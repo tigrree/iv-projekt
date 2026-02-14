@@ -1,8 +1,8 @@
 name: Taegliches Scraping
 on:
   schedule:
-    - cron: '0 12 * * *' # Täglich 13:00 Uhr Schweizer Zeit
-  workflow_dispatch: # Erlaubt manuelles Starten
+    - cron: '0 12 * * 1-5' # Läuft nur Mo, Di, Mi, Do, Fr um 13:00 Uhr Schweizer Zeit
+  workflow_dispatch: # Erlaubt weiterhin manuelles Starten am Wochenende für Tests
 
 permissions:
   contents: write

@@ -5,21 +5,15 @@ import os
 import time
 from datetime import datetime
 
-# API Key von Groq
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY:
-        return "Vorschau: Details im Originalurteil verfügbar."
+        return "Vorschau im Originalurteil verfügbar."
     
-    # RADIKALE SÄUBERUNG:
-    # Nur Buchstaben, Zahlen und Punkte behalten, um JSON-Fehler zu vermeiden
-    clean_text = "".join(c for c in urteil_text if c.isalnum() or c in " .")
-    clean_text = " ".join(clean_text.split())
-    
-    # MASSIVE KÜRZUNG: 
-    # Wir nehmen nur die ersten 2000 Zeichen (reicht für Sachverhalt/Ergebnis)
-    short_text = clean_text[:2000]
+    # 1. Wir nehmen nur die nackten Wörter (entfernt alle Sonderzeichen/Umbrüche)
+    words = urteil_text.split()
+    clean_text = " ".join(words[:400]) # Wir nehmen nur die ersten 400 Wörter
     
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
@@ -27,29 +21,30 @@ def summarize_with_ai(urteil_text):
         "Content-Type": "application/json"
     }
     
-    # Prompt so simpel wie möglich halten
+    # 2. Wir nutzen Mixtral, das ist robuster bei Fehlern
     data = {
-        "model": "llama3-8b-8192",
+        "model": "mixtral-8x7b-32768", 
         "messages": [
-            {"role": "system", "content": "Du bist ein juristischer Assistent. Antworte kurz in 3 Sätzen auf Deutsch."},
-            {"role": "user", "content": f"Fasse dieses Urteil zusammen: {short_text}"}
+            {"role": "system", "content": "Du bist ein Schweizer Jurist. Fasse das Urteil in 3 kurzen Sätzen zusammen."},
+            {"role": "user", "content": f"Urteilstext: {clean_text}"}
         ],
         "temperature": 0.1
     }
     
     try:
-        # json=data kümmert sich um das korrekte Maskieren von Sonderzeichen
+        # Wir senden die Anfrage
         response = requests.post(url, headers=headers, json=data, timeout=30)
         
+        # Falls Rate Limit (429), kurz warten
         if response.status_code == 429:
-            print("Rate Limit. Warte...")
-            time.sleep(25)
-            return summarize_with_ai(urteil_text) # Einmaliger Wiederholungsversuch
+            print("Warte wegen Rate Limit...")
+            time.sleep(30)
+            return summarize_with_ai(urteil_text)
 
         response.raise_for_status()
         return response.json()['choices'][0]['message']['content'].strip()
     except Exception as e:
-        print(f"KI Fehler bei {short_text[:20]}... : {e}")
+        print(f"Fehler bei KI: {e}")
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
@@ -57,20 +52,18 @@ def scrape_bger():
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
-    heute_str = datetime.now().strftime("%d.%m.%Y")
-    
-    # Archiv laden
+    # Archiv laden (um nur Fehlende zu bearbeiten)
     archiv = {}
     if os.path.exists('urteile.json'):
         try:
             with open('urteile.json', 'r', encoding='utf-8') as f:
                 alte_daten = json.load(f)
+                # Nur Urteile behalten, die eine ECHTE Zusammenfassung haben
                 archiv = {d['aktenzeichen']: d['zusammenfassung'] for d in alte_daten 
-                          if d['aktenzeichen'] != "Info" and "nicht verfügbar" not in d['zusammenfassung']}
+                          if len(d['zusammenfassung']) > 50 and "verfügbar" not in d['zusammenfassung']}
         except: pass
 
     neue_liste = []
-    
     try:
         res = requests.get(base_url, headers=headers, timeout=15)
         soup = BeautifulSoup(res.text, 'html.parser')
@@ -86,13 +79,12 @@ def scrape_bger():
                     if az in archiv:
                         zusammenfassung = archiv[az]
                     else:
-                        print(f"Analysiere: {az}")
+                        print(f"Versuche Analyse für: {az}")
                         full_link = case_link['href'] if case_link['href'].startswith("http") else domain + case_link['href']
                         case_page = requests.get(full_link, headers=headers)
-                        # Wir holen nur den Text aus dem 'body'
-                        case_soup = BeautifulSoup(case_page.text, 'html.parser')
-                        zusammenfassung = summarize_with_ai(case_soup.get_text())
-                        time.sleep(15) # Von 10 auf 15 Sekunden erhöhen
+                        case_text = BeautifulSoup(case_page.text, 'html.parser').get_text()
+                        zusammenfassung = summarize_with_ai(case_text)
+                        time.sleep(15) # 15 Sekunden Sicherheitsabstand
 
                     neue_liste.append({
                         "aktenzeichen": az,
@@ -101,6 +93,8 @@ def scrape_bger():
                         "url": case_link['href'] if case_link['href'].startswith("http") else domain + case_link['href']
                     })
 
+        # Info-Meldung für heute
+        heute_str = datetime.now().strftime("%d.%m.%Y")
         if not any(d['datum'] == heute_str for d in neue_liste) and datetime.now().weekday() < 5:
             neue_liste.insert(0, {"aktenzeichen": "Info", "datum": heute_str, "zusammenfassung": "Heute wurden keine neuen IV-relevanten Urteile publiziert.", "url": None})
 

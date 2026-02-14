@@ -1,11 +1,11 @@
 name: Taegliches Scraping
 on:
   schedule:
-    - cron: '0 12 * * *'
-  workflow_dispatch:
+    - cron: '0 12 * * *' # Täglich 13:00 Uhr Schweizer Zeit
+  workflow_dispatch: # Erlaubt manuelles Starten
 
 permissions:
-  contents: write # Das gibt dem Skript die Erlaubnis, die Datei zu speichern
+  contents: write
 
 jobs:
   build:
@@ -25,5 +25,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add urteile.json
-          git commit -m "Update: $GITHUB_RUN_ID" || exit 0
+          # Der Trick: Wir fügen '|| exit 0' hinzu, damit kein Fehler gemeldet wird, wenn nichts neu ist
+          git commit -m "Update Urteile: $(date +'%Y-%m-%d %H:%M')" || exit 0
           git push

@@ -92,7 +92,7 @@ def scrape_bger():
                         # Wir holen nur den Text aus dem 'body'
                         case_soup = BeautifulSoup(case_page.text, 'html.parser')
                         zusammenfassung = summarize_with_ai(case_soup.get_text())
-                        time.sleep(12) # Viel Puffer für die kostenlose API
+                        time.sleep(15) # Von 10 auf 15 Sekunden erhöhen
 
                     neue_liste.append({
                         "aktenzeichen": az,

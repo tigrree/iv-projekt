@@ -11,9 +11,8 @@ def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY:
         return "Vorschau im Originalurteil verfügbar."
     
-    # Text-Vorbereitung: Nur die ersten 400 Wörter für die KI
-    words = urteil_text.split()
-    clean_text = " ".join(words[:400])
+    # 1. Radikale Text-Vorbereitung: Nur reiner Text, max 400 Wörter
+    clean_text = " ".join(urteil_text.split()[:400])
     
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
@@ -21,25 +20,30 @@ def summarize_with_ai(urteil_text):
         "Content-Type": "application/json"
     }
     
-    data = {
-        "model": "mixtral-8x7b-32768", 
+    # 2. Absolut minimalistisches JSON-Format
+    payload = {
+        "model": "mixtral-8x7b-32768",
         "messages": [
-            {"role": "system", "content": "Du bist ein Schweizer Jurist. Fasse das Urteil in 3 kurzen Sätzen zusammen (Sachverhalt, Rechtsfrage, Ergebnis)."},
-            {"role": "user", "content": f"Urteilstext: {clean_text}"}
+            {"role": "user", "content": f"Fasse kurz in 3 Saetzen zusammen: {clean_text}"}
         ],
         "temperature": 0.1
     }
     
     try:
-        response = requests.post(url, headers=headers, json=data, timeout=30)
+        # json=payload stellt sicher, dass Python das Encoding perfekt übernimmt
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        
         if response.status_code == 429:
-            print("Rate Limit erreicht. Warte 30 Sek...")
             time.sleep(30)
             return summarize_with_ai(urteil_text)
-        response.raise_for_status()
+            
+        if response.status_code != 200:
+            print(f"API Fehler {response.status_code}: {response.text}")
+            return "Zusammenfassung aktuell nicht verfügbar."
+            
         return response.json()['choices'][0]['message']['content'].strip()
     except Exception as e:
-        print(f"KI Fehler: {e}")
+        print(f"Systemfehler: {e}")
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
@@ -53,21 +57,19 @@ def scrape_bger():
         try:
             with open('urteile.json', 'r', encoding='utf-8') as f:
                 alte_daten = json.load(f)
-                # Wir behalten nur Urteile, die bereits eine richtige Zusammenfassung haben
+                # Nur ECHTE Zusammenfassungen behalten
                 archiv = {d['aktenzeichen']: d['zusammenfassung'] for d in alte_daten 
                           if len(d['zusammenfassung']) > 50 and "verfügbar" not in d['zusammenfassung']}
         except: pass
 
     try:
-        res = requests.get(base_url, headers=headers, timeout=15)
+        res = requests.get(base_url, headers=headers)
         soup = BeautifulSoup(res.text, 'html.parser')
         date_links = [(a.get_text().strip(), a['href']) for a in soup.find_all('a', href=True) if a.get_text().strip().count('.') == 2]
-
-        # --- DIE NEUE LOGIK: Chronologisch von alt nach neu ---
-        date_links.reverse() # Wir fangen beim ältesten Datum (27.01.) an
+        date_links.reverse() # Von alt nach neu
         
         neue_liste = []
-        limit_pro_lauf = 8 # Wir machen max. 8 NEUE Analysen pro Durchgang, um die API zu schonen
+        limit = 5 # Wir machen nur 5 pro Lauf, um absolut sicher zu gehen
         counter = 0
 
         for datum, link in date_links:
@@ -77,17 +79,16 @@ def scrape_bger():
             for case_link in day_soup.find_all('a', href=True):
                 az = case_link.get_text().strip()
                 if az.startswith("9C_") or az.startswith("8C_"):
-                    full_link = case_link['href'] if case_link['href'].startswith("http") else domain + case_link['href']
-                    
                     if az in archiv:
                         zusammenfassung = archiv[az]
-                    elif counter < limit_pro_lauf:
-                        print(f"Analysiere NEUES Urteil ({counter+1}/{limit_pro_lauf}): {az}")
+                    elif counter < limit:
+                        print(f"Versuch {counter+1}: {az}")
+                        full_link = case_link['href'] if case_link['href'].startswith("http") else domain + case_link['href']
                         case_page = requests.get(full_link, headers=headers)
                         case_text = BeautifulSoup(case_page.text, 'html.parser').get_text()
                         zusammenfassung = summarize_with_ai(case_text)
                         counter += 1
-                        time.sleep(20) # Sicherheitsabstand
+                        time.sleep(15)
                     else:
                         zusammenfassung = "Wird im nächsten Durchlauf analysiert..."
 
@@ -95,18 +96,11 @@ def scrape_bger():
                         "aktenzeichen": az,
                         "datum": datum,
                         "zusammenfassung": zusammenfassung,
-                        "url": full_link
+                        "url": case_link['href'] if case_link['href'].startswith("http") else domain + case_link['href']
                     })
 
-        # Liste für die Anzeige wieder umdrehen (Neueste oben)
-        neue_liste.reverse()
-
-        # Info-Meldung für heute (Wochentag-Check)
-        heute_str = datetime.now().strftime("%d.%m.%Y")
-        if not any(d['datum'] == heute_str for d in neue_liste) and datetime.now().weekday() < 5:
-            neue_liste.insert(0, {"aktenzeichen": "Info", "datum": heute_str, "zusammenfassung": "Heute wurden keine neuen IV-Urteile publiziert.", "url": None})
-
-        # Speichern
+        neue_liste.reverse() # Neueste oben für die App
+        
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(neue_liste, f, ensure_ascii=False, indent=4)
             

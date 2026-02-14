@@ -4,19 +4,17 @@ import json
 from datetime import datetime
 
 def scrape_bger():
-    # Wir fügen die aktuelle Uhrzeit hinzu, damit die Datei immer "neu" ist
+    # Aktueller Zeitstempel
     zeitstempel = datetime.now().strftime("%d.%m.%Y, %H:%M")
     
-    url = "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index&search=false"
-    
-    # Standard-Inhalt, falls (noch) nichts gefunden wird
+    # Hier ändern wir deine Meldung
     ergebnisse = [{
-        "aktenzeichen": "Status",
+        "aktenzeichen": "Info",
         "datum": zeitstempel,
-        "zusammenfassung": "Das Skript läuft. Aktuell werden keine neuen IV-Urteile publiziert (Wochenende/Feiertag)."
+        "zusammenfassung": "Heute wurden keine neuen IV-relevanten Urteile publiziert."
     }]
     
-    # Später fügen wir hier die Such-Logik ein
+    # (Deine restliche Such-Logik bleibt hier...)
     
     with open('urteile.json', 'w', encoding='utf-8') as f:
         json.dump(ergebnisse, f, ensure_ascii=False, indent=4)

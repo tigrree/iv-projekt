@@ -35,7 +35,7 @@ def scrape_bger():
                 "aktenzeichen": "Info",
                 "datum": datetime.now().strftime("%d.%m.%Y"),
                 "zusammenfassung": "Heute wurden keine neuen IV-relevanten Urteile publiziert.",
-                "url": "https://www.bger.ch"
+                "url": None  # Hier 'None' statt der Webadresse
             }]
             
     except Exception as e:

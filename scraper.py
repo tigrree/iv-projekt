@@ -5,6 +5,7 @@ import os
 import time
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+# Keywords für die Spalte "Sachgebiet" (siehe Ihr Screenshot)
 IV_KEYWORDS = ["Invalidenversicherung", "Assurance-invalidité", "Assicurazione per l’invalidità", "Invalid"]
 
 def summarize_with_ai(urteil_text):
@@ -29,6 +30,7 @@ def scrape_bger():
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
+    # Archiv ohne "Info"-Einträge laden
     archiv = {}
     if os.path.exists('urteile.json'):
         try:
@@ -41,10 +43,11 @@ def scrape_bger():
     try:
         res = requests.get(base_url, headers=headers)
         soup = BeautifulSoup(res.text, 'html.parser')
+        # Die letzten 20 Tage abrufen
         date_links = [(a.get_text().strip(), a['href']) for a in soup.find_all('a', href=True) if a.get_text().strip().count('.') == 2][:20]
         
         neue_liste = []
-        limit = 50
+        limit = 60 # Genügend Puffer für alle IV-Urteile der letzten 14 Tage
         ai_counter = 0
 
         for datum, link in date_links:
@@ -53,46 +56,41 @@ def scrape_bger():
             
             tages_ergebnisse = []
             
-            # Suche die Tabelle mit den Entscheiden
-            table = day_soup.find('table')
-            if not table: continue
+            # Alle Tabellenzeilen durchlaufen
+            for row in day_soup.find_all('tr'):
+                # Suche nach der Geschäftsnummer (Link) und dem Text in der Zeile
+                link_tag = row.find('a', href=True)
+                if not link_tag: continue
+                
+                az = link_tag.get_text().strip()
+                # Nur Sozialversicherungsabteilungen 8C/9C
+                if not (az.startswith("9C_") or az.startswith("8C_")): continue
+                
+                # Prüfe, ob in dieser Tabellenzeile eines der Keywords im "Sachgebiet" steht
+                row_text = row.get_text()
+                if any(kw.lower() in row_text.lower() for kw in IV_KEYWORDS):
+                    full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
+                    
+                    if az in archiv:
+                        zusammenfassung = archiv[az]
+                    elif ai_counter < limit:
+                        print(f"Verarbeite IV-Fall: {az}")
+                        case_res = requests.get(full_link, headers=headers)
+                        case_text = BeautifulSoup(case_res.text, 'html.parser').get_text()
+                        zusammenfassung = summarize_with_ai(case_text)
+                        ai_counter += 1
+                        time.sleep(12) # API-Schutz
+                    else:
+                        zusammenfassung = "Wird analysiert..."
 
-            rows = table.find_all('tr')
-            for row in rows:
-                cols = row.find_all('td')
-                # Wir suchen nach der Zeile, die das Aktenzeichen (z.B. 9C_...) enthält
-                if len(cols) >= 2:
-                    az_cell = row.find('a', href=True)
-                    if not az_cell: continue
-                    
-                    az = az_cell.get_text().strip()
-                    if not (az.startswith("9C_") or az.startswith("8C_")): continue
-                    
-                    # Suche in der gesamten Zeile nach den IV-Keywords im Text (Sachgebiet-Spalte)
-                    row_text = row.get_text()
-                    
-                    if any(kw.lower() in row_text.lower() for kw in IV_KEYWORDS):
-                        full_link = az_cell['href'] if az_cell['href'].startswith("http") else domain + az_cell['href']
-                        
-                        if az in archiv:
-                            zusammenfassung = archiv[az]
-                        elif ai_counter < limit:
-                            print(f"Analysiere IV-Urteil: {az}")
-                            case_res = requests.get(full_link, headers=headers)
-                            case_text = BeautifulSoup(case_res.text, 'html.parser').get_text()
-                            zusammenfassung = summarize_with_ai(case_text)
-                            ai_counter += 1
-                            time.sleep(12)
-                        else:
-                            zusammenfassung = "Wird analysiert..."
-
-                        tages_ergebnisse.append({
-                            "aktenzeichen": az,
-                            "datum": datum,
-                            "zusammenfassung": zusammenfassung,
-                            "url": full_link
-                        })
+                    tages_ergebnisse.append({
+                        "aktenzeichen": az,
+                        "datum": datum,
+                        "zusammenfassung": zusammenfassung,
+                        "url": full_link
+                    })
             
+            # Falls IV-Urteile gefunden wurden, hinzufügen. Sonst Info-Eintrag.
             if tages_ergebnisse:
                 neue_liste.extend(tages_ergebnisse)
             else:

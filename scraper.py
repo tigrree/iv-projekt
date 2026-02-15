@@ -5,8 +5,16 @@ import os
 import time
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-# Keywords für die Spalte "Sachgebiet" (siehe Ihr Screenshot)
-IV_KEYWORDS = ["Invalidenversicherung", "Assurance-invalidité", "Assicurazione per l’invalidità", "Invalid"]
+
+# Erweiterte Keyword-Liste (Groß-/Kleinschreibung wird im Code ignoriert)
+IV_KEYWORDS = [
+    "Invalidenversicherung", 
+    "Assurance-invalidité", 
+    "Assicurazione per l’invalidità", 
+    "Invalid",
+    "Invalidité",
+    "Invalidità"
+]
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "Vorschau im Originalurteil verfügbar."
@@ -30,7 +38,7 @@ def scrape_bger():
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
-    # Archiv ohne "Info"-Einträge laden
+    # Archiv laden (Gedächtnis)
     archiv = {}
     if os.path.exists('urteile.json'):
         try:
@@ -43,11 +51,11 @@ def scrape_bger():
     try:
         res = requests.get(base_url, headers=headers)
         soup = BeautifulSoup(res.text, 'html.parser')
-        # Die letzten 20 Tage abrufen
+        # Die letzten 20 Tage prüfen
         date_links = [(a.get_text().strip(), a['href']) for a in soup.find_all('a', href=True) if a.get_text().strip().count('.') == 2][:20]
         
         neue_liste = []
-        limit = 60 # Genügend Puffer für alle IV-Urteile der letzten 14 Tage
+        limit = 60 
         ai_counter = 0
 
         for datum, link in date_links:
@@ -56,30 +64,30 @@ def scrape_bger():
             
             tages_ergebnisse = []
             
-            # Alle Tabellenzeilen durchlaufen
+            # Gezielte Tabellen-Analyse pro Tag
             for row in day_soup.find_all('tr'):
-                # Suche nach der Geschäftsnummer (Link) und dem Text in der Zeile
                 link_tag = row.find('a', href=True)
                 if not link_tag: continue
                 
                 az = link_tag.get_text().strip()
-                # Nur Sozialversicherungsabteilungen 8C/9C
+                # Filter auf die relevanten Abteilungen 8C und 9C
                 if not (az.startswith("9C_") or az.startswith("8C_")): continue
                 
-                # Prüfe, ob in dieser Tabellenzeile eines der Keywords im "Sachgebiet" steht
-                row_text = row.get_text()
-                if any(kw.lower() in row_text.lower() for kw in IV_KEYWORDS):
+                # CASE-INSENSITIVE Suche im Text der gesamten Zeile (Sachgebiet-Spalte)
+                row_text = row.get_text().lower()
+                
+                if any(kw.lower() in row_text for kw in IV_KEYWORDS):
                     full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     
                     if az in archiv:
                         zusammenfassung = archiv[az]
                     elif ai_counter < limit:
-                        print(f"Verarbeite IV-Fall: {az}")
+                        print(f"Analysiere IV-Fall: {az}")
                         case_res = requests.get(full_link, headers=headers)
                         case_text = BeautifulSoup(case_res.text, 'html.parser').get_text()
                         zusammenfassung = summarize_with_ai(case_text)
                         ai_counter += 1
-                        time.sleep(12) # API-Schutz
+                        time.sleep(12) # Schutz vor API-Sperre
                     else:
                         zusammenfassung = "Wird analysiert..."
 
@@ -90,7 +98,7 @@ def scrape_bger():
                         "url": full_link
                     })
             
-            # Falls IV-Urteile gefunden wurden, hinzufügen. Sonst Info-Eintrag.
+            # Ergebnis für diesen Tag speichern oder Info-Meldung generieren
             if tages_ergebnisse:
                 neue_liste.extend(tages_ergebnisse)
             else:

@@ -7,14 +7,8 @@ import time
 # API-Konfiguration
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Strikt auf den Wortstamm bezogene Keywords für das Sachgebiet
-# Kleingeschrieben für einen robusten Abgleich
-IV_KEYWORDS = [
-    "invalidenversicherung", 
-    "assurance-invalidité", 
-    "assicurazione per l’invalidità", 
-    "invalid"  # Deckt Invalidität, invalidité, invalidità, Invalidenrente etc. ab
-]
+# Der universelle Wortstamm für die Suche
+IV_SEARCH_TERM = "invalid"
 
 def summarize_with_ai(urteil_text, retries=3):
     """Fasst das Urteil zusammen mit Fokus auf Sachverhalt, Rechtsfrage und Ergebnis."""
@@ -59,7 +53,7 @@ def scrape_bger():
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
-    # Archiv laden
+    # Archiv laden (überspringt Info-Einträge, um Lücken neu zu scannen)
     archiv = {}
     if os.path.exists('urteile.json'):
         try:
@@ -84,17 +78,15 @@ def scrape_bger():
             day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
             tages_ergebnisse = []
             
+            # Alle Zeilen der Tabelle prüfen
             for row in day_soup.find_all('tr'):
-                # Gesamten Text der Zeile prüfen (enthält das Sachgebiet inkl. Klammerzusätze)
-                row_text = row.get_text().lower()
-                
-                # Filter: Enthält die Zeile einen der Invalid-Wortstämme?
-                if any(kw in row_text for kw in IV_KEYWORDS):
+                # Hier passiert die Magie: Gesamter Zeilentext wird kleingeschrieben verglichen
+                if IV_SEARCH_TERM in row.get_text().lower():
                     link_tag = row.find('a', href=True)
                     if not link_tag: continue
                     
                     az = link_tag.get_text().strip()
-                    # Nur Sozialversicherungsabteilungen berücksichtigen
+                    # Nur 9C (Sozialrecht II) und 8C (Sozialrecht I)
                     if not (az.startswith("9C_") or az.startswith("8C_")): continue
                     
                     full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']

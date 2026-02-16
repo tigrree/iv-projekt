@@ -1,5 +1,17 @@
 [
     {
+        "aktenzeichen": "8C_699/2024",
+        "datum": "16.02.2026",
+        "zusammenfassung": "Hier ist eine Zusammenfassung des Schweizer IV-Urteils in 3 Sätzen:\n\nDie Klägerin, eine 1968 geborene Frau, hatte bereits von 2013 bis 2013 eine Rente wegen eines Brustkrebsleidens bezogen und stellte 2018 erneut einen Antrag auf Leistungen der Invalidenversicherung, da sie seit 2016 arbeitsunfähig sei und an psychischen Störungen leide. Die Rechtsfrage drehte sich um die Frage, ob die Klägerin Anspruch auf eine Allocation für Impotenz (eine Art Pflegegeld) hatte, nachdem das Amt für Invalidenversicherung eine entsprechende Entscheidung getroffen hatte. Das Bundesgericht bestätigte letztendlich die Entscheidung des Amtes und des kantonalen Gerichts, die Klägerin habe keinen Anspruch auf eine Allocation für Impotenz, da die erforderlichen Voraussetzungen nicht erfüllt seien.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://08-01-2026-8C_699-2024&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "8C_57/2026",
+        "datum": "16.02.2026",
+        "zusammenfassung": "Hier ist eine Zusammenfassung des Schweizer IV-Urteils in 3 Sätzen:\n\nDer Beschwerdeführer A.________ hatte gegen das Urteil des Verwaltungsgerichts des Kantons Bern vom 30. Mai 2024 Beschwerde eingelegt, die jedoch nicht innerhalb der 30-tägigen Rechtsmittelfrist eingereicht worden war. Die Rechtsfrage war, ob die Beschwerde trotz der verspäteten Einreichung behandelt werden sollte, was jedoch aufgrund der fehlenden Fristwiederherstellungsgründe abgelehnt wurde. Das Ergebnis war, dass das Bundesgericht nicht auf die Beschwerde einging, das Gesuch um unentgeltliche Rechtspflege abwies, aber auf die Erhebung von Gerichtskosten verzichtete.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://27-01-2026-8C_57-2026&lang=de&zoom=&type=show_document"
+    },
+    {
         "aktenzeichen": "9C_59/2025",
         "datum": "13.02.2026",
         "zusammenfassung": "Das Bundesgericht hat am 8. Januar 2026 ein Urteil in einem Fall der Invalidenversicherung gefällt. Die Beschwerdeführerin, A.________, hatte sich 2017 bei der Invalidenversicherung zum Leistungsbezug angemeldet, nachdem sie aufgrund von Schmerzen nicht mehr arbeiten konnte. Die IV-Stelle des Kantons Zürich hatte einen Rentenanspruch verneint, was vom Sozialversicherungsgericht des Kantons Zürich bestätigt wurde. Die Beschwerdeführerin hat nun vor dem Bundesgericht eine Beschwerde in öffentlich-rechtlichen Angelegenheiten eingereicht und beantragt, ihr eine volle Rente zuzusprechen oder die Sache an die IV-Stelle zurückzuweisen, um weitere Abklärungen vorzunehmen. \n\nDas Bundesgericht hat die Beschwerde abgewiesen und die Entscheidung der Vorinstanz bestätigt. Die genauen Gründe für diese Entscheidung sind im Urteil dargelegt und basieren auf der Prüfung der Rechtsmängel und der Sachverhaltsfeststellung durch die Vorinstanz. \n\nDie Entscheidung des Bundesgerichts ist endgültig und kann nicht mehr angefochten werden. Die Beschwerdeführerin hat somit keinen Anspruch auf eine volle Rente aus der Invalidenversicherung.",
@@ -122,12 +134,6 @@
     {
         "aktenzeichen": "Info",
         "datum": "28.01.2026",
-        "zusammenfassung": "An diesem Tag wurden keine IV-relevanten Urteile publiziert.",
-        "url": "https://www.bger.ch"
-    },
-    {
-        "aktenzeichen": "Info",
-        "datum": "27.01.2026",
         "zusammenfassung": "An diesem Tag wurden keine IV-relevanten Urteile publiziert.",
         "url": "https://www.bger.ch"
     }

@@ -7,7 +7,7 @@ import time
 # API-Konfiguration
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Der universelle Wortstamm für die Suche
+# Der universelle Wortstamm für die Suche (kleingeschrieben für den Abgleich)
 IV_SEARCH_TERM = "invalid"
 
 def summarize_with_ai(urteil_text, retries=3):
@@ -48,7 +48,7 @@ def summarize_with_ai(urteil_text, retries=3):
     return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    """Scrapt das BGer und filtert Urteile basierend auf dem Wortstamm im Sachgebiet."""
+    """Scrapt das BGer und filtert Urteile basierend auf dem Wortstamm 'invalid'."""
     base_url = "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
@@ -60,6 +60,7 @@ def scrape_bger():
             with open('urteile.json', 'r', encoding='utf-8') as f:
                 alte_daten = json.load(f)
                 for d in alte_daten:
+                    # Wir behalten nur echte Urteile im Archiv, keine Platzhalter
                     if d['aktenzeichen'] != "Info" and "nicht verfügbar" not in d['zusammenfassung']:
                         archiv[d['aktenzeichen']] = d['zusammenfassung']
         except: pass
@@ -67,6 +68,7 @@ def scrape_bger():
     try:
         res = requests.get(base_url, headers=headers)
         soup = BeautifulSoup(res.text, 'html.parser')
+        # Die letzten 20 Publikationstage abrufen
         date_links = [(a.get_text().strip(), a['href']) for a in soup.find_all('a', href=True) if a.get_text().strip().count('.') == 2][:20]
         
         neue_liste = []
@@ -80,13 +82,13 @@ def scrape_bger():
             
             # Alle Zeilen der Tabelle prüfen
             for row in day_soup.find_all('tr'):
-                # Hier passiert die Magie: Gesamter Zeilentext wird kleingeschrieben verglichen
+                # Suche nach dem Wortstamm im gesamten Zeilentext (Case-Insensitive)
                 if IV_SEARCH_TERM in row.get_text().lower():
                     link_tag = row.find('a', href=True)
                     if not link_tag: continue
                     
                     az = link_tag.get_text().strip()
-                    # Nur 9C (Sozialrecht II) und 8C (Sozialrecht I)
+                    # Filter auf relevante Abteilungen (Sozialrecht I & II)
                     if not (az.startswith("9C_") or az.startswith("8C_")): continue
                     
                     full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
@@ -94,12 +96,12 @@ def scrape_bger():
                     if az in archiv:
                         zusammenfassung = archiv[az]
                     elif ai_counter < ai_limit:
-                        print(f"Analysiere relevanten Fall: {az}...")
+                        print(f"Verarbeite relevanten Fall: {az}...")
                         case_res = requests.get(full_link, headers=headers)
                         case_text = BeautifulSoup(case_res.text, 'html.parser').get_text()
                         zusammenfassung = summarize_with_ai(case_text)
                         ai_counter += 1
-                        time.sleep(25)
+                        time.sleep(25) # API-Pause
                     else:
                         zusammenfassung = "Zusammenfassung aktuell nicht verfügbar."
 
@@ -110,6 +112,7 @@ def scrape_bger():
                         "url": full_link
                     })
             
+            # Falls Urteile gefunden wurden, hinzufügen. Sonst Info-Eintrag.
             if tages_ergebnisse:
                 neue_liste.extend(tages_ergebnisse)
             else:
@@ -120,6 +123,7 @@ def scrape_bger():
                     "url": "https://www.bger.ch"
                 })
 
+        # Ergebnisse speichern
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(neue_liste, f, ensure_ascii=False, indent=4)
             

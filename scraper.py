@@ -6,12 +6,10 @@ import time
 from datetime import datetime
 
 # --- DEINE MANUELLE EINSTELLUNG ---
-ZIEL_DATUM = "16.02.2026"
+ZIEL_DATUM = "17.02.2026" 
 # ----------------------------------
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
-# Reduziert auf den absoluten Kernbegriff
 KEYWORDS = ["invalid"]
 
 def summarize_with_ai(urteil_text):
@@ -27,28 +25,24 @@ def summarize_with_ai(urteil_text):
     except: return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte Fokus-Scan ('invalid') für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Run für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
-    archiv_daten = []
-    archiv_map = {} 
-    if os.path.exists('urteile.json'):
-        with open('urteile.json', 'r', encoding='utf-8') as f:
-            try:
-                archiv_daten = json.load(f)
-                for d in archiv_daten: archiv_map[d['aktenzeichen']] = d['zusammenfassung']
-            except: pass
+    if not os.path.exists('urteile.json'):
+        with open('urteile.json', 'w', encoding='utf-8') as f: json.dump([], f)
+
+    with open('urteile.json', 'r', encoding='utf-8') as f:
+        archiv_daten = json.load(f)
 
     try:
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: return print("Datum nicht gefunden.")
+        if not tag_link: return print(f"Datum {ZIEL_DATUM} noch nicht publiziert.")
 
-        day_url = tag_link if tag_link.startswith("http") else domain + tag_link
-        day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
+        day_soup = BeautifulSoup(requests.get(tag_link if tag_link.startswith("http") else domain + tag_link, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
         rows = day_soup.find_all('tr')
         
@@ -56,37 +50,33 @@ def scrape_bger():
             row = rows[i]
             link_tag = row.find('a', href=True)
             if not link_tag: continue
-            
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # Kombiniere aktuelle und nächste Zeile für den Kontext
-            current_row_text = row.get_text(separator=" ")
-            next_row_text = rows[i+1].get_text(separator=" ") if i + 1 < len(rows) else ""
-            combined_context = (current_row_text + " " + next_row_text).lower()
-            
-            # Filter nur noch auf "invalid"
-            if any(key in combined_context for key in KEYWORDS):
-                full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
-                
-                if az in archiv_map and "nicht verfügbar" not in archiv_map[az]:
-                    print(f"Überspringe: {az}")
-                    zusammenfassung = archiv_map[az]
-                else:
-                    print(f"!!! GEFUNDEN: {az} !!!")
-                    case_text = BeautifulSoup(requests.get(full_link, headers=headers).text, 'html.parser').get_text()
-                    zusammenfassung = summarize_with_ai(case_text)
-                    time.sleep(10)
-                
-                if not any(e['aktenzeichen'] == az for e in tages_ergebnisse):
-                    tages_ergebnisse.append({"aktenzeichen": az, "datum": ZIEL_DATUM, "zusammenfassung": zusammenfassung, "url": full_link})
+            ctx = (row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")).lower()
+            if any(key in ctx for key in KEYWORDS):
+                print(f"Analysiere: {az}...")
+                text = BeautifulSoup(requests.get(link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href'], headers=headers).text, 'html.parser').get_text()
+                tages_ergebnisse.append({"aktenzeichen": az, "datum": ZIEL_DATUM, "zusammenfassung": summarize_with_ai(text), "url": link_tag['href']})
+                time.sleep(10)
 
         if not tages_ergebnisse:
-            tages_ergebnisse.append({"aktenzeichen": "Info", "datum": ZIEL_DATUM, "zusammenfassung": "Keine IV-Urteile.", "url": domain})
+            tages_ergebnisse.append({"aktenzeichen": "Info", "datum": ZIEL_DATUM, "zusammenfassung": "Keine IV-relevanten Urteile publiziert.", "url": domain})
 
+        # 1. Altes Ziel-Datum entfernen (falls vorhanden)
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
+        # 2. Neues Datum hinzufügen
         archiv_daten.extend(tages_ergebnisse)
+        # 3. Sortieren
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
+
+        # --- AUTO-DELETE LOGIK ---
+        alle_daten = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
+        if len(alle_daten) > 14:
+            aeltestes_datum = alle_daten[0]
+            print(f"Lösche ältestes Datum aus Archiv: {aeltestes_datum}")
+            archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
+        # -------------------------
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)

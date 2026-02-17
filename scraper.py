@@ -5,9 +5,10 @@ import os
 import time
 from datetime import datetime
 
-# --- DEINE MANUELLE EINSTELLUNG ---
-ZIEL_DATUM = "17.02.2026" 
-# ----------------------------------
+# --- AUTOMATISIERUNG ---
+# Statt eines festen Datums nimmt der Code jetzt immer den aktuellen Tag
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y") 
+# -----------------------
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -25,7 +26,7 @@ def summarize_with_ai(urteil_text):
     except: return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte Run für: {ZIEL_DATUM} ---")
+    print(f"--- Starte automatischen Run für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -38,11 +39,16 @@ def scrape_bger():
     try:
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
+        
+        # Suchen nach dem Link für das heutige Datum
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: return print(f"Datum {ZIEL_DATUM} noch nicht publiziert.")
+        if not tag_link:
+            print(f"Datum {ZIEL_DATUM} wurde vom Bundesgericht noch nicht auf der Übersicht gelistet.")
+            return 
 
-        day_soup = BeautifulSoup(requests.get(tag_link if tag_link.startswith("http") else domain + tag_link, headers=headers).text, 'html.parser')
+        day_url = tag_link if tag_link.startswith("http") else domain + tag_link
+        day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
         rows = day_soup.find_all('tr')
         
@@ -53,30 +59,39 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
+            # Look-ahead für zweizeilige Sachgebiete
             ctx = (row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")).lower()
             if any(key in ctx for key in KEYWORDS):
                 print(f"Analysiere: {az}...")
-                text = BeautifulSoup(requests.get(link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href'], headers=headers).text, 'html.parser').get_text()
-                tages_ergebnisse.append({"aktenzeichen": az, "datum": ZIEL_DATUM, "zusammenfassung": summarize_with_ai(text), "url": link_tag['href']})
+                full_case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
+                text = BeautifulSoup(requests.get(full_case_url, headers=headers).text, 'html.parser').get_text()
+                tages_ergebnisse.append({
+                    "aktenzeichen": az, 
+                    "datum": ZIEL_DATUM, 
+                    "zusammenfassung": summarize_with_ai(text), 
+                    "url": full_case_url
+                })
                 time.sleep(10)
 
         if not tages_ergebnisse:
-            tages_ergebnisse.append({"aktenzeichen": "Info", "datum": ZIEL_DATUM, "zusammenfassung": "Keine IV-relevanten Urteile publiziert.", "url": domain})
+            tages_ergebnisse.append({
+                "aktenzeichen": "Info", 
+                "datum": ZIEL_DATUM, 
+                "zusammenfassung": "Keine IV-relevanten Urteile publiziert.", 
+                "url": domain
+            })
 
-        # 1. Altes Ziel-Datum entfernen (falls vorhanden)
+        # Archiv-Pflege
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
-        # 2. Neues Datum hinzufügen
         archiv_daten.extend(tages_ergebnisse)
-        # 3. Sortieren
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
 
-        # --- AUTO-DELETE LOGIK ---
+        # 14-Tage-Limit (ältestes Datum löschen)
         alle_daten = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         if len(alle_daten) > 14:
             aeltestes_datum = alle_daten[0]
             print(f"Lösche ältestes Datum aus Archiv: {aeltestes_datum}")
             archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
-        # -------------------------
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)

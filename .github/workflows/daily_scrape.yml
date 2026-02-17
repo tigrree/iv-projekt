@@ -1,36 +1,34 @@
-name: Taegliches Scraping
+name: Daily IV Scraper
+
 on:
   schedule:
-    - cron: '0 12 * * 1-5' # Läuft nur Mo, Di, Mi, Do, Fr um 13:00 Uhr Schweizer Zeit
-  workflow_dispatch: # Erlaubt weiterhin manuelles Starten am Wochenende für Tests
-
-permissions:
-  contents: write
+    - cron: '0 12 * * *'  # Täglich um 12:00 UTC (13:00 Uhr Schweizer Zeit)
+  workflow_dispatch:      # Erlaubt weiterhin manuelles Starten
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Python
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-          
+
       - name: Install Dependencies
         run: pip install requests beautifulsoup4
-        
+
       - name: Run Scraper
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python scraper.py
-        
-      - name: Commit & Push changes
+
+      - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add urteile.json
-          # Der Trick: Wir fügen '|| exit 0' hinzu, damit kein Fehler gemeldet wird, wenn nichts neu ist
-          git commit -m "Update Urteile: $(date +'%Y-%m-%d %H:%M')" || exit 0
+          git commit -m "Automatisches Update: $(date +'%d.%m.%Y')" || exit 0
           git push

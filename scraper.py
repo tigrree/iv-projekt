@@ -16,8 +16,12 @@ def translate_preview(text):
     """Übersetzt die Vorschau ins Deutsche, falls sie in einer anderen Sprache vorliegt."""
     if not GROQ_API_KEY or not text: return text
     
-    # Kurze Prüfung: Wenn Begriffe wie 'versicherung' oder 'rente' vorkommen, ist es bereits Deutsch
-    if any(word in text.lower() for word in ["versicherung", "rente", "invalid", "stelle"]):
+    # Erweiterte Prüfung auf französische/italienische Signalwörter
+    foreign_indicators = ["assurance", "invalidité", "impotent", "allocation", "rendita", "invalidità"]
+    is_foreign = any(word in text.lower() for word in foreign_indicators)
+    
+    # Wenn es nicht eindeutig Deutsch ist oder Fremdwörter enthält, übersetzen wir
+    if not is_foreign and "versicherung" in text.lower():
         return text
 
     url = "https://api.groq.com/openai/v1/chat/completions"
@@ -25,14 +29,18 @@ def translate_preview(text):
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages": [{
+            "role": "system",
+            "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Übersetze kurz und präzise ins Deutsche."
+        }, {
             "role": "user", 
-            "content": f"Übersetze diesen Schweizer juristischen Begriff exakt ins Deutsche. Antworte NUR mit der Übersetzung: {text}"
+            "content": f"Übersetze diesen Begriff der Invalidenversicherung ins Deutsche (z.B. Invalidenrente, Hilflosenentschädigung etc.). Antworte NUR mit der Übersetzung ohne Punkt: {text}"
         }],
         "temperature": 0.1 
     }
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=15)
-        return response.json()['choices'][0]['message']['content'].strip().replace('"', '')
+        result = response.json()['choices'][0]['message']['content'].strip().replace('"', '')
+        return result
     except:
         return text
 
@@ -58,7 +66,7 @@ Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
     except: return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte manuellen Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Korrektur-Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -102,53 +110,20 @@ def scrape_bger():
 
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             if any(key in full_context.lower() for key in KEYWORDS):
-                # NEU: Vorschau übersetzen
-                print(f"Treffer: {az} | Vorschau (Original): {vorschau_text}")
+                # JETZT: Konsequente Übersetzung
+                print(f"Treffer gefunden: {az}")
                 vorschau_deutsch = translate_preview(vorschau_text)
-                if vorschau_deutsch != vorschau_text:
-                    print(f"-> Übersetzt: {vorschau_deutsch}")
                 
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
+                # Immer neu generieren, wenn Vorschau noch französisch ist
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
-                if existing and "nicht verfügbar" not in existing['zusammenfassung'] and existing['zusammenfassung'] != "":
+                
+                # KI Zusammenfassung (bleibt wie sie ist, da sie schon Deutsch war)
+                if existing and "Sachverhalt" in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
                     print(f"Analysiere {az}...")
                     text = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     zusammenfassung = summarize_with_ai(text)
-                    time.sleep(12)
-
-                tages_ergebnisse.append({
-                    "aktenzeichen": az, 
-                    "datum": ZIEL_DATUM,
-                    "vorschau": vorschau_deutsch,
-                    "zusammenfassung": zusammenfassung, 
-                    "url": case_url
-                })
-
-        if not tages_ergebnisse:
-            tages_ergebnisse.append({
-                "aktenzeichen": "Info", 
-                "datum": ZIEL_DATUM,
-                "vorschau": "Keine IV-Einträge",
-                "zusammenfassung": "Keine IV-relevanten Urteile publiziert.", 
-                "url": domain
-            })
-
-        archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
-        archiv_daten.extend(tages_ergebnisse)
-        archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-        
-        alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
-        if len(alle_tage) > 14:
-            archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]
-
-        with open('urteile.json', 'w', encoding='utf-8') as f:
-            json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print("Erfolg!")
-            
-    except Exception as e: print(f"Fehler: {e}")
-
-if __name__ == "__main__":
-    scrape_bger()
+                    time.sleep

@@ -2,33 +2,40 @@ name: Daily IV Scraper
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Täglich um 12:00 UTC (13:00 Uhr Schweizer Zeit)
-  workflow_dispatch:      # Erlaubt weiterhin manuelles Starten
+    # 12:00 UTC entspricht 13:00 Uhr Schweizer Zeit (Winterzeit)
+    - cron: '0 12 * * *'
+  # Erlaubt es dir, den Scraper jederzeit manuell unter "Actions" zu starten
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Gewährt der Action die notwendigen Schreibrechte für das Repository
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository Code
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Set up Python Environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Install Dependencies
+      - name: Install Python Dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Run Scraper
+      - name: Run Scraper Script
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python scraper.py
 
-      - name: Commit and Push
+      - name: Commit and Push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add urteile.json
+          # Verhindert Fehlermeldungen, falls sich an einem Tag nichts geändert hat
           git commit -m "Automatisches Update: $(date +'%d.%m.%Y')" || exit 0
           git push

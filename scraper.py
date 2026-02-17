@@ -11,10 +11,10 @@ ZIEL_DATUM = "11.02.2026"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
+# Wir suchen nach den Wortstämmen, das ist sicherer als ganze Sätze
 KEYWORDS = [
-    "invalidenversicherung", "invalidenrente", "assurance-invalidité", 
-    "rente d'invalidité", "assicurazione per l’invalidità", 
-    "rendita d'invalidità", "iv-stelle", "office ai", "ufficio ai"
+    "invaliden", "invalidité", "invalidità", "iv-stelle", 
+    "office ai", "ufficio ai", "iv-rente"
 ]
 
 def summarize_with_ai(urteil_text):
@@ -55,11 +55,11 @@ def scrape_bger():
         day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
         
-        # Gehe durch jede Zeile der Tabelle
         for row in day_soup.find_all('tr'):
-            # FIX: Wir holen den Text mit "separator", damit Absätze nicht verschmelzen
-            row_text = row.get_text(separator=" ").lower()
+            # Wir ziehen ALLES aus der Zeile zusammen und normalisieren Leerzeichen
+            row_text = " ".join(row.get_text().lower().split())
             
+            # Jetzt prüfen wir, ob einer der Kernbegriffe vorkommt
             if any(key in row_text for key in KEYWORDS):
                 link = row.find('a', href=True)
                 if not link: continue

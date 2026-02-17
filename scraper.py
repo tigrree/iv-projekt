@@ -6,6 +6,7 @@ import time
 from datetime import datetime
 
 # --- EINSTELLUNG ---
+# Für morgen dann wieder datetime.now().strftime("%d.%m.%Y")
 ZIEL_DATUM = "17.02.2026" 
 # -------------------
 
@@ -63,38 +64,39 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # --- NEUE ROBUSTE VORSCHAU-LOGIK ---
-            # Wir nehmen alle Texte der Zeile als Liste
+            # --- LOGIK FÜR KOMBINIERTE VORSCHAU ---
             text_parts = [t.strip() for t in row.find_all(string=True) if t.strip()]
             
             vorschau_text = ""
             try:
-                # Wir suchen die Position des Aktenzeichens in der Liste
                 idx = text_parts.index(az)
-                # Alles was danach kommt, gehört zum Sachgebiet.
-                # Wir nehmen die nächsten zwei Elemente und fügen sie zusammen.
+                # Wir schauen, was nach dem Aktenzeichen kommt
                 remaining = text_parts[idx+1:]
+                
                 if len(remaining) >= 2:
-                    # Falls der erste Teil "Invalidenversicherung" ist, nehmen wir den zweiten Teil
-                    if "invalid" in remaining[0].lower() and len(remaining) > 1:
-                        vorschau_text = f"{remaining[0]} ({remaining[1]})"
+                    # Kombiniere das erste Wort (z.B. Invalidenversicherung) 
+                    # mit dem direkt darauffolgenden Teil (z.B. die Klammer)
+                    part1 = remaining[0]
+                    part2 = remaining[1]
+                    
+                    # Falls part2 bereits eine Klammer ist, einfach anhängen
+                    if part2.startswith("("):
+                        vorschau_text = f"{part1} {part2}"
                     else:
-                        vorschau_text = remaining[0]
+                        # Ansonsten mit Klammer formatieren
+                        vorschau_text = f"{part1} ({part2})"
                 elif len(remaining) == 1:
                     vorschau_text = remaining[0]
             except ValueError:
-                vorschau_text = "Sachgebiet konnte nicht extrahiert werden"
+                vorschau_text = "Sachgebiet unbekannt"
             
-            # Bereinigung: Falls Klammern doppelt vorkommen oder Text unschön ist
-            vorschau_text = vorschau_text.replace("((", "(").replace("))", ")")
-            # ----------------------------------
+            # --------------------------------------
 
             ctx = (row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")).lower()
             if any(key in ctx for key in KEYWORDS):
                 print(f"Treffer: {az} | Vorschau: {vorschau_text}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Check ob Zusammenfassung schon existiert
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung'] and existing['zusammenfassung'] != "":
                     zusammenfassung = existing['zusammenfassung']
@@ -112,16 +114,10 @@ def scrape_bger():
                     "url": case_url
                 })
 
-        # Archiv speichern
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14 Tage Limit
-        tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
-        if len(tage) > 14:
-            archiv_daten = [d for d in archiv_daten if d['datum'] != tage[0]]
-
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print("Erfolg!")

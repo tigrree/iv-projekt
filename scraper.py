@@ -6,12 +6,35 @@ import time
 from datetime import datetime
 
 # --- MANUELLE EINSTELLUNG ---
-# Auf das gewünschte Datum gesetzt für den Spezial-Run
 ZIEL_DATUM = "16.02.2026" 
 # ----------------------------
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
+
+def translate_preview(text):
+    """Übersetzt die Vorschau ins Deutsche, falls sie in einer anderen Sprache vorliegt."""
+    if not GROQ_API_KEY or not text: return text
+    
+    # Kurze Prüfung: Wenn Begriffe wie 'versicherung' oder 'rente' vorkommen, ist es bereits Deutsch
+    if any(word in text.lower() for word in ["versicherung", "rente", "invalid", "stelle"]):
+        return text
+
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
+    payload = {
+        "model": "llama-3.3-70b-versatile",
+        "messages": [{
+            "role": "user", 
+            "content": f"Übersetze diesen Schweizer juristischen Begriff exakt ins Deutsche. Antworte NUR mit der Übersetzung: {text}"
+        }],
+        "temperature": 0.1 
+    }
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=15)
+        return response.json()['choices'][0]['message']['content'].strip().replace('"', '')
+    except:
+        return text
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
@@ -63,7 +86,6 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # --- PRÄZISE VORSCHAU-LOGIK (NUR 2. ABSATZ) ---
             vorschau_text = ""
             if i + 1 < len(rows):
                 potential_detail = rows[i+1].get_text().strip()
@@ -80,7 +102,12 @@ def scrape_bger():
 
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             if any(key in full_context.lower() for key in KEYWORDS):
-                print(f"Treffer: {az} | Vorschau: {vorschau_text}")
+                # NEU: Vorschau übersetzen
+                print(f"Treffer: {az} | Vorschau (Original): {vorschau_text}")
+                vorschau_deutsch = translate_preview(vorschau_text)
+                if vorschau_deutsch != vorschau_text:
+                    print(f"-> Übersetzt: {vorschau_deutsch}")
+                
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
@@ -95,7 +122,7 @@ def scrape_bger():
                 tages_ergebnisse.append({
                     "aktenzeichen": az, 
                     "datum": ZIEL_DATUM,
-                    "vorschau": vorschau_text,
+                    "vorschau": vorschau_deutsch,
                     "zusammenfassung": zusammenfassung, 
                     "url": case_url
                 })
@@ -109,15 +136,12 @@ def scrape_bger():
                 "url": domain
             })
 
-        # Archiv-Logik (Update & 14-Tage-Limit)
-        # Bestehende Einträge für diesen Tag entfernen, falls man den Run wiederholt
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         if len(alle_tage) > 14:
-            # Löscht das älteste Datum aus dem Archiv
             archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]
 
         with open('urteile.json', 'w', encoding='utf-8') as f:

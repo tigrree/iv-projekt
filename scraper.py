@@ -5,9 +5,9 @@ import os
 import time
 from datetime import datetime
 
-# --- MANUELLE EINSTELLUNG ---
-ZIEL_DATUM = "04.02.2026" 
-# ----------------------------
+# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
+# Für manuelle Nachpflege einfach "05.02.2026" statt datetime... schreiben
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -65,12 +65,13 @@ Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte Präzisions-Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
     if not os.path.exists('urteile.json'):
         with open('urteile.json', 'w', encoding='utf-8') as f: json.dump([], f)
+    
     with open('urteile.json', 'r', encoding='utf-8') as f:
         try:
             archiv_daten = json.load(f)
@@ -82,7 +83,9 @@ def scrape_bger():
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: return print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
+        if not tag_link:
+            # Falls für heute noch nichts da ist, beenden wir ohne Löschung
+            return print(f"Datum {ZIEL_DATUM} noch nicht auf der BGer-Seite gelistet.")
 
         day_soup = BeautifulSoup(requests.get(tag_link if tag_link.startswith("http") else domain + tag_link, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
@@ -112,12 +115,12 @@ def scrape_bger():
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             if any(key in full_context.lower() for key in KEYWORDS):
                 vorschau_deutsch = translate_preview(vorschau_text)
-                print(f"Treffer: {az} | Vorschau: {vorschau_deutsch}")
+                print(f"Treffer: {az} | {vorschau_deutsch}")
                 
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
-                if existing and "nicht verfügbar" not in existing['zusammenfassung'] and existing['zusammenfassung'] != "":
+                if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
                     print(f"Analysiere {az}...")
@@ -131,19 +134,28 @@ def scrape_bger():
                     "url": case_url
                 })
 
-        # Archiv-Logik
+        # --- ARCHIV AKTUALISIEREN ---
+        # 1. Bestehende Einträge des aktuellen Ziel-Datums entfernen (Vermeidung von Duplikaten bei manuellem Run)
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
+        
+        # 2. Neue Ergebnisse hinzufügen
         archiv_daten.extend(tages_ergebnisse)
+        
+        # 3. Sortieren nach Datum (Neueste zuerst)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14-Tage Limit
+        # --- 14-TAGE LOGIK ---
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
-        if len(alle_tage) > 14:
-            archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]
+        
+        while len(alle_tage) > 14:
+            aeltestes_datum = alle_tage[0]
+            print(f"Limit erreicht (15 Tage erkannt). Lösche ältesten Tag: {aeltestes_datum}")
+            archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
+            alle_tage.pop(0) # Entferne aus der Liste für die nächste Iteration der Schleife
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print("Erfolg!")
+        print(f"Scan für {ZIEL_DATUM} erfolgreich abgeschlossen.")
             
     except Exception as e: print(f"Fehler: {e}")
 

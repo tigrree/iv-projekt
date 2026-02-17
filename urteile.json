@@ -80,7 +80,7 @@
     {
         "aktenzeichen": "8C_645/2025",
         "datum": "06.02.2026",
-        "zusammenfassung": "Zusammenfassung aktuell nicht verfügbar.",
+        "zusammenfassung": "Zusammenfassung aktuell nicht verfügbar (Rate Limit).",
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://16-01-2026-8C_645-2025&lang=de&zoom=&type=show_document"
     },
     {

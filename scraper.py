@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 # --- MANUELLE EINSTELLUNG ---
-ZIEL_DATUM = "10.02.2026" 
+ZIEL_DATUM = "09.02.2026" 
 # ----------------------------
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")

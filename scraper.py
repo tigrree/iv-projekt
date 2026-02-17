@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 # --- DEINE EINSTELLUNG ---
-ZIEL_DATUM = "04.02.2026"  # Hier einfach das Datum ändern
+ZIEL_DATUM = "04.02.2026"  # Hier das Datum anpassen
 # -------------------------
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -48,15 +48,18 @@ def scrape_bger():
     
     # 1. Archiv laden
     archiv_daten = []
+    archiv_map = {} # Hilfs-Map für schnellen Check
     if os.path.exists('urteile.json'):
         with open('urteile.json', 'r', encoding='utf-8') as f:
             archiv_daten = json.load(f)
+            # Wir speichern uns den Stand aller bereits existierenden Urteile
+            for d in archiv_daten:
+                archiv_map[d['aktenzeichen']] = d['zusammenfassung']
 
     try:
         res = requests.get(base_url, headers=headers)
         soup = BeautifulSoup(res.text, 'html.parser')
         
-        # Den Link für das Zieldatum finden
         tag_link = None
         for a in soup.find_all('a', href=True):
             if a.get_text().strip() == ZIEL_DATUM:
@@ -64,7 +67,7 @@ def scrape_bger():
                 break
         
         if not tag_link:
-            print(f"Datum {ZIEL_DATUM} wurde auf der BGer-Seite nicht gefunden.")
+            print(f"Datum {ZIEL_DATUM} wurde nicht gefunden.")
             return
 
         # 2. Den Tag scannen
@@ -72,6 +75,7 @@ def scrape_bger():
         day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
         
+        # Urteile des Tages sammeln
         for row in day_soup.find_all('tr'):
             if IV_SEARCH_TERM in row.get_text().lower():
                 link_tag = row.find('a', href=True)
@@ -79,16 +83,23 @@ def scrape_bger():
                 az = link_tag.get_text().strip()
                 if not (az.startswith("9C_") or az.startswith("8C_")): continue
                 
-                print(f"Verarbeite: {az}...")
                 full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
-                case_res = requests.get(full_link, headers=headers)
-                zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
+                
+                # PRÜFUNG: Haben wir dieses Urteil schon fertig zusammengefasst?
+                if az in archiv_map and "nicht verfügbar" not in archiv_map[az]:
+                    print(f"Überspringe {az} (bereits fertig im Archiv).")
+                    zusammenfassung = archiv_map[az]
+                else:
+                    print(f"Analysiere: {az}...")
+                    case_res = requests.get(full_link, headers=headers)
+                    zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
+                    # Nur pausieren, wenn wir wirklich die KI gefragt haben
+                    time.sleep(15) 
                 
                 tages_ergebnisse.append({
                     "aktenzeichen": az, "datum": ZIEL_DATUM, 
                     "zusammenfassung": zusammenfassung, "url": full_link
                 })
-                time.sleep(10) # Kleine Pause
 
         if not tages_ergebnisse:
             tages_ergebnisse.append({
@@ -97,7 +108,7 @@ def scrape_bger():
                 "url": "https://www.bger.ch"
             })
 
-        # 3. Archiv aktualisieren & Sortieren
+        # 3. Archiv aktualisieren (Alten Stand des Tages löschen, neuen hinzufügen)
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         
@@ -107,7 +118,7 @@ def scrape_bger():
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
             
-        print(f"Fertig! {ZIEL_DATUM} wurde erfolgreich gespeichert.")
+        print(f"Update für {ZIEL_DATUM} abgeschlossen.")
             
     except Exception as e:
         print(f"Fehler: {e}")

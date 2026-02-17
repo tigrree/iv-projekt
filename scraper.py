@@ -12,39 +12,26 @@ ZIEL_DATUM = "11.02.2026"
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 KEYWORDS = [
-    "invalidenversicherung", 
-    "invalidenrente", 
-    "assurance-invalidité", 
-    "rente d'invalidité", 
-    "assicurazione per l’invalidità", 
-    "rendita d'invalidità",
-    "iv-stelle",
-    "office ai",
-    "ufficio ai"
+    "invalidenversicherung", "invalidenrente", "assurance-invalidité", 
+    "rente d'invalidité", "assicurazione per l’invalidità", 
+    "rendita d'invalidità", "iv-stelle", "office ai", "ufficio ai"
 ]
 
 def summarize_with_ai(urteil_text):
-    if not GROQ_API_KEY: 
-        return "API Key fehlt."
+    if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:750])
     PROMPT_TEXT = "Fasse das Urteil als Schweizer Jurist zusammen: **Sachverhalt & Anträge**, **Streitig**, **Zu prüfen & Entscheidung**. Zwingend Deutsch."
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
-    payload = {
-        "model": "llama-3.3-70b-versatile",
-        "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}],
-        "temperature": 0.1 
-    }
+    payload = {"model": "llama-3.3-70b-versatile", "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}], "temperature": 0.1}
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         if response.status_code == 429: return "Zusammenfassung aktuell nicht verfügbar (Rate Limit)."
         return response.json()['choices'][0]['message']['content'].strip()
-    except:
-        return "Zusammenfassung aktuell nicht verfügbar."
+    except: return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
     print(f"--- Starte Analyse für: {ZIEL_DATUM} ---")
-    base_url = "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -54,26 +41,25 @@ def scrape_bger():
         with open('urteile.json', 'r', encoding='utf-8') as f:
             try:
                 archiv_daten = json.load(f)
-                for d in archiv_daten:
-                    archiv_map[d['aktenzeichen']] = d['zusammenfassung']
-            except:
-                pass
+                for d in archiv_daten: archiv_map[d['aktenzeichen']] = d['zusammenfassung']
+            except: pass
 
     try:
-        res = requests.get(base_url, headers=headers)
-        soup = BeautifulSoup(res.text, 'html.parser')
+        base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
+        soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link:
-            print("Datum nicht gefunden.")
-            return
+        if not tag_link: return print("Datum nicht gefunden.")
 
         day_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
         
+        # Gehe durch jede Zeile der Tabelle
         for row in day_soup.find_all('tr'):
-            row_text = row.get_text().lower()
+            # FIX: Wir holen den Text mit "separator", damit Absätze nicht verschmelzen
+            row_text = row.get_text(separator=" ").lower()
+            
             if any(key in row_text for key in KEYWORDS):
                 link = row.find('a', href=True)
                 if not link: continue
@@ -103,8 +89,7 @@ def scrape_bger():
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print("Erfolg!")
             
-    except Exception as e:
-        print(f"Fehler: {e}")
+    except Exception as e: print(f"Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

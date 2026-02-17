@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 # --- AUTOMATISIERUNG ---
-# Statt eines festen Datums nimmt der Code jetzt immer den aktuellen Tag
+# Nimmt ab morgen automatisch das tagesaktuelle Datum
 ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y") 
 # -----------------------
 
@@ -16,14 +16,32 @@ KEYWORDS = ["invalid"]
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:750])
-    PROMPT_TEXT = "Fasse das Urteil als Schweizer Jurist zusammen: **Sachverhalt & Anträge**, **Streitig**, **Zu prüfen & Entscheidung**. Zwingend Deutsch."
+    
+    # FORMAT-VORGABE: Exakt so, wie du es für die App-Anzeige gewünscht hast
+    PROMPT_TEXT = """
+Fasse das Urteil als Schweizer Jurist exakt in diesem Format zusammen:
+**Sachverhalt & Anträge**\n[Hier Text einfügen]
+
+**Streitig:**\n[Hier Text einfügen]
+
+**Zu prüfen & Entscheidung:**\n[Hier Text einfügen]
+
+Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
+"""
+    
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
-    payload = {"model": "llama-3.3-70b-versatile", "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}], "temperature": 0.1}
+    payload = {
+        "model": "llama-3.3-70b-versatile",
+        "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}],
+        "temperature": 0.1
+    }
+    
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         return response.json()['choices'][0]['message']['content'].strip()
-    except: return "Zusammenfassung aktuell nicht verfügbar."
+    except:
+        return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
     print(f"--- Starte automatischen Run für: {ZIEL_DATUM} ---")
@@ -39,16 +57,13 @@ def scrape_bger():
     try:
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
-        
-        # Suchen nach dem Link für das heutige Datum
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
         if not tag_link:
-            print(f"Datum {ZIEL_DATUM} wurde vom Bundesgericht noch nicht auf der Übersicht gelistet.")
+            print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
             return 
 
-        day_url = tag_link if tag_link.startswith("http") else domain + tag_link
-        day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
+        day_soup = BeautifulSoup(requests.get(tag_link if tag_link.startswith("http") else domain + tag_link, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
         rows = day_soup.find_all('tr')
         
@@ -63,15 +78,19 @@ def scrape_bger():
             ctx = (row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")).lower()
             if any(key in ctx for key in KEYWORDS):
                 print(f"Analysiere: {az}...")
-                full_case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
-                text = BeautifulSoup(requests.get(full_case_url, headers=headers).text, 'html.parser').get_text()
+                case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
+                text = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
+                
+                # Hier wird die Zusammenfassung mit den korrekten \n generiert
+                zusammenfassung = summarize_with_ai(text)
+                
                 tages_ergebnisse.append({
                     "aktenzeichen": az, 
                     "datum": ZIEL_DATUM, 
-                    "zusammenfassung": summarize_with_ai(text), 
-                    "url": full_case_url
+                    "zusammenfassung": zusammenfassung, 
+                    "url": case_url
                 })
-                time.sleep(10)
+                time.sleep(12)
 
         if not tages_ergebnisse:
             tages_ergebnisse.append({
@@ -81,17 +100,17 @@ def scrape_bger():
                 "url": domain
             })
 
-        # Archiv-Pflege
+        # Archiv-Pflege: Altes Datum raus, neues rein
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
 
-        # 14-Tage-Limit (ältestes Datum löschen)
-        alle_daten = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
-        if len(alle_daten) > 14:
-            aeltestes_datum = alle_daten[0]
-            print(f"Lösche ältestes Datum aus Archiv: {aeltestes_datum}")
-            archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
+        # 14-Tage-Limit einhalten
+        alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
+        if len(alle_tage) > 14:
+            aeltestes = alle_tage[0]
+            print(f"Archiv voll. Lösche ältestes Datum: {aeltestes}")
+            archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes]
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)

@@ -126,15 +126,15 @@
         "url": "https://www.bger.ch"
     },
     {
-        "aktenzeichen": "9C_94/2025",
-        "datum": "29.01.2026",
-        "zusammenfassung": "Zusammenfassung aktuell nicht verfügbar.",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://12-01-2026-9C_94-2025&lang=de&zoom=&type=show_document"
-    },
-    {
         "aktenzeichen": "Info",
         "datum": "28.01.2026",
         "zusammenfassung": "Keine IV-relevanten Urteile publiziert.",
         "url": "https://www.bger.ch"
+    },
+    {
+        "aktenzeichen": "9C_94/2025",
+        "datum": "29.01.2026",
+        "zusammenfassung": "Zusammenfassung aktuell nicht verfügbar.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://12-01-2026-9C_94-2025&lang=de&zoom=&type=show_document"
     }
 ]

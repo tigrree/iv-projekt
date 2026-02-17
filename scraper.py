@@ -5,11 +5,10 @@ import os
 import time
 from datetime import datetime
 
-# --- AUTOMATISIERUNG ---
-# Nimmt ab morgen automatisch das tagesaktuelle Datum
-ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y") 
-# Zum Testen heute noch einmal: ZIEL_DATUM = "17.02.2026"
-# -----------------------
+# --- MANUELLE EINSTELLUNG ---
+# Auf das gewünschte Datum gesetzt für den Spezial-Run
+ZIEL_DATUM = "16.02.2026" 
+# ----------------------------
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -36,7 +35,7 @@ Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
     except: return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte finalen Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte manuellen Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -68,11 +67,9 @@ def scrape_bger():
             vorschau_text = ""
             if i + 1 < len(rows):
                 potential_detail = rows[i+1].get_text().strip()
-                # Wenn die nächste Zeile kein neues AZ ist, ist es unser gewünschter 2. Absatz
                 if not (potential_detail.startswith("8C_") or potential_detail.startswith("9C_")):
                     vorschau_text = potential_detail
             
-            # Falls kein 2. Absatz existiert, nimm das Haupt-Sachgebiet der aktuellen Zeile
             if not vorschau_text:
                 text_parts = [t.strip() for t in row.find_all(string=True) if t.strip()]
                 try:
@@ -80,15 +77,12 @@ def scrape_bger():
                     if len(text_parts) > idx + 1:
                         vorschau_text = text_parts[idx+1]
                 except: pass
-            # ----------------------------------------------
 
-            # Suche im kombinierten Kontext (wie bisher)
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             if any(key in full_context.lower() for key in KEYWORDS):
                 print(f"Treffer: {az} | Vorschau: {vorschau_text}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Bestehende Zusammenfassung schützen
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung'] and existing['zusammenfassung'] != "":
                     zusammenfassung = existing['zusammenfassung']
@@ -106,13 +100,24 @@ def scrape_bger():
                     "url": case_url
                 })
 
+        if not tages_ergebnisse:
+            tages_ergebnisse.append({
+                "aktenzeichen": "Info", 
+                "datum": ZIEL_DATUM,
+                "vorschau": "Keine IV-Einträge",
+                "zusammenfassung": "Keine IV-relevanten Urteile publiziert.", 
+                "url": domain
+            })
+
         # Archiv-Logik (Update & 14-Tage-Limit)
+        # Bestehende Einträge für diesen Tag entfernen, falls man den Run wiederholt
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         if len(alle_tage) > 14:
+            # Löscht das älteste Datum aus dem Archiv
             archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]
 
         with open('urteile.json', 'w', encoding='utf-8') as f:

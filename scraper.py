@@ -11,8 +11,8 @@ ZIEL_DATUM = "12.02.2026"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Kernbegriffe für maximale Trefferrate
-KEYWORDS = ["invalid", "iv-stelle", "office ai", "ufficio ai", "ai"]
+# Reduziert auf den absoluten Kernbegriff
+KEYWORDS = ["invalid"]
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
@@ -27,7 +27,7 @@ def summarize_with_ai(urteil_text):
     except: return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte Deep-Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Fokus-Scan ('invalid') für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -50,11 +50,8 @@ def scrape_bger():
         day_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(day_url, headers=headers).text, 'html.parser')
         tages_ergebnisse = []
-        
-        # Alle Tabellenzeilen finden
         rows = day_soup.find_all('tr')
         
-        # FIX: Korrekte Syntax für die Schleife (ohne das hängende Komma)
         for i in range(len(rows)):
             row = rows[i]
             link_tag = row.find('a', href=True)
@@ -63,14 +60,12 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # Look-Ahead Logik: Aktuelle Zeile + nächste Zeile kombinieren
+            # Kombiniere aktuelle und nächste Zeile für den Kontext
             current_row_text = row.get_text(separator=" ")
-            next_row_text = ""
-            if i + 1 < len(rows):
-                next_row_text = rows[i+1].get_text(separator=" ")
-            
+            next_row_text = rows[i+1].get_text(separator=" ") if i + 1 < len(rows) else ""
             combined_context = (current_row_text + " " + next_row_text).lower()
             
+            # Filter nur noch auf "invalid"
             if any(key in combined_context for key in KEYWORDS):
                 full_link = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 

@@ -64,39 +64,38 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # --- LOGIK FÜR KOMBINIERTE VORSCHAU ---
+            # --- VERBESSERTE VORSCHAU-LOGIK ---
+            # Wir nehmen alle Textelemente der Tabellenzeile
             text_parts = [t.strip() for t in row.find_all(string=True) if t.strip()]
             
             vorschau_text = ""
             try:
+                # Wir suchen das Aktenzeichen in der Liste
                 idx = text_parts.index(az)
-                # Wir schauen, was nach dem Aktenzeichen kommt
-                remaining = text_parts[idx+1:]
+                # Alles was danach kommt, sind Teile des Sachgebiets
+                relevant_parts = text_parts[idx+1:]
                 
-                if len(remaining) >= 2:
-                    # Kombiniere das erste Wort (z.B. Invalidenversicherung) 
-                    # mit dem direkt darauffolgenden Teil (z.B. die Klammer)
-                    part1 = remaining[0]
-                    part2 = remaining[1]
+                if len(relevant_parts) >= 2:
+                    # Kombiniere die nächsten zwei Teile (Hauptbegriff + Detail/Klammer)
+                    part1 = relevant_parts[0]
+                    part2 = relevant_parts[1]
                     
-                    # Falls part2 bereits eine Klammer ist, einfach anhängen
                     if part2.startswith("("):
                         vorschau_text = f"{part1} {part2}"
                     else:
-                        # Ansonsten mit Klammer formatieren
                         vorschau_text = f"{part1} ({part2})"
-                elif len(remaining) == 1:
-                    vorschau_text = remaining[0]
+                elif len(relevant_parts) == 1:
+                    vorschau_text = relevant_parts[0]
             except ValueError:
-                vorschau_text = "Sachgebiet unbekannt"
-            
-            # --------------------------------------
+                vorschau_text = "Sachgebiet konnte nicht extrahiert werden"
+            # ----------------------------------
 
             ctx = (row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")).lower()
             if any(key in ctx for key in KEYWORDS):
                 print(f"Treffer: {az} | Vorschau: {vorschau_text}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
+                # Bestehende Zusammenfassung beibehalten
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung'] and existing['zusammenfassung'] != "":
                     zusammenfassung = existing['zusammenfassung']
@@ -114,6 +113,7 @@ def scrape_bger():
                     "url": case_url
                 })
 
+        # Speichern & Archiv pflegen
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)

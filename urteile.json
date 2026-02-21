@@ -14,6 +14,13 @@
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://28-01-2026-8C_659-2024&lang=de&zoom=&type=show_document"
     },
     {
+        "aktenzeichen": "Info",
+        "datum": "19.02.2026",
+        "vorschau": "Keine Publikationen",
+        "zusammenfassung": "An diesem Tag wurden keine IV-relevanten Urteile publiziert.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index_aza.php?date=20260219&lang=de&mode=news"
+    },
+    {
         "aktenzeichen": "8C_86/2025",
         "datum": "18.02.2026",
         "vorschau": "Berufsunfähigkeitsrente",

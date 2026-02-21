@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 import time
-import re  # WICHTIG: Erlaubt das Suchen und Ersetzen von Mustern
+import re  # Erlaubt das Suchen und Ersetzen von Mustern
 from datetime import datetime
 
 # TEST-MODUS: Datum manuell auf den 20.02.2026 gesetzt
@@ -13,14 +13,21 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
 
 def translate_preview(text):
+    """Übersetzt nur, wenn es absolut notwendig ist (z.B. Französisch/Italienisch)."""
     if not GROQ_API_KEY or not text: return text
+    
+    # Falls Deutsch bereits erkannt wird, nichts tun
+    german_indicators = ["invalidenversicherung", "rente", "iv-stelle", "versicherungsgericht"]
+    if any(word in text.lower() for word in german_indicators):
+        return text
+
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages": [
-            {"role": "system", "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Übersetze kurz ins Deutsche."},
-            {"role": "user", "content": f"Übersetze ins Deutsche: {text}"}
+            {"role": "system", "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Antworte NUR mit der Übersetzung des Begriffs. Keine Erklärungen, keine Einleitung."},
+            {"role": "user", "content": f"Übersetze diesen juristischen Begriff kurz ins Deutsche: {text}"}
         ],
         "temperature": 0.1 
     }
@@ -33,7 +40,6 @@ def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:1500])
     
-    # OPTIMIERTER PROMPT: Jetzt mit expliziter Anweisung gegen Bodenstriche
     PROMPT_TEXT = """
 Du bist ein erfahrener Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Erstelle eine hochpräzise juristische Zusammenfassung.
 
@@ -73,7 +79,6 @@ Hier ist das Urteil:
         antwort = response.json()['choices'][0]['message']['content'].strip()
         
         # TECHNISCHE REINIGUNG (Regex): 
-        # Findet Muster wie A.____ oder A. A.____ und löscht die Striche
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         
@@ -125,15 +130,13 @@ def scrape_bger():
                 print(f"Treffer gefunden: {az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Prüfung ob bereits im Archiv
-                existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
-                if existing and "nicht verfügbar" not in existing['zusammenfassung']:
-                    zusammenfassung = existing['zusammenfassung']
-                else:
-                    print(f"KI-Analyse für {az} mit neuem Prompt und Regex...")
-                    case_res = requests.get(case_url, headers=headers)
-                    zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
-                    time.sleep(2) 
+                # Wir löschen bestehende Einträge für diesen Tag im Test, damit die KI neu generiert
+                archiv_daten = [d for d in archiv_daten if d['aktenzeichen'] != az]
+                
+                print(f"KI-Analyse für {az}...")
+                case_res = requests.get(case_url, headers=headers)
+                zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
+                time.sleep(2) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": az, "datum": ZIEL_DATUM,
@@ -147,11 +150,11 @@ def scrape_bger():
                 "vorschau": "Keine IV-Urteile publiziert", "zusammenfassung": "", "url": ""
             })
 
-        # Bestehende Einträge für den Test-Tag entfernen
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
+        # 14-Tage Limit
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         while len(alle_tage) > 14:
             archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]

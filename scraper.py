@@ -5,8 +5,8 @@ import os
 import time
 from datetime import datetime
 
-# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
-ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+# TEST-MODUS: Manuell auf den 20.02.2026 gesetzt
+ZIEL_DATUM = "20.02.2026"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -83,7 +83,7 @@ Hier ist das Urteil:
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte TEST-Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -165,7 +165,7 @@ def scrape_bger():
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
+        print(f"Test-Scan für {ZIEL_DATUM} abgeschlossen.")
             
     except Exception as e: print(f"Fehler: {e}")
 

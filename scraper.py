@@ -112,14 +112,12 @@ def scrape_bger():
             
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             
-            # Prüfung auf IV-Relevanz
             if any(key in full_context.lower() for key in KEYWORDS):
                 vorschau_deutsch = translate_preview(vorschau_text)
                 print(f"Treffer gefunden: {az}")
                 
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Prüfen ob bereits im Archiv
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
@@ -137,32 +135,26 @@ def scrape_bger():
                     "url": case_url
                 })
 
-        # Falls kein IV-Urteil gefunden wurde, erstelle Platzhalter für die App
+        # FALLS KEIN TREFFER: Markierung mit INFO_SKIP
         if not tages_ergebnisse:
-            print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Platzhalter.")
+            print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Info-Eintrag.")
             tages_ergebnisse.append({
-                "aktenzeichen": "Info",
+                "aktenzeichen": "INFO_SKIP", 
                 "datum": ZIEL_DATUM,
-                "vorschau": "Keine Publikationen",
-                "zusammenfassung": "An diesem Tag wurden keine IV-relevanten Urteile publiziert.",
-                "url": full_tag_url
+                "vorschau": "Keine IV-Urteile publiziert",
+                "zusammenfassung": "", 
+                "url": ""
             })
 
-        # Archiv aktualisieren (alte Einträge dieses Tages löschen)
+        # Archiv aktualisieren
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
-        
-        # Neue Ergebnisse hinzufügen
         archiv_daten.extend(tages_ergebnisse)
-        
-        # Sortieren nach Datum (Neueste zuerst)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14-Tage Archiv-Logik
+        # 14-Tage Logik
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
-        
         while len(alle_tage) > 14:
             aeltestes_datum = alle_tage[0]
-            print(f"Archiv-Limit erreicht. Lösche: {aeltestes_datum}")
             archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
             alle_tage.pop(0)
 

@@ -12,12 +12,9 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
 
 def translate_preview(text):
-    """Übersetzt die Vorschau ins Deutsche, falls sie in einer anderen Sprache vorliegt."""
     if not GROQ_API_KEY or not text: return text
-    
     foreign_indicators = ["assurance", "invalidité", "impotent", "allocation", "rendita", "invalidità"]
     is_foreign = any(word in text.lower() for word in foreign_indicators)
-    
     if not is_foreign and ("versicherung" in text.lower() or "rente" in text.lower()):
         return text
 
@@ -39,25 +36,44 @@ def translate_preview(text):
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
-    clean_text = " ".join(urteil_text.split()[:750])
+    
+    # ERHÖHT: Wir senden mehr Text an die KI (ca. 1500 Wörter), um Details nicht zu verlieren
+    clean_text = " ".join(urteil_text.split()[:1500])
+    
+    # OPTIMIERTER PROMPT für maximale juristische Detailtiefe
     PROMPT_TEXT = """
-Fasse das Urteil als Schweizer Jurist exakt in diesem Format zusammen:
+Du bist ein erfahrener Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Erstelle eine hochpräzise juristische Zusammenfassung.
+
+STRIKTE REGELN:
+1. Anonymisierung: Namen (z. B. B.________) immer zu 'B.' kürzen.
+2. Prozessgeschichte: Erfasse genau, welche Vorinstanz (z. B. Versicherungsgericht Aargau) entschieden hat und wie der Weg zum Bundesgericht war.
+3. Medizinische Beweiswürdigung: Arbeite den Kontrast zwischen Gutachten (z. B. ABI, SMAB) und behandelnden Ärzten (Hausärzte) klar heraus. Erwähne den RAD explizit.
+4. Übergangsbestimmungen (WEIV): Wenn relevant, unterteile die Prüfung zwingend in die Zeiträume vor und nach dem 1.1.2024 (neue Rententabelle/lineares System).
+5. Verwertbarkeit: Gehe auf das Argument der 'Verwertbarkeit der Restarbeitsfähigkeit' auf dem hypothetischen Arbeitsmarkt ein.
+
+FORMATIERUNG (Zwingend diese drei fettgedruckten Header):
+
 **Sachverhalt & Anträge**
-[Hier Text einfügen]
+[Detaillierter Fliesstext zu Alter, Beruf, Gesundheitsschaden, bisherigem Verfahrensgang und heutigen Anträgen]
 
-**Streitig:**
-[Hier Text einfügen]
+**Streitig**
+[Präzise Aufzählung der strittigen Punkte: Rente, Gutachten-Beweiskraft, Arbeitsfähigkeit, Verwertbarkeit, Lohnabzug]
 
-**Zu prüfen & Entscheidung:**
-[Hier Text einfügen]
+**Zu prüfen & Entscheidung**
+[Detaillierte Analyse der Erwägungen. Erwähne medizinische Diagnosen, die RAD-Einschätzung und die rechnerischen Folgen (Invaliditätsgrad). Endresultat (z. B. Abweisung) nennen.]
 
-Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
+Antworte NUR in Deutsch. Keine Einleitung.
+Hier ist das Urteil:
 """
+    
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     payload = {
         "model": "llama-3.3-70b-versatile",
-        "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}],
+        "messages": [
+            {"role": "system", "content": "Du bist ein Schweizer Bundesrichter. Deine Zusammenfassungen sind fachlich tiefgreifend, präzise und halten sich strikt an das Format."},
+            {"role": "user", "content": PROMPT_TEXT + clean_text}
+        ],
         "temperature": 0.1
     }
     try:
@@ -87,7 +103,7 @@ def scrape_bger():
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
         if not tag_link:
-            return print(f"Datum {ZIEL_DATUM} noch nicht auf der BGer-Seite gelistet.")
+            return print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
 
         full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
@@ -103,7 +119,7 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # Vorschau-Text Logik
+            # Vorschau-Extraktion
             vorschau_text = ""
             if i + 1 < len(rows):
                 potential_detail = rows[i+1].get_text().strip()
@@ -114,7 +130,7 @@ def scrape_bger():
             
             if any(key in full_context.lower() for key in KEYWORDS):
                 vorschau_deutsch = translate_preview(vorschau_text)
-                print(f"Treffer gefunden: {az}")
+                print(f"Treffer: {az}")
                 
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
@@ -122,49 +138,36 @@ def scrape_bger():
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
-                    print(f"Analysiere {az} mit KI...")
+                    print(f"KI-Analyse für {az}...")
                     case_res = requests.get(case_url, headers=headers)
                     zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
                     time.sleep(2) 
 
                 tages_ergebnisse.append({
-                    "aktenzeichen": az, 
-                    "datum": ZIEL_DATUM,
-                    "vorschau": vorschau_deutsch, 
-                    "zusammenfassung": zusammenfassung, 
-                    "url": case_url
+                    "aktenzeichen": az, "datum": ZIEL_DATUM,
+                    "vorschau": vorschau_deutsch, "zusammenfassung": zusammenfassung, "url": case_url
                 })
 
-        # FALLS KEIN TREFFER: Markierung mit INFO_SKIP
         if not tages_ergebnisse:
-            print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Info-Eintrag.")
             tages_ergebnisse.append({
-                "aktenzeichen": "INFO_SKIP", 
-                "datum": ZIEL_DATUM,
-                "vorschau": "Keine IV-Urteile publiziert",
-                "zusammenfassung": "", 
-                "url": ""
+                "aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM,
+                "vorschau": "Keine IV-Urteile publiziert", "zusammenfassung": "", "url": ""
             })
 
-        # Archiv aktualisieren
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14-Tage Logik
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         while len(alle_tage) > 14:
-            aeltestes_datum = alle_tage[0]
-            archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
+            archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]
             alle_tage.pop(0)
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        
-        print(f"Scan für {ZIEL_DATUM} erfolgreich abgeschlossen.")
+        print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
             
-    except Exception as e: 
-        print(f"Fehler: {e}")
+    except Exception as e: print(f"Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

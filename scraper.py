@@ -3,67 +3,58 @@ from bs4 import BeautifulSoup
 import json
 import os
 import time
+import re  # WICHTIG: Erlaubt das Suchen und Ersetzen von Mustern
 from datetime import datetime
 
-# TEST-MODUS: Manuell auf den 20.02.2026 gesetzt
-ZIEL_DATUM = "20.02.2026"
+# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
 
 def translate_preview(text):
     if not GROQ_API_KEY or not text: return text
-    foreign_indicators = ["assurance", "invalidité", "impotent", "allocation", "rendita", "invalidità"]
-    is_foreign = any(word in text.lower() for word in foreign_indicators)
-    if not is_foreign and ("versicherung" in text.lower() or "rente" in text.lower()):
-        return text
-
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages": [
-            {"role": "system", "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Übersetze kurz und präzise ins Deutsche."},
-            {"role": "user", "content": f"Übersetze diesen Begriff der Invalidenversicherung ins Deutsche: {text}"}
+            {"role": "system", "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Übersetze kurz ins Deutsche."},
+            {"role": "user", "content": f"Übersetze ins Deutsche: {text}"}
         ],
         "temperature": 0.1 
     }
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=15)
         return response.json()['choices'][0]['message']['content'].strip().replace('"', '')
-    except:
-        return text
+    except: return text
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
-    
-    # ERHÖHT: Wir senden mehr Text an die KI (ca. 1500 Wörter), um Details nicht zu verlieren
     clean_text = " ".join(urteil_text.split()[:1500])
     
-    # OPTIMIERTER PROMPT für maximale juristische Detailtiefe
+    # OPTIMIERTER PROMPT: Jetzt mit expliziter Anweisung gegen Bodenstriche
     PROMPT_TEXT = """
 Du bist ein erfahrener Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Erstelle eine hochpräzise juristische Zusammenfassung.
 
 STRIKTE REGELN:
-1. Anonymisierung: Namen (z. B. B.________) immer zu 'B.' kürzen.
-2. Prozessgeschichte: Erfasse genau, welche Vorinstanz (z. B. Versicherungsgericht Aargau) entschieden hat und wie der Weg zum Bundesgericht war.
-3. Medizinische Beweiswürdigung: Arbeite den Kontrast zwischen Gutachten (z. B. ABI, SMAB) und behandelnden Ärzten (Hausärzte) klar heraus. Erwähne den RAD explizit.
-4. Übergangsbestimmungen (WEIV): Wenn relevant, unterteile die Prüfung zwingend in die Zeiträume vor und nach dem 1.1.2024 (neue Rententabelle/lineares System).
-5. Verwertbarkeit: Gehe auf das Argument der 'Verwertbarkeit der Restarbeitsfähigkeit' auf dem hypothetischen Arbeitsmarkt ein.
+1. Anonymisierung: Namen (z. B. A.________ oder A. A.________) konsequent auf den Buchstaben mit Punkt reduzieren (Beispiel: 'A.' oder 'A. A.'). Bodenstriche nach dem Punkt müssen ZWINGEND entfernt werden.
+2. Prozessgeschichte: Erfasse genau die Vorinstanz und den Weg zum Bundesgericht.
+3. Medizin: Fokus auf Gutachten (ABI, SMAB etc.) vs. Hausärzte. RAD explizit erwähnen.
+4. WEIV: Unterteile Prüfung in Zeiträume vor/nach 1.1.2024, falls relevant.
+5. Verwertbarkeit: Gehe auf die Verwertbarkeit der Restarbeitsfähigkeit ein.
 
-FORMATIERUNG (Zwingend diese drei fettgedruckten Header):
-
+FORMATIERUNG:
 **Sachverhalt & Anträge**
-[Detaillierter Fliesstext zu Alter, Beruf, Gesundheitsschaden, bisherigem Verfahrensgang und heutigen Anträgen]
+[Text]
 
 **Streitig**
-[Präzise Aufzählung der strittigen Punkte: Rente, Gutachten-Beweiskraft, Arbeitsfähigkeit, Verwertbarkeit, Lohnabzug]
+[Text]
 
 **Zu prüfen & Entscheidung**
-[Detaillierte Analyse der Erwägungen. Erwähne medizinische Diagnosen, die RAD-Einschätzung und die rechnerischen Folgen (Invaliditätsgrad). Endresultat (z. B. Abweisung) nennen.]
+[Text inkl. Ergebnis]
 
 Antworte NUR in Deutsch. Keine Einleitung.
-Hier ist das Urteil:
 """
     
     url = "https://api.groq.com/openai/v1/chat/completions"
@@ -71,19 +62,26 @@ Hier ist das Urteil:
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages": [
-            {"role": "system", "content": "Du bist ein Schweizer Bundesrichter. Deine Zusammenfassungen sind fachlich tiefgreifend, präzise und halten sich strikt an das Format."},
+            {"role": "system", "content": "Du bist ein Schweizer Bundesrichter. Deine Zusammenfassungen sind präzise und frei von Bodenstrichen bei Namen."},
             {"role": "user", "content": PROMPT_TEXT + clean_text}
         ],
         "temperature": 0.1
     }
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
-        return response.json()['choices'][0]['message']['content'].strip()
+        antwort = response.json()['choices'][0]['message']['content'].strip()
+        
+        # TECHNISCHE REINIGUNG (Regex): 
+        # Findet Muster wie A.____ oder A. A.____ und löscht die Striche
+        antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
+        antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
+        
+        return antwort
     except:
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte TEST-Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -91,19 +89,15 @@ def scrape_bger():
         with open('urteile.json', 'w', encoding='utf-8') as f: json.dump([], f)
     
     with open('urteile.json', 'r', encoding='utf-8') as f:
-        try:
-            archiv_daten = json.load(f)
-        except:
-            archiv_daten = []
+        try: archiv_daten = json.load(f)
+        except: archiv_daten = []
 
     try:
-        base_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
-        base_res = requests.get(base_url, headers=headers)
+        base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link:
-            return print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
+        if not tag_link: return print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
 
         full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
@@ -115,11 +109,9 @@ def scrape_bger():
             row = rows[i]
             link_tag = row.find('a', href=True)
             if not link_tag: continue
-            
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
-            # Vorschau-Extraktion
             vorschau_text = ""
             if i + 1 < len(rows):
                 potential_detail = rows[i+1].get_text().strip()
@@ -129,23 +121,21 @@ def scrape_bger():
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             
             if any(key in full_context.lower() for key in KEYWORDS):
-                vorschau_deutsch = translate_preview(vorschau_text)
                 print(f"Treffer: {az}")
-                
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
-                
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
+                
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
-                    print(f"KI-Analyse für {az}...")
                     case_res = requests.get(case_url, headers=headers)
                     zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
                     time.sleep(2) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": az, "datum": ZIEL_DATUM,
-                    "vorschau": vorschau_deutsch, "zusammenfassung": zusammenfassung, "url": case_url
+                    "vorschau": translate_preview(vorschau_text), 
+                    "zusammenfassung": zusammenfassung, "url": case_url
                 })
 
         if not tages_ergebnisse:
@@ -165,7 +155,7 @@ def scrape_bger():
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print(f"Test-Scan für {ZIEL_DATUM} abgeschlossen.")
+        print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
             
     except Exception as e: print(f"Fehler: {e}")
 

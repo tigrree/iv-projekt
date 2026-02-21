@@ -3,7 +3,8 @@ name: Daily IV Scraper
 on:
   schedule:
     # 12:00 UTC entspricht 13:00 Uhr Schweizer Zeit (Winterzeit)
-    - cron: '0 12 * * *'
+    # '1-5' bedeutet: Läuft nur Montag, Dienstag, Mittwoch, Donnerstag und Freitag
+    - cron: '0 12 * * 1-5'
   # Erlaubt es dir, den Scraper jederzeit manuell unter "Actions" zu starten
   workflow_dispatch:
 

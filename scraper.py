@@ -5,8 +5,8 @@ import os
 import time
 from datetime import datetime
 
-# TEST-MODUS: Datum manuell auf den 19.02.2026 gesetzt
-ZIEL_DATUM = "19.02.2026" 
+# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -67,7 +67,7 @@ Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte TEST-Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -103,6 +103,7 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
+            # Vorschau-Text Logik
             vorschau_text = ""
             if i + 1 < len(rows):
                 potential_detail = rows[i+1].get_text().strip()
@@ -111,12 +112,14 @@ def scrape_bger():
             
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
             
+            # Prüfung auf IV-Relevanz
             if any(key in full_context.lower() for key in KEYWORDS):
                 vorschau_deutsch = translate_preview(vorschau_text)
                 print(f"Treffer gefunden: {az}")
                 
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
+                # Prüfen ob bereits im Archiv
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
@@ -124,7 +127,7 @@ def scrape_bger():
                     print(f"Analysiere {az} mit KI...")
                     case_res = requests.get(case_url, headers=headers)
                     zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
-                    time.sleep(2)
+                    time.sleep(2) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": az, 
@@ -134,7 +137,7 @@ def scrape_bger():
                     "url": case_url
                 })
 
-        # Platzhalter-Logik, falls am 19.02.2026 kein IV-Urteil gefunden wurde
+        # Falls kein IV-Urteil gefunden wurde, erstelle Platzhalter für die App
         if not tages_ergebnisse:
             print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Platzhalter.")
             tages_ergebnisse.append({
@@ -145,22 +148,28 @@ def scrape_bger():
                 "url": full_tag_url
             })
 
-        # Archiv aktualisieren
+        # Archiv aktualisieren (alte Einträge dieses Tages löschen)
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
+        
+        # Neue Ergebnisse hinzufügen
         archiv_daten.extend(tages_ergebnisse)
+        
+        # Sortieren nach Datum (Neueste zuerst)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14-Tage Limit
+        # 14-Tage Archiv-Logik
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
+        
         while len(alle_tage) > 14:
             aeltestes_datum = alle_tage[0]
+            print(f"Archiv-Limit erreicht. Lösche: {aeltestes_datum}")
             archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
             alle_tage.pop(0)
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         
-        print(f"Test-Scan für {ZIEL_DATUM} abgeschlossen.")
+        print(f"Scan für {ZIEL_DATUM} erfolgreich abgeschlossen.")
             
     except Exception as e: 
         print(f"Fehler: {e}")

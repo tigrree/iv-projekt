@@ -6,7 +6,6 @@ import time
 from datetime import datetime
 
 # AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
-# Für manuelle Nachpflege einfach "05.02.2026" statt datetime... schreiben
 ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -28,7 +27,7 @@ def translate_preview(text):
         "model": "llama-3.3-70b-versatile",
         "messages": [
             {"role": "system", "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Übersetze kurz und präzise ins Deutsche."},
-            {"role": "user", "content": f"Übersetze diesen Begriff der Invalidenversicherung ins Deutsche (z.B. Invalidenrente, Hilflosenentschädigung etc.). Antworte NUR mit der Übersetzung ohne Punkt: {text}"}
+            {"role": "user", "content": f"Übersetze diesen Begriff der Invalidenversicherung ins Deutsche: {text}"}
         ],
         "temperature": 0.1 
     }
@@ -43,11 +42,14 @@ def summarize_with_ai(urteil_text):
     clean_text = " ".join(urteil_text.split()[:750])
     PROMPT_TEXT = """
 Fasse das Urteil als Schweizer Jurist exakt in diesem Format zusammen:
-**Sachverhalt & Anträge**\n[Hier Text einfügen]
+**Sachverhalt & Anträge**
+[Hier Text einfügen]
 
-**Streitig:**\n[Hier Text einfügen]
+**Streitig:**
+[Hier Text einfügen]
 
-**Zu prüfen & Entscheidung:**\n[Hier Text einfügen]
+**Zu prüfen & Entscheidung:**
+[Hier Text einfügen]
 
 Zwingend in Deutsch antworten. Keine Einleitung, nur dieser Block.
 """
@@ -79,15 +81,17 @@ def scrape_bger():
             archiv_daten = []
 
     try:
-        base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
+        base_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
+        base_res = requests.get(base_url, headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
         if not tag_link:
-            # Falls für heute noch nichts da ist, beenden wir ohne Löschung
             return print(f"Datum {ZIEL_DATUM} noch nicht auf der BGer-Seite gelistet.")
 
-        day_soup = BeautifulSoup(requests.get(tag_link if tag_link.startswith("http") else domain + tag_link, headers=headers).text, 'html.parser')
+        full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
+        day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
+        
         tages_ergebnisse = []
         rows = day_soup.find_all('tr')
         
@@ -99,49 +103,59 @@ def scrape_bger():
             az = link_tag.get_text().strip()
             if not (az.startswith("9C_") or az.startswith("8C_")): continue
             
+            # Vorschau-Text Logik
             vorschau_text = ""
             if i + 1 < len(rows):
                 potential_detail = rows[i+1].get_text().strip()
                 if not (potential_detail.startswith("8C_") or potential_detail.startswith("9C_")):
                     vorschau_text = potential_detail
             
-            if not vorschau_text:
-                text_parts = [t.strip() for t in row.find_all(string=True) if t.strip()]
-                try:
-                    idx = text_parts.index(az)
-                    if len(text_parts) > idx + 1: vorschau_text = text_parts[idx+1]
-                except: pass
-
             full_context = row.get_text() + " " + (rows[i+1].get_text() if i+1 < len(rows) else "")
+            
+            # Prüfung auf IV-Relevanz
             if any(key in full_context.lower() for key in KEYWORDS):
                 vorschau_deutsch = translate_preview(vorschau_text)
-                print(f"Treffer: {az} | {vorschau_deutsch}")
+                print(f"Treffer gefunden: {az}")
                 
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
+                # Prüfen ob bereits im Archiv
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
-                    print(f"Analysiere {az}...")
+                    print(f"Analysiere {az} mit KI...")
                     case_res = requests.get(case_url, headers=headers)
                     zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
-                    time.sleep(12)
+                    time.sleep(2) # Kürzere Pause für API-Limits
 
                 tages_ergebnisse.append({
-                    "aktenzeichen": az, "datum": ZIEL_DATUM,
-                    "vorschau": vorschau_deutsch, "zusammenfassung": zusammenfassung, 
+                    "aktenzeichen": az, 
+                    "datum": ZIEL_DATUM,
+                    "vorschau": vorschau_deutsch, 
+                    "zusammenfassung": zusammenfassung, 
                     "url": case_url
                 })
 
+        # --- NEU: Falls kein IV-Urteil gefunden wurde, erstelle Platzhalter ---
+        if not tages_ergebnisse:
+            print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Platzhalter.")
+            tages_ergebnisse.append({
+                "aktenzeichen": "Info",
+                "datum": ZIEL_DATUM,
+                "vorschau": "Keine Publikationen",
+                "zusammenfassung": "An diesem Tag wurden keine IV-relevanten Urteile publiziert.",
+                "url": full_tag_url
+            })
+
         # --- ARCHIV AKTUALISIEREN ---
-        # 1. Bestehende Einträge des aktuellen Ziel-Datums entfernen (Vermeidung von Duplikaten bei manuellem Run)
+        # Entferne alte Einträge dieses Tages (auch alte Platzhalter)
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         
-        # 2. Neue Ergebnisse hinzufügen
+        # Neue Ergebnisse hinzufügen
         archiv_daten.extend(tages_ergebnisse)
         
-        # 3. Sortieren nach Datum (Neueste zuerst)
+        # Sortieren nach Datum (Neueste zuerst)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
         # --- 14-TAGE LOGIK ---
@@ -149,15 +163,17 @@ def scrape_bger():
         
         while len(alle_tage) > 14:
             aeltestes_datum = alle_tage[0]
-            print(f"Limit erreicht (15 Tage erkannt). Lösche ältesten Tag: {aeltestes_datum}")
+            print(f"Archiv voll. Lösche: {aeltestes_datum}")
             archiv_daten = [d for d in archiv_daten if d['datum'] != aeltestes_datum]
-            alle_tage.pop(0) # Entferne aus der Liste für die nächste Iteration der Schleife
+            alle_tage.pop(0)
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print(f"Scan für {ZIEL_DATUM} erfolgreich abgeschlossen.")
+        
+        print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
             
-    except Exception as e: print(f"Fehler: {e}")
+    except Exception as e: 
+        print(f"Kritischer Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

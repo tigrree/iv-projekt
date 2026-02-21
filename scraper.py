@@ -6,8 +6,8 @@ import time
 import re  # Erlaubt das Suchen und Ersetzen von Mustern
 from datetime import datetime
 
-# TEST-MODUS: Datum manuell auf den 20.02.2026 gesetzt
-ZIEL_DATUM = "20.02.2026"
+# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -79,6 +79,7 @@ Hier ist das Urteil:
         antwort = response.json()['choices'][0]['message']['content'].strip()
         
         # TECHNISCHE REINIGUNG (Regex): 
+        # Entfernt Bodenstriche bei Mustern wie A.____ oder A. A.____
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         
@@ -87,7 +88,7 @@ Hier ist das Urteil:
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
-    print(f"--- Starte TEST-Scan für: {ZIEL_DATUM} ---")
+    print(f"--- Starte Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -130,13 +131,16 @@ def scrape_bger():
                 print(f"Treffer gefunden: {az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Wir löschen bestehende Einträge für diesen Tag im Test, damit die KI neu generiert
-                archiv_daten = [d for d in archiv_daten if d['aktenzeichen'] != az]
-                
-                print(f"KI-Analyse für {az}...")
-                case_res = requests.get(case_url, headers=headers)
-                zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
-                time.sleep(2) 
+                # Nur analysieren, wenn das Aktenzeichen noch nicht im Archiv ist
+                existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
+                if existing and "nicht verfügbar" not in existing['zusammenfassung']:
+                    zusammenfassung = existing['zusammenfassung']
+                    print(f"{az} bereits im Archiv.")
+                else:
+                    print(f"KI-Analyse für {az}...")
+                    case_res = requests.get(case_url, headers=headers)
+                    zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
+                    time.sleep(2) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": az, "datum": ZIEL_DATUM,
@@ -144,25 +148,31 @@ def scrape_bger():
                     "zusammenfassung": zusammenfassung, "url": case_url
                 })
 
+        # Falls kein IV-Urteil gefunden wurde, erstelle Info-Eintrag
         if not tages_ergebnisse:
+            print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Info-Eintrag.")
             tages_ergebnisse.append({
                 "aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM,
                 "vorschau": "Keine IV-Urteile publiziert", "zusammenfassung": "", "url": ""
             })
 
+        # Archiv aktualisieren: Einträge des aktuellen Tages ersetzen
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
+        
+        # Sortieren (Neueste zuerst)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14-Tage Limit
+        # 14-Tage Limit einhalten
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         while len(alle_tage) > 14:
-            archiv_daten = [d for d in archiv_daten if d['datum'] != alle_tage[0]]
+            datum_zu_loeschen = alle_tage[0]
+            archiv_daten = [d for d in archiv_daten if d['datum'] != datum_zu_loeschen]
             alle_tage.pop(0)
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print(f"Test-Scan für {ZIEL_DATUM} abgeschlossen.")
+        print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
             
     except Exception as e: print(f"Fehler: {e}")
 

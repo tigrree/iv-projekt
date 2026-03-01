@@ -37,31 +37,33 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- OPTIMIERTER, SCHMALERER BUTTON --- */
+        /* --- DER PERFEKT ZENTRIERTE, MINIMALE BUTTON --- */
         .ios-button {
-            display: flex !important;
+            display: block !important;
             width: 100% !important;
             box-sizing: border-box;
-            justify-content: center !important;
-            align-items: center !important;
-            text-align: center !important;
             background-color: #3b82f6; 
             color: white !important;
             
-            /* Minimale Höhe: Padding reduziert auf 6px für ein flaches Design */
-            padding: 6px 16px !important; 
+            /* Minimale Höhe durch sehr kleines Padding */
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
             
-            border-radius: 10px; 
+            border-radius: 8px; 
             font-weight: 600;
             font-size: 14px; 
             text-decoration: none !important;
-            transition: opacity 0.2s, transform 0.1s;
+            text-align: center !important;
             margin-top: 1.25rem; 
             
-            /* Zeilenhöhe festgesetzt, damit Text nicht abgeschnitten wird */
-            line-height: 1.4 !important; 
+            /* Fixiert die Texthöhe für perfekte vertikale Zentrierung */
+            line-height: 24px !important; 
+            height: 32px !important; /* Gesamthöhe des Buttons fest definiert */
+            
+            transition: opacity 0.2s, transform 0.1s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .ios-button:active { transform: scale(0.98); }
+        .ios-button:active { transform: scale(0.99); }
         .ios-button:hover { opacity: 0.9; }
     </style>
 </head>

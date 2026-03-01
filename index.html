@@ -38,22 +38,22 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* Ästhetischer Button: Text absolut zentriert */
+        /* Ästhetischer, flacherer Button mit zentriertem Text */
         .ios-button {
             display: flex;
             align-items: center;
             justify-content: center; /* Horizontale Zentrierung */
-            text-align: center;      /* Zusätzliche Sicherheit für Textzentrierung */
+            text-align: center;      /* Zusätzliche Absicherung der Zentrierung */
             width: 100%; 
             background-color: #3b82f6; 
             color: white !important;
-            padding: 10px 16px; 
+            padding: 10px 16px;      /* Reduzierte Höhe für mehr Ästhetik */
             border-radius: 12px; 
             font-weight: 600;
             font-size: 14px; 
             text-decoration: none !important;
             transition: opacity 0.2s, transform 0.1s;
-            margin-top: 1.25rem;
+            margin-top: 1.25rem;     /* Abstand zum Text wie gewünscht */
             line-height: 1.2; 
         }
         .ios-button:active { transform: scale(0.98); }

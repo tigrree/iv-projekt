@@ -17,7 +17,6 @@
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
         
-        /* Titel-Formatierung */
         .summary-title { 
             font-weight: 700; 
             display: block; 
@@ -38,28 +37,23 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- DER BEREINIGTE, ABSOLUT ZENTRIERTE BUTTON --- */
         .ios-button {
-            /* Simples Block-Element ist am sichersten gegen Verschiebungen */
             display: block !important;
             width: 100% !important;
             box-sizing: border-box;
             background-color: #3b82f6; 
             color: white !important;
-            
-            /* Nur noch Padding oben und unten. Links/Rechts übernimmt die Textzentrierung */
             padding: 8px 0 !important; 
-            
             border-radius: 8px; 
             font-weight: 600;
             font-size: 14px; 
-            
-            /* Die absolute Mitte für den Text */
             text-align: center !important; 
             text-decoration: none !important;
-            margin-top: 1.25rem; 
-            line-height: normal !important; 
             
+            /* DEUTLICH REDUZIERTER ABSTAND NACH OBEN (VOR DEM BUTTON) */
+            margin-top: 0.5rem !important; 
+            
+            line-height: normal !important; 
             transition: opacity 0.2s, transform 0.1s;
             -webkit-tap-highlight-color: transparent;
         }
@@ -117,6 +111,9 @@
         applyTheme(localStorage.theme || 'system');
 
         function formatSummary(text) {
+            if (!text) return '';
+            // VERHINDERT LEERE BLÖCKE: Entfernt unsichtbare Leerzeichen & Zeilenumbrüche am Textende
+            text = text.trim(); 
             return text
                 .replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title text-left">$1</span><span class="summary-text-block text-left">')
                 .replace(/\n\n/g, '</span><span class="summary-text-block text-left">') + '</span>';
@@ -157,15 +154,15 @@
                         echteUrteile.forEach(u => {
                             dayHtml += `
                                 <div class="sub-accordion-item">
-                                    <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left p-6 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
-                                        <div class="text-left">
+                                    <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
+                                        <div class="text-left pr-4">
                                             <div class="text-blue-600 dark:text-blue-500 font-bold text-xl text-left">${u.aktenzeichen}</div>
                                             <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
                                         </div>
-                                        <svg class="rotate-icon w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                        <svg class="rotate-icon flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
-                                        <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
+                                        <div class="px-6 pt-4 pb-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
                                             <a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a>
                                         </div>

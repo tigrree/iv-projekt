@@ -38,7 +38,7 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* Der iOS-Style Button: Volle Breite des Textblocks */
+        /* Kompakter iOS-Style Button ohne Icon */
         .ios-button {
             display: flex;
             align-items: center;
@@ -46,13 +46,14 @@
             width: 100%; /* Volle Breite des Text-Containers */
             background-color: #3b82f6; 
             color: white !important;
-            padding: 12px 16px; /* Ästhetische Höhe */
-            border-radius: 12px; 
+            padding: 8px 16px; /* Höhe deutlich reduziert für Eleganz */
+            border-radius: 10px; /* Etwas subtilerer Radius */
             font-weight: 600;
-            font-size: 15px; /* Kompakter, feiner Text */
+            font-size: 14px; /* Kompakterer Text */
             text-decoration: none !important;
             transition: opacity 0.2s, transform 0.1s;
             margin-top: 1.25rem; /* Gleicher Abstand wie zwischen Absätzen */
+            line-height: 1.2; /* Verhindert, dass Text abgeschnitten wird */
         }
         .ios-button:active { transform: scale(0.98); }
         .ios-button:hover { opacity: 0.9; }
@@ -83,7 +84,7 @@
             </button>
         </header>
 
-        <h1 class="text-3xl sm:text-4xl font-bold mb-8">IV-Entscheide BGer</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight">IV-Entscheide BGer</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
         <div id="app-container" class="space-y-6"></div>
     </div>
@@ -153,7 +154,7 @@
                                             <div class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</div>
                                             <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
                                         </div>
-                                        <svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                        <svg class="rotate-icon w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
                                         <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
@@ -161,7 +162,6 @@
                                             
                                             <div class="flex justify-center mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
                                                 <a href="${u.url}" target="_blank" class="ios-button">
-                                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                                                     Originalurteil öffnen
                                                 </a>
                                             </div>

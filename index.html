@@ -20,15 +20,14 @@
         .summary-title { 
             font-weight: 700; 
             display: block; 
-            margin-top: 1.25rem; 
+            margin-top: 1.25rem; /* Standardabstand oben für Zwischentitel (20px) */
             margin-bottom: 0px !important; 
             color: currentColor;
             text-align: left;
             line-height: 1.5;
         }
         
-        /* Wenn der Titel das allererste Element ist, hat er KEINEN eigenen Abstand nach oben, 
-           sondern nutzt nur das pt-5 (20px) Padding des Kastens */
+        /* Zwingt den ERSTEN Titel, KEINEN Abstand nach oben zu machen, damit nur pt-5 gilt */
         .summary-title:first-child { 
             margin-top: 0 !important; 
         }
@@ -57,7 +56,7 @@
             font-size: 14px; 
             text-align: center !important; 
             text-decoration: none !important;
-            margin-top: 1.5rem !important; 
+            margin-top: 1.25rem !important; /* Abstand VOR dem Button (20px) */
             margin-bottom: 0px !important; 
             line-height: normal !important; 
             transition: opacity 0.2s, transform 0.1s;
@@ -123,8 +122,7 @@
             html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title text-left">$1</span><span class="summary-text-block text-left">');
             html = html.replace(/\n\n/g, '</span><span class="summary-text-block text-left">');
             
-            // BEREINIGUNG GEFIXT: Entfernt nun ALLE leeren span-Tags zuverlässig, 
-            // damit der Titel garantiert das :first-child ist und der Abstand stimmt.
+            // BEREINIGUNG: Entfernt leere span-Tags, die zu doppelten Abständen führen könnten.
             html = html.replace(/<span[^>]*>\s*<\/span>/g, '');
             return html;
         }

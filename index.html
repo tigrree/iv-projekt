@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IV-Urteils-Monitor</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-open .accordion-content { max-height: 2000px; transition: max-height 0.5s ease-in; }
+        .rotate-icon { transition: transform 0.3s; }
+        .accordion-open .rotate-icon { transform: rotate(180deg); }
+    </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
     <div class="max-w-4xl mx-auto py-12 px-6">
         <header class="mb-12 border-b pb-6">
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">IV-Rechtsprechungs-Monitor</h1>
-            <p class="text-slate-500 mt-2">Chronologische Übersicht der Bundesgerichtsentscheide</p>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight text-center">IV-Rechtsprechungs-Monitor</h1>
+            <p class="text-slate-500 mt-2 text-center">Chronologische Übersicht der Bundesgerichtsentscheide</p>
         </header>
 
         <div id="loading" class="text-center py-10">Lade Daten...</div>
-        <div id="timeline-container" class="space-y-10"></div>
+        <div id="timeline-container" class="space-y-4"></div>
     </div>
 
     <script>
@@ -28,69 +34,52 @@
                 // 1. Gruppiere Urteile nach Datum
                 const urteileNachDatum = {};
                 urteile.forEach(u => {
-                    if (!urteileNachDatum[u.datum]) {
-                        urteileNachDatum[u.datum] = [];
-                    }
-                    urteileNachDatum[u.datum].push(u);
+                    if (!urteileNachDatum[u.datum]) urteileNachDatum[u.datum] = [];
+                    // Entferne INFO_SKIP aus der Anzeige, falls vorhanden
+                    if (u.aktenzeichen !== "INFO_SKIP") urteileNachDatum[u.datum].push(u);
                 });
 
-                // 2. Erstelle eine Liste der letzten 14 Tage (inkl. heute)
+                // 2. Erzeuge Liste der letzten 14 Tage
                 const heute = new Date();
                 for (let i = 0; i < 14; i++) {
                     const datum = new Date(heute);
                     datum.setDate(heute.getDate() - i);
-                    
-                    // Formatierung passend zu deinem JSON (z.B. "27.02.2026")
-                    const dateStr = datum.toLocaleDateString('de-DE', {
-                        day: '2.digit',
-                        month: '2.digit',
-                        year: 'numeric'
-                    });
+                    const dateStr = datum.toLocaleDateString('de-DE', { day: '2.digit', month: '2.digit', year: 'numeric' });
 
-                    // 3. HTML für den Tag erstellen
-                    const daySection = document.createElement('section');
-                    daySection.className = "relative pl-8 border-l-2 border-slate-200";
+                    const hasUrteile = urteileNachDatum[dateStr] && urteileNachDatum[dateStr].length > 0;
                     
-                    // Der "Punkt" auf der Zeitachse
-                    const dot = `<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-slate-50"></div>`;
+                    const dayWrapper = document.createElement('div');
+                    dayWrapper.className = "border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm";
                     
-                    let content = `
-                        <div class="mb-4">
-                            <h2 class="text-lg font-bold text-slate-700">${dateStr}</h2>
+                    // Header des Tages (Klickbereich)
+                    dayWrapper.innerHTML = `
+                        <button onclick="this.parentElement.classList.toggle('accordion-open')" class="w-full flex items-center justify-between p-5 bg-white hover:bg-slate-50 transition-colors">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-lg font-bold text-slate-700">${dateStr}</span>
+                                ${hasUrteile ? `<span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">${urteileNachDatum[dateStr].length} Urteile</span>` : ''}
+                            </div>
+                            <svg class="rotate-icon w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content bg-slate-50">
+                            <div class="p-5 space-y-4">
+                                ${hasUrteile ? urteileNachDatum[dateStr].map(u => `
+                                    <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
+                                        <div class="flex items-center mb-3">
+                                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded mr-2">IV</span>
+                                            <span class="font-mono font-bold text-blue-900">${u.aktenzeichen}</span>
+                                        </div>
+                                        <div class="text-slate-700 text-sm leading-relaxed">${u.zusammenfassung.replace(/\n/g, '<br>')}</div>
+                                    </div>
+                                `).join('') : `<p class="text-slate-400 italic text-center py-4">Heute wurden keine IV-relevanten Urteile publiziert.</p>`}
+                            </div>
                         </div>
                     `;
-
-                    if (urteileNachDatum[dateStr]) {
-                        // Urteile vorhanden
-                        urteileNachDatum[dateStr].forEach(u => {
-                            content += `
-                                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-4 hover:shadow-md transition-shadow">
-                                    <div class="flex items-center mb-2">
-                                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-0.5 rounded mr-2 uppercase">IV</span>
-                                        <span class="font-mono font-bold text-blue-900">${u.aktenzeichen}</span>
-                                    </div>
-                                    <p class="text-slate-700 text-sm leading-relaxed">${u.zusammenfassung}</p>
-                                </div>
-                            `;
-                        });
-                    } else {
-                        // Kein Urteil vorhanden
-                        content += `
-                            <div class="bg-slate-100 p-4 rounded-lg border border-dashed border-slate-300">
-                                <p class="text-slate-400 text-sm italic">Keine IV-relevanten Urteile publiziert.</p>
-                            </div>
-                        `;
-                    }
-
-                    daySection.innerHTML = dot + content;
-                    container.appendChild(daySection);
+                    container.appendChild(dayWrapper);
                 }
             } catch (error) {
-                console.error(error);
-                document.getElementById('loading').innerHTML = "Fehler beim Laden oder Verarbeiten der Daten.";
+                document.getElementById('loading').innerHTML = "Fehler beim Laden der Daten.";
             }
         }
-
         loadAndDisplay();
     </script>
 </body>

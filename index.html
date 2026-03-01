@@ -29,36 +29,39 @@
         }
         .summary-title:first-child { margin-top: 0; }
         
-        /* Textblock mit REDUZIERTEM Abstand danach (0.75rem statt 1.25rem) */
         .summary-text-block {
             display: block;
             margin-top: 0px !important;
             padding-top: 2px;
-            margin-bottom: 0.75rem; /* Abstand nach dem Text verringert */
+            margin-bottom: 1.25rem; 
             text-align: left;
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* Ästhetischer, kompakter Button */
+        /* --- ZURÜCKGESETZTES BUTTON-STYLING (wie Bild 2) --- */
         .ios-button {
-            display: flex;
+            display: inline-flex; /* Kompakt, nicht volle Breite */
             align-items: center;
             justify-content: center;
-            width: 100%; /* Volle Breite des Text-Containers */
             background-color: #3b82f6; 
             color: white !important;
-            padding: 10px 16px; 
-            border-radius: 12px; 
+            padding: 8px 20px; /* Ästhetische, kompakte Höhe */
+            border-radius: 10px; 
             font-weight: 600;
-            font-size: 14px; 
+            font-size: 13px; /* Kleinere, feinere Schrift */
             text-decoration: none !important;
             transition: opacity 0.2s, transform 0.1s;
-            /* Der Abstand wird primär durch margin-bottom des vorigen Textes gesteuert */
-            margin-top: 0.5rem; 
-            line-height: 1.2; 
+            margin-top: 0rem; /* Abstand wird durch margin-bottom des vorigen Textes gesteuert */
         }
-        .ios-button:active { transform: scale(0.98); }
+        .ios-button:active { transform: scale(0.97); }
         .ios-button:hover { opacity: 0.9; }
+
+        /* Container für den Button zum Rechtsbündig-Stellen */
+        .button-wrapper {
+            display: flex;
+            justify-content: flex-end; /* Rechtsbündig */
+            margin-top: 0rem;
+        }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
@@ -111,7 +114,6 @@
         applyTheme(localStorage.theme || 'system');
 
         function formatSummary(text) {
-            // Erkennt **Titel** und setzt den Textblock unmittelbar darunter
             return text
                 .replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title">$1</span><span class="summary-text-block">')
                 .replace(/\n\n/g, '</span><span class="summary-text-block">') + '</span>';
@@ -163,7 +165,7 @@
                                         <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
                                             
-                                            <div class="flex justify-center pt-1 border-t border-gray-100 dark:border-gray-800">
+                                            <div class="button-wrapper">
                                                 <a href="${u.url}" target="_blank" class="ios-button">
                                                     Originalurteil öffnen
                                                 </a>

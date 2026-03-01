@@ -33,35 +33,39 @@
             display: block;
             margin-top: 0px !important;
             padding-top: 2px;
-            margin-bottom: 1.25rem; 
+            margin-bottom: 0.75rem; 
             text-align: left;
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- ZURÜCKGESETZTES BUTTON-STYLING (wie Bild 2) --- */
+        /* --- STABILER BUTTON ÜBER VOLLE BREITE --- */
         .ios-button {
-            display: inline-flex; /* Kompakt, nicht volle Breite */
-            align-items: center;
-            justify-content: center;
+            /* Erzwingt volle Breite auf jedem Gerät */
+            display: block !important;
+            width: 100% !important;
+            box-sizing: border-box;
+            
+            /* Höchste Stufe der Text-Zentrierung */
+            text-align: center !important;
+            
+            /* Flexbox-Zentrierung für vertikale Ausrichtung */
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            
             background-color: #3b82f6; 
             color: white !important;
-            padding: 8px 20px; /* Ästhetische, kompakte Höhe */
-            border-radius: 10px; 
+            padding: 10px 16px; 
+            border-radius: 12px; 
             font-weight: 600;
-            font-size: 13px; /* Kleinere, feinere Schrift */
+            font-size: 14px; 
             text-decoration: none !important;
             transition: opacity 0.2s, transform 0.1s;
-            margin-top: 0rem; /* Abstand wird durch margin-bottom des vorigen Textes gesteuert */
+            margin-top: 1.25rem; 
+            line-height: 1.2; 
         }
-        .ios-button:active { transform: scale(0.97); }
+        .ios-button:active { transform: scale(0.98); }
         .ios-button:hover { opacity: 0.9; }
-
-        /* Container für den Button zum Rechtsbündig-Stellen */
-        .button-wrapper {
-            display: flex;
-            justify-content: flex-end; /* Rechtsbündig */
-            margin-top: 0rem;
-        }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
@@ -89,9 +93,9 @@
             </button>
         </header>
 
-        <h1 class="text-3xl sm:text-4xl font-bold mb-8">IV-Entscheide BGer</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight">IV-Entscheide BGer</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
-        <div id="app-container" class="space-y-6"></div>
+        <div id="app-container" class="space-y-6 text-black dark:text-white"></div>
     </div>
 
     <script>
@@ -165,11 +169,9 @@
                                         <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
                                             
-                                            <div class="button-wrapper">
-                                                <a href="${u.url}" target="_blank" class="ios-button">
-                                                    Originalurteil öffnen
-                                                </a>
-                                            </div>
+                                            <a href="${u.url}" target="_blank" class="ios-button">
+                                                Originalurteil öffnen
+                                            </a>
                                         </div>
                                     </div>
                                 </div>`;
@@ -181,7 +183,7 @@
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
-                                <div class="text-left"><div class="font-bold text-lg text-gray-700 dark:text-gray-200">Keine Publikationen</div><div class="text-gray-500 dark:text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
+                                <div class="text-left font-bold text-lg text-gray-700 dark:text-gray-200">Keine Publikationen</div>
                             </div>`;
                     }
                     dayHtml += `</div>`;

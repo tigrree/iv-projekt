@@ -3,51 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UrteilsCheck Web</title>
+    <title>IV-Urteils-Monitor</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
-    <div class="max-w-4xl mx-auto py-10 px-4">
-        <header class="mb-10 text-center">
-            <h1 class="text-4xl font-bold text-slate-800">IV-UrteilsCheck</h1>
-            <p class="text-slate-600 mt-2">Aktuelle Bundesgerichtsentscheide zur Invalidenversicherung</p>
+<body class="bg-slate-50 font-sans text-slate-900">
+    <div class="max-w-4xl mx-auto py-12 px-6">
+        <header class="mb-12 border-b pb-6">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">IV-Rechtsprechungs-Monitor</h1>
+            <p class="text-slate-500 mt-2">Chronologische Übersicht der Bundesgerichtsentscheide</p>
         </header>
 
-        <div id="loading" class="text-center text-slate-500">Lade neueste Urteile...</div>
-        <div id="urteile-container" class="space-y-6"></div>
+        <div id="loading" class="text-center py-10">Lade Daten...</div>
+        <div id="timeline-container" class="space-y-10"></div>
     </div>
 
     <script>
-        async function loadUrteile() {
+        async function loadAndDisplay() {
             try {
-                // Hier wird deine JSON-Datei vom GitHub-Server geladen
                 const response = await fetch('urteile.json');
-                const data = await response.json();
-                const container = document.getElementById('urteile-container');
-                const loading = document.getElementById('loading');
-                
-                loading.style.display = 'none';
+                const urteile = await response.json();
+                const container = document.getElementById('timeline-container');
+                document.getElementById('loading').style.display = 'none';
 
-                data.forEach(urteil => {
-                    const card = document.createElement('div');
-                    card.className = "bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500";
-                    card.innerHTML = `
-                        <div class="flex justify-between items-start mb-4">
-                            <h2 class="text-xl font-bold text-blue-700">${urteil.aktenzeichen}</h2>
-                            <span class="text-sm text-gray-500">${urteil.datum || ''}</span>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed whitespace-pre-line">${urteil.zusammenfassung}</p>
-                        <div class="mt-4 pt-4 border-t text-xs text-gray-400">
-                            Kategorie: ${urteil.vorschau}
+                // 1. Gruppiere Urteile nach Datum
+                const urteileNachDatum = {};
+                urteile.forEach(u => {
+                    if (!urteileNachDatum[u.datum]) {
+                        urteileNachDatum[u.datum] = [];
+                    }
+                    urteileNachDatum[u.datum].push(u);
+                });
+
+                // 2. Erstelle eine Liste der letzten 14 Tage (inkl. heute)
+                const heute = new Date();
+                for (let i = 0; i < 14; i++) {
+                    const datum = new Date(heute);
+                    datum.setDate(heute.getDate() - i);
+                    
+                    // Formatierung passend zu deinem JSON (z.B. "27.02.2026")
+                    const dateStr = datum.toLocaleDateString('de-DE', {
+                        day: '2.digit',
+                        month: '2.digit',
+                        year: 'numeric'
+                    });
+
+                    // 3. HTML für den Tag erstellen
+                    const daySection = document.createElement('section');
+                    daySection.className = "relative pl-8 border-l-2 border-slate-200";
+                    
+                    // Der "Punkt" auf der Zeitachse
+                    const dot = `<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-slate-50"></div>`;
+                    
+                    let content = `
+                        <div class="mb-4">
+                            <h2 class="text-lg font-bold text-slate-700">${dateStr}</h2>
                         </div>
                     `;
-                    container.appendChild(card);
-                });
+
+                    if (urteileNachDatum[dateStr]) {
+                        // Urteile vorhanden
+                        urteileNachDatum[dateStr].forEach(u => {
+                            content += `
+                                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-0.5 rounded mr-2 uppercase">IV</span>
+                                        <span class="font-mono font-bold text-blue-900">${u.aktenzeichen}</span>
+                                    </div>
+                                    <p class="text-slate-700 text-sm leading-relaxed">${u.zusammenfassung}</p>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        // Kein Urteil vorhanden
+                        content += `
+                            <div class="bg-slate-100 p-4 rounded-lg border border-dashed border-slate-300">
+                                <p class="text-slate-400 text-sm italic">Keine IV-relevanten Urteile publiziert.</p>
+                            </div>
+                        `;
+                    }
+
+                    daySection.innerHTML = dot + content;
+                    container.appendChild(daySection);
+                }
             } catch (error) {
-                document.getElementById('loading').innerHTML = "Fehler beim Laden der Daten.";
+                console.error(error);
+                document.getElementById('loading').innerHTML = "Fehler beim Laden oder Verarbeiten der Daten.";
             }
         }
-        loadUrteile();
+
+        loadAndDisplay();
     </script>
 </body>
 </html>

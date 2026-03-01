@@ -21,45 +21,41 @@
         .summary-title { 
             font-weight: 700; 
             display: block; 
-            margin-top: 0rem; 
+            margin-top: 1.25rem; 
             margin-bottom: 0px !important; 
             color: currentColor;
             text-align: left;
             line-height: 1.5;
         }
+        .summary-title:first-child { margin-top: 0; }
         
-        /* Textblock mit konsistentem Abstand danach */
         .summary-text-block {
             display: block;
             margin-top: 0px !important;
-            margin-bottom: 1.25rem; /* Gleicher Abstand wie beim Button */
+            padding-top: 2px;
+            margin-bottom: 1.25rem; 
             text-align: left;
         }
+        .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* Ästhetischer, kompakter Button */
+        /* Der iOS-Style Button: Volle Breite des Textblocks */
         .ios-button {
-            display: inline-flex; /* Nicht mehr volle Breite, wirkt weniger wuchtig */
+            display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%; /* Volle Breite des Text-Containers */
             background-color: #3b82f6; 
             color: white !important;
-            padding: 8px 20px; /* Kompakte Höhe für Eleganz */
-            border-radius: 10px; 
+            padding: 12px 16px; /* Ästhetische Höhe */
+            border-radius: 12px; 
             font-weight: 600;
-            font-size: 13px; /* Kleinere, feinere Schrift */
+            font-size: 15px; /* Kompakter, feiner Text */
             text-decoration: none !important;
             transition: opacity 0.2s, transform 0.1s;
-            margin-top: 0rem; /* Abstand wird durch margin-bottom des vorigen Textes gesteuert */
+            margin-top: 1.25rem; /* Gleicher Abstand wie zwischen Absätzen */
         }
-        .ios-button:active { transform: scale(0.97); }
+        .ios-button:active { transform: scale(0.98); }
         .ios-button:hover { opacity: 0.9; }
-
-        /* Container für den Button zum Rechtsbündig-Stellen */
-        .button-wrapper {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 0rem;
-        }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
@@ -157,13 +153,13 @@
                                             <div class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</div>
                                             <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
                                         </div>
-                                        <svg class="rotate-icon w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                        <svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
                                         <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
                                             
-                                            <div class="button-wrapper">
+                                            <div class="flex justify-center mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
                                                 <a href="${u.url}" target="_blank" class="ios-button">
                                                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                                                     Originalurteil öffnen
@@ -176,11 +172,11 @@
                         dayHtml += `</div>`;
                     } else {
                         dayHtml += `
-                            <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl flex items-start space-x-4 shadow-sm mb-4 text-left">
+                            <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl flex items-start space-x-4 shadow-sm mb-4">
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
-                                <div><div class="font-bold text-lg text-gray-700 dark:text-gray-200">Keine Publikationen</div><div class="text-gray-500 dark:text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
+                                <div class="text-left"><div class="font-bold text-lg text-gray-700 dark:text-gray-200">Keine Publikationen</div><div class="text-gray-500 dark:text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
                             </div>`;
                     }
                     dayHtml += `</div>`;

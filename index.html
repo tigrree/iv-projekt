@@ -7,87 +7,102 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-open .accordion-content { max-height: 3000px; transition: max-height 0.5s ease-in; }
+        .accordion-open .accordion-content { max-height: 5000px; transition: max-height 0.6s ease-in; }
         .rotate-icon { transition: transform 0.3s; }
         .accordion-open .rotate-icon { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
     <div class="max-w-4xl mx-auto py-12 px-6">
-        <header class="mb-12 border-b pb-6">
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight text-center">IV-Rechtsprechungs-Monitor</h1>
-            <p class="text-slate-500 mt-2 text-center">Chronologische Übersicht der Bundesgerichtsentscheide</p>
+        <header class="mb-12 border-b pb-6 text-center">
+            <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">IV-Rechtsprechungs-Monitor</h1>
+            <p class="text-slate-500 mt-2 text-lg">Chronologische Übersicht der Bundesgerichtsentscheide</p>
         </header>
 
-        <div id="status-msg" class="text-center py-10 text-slate-400">Suche nach Daten...</div>
+        <div id="loading" class="text-center py-10">Lade Daten aus urteile.json...</div>
         <div id="timeline-container" class="space-y-4"></div>
     </div>
 
     <script>
         async function loadAndDisplay() {
-            const container = document.getElementById('timeline-container');
-            const statusMsg = document.getElementById('status-msg');
-
             try {
-                // Cache-Buster, um die aktuellste JSON zu erzwingen
+                // Fetch mit Cache-Buster
                 const response = await fetch('urteile.json?v=' + Date.now());
-                if (!response.ok) throw new Error("Datei urteile.json wurde nicht gefunden.");
+                if (!response.ok) throw new Error("JSON-Datei nicht gefunden.");
+                const data = await response.json();
                 
-                const urteile = await response.json();
-                statusMsg.style.display = 'none';
+                const container = document.getElementById('timeline-container');
+                document.getElementById('loading').style.display = 'none';
 
-                // 1. Daten bereinigen und gruppieren
-                const urteileNachDatum = {};
-                urteile.forEach(u => {
-                    if (!u.datum) return;
-                    const cleanDate = u.datum.trim();
-                    if (!urteileNachDatum[cleanDate]) urteileNachDatum[cleanDate] = [];
-                    // Wir zeigen nur echte Urteile (keine Platzhalter)
-                    if (u.aktenzeichen && u.aktenzeichen !== "INFO_SKIP") {
-                        urteileNachDatum[cleanDate].push(u);
-                    }
+                // 1. Gruppiere Daten nach Datum
+                const tageMap = {};
+                data.forEach(item => {
+                    if (!item.datum) return;
+                    if (!tageMap[item.datum]) tageMap[item.datum] = [];
+                    tageMap[item.datum].push(item);
                 });
 
-                // 2. Die letzten 14 Tage generieren
-                const heute = new Date();
-                for (let i = 0; i < 14; i++) {
-                    const d = new Date(heute);
-                    d.setDate(heute.getDate() - i);
-                    const dateStr = d.toLocaleDateString('de-DE', { day: '2.digit', month: '2.digit', year: 'numeric' });
+                // 2. Sortiere die Daten (Neueste zuerst)
+                const sortierteTage = Object.keys(tageMap).sort((a, b) => {
+                    const partsA = a.split('.').reverse().join('-');
+                    const partsB = b.split('.').reverse().join('-');
+                    return partsB.localeCompare(partsA);
+                });
 
-                    const tagUrteile = urteileNachDatum[dateStr] || [];
+                // 3. HTML generieren
+                sortierteTage.forEach(datum => {
+                    const eintraege = tageMap[datum];
+                    // Prüfe, ob echte Urteile vorhanden sind (nicht nur INFO_SKIP)
+                    const echteUrteile = eintraege.filter(e => e.aktenzeichen !== "INFO_SKIP" && e.aktenzeichen !== "Info");
+                    const hatUrteile = echteUrteile.length > 0;
+
                     const dayWrapper = document.createElement('div');
-                    dayWrapper.className = "border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm";
+                    dayWrapper.className = "border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm transition-all duration-200";
                     
                     dayWrapper.innerHTML = `
-                        <button onclick="this.parentElement.classList.toggle('accordion-open')" class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
+                        <button onclick="this.parentElement.classList.toggle('accordion-open')" 
+                                class="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors text-left">
                             <div class="flex items-center space-x-4">
-                                <span class="text-lg font-bold text-slate-700">${dateStr}</span>
-                                ${tagUrteile.length > 0 
-                                    ? `<span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">${tagUrteile.length} IV-Urteile</span>` 
-                                    : '<span class="text-slate-400 text-sm font-normal italic">Keine IV-Publikationen</span>'}
+                                <span class="text-xl font-bold text-slate-800">${datum}</span>
+                                ${hatUrteile 
+                                    ? `<span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">${echteUrteile.length} IV-Urteile</span>` 
+                                    : `<span class="text-slate-400 text-sm font-medium italic italic italic italic">Keine Publikationen</span>`}
                             </div>
-                            <svg class="rotate-icon w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="rotate-icon w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </button>
-                        <div class="accordion-content bg-slate-50/50">
-                            <div class="p-5 space-y-4">
-                                ${tagUrteile.length > 0 ? tagUrteile.map(u => `
-                                    <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-                                        <div class="flex items-center mb-3 text-blue-900 font-bold font-mono">
-                                            <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded mr-2 tracking-wider">BGER</span>
-                                            ${u.aktenzeichen}
+                        <div class="accordion-content bg-slate-50/30">
+                            <div class="p-6 space-y-6">
+                                ${hatUrteile ? echteUrteile.map(u => `
+                                    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                                        <div class="flex flex-wrap items-center justify-between mb-4 gap-2">
+                                            <div class="flex items-center">
+                                                <span class="bg-blue-100 text-blue-700 text-[10px] px-2 py-1 rounded mr-3 font-bold tracking-widest uppercase">BGer</span>
+                                                <span class="text-lg font-mono font-bold text-blue-900">${u.aktenzeichen}</span>
+                                            </div>
+                                            <a href="${u.url}" target="_blank" class="text-xs text-blue-500 hover:underline flex items-center">
+                                                Original-Urteil 
+                                                <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                            </a>
                                         </div>
                                         <div class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${u.zusammenfassung}</div>
+                                        <div class="mt-4 pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium italic">
+                                            Fachbereich: ${u.vorschau}
+                                        </div>
                                     </div>
-                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm">An diesem Tag wurden keine IV-relevanten Urteile publiziert.</p>`}
+                                `).join('') : `
+                                    <div class="text-center py-6">
+                                        <p class="text-slate-400 italic text-sm">An diesem Tag wurden keine IV-relevanten Urteile vom Bundesgericht publiziert.</p>
+                                    </div>
+                                `}
                             </div>
                         </div>
                     `;
                     container.appendChild(dayWrapper);
-                }
-            } catch (err) {
-                statusMsg.innerHTML = `<span class="text-red-500 font-bold">Fehler beim Laden:</span><br>${err.message}<br><br><small class="text-slate-400">Prüfe, ob urteile.json im selben Ordner wie index.html liegt.</small>`;
-                console.error(err);
+                });
+            } catch (error) {
+                document.getElementById('loading').innerHTML = `<div class="text-red-500 font-bold p-4 bg-red-50 rounded-lg">Fehler beim Laden der Daten: ${error.message}</div>`;
             }
         }
         loadAndDisplay();

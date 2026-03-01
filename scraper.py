@@ -6,8 +6,9 @@ import time
 import re  # Erlaubt das Suchen und Ersetzen von Mustern
 from datetime import datetime
 
-# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
-ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+# --- DATUM MANUELL FESTLEGEN ---
+# Auskommentiert für manuellen Lauf: ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+ZIEL_DATUM = "26.02.2026"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -131,13 +132,17 @@ def scrape_bger():
                 print(f"Treffer gefunden: {az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Nur analysieren, wenn das Aktenzeichen noch nicht im Archiv ist
+                # Nur analysieren, wenn das Aktenzeichen noch nicht im Archiv ist (oder unvollständig ist)
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
-                    print(f"{az} bereits im Archiv.")
+                    print(f"{az} bereits komplett im Archiv.")
                 else:
-                    print(f"KI-Analyse für {az}...")
+                    if existing:
+                        print(f"Bisherige Zusammenfassung für {az} war unvollständig. KI-Analyse wird neu gestartet...")
+                    else:
+                        print(f"KI-Analyse für {az}...")
+                        
                     case_res = requests.get(case_url, headers=headers)
                     zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
                     time.sleep(2) 

@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-open .accordion-content { max-height: 2000px; transition: max-height 0.5s ease-in; }
+        .accordion-open .accordion-content { max-height: 3000px; transition: max-height 0.5s ease-in; }
         .rotate-icon { transition: transform 0.3s; }
         .accordion-open .rotate-icon { transform: rotate(180deg); }
     </style>
@@ -26,7 +26,8 @@
     <script>
         async function loadAndDisplay() {
             try {
-                const response = await fetch('urteile.json');
+                // Cache-Buster hinzufügen, um immer die neueste Version der JSON zu laden
+                const response = await fetch('urteile.json?v=' + new Date().getTime());
                 const urteile = await response.json();
                 const container = document.getElementById('timeline-container');
                 document.getElementById('loading').style.display = 'none';
@@ -34,9 +35,14 @@
                 // 1. Gruppiere Urteile nach Datum
                 const urteileNachDatum = {};
                 urteile.forEach(u => {
-                    if (!urteileNachDatum[u.datum]) urteileNachDatum[u.datum] = [];
-                    // Entferne INFO_SKIP aus der Anzeige, falls vorhanden
-                    if (u.aktenzeichen !== "INFO_SKIP") urteileNachDatum[u.datum].push(u);
+                    if (!u.datum) return;
+                    // Normalisierung: Entferne Leerzeichen
+                    const cleanDate = u.datum.trim();
+                    if (!urteileNachDatum[cleanDate]) urteileNachDatum[cleanDate] = [];
+                    // "INFO_SKIP" ignorieren, wir zählen nur echte Urteile
+                    if (u.aktenzeichen && u.aktenzeichen !== "INFO_SKIP") {
+                        urteileNachDatum[cleanDate].push(u);
+                    }
                 });
 
                 // 2. Erzeuge Liste der letzten 14 Tage
@@ -46,38 +52,39 @@
                     datum.setDate(heute.getDate() - i);
                     const dateStr = datum.toLocaleDateString('de-DE', { day: '2.digit', month: '2.digit', year: 'numeric' });
 
-                    const hasUrteile = urteileNachDatum[dateStr] && urteileNachDatum[dateStr].length > 0;
+                    const tagUrteile = urteileNachDatum[dateStr] || [];
+                    const hasUrteile = tagUrteile.length > 0;
                     
                     const dayWrapper = document.createElement('div');
                     dayWrapper.className = "border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm";
                     
-                    // Header des Tages (Klickbereich)
                     dayWrapper.innerHTML = `
-                        <button onclick="this.parentElement.classList.toggle('accordion-open')" class="w-full flex items-center justify-between p-5 bg-white hover:bg-slate-50 transition-colors">
+                        <button onclick="this.parentElement.classList.toggle('accordion-open')" class="w-full flex items-center justify-between p-5 bg-white hover:bg-slate-50 transition-colors border-b border-transparent accordion-open:border-slate-100">
                             <div class="flex items-center space-x-4">
                                 <span class="text-lg font-bold text-slate-700">${dateStr}</span>
-                                ${hasUrteile ? `<span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">${urteileNachDatum[dateStr].length} Urteile</span>` : ''}
+                                ${hasUrteile ? `<span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">${tagUrteile.length} IV-Urteile</span>` : '<span class="text-slate-400 text-sm font-normal">Keine Publikationen</span>'}
                             </div>
                             <svg class="rotate-icon w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content bg-slate-50">
+                        <div class="accordion-content bg-slate-50/50">
                             <div class="p-5 space-y-4">
-                                ${hasUrteile ? urteileNachDatum[dateStr].map(u => `
+                                ${hasUrteile ? tagUrteile.map(u => `
                                     <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
                                         <div class="flex items-center mb-3">
-                                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded mr-2">IV</span>
+                                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded mr-2 uppercase">BGer</span>
                                             <span class="font-mono font-bold text-blue-900">${u.aktenzeichen}</span>
                                         </div>
-                                        <div class="text-slate-700 text-sm leading-relaxed">${u.zusammenfassung.replace(/\n/g, '<br>')}</div>
+                                        <div class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${u.zusammenfassung}</div>
                                     </div>
-                                `).join('') : `<p class="text-slate-400 italic text-center py-4">Heute wurden keine IV-relevanten Urteile publiziert.</p>`}
+                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm">An diesem Tag wurden keine IV-relevanten Urteile publiziert.</p>`}
                             </div>
                         </div>
                     `;
                     container.appendChild(dayWrapper);
                 }
             } catch (error) {
-                document.getElementById('loading').innerHTML = "Fehler beim Laden der Daten.";
+                console.error("Fehler:", error);
+                document.getElementById('loading').innerHTML = "Fehler beim Laden der Daten. Bitte prüfe, ob die urteile.json korrekt formatiert ist.";
             }
         }
         loadAndDisplay();

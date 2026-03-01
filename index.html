@@ -17,13 +17,12 @@
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
         
-        /* Titel-Formatierung: Absolut bündig zum Text */
+        /* Titel bündig zum Text */
         .summary-title { 
             font-weight: 700; 
             display: block; 
-            margin-top: 1.5rem; 
+            margin-top: 1.25rem; 
             margin-bottom: 0px !important; 
-            padding-bottom: 0px !important;
             color: currentColor;
             text-align: left;
             line-height: 1.2;
@@ -34,27 +33,28 @@
             display: block;
             margin-top: 0px !important;
             padding-top: 2px;
-            margin-bottom: 1.5rem; 
+            margin-bottom: 1.25rem; 
             text-align: left;
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* Der blaue iOS-Style Button aus Bild 2 */
+        /* Ästhetischer iOS-Style Button */
         .ios-button {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            background-color: #3b82f6; /* Helles Blau */
+            background-color: #3b82f6; 
             color: white !important;
-            padding: 14px;
-            border-radius: 14px;
+            padding: 10px 16px; /* Höhe reduziert für Eleganz */
+            border-radius: 12px; /* Etwas subtilerer Radius */
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px; /* Kompakterer Text */
             text-decoration: none !important;
-            transition: opacity 0.2s;
-            margin-top: 2rem;
+            transition: opacity 0.2s, transform 0.1s;
+            margin-top: 1.25rem; /* Abstand zum Text verringert */
         }
+        .ios-button:active { transform: scale(0.98); }
         .ios-button:hover { opacity: 0.9; }
     </style>
 </head>
@@ -66,7 +66,7 @@
                 <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span id="active-theme-icon" class="text-black dark:text-white font-bold"></span>
                 </button>
-                <div id="theme-menu" class="theme-menu absolute left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden">
+                <div id="theme-menu" class="theme-menu absolute left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
                     <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
                         <span>System</span><span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
@@ -83,7 +83,7 @@
             </button>
         </header>
 
-        <h1 class="text-3xl sm:text-4xl font-bold mb-8">IV-Entscheide BGer</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight">IV-Entscheide BGer</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
         <div id="app-container" class="space-y-6"></div>
     </div>
@@ -160,7 +160,7 @@
                                             ${formatSummary(u.zusammenfassung)}
                                             
                                             <a href="${u.url}" target="_blank" class="ios-button">
-                                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                                                 Originalurteil öffnen
                                             </a>
                                         </div>

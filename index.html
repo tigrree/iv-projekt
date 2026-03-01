@@ -16,6 +16,17 @@
         .is-open > button .rotate-icon { transform: rotate(180deg); }
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
+        
+        /* Formatierung für die Titel im Text */
+        .summary-title { 
+            font-weight: 700; 
+            display: block; 
+            margin-top: 1.25rem; 
+            margin-bottom: 0.25rem; 
+            color: currentColor;
+            text-align: left;
+        }
+        .summary-title:first-child { margin-top: 0; }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
@@ -26,23 +37,18 @@
                 <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span id="active-theme-icon" class="text-black dark:text-white"></span>
                 </button>
-                
                 <div id="theme-menu" class="theme-menu absolute left-0 mt-2 w-40 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
                     <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
-                        <span>System</span>
-                        <span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
+                        <span>System</span> <span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
                     <button onclick="setTheme('light')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
-                        <span>Hell</span>
-                        <span id="check-light" class="hidden text-blue-500 font-bold">✓</span>
+                        <span>Hell</span> <span id="check-light" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
                     <button onclick="setTheme('dark')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
-                        <span>Dunkel</span>
-                        <span id="check-dark" class="hidden text-blue-500 font-bold">✓</span>
+                        <span>Dunkel</span> <span id="check-dark" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
                 </div>
             </div>
-            
             <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </button>
@@ -50,7 +56,7 @@
 
         <h1 class="text-3xl sm:text-4xl font-bold mb-8">IV-Entscheide BGer</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
-        <div id="app-container" class="space-y-10 text-black dark:text-white"></div>
+        <div id="app-container" class="space-y-10"></div>
     </div>
 
     <script>
@@ -67,15 +73,16 @@
             ['system', 'light', 'dark'].forEach(t => document.getElementById('check-' + t).classList.toggle('hidden', t !== theme));
         }
 
-        function setTheme(theme) {
-            localStorage.theme = theme;
-            applyTheme(theme);
-            document.getElementById('theme-menu').classList.remove('show');
-        }
-
+        function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
         function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); }
         window.onclick = function(event) { if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); }
         applyTheme(localStorage.theme || 'system');
+
+        // Hilfsfunktion zum Umwandeln von Markdown-Titeln in HTML
+        function formatSummary(text) {
+            // Ersetzt **Titel** durch <span class="summary-title">Titel</span>
+            return text.replace(/\*\*(.*?)\*\*/g, '<span class="summary-title">$1</span>');
+        }
 
         async function loadUrteile() {
             try {
@@ -108,24 +115,22 @@
                     `;
 
                     if (echteUrteile.length > 0) {
-                        dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-3xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm transition-colors mb-6">`;
+                        dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-3xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm transition-colors mb-6 text-left">`;
                         echteUrteile.forEach(u => {
                             dayHtml += `
                                 <div class="sub-accordion-item">
                                     <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left p-6 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
                                         <div class="pr-4">
                                             <div class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</div>
-                                            <div class="text-gray-500 dark:text-gray-400 text-sm mt-1">${u.vorschau}</div>
+                                            <div class="text-gray-500 dark:text-gray-400 text-sm mt-1 text-left">${u.vorschau}</div>
                                         </div>
                                         <svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
-                                        <div class="p-6 pt-2 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30">
-                                            ${u.zusammenfassung}
+                                        <div class="p-6 pt-2 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
+                                            ${formatSummary(u.zusammenfassung)}
                                             <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-end">
-                                                <a href="${u.url}" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:underline">
-                                                    Zum Bundesgericht <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                                </a>
+                                                <a href="${u.url}" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:underline uppercase text-xs tracking-wider">Original-Urteil</a>
                                             </div>
                                         </div>
                                     </div>
@@ -134,11 +139,11 @@
                         dayHtml += `</div>`;
                     } else {
                         dayHtml += `
-                            <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-3xl flex items-center space-x-6 shadow-sm mb-6">
+                            <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-3xl flex items-center space-x-6 shadow-sm mb-6 text-left">
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
-                                <div><div class="font-bold text-lg">Keine Publikationen</div><div class="text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
+                                <div class="text-left"><div class="font-bold text-lg">Keine Publikationen</div><div class="text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
                             </div>`;
                     }
                     dayHtml += `</div>`;

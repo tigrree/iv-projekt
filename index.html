@@ -38,27 +38,26 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- DIE ULTIMATIVE ZENTRIERUNG --- */
+        /* --- DER BEREINIGTE, ABSOLUT ZENTRIERTE BUTTON --- */
         .ios-button {
-            /* Wir nutzen 'grid' statt 'flex', da es bei vertikaler Zentrierung robuster ist */
-            display: grid !important;
-            place-items: center !important; /* Zentriert Inhalt horizontal UND vertikal perfekt */
-            
+            /* Simples Block-Element ist am sichersten gegen Verschiebungen */
+            display: block !important;
             width: 100% !important;
             box-sizing: border-box;
             background-color: #3b82f6; 
             color: white !important;
             
-            /* Wir definieren KEINE feste Höhe, sondern nutzen exakt symmetrisches Padding */
-            padding: 8px 16px !important; 
+            /* Nur noch Padding oben und unten. Links/Rechts übernimmt die Textzentrierung */
+            padding: 8px 0 !important; 
             
             border-radius: 8px; 
             font-weight: 600;
             font-size: 14px; 
+            
+            /* Die absolute Mitte für den Text */
+            text-align: center !important; 
             text-decoration: none !important;
             margin-top: 1.25rem; 
-            
-            /* WICHTIG: line-height auf 'normal', damit der Browser keine eigenen Offsets berechnet */
             line-height: normal !important; 
             
             transition: opacity 0.2s, transform 0.1s;
@@ -168,9 +167,7 @@
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
                                         <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
-                                            <a href="${u.url}" target="_blank" class="ios-button">
-                                                Originalurteil öffnen
-                                            </a>
+                                            <a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a>
                                         </div>
                                     </div>
                                 </div>`;

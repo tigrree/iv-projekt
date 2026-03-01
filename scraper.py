@@ -6,9 +6,8 @@ import time
 import re  # Erlaubt das Suchen und Ersetzen von Mustern
 from datetime import datetime
 
-# --- DATUM MANUELL FESTLEGEN ---
-# Auskommentiert für manuellen Lauf: ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
-ZIEL_DATUM = "26.02.2026"
+# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
@@ -85,7 +84,9 @@ Hier ist das Urteil:
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         
         return antwort
-    except:
+    except Exception as e:
+        # Verbesserte Fehleranzeige im Terminal, falls die KI ausfällt
+        print(f"Fehler bei der KI-Anfrage für dieses Urteil: {e}")
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():

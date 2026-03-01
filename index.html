@@ -141,11 +141,14 @@
                     return db - da;
                 });
 
-                sortierteTage.forEach(datum => {
+                // HIER IST DIE ÄNDERUNG: Wir prüfen mit dem Index (i), ob es der erste Tag ist
+                sortierteTage.forEach((datum, i) => {
                     const urteileAmTag = tageMap[datum];
                     const echteUrteile = urteileAmTag.filter(u => u.aktenzeichen !== "INFO_SKIP");
                     const daySection = document.createElement('div');
-                    daySection.className = "accordion-group";
+                    
+                    // Der erste Tag (i === 0) bekommt automatisch die Klasse 'is-open'
+                    daySection.className = i === 0 ? "accordion-group is-open" : "accordion-group";
                     
                     let dayHtml = `
                         <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full flex justify-between items-center px-1 mb-2">
@@ -176,7 +179,6 @@
                         });
                         dayHtml += `</div>`;
                     } else {
-                        // HIER IST DIE ÄNDERUNG: "items-start" wurde zu "items-center"
                         dayHtml += `
                             <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl flex items-center space-x-4 shadow-sm mb-4">
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">

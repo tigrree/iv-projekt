@@ -10,10 +10,8 @@
     </script>
     <style>
         body { transition: background-color 0.3s, color 0.3s; }
-        /* Animation für das Aufklappen */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .is-open > .accordion-content { max-height: 10000px; transition: max-height 0.5s ease-in; }
-        /* Rotation der Pfeile */
         .rotate-icon { transition: transform 0.3s; }
         .is-open > button .rotate-icon { transform: rotate(180deg); }
         .theme-menu { display: none; }
@@ -24,16 +22,19 @@
             font-weight: 700; 
             display: block; 
             margin-top: 1.5rem; 
-            margin-bottom: 0rem; /* KEIN Abstand nach dem Titel */
+            margin-bottom: 0px !important; /* Absolut kein Abstand nach unten */
+            padding-bottom: 0px !important;
             color: currentColor;
             text-align: left;
+            line-height: 1.2;
         }
         .summary-title:first-child { margin-top: 0; }
         
-        /* Text direkt unter dem Titel */
-        .summary-text {
+        /* Text direkt unter dem Titel ohne Versatz */
+        .summary-text-block {
             display: block;
-            margin-top: 0.25rem;
+            margin-top: 0px !important;
+            padding-top: 2px; /* Minimaler optischer Abstand für die Lesbarkeit */
             text-align: left;
         }
     </style>
@@ -46,23 +47,18 @@
                 <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span id="active-theme-icon" class="text-black dark:text-white font-bold"></span>
                 </button>
-                
                 <div id="theme-menu" class="theme-menu absolute left-0 mt-2 w-40 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
                     <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
-                        <span>System</span>
-                        <span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
+                        <span>System</span><span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
                     <button onclick="setTheme('light')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
-                        <span>Hell</span>
-                        <span id="check-light" class="hidden text-blue-500 font-bold">✓</span>
+                        <span>Hell</span><span id="check-light" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
                     <button onclick="setTheme('dark')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
-                        <span>Dunkel</span>
-                        <span id="check-dark" class="hidden text-blue-500 font-bold">✓</span>
+                        <span>Dunkel</span><span id="check-dark" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
                 </div>
             </div>
-            
             <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </button>
@@ -93,8 +89,8 @@
         applyTheme(localStorage.theme || 'system');
 
         function formatSummary(text) {
-            // Konvertiert **Titel** in fettgedruckte HTML-Titel ohne nachfolgenden Abstand
-            return text.replace(/\*\*(.*?)\*\*/g, '<span class="summary-title">$1</span>');
+            // Erkennt **Titel** und setzt den Textblock unmittelbar darunter
+            return text.replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title">$1</span><span class="summary-text-block">').replace(/\n\n/g, '</span><span class="summary-text-block">') + '</span>';
         }
 
         async function loadUrteile() {
@@ -128,7 +124,7 @@
                     `;
 
                     if (echteUrteile.length > 0) {
-                        dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm transition-colors mb-4">`;
+                        dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm transition-colors mb-4 text-left">`;
                         echteUrteile.forEach(u => {
                             dayHtml += `
                                 <div class="sub-accordion-item">
@@ -156,10 +152,9 @@
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
-                                <div class="text-left"><div class="font-bold text-lg">Keine Publikationen</div><div class="text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
+                                <div class="text-left"><div class="font-bold text-lg text-gray-700 dark:text-gray-200">Keine Publikationen</div><div class="text-gray-500 dark:text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div></div>
                             </div>`;
                     }
-
                     dayHtml += `</div>`;
                     daySection.innerHTML = dayHtml;
                     container.appendChild(daySection);

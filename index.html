@@ -37,28 +37,30 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- DER PERFEKT ZENTRIERTE, MINIMALE BUTTON --- */
+        /* --- DER DEFINITIV ZENTRIERTE BUTTON --- */
         .ios-button {
-            display: block !important;
+            /* Flexbox ist die stabilste Methode für vertikale Zentrierung */
+            display: flex !important;
+            align-items: center !important;     /* Vertikale Mitte */
+            justify-content: center !important;  /* Horizontale Mitte */
+            
             width: 100% !important;
             box-sizing: border-box;
             background-color: #3b82f6; 
             color: white !important;
             
-            /* Minimale Höhe durch sehr kleines Padding */
-            padding-top: 4px !important;
-            padding-bottom: 4px !important;
+            /* Symmetrisches Padding erzwingt die Zentrierung ohne feste Höhe */
+            padding-top: 6px !important;
+            padding-bottom: 6px !important;
             
             border-radius: 8px; 
             font-weight: 600;
             font-size: 14px; 
             text-decoration: none !important;
-            text-align: center !important;
             margin-top: 1.25rem; 
             
-            /* Fixiert die Texthöhe für perfekte vertikale Zentrierung */
-            line-height: 24px !important; 
-            height: 32px !important; /* Gesamthöhe des Buttons fest definiert */
+            /* Line-height auf 1 setzen, damit kein extra Raum um den Text entsteht */
+            line-height: 1 !important; 
             
             transition: opacity 0.2s, transform 0.1s;
             -webkit-tap-highlight-color: transparent;

@@ -17,6 +17,7 @@
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
         
+        /* Titel-Formatierung */
         .summary-title { 
             font-weight: 700; 
             display: block; 
@@ -37,33 +38,28 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- DER DEFINITIV ZENTRIERTE BUTTON --- */
+        /* --- DIE ULTIMATIVE ZENTRIERUNG --- */
         .ios-button {
-            /* Flexbox für perfekte Zentrierung in beide Richtungen */
-            display: flex !important;
-            align-items: center !important;     /* Vertikal mittig */
-            justify-content: center !important;  /* Horizontal absolut mittig */
+            /* Wir nutzen 'grid' statt 'flex', da es bei vertikaler Zentrierung robuster ist */
+            display: grid !important;
+            place-items: center !important; /* Zentriert Inhalt horizontal UND vertikal perfekt */
             
             width: 100% !important;
             box-sizing: border-box;
             background-color: #3b82f6; 
             color: white !important;
             
-            /* Symmetrisches Padding für die Balkenhöhe */
-            padding-top: 8px !important;
-            padding-bottom: 8px !important;
-            padding-left: 0 !important;   /* Keine seitlichen Abstände, die schieben könnten */
-            padding-right: 0 !important;
+            /* Wir definieren KEINE feste Höhe, sondern nutzen exakt symmetrisches Padding */
+            padding: 8px 16px !important; 
             
             border-radius: 8px; 
             font-weight: 600;
             font-size: 14px; 
             text-decoration: none !important;
-            text-align: center !important; /* Fallback für die Zentrierung */
             margin-top: 1.25rem; 
             
-            /* Zeilenhöhe 1 verhindert vertikales Verschieben */
-            line-height: 1 !important; 
+            /* WICHTIG: line-height auf 'normal', damit der Browser keine eigenen Offsets berechnet */
+            line-height: normal !important; 
             
             transition: opacity 0.2s, transform 0.1s;
             -webkit-tap-highlight-color: transparent;
@@ -72,7 +68,7 @@
         .ios-button:hover { opacity: 0.9; }
     </style>
 </head>
-<body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
+<body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased text-left">
     <div class="max-w-4xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-8">
         
         <header class="flex justify-between items-center mb-8 relative border-b border-gray-100 dark:border-gray-800 pb-4">
@@ -97,9 +93,9 @@
             </button>
         </header>
 
-        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-left">IV-Entscheide BGer</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-left text-black dark:text-white">IV-Entscheide BGer</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
-        <div id="app-container" class="space-y-6"></div>
+        <div id="app-container" class="space-y-6 text-black dark:text-white text-left"></div>
     </div>
 
     <script>
@@ -123,8 +119,8 @@
 
         function formatSummary(text) {
             return text
-                .replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title">$1</span><span class="summary-text-block">')
-                .replace(/\n\n/g, '</span><span class="summary-text-block">') + '</span>';
+                .replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title text-left">$1</span><span class="summary-text-block text-left">')
+                .replace(/\n\n/g, '</span><span class="summary-text-block text-left">') + '</span>';
         }
 
         async function loadUrteile() {
@@ -163,8 +159,8 @@
                             dayHtml += `
                                 <div class="sub-accordion-item">
                                     <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left p-6 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
-                                        <div>
-                                            <div class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</div>
+                                        <div class="text-left">
+                                            <div class="text-blue-600 dark:text-blue-500 font-bold text-xl text-left">${u.aktenzeichen}</div>
                                             <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
                                         </div>
                                         <svg class="rotate-icon w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>

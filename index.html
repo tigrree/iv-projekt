@@ -17,7 +17,6 @@
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
         
-        /* Titel bündig zum Text */
         .summary-title { 
             font-weight: 700; 
             display: block; 
@@ -38,31 +37,29 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* --- STABILER BUTTON ÜBER VOLLE BREITE --- */
+        /* --- OPTIMIERTER, SCHMALERER BUTTON --- */
         .ios-button {
-            /* Erzwingt volle Breite auf jedem Gerät */
-            display: block !important;
+            display: flex !important;
             width: 100% !important;
             box-sizing: border-box;
-            
-            /* Höchste Stufe der Text-Zentrierung */
-            text-align: center !important;
-            
-            /* Flexbox-Zentrierung für vertikale Ausrichtung */
-            display: flex !important;
             justify-content: center !important;
             align-items: center !important;
-            
+            text-align: center !important;
             background-color: #3b82f6; 
             color: white !important;
-            padding: 10px 16px; 
-            border-radius: 12px; 
+            
+            /* Minimale Höhe: Padding reduziert auf 6px für ein flaches Design */
+            padding: 6px 16px !important; 
+            
+            border-radius: 10px; 
             font-weight: 600;
             font-size: 14px; 
             text-decoration: none !important;
             transition: opacity 0.2s, transform 0.1s;
             margin-top: 1.25rem; 
-            line-height: 1.2; 
+            
+            /* Zeilenhöhe festgesetzt, damit Text nicht abgeschnitten wird */
+            line-height: 1.4 !important; 
         }
         .ios-button:active { transform: scale(0.98); }
         .ios-button:hover { opacity: 0.9; }
@@ -168,7 +165,6 @@
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
                                         <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
-                                            
                                             <a href="${u.url}" target="_blank" class="ios-button">
                                                 Originalurteil öffnen
                                             </a>

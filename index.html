@@ -16,7 +16,7 @@
     <div class="max-w-4xl mx-auto py-12 px-6">
         <header class="mb-12 border-b pb-6 text-center">
             <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight text-center">IV-Rechtsprechungs-Monitor</h1>
-            <p class="text-slate-500 mt-2 text-lg text-center">Chronologische Übersicht der Bundesgerichtsentscheide</p>
+            <p class="text-slate-500 mt-2 text-lg text-center font-medium">Chronologische Übersicht der Bundesgerichtsentscheide</p>
         </header>
 
         <div id="status-area" class="text-center py-10">
@@ -32,20 +32,20 @@
             const statusArea = document.getElementById('status-area');
 
             try {
-                // 1. Daten laden
+                // 1. Daten laden (Cache-Buster mit Zeitstempel)
                 const response = await fetch('urteile.json?v=' + Date.now());
                 if (!response.ok) throw new Error("Datei urteile.json nicht gefunden.");
                 const data = await response.json();
                 
                 statusArea.style.display = 'none';
 
-                // 2. Gruppieren nach Datum
+                // 2. Gruppieren nach Datum (TT.MM.JJJJ)
                 const tageMap = {};
                 data.forEach(item => {
                     const d = item.datum ? item.datum.trim() : "Unbekannt";
                     if (!tageMap[d]) tageMap[d] = [];
-                    // Nur echte Urteile in die Liste (keine Info-Platzhalter)
-                    if (item.aktenzeichen !== "INFO_SKIP" && item.aktenzeichen !== "Info") {
+                    // Nur echte Urteile (9C... / 8C...) in die Liste aufnehmen
+                    if (item.aktenzeichen && item.aktenzeichen !== "INFO_SKIP" && item.aktenzeichen !== "Info") {
                         tageMap[d].push(item);
                     }
                 });
@@ -56,7 +56,7 @@
                     const d = new Date(heute);
                     d.setDate(heute.getDate() - i);
                     
-                    // KORREKTUR: '2-digit' statt '2.digit'
+                    // FIX: Bindestrich statt Punkt (2-digit)
                     const dateStr = d.toLocaleDateString('de-DE', { 
                         day: '2-digit', 
                         month: '2-digit', 
@@ -82,24 +82,24 @@
                                 ${tagUrteile.length > 0 ? tagUrteile.map(u => `
                                     <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
                                         <div class="flex items-center justify-between mb-3">
-                                            <div class="flex items-center font-mono font-bold text-blue-900">
-                                                <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded mr-2 uppercase">BGER</span>
+                                            <div class="flex items-center font-mono font-bold text-blue-900 italic uppercase">
+                                                <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded mr-2">BGER</span>
                                                 ${u.aktenzeichen}
                                             </div>
-                                            ${u.url ? `<a href="${u.url}" target="_blank" class="text-blue-500 hover:text-blue-700 text-xs flex items-center">
-                                                Urteil <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            ${u.url ? `<a href="${u.url}" target="_blank" class="text-blue-500 hover:text-blue-700 text-xs flex items-center font-medium">
+                                                Original <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                             </a>` : ''}
                                         </div>
-                                        <div class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${u.zusammenfassung}</div>
+                                        <div class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${u.zusammenfassung || 'Zusammenfassung wird geladen...'}</div>
                                     </div>
-                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm text-center">Heute wurden keine IV-relevanten Urteile vom Bundesgericht publiziert.</p>`}
+                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm font-medium">An diesem Tag wurden keine IV-relevanten Urteile vom Bundesgericht publiziert.</p>`}
                             </div>
                         </div>
                     `;
                     container.appendChild(section);
                 }
             } catch (err) {
-                statusArea.innerHTML = `<div class="bg-red-50 text-red-600 p-4 rounded-lg border border-red-200 font-mono text-xs">
+                statusArea.innerHTML = `<div class="bg-red-50 text-red-600 p-4 rounded-lg border border-red-200 font-mono text-xs font-bold uppercase tracking-tight">
                     Fehler: ${err.message}
                 </div>`;
             }

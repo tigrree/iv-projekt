@@ -3,108 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IV-Urteils-Monitor</title>
+    <title>IV-Entscheide BGer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body { background-color: #000; color: #fff; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-open .accordion-content { max-height: 5000px; transition: max-height 0.6s ease-in; }
+        .item-open .accordion-content { max-height: 2000px; transition: max-height 0.5s ease-in; }
         .rotate-icon { transition: transform 0.3s; }
-        .accordion-open .rotate-icon { transform: rotate(180deg); }
+        .item-open .rotate-icon { transform: rotate(90deg); }
     </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-900">
-    <div class="max-w-4xl mx-auto py-12 px-6">
-        <header class="mb-12 border-b pb-6 text-center">
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight text-center">IV-Rechtsprechungs-Monitor</h1>
-            <p class="text-slate-500 mt-2 text-lg text-center font-medium">Chronologische Übersicht der Bundesgerichtsentscheide</p>
+<body class="font-sans antialiased">
+    <div class="max-w-md mx-auto min-h-screen px-4 py-8">
+        <header class="flex justify-between items-center mb-8">
+            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>
+            <button onclick="location.reload()" class="text-gray-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </button>
         </header>
 
-        <div id="status-area" class="text-center py-10">
-            <p id="status-text" class="text-slate-400 italic">Lade urteile.json...</p>
-        </div>
-        
-        <div id="timeline-container" class="space-y-4"></div>
+        <h1 class="text-3xl font-bold mb-8">IV-Entscheide BGer</h1>
+
+        <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
+        <div id="app-container" class="space-y-8"></div>
     </div>
 
     <script>
-        async function runMonitor() {
-            const container = document.getElementById('timeline-container');
-            const statusArea = document.getElementById('status-area');
-
+        async function loadUrteile() {
             try {
-                // 1. Daten laden (Cache-Buster mit Zeitstempel)
                 const response = await fetch('urteile.json?v=' + Date.now());
-                if (!response.ok) throw new Error("Datei urteile.json nicht gefunden.");
                 const data = await response.json();
-                
-                statusArea.style.display = 'none';
+                document.getElementById('loading').style.display = 'none';
 
-                // 2. Gruppieren nach Datum (TT.MM.JJJJ)
+                const container = document.getElementById('app-container');
+                
+                // Gruppierung nach Datum
                 const tageMap = {};
-                data.forEach(item => {
-                    const d = item.datum ? item.datum.trim() : "Unbekannt";
-                    if (!tageMap[d]) tageMap[d] = [];
-                    // Nur echte Urteile (9C... / 8C...) in die Liste aufnehmen
-                    if (item.aktenzeichen && item.aktenzeichen !== "INFO_SKIP" && item.aktenzeichen !== "Info") {
-                        tageMap[d].push(item);
-                    }
+                data.forEach(u => {
+                    if (!tageMap[u.datum]) tageMap[u.datum] = [];
+                    tageMap[u.datum].push(u);
                 });
 
-                // 3. Anzeige generieren (Heute bis vor 14 Tagen)
-                const heute = new Date();
-                for (let i = 0; i < 14; i++) {
-                    const d = new Date(heute);
-                    d.setDate(heute.getDate() - i);
-                    
-                    // FIX: Bindestrich statt Punkt (2-digit)
-                    const dateStr = d.toLocaleDateString('de-DE', { 
-                        day: '2-digit', 
-                        month: '2-digit', 
-                        year: 'numeric' 
-                    });
+                // Sortierte Datumsliste (neueste oben)
+                const sortierteTage = Object.keys(tageMap).sort((a, b) => {
+                    const da = a.split('.').reverse().join('');
+                    const db = b.split('.').reverse().join('');
+                    return db - da;
+                });
 
-                    const tagUrteile = tageMap[dateStr] || [];
-                    const section = document.createElement('div');
-                    section.className = "border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm";
+                sortierteTage.forEach(datum => {
+                    const urteileAmTag = tageMap[datum];
+                    const echteUrteile = urteileAmTag.filter(u => u.aktenzeichen !== "INFO_SKIP");
                     
-                    section.innerHTML = `
-                        <button onclick="this.parentElement.classList.toggle('accordion-open')" class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
-                            <div class="flex items-center space-x-4">
-                                <span class="text-lg font-bold text-slate-700">${dateStr}</span>
-                                ${tagUrteile.length > 0 
-                                    ? `<span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">${tagUrteile.length} Urteile</span>` 
-                                    : '<span class="text-slate-300 text-sm italic">Keine Publikationen</span>'}
-                            </div>
-                            <svg class="rotate-icon w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                        <div class="accordion-content bg-slate-50/50">
-                            <div class="p-5 space-y-4">
-                                ${tagUrteile.length > 0 ? tagUrteile.map(u => `
-                                    <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-                                        <div class="flex items-center justify-between mb-3">
-                                            <div class="flex items-center font-mono font-bold text-blue-900 italic uppercase">
-                                                <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded mr-2">BGER</span>
-                                                ${u.aktenzeichen}
-                                            </div>
-                                            ${u.url ? `<a href="${u.url}" target="_blank" class="text-blue-500 hover:text-blue-700 text-xs flex items-center font-medium">
-                                                Original <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            </a>` : ''}
-                                        </div>
-                                        <div class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${u.zusammenfassung || 'Zusammenfassung wird geladen...'}</div>
-                                    </div>
-                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm font-medium">An diesem Tag wurden keine IV-relevanten Urteile vom Bundesgericht publiziert.</p>`}
-                            </div>
+                    const daySection = document.createElement('div');
+                    daySection.className = "space-y-3";
+                    
+                    let dayHeader = `
+                        <div class="flex justify-between items-center px-1">
+                            <span class="text-lg font-bold">${datum}</span>
+                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </div>
                     `;
-                    container.appendChild(section);
-                }
-            } catch (err) {
-                statusArea.innerHTML = `<div class="bg-red-50 text-red-600 p-4 rounded-lg border border-red-200 font-mono text-xs font-bold uppercase tracking-tight">
-                    Fehler: ${err.message}
-                </div>`;
+
+                    let contentHtml = '';
+                    if (echteUrteile.length > 0) {
+                        contentHtml = `<div class="bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-800">`;
+                        echteUrteile.forEach(u => {
+                            contentHtml += `
+                                <div class="accordion-item">
+                                    <button onclick="this.parentElement.classList.toggle('item-open')" class="w-full text-left p-4 hover:bg-gray-800 transition-colors flex justify-between items-center group">
+                                        <div>
+                                            <div class="text-blue-500 font-semibold text-lg">${u.aktenzeichen}</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">${u.vorschau}</div>
+                                        </div>
+                                        <svg class="rotate-icon w-5 h-5 text-gray-600 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                    </button>
+                                    <div class="accordion-content bg-black/30">
+                                        <div class="p-4 pt-0 text-gray-300 text-sm leading-relaxed whitespace-pre-wrap border-t border-gray-800/50 mt-2">
+                                            ${u.zusammenfassung}
+                                            <div class="mt-4">
+                                                <a href="${u.url}" target="_blank" class="text-blue-500 underline text-xs">Im Browser öffnen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+                        });
+                        contentHtml += `</div>`;
+                    } else {
+                        // Info-Box für leere Tage wie im Screenshot
+                        contentHtml = `
+                            <div class="bg-[#1c1c1e] p-5 rounded-2xl flex items-start space-x-4">
+                                <div class="bg-gray-800 p-2 rounded-full text-gray-400">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-300">Info</div>
+                                    <div class="text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div>
+                                </div>
+                            </div>`;
+                    }
+
+                    daySection.innerHTML = dayHeader + contentHtml;
+                    container.appendChild(daySection);
+                });
+            } catch (e) {
+                document.getElementById('loading').innerHTML = "Fehler: " + e.message;
             }
         }
-        runMonitor();
+        loadUrteile();
     </script>
 </body>
 </html>

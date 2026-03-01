@@ -21,31 +21,32 @@
         .summary-title { 
             font-weight: 700; 
             display: block; 
-            margin-top: 1.5rem; 
-            margin-bottom: 0px !important; /* Absolut kein Abstand nach unten */
-            padding-bottom: 0px !important;
+            margin-top: 0rem; 
+            margin-bottom: 0px !important; 
             color: currentColor;
             text-align: left;
-            line-height: 1.2;
+            line-height: 1.5;
         }
-        .summary-title:first-child { margin-top: 0; }
         
-        /* Text direkt unter dem Titel ohne Versatz */
+        /* Der Textblock unmittelbar unter dem Titel */
         .summary-text-block {
             display: block;
             margin-top: 0px !important;
-            padding-top: 2px; /* Minimaler optischer Abstand für die Lesbarkeit */
+            margin-bottom: 1.5rem; /* Abstand NACH dem Text zum nächsten Abschnitt */
             text-align: left;
         }
+
+        /* Verhindert doppelten Abstand beim letzten Element */
+        .summary-text-block:last-child { margin-bottom: 0; }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
     <div class="max-w-4xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-8">
         
-        <header class="flex justify-between items-center mb-8 relative">
+        <header class="flex justify-between items-center mb-8 relative border-b border-gray-100 dark:border-gray-800 pb-4">
             <div class="relative">
                 <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                    <span id="active-theme-icon" class="text-black dark:text-white font-bold"></span>
+                    <span id="active-theme-icon" class="text-black dark:text-white"></span>
                 </button>
                 <div id="theme-menu" class="theme-menu absolute left-0 mt-2 w-40 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
                     <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
@@ -89,8 +90,10 @@
         applyTheme(localStorage.theme || 'system');
 
         function formatSummary(text) {
-            // Erkennt **Titel** und setzt den Textblock unmittelbar darunter
-            return text.replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title">$1</span><span class="summary-text-block">').replace(/\n\n/g, '</span><span class="summary-text-block">') + '</span>';
+            // Logik: Titel bündig an Text, danach Abstand
+            return text
+                .replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title">$1</span><span class="summary-text-block">')
+                .replace(/\n\n/g, '</span><span class="summary-text-block">') + '</span>';
         }
 
         async function loadUrteile() {
@@ -136,9 +139,9 @@
                                         <svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
-                                        <div class="p-6 pt-2 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
+                                        <div class="p-6 pt-4 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}
-                                            <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-end">
+                                            <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-end">
                                                 <a href="${u.url}" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:underline uppercase text-xs">Original-Urteil</a>
                                             </div>
                                         </div>

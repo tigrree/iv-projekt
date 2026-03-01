@@ -17,6 +17,7 @@
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
         
+        /* Titel bündig zum Text */
         .summary-title { 
             font-weight: 700; 
             display: block; 
@@ -39,19 +40,19 @@
 
         /* --- DER DEFINITIV ZENTRIERTE BUTTON --- */
         .ios-button {
-            /* Flexbox ist die stabilste Methode für vertikale Zentrierung */
+            /* Flexbox erzwingt die vertikale und horizontale Mitte */
             display: flex !important;
-            align-items: center !important;     /* Vertikale Mitte */
-            justify-content: center !important;  /* Horizontale Mitte */
+            align-items: center !important;     /* Vertikale Zentrierung */
+            justify-content: center !important;  /* Horizontale Zentrierung */
             
             width: 100% !important;
             box-sizing: border-box;
             background-color: #3b82f6; 
             color: white !important;
             
-            /* Symmetrisches Padding erzwingt die Zentrierung ohne feste Höhe */
-            padding-top: 6px !important;
-            padding-bottom: 6px !important;
+            /* KEINE feste Höhe verwenden. Symmetrisches Padding steuert die Button-Dicke. */
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
             
             border-radius: 8px; 
             font-weight: 600;
@@ -59,7 +60,7 @@
             text-decoration: none !important;
             margin-top: 1.25rem; 
             
-            /* Line-height auf 1 setzen, damit kein extra Raum um den Text entsteht */
+            /* Line-height 1 verhindert, dass Text nach unten "fällt" */
             line-height: 1 !important; 
             
             transition: opacity 0.2s, transform 0.1s;
@@ -94,7 +95,7 @@
             </button>
         </header>
 
-        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight">IV-Entscheide BGer</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-left">IV-Entscheide BGer</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
         <div id="app-container" class="space-y-6 text-black dark:text-white"></div>
     </div>

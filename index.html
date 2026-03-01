@@ -6,7 +6,30 @@
     <title>IV-Entscheide BGer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #000; color: #fff; }
+        /* Standard: Light Mode */
+        :root {
+            --bg-color: #f2f2f7;
+            --card-bg: #ffffff;
+            --text-main: #000000;
+            --text-muted: #666666;
+            --border-color: #e5e5ea;
+            --info-bg: #e5e5ea;
+        }
+
+        /* Automatischer Dark Mode gemäss Geräteneinstellung */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #000000;
+                --card-bg: #1c1c1e;
+                --text-main: #ffffff;
+                --text-muted: #8e8e93;
+                --border-color: #38383a;
+                --info-bg: #2c2c2e;
+            }
+        }
+
+        body { background-color: var(--bg-color); color: var(--text-main); transition: all 0.3s ease; }
+        .card { background-color: var(--card-bg); border-radius: 1rem; overflow: hidden; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .item-open .accordion-content { max-height: 2000px; transition: max-height 0.5s ease-in; }
         .rotate-icon { transition: transform 0.3s; }
@@ -15,17 +38,20 @@
 </head>
 <body class="font-sans antialiased">
     <div class="max-w-md mx-auto min-h-screen px-4 py-8">
+        
         <header class="flex justify-between items-center mb-8">
-            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>
-            <button onclick="location.reload()" class="text-gray-400">
+            <div class="text-blue-500">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>
+            </div>
+            <button onclick="location.reload()" class="text-gray-500 hover:text-blue-500 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </button>
         </header>
 
         <h1 class="text-3xl font-bold mb-8">IV-Entscheide BGer</h1>
 
-        <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
-        <div id="app-container" class="space-y-8"></div>
+        <div id="loading" class="text-center py-10 text-gray-500 italic">Lade aktuellste Urteile...</div>
+        <div id="app-container" class="space-y-10"></div>
     </div>
 
     <script>
@@ -44,7 +70,7 @@
                     tageMap[u.datum].push(u);
                 });
 
-                // Sortierte Datumsliste (neueste oben)
+                // Sortierung: Neueste Tage oben
                 const sortierteTage = Object.keys(tageMap).sort((a, b) => {
                     const da = a.split('.').reverse().join('');
                     const db = b.split('.').reverse().join('');
@@ -52,37 +78,38 @@
                 });
 
                 sortierteTage.forEach(datum => {
-                    const urteileAmTag = tageMap[datum];
-                    const echteUrteile = urteileAmTag.filter(u => u.aktenzeichen !== "INFO_SKIP");
-                    
+                    const echteUrteile = tageMap[datum].filter(u => u.aktenzeichen !== "INFO_SKIP");
                     const daySection = document.createElement('div');
-                    daySection.className = "space-y-3";
+                    daySection.className = "space-y-4";
                     
                     let dayHeader = `
                         <div class="flex justify-between items-center px-1">
-                            <span class="text-lg font-bold">${datum}</span>
-                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            <span class="text-xl font-bold">${datum}</span>
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </div>
                     `;
 
                     let contentHtml = '';
                     if (echteUrteile.length > 0) {
-                        contentHtml = `<div class="bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-800">`;
+                        contentHtml = `<div class="card divide-y divide-[var(--border-color)] shadow-lg">`;
                         echteUrteile.forEach(u => {
                             contentHtml += `
                                 <div class="accordion-item">
-                                    <button onclick="this.parentElement.classList.toggle('item-open')" class="w-full text-left p-4 hover:bg-gray-800 transition-colors flex justify-between items-center group">
-                                        <div>
-                                            <div class="text-blue-500 font-semibold text-lg">${u.aktenzeichen}</div>
-                                            <div class="text-gray-400 text-sm mt-0.5">${u.vorschau}</div>
+                                    <button onclick="this.parentElement.classList.toggle('item-open')" class="w-full text-left p-5 hover:opacity-80 transition-all flex justify-between items-center group">
+                                        <div class="pr-4">
+                                            <div class="text-blue-500 font-bold text-lg leading-tight mb-1">${u.aktenzeichen}</div>
+                                            <div style="color: var(--text-muted)" class="text-xs font-medium uppercase tracking-wide">${u.vorschau}</div>
                                         </div>
-                                        <svg class="rotate-icon w-5 h-5 text-gray-600 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                        <svg class="rotate-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7-7"/></svg>
                                     </button>
-                                    <div class="accordion-content bg-black/30">
-                                        <div class="p-4 pt-0 text-gray-300 text-sm leading-relaxed whitespace-pre-wrap border-t border-gray-800/50 mt-2">
-                                            ${u.zusammenfassung}
-                                            <div class="mt-4">
-                                                <a href="${u.url}" target="_blank" class="text-blue-500 underline text-xs">Im Browser öffnen</a>
+                                    <div class="accordion-content">
+                                        <div class="px-5 pb-5 text-sm leading-relaxed border-t border-[var(--border-color)] pt-4" style="color: var(--text-muted)">
+                                            <div class="whitespace-pre-wrap">${u.zusammenfassung}</div>
+                                            <div class="mt-6 border-t border-[var(--border-color)] pt-4 flex justify-between items-center">
+                                                <a href="${u.url}" target="_blank" class="text-blue-500 font-semibold hover:underline text-xs flex items-center">
+                                                    Zum Original-Urteil 
+                                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -90,15 +117,17 @@
                         });
                         contentHtml += `</div>`;
                     } else {
-                        // Info-Box für leere Tage wie im Screenshot
+                        // Info-Box Design wie im iPhone Screenshot
                         contentHtml = `
-                            <div class="bg-[#1c1c1e] p-5 rounded-2xl flex items-start space-x-4">
-                                <div class="bg-gray-800 p-2 rounded-full text-gray-400">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <div class="card p-6 flex items-start space-x-4 shadow-md border border-[var(--border-color)]">
+                                <div class="bg-blue-500/10 p-2 rounded-full text-blue-500 flex-shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
                                 <div>
-                                    <div class="font-semibold text-gray-300">Info</div>
-                                    <div class="text-gray-500 text-sm italic">Heute wurden keine IV-relevanten Urteile publiziert.</div>
+                                    <div class="font-bold text-lg mb-1">Info</div>
+                                    <p style="color: var(--text-muted)" class="text-sm italic font-medium leading-snug">
+                                        Heute wurden keine IV-relevanten Urteile publiziert.
+                                    </p>
                                 </div>
                             </div>`;
                     }
@@ -107,7 +136,7 @@
                     container.appendChild(daySection);
                 });
             } catch (e) {
-                document.getElementById('loading').innerHTML = "Fehler: " + e.message;
+                document.getElementById('loading').innerHTML = `<div class="p-4 bg-red-500 text-white rounded-xl">Fehler beim Laden: ${e.message}</div>`;
             }
         }
         loadUrteile();

@@ -15,13 +15,12 @@
 <body class="bg-slate-50 font-sans text-slate-900">
     <div class="max-w-4xl mx-auto py-12 px-6">
         <header class="mb-12 border-b pb-6 text-center">
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">IV-Rechtsprechungs-Monitor</h1>
-            <p class="text-slate-500 mt-2 text-lg">Chronologische Übersicht der Bundesgerichtsentscheide</p>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight text-center">IV-Rechtsprechungs-Monitor</h1>
+            <p class="text-slate-500 mt-2 text-lg text-center">Chronologische Übersicht der Bundesgerichtsentscheide</p>
         </header>
 
-        <div id="status-display" class="text-center py-10">
+        <div id="status-area" class="text-center py-10">
             <p id="status-text" class="text-slate-400 italic">Lade urteile.json...</p>
-            <div id="debug-info" class="hidden mt-4 p-4 bg-amber-50 border border-amber-200 rounded text-xs text-amber-700 text-left overflow-auto max-h-40 font-mono"></div>
         </div>
         
         <div id="timeline-container" class="space-y-4"></div>
@@ -30,41 +29,39 @@
     <script>
         async function runMonitor() {
             const container = document.getElementById('timeline-container');
-            const statusText = document.getElementById('status-text');
-            const debugInfo = document.getElementById('debug-info');
+            const statusArea = document.getElementById('status-area');
 
             try {
-                // 1. Datei laden
-                const response = await fetch('urteile.json?nocache=' + Date.now());
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP-Fehler! Status: ${response.status}. Prüfe, ob urteile.json wirklich im Hauptordner liegt.`);
-                }
-
+                // 1. Daten laden
+                const response = await fetch('urteile.json?v=' + Date.now());
+                if (!response.ok) throw new Error("Datei urteile.json nicht gefunden.");
                 const data = await response.json();
                 
-                // Debug-Ausgabe zur Kontrolle
-                debugInfo.classList.remove('hidden');
-                debugInfo.innerText = `Daten geladen: ${data.length} Einträge gefunden.`;
-                
-                statusText.style.display = 'none';
+                statusArea.style.display = 'none';
 
-                // 2. Gruppieren
+                // 2. Gruppieren nach Datum
                 const tageMap = {};
                 data.forEach(item => {
                     const d = item.datum ? item.datum.trim() : "Unbekannt";
                     if (!tageMap[d]) tageMap[d] = [];
+                    // Nur echte Urteile in die Liste (keine Info-Platzhalter)
                     if (item.aktenzeichen !== "INFO_SKIP" && item.aktenzeichen !== "Info") {
                         tageMap[d].push(item);
                     }
                 });
 
-                // 3. Anzeige (Heute bis vor 14 Tagen)
+                // 3. Anzeige generieren (Heute bis vor 14 Tagen)
                 const heute = new Date();
                 for (let i = 0; i < 14; i++) {
                     const d = new Date(heute);
                     d.setDate(heute.getDate() - i);
-                    const dateStr = d.toLocaleDateString('de-DE', { day: '2.digit', month: '2.digit', year: 'numeric' });
+                    
+                    // KORREKTUR: '2-digit' statt '2.digit'
+                    const dateStr = d.toLocaleDateString('de-DE', { 
+                        day: '2-digit', 
+                        month: '2-digit', 
+                        year: 'numeric' 
+                    });
 
                     const tagUrteile = tageMap[dateStr] || [];
                     const section = document.createElement('div');
@@ -84,22 +81,27 @@
                             <div class="p-5 space-y-4">
                                 ${tagUrteile.length > 0 ? tagUrteile.map(u => `
                                     <div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-                                        <div class="flex items-center mb-2 font-mono font-bold text-blue-900">
-                                            <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded mr-2 uppercase tracking-tighter">BGER</span>
-                                            ${u.aktenzeichen}
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="flex items-center font-mono font-bold text-blue-900">
+                                                <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded mr-2 uppercase">BGER</span>
+                                                ${u.aktenzeichen}
+                                            </div>
+                                            ${u.url ? `<a href="${u.url}" target="_blank" class="text-blue-500 hover:text-blue-700 text-xs flex items-center">
+                                                Urteil <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            </a>` : ''}
                                         </div>
                                         <div class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">${u.zusammenfassung}</div>
                                     </div>
-                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm">Keine IV-Urteile publiziert.</p>`}
+                                `).join('') : `<p class="text-slate-400 italic text-center py-4 text-sm text-center">Heute wurden keine IV-relevanten Urteile vom Bundesgericht publiziert.</p>`}
                             </div>
                         </div>
                     `;
                     container.appendChild(section);
                 }
             } catch (err) {
-                statusText.innerHTML = `<span class="text-red-600 font-bold">Fehler beim Laden:</span>`;
-                debugInfo.classList.remove('hidden');
-                debugInfo.innerText = err.message;
+                statusArea.innerHTML = `<div class="bg-red-50 text-red-600 p-4 rounded-lg border border-red-200 font-mono text-xs">
+                    Fehler: ${err.message}
+                </div>`;
             }
         }
         runMonitor();

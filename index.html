@@ -14,8 +14,10 @@
         .is-open > .accordion-content { max-height: 10000px; transition: max-height 0.5s ease-in; }
         .rotate-icon { transition: transform 0.3s; }
         .is-open > button .rotate-icon { transform: rotate(180deg); }
-        .theme-menu { display: none; }
-        .theme-menu.show { display: block; }
+        
+        /* Umbenannt für universelle Nutzung (Theme & Ansicht) */
+        .dropdown-menu { display: none; }
+        .dropdown-menu.show { display: block; }
         
         .summary-title { 
             font-weight: 700; 
@@ -69,11 +71,12 @@
     <div class="max-w-4xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-8">
         
         <header class="flex justify-between items-center mb-8 relative border-b border-gray-100 dark:border-gray-800 pb-4">
+            
             <div class="relative">
                 <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span id="active-theme-icon" class="text-black dark:text-white font-bold"></span>
                 </button>
-                <div id="theme-menu" class="theme-menu absolute left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
+                <div id="theme-menu" class="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
                     <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
                         <span>System</span><span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
@@ -85,6 +88,26 @@
                     </button>
                 </div>
             </div>
+
+            <div class="relative">
+                <button onclick="toggleViewMenu(event)" id="view-btn" class="text-gray-600 dark:text-gray-300 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
+                    </svg>
+                </button>
+                <div id="view-menu" class="dropdown-menu absolute left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
+                    <button onclick="setView('newest')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 text-sm">
+                        Nur aktuellster Tag
+                    </button>
+                    <button onclick="setView('all')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 text-sm">
+                        Alle aufklappen
+                    </button>
+                    <button onclick="setView('none')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">
+                        Alle zuklappen
+                    </button>
+                </div>
+            </div>
+
             <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </button>
@@ -102,6 +125,7 @@
             system: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path d="M12 3v1m0 16v1m9-9h-1M4 12H3" opacity="0.5"/></svg>'
         };
 
+        /* --- THEME LOGIK --- */
         function applyTheme(theme) {
             const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             document.documentElement.classList.toggle('dark', isDark);
@@ -110,10 +134,44 @@
         }
 
         function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
-        function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); }
-        window.onclick = function(event) { if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); }
+        
+        /* --- MENÜ TOGGLE LOGIK --- */
+        function toggleThemeMenu(e) { 
+            e.stopPropagation(); 
+            document.getElementById('theme-menu').classList.toggle('show'); 
+            document.getElementById('view-menu').classList.remove('show'); // Schließt das andere Menü
+        }
+        
+        function toggleViewMenu(e) { 
+            e.stopPropagation(); 
+            document.getElementById('view-menu').classList.toggle('show'); 
+            document.getElementById('theme-menu').classList.remove('show'); // Schließt das andere Menü
+        }
+
+        window.onclick = function(event) { 
+            if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); 
+            if (!event.target.closest('#view-btn')) document.getElementById('view-menu').classList.remove('show'); 
+        }
+        
         applyTheme(localStorage.theme || 'system');
 
+        /* --- ANSICHT LOGIK (AUF/ZUKLAPPEN) --- */
+        function setView(mode) {
+            const groups = document.querySelectorAll('.accordion-group');
+            groups.forEach((group, index) => {
+                if (mode === 'newest') {
+                    if (index === 0) group.classList.add('is-open');
+                    else group.classList.remove('is-open');
+                } else if (mode === 'all') {
+                    group.classList.add('is-open');
+                } else if (mode === 'none') {
+                    group.classList.remove('is-open');
+                }
+            });
+            document.getElementById('view-menu').classList.remove('show');
+        }
+
+        /* --- INHALT LOGIK --- */
         function formatSummary(text) {
             if (!text) return '';
             text = text.trim(); 
@@ -141,13 +199,12 @@
                     return db - da;
                 });
 
-                // HIER IST DIE ÄNDERUNG: Wir prüfen mit dem Index (i), ob es der erste Tag ist
                 sortierteTage.forEach((datum, i) => {
                     const urteileAmTag = tageMap[datum];
                     const echteUrteile = urteileAmTag.filter(u => u.aktenzeichen !== "INFO_SKIP");
                     const daySection = document.createElement('div');
                     
-                    // Der erste Tag (i === 0) bekommt automatisch die Klasse 'is-open'
+                    // DEFAULT: Der aktuellste Tag (i === 0) ist immer aufgeklappt
                     daySection.className = i === 0 ? "accordion-group is-open" : "accordion-group";
                     
                     let dayHtml = `
@@ -171,7 +228,7 @@
                                         <svg class="rotate-icon flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
-                                        <div class="px-6 pt-5 pb-6 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
+                                        <div class="px-6 pt-3 pb-6 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}<a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a>
                                         </div>
                                     </div>
@@ -184,7 +241,7 @@
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
-                                <div class="text-left font-bold text-lg text-gray-700 dark:text-gray-200 w-full">Keine IV-relevanten Publikationen</div>
+                                <div class="text-left font-bold text-lg text-gray-700 dark:text-gray-200 w-full">Keine Publikationen</div>
                             </div>`;
                     }
                     dayHtml += `</div>`;

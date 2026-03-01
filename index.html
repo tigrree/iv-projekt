@@ -9,15 +9,22 @@
         tailwind.config = { darkMode: 'class' }
     </script>
     <style>
+        /* Grundlegende Theme-Übergänge */
         body { transition: background-color 0.3s, color 0.3s; }
+        
+        /* Akkordeon-Animationen */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .is-open > .accordion-content { max-height: 10000px; transition: max-height 0.5s ease-in; }
+        
+        /* Icon-Rotation */
         .rotate-icon { transition: transform 0.3s; }
         .is-open > button .rotate-icon { transform: rotate(180deg); }
+        
+        /* Theme-Menü-Sichtbarkeit */
         .theme-menu { display: none; }
         .theme-menu.show { display: block; }
         
-        /* Titel bündig zum Text */
+        /* --- Formatierung Zusammenfassung --- */
         .summary-title { 
             font-weight: 700; 
             display: block; 
@@ -38,26 +45,66 @@
         }
         .summary-text-block:last-child { margin-bottom: 0; }
 
-        /* Ästhetischer, flacherer Button mit zentriertem Text */
+        /* --- Fehlerresistentes Button-Styling --- */
         .ios-button {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Horizontale Zentrierung */
-            text-align: center;      /* Zusätzliche Absicherung der Zentrierung */
-            width: 100%; 
+            /* 1. Definitive Block-Anzeige für volle Breite */
+            display: block !important;
+            width: 100% !important;
+            box-sizing: border-box; /* padding zählt nicht zur Breite */
+            
+            /* 2. Vertikale Zentrierung via Grid & Flex-Fallbacks */
+            display: -webkit-box;      /* Alt-iOS Fallback */
+            display: -ms-flexbox;      /* Alt-IE Fallback */
+            display: flex;             /* Modernes Flex */
+            display: grid;             /* Modernes Grid (stärker für Zentrierung) */
+            
+            -webkit-box-align: center; /* Alt-iOS vertikal */
+            -ms-flex-align: center;    /* Alt-IE vertikal */
+            align-items: center;       /* Modern vertikal */
+            
+            place-items: center;       /* Grid Super-Zentrierung (vertikal & horizontal) */
+            
+            /* 3. Horizontale Zentrierung via Text-Align Fallback */
+            -webkit-box-pack: center;  /* Alt-iOS horizontal */
+            -ms-flex-pack: center;     /* Alt-IE horizontal */
+            justify-content: center;   /* Modern horizontal */
+            text-align: center;        /* Ultimativer Text-Fallback */
+            
+            /* 4. Ästhetik & Abstände */
             background-color: #3b82f6; 
             color: white !important;
-            padding: 10px 16px;      /* Reduzierte Höhe für mehr Ästhetik */
+            
+            /* Padding: Oben/Unten (Höhe), Links/Rechts */
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+            
             border-radius: 12px; 
             font-weight: 600;
             font-size: 14px; 
             text-decoration: none !important;
+            margin-top: 1.25rem; /* Abstand zum Text wie gewünscht */
+            
+            /* Sicherheit für Text-Rendering */
+            line-height: 1.2 !important; 
+            white-space: nowrap; /* Verhindert Umbruch im Button */
+            
+            /* Interaktions-Effekte */
             transition: opacity 0.2s, transform 0.1s;
-            margin-top: 1.25rem;     /* Abstand zum Text wie gewünscht */
-            line-height: 1.2; 
+            -webkit-tap-highlight-color: transparent; /* Entfernt grauen Kasten auf iOS */
         }
-        .ios-button:active { transform: scale(0.98); }
-        .ios-button:hover { opacity: 0.9; }
+        
+        /* Aktiver Zustand (Klicken/Tippen) */
+        .ios-button:active { 
+            transform: scale(0.98); 
+            opacity: 0.9;
+        }
+        
+        /* Hover Zustand (Maus) */
+        .ios-button:hover { 
+            opacity: 0.95; 
+        }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased">
@@ -110,6 +157,7 @@
         applyTheme(localStorage.theme || 'system');
 
         function formatSummary(text) {
+            // Erkennt **Titel** und setzt den Textblock unmittelbar darunter
             return text
                 .replace(/\*\*(.*?)\*\*\n?/g, '<span class="summary-title">$1</span><span class="summary-text-block">')
                 .replace(/\n\n/g, '</span><span class="summary-text-block">') + '</span>';

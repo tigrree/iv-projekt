@@ -20,7 +20,7 @@
         .summary-title { 
             font-weight: 700; 
             display: block; 
-            margin-top: 1.25rem; 
+            margin-top: 1.25rem; /* Das ist der Referenz-Abstand aus deinem Bild */
             margin-bottom: 0px !important; 
             color: currentColor;
             text-align: left;
@@ -36,7 +36,7 @@
             text-align: left;
         }
         
-        /* Zwingt den allerletzten Text-Absatz vor dem Button, KEINEN Abstand nach unten zu machen */
+        /* Letzter Textblock vor dem Button hat keinen eigenen Abstand mehr */
         .summary-text-block:last-of-type { 
             margin-bottom: 0px !important; 
         }
@@ -54,8 +54,8 @@
             text-align: center !important; 
             text-decoration: none !important;
             
-            /* Exakt 8 Pixel Abstand nach oben zum Text */
-            margin-top: 8px !important; 
+            /* ABSTAND ANGEPASST: Exakt der gleiche Wert wie bei .summary-title (1.25rem = 20px) */
+            margin-top: 1.25rem !important; 
             margin-bottom: 0px !important; 
             
             line-height: normal !important; 
@@ -118,7 +118,6 @@
         function formatSummary(text) {
             if (!text) return '';
             text = text.trim(); 
-            // Jeder Text wird explizit in eine Text-Block-Klasse gepackt
             let html = '<span class="summary-text-block">' + text + '</span>';
             html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title">$1</span><span class="summary-text-block">');
             html = html.replace(/\n\n/g, '</span><span class="summary-text-block">');
@@ -169,7 +168,7 @@
                                         <svg class="rotate-icon flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                     </button>
                                     <div class="accordion-content bg-white/40 dark:bg-black/20">
-                                        <div class="px-6 pt-4 pb-2 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
+                                        <div class="px-6 pt-4 pb-5 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
                                             ${formatSummary(u.zusammenfassung)}<a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a>
                                         </div>
                                     </div>

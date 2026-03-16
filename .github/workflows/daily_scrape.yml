@@ -2,16 +2,18 @@ name: Daily IV Scraper
 
 on:
   schedule:
-    # 12:00 UTC entspricht 13:00 Uhr Schweizer Zeit (Winterzeit)
-    # '1-5' bedeutet: Läuft nur Montag, Dienstag, Mittwoch, Donnerstag und Freitag
-    - cron: '0 12 * * 1-5'
-  # Erlaubt es dir, den Scraper jederzeit manuell unter "Actions" zu starten
+    # Erläuterung der Zeiten:
+    # 10:23 UTC -> 12:23 Schweizer Sommerzeit
+    # 11:23 UTC -> 12:23 Schweizer Winterzeit
+    # 13:23 UTC -> 15:23 Schweizer Sommerzeit
+    # 14:23 UTC -> 15:23 Schweizer Winterzeit
+    - cron: '23 10,11,13,14 * * 1-5'
+  
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Gewährt der Action die notwendigen Schreibrechte für das Repository
     permissions:
       contents: write
 
@@ -36,7 +38,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add urteile.json
-          # Verhindert Fehlermeldungen, falls sich an einem Tag nichts geändert hat
-          git commit -m "Automatisches Update: $(date +'%d.%m.%Y')" || exit 0
-          git push
+          
+          if [ -f urteile.json ]; then
+            git add urteile.json
+            # Commit nur, wenn tatsächlich neue Daten vorhanden sind
+            git commit -m "Automatisches Update: $(date +'%d.%m.%Y %H:%M')" || exit 0
+            git push
+          else
+            echo "Datei urteile.json wurde nicht gefunden. Überspringe Commit."
+          fi

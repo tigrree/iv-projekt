@@ -1,5 +1,12 @@
 [
     {
+        "aktenzeichen": "INFO_SKIP",
+        "datum": "16.03.2026",
+        "vorschau": "Keine IV-Urteile publiziert",
+        "zusammenfassung": "",
+        "url": ""
+    },
+    {
         "aktenzeichen": "9C_678/2024",
         "datum": "13.03.2026",
         "vorschau": "Invalidenversicherung",
@@ -254,13 +261,6 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "25.02.2026",
-        "vorschau": "Keine IV-Urteile publiziert",
-        "zusammenfassung": "",
-        "url": ""
-    },
-    {
-        "aktenzeichen": "INFO_SKIP",
-        "datum": "24.02.2026",
         "vorschau": "Keine IV-Urteile publiziert",
         "zusammenfassung": "",
         "url": ""

@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 import time
-import re  # Erlaubt das Suchen und Ersetzen von Mustern
+import re
 from datetime import datetime
 
 # AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
@@ -16,7 +16,6 @@ def translate_preview(text):
     """Übersetzt nur, wenn es absolut notwendig ist (z.B. Französisch/Italienisch)."""
     if not GROQ_API_KEY or not text: return text
     
-    # Falls Deutsch bereits erkannt wird, nichts tun
     german_indicators = ["invalidenversicherung", "rente", "iv-stelle", "versicherungsgericht"]
     if any(word in text.lower() for word in german_indicators):
         return text
@@ -40,14 +39,15 @@ def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:1500])
     
+    # ANGEPASSTER PROMPT: "Entscheidung" statt "Zu prüfen & Entscheidung"
     PROMPT_TEXT = """
 Du bist ein erfahrener Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Erstelle eine hochpräzise juristische Zusammenfassung.
 
 STRIKTE REGELN:
-1. Anonymisierung: Namen (z. B. A.________ oder A. A.________) konsequent auf den Buchstaben mit Punkt reduzieren (Beispiel: 'A.' oder 'A. A.'). Bodenstriche nach dem Punkt müssen ZWINGEND entfernt werden.
+1. Anonymisierung: Namen (z. B. A.________) konsequent auf den Buchstaben mit Punkt reduzieren (Beispiel: 'A.'). Bodenstriche nach dem Punkt ZWINGEND entfernen.
 2. Prozessgeschichte: Erfasse genau die Vorinstanz und den Weg zum Bundesgericht.
 3. Medizin: Fokus auf Gutachten (ABI, SMAB etc.) vs. Hausärzte. RAD explizit erwähnen.
-4. WEIV: Unterteile Prüfung in Zeiträume vor/nach 1.1.2024, falls relevant.
+4. WEIV: Unterteile Prüfung in Zeiträume vor/nach 1.1.2022, falls relevant.
 5. Verwertbarkeit: Gehe auf die Verwertbarkeit der Restarbeitsfähigkeit ein.
 
 FORMATIERUNG:
@@ -57,7 +57,7 @@ FORMATIERUNG:
 **Streitig**
 [Text]
 
-**Zu prüfen & Entscheidung**
+**Entscheidung**
 [Text inkl. Ergebnis]
 
 Antworte NUR in Deutsch. Keine Einleitung.
@@ -78,15 +78,13 @@ Hier ist das Urteil:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         antwort = response.json()['choices'][0]['message']['content'].strip()
         
-        # TECHNISCHE REINIGUNG (Regex): 
-        # Entfernt Bodenstriche bei Mustern wie A.____ oder A. A.____
+        # TECHNISCHE REINIGUNG (Regex)
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         
         return antwort
     except Exception as e:
-        # Verbesserte Fehleranzeige im Terminal, falls die KI ausfällt
-        print(f"Fehler bei der KI-Anfrage für dieses Urteil: {e}")
+        print(f"Fehler bei der KI-Anfrage: {e}")
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
@@ -133,17 +131,10 @@ def scrape_bger():
                 print(f"Treffer gefunden: {az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 
-                # Nur analysieren, wenn das Aktenzeichen noch nicht im Archiv ist (oder unvollständig ist)
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
-                    print(f"{az} bereits komplett im Archiv.")
                 else:
-                    if existing:
-                        print(f"Bisherige Zusammenfassung für {az} war unvollständig. KI-Analyse wird neu gestartet...")
-                    else:
-                        print(f"KI-Analyse für {az}...")
-                        
                     case_res = requests.get(case_url, headers=headers)
                     zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
                     time.sleep(2) 
@@ -154,22 +145,16 @@ def scrape_bger():
                     "zusammenfassung": zusammenfassung, "url": case_url
                 })
 
-        # Falls kein IV-Urteil gefunden wurde, erstelle Info-Eintrag
         if not tages_ergebnisse:
-            print(f"Keine IV-Urteile am {ZIEL_DATUM}. Erstelle Info-Eintrag.")
             tages_ergebnisse.append({
                 "aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM,
                 "vorschau": "Keine IV-Urteile publiziert", "zusammenfassung": "", "url": ""
             })
 
-        # Archiv aktualisieren: Einträge des aktuellen Tages ersetzen
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
-        
-        # Sortieren (Neueste zuerst)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         
-        # 14-Tage Limit einhalten
         alle_tage = sorted(list(set(d['datum'] for d in archiv_daten)), key=lambda x: datetime.strptime(x, "%d.%m.%Y"))
         while len(alle_tage) > 14:
             datum_zu_loeschen = alle_tage[0]
@@ -178,7 +163,6 @@ def scrape_bger():
 
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-        print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
             
     except Exception as e: print(f"Fehler: {e}")
 

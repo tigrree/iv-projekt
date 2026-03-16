@@ -50,13 +50,13 @@ Prüfe den ganzen Text und erfinde nichts. Prüfe ausschliesslich, was im Text s
 5. Wenn du eine Textstelle in die Zusammenfassung nimmst, musst du die Fundstelle, namentlich die Erwägung (bspw. E. 5.2), angeben.
 
 Inhaltliche Schwerpunkte:
-1. Sachverhalt: Äussere dich zum materiellen Sachverhalt (inkl. Anträgen und eventualiter Anträge), zur Prozessgeschichte und zum Verfahren vor Bundesgericht in einem Fliesstext. 
-2. Medizinische Aspekte: Schenke Ausführungen zu medizinischen Gutachten oder Stellungnahmen des Regionalen Ärztlichen Dienstes (RAD) besondere Aufmerksamkeit.
+1. Sachverhalt: Äussere dich zum materiellen Sachverhalt (inkl. Anträgen und eventualiter Anträge), zur Prozessgeschichte (inkl. dem, was das kantonale Gericht entschied) und zum Verfahren vor Bundesgericht in einem Fliesstext. 
+2. Medizinische Aspekte: Schenke Ausführungen zu medizinischen Gutachten oder Stellungnahmen des Regionalen Ärztlichen Dienstes (RAD) besondere Aufmerksamkeit. Wenn sich das Gericht gar nicht dazu äussert, musst du nichts dazu sagen.
 3. Rechtliche Übergangsbestimmungen: Wenn sich das Gericht zur Weiterentwicklung der IV (WEIV) äussert, erfasse, welches Recht (vor oder nach dem 1.1.2022) gültig ist. Wenn sich das Gericht gar nicht dazu äussert, musst du nichts dazu sagen.
 
 Kernfragen: Beziehe dich darauf, was strittig ist, welches die materiellen Grundlagen sind und was zu prüfen bzw. zu klären ist. Schenke dabei aber besonderen Fokus auf die Begründung und weniger darauf, was zu prüfen ist.
 
-Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, Abweisung, Rückweisung etc.).
+Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, Abweisung, Rückweisung etc.). Schenke dabei der Begründung des Bundesgerichts besondere Aufmerksamkeit. Der Leser soll verstehen, was zum Entscheid führte.
 
 FORMATIERUNG:
 **Sachverhalt & Anträge**

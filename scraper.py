@@ -20,10 +20,7 @@ def translate_preview(text):
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     payload = {
         "model": "llama-3.3-70b-versatile",
-        "messages": [
-            {"role": "system", "content": "Du bist ein Übersetzer für Schweizer Rechtsterminologie. Antworte NUR mit der Übersetzung."},
-            {"role": "user", "content": f"Übersetze kurz ins Deutsche: {text}"}
-        ],
+        "messages": [{"role": "system", "content": "Du bist ein Übersetzer."}, {"role": "user", "content": f"Übersetze kurz: {text}"}],
         "temperature": 0.1 
     }
     try:
@@ -34,35 +31,21 @@ def translate_preview(text):
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:1500])
-    PROMPT_TEXT = """
-Du bist ein erfahrener Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Erstelle eine hochpräzise juristische Zusammenfassung.
+    PROMPT_TEXT = """Du bist ein erfahrener Bundesrichter. Erstelle eine hochpräzise Zusammenfassung.
 STRIKTE REGELN:
-1. Anonymisierung: Namen (z. B. A.________) konsequent auf den Buchstaben mit Punkt reduzieren (Beispiel: 'A.'). Bodenstriche ZWINGEND entfernen.
-2. Prozessgeschichte: Erfasse Vorinstanz und Weg zum Bundesgericht.
-3. Medizin: Fokus auf Gutachten (ABI, SMAB etc.) vs. Hausärzte. RAD erwähnen.
-4. WEIV: Unterteile Prüfung in Zeiträume vor/nach 1.1.2022, falls relevant.
-5. Verwertbarkeit: Gehe auf die Verwertbarkeit der Restarbeitsfähigkeit ein.
-
+1. Anonymisierung: Namen (z. B. A.________) auf Buchstaben mit Punkt reduzieren. Bodenstriche entfernen.
+2. Fokus: Gutachten, RAD, WEIV, Verwertbarkeit.
 FORMATIERUNG:
 **Sachverhalt & Anträge**
-[Text]
 **Streitig**
-[Text]
-**Entscheidung**
-[Text inkl. Ergebnis]
-"""
+**Entscheidung**"""
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
-    payload = {
-        "model": "llama-3.3-70b-versatile",
-        "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}],
-        "temperature": 0.1
-    }
+    payload = {"model": "llama-3.3-70b-versatile", "messages": [{"role": "user", "content": PROMPT_TEXT + clean_text}], "temperature": 0.1}
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         antwort = response.json()['choices'][0]['message']['content'].strip()
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
-        antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         return antwort
     except: return "Zusammenfassung aktuell nicht verfügbar."
 
@@ -94,30 +77,42 @@ def scrape_bger():
             raw_az = link_tag.get_text().strip()
             if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
             
-            # PRÜFUNG AUF PUBLIKATIONS-STERN
             is_publikation = "*" in raw_az
             clean_az = raw_az.replace("*", "").strip()
-            
-            vorschau_text = ""
-            if i + 1 < len(rows):
-                potential_detail = rows[i+1].get_text().strip()
-                if not (potential_detail.startswith("8C_") or potential_detail.startswith("9C_")):
-                    vorschau_text = potential_detail
-            
+            vorschau_text = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
+
             if any(key in (row.get_text() + vorschau_text).lower() for key in KEYWORDS):
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
+                
+                # URTEIL LADEN FÜR ROLLEN-CHECK
+                case_res = requests.get(case_url, headers=headers)
+                case_html = BeautifulSoup(case_res.text, 'html.parser').get_text()
+                
+                # Check Rolle IV-Stelle Zürich
+                iv_zh_fuehrer = False
+                iv_zh_gegner = False
+                
+                beteiligte_part = case_html.split("Sachverhalt:")[0] # Suche nur am Anfang
+                if "IV-Stelle des Kantons Zürich" in beteiligte_part:
+                    # Suche nach Kontext Beschwerdeführer/Gegner
+                    if re.search(r"IV-Stelle des Kantons Zürich.*Beschwerdeführerin", beteiligte_part, re.I):
+                        iv_zh_fuehrer = True
+                    elif re.search(r"IV-Stelle des Kantons Zürich.*Beschwerdegegnerin", beteiligte_part, re.I):
+                        iv_zh_gegner = True
+
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
-                    case_res = requests.get(case_url, headers=headers)
-                    zusammenfassung = summarize_with_ai(BeautifulSoup(case_res.text, 'html.parser').get_text())
+                    zusammenfassung = summarize_with_ai(case_html)
                     time.sleep(2) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": clean_az, 
                     "datum": ZIEL_DATUM,
-                    "publikation": is_publikation, # NEUES FELD
+                    "publikation": is_publikation,
+                    "iv_zh_fuehrer": iv_zh_fuehrer,
+                    "iv_zh_gegner": iv_zh_gegner,
                     "vorschau": translate_preview(vorschau_text), 
                     "zusammenfassung": zusammenfassung, 
                     "url": case_url

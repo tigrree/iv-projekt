@@ -31,10 +31,8 @@ def translate_preview(text):
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
-    # Etwas längerer Text-Ausschnitt, da der Prompt detaillierter ist
     clean_text = " ".join(urteil_text.split()[:2000])
     
-    # NEUER ANGEPASSTER PROMPT
     PROMPT_TEXT = """Du bist ein erfahrener Jurist, genauer gesagt ein erfahrener Richter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise und fachgerecht zusammenzufassen.
 
 Prüfe den ganzen Text und erfinde nichts. Prüfe ausschliesslich, was im Text steht. Beachte dabei folgende strikte Regeln:
@@ -50,13 +48,13 @@ Prüfe den ganzen Text und erfinde nichts. Prüfe ausschliesslich, was im Text s
 5. Wenn du eine Textstelle in die Zusammenfassung nimmst, musst du die Fundstelle, namentlich die Erwägung (bspw. E. 5.2), angeben.
 
 Inhaltliche Schwerpunkte:
-1. Sachverhalt: Äussere dich zum materiellen Sachverhalt (inkl. Anträgen und eventualiter Anträge), zur Prozessgeschichte (inkl. dem, was das kantonale Gericht entschied) und zum Verfahren vor Bundesgericht in einem Fliesstext. 
-2. Medizinische Aspekte: Schenke Ausführungen zu medizinischen Gutachten oder Stellungnahmen des Regionalen Ärztlichen Dienstes (RAD) besondere Aufmerksamkeit. Wenn sich das Gericht gar nicht dazu äussert, musst du nichts dazu sagen.
+1. Sachverhalt: Äussere dich zum materiellen Sachverhalt (inkl. Anträgen und eventualiter Anträge), zur Prozessgeschichte und zum Verfahren vor Bundesgericht in einem Fliesstext. 
+2. Medizinische Aspekte: Schenke Ausführungen zu medizinischen Gutachten oder Stellungnahmen des Regionalen Ärztlichen Dienstes (RAD) besondere Aufmerksamkeit.
 3. Rechtliche Übergangsbestimmungen: Wenn sich das Gericht zur Weiterentwicklung der IV (WEIV) äussert, erfasse, welches Recht (vor oder nach dem 1.1.2022) gültig ist. Wenn sich das Gericht gar nicht dazu äussert, musst du nichts dazu sagen.
 
 Kernfragen: Beziehe dich darauf, was strittig ist, welches die materiellen Grundlagen sind und was zu prüfen bzw. zu klären ist. Schenke dabei aber besonderen Fokus auf die Begründung und weniger darauf, was zu prüfen ist.
 
-Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, Abweisung, Rückweisung etc.). Schenke dabei der Begründung des Bundesgerichts besondere Aufmerksamkeit. Der Leser soll verstehen, was zum Entscheid führte.
+Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, Abweisung, Rückweisung etc.).
 
 FORMATIERUNG:
 **Sachverhalt & Anträge**
@@ -85,11 +83,8 @@ Hier ist das Urteil:
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         antwort = response.json()['choices'][0]['message']['content'].strip()
-        
-        # Zusätzliche Bereinigung der Bodenstriche bei Namen
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
-        
         return antwort
     except Exception as e:
         print(f"Fehler bei der KI-Anfrage: {e}")
@@ -99,8 +94,10 @@ def scrape_bger():
     print(f"--- Scan für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
+    
     if not os.path.exists('urteile.json'):
         with open('urteile.json', 'w', encoding='utf-8') as f: json.dump([], f)
+    
     with open('urteile.json', 'r', encoding='utf-8') as f:
         try: archiv_daten = json.load(f)
         except: archiv_daten = []
@@ -109,10 +106,12 @@ def scrape_bger():
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
+        
         if not tag_link: return print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
 
         full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
+        
         tages_ergebnisse = []
         rows = day_soup.find_all('tr')
         
@@ -134,20 +133,27 @@ def scrape_bger():
                 case_res = requests.get(case_url, headers=headers)
                 case_html = BeautifulSoup(case_res.text, 'html.parser').get_text()
                 
-                # Check Rolle IV-Stelle Zürich
+                # --- VERBESSERTE LOGIK FÜR DIE ROLLENPRÜFUNG ---
                 iv_zh_fuehrer = False
                 iv_zh_gegner = False
+                
+                # Wir nehmen den Teil vor dem Sachverhalt und bügeln alle Leerzeichen/Umbrüche glatt
                 beteiligte_part = case_html.split("Sachverhalt:")[0]
-                if "IV-Stelle des Kantons Zürich" in beteiligte_part:
-                    if re.search(r"IV-Stelle des Kantons Zürich.*Beschwerdeführerin", beteiligte_part, re.I):
+                search_text = " ".join(beteiligte_part.split())
+                
+                if "IV-Stelle des Kantons Zürich" in search_text:
+                    if "Beschwerdeführerin" in search_text:
                         iv_zh_fuehrer = True
-                    elif re.search(r"IV-Stelle des Kantons Zürich.*Beschwerdegegnerin", beteiligte_part, re.I):
+                    elif "Beschwerdegegnerin" in search_text:
                         iv_zh_gegner = True
 
-                # Neue Analyse erzwingen oder bestehende nehmen
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
+                    # Falls das bestehende Urteil die neuen Felder noch nicht hat, aktualisieren wir sie
+                    existing["iv_zh_fuehrer"] = iv_zh_fuehrer
+                    existing["iv_zh_gegner"] = iv_zh_gegner
+                    existing["publikation"] = is_publikation
                 else:
                     zusammenfassung = summarize_with_ai(case_html)
                     time.sleep(2) 

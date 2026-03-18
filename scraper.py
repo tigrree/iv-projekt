@@ -75,7 +75,7 @@ def summarize_with_ai(urteil_text):
 [Text]
 
 **Entscheidung**
-[Text: Führe hier ausschliesslich die materielle Begründung des Bundesgerichts zum konkreten Fall auf. Beginne direkt mit der Kritik an der Vorinstanz (bei Gutheissung) oder der Bestätigung der konkreten Beweiswürdigung (bei Abweisung), ohne allgemeine rechtliche Einleitung.]
+[Text]
 
 Antworte NUR in Deutsch. Keine Einleitung.
 Hier ist das Urteil:

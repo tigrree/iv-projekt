@@ -52,12 +52,13 @@ def summarize_with_ai(urteil_text):
 
 ### STRIKTE INHALTSFILTER:
 1 KEINE Einleitung ("In diesem Urteil geht es um...").
-2 KEINE Wiederholung von Standard-Rechtssätzen (Art. 95, 97 BGG etc. und "Die Vorinstanz hat die Bestimmungen zu den Begriffen der Invalidität und der Erwerbsunfähigkeit richtig dargelegt").
+2 KEINE Wiederholung von Standard-Rechtssätzen (Art. 95, 97 BGG etc.).
 3 KEINE Sätze wie "Die Vorinstanz hat die Bestimmungen richtig dargelegt".
 4 KEINE redundanten Aufzählungen ("Das Gericht hat zu prüfen...").
-5. Rubrum und Dispositiv (als Textblock) weglassen.
-6. Prozesskosten/Entschädigungen weglassen.
-7. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.
+5 Satz "Die Vorinstanz hat die Bestimmungen zu den Begriffen der Invalidität und der Erwerbsunfähigkeit richtig dargelegt" weglassen. Äussere dich nur dazu, wenn die Vorinstanz die Bestimmungen zu den Begriffen der Invalidität und der Erwerbsunfähigkeit NICHT richtig dargelegt hat.
+6. Rubrum und Dispositiv (als Textblock) weglassen.
+7. Prozesskosten/Entschädigungen weglassen.
+8. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.
 
 ### STRIKTE FORMREGELN:
 1. Anonymisierung:

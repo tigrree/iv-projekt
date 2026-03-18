@@ -32,7 +32,7 @@ def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:2000])
     
-PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
+    PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
 
 ### STRIKTE REGEL FÜR DIE BEGRÜNDUNG (KERNAUFGABE):
 Wenn das Bundesgericht ein vorinstanzliches Urteil aufhebt oder zurückweist, liegt der Fokus deiner Zusammenfassung zwingend auf der FEHLERANALYSE des kantonalen Urteils durch das Bundesgericht. 

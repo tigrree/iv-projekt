@@ -7,7 +7,7 @@ import re
 from datetime import datetime
 
 # AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
-ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+ZIEL_DATUM = "12.03.2025"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]

@@ -51,11 +51,11 @@ def summarize_with_ai(urteil_text):
 4.2 Übergangsrecht: Falls WEIV (altes vs. neues Recht ab 1.1.2022) thematisiert wird, kurz erwähnen, welches Recht anwendbar ist. Sofern das WEIV nicht thematisiert wird, musst du keine Ausführungen zum WEIV erfassen.
 
 ### STRIKTE INHALTSFILTER:
-1 ÜBERSPRINGE DEKLARATORISCHE VERWEISE: Erfasse KEINERLEI Text dazu, dass die Vorinstanz Rechtsgrundlagen (wie Begriffe der Invalidität, Erwerbsunfähigkeit oder Beweiswertregeln) "richtig dargelegt" oder "korrekt wiedergegeben" hat. Steige direkt bei der materiellen Prüfung des Einzelfalls ein.
-2 KEINE Einleitung ("In diesem Urteil geht es um...").
-3 KEINE Wiederholung von Standard-Rechtssätzen (Art. 95, 97 BGG etc.).
-4 KEINE Sätze wie "Die Vorinstanz hat die Bestimmungen richtig dargelegt".
-5 KEINE redundanten Aufzählungen ("Das Gericht hat zu prüfen...").
+1. KEINE Erwähnung, dass die Vorinstanz die Bestimmungen zu den Begriffen der Invalidität und der Erwerbsunfähigkeit richtig dargelegt hat. Das ist für die Zusammenfassung wertlos.
+2. KEINE Einleitung ("In diesem Urteil geht es um...").
+3. KEINE Standard-Sätze zu Art. 95, 97, 105, 106 BGG. Das ist für die Zusammenfassung wertlos.
+4. KEINE Sätze wie "Die Vorinstanz hat die Bestimmungen richtig dargelegt".
+5. KEINE redundanten Aufzählungen ("Das Gericht hat zu prüfen...").
 6. Rubrum und Dispositiv (als Textblock) weglassen.
 7. Prozesskosten/Entschädigungen weglassen.
 8. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.

@@ -39,9 +39,9 @@ def summarize_with_ai(urteil_text):
 1. Lies als erstes das ganze Urteil durch.
 2. Analysiere das Ergebnis: Rückweisung, Gutheissung oder Abweisung?
 3. Bei RÜCKWEISUNG/GUTHEISSUNG:
-4.1 Benenne exakt den Rechtsfehler der Vorinstanz. Mit anderen Worten: Führe die, gemäss des Entscheid des Bundesgerichts, fehlerhaften vorinstanzlichen Ausführungen auf. Der Fokus deiner Zusammenfassung liegt zwingend auf der FEHLERANALYSE des kantonalen Urteils durch das Bundesgericht. 
-4.2 Erfasse genau, was die Vorinstanz im neuen Verfahren nachholen muss.
-5. Bei ABWEISUNG: Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
+3.1 Führe ausschliesslich diejenigen vorinstanzlichen Ausführungen auf, die das Bundesgericht explizit als rechtsfehlerhaft bezeichnet. Nutze dabei die Terminologie des Gerichts (z.B. „verletzt Bundesrecht“, „überschreitet Ermessensspielraum“). Vermeide eigene Schlussfolgerungen wie „Dies ist bundesrechtswidrig“, wenn diese exakte Formulierung nicht im Text steht. 
+3.2 Erfasse genau, was die Vorinstanz im neuen Verfahren nachholen muss.
+4. Bei ABWEISUNG: Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
 
 ### STRIKTE ROLLENTRENNUNG (ATTRIBUTION):
 Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten), den Feststellungen der Vorinstanz (was das kantonale Gericht entschied) und der Erwägung des Bundesgerichts (was das höchste Gericht als richtig/falsch bewertet).
@@ -49,7 +49,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 2. Stelle ein Vorbringen einer Partei niemals als Tatsache dar, es sei denn, das Bundesgericht bestätigt diese Rüge in seinen eigenen Erwägungen ausdrücklich als begründet.
 
 ### INHALTLICHE SCHWERPUNKTE:
-1. Erfinde nichts, sondern bezieh dich ausschliesslich auf den Urteilstext.
+1. Erfinde nichts und leite nichts selbstständig her. Nutze für die Begründung nahezu ausschliesslich die im Urteil verwendeten Verben und Adjektive. Wenn das Gericht schreibt, eine Schlussfolgerung „beruht auf einer Verletzung von Bundesrecht“, schreibe nicht „ist bundesrechtswidrig“.
 2. Zum Sachverhalt: Fokus auf dem materiellen Sachverhalt. Namentlich auf den Anträgen (auch eventualiter Anträge), Prozessgeschichte (Vorinstanz) und Verfahren vor Bundesgericht.
 3. Streitig: Fokus auf dem, was strittig ist und was unstrittig ist.
 4. Zum Entscheid:
@@ -65,6 +65,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 6. Rubrum und Dispositiv (als Textblock) weglassen.
 7. Prozesskosten/Entschädigungen weglassen.
 8. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.
+9. VERBOT DER SYNTHESE: Erstelle keine eigenen logischen Verknüpfungen zwischen Parteivorbringen und dem Urteil. Wenn das Bundesgericht eine Rüge nur wiedergibt, ohne sie sich zu eigen zu machen, darf sie nicht als Feststellung des Gerichts erscheinen. Die Zusammenfassung muss ein neutrales Referat des Textes sein, keine rechtliche Würdigung durch die KI.
 
 ### STRIKTE FORMREGELN:
 1. Anonymisierung:

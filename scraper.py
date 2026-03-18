@@ -108,7 +108,7 @@ Hier ist das Urteil:
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         return antwort
     except Exception as e:
-        print(f"Fehler bei der KI-Anfrage: {e}")
+        print(f"Fehler bei der KI-Anfrage: {e}") # Diese Zeile ist wichtig!
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():

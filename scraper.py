@@ -52,7 +52,7 @@ def summarize_with_ai(urteil_text):
 
 ### STRIKTE INHALTSFILTER:
 1 KEINE Einleitung ("In diesem Urteil geht es um...").
-2 KEINE Wiederholung von Standard-Rechtssätzen (Art. 95, 97 BGG etc.).
+2 KEINE Wiederholung von Standard-Rechtssätzen (Art. 95, 97 BGG etc. und "Die Vorinstanz hat die Bestimmungen zu den Begriffen der Invalidität und der Erwerbsunfähigkeit richtig dargelegt").
 3 KEINE Sätze wie "Die Vorinstanz hat die Bestimmungen richtig dargelegt".
 4 KEINE redundanten Aufzählungen ("Das Gericht hat zu prüfen...").
 5. Rubrum und Dispositiv (als Textblock) weglassen.

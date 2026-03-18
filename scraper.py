@@ -7,7 +7,6 @@ import re
 from datetime import datetime
 
 # AUTOMATISIERUNG: Für den Testlauf auf den 12.03.2026 gesetzt
-# Danach wieder auf datetime.now().strftime("%d.%m.%Y") zurückstellen
 ZIEL_DATUM = "12.03.2026"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -25,13 +24,14 @@ def translate_preview(text):
         "temperature": 0.1 
     }
     try:
-        response = requests.post(url, headers=headers, json=payload, timeout=15)
+        response = requests.post(url, headers=headers, json=payload, timeout=20)
         return response.json()['choices'][0]['message']['content'].strip().replace('"', '')
     except: return text
 
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
-    clean_text = " ".join(urteil_text.split()[:2000])
+    # Text etwas einkürzen für stabilere API-Antworten
+    clean_text = " ".join(urteil_text.split()[:1800])
     
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
 
@@ -71,7 +71,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 1. Anonymisierung:
 1.1. Namen von Personen (z. B. B.________) konsequent auf den Buchstaben und den Punkt reduzieren (Beispiel: B. B.).
 1.2. Gutachterstellen: Nur die Abkürzung angeben (z.B. ZMB statt Zentrum für Medizinische Begutachtung).
-2. Schreibstil: Konsequent "ss" statt "ß".
+2. Schreibstil: Konsequent 'ss' statt 'ß'.
 3. Zitatpflicht: Jede inhaltliche Feststellung MUSS mit der Erwägung (z.B. E. 7.1) belegt werden.
 4. Indirekte Rede & Quelle: Nutze bei der Wiedergabe von Parteivorbringen konsequent Verben wie „macht geltend“, „behauptet“ oder „rügt“. Bei der Vorinstanz „ging davon aus“ oder „erwog“. Nur beim Bundesgericht verwendest du Feststellungen wie „stellt fest“ oder „erkennt“.
 5. Wahrheitsgehalt: Wenn du eine Kritik (z.B. „medizinische Fragen selbst interpretiert“) erwähnst, stelle klar, ob dies eine Rüge des Beschwerdeführers ist oder eine Feststellung des Bundesgerichts.
@@ -95,20 +95,22 @@ Hier ist das Urteil:
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages": [
-            {"role": "system", "content": "Du bist ein erfahrener Schweizer Bundesrichter. Du nutzt ausschliesslich 'ss' statt 'ss' und zitierst Erwägungen präzise."},
+            {"role": "system", "content": "Du bist ein erfahrener Schweizer Bundesrichter. Du nutzt ausschliesslich 'ss' statt 'ß' und zitierst Erwägungen präzise."},
             {"role": "user", "content": PROMPT_TEXT + clean_text}
         ],
         "temperature": 0.1
     }
     try:
-        response = requests.post(url, headers=headers, json=payload, timeout=60)
-        antwort = response.json()['choices'][0]['message']['content'].strip()
-        # Säuberung von Unterstrichen bei Namen
+        # Timeout auf 120 Sekunden erhöht für lange Urteile
+        response = requests.post(url, headers=headers, json=payload, timeout=120)
+        response.raise_for_status() # Löst Fehler bei 4xx/5xx aus
+        data = response.json()
+        antwort = data['choices'][0]['message']['content'].strip()
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         return antwort
     except Exception as e:
-        print(f"Fehler bei der KI-Anfrage: {e}") # Diese Zeile ist wichtig!
+        print(f"DEBUG: KI-Fehler-Details: {e}")
         return "Zusammenfassung aktuell nicht verfügbar."
 
 def scrape_bger():
@@ -154,7 +156,6 @@ def scrape_bger():
                 case_res = requests.get(case_url, headers=headers)
                 case_html = BeautifulSoup(case_res.text, 'html.parser').get_text()
                 
-                # Rollenprüfung IV-Stelle Zürich
                 iv_zh_fuehrer = False
                 iv_zh_gegner = False
                 beteiligte_part = case_html.split("Sachverhalt:")[0]
@@ -169,9 +170,6 @@ def scrape_bger():
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
-                    existing["iv_zh_fuehrer"] = iv_zh_fuehrer
-                    existing["iv_zh_gegner"] = iv_zh_gegner
-                    existing["publikation"] = is_publikation
                 else:
                     zusammenfassung = summarize_with_ai(case_html)
                     time.sleep(2) 
@@ -190,6 +188,7 @@ def scrape_bger():
         if not tages_ergebnisse:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM, "vorschau": "Keine neuen IV-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False})
 
+        # Archiv aktualisieren
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
@@ -198,7 +197,8 @@ def scrape_bger():
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
 
-    except Exception as e: print(f"Fehler: {e}")
+    except Exception as e:
+        print(f"Kritischer Fehler im Scraper: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

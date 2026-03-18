@@ -13,7 +13,6 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 KEYWORDS = ["invalid"]
 
 def translate_preview(text):
-    """Übersetzt nur, wenn es absolut notwendig ist (z.B. Französisch/Italienisch)."""
     if not GROQ_API_KEY or not text: return text
     german_indicators = ["invalidenversicherung", "rente", "iv-stelle", "versicherungsgericht"]
     if any(word in text.lower() for word in german_indicators): return text
@@ -35,7 +34,7 @@ def summarize_with_ai(urteil_text):
     
     PROMPT_TEXT = """Du bist ein erfahrener Jurist, genauer gesagt ein erfahrener Richter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise und fachgerecht zusammenzufassen.
 
-Prüfe den ganzen Urteilstext und erfinde nichts. Prüfe ausschliesslich, was im Urteilsext steht. Beachte dabei folgende strikte Regeln:
+Prüfe den ganzen Text und erfinde nichts. Prüfe ausschliesslich, was im Text steht. Beachte dabei folgende strikte Regeln:
 1. Anonymisierung:
 1.1. Namen von Personen (z. B. B.________) müssen konsequent auf den Buchstaben und den Punkt reduziert werden (Beispiel: B.).
 1.2. Wenn die Gutachterstellen ausgeschrieben werden und in Klammern die Abkürzung angegeben wird (Beispiel: Expertise des Centre médical d'expertises = CEMEDEX), dann nur die Abkürzung angeben.
@@ -48,12 +47,11 @@ Prüfe den ganzen Urteilstext und erfinde nichts. Prüfe ausschliesslich, was im
 5. Wenn du eine Textstelle in die Zusammenfassung nimmst, musst du die Fundstelle, namentlich die Erwägung (bspw. E. 5.2), angeben.
 
 Inhaltliche Schwerpunkte:
-1. Sachverhalt: Äussere dich zum materiellen Sachverhalt (inkl. Anträgen und eventualiter Anträge), zur Prozessgeschichte und zum Verfahren vor Bundesgericht in einem Fliesstext.
-2. Streitig: Erfasse, was strittig ist (meistens steht im Urteilstest "Strittig ist, ..."). Wenn beschrieben wird, dass etwas unstrittig ist, sollst du dies auch erfassen. Erfasse darin aber nicht, was entschieden wurde. Was entschieden wurde, ist erst im Absatz "Entscheidung" relevant.
-3. Medizinische Aspekte: Schenke Ausführungen zu medizinischen Gutachten oder Stellungnahmen des Regionalen Ärztlichen Dienstes (RAD) besondere Aufmerksamkeit.
-4. Rechtliche Übergangsbestimmungen: Wenn sich das Gericht zur Weiterentwicklung der IV (WEIV) äussert, erfasse, welches Recht (vor oder nach dem 1.1.2022) gültig ist. Wenn sich das Gericht gar nicht dazu äussert, musst du nichts dazu sagen.
+1. Sachverhalt: Äussere dich zum materiellen Sachverhalt (inkl. Anträgen und eventualiter Anträge), zur Prozessgeschichte und zum Verfahren vor Bundesgericht in einem Fliesstext. 
+2. Medizinische Aspekte: Schenke Ausführungen zu medizinischen Gutachten oder Stellungnahmen des Regionalen Ärztlichen Dienstes (RAD) besondere Aufmerksamkeit.
+3. Rechtliche Übergangsbestimmungen: Wenn sich das Gericht zur Weiterentwicklung der IV (WEIV) äussert, erfasse, welches Recht (vor oder nach dem 1.1.2022) gültig ist. Wenn sich das Gericht gar nicht dazu äussert, musst du nichts dazu sagen.
 
-Kernfragen: Beziehe dich darauf, was strittig und unstrittig ist, welches die materiellen Grundlagen sind und was zu prüfen bzw. zu klären ist. Schenke dabei aber besonderen Fokus auf die Begründung und weniger darauf, was zu prüfen ist.
+Kernfragen: Beziehe dich darauf, was strittig ist, welches die materiellen Grundlagen sind und was zu prüfen bzw. zu klären ist. Schenke dabei aber besonderen Fokus auf die Begründung und weniger darauf, was zu prüfen ist.
 
 Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, Abweisung, Rückweisung etc.).
 
@@ -134,11 +132,9 @@ def scrape_bger():
                 case_res = requests.get(case_url, headers=headers)
                 case_html = BeautifulSoup(case_res.text, 'html.parser').get_text()
                 
-                # --- VERBESSERTE LOGIK FÜR DIE ROLLENPRÜFUNG ---
                 iv_zh_fuehrer = False
                 iv_zh_gegner = False
                 
-                # Wir nehmen den Teil vor dem Sachverhalt und bügeln alle Leerzeichen/Umbrüche glatt
                 beteiligte_part = case_html.split("Sachverhalt:")[0]
                 search_text = " ".join(beteiligte_part.split())
                 
@@ -151,7 +147,6 @@ def scrape_bger():
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
                 if existing and "nicht verfügbar" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
-                    # Falls das bestehende Urteil die neuen Felder noch nicht hat, aktualisieren wir sie
                     existing["iv_zh_fuehrer"] = iv_zh_fuehrer
                     existing["iv_zh_gegner"] = iv_zh_gegner
                     existing["publikation"] = is_publikation
@@ -171,7 +166,8 @@ def scrape_bger():
                 })
 
         if not tages_ergebnisse:
-            tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM, "vorschau": "Keine IV-Urteile publiziert", "zusammenfassung": "", "url": "", "publikation": False})
+            # ANGEPASSTER TEXT IM SPEICHER-PROZESS
+            tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM, "vorschau": "Keine neuen IV-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False})
 
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)

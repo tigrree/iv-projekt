@@ -38,7 +38,7 @@ def summarize_with_ai(urteil_text):
 ### DEIN ARBEITSAUFTRAG:
 1. Analysiere das Ergebnis: Rückweisung, Gutheissung oder Abweisung?
 2. Bei RÜCKWEISUNG/GUTHEISSUNG:
-2.1 Benenne exakt den Rechtsfehler der Vorinstanz. Der Fokus deiner Zusammenfassung liegt zwingend auf der FEHLERANALYSE des kantonalen Urteils durch das Bundesgericht.
+2.1 Benenne exakt den Rechtsfehler der Vorinstanz. Der Fokus deiner Zusammenfassung liegt zwingend auf der FEHLERANALYSE des kantonalen Urteils durch das Bundesgericht. Führe auf, auf welchen Grundlagen die Vorinstanz ihr Urteil begründet und führe auf, was das Bundesgericht dazu ausführt (warum die vorinstanzlichen Ausführungen falsch sind).
 2.2 Erfasse genau, was die Vorinstanz im neuen Verfahren nachholen muss.
 3. Bei ABWEISUNG: Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
 

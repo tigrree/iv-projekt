@@ -31,7 +31,8 @@ def translate_preview(text):
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:2000])
-    
+
+    # DIESER GANZE BLOCK MUSS EINGERÜCKT SEIN:
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
 
 ### STRIKTE REGEL FÜR DIE BEGRÜNDUNG (KERNAUFGABE):

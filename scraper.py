@@ -36,11 +36,12 @@ def summarize_with_ai(urteil_text):
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
 
 ### DEIN ARBEITSAUFTRAG:
-1. Analysiere das Ergebnis: Rückweisung, Gutheissung oder Abweisung?
-2. Bei RÜCKWEISUNG/GUTHEISSUNG:
-2.1 Benenne exakt den Rechtsfehler der Vorinstanz. Mit anderen Worten: Führe die, gemäss des Entscheid des Bundesgerichts, fehlerhaften vorinstanzlichen Ausführungen auf. Der Fokus deiner Zusammenfassung liegt zwingend auf der FEHLERANALYSE des kantonalen Urteils durch das Bundesgericht.
-2.2 Erfasse genau, was die Vorinstanz im neuen Verfahren nachholen muss.
-3. Bei ABWEISUNG: Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
+1. Lies als erstes das ganze Urteil durch.
+2. Analysiere das Ergebnis: Rückweisung, Gutheissung oder Abweisung?
+3. Bei RÜCKWEISUNG/GUTHEISSUNG:
+4.1 Benenne exakt den Rechtsfehler der Vorinstanz. Mit anderen Worten: Führe die, gemäss des Entscheid des Bundesgerichts, fehlerhaften vorinstanzlichen Ausführungen auf. Der Fokus deiner Zusammenfassung liegt zwingend auf der FEHLERANALYSE des kantonalen Urteils durch das Bundesgericht. 
+4.2 Erfasse genau, was die Vorinstanz im neuen Verfahren nachholen muss.
+5. Bei ABWEISUNG: Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
 
 ### INHALTLICHE SCHWERPUNKTE:
 1. Erfinde nichts, sondern bezieh dich ausschliesslich auf den Urteilstext.

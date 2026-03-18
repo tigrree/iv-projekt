@@ -6,7 +6,8 @@ import time
 import re
 from datetime import datetime
 
-# AUTOMATISIERUNG: Nimmt standardmässig das heutige Datum
+# AUTOMATISIERUNG: Für den Testlauf auf den 12.03.2026 gesetzt
+# Danach wieder auf datetime.now().strftime("%d.%m.%Y") zurückstellen
 ZIEL_DATUM = "12.03.2026"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -31,8 +32,7 @@ def translate_preview(text):
 def summarize_with_ai(urteil_text):
     if not GROQ_API_KEY: return "API Key fehlt."
     clean_text = " ".join(urteil_text.split()[:2000])
-
-    # DIESER GANZE BLOCK MUSS EINGERÜCKT SEIN:
+    
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
 
 ### STRIKTE REGEL FÜR DIE BEGRÜNDUNG (KERNAUFGABE):
@@ -58,7 +58,7 @@ Beachte bei jeder Zusammenfassung folgende inhaltlichen Schwerpunkte:
 1.2. Gutachterstellen: Nur die Abkürzung angeben (z.B. ZMB statt Zentrum für Medizinische Begutachtung).
 2. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.
 3. Schreibstil:
-3.1 Konsequent "ss" statt "ß".
+3.1 Konsequent "ss" statt "ss".
 3.2 Lasse Floskeln weg wie "Die Vorinstanz hat die Bestimmungen richtig dargelegt". Steige direkt dort ein, wo das Bundesgericht auf die entscheidwesentlichen Feststellungen eingeht.
 4. Zitatpflicht: Jede inhaltliche Feststellung MUSS mit der Erwägung (z.B. E. 7.1) belegt werden.
 
@@ -86,7 +86,7 @@ Hier ist das Urteil:
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages": [
-            {"role": "system", "content": "Du bist ein erfahrener Schweizer Bundesrichter. Du nutzt ausschliesslich 'ss' statt 'ß' und zitierst Erwägungen präzise."},
+            {"role": "system", "content": "Du bist ein erfahrener Schweizer Bundesrichter. Du nutzt ausschliesslich 'ss' statt 'ss' und zitierst Erwägungen präzise."},
             {"role": "user", "content": PROMPT_TEXT + clean_text}
         ],
         "temperature": 0.1
@@ -94,6 +94,7 @@ Hier ist das Urteil:
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         antwort = response.json()['choices'][0]['message']['content'].strip()
+        # Säuberung von Unterstrichen bei Namen
         antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
         antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
         return antwort
@@ -144,9 +145,9 @@ def scrape_bger():
                 case_res = requests.get(case_url, headers=headers)
                 case_html = BeautifulSoup(case_res.text, 'html.parser').get_text()
                 
+                # Rollenprüfung IV-Stelle Zürich
                 iv_zh_fuehrer = False
                 iv_zh_gegner = False
-                
                 beteiligte_part = case_html.split("Sachverhalt:")[0]
                 search_text = " ".join(beteiligte_part.split())
                 
@@ -178,7 +179,6 @@ def scrape_bger():
                 })
 
         if not tages_ergebnisse:
-            # ANGEPASSTER TEXT IM SPEICHER-PROZESS
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM, "vorschau": "Keine neuen IV-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False})
 
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]

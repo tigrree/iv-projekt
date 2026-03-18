@@ -53,7 +53,7 @@ Inhaltliche Schwerpunkte:
 
 Kernfragen: Beziehe dich darauf, was strittig ist, welches die materiellen Grundlagen sind und was zu prüfen bzw. zu klären ist. Schenke dabei aber besonderen Fokus auf die Begründung und weniger darauf, was zu prüfen ist.
 
-Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, Abweisung, Rückweisung etc.).
+Entscheid: Erfasse am Ende, was das Bundesgericht letztlich entschieden hat (Gutheissung, teilweise Gutheissung, Abweisung, Rückweisung etc.).
 
 FORMATIERUNG:
 **Sachverhalt & Anträge**

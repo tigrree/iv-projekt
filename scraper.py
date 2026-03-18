@@ -43,10 +43,12 @@ def summarize_with_ai(urteil_text):
 3. Bei ABWEISUNG: Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
 
 ### INHALTLICHE SCHWERPUNKTE:
-1. Sachverhalt: Fokus auf dem materiellen Sachverhalt. Namentlich auf den Anträgen (auch eventualiter Anträge), Prozessgeschichte (Vorinstanz) und Verfahren vor Bundesgericht.
-2. Medizinische Aspekte: Fokus auf Gutachten und RAD-Stellungnahmen. Sofern das oder die Gutachten und/oder die RAD-Stellungnahme oder RAD-Stellungnahmen nicht thematisiert wird/werden, musst du keine Ausführungen dazu erfassen.
-3. Übergangsrecht: Falls WEIV (altes vs. neues Recht ab 1.1.2022) thematisiert wird, kurz erwähnen, welches Recht anwendbar ist. Sofern das WEIV nicht thematisiert wird, musst du keine Ausführungen zum WEIV erfassen.
-4. Streitig: Fokus auf dem, was strittig ist und was unstrittig ist.
+1. Erfinde nichts, sondern bezieh dich ausschliesslich auf den Urteilstext.
+2. Zum Sachverhalt: Fokus auf dem materiellen Sachverhalt. Namentlich auf den Anträgen (auch eventualiter Anträge), Prozessgeschichte (Vorinstanz) und Verfahren vor Bundesgericht.
+3. Streitig: Fokus auf dem, was strittig ist und was unstrittig ist.
+4. Zum Entscheid:
+4.1 Medizinische Aspekte: Fokus auf Gutachten und RAD-Stellungnahmen. Sofern das oder die Gutachten und/oder die RAD-Stellungnahme oder RAD-Stellungnahmen nicht thematisiert wird/werden, musst du keine Ausführungen dazu erfassen.
+4.2 Übergangsrecht: Falls WEIV (altes vs. neues Recht ab 1.1.2022) thematisiert wird, kurz erwähnen, welches Recht anwendbar ist. Sofern das WEIV nicht thematisiert wird, musst du keine Ausführungen zum WEIV erfassen.
 
 ### STRIKTE INHALTSFILTER:
 1 KEINE Einleitung ("In diesem Urteil geht es um...").
@@ -56,7 +58,6 @@ def summarize_with_ai(urteil_text):
 5. Rubrum und Dispositiv (als Textblock) weglassen.
 6. Prozesskosten/Entschädigungen weglassen.
 7. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.
-8. Erfinde nichts, sondern bezieh dich ausschliesslich auf den Urteilstext.
 
 ### STRIKTE FORMREGELN:
 1. Anonymisierung:

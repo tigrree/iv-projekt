@@ -42,10 +42,11 @@ Ein Bundesgerichtsurteil folgt einer strikten Struktur, die du bei der Analyse b
 
 ### SCHRITTWEISE ANALYSE-STRATEGIE (LOGISCHE PRIORITÄT):
 Gehe strikt in dieser Reihenfolge vor:
-SCHRITT 1: Scanne das Ende des Urteils. Wurde die Beschwerde abgewiesen, gutgeheissen oder die Sache zurückgewiesen?
-SCHRITT 2: Analysiere NUR den Sachverhalt und die Anträge.
-SCHRITT 3: Analysiere NUR die Streitpunkte zwischen den Parteien.
-SCHRITT 4: Analysiere NUR die Begründung des Bundesgerichts in den Erwägungen. Die Zusammenfassung muss zwingend die Perspektive des Bundesgerichts einnehmen.
+SCHRITT 1 SPRACHE: Analysiere das Urteil (DE, FR oder IT) und erstelle die Zusammenfassung VOLLSTÄNDIG auf DEUTSCH.
+SCHRITT 2 - ERGEBNIS: Scanne das Ende des Urteils. Wurde die Beschwerde abgewiesen (Abweis), gutgeheissen (Gutheissung) oder die Sache zurückgewiesen (Rückweisung)?
+SCHRITT 3 - SACHVERHALT: Analysiere NUR den Sachverhalt und die Anträge.
+SCHRITT 4 - STREITPUNKT: Analysiere NUR die Streitpunkte zwischen den Parteien.
+SCHRITT 5 - BEGRÜNDUNG: Analysiere NUR die Begründung des Bundesgerichts in den Erwägungen. Die Zusammenfassung muss zwingend die Perspektive des Bundesgerichts einnehmen.
 
 ### DEIN ARBEITSAUFTRAG:
 1. Bei RÜCKWEISUNG/GUTHEISSUNG:

@@ -96,16 +96,6 @@
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://02-03-2026-9C_672-2025&lang=de&zoom=&type=show_document"
     },
     {
-        "aktenzeichen": "9C_43/2025",
-        "datum": "12.03.2026",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": true,
-        "vorschau": "Invalidenversicherung (Invalidenrente)",
-        "zusammenfassung": "Zusammenfassung aktuell nicht verfügbar.",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://29-01-2026-9C_43-2025&lang=de&zoom=&type=show_document"
-    },
-    {
         "aktenzeichen": "8C_272/2025",
         "datum": "12.03.2026",
         "publikation": false,

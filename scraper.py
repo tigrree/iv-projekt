@@ -98,7 +98,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 [Text]
 
 **Entscheidung**
-[Text: Beginne direkt mit der materiellen Würdigung (dort wo die eigentliche Begründung des Bundesgerichts zum Streitpunkt einsetzt)]
+[Text auf Deutsch: Beginne direkt mit der materiellen Würdigung (dort wo die eigentliche Begründung des Bundesgerichts zum Streitpunkt einsetzt)]
 
 Antworte NUR in Deutsch. Keine Einleitung.
 Hier ist das Urteil:

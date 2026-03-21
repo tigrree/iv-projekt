@@ -10,8 +10,15 @@ import anthropic
 # AUTOMATISIERUNG: Aktuelles Datum
 ZIEL_DATUM = "20.03.2026"
 
-def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Übersetzt exakt den Kurztitel und erstellt die Zusammenfassung."""
+def summarize_with_ai(urteil_text):
+    """Führt die Zusammenfassung mit dem neuesten Claude 4-6 Modell durch."""
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    
+    # Hier deine Organization ID einsetzen (aus deinem Screenshot):
+    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" 
+
+    if not api_key:
+        return "Fehler: ANTHROPIC_API_KEY nicht in den GitHub Secrets gefunden."
 
     # Dein spezialisierter Prompt für Schweizer Sozialversicherungsrecht   
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -94,37 +101,35 @@ Hier ist das Urteil:
 """
     
     try:
-        clean_text = " ".join(urteil_text.split()[:5000])
-        
-        message = client.messages.create(
-            model="claude-sonnet-4-6", 
-            max_tokens=3500,
-            temperature=0,
-            system="Antworte NUR im JSON-Format: {\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}",
-            messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteilstext:\n" + clean_text}]
+        # Initialisierung mit der Organization ID im Header
+        client = anthropic.Anthropic(
+            api_key=api_key,
+            default_headers={"anthropic-organization": org_id}
         )
         
-        res_data = json.loads(message.content[0].text)
-        v_de = res_data.get("vorschau_de", vorschau_raw)
-        z_de = res_data.get("zusammenfassung", "")
+        # Claude 4-6 verarbeitet extrem lange Texte (bis zu 5000 Wörter hier begrenzt)
+        clean_text = " ".join(urteil_text.split()[:5000])
         
-        # Bereinigung der Anonymisierung
-        z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
+        # Aufruf des Modells aus deinem Workbench-Screenshot
+        message = client.messages.create(
+            model="claude-sonnet-4-6", 
+            max_tokens=3000,
+            temperature=0,
+            system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'. Übersetze Fachbegriffe aus dem IT/FR korrekt ins DE.",
+            messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
+        )
         
-        return v_de, z_de
+        antwort = message.content[0].text.strip()
+        # Säuberung von Platzhaltern (z.B. A.____ -> A.)
+        antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
+        antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
+        return antwort
+
     except Exception as e:
-        print(f"KI-Fehler: {e}")
-        return vorschau_raw, f"Fehler bei Claude 4-6: {str(e)}"
+        return f"Fehler bei Claude 4-6: {str(e)}"
 
 def scrape_bger():
-    print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" # Deine ID hier einsetzen
-
-    if not api_key:
-        print("Fehler: ANTHROPIC_API_KEY fehlt."); return
-
-    client = anthropic.Anthropic(api_key=api_key, default_headers={"anthropic-organization": org_id})
+    print(f"--- Scan gestartet für: {ZIEL_DATUM} (Claude 4-6) ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -140,7 +145,9 @@ def scrape_bger():
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: return
+        if not tag_link: 
+            print(f"Datum {ZIEL_DATUM} noch nicht gelistet.")
+            return
 
         full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
@@ -157,10 +164,9 @@ def scrape_bger():
             
             clean_az = raw_az.replace("*", "").strip()
             is_publikation = "*" in raw_az
-            # Das ist der Text aus der Spalte "Sachgebiet"
-            vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
+            vorschau_text = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
 
-            if "invalid" in (row.get_text() + vorschau_raw).lower():
+            if "invalid" in (row.get_text() + vorschau_text).lower():
                 print(f"Treffer: {clean_az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
@@ -171,22 +177,18 @@ def scrape_bger():
                     if "Beschwerdeführerin" in search_text: iv_zh_fuehrer = True
                     elif "Beschwerdegegnerin" in search_text: iv_zh_gegner = True
 
+                # Falls Fehler in der Zusammenfassung steht, wird neu generiert
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
-                
-                # Prüfen, ob die Vorschau noch IT oder FR Signalwörter enthält
-                ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "rendita", "invalidità"])
-
-                if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
-                    v_text = existing['vorschau']
-                    z_text = existing['zusammenfassung']
+                if existing and "Fehler" not in existing.get('zusammenfassung', ''):
+                    zusammenfassung = existing['zusammenfassung']
                 else:
-                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
+                    zusammenfassung = summarize_with_ai(case_html)
                     time.sleep(1) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": is_publikation,
                     "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
-                    "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
+                    "vorschau": vorschau_text, "zusammenfassung": zusammenfassung, "url": case_url
                 })
 
         if tages_ergebnisse:
@@ -197,7 +199,7 @@ def scrape_bger():
                 json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
     except Exception as e:
-        print(f"Fehler: {e}")
+        print(f"Fehler im Hauptprozess: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

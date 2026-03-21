@@ -10,6 +10,21 @@ import anthropic
 # AUTOMATISIERUNG: Aktuelles Datum
 ZIEL_DATUM = "20.03.2026"
 
+def translate_preview(text, client):
+    """Übersetzt die kurze Vorschauzeile (z.B. aus IT/FR) ins Deutsche."""
+    if not text or len(text) < 5: return text
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=100,
+            temperature=0,
+            system="Übersetze den folgenden juristischen Kurztitel präzise ins Deutsche. Antworte NUR mit der Übersetzung.",
+            messages=[{"role": "user", "content": text}]
+        )
+        return response.content[0].text.strip()
+    except:
+        return text
+
 def summarize_with_ai(urteil_text):
     """Führt die Zusammenfassung mit dem neuesten Claude 4-6 Modell durch."""
     api_key = os.getenv("ANTHROPIC_API_KEY")

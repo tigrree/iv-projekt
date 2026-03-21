@@ -1,5 +1,15 @@
 [
     {
+        "aktenzeichen": "8C_379/2025",
+        "datum": "20.03.2026",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "vorschau": "Das ist eine einfache Übersetzung:\n\nBerufsunfähigkeitsversicherung (Berufsunfähigkeitsrente)",
+        "zusammenfassung": "Claude API Key fehlt.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://24-02-2026-8C_379-2025&lang=de&zoom=&type=show_document"
+    },
+    {
         "aktenzeichen": "INFO_SKIP",
         "datum": "19.03.2026",
         "vorschau": "Keine neuen IV-relevanten Urteile",

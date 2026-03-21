@@ -78,6 +78,10 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 5. Wahrheitsgehalt: Wenn du eine Kritik (z.B. „medizinische Fragen selbst interpretiert“) erwähnst, stelle klar, ob dies eine Rüge des Beschwerdeführers ist oder eine Feststellung des Bundesgerichts.
 6. Zwingende Übersetzung: Falls das Urteil auf Französisch oder Italienisch verfasst ist, müssen ALLE Fachbegriffe (z.B. „perizia“, „capacità lavorativa“, „istanza precedente“) zwingend durch ihre korrekten deutschen Entsprechungen (z.B. „Gutachten“, „Arbeitsfähigkeit“, „Vorinstanz“) ersetzt werden.
 
+### STRIKTE FORMATIERUNG:
+1. Haupttitel: Nur "**Sachverhalt & Anträge**", "**Streitig**" und "**Entscheidung**" werden fett formatiert.
+2. Untertitel innerhalb dieser Teile: Normalschrift, gefolgt von einem Doppelpunkt (Beispiel: Medizinische Ausgangslage / ZMB-Gutachten (E. 6):). Keine Fettschrift für Untertitel.
+
 ### FORMATVORGABEN:
 **Sachverhalt & Anträge**
 [Text]

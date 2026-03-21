@@ -11,10 +11,13 @@ import anthropic
 ZIEL_DATUM = "20.03.2026"
 
 def summarize_with_ai(urteil_text):
-    """Führt die Zusammenfassung ausschliesslich mit Claude 3.5 Sonnet durch."""
+    """Führt die Zusammenfassung mit Claude durch (Sonnet mit Fallback auf Haiku)."""
     api_key = os.getenv("ANTHROPIC_API_KEY")
+    # Falls du eine Org-ID hast (org_...), trage sie hier ein, sonst lass es None
+    org_id = None 
+
     if not api_key:
-        return "Fehler: ANTHROPIC_API_KEY nicht in den GitHub Secrets gefunden."
+        return "Fehler: ANTHROPIC_API_KEY fehlt."
 
     # Dein spezialisierter Prompt für Schweizer Sozialversicherungsrecht   
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -88,30 +91,36 @@ Antworte NUR in Deutsch. Keine Einleitung.
 Hier ist das Urteil:
 """
     
-    try:
-        client = anthropic.Anthropic(api_key=api_key)
-        # Claude 3.5 Sonnet verarbeitet lange Texte sehr präzise
-        clean_text = " ".join(urteil_text.split()[:5000])
-        
-        message = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=2500,
-            temperature=0,
-            system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'. Übersetze Fachbegriffe aus dem IT/FR korrekt ins DE.",
-            messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
-        )
-        
-        antwort = message.content[0].text.strip()
-        # Säuberung von Platzhaltern/Unterstrichen
-        antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
-        antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
-        return antwort
+    client = anthropic.Anthropic(api_key=api_key, organization=org_id)
+    clean_text = " ".join(urteil_text.split()[:5000])
 
-    except Exception as e:
-        return f"Fehler bei Claude: {str(e)}"
+    # Liste der Modelle, die wir der Reihe nach probieren (Sonnet -> Haiku)
+    models_to_try = ["claude-3-5-sonnet-20241022", "claude-3-haiku-20240307"]
+    
+    last_error = ""
+    for model_name in models_to_try:
+        try:
+            print(f"DEBUG: Versuche Aufruf mit Modell {model_name}...")
+            message = client.messages.create(
+                model=model_name,
+                max_tokens=2500,
+                temperature=0,
+                system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch.",
+                messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
+            )
+            antwort = message.content[0].text.strip()
+            # Säuberung von Unterstrichen
+            antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
+            return antwort
+        except Exception as e:
+            last_error = str(e)
+            print(f"DEBUG: Fehler bei {model_name}: {last_error}")
+            continue # Probiere das nächste Modell in der Liste
+            
+    return f"Fehler bei Claude (alle Modelle): {last_error}"
 
 def scrape_bger():
-    print(f"--- Scan gestartet für: {ZIEL_DATUM} (Nur Claude API) ---")
+    print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -153,20 +162,19 @@ def scrape_bger():
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
-                # Prüfung auf IV-Stelle Zürich
                 iv_zh_fuehrer, iv_zh_gegner = False, False
                 search_text = " ".join(case_html.split("Sachverhalt:")[0].split())
                 if "IV-Stelle des Kantons Zürich" in search_text:
                     if "Beschwerdeführerin" in search_text: iv_zh_fuehrer = True
                     elif "Beschwerdegegnerin" in search_text: iv_zh_gegner = True
 
-                # Nur zusammenfassen, wenn noch nicht vorhanden oder fehlerhaft
+                # Falls Fehler in der Zusammenfassung steht, löschen wir den Eintrag intern, damit er neu generiert wird
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
                 if existing and "Fehler" not in existing.get('zusammenfassung', ''):
                     zusammenfassung = existing['zusammenfassung']
                 else:
                     zusammenfassung = summarize_with_ai(case_html)
-                    time.sleep(1) # Kurze Pause für die API Rate-Limits
+                    time.sleep(1) 
 
                 tages_ergebnisse.append({
                     "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": is_publikation,
@@ -175,7 +183,6 @@ def scrape_bger():
                 })
 
         if tages_ergebnisse:
-            # Archiv aktualisieren
             archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
             archiv_daten.extend(tages_ergebnisse)
             archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)

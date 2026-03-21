@@ -10,29 +10,13 @@ import anthropic
 # AUTOMATISIERUNG: Aktuelles Datum
 ZIEL_DATUM = "20.03.2026"
 
-def translate_preview(text):
-    # Einfache Übersetzung der Vorschau via Groq (dafür reicht Llama völlig aus)
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key or not text: return text
-    german_indicators = ["invalidenversicherung", "rente", "iv-stelle", "versicherungsgericht"]
-    if any(word in text.lower() for word in german_indicators): return text
-    
-    url = "https://api.groq.com/openai/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    payload = {
-        "model": "llama-3.3-70b-versatile",
-        "messages": [{"role": "system", "content": "Du bist ein Übersetzer."}, {"role": "user", "content": f"Übersetze kurz ins Deutsche: {text}"}],
-        "temperature": 0.1
-    }
-    try:
-        response = requests.post(url, headers=headers, json=payload, timeout=20)
-        return response.json()['choices'][0]['message']['content'].strip().replace('"', '')
-    except: return text
-
 def summarize_with_ai(urteil_text):
-    USE_CLAUDE = True
-    
-    # Gemeinsamer Prompt für beide Modelle    
+    """Führt die Zusammenfassung ausschliesslich mit Claude 3.5 Sonnet durch."""
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        return "Fehler: ANTHROPIC_API_KEY nicht in den GitHub Secrets gefunden."
+
+    # Dein spezialisierter Prompt für Schweizer Sozialversicherungsrecht   
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
 
 ### VORAB-INFORMATION ZUM URTEILSAUFBAU:
@@ -104,55 +88,30 @@ Antworte NUR in Deutsch. Keine Einleitung.
 Hier ist das Urteil:
 """
     
-    if USE_CLAUDE:
-        api_key_anthropic = os.getenv("ANTHROPIC_API_KEY")
-        if api_key_anthropic:
-            try:
-                client = anthropic.Anthropic(api_key=api_key_anthropic)
-                clean_text = " ".join(urteil_text.split()[:4000])
-                
-                message = client.messages.create(
-                    model="claude-3-5-sonnet-latest",
-                    max_tokens=2000,
-                    temperature=0,
-                    system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'.",
-                    messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
-                )
-                antwort = message.content[0].text.strip()
-                return clean_output(antwort)
-            except Exception as e:
-                print(f"DEBUG: Claude-Fehler ({e}). Versuche Fallback auf Groq...")
-
-    # --- FALLBACK AUF GROQ (Llama) ---
-    api_key_groq = os.getenv("GROQ_API_KEY")
-    if not api_key_groq: return "Keine API verfügbar."
-    
     try:
-        clean_text_groq = " ".join(urteil_text.split()[:1500])
-        url = "https://api.groq.com/openai/v1/chat/completions"
-        headers = {"Authorization": f"Bearer {api_key_groq}", "Content-Type": "application/json"}
-        payload = {
-            "model": "llama-3.3-70b-versatile",
-            "messages": [
-                {"role": "system", "content": "Du bist ein Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'."},
-                {"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text_groq}
-            ],
-            "temperature": 0.0
-        }
-        response = requests.post(url, headers=headers, json=payload, timeout=60)
-        antwort = response.json()['choices'][0]['message']['content'].strip()
-        return clean_output(antwort)
-    except Exception as e:
-        return f"Beide APIs fehlgeschlagen. Fehler: {e}"
+        client = anthropic.Anthropic(api_key=api_key)
+        # Claude 3.5 Sonnet verarbeitet lange Texte sehr präzise
+        clean_text = " ".join(urteil_text.split()[:5000])
+        
+        message = client.messages.create(
+            model="claude-3-5-sonnet-latest",
+            max_tokens=2500,
+            temperature=0,
+            system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'. Übersetze Fachbegriffe aus dem IT/FR korrekt ins DE.",
+            messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
+        )
+        
+        antwort = message.content[0].text.strip()
+        # Säuberung von Platzhaltern/Unterstrichen
+        antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
+        antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
+        return antwort
 
-def clean_output(text):
-    # Säuberung von Unterstrichen (A.____ -> A.)
-    text = re.sub(r'([A-Z]\.)_+', r'\1', text)
-    text = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', text)
-    return text
+    except Exception as e:
+        return f"Fehler bei Claude: {str(e)}"
 
 def scrape_bger():
-    print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
+    print(f"--- Scan gestartet für: {ZIEL_DATUM} (Nur Claude API) ---")
     domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -189,31 +148,34 @@ def scrape_bger():
             is_publikation = "*" in raw_az
             vorschau_text = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
 
-            if any(key in (row.get_text() + vorschau_text).lower() for key in ["invalid"]):
+            if "invalid" in (row.get_text() + vorschau_text).lower():
                 print(f"Treffer: {clean_az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
+                # Prüfung auf IV-Stelle Zürich
                 iv_zh_fuehrer, iv_zh_gegner = False, False
                 search_text = " ".join(case_html.split("Sachverhalt:")[0].split())
                 if "IV-Stelle des Kantons Zürich" in search_text:
                     if "Beschwerdeführerin" in search_text: iv_zh_fuehrer = True
                     elif "Beschwerdegegnerin" in search_text: iv_zh_gegner = True
 
+                # Nur zusammenfassen, wenn noch nicht vorhanden oder fehlerhaft
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
-                if existing and "nicht verfügbar" not in existing['zusammenfassung'] and "Fehler" not in existing['zusammenfassung']:
+                if existing and "Fehler" not in existing.get('zusammenfassung', ''):
                     zusammenfassung = existing['zusammenfassung']
                 else:
                     zusammenfassung = summarize_with_ai(case_html)
-                    time.sleep(2) 
+                    time.sleep(1) # Kurze Pause für die API Rate-Limits
 
                 tages_ergebnisse.append({
                     "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": is_publikation,
                     "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
-                    "vorschau": translate_preview(vorschau_text), "zusammenfassung": zusammenfassung, "url": case_url
+                    "vorschau": vorschau_text, "zusammenfassung": zusammenfassung, "url": case_url
                 })
 
         if tages_ergebnisse:
+            # Archiv aktualisieren
             archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
             archiv_daten.extend(tages_ergebnisse)
             archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
@@ -221,7 +183,7 @@ def scrape_bger():
                 json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
     except Exception as e:
-        print(f"Fehler: {e}")
+        print(f"Fehler im Hauptprozess: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

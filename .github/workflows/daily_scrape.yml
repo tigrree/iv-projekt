@@ -15,11 +15,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # Wichtig, damit die Action Dateien zurückschreiben darf
 
     steps:
       - name: Checkout Repository Code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true # Stellt sicher, dass das Push-Recht erhalten bleibt
 
       - name: Set up Python Environment
         uses: actions/setup-python@v4
@@ -27,11 +29,15 @@ jobs:
           python-version: '3.9'
 
       - name: Install Python Dependencies
-        run: pip install requests beautifulsoup4
+        run: |
+          pip install requests beautifulsoup4 anthropic 
+          # Hier wurde 'anthropic' hinzugefügt
 
       - name: Run Scraper Script
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} 
+          # Hier wurde die Umgebungsvariable für Claude hinzugefügt
         run: python scraper.py
 
       - name: Commit and Push changes
@@ -41,7 +47,7 @@ jobs:
           
           if [ -f urteile.json ]; then
             git add urteile.json
-            # Commit nur, wenn tatsächlich neue Daten vorhanden sind
+            # Commit nur, wenn tatsächlich Änderungen (neue Urteile) vorhanden sind
             git commit -m "Automatisches Update: $(date +'%d.%m.%Y %H:%M')" || exit 0
             git push
           else

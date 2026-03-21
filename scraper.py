@@ -11,7 +11,7 @@ import anthropic
 ZIEL_DATUM = "20.03.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Übersetzt die Vorschau und erstellt die Zusammenfassung in einem Schritt via JSON."""
+    """Übersetzt exakt den Kurztitel und erstellt die Zusammenfassung."""
 
     # Dein spezialisierter Prompt für Schweizer Sozialversicherungsrecht   
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -96,30 +96,28 @@ Hier ist das Urteil:
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         
-        # Aufruf mit JSON-Zwang
         message = client.messages.create(
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Antworte NUR im validen JSON-Format: {\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}",
+            system="Antworte NUR im JSON-Format: {\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}",
             messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteilstext:\n" + clean_text}]
         )
         
-        # Extraktion der Daten aus dem JSON
         res_data = json.loads(message.content[0].text)
         v_de = res_data.get("vorschau_de", vorschau_raw)
         z_de = res_data.get("zusammenfassung", "")
         
-        # Bereinigung der Anonymisierung (A.____ -> A.)
+        # Bereinigung der Anonymisierung
         z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
         
         return v_de, z_de
     except Exception as e:
-        print(f"KI-Fehler bei {vorschau_raw}: {e}")
+        print(f"KI-Fehler: {e}")
         return vorschau_raw, f"Fehler bei Claude 4-6: {str(e)}"
 
 def scrape_bger():
-    print(f"--- Scan gestartet für: {ZIEL_DATUM} (Claude 4-6) ---")
+    print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
     api_key = os.getenv("ANTHROPIC_API_KEY")
     org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" # Deine ID hier einsetzen
 
@@ -142,8 +140,7 @@ def scrape_bger():
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: 
-            print("Datum noch nicht gelistet."); return
+        if not tag_link: return
 
         full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
         day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
@@ -160,6 +157,7 @@ def scrape_bger():
             
             clean_az = raw_az.replace("*", "").strip()
             is_publikation = "*" in raw_az
+            # Das ist der Text aus der Spalte "Sachgebiet"
             vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
 
             if "invalid" in (row.get_text() + vorschau_raw).lower():
@@ -167,24 +165,21 @@ def scrape_bger():
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
-                # Check IV Zürich
                 iv_zh_fuehrer, iv_zh_gegner = False, False
                 search_text = " ".join(case_html.split("Sachverhalt:")[0].split())
                 if "IV-Stelle des Kantons Zürich" in search_text:
                     if "Beschwerdeführerin" in search_text: iv_zh_fuehrer = True
                     elif "Beschwerdegegnerin" in search_text: iv_zh_gegner = True
 
-                # Prüfung: Existiert der Eintrag schon und ist er bereits DEUTSCH?
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
                 
-                # Signalwörter für Fremdsprachen prüfen
-                is_foreign = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "rendita"])
-                
-                if existing and "Fehler" not in existing.get('zusammenfassung', '') and not is_foreign:
+                # Prüfen, ob die Vorschau noch IT oder FR Signalwörter enthält
+                ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "rendita", "invalidità"])
+
+                if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
                     v_text = existing['vorschau']
                     z_text = existing['zusammenfassung']
                 else:
-                    print(f"KI-Verarbeitung (Übersetzung & Zusammenfassung) für {clean_az}...")
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                     time.sleep(1) 
 

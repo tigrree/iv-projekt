@@ -94,7 +94,7 @@ Hier ist das Urteil:
         clean_text = " ".join(urteil_text.split()[:5000])
         
         message = client.messages.create(
-            model="claude-3-5-sonnet-latest",
+            model="claude-3-haiku-20240307",
             max_tokens=2500,
             temperature=0,
             system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'. Übersetze Fachbegriffe aus dem IT/FR korrekt ins DE.",

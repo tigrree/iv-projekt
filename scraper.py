@@ -14,7 +14,7 @@ def summarize_with_ai(urteil_text):
     """Führt die Zusammenfassung mit Claude durch (Sonnet mit Fallback auf Haiku)."""
     api_key = os.getenv("ANTHROPIC_API_KEY")
     # Falls du eine Org-ID hast (org_...), trage sie hier ein, sonst lass es None
-    org_id = None 
+    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc"
 
     if not api_key:
         return "Fehler: ANTHROPIC_API_KEY fehlt."

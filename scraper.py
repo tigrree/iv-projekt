@@ -105,7 +105,7 @@ Antworte NUR in Deutsch. Keine Einleitung.
 Hier ist das Urteil:
 """
     
-if USE_CLAUDE:
+    if USE_CLAUDE:
         api_key = os.getenv("ANTHROPIC_API_KEY")
         if not api_key: return "Claude API Key fehlt."
         try:

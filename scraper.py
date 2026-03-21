@@ -7,16 +7,14 @@ import re
 from datetime import datetime
 import anthropic
 
-# AUTOMATISIERUNG: Aktuelles Datum (oder ein spezifisches Testdatum)
+# AUTOMATISIERUNG: Aktuelles Datum
 ZIEL_DATUM = "20.03.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Übersetzt die Vorschau (Kurztitel) und erstellt die Zusammenfassung."""
-
-    # Dein spezialisierter Prompt für Schweizer Sozialversicherungsrecht   
-    PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
-
-### VORAB-INFORMATION ZUM URTEILSAUFBAU:
+    """Übersetzt exakt das Sachgebiet und erstellt die Zusammenfassung basierend auf dem Experten-Prompt."""
+    
+    # DEIN SPEZIALISIERTER PROMPT (Struktur exakt beibehalten)
+    PROMPT_ZUSAMMENFASSUNG = """### VORAB-INFORMATION ZUM URTEILSAUFBAU:
 Ein Bundesgerichtsurteil folgt einer strikten Struktur, die du bei der Analyse beachten musst (das Rubrum und das Dispositiv sind nicht relevant):
 - Sachverhalt: Enthält den materiellen Sachverhalt, die medizinische Historie, die Prozessgeschichte und die Anträge. Achtung: Dies sind noch NICHT die Erwägungen des Bundesgerichts.
 - Erwägungen (Ziffern 1, 2, 3...): Hier findet die eigentliche rechtliche Prüfung statt.
@@ -90,41 +88,41 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 [Text auf Deutsch: Beginne direkt mit der materiellen Würdigung (dort wo die eigentliche Begründung des Bundesgerichts zum Streitpunkt einsetzt) und lasse theoretische Einleitungen weg.]
 
 Antworte NUR in Deutsch. Keine Einleitung.
-Hier ist das Urteil:
 """
-    
+
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         
-        # Aufruf mit JSON-Zwang für strukturierte Daten
+        # Gezielte Anweisung für zwei Felder: Übersetzung Sachgebiet + Zusammenfassung
         message = client.messages.create(
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system='Antworte NUR im validen JSON-Format: {"vorschau_de": "...", "zusammenfassung": "..."}',
-            messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteilstext:\n" + clean_text}]
+            system='Antworte AUSSCHLIESSLICH im JSON-Format: {"vorschau_de": "Kurze Übersetzung des Sachgebiets", "zusammenfassung": "Deine Zusammenfassung"}.',
+            messages=[
+                {"role": "user", "content": f"Schritt 1: Übersetze den folgenden Text aus dem Sachgebiet exakt und kurz ins Deutsche: '{vorschau_raw}'. Schritt 2: Erstelle die Zusammenfassung für das untenstehende Urteil basierend auf diesem Prompt:\n\n{PROMPT_ZUSAMMENFASSUNG}\n\nUrteil:\n{clean_text}"}
+            ]
         )
         
-        # JSON parsen
         res_data = json.loads(message.content[0].text)
         v_de = res_data.get("vorschau_de", vorschau_raw)
         z_de = res_data.get("zusammenfassung", "")
         
-        # Bereinigung der Anonymisierung (A.____ -> A.)
+        # Bereinigung der Anonymisierungs-Platzhalter
         z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
         
         return v_de, z_de
     except Exception as e:
-        print(f"KI-Fehler: {e}")
+        print(f"Fehler: {e}")
         return vorschau_raw, f"Fehler bei Claude 4-6: {str(e)}"
 
 def scrape_bger():
-    print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
+    print(f"--- Scan gestartet für: {ZIEL_DATUM} (Claude 4-6) ---")
     api_key = os.getenv("ANTHROPIC_API_KEY")
     org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" # Deine ID einsetzen
 
     if not api_key:
-        print("Fehler: ANTHROPIC_API_KEY fehlt."); return
+        print("Fehler: API Key fehlt."); return
 
     client = anthropic.Anthropic(api_key=api_key, default_headers={"anthropic-organization": org_id})
     domain = "https://www.bger.ch"
@@ -158,38 +156,32 @@ def scrape_bger():
             if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
             
             clean_az = raw_az.replace("*", "").strip()
-            is_publikation = "*" in raw_az
+            # Hier greifen wir das Sachgebiet ab (für die Spalte 'Vorschau')
             vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
 
-            # 1. Grober Filter: Nur IV-Fälle (deutsch, franz., ital.)
             if "invalid" in (row.get_text() + vorschau_raw).lower():
-                print(f"Treffer: {clean_az}")
+                print(f"Verarbeite Treffer: {clean_az}")
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
-                # Prüfung auf IV Zürich
+                # Check für IV-Stelle Zürich
                 iv_zh_fuehrer, iv_zh_gegner = False, False
-                search_text = " ".join(case_html.split("Sachverhalt:")[0].split())
-                if "IV-Stelle des Kantons Zürich" in search_text:
-                    if "Beschwerdeführerin" in search_text: iv_zh_fuehrer = True
-                    elif "Beschwerdegegnerin" in search_text: iv_zh_gegner = True
+                if "IV-Stelle des Kantons Zürich" in case_html[:5000]:
+                    if "Beschwerdeführerin" in case_html[:2000]: iv_zh_fuehrer = True
+                    else: iv_zh_gegner = True
 
-                # Logik-Check: Existiert der Eintrag schon und ist die Vorschau bereits DEUTSCH?
-                existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
-                
-                # Prüfe auf Fremdsprachen-Keywords in der aktuellen Vorschau
+                # Erkennung ob Übersetzung/Verarbeitung nötig ist
                 ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "rendita", "invalidità"])
+                existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
 
                 if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
-                    v_text = existing['vorschau']
-                    z_text = existing['zusammenfassung']
+                    v_text, z_text = existing['vorschau'], existing['zusammenfassung']
                 else:
-                    print(f"KI-Verarbeitung für {clean_az}...")
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                     time.sleep(1) 
 
                 tages_ergebnisse.append({
-                    "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": is_publikation,
+                    "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": "*" in raw_az,
                     "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
                     "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
                 })

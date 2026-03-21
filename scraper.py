@@ -80,8 +80,10 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 
 ### STRIKTE FORMATIERUNG:
 1. Haupttitel: Nur "**Sachverhalt & Anträge**", "**Streitig**" und "**Entscheidung**" werden fett formatiert.
-2. Untertitel innerhalb dieser Teile: Normalschrift, gefolgt von einem Doppelpunkt (Beispiel: Medizinische Ausgangslage / ZMB-Gutachten (E. 6):). Keine Fettschrift für Untertitel.
-
+2. UNTERTITEL (innerhalb der Hauptteile): Diese müssen zwingend UNTERSTRICHEN werden und mit einem Doppelpunkt enden. 
+2.1. Beispiel: <u>Medizinische Ausgangslage / ZMB-Gutachten (E. 6):</u>
+2.2. Verwende KEINE Fettschrift für Untertitel.
+   
 ### FORMATVORGABEN:
 **Sachverhalt & Anträge**
 [Text]

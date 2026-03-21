@@ -58,7 +58,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 4.2 Übergangsrecht: Falls WEIV (altes vs. neues Recht ab 1.1.2022) thematisiert wird, kurz erwähnen, welches Recht anwendbar ist. Sofern das WEIV nicht thematisiert wird, musst du keine Ausführungen zum WEIV erfassen.
 
 ### STRIKTE INHALTSFILTER:
-1. KEINE Erwähnung, dass die Vorinstanz die Bestimmungen zu den Begriffen der Invalidität und der Erwerbsunfähigkeit richtig dargelegt hat. Das ist für die Zusammenfassung wertlos.
+1. KEINE allgemeinen rechtlichen Ausführungen oder theoretischen Herleitungen (z.B. keine Definitionen von Revision nach Art. 17 ATSG, keine allgemeinen Grundsätze zur Beweiswürdigung). Steige direkt in die fallspezifische Subsumtion ein.
 2. KEINE Einleitung ("In diesem Urteil geht es um...").
 3. KEINE Standard-Sätze zu Art. 95, 97, 105, 106 BGG. Das ist für die Zusammenfassung wertlos, es sei denn, das Bundesgericht wendet diese Artikel im Einzelfall spezifisch auf eine Rüge an.
 4. KEINE Sätze wie "Die Vorinstanz hat die Bestimmungen richtig dargelegt".

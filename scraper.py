@@ -113,7 +113,7 @@ Hier ist das Urteil:
             # Claude verträgt bis zu 4000 Wörter problemlos
             clean_text = " ".join(urteil_text.split()[:4000])
             message = client.messages.create(
-                model="claude-3-5-sonnet-20240620",
+                model="claude-3-5-sonnet-latest",
                 max_tokens=2000,
                 temperature=0,
                 system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'. Übersetze alle Fachbegriffe korrekt.",

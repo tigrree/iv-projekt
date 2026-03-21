@@ -30,8 +30,7 @@ def translate_preview(text):
     except: return text
 
 def summarize_with_ai(urteil_text):
-    # SCHALTER: True = Claude (Anthropic), False = Groq (Llama)
-    USE_CLAUDE = True 
+    USE_CLAUDE = True
     
     # Gemeinsamer Prompt für beide Modelle    
     PROMPT_TEXT = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -106,47 +105,52 @@ Hier ist das Urteil:
 """
     
     if USE_CLAUDE:
-        api_key = os.getenv("ANTHROPIC_API_KEY")
-        if not api_key: return "Claude API Key fehlt."
-        try:
-            client = anthropic.Anthropic(api_key=api_key)
-            # Claude verträgt bis zu 4000 Wörter problemlos
-            clean_text = " ".join(urteil_text.split()[:4000])
-            message = client.messages.create(
-                model="claude-3-5-sonnet-20241022",
-                max_tokens=2000,
-                temperature=0,
-                system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'. Übersetze alle Fachbegriffe korrekt.",
-                messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
-            )
-            antwort = message.content[0].text.strip()
-        except Exception as e:
-            return f"Fehler bei Claude: {e}"
-    else:
-        # BACKUP: Groq Logik
-        api_key = os.getenv("GROQ_API_KEY")
-        if not api_key: return "Groq API Key fehlt."
-        clean_text = " ".join(urteil_text.split()[:1500])
+        api_key_anthropic = os.getenv("ANTHROPIC_API_KEY")
+        if api_key_anthropic:
+            try:
+                client = anthropic.Anthropic(api_key=api_key_anthropic)
+                clean_text = " ".join(urteil_text.split()[:4000])
+                
+                # Nutze Haiku als stabilen Test für Tier 1
+                message = client.messages.create(
+                    model="claude-3-haiku-20240307",
+                    max_tokens=2000,
+                    temperature=0,
+                    system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'.",
+                    messages=[{"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}]
+                )
+                antwort = message.content[0].text.strip()
+                return clean_output(antwort)
+            except Exception as e:
+                print(f"DEBUG: Claude-Fehler ({e}). Versuche Fallback auf Groq...")
+
+    # --- FALLBACK AUF GROQ (Llama) ---
+    api_key_groq = os.getenv("GROQ_API_KEY")
+    if not api_key_groq: return "Keine API verfügbar."
+    
+    try:
+        clean_text_groq = " ".join(urteil_text.split()[:1500])
         url = "https://api.groq.com/openai/v1/chat/completions"
-        headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+        headers = {"Authorization": f"Bearer {api_key_groq}", "Content-Type": "application/json"}
         payload = {
             "model": "llama-3.3-70b-versatile",
             "messages": [
-                {"role": "system", "content": "Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'."},
-                {"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text}
+                {"role": "system", "content": "Du bist ein Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'."},
+                {"role": "user", "content": PROMPT_TEXT + "\n\nUrteil:\n" + clean_text_groq}
             ],
             "temperature": 0.0
         }
-        try:
-            response = requests.post(url, headers=headers, json=payload, timeout=120)
-            antwort = response.json()['choices'][0]['message']['content'].strip()
-        except Exception as e:
-            return f"Fehler bei Groq: {e}"
+        response = requests.post(url, headers=headers, json=payload, timeout=60)
+        antwort = response.json()['choices'][0]['message']['content'].strip()
+        return clean_output(antwort)
+    except Exception as e:
+        return f"Beide APIs fehlgeschlagen. Fehler: {e}"
 
-    # Säuberung von Unterstrichen (für beide Modelle)
-    antwort = re.sub(r'([A-Z]\.)_+', r'\1', antwort)
-    antwort = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', antwort)
-    return antwort
+def clean_output(text):
+    # Säuberung von Unterstrichen (A.____ -> A.)
+    text = re.sub(r'([A-Z]\.)_+', r'\1', text)
+    text = re.sub(r'([A-Z]\s[A-Z]\.)_+', r'\1', text)
+    return text
 
 def scrape_bger():
     print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
@@ -191,7 +195,6 @@ def scrape_bger():
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
-                # Rollenprüfung
                 iv_zh_fuehrer, iv_zh_gegner = False, False
                 search_text = " ".join(case_html.split("Sachverhalt:")[0].split())
                 if "IV-Stelle des Kantons Zürich" in search_text:
@@ -199,7 +202,7 @@ def scrape_bger():
                     elif "Beschwerdegegnerin" in search_text: iv_zh_gegner = True
 
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
-                if existing and "nicht verfügbar" not in existing['zusammenfassung']:
+                if existing and "nicht verfügbar" not in existing['zusammenfassung'] and "Fehler" not in existing['zusammenfassung']:
                     zusammenfassung = existing['zusammenfassung']
                 else:
                     zusammenfassung = summarize_with_ai(case_html)

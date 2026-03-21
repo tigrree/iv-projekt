@@ -8,7 +8,7 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = "20.03.2026"
+ZIEL_DATUM = "12.03.2026"
 
 def summarize_with_ai(urteil_text):
     """Führt die Zusammenfassung mit dem neuesten Claude 4-6 Modell durch."""

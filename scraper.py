@@ -8,7 +8,7 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+ZIEL_DATUM = "20.03.2026"
 
 def translate_preview(text):
     # Einfache Übersetzung der Vorschau via Groq (dafür reicht Llama völlig aus)

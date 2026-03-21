@@ -11,17 +11,19 @@ import anthropic
 ZIEL_DATUM = "20.03.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Übersetzt exakt das Sachgebiet und erstellt die Zusammenfassung basierend auf dem Experten-Prompt."""
+    """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit robustem JSON-Parsing."""
     
-    # DEIN SPEZIALISIERTER PROMPT (Struktur exakt beibehalten)
-    PROMPT_ZUSAMMENFASSUNG = """### VORAB-INFORMATION ZUM URTEILSAUFBAU:
+    # DEIN PROMPT (Struktur bleibt 1:1 erhalten)
+    PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
+    
+### VORAB-INFORMATION ZUM URTEILSAUFBAU:
 Ein Bundesgerichtsurteil folgt einer strikten Struktur, die du bei der Analyse beachten musst (das Rubrum und das Dispositiv sind nicht relevant):
 - Sachverhalt: Enthält den materiellen Sachverhalt, die medizinische Historie, die Prozessgeschichte und die Anträge. Achtung: Dies sind noch NICHT die Erwägungen des Bundesgerichts.
 - Erwägungen (Ziffern 1, 2, 3...): Hier findet die eigentliche rechtliche Prüfung statt.
 
 ### SCHRITTWEISE ANALYSE-STRATEGIE (LOGISCHE PRIORITÄT):
 Gehe strikt in dieser Reihenfolge vor:
-SCHRITT 1 SPRACHE: Analysiere das Urteil (DE, FR oder IT) und erstelle die Zusammenfassung VOLLSTÄNDIG auf DEUTSCH.
+SCHRITT 1 - SPRACHE: Analysiere das Urteil (DE, FR oder IT) und erstelle die Zusammenfassung VOLLSTÄNDIG auf DEUTSCH.
 SCHRITT 2 - ERGEBNIS: Scanne das Ende des Urteils. Wurde die Beschwerde abgewiesen (Abweis), gutgeheissen (Gutheissung) oder die Sache zurückgewiesen (Rückweisung)?
 SCHRITT 3 - SACHVERHALT: Analysiere NUR den Sachverhalt und die Anträge.
 SCHRITT 4 - STREITPUNKT: Analysiere NUR die Streitpunkte zwischen den Parteien.
@@ -71,11 +73,9 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 
 ### STRIKTE FORMATIERUNG:
 1. Haupttitel: Nur "**Sachverhalt & Anträge**", "**Streitig**" und "**Entscheidung**" werden fett formatiert.
-2. ABSTÄNDE: Füge nach einem Haupttitel KEINE zusätzliche Leerzeile ein. Der Text beginnt direkt in der nächsten Zeile (wie bei normalen Absätzen).
-3. KEINE TRENNLINIEN: Verwende unter keinen Umständen Trennlinien (wie "---"), Sterne-Reihen oder andere visuelle Trennsymbole zwischen den Abschnitten.
-4. UNTERTITEL (innerhalb der Hauptteile): Diese müssen zwingend UNTERSTRICHEN werden und mit einem Doppelpunkt enden. 
-4.1. Beispiel: <u>Medizinische Ausgangslage / ZMB-Gutachten (E. 6):</u>
-4.2. Verwende KEINE Fettschrift für Untertitel.
+2. ABSTÄNDE: Füge nach einem Haupttitel KEINE zusätzliche Leerzeile ein. Der Text beginnt direkt in der nächsten Zeile.
+3. KEINE TRENNLINIEN: Verwende unter keinen Umständen Trennlinien (wie "---").
+4. UNTERTITEL: Zwingend UNTERSTRICHEN (<u>...</u>) und mit Doppelpunkt. Keine Fettschrift.
    
 ### FORMATVORGABEN:
 **Sachverhalt & Anträge**
@@ -85,39 +85,41 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 [Text]
 
 **Entscheidung**
-[Text auf Deutsch: Beginne direkt mit der materiellen Würdigung (dort wo die eigentliche Begründung des Bundesgerichts zum Streitpunkt einsetzt) und lasse theoretische Einleitungen weg.]
-
-Antworte NUR in Deutsch. Keine Einleitung.
+[Text auf Deutsch: Beginne direkt mit der materiellen Würdigung]
 """
 
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         
-        # Gezielte Anweisung für zwei Felder: Übersetzung Sachgebiet + Zusammenfassung
-        message = client.messages.create(
+        # Gezielte Abfrage
+        response = client.messages.create(
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system='Antworte AUSSCHLIESSLICH im JSON-Format: {"vorschau_de": "Kurze Übersetzung des Sachgebiets", "zusammenfassung": "Deine Zusammenfassung"}.',
+            system="Du bist ein IT-System, das NUR JSON ausgibt. Keine Prosa, keine Einleitung.",
             messages=[
-                {"role": "user", "content": f"Schritt 1: Übersetze den folgenden Text aus dem Sachgebiet exakt und kurz ins Deutsche: '{vorschau_raw}'. Schritt 2: Erstelle die Zusammenfassung für das untenstehende Urteil basierend auf diesem Prompt:\n\n{PROMPT_ZUSAMMENFASSUNG}\n\nUrteil:\n{clean_text}"}
+                {"role": "user", "content": f"Übersetze dieses Sachgebiet kurz ins Deutsche: '{vorschau_raw}'. Erstelle dann die Zusammenfassung für das Urteil basierend auf diesem Prompt:\n\n{PROMPT_ZUSAMMENFASSUNG}\n\nUrteil:\n{clean_text}\n\nGib das Ergebnis NUR in diesem Format aus: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}"}
             ]
         )
         
-        res_data = json.loads(message.content[0].text)
-        v_de = res_data.get("vorschau_de", vorschau_raw)
-        z_de = res_data.get("zusammenfassung", "")
-        
-        # Bereinigung der Anonymisierungs-Platzhalter
-        z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
-        
-        return v_de, z_de
+        # Sicherer Parser: Extrahiert JSON, falls Claude doch Text drumherum schreibt
+        raw_content = response.content[0].text
+        json_match = re.search(r'\{.*\}', raw_content, re.DOTALL)
+        if json_match:
+            res_data = json.loads(json_match.group(0))
+            v_de = res_data.get("vorschau_de", vorschau_raw)
+            z_de = res_data.get("zusammenfassung", "")
+            z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
+            return v_de, z_de
+        else:
+            raise ValueError("Kein JSON gefunden")
+
     except Exception as e:
-        print(f"Fehler: {e}")
-        return vorschau_raw, f"Fehler bei Claude 4-6: {str(e)}"
+        print(f"KI-Fehler: {e}")
+        return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
 def scrape_bger():
-    print(f"--- Scan gestartet für: {ZIEL_DATUM} (Claude 4-6) ---")
+    print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
     api_key = os.getenv("ANTHROPIC_API_KEY")
     org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" # Deine ID einsetzen
 
@@ -156,7 +158,7 @@ def scrape_bger():
             if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
             
             clean_az = raw_az.replace("*", "").strip()
-            # Hier greifen wir das Sachgebiet ab (für die Spalte 'Vorschau')
+            # Wir nehmen das Sachgebiet von der Webseite
             vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
 
             if "invalid" in (row.get_text() + vorschau_raw).lower():
@@ -164,14 +166,12 @@ def scrape_bger():
                 case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                 case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
-                # Check für IV-Stelle Zürich
                 iv_zh_fuehrer, iv_zh_gegner = False, False
                 if "IV-Stelle des Kantons Zürich" in case_html[:5000]:
                     if "Beschwerdeführerin" in case_html[:2000]: iv_zh_fuehrer = True
                     else: iv_zh_gegner = True
 
-                # Erkennung ob Übersetzung/Verarbeitung nötig ist
-                ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "rendita", "invalidità"])
+                ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
                 existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
 
                 if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:

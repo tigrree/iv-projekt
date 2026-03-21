@@ -111,9 +111,8 @@ Hier ist das Urteil:
                 client = anthropic.Anthropic(api_key=api_key_anthropic)
                 clean_text = " ".join(urteil_text.split()[:4000])
                 
-                # Nutze Haiku als stabilen Test für Tier 1
                 message = client.messages.create(
-                    model="claude-3-haiku-20240307",
+                    model="claude-3-5-sonnet-latest",
                     max_tokens=2000,
                     temperature=0,
                     system="Du bist ein präziser Schweizer Bundesrichter. Antworte NUR auf Deutsch. Nutze 'ss'.",

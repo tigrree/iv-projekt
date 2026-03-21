@@ -15,7 +15,7 @@ def summarize_with_ai(urteil_text):
     api_key = os.getenv("ANTHROPIC_API_KEY")
     
     # Hier deine Organization ID einsetzen:
-    org_id = "ORG_ID_HIER" 
+    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" 
 
     if not api_key:
         return "Fehler: ANTHROPIC_API_KEY nicht in den GitHub Secrets gefunden."

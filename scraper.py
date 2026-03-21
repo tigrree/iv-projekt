@@ -11,14 +11,14 @@ import anthropic
 ZIEL_DATUM = "20.03.2026"
 
 def translate_preview(text, client):
-    """Übersetzt die kurze Vorschauzeile (z.B. aus IT/FR) ins Deutsche."""
+    """Übersetzt die kurze Vorschauzeile (z.B. aus IT/FR) präzise ins Deutsche."""
     if not text or len(text) < 5: return text
     try:
         response = client.messages.create(
             model="claude-sonnet-4-6",
             max_tokens=100,
             temperature=0,
-            system="Übersetze den folgenden juristischen Kurztitel präzise ins Deutsche. Antworte NUR mit der Übersetzung.",
+            system="Du bist ein erfahrener Übersetzer bzw. Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Übersetze den folgenden Kurztitel eines Bundesgerichtsurteils präzise ins Deutsche (z.B. 'Assicurazione per l'invalidità' -> 'Invalidenversicherung'). Antworte NUR mit der Übersetzung.",
             messages=[{"role": "user", "content": text}]
         )
         return response.content[0].text.strip()

@@ -19,7 +19,7 @@
         .summary-title { font-weight: 700; display: block; margin-top: 1.25rem; margin-bottom: 0px !important; color: currentColor; text-align: left; line-height: 1.5; }
         .summary-title:first-child { margin-top: 0 !important; }
         .summary-text-block { display: block; margin-top: 0px !important; padding-top: 2px; margin-bottom: 0.5rem !important; text-align: left; }
-        .summary-text-block:last-of-type { margin-bottom: 0px !important; }
+        .summary-text-block:last-of-type { margin-bottom: 0.5rem !important; }
         .ios-button { display: block !important; width: 100% !important; box-sizing: border-box; background-color: #3b82f6; color: white !important; padding: 8px 0 !important; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center !important; text-decoration: none !important; margin-top: 1.25rem !important; margin-bottom: 0px !important; line-height: normal !important; transition: opacity 0.2s, transform 0.1s; -webkit-tap-highlight-color: transparent; }
         .ios-button:active { transform: scale(0.99); }
         .ios-button:hover { opacity: 0.9; }
@@ -56,10 +56,9 @@
             background: white; color: black; outline: none;
         }
         .dark #chat-input-area input, .dark #chat-input-area textarea { background: #2c2c2e; border-color: #444; color: white; }
-        #send-btn { background: #1a3a5a; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: opacity 0.2s; }
-        #send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        #send-btn { background: #1a3a5a; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        #send-btn:disabled { opacity: 0.5; }
 
-        /* LOADING ANIMATION */
         .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #e4e6eb; border-radius: 12px; width: fit-content; margin-bottom: 5px; }
         .dark .typing { background: #2c2c2e; }
         .dot { width: 6px; height: 6px; background: #8e8e93; border-radius: 50%; animation: hop 1.4s infinite ease-in-out; }
@@ -143,7 +142,7 @@
 
         function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
         function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); document.getElementById('view-menu').classList.remove('show'); }
-        function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.remove('show'); document.getElementById('theme-menu').classList.remove('show'); }
+        function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.toggle('show'); document.getElementById('theme-menu').classList.remove('show'); }
         window.onclick = function(event) { if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); if (!event.target.closest('#view-btn')) document.getElementById('view-menu').classList.remove('show'); }
         applyTheme(localStorage.theme || 'system');
         
@@ -167,7 +166,6 @@
             return html;
         }
 
-        // NEU: Funktion um Aktenzeichen in den Bot zu kopieren
         function fillBot(az) {
             document.getElementById('bot-case-nr').value = az;
             const win = document.getElementById('bger-chat-window');
@@ -204,7 +202,6 @@
                             else if (u.iv_zh_gegner) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>`;
                             const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
                             
-                            // MODIFIZIERT: onclick="fillBot('${u.aktenzeichen}')" zum Aktenzeichen hinzugefügt
                             dayHtml += `
                                 <div class="sub-accordion-item">
                                     <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
@@ -240,7 +237,6 @@
         }
         loadUrteile();
 
-        // BOT LOGIK
         function handleKeyPress(event) {
             if (event.key === "Enter" && !event.shiftKey) {
                 event.preventDefault();
@@ -290,25 +286,3 @@
                 
                 const loader = document.getElementById('typing-indicator');
                 if(loader) loader.remove();
-
-                const botDiv = document.createElement('div');
-                botDiv.className = 'msg bot';
-                botDiv.innerText = data.antwort || "Problem bei der Analyse.";
-                chatBox.appendChild(botDiv);
-            } catch (e) {
-                const loader = document.getElementById('typing-indicator');
-                if(loader) loader.remove();
-                const errDiv = document.createElement('div');
-                errDiv.className = 'msg bot';
-                errDiv.innerText = "Verbindungsfehler.";
-                chatBox.appendChild(errDiv);
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "Frage stellen";
-                chatBox.scrollTop = chatBox.scrollHeight;
-                document.getElementById('bot-query').value = "";
-            }
-        }
-    </script>
-</body>
-</html>

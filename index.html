@@ -23,6 +23,41 @@
         .ios-button { display: block !important; width: 100% !important; box-sizing: border-box; background-color: #3b82f6; color: white !important; padding: 8px 0 !important; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center !important; text-decoration: none !important; margin-top: 1.25rem !important; margin-bottom: 0px !important; line-height: normal !important; transition: opacity 0.2s, transform 0.1s; -webkit-tap-highlight-color: transparent; }
         .ios-button:active { transform: scale(0.99); }
         .ios-button:hover { opacity: 0.9; }
+
+        /* BOT STYLES */
+        #chat-icon-launcher {
+            position: fixed; bottom: 25px; right: 25px;
+            width: 60px; height: 60px; background-color: #1a3a5a;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; cursor: pointer; z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        #chat-icon-launcher:hover { transform: scale(1.1); }
+        #bger-chat-window {
+            position: fixed; bottom: 95px; right: 25px;
+            width: 350px; height: 500px; background: white;
+            border-radius: 15px; display: none; flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 10000;
+            overflow: hidden; border: 1px solid #ddd;
+        }
+        .dark #bger-chat-window { background: #1c1c1e; border-color: #333; color: white; }
+        #chat-header { background: #1a3a5a; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f0f2f5; }
+        .dark #chat-messages { background: #000; }
+        .msg { padding: 10px 14px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.4; }
+        .bot { background: #e4e6eb; align-self: flex-start; color: black; }
+        .dark .bot { background: #2c2c2e; color: white; }
+        .user { background: #1a3a5a; align-self: flex-end; color: white; }
+        #chat-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; flex-direction: column; gap: 8px; }
+        .dark #chat-input-area { border-color: #333; }
+        #chat-input-area input, #chat-input-area textarea { 
+            width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 8px; font-size: 13px; 
+            background: white; color: black;
+        }
+        .dark #chat-input-area input, .dark #chat-input-area textarea { background: #2c2c2e; border-color: #444; color: white; }
+        #send-btn { background: #1a3a5a; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        #send-btn:disabled { opacity: 0.5; }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased text-left">
@@ -64,6 +99,22 @@
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
         <div id="app-container" class="space-y-6 text-black dark:text-white text-left"></div>
     </div>
+
+    <div id="chat-bot-wrapper">
+        <div id="chat-icon-launcher" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" fill="white" width="30px" height="30px"><path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 16.5l-1.32 1.32-.96-.96C7.21 17.9 5 14.71 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.71-2.21 6.9-4.72 7.86l-.96.96L12 18.5zM7.5 10c.83 0 1.5-.67 1.5-1.5S8.33 7 7.5 7 6 7.67 6 8.5 6.67 10 7.5 10zm9 0c.83 0 1.5-.67 1.5-1.5S17.33 7 16.5 7 15 7.67 15 8.5s.67 1.5 1.5 1.5zM12 15c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"/></svg>
+        </div>
+        <div id="bger-chat-window">
+            <div id="chat-header"><span>BGer Assistent</span><button onclick="toggleChat()">&times;</button></div>
+            <div id="chat-messages"><div class="msg bot">Welches Urteil interessiert Sie? Geben Sie die Nummer (z.B. 9C_512/2024) und Ihre Frage an.</div></div>
+            <div id="chat-input-area">
+                <input type="text" id="bot-case-nr" placeholder="Urteilsnummer...">
+                <textarea id="bot-query" placeholder="Ihre Frage..." rows="2"></textarea>
+                <button onclick="askBot()" id="send-btn">Frage an Claude senden</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         const icons = {
             dark: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>',
@@ -73,14 +124,19 @@
         function applyTheme(theme) {
             const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             document.documentElement.classList.toggle('dark', isDark);
-            document.getElementById('active-theme-icon').innerHTML = icons[theme] || icons.system;
-            ['system', 'light', 'dark'].forEach(t => document.getElementById('check-' + t).classList.toggle('hidden', t !== theme));
+            const iconEl = document.getElementById('active-theme-icon');
+            if(iconEl) iconEl.innerHTML = icons[theme] || icons.system;
+            ['system', 'light', 'dark'].forEach(t => {
+                const el = document.getElementById('check-' + t);
+                if(el) el.classList.toggle('hidden', t !== theme);
+            });
         }
         function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
         function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); document.getElementById('view-menu').classList.remove('show'); }
         function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.toggle('show'); document.getElementById('theme-menu').classList.remove('show'); }
         window.onclick = function(event) { if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); if (!event.target.closest('#view-btn')) document.getElementById('view-menu').classList.remove('show'); }
         applyTheme(localStorage.theme || 'system');
+        
         function setView(mode) {
             const groups = document.querySelectorAll('.accordion-group');
             groups.forEach((group, index) => {
@@ -92,7 +148,7 @@
         }
         function formatSummary(text) {
             if (!text) return '';
-            text = text.trim().replace("Zu prüfen & Entscheidung", "Entscheidung"); 
+            text = text.trim().replace("Zu prüfen & Entscheidung", "Entscheidung"); 
             let html = '<span class="summary-text-block text-left">' + text + '</span>';
             html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title text-left">$1</span><span class="summary-text-block text-left">');
             html = html.replace(/\n\n/g, '</span><span class="summary-text-block text-left">');
@@ -146,7 +202,6 @@
                         });
                         dayHtml += `</div>`;
                     } else {
-                        // ANGEPASSTER TEXT IN DER ANZEIGE
                         dayHtml += `
                             <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl flex items-center space-x-4 shadow-sm mb-4">
                                 <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
@@ -162,6 +217,57 @@
             } catch (e) { document.getElementById('loading').innerHTML = "Fehler beim Laden."; }
         }
         loadUrteile();
+
+        // BOT LOGIK
+        function toggleChat() {
+            const win = document.getElementById('bger-chat-window');
+            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        async function askBot() {
+            const nr = document.getElementById('bot-case-nr').value.trim();
+            const query = document.getElementById('bot-query').value.trim();
+            const btn = document.getElementById('send-btn');
+            const chatBox = document.getElementById('chat-messages');
+
+            if (!nr || !query) { alert("Bitte Urteilsnummer und Frage eingeben."); return; }
+
+            const userDiv = document.createElement('div');
+            userDiv.className = 'msg user';
+            userDiv.innerText = query;
+            chatBox.appendChild(userDiv);
+            
+            btn.disabled = true;
+            btn.innerText = "Claude analysiert...";
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                // HIER DEINE RENDER-URL EINTRAGEN
+                const API_URL = "https://DEIN-BOT-NAME.onrender.com/ask";
+
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ urteilsnummer: nr, frage: query })
+                });
+                const data = await response.json();
+                
+                const botDiv = document.createElement('div');
+                botDiv.className = 'msg bot';
+                botDiv.innerText = data.antwort || "Problem bei der Analyse.";
+                chatBox.appendChild(botDiv);
+            } catch (e) {
+                const errDiv = document.createElement('div');
+                errDiv.className = 'msg bot';
+                errDiv.innerText = "Verbindungsfehler.";
+                chatBox.appendChild(errDiv);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Frage an Claude senden";
+                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById('bot-query').value = "";
+            }
+        }
     </script>
 </body>
 </html>

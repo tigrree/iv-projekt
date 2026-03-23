@@ -1,5 +1,25 @@
 [
     {
+        "aktenzeichen": "9C_719/2025",
+        "datum": "23.03.2026",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "vorschau": "Assurance-invalidité",
+        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 3 column 702 (char 1089)",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://03-03-2026-9C_719-2025&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "9C_263/2025",
+        "datum": "23.03.2026",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "vorschau": "Assurance-invalidité (allocation pour impotent)",
+        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 3 column 1023 (char 1091)",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://04-03-2026-9C_263-2025&lang=de&zoom=&type=show_document"
+    },
+    {
         "aktenzeichen": "8C_379/2025",
         "datum": "20.03.2026",
         "publikation": false,

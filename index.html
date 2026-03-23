@@ -275,7 +275,7 @@
 
             try {
                 // HIER DEINE RENDER-URL EINTRAGEN
-                const API_URL = "https://bger-chatbot.onrender.com/ask";
+                const API_URL = "https://DEIN-BOT-NAME.onrender.com/ask";
 
                 const response = await fetch(API_URL, {
                     method: 'POST',
@@ -286,3 +286,25 @@
                 
                 const loader = document.getElementById('typing-indicator');
                 if(loader) loader.remove();
+
+                const botDiv = document.createElement('div');
+                botDiv.className = 'msg bot';
+                botDiv.innerText = data.antwort || "Problem bei der Analyse.";
+                chatBox.appendChild(botDiv);
+            } catch (e) {
+                const loader = document.getElementById('typing-indicator');
+                if(loader) loader.remove();
+                const errDiv = document.createElement('div');
+                errDiv.className = 'msg bot';
+                errDiv.innerText = "Verbindungsfehler.";
+                chatBox.appendChild(errDiv);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Frage stellen";
+                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById('bot-query').value = "";
+            }
+        }
+    </script>
+</body>
+</html>

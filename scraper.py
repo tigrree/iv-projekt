@@ -91,31 +91,42 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         
-        # Gezielte Abfrage
         response = client.messages.create(
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System, das NUR JSON ausgibt. Keine Prosa, keine Einleitung.",
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Nutze für Zeilenumbrüche im Text '\\n'. Maskiere Anführungszeichen im Text mit einem Backslash.",
             messages=[
-                {"role": "user", "content": f"Übersetze dieses Sachgebiet kurz ins Deutsche: '{vorschau_raw}'. Erstelle dann die Zusammenfassung für das Urteil basierend auf diesem Prompt:\n\n{PROMPT_ZUSAMMENFASSUNG}\n\nUrteil:\n{clean_text}\n\nGib das Ergebnis NUR in diesem Format aus: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}"}
+                {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' kurz ins Deutsche. Schritt 2: Erstelle die Zusammenfassung.\n\nGib das Ergebnis NUR in diesem Format aus: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
             ]
         )
         
-        # Sicherer Parser: Extrahiert JSON, falls Claude doch Text drumherum schreibt
         raw_content = response.content[0].text
-        json_match = re.search(r'\{.*\}', raw_content, re.DOTALL)
-        if json_match:
-            res_data = json.loads(json_match.group(0))
-            v_de = res_data.get("vorschau_de", vorschau_raw)
-            z_de = res_data.get("zusammenfassung", "")
-            z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
+        
+        # Verbessertes Parsing: Suche den Bereich zwischen den ersten und letzten geschweiften Klammern
+        try:
+            json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
+            if json_match:
+                # Wir bereinigen potenzielle Steuerzeichen, die JSON brechen
+                json_string = json_match.group(1).replace('\t', ' ')
+                res_data = json.loads(json_string)
+                v_de = res_data.get("vorschau_de", vorschau_raw)
+                z_de = res_data.get("zusammenfassung", "")
+                
+                # Anonymisierungssäuberung
+                z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
+                return v_de, z_de
+            else:
+                raise ValueError("Kein JSON gefunden")
+        except json.JSONDecodeError:
+            # Fallback: Falls JSON-Parsing scheitert, versuchen wir die Felder manuell zu extrahieren
+            v_match = re.search(r'"vorschau_de":\s*"(.*?)"', raw_content)
+            z_match = re.search(r'"zusammenfassung":\s*"(.*)"', raw_content, re.DOTALL)
+            v_de = v_match.group(1) if v_match else vorschau_raw
+            z_de = z_match.group(1) if z_match else "Fehler beim Parsing der KI-Antwort."
             return v_de, z_de
-        else:
-            raise ValueError("Kein JSON gefunden")
 
     except Exception as e:
-        print(f"KI-Fehler: {e}")
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
 def scrape_bger():

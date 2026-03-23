@@ -6,7 +6,7 @@
         "iv_zh_fuehrer": false,
         "iv_zh_gegner": false,
         "vorschau": "Assurance-invalidité",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 3 column 702 (char 1089)",
+        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 1 column 3469 (char 3468)",
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://03-03-2026-9C_719-2025&lang=de&zoom=&type=show_document"
     },
     {
@@ -16,7 +16,7 @@
         "iv_zh_fuehrer": false,
         "iv_zh_gegner": false,
         "vorschau": "Assurance-invalidité (allocation pour impotent)",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 3 column 1023 (char 1091)",
+        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 3 column 870 (char 938)",
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://04-03-2026-9C_263-2025&lang=de&zoom=&type=show_document"
     },
     {

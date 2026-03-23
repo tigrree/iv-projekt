@@ -42,7 +42,7 @@
             overflow: hidden; border: 1px solid #ddd;
         }
         .dark #bger-chat-window { background: #1c1c1e; border-color: #333; color: white; }
-        #chat-header { background: #1a3a5a; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; }
+        #chat-header { background: #1a3a5a; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
         #chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f0f2f5; }
         .dark #chat-messages { background: #000; }
         .msg { padding: 10px 14px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.4; }
@@ -53,14 +53,14 @@
         .dark #chat-input-area { border-color: #333; }
         #chat-input-area input, #chat-input-area textarea { 
             width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 8px; font-size: 13px; 
-            background: white; color: black;
+            background: white; color: black; outline: none;
         }
         .dark #chat-input-area input, .dark #chat-input-area textarea { background: #2c2c2e; border-color: #444; color: white; }
-        #send-btn { background: #1a3a5a; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; }
-        #send-btn:disabled { opacity: 0.5; }
+        #send-btn { background: #1a3a5a; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: opacity 0.2s; }
+        #send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
         /* LOADING ANIMATION */
-        .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #e4e6eb; border-radius: 12px; width: fit-content; }
+        .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #e4e6eb; border-radius: 12px; width: fit-content; margin-bottom: 5px; }
         .dark .typing { background: #2c2c2e; }
         .dot { width: 6px; height: 6px; background: #8e8e93; border-radius: 50%; animation: hop 1.4s infinite ease-in-out; }
         .dot:nth-child(2) { animation-delay: 0.2s; }
@@ -113,12 +113,12 @@
             <svg viewBox="0 0 24 24" fill="white" width="30px" height="30px"><path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 16.5l-1.32 1.32-.96-.96C7.21 17.9 5 14.71 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.71-2.21 6.9-4.72 7.86l-.96.96L12 18.5zM7.5 10c.83 0 1.5-.67 1.5-1.5S8.33 7 7.5 7 6 7.67 6 8.5 6.67 10 7.5 10zm9 0c.83 0 1.5-.67 1.5-1.5S17.33 7 16.5 7 15 7.67 15 8.5s.67 1.5 1.5 1.5zM12 15c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"/></svg>
         </div>
         <div id="bger-chat-window">
-            <div id="chat-header"><span>BGer Assistent</span><button onclick="toggleChat()">&times;</button></div>
+            <div id="chat-header"><span>BGer Assistent</span><button onclick="toggleChat()" class="text-xl">&times;</button></div>
             <div id="chat-messages"><div class="msg bot">Welches Urteil interessiert Sie? Geben Sie die Nummer (z.B. 9C_512/2024) und Ihre Frage an.</div></div>
             <div id="chat-input-area">
-                <input type="text" id="bot-case-nr" placeholder="Urteilsnummer...">
-                <textarea id="bot-query" placeholder="Ihre Frage..." rows="2"></textarea>
-                <button onclick="askBot()" id="send-btn">Frage an Claude senden</button>
+                <input type="text" id="bot-case-nr" placeholder="Urteilsnummer (z.B. 9C_512/2024)">
+                <textarea id="bot-query" placeholder="Ihre Frage... (Enter zum Senden)" rows="2" onkeydown="handleKeyPress(event)"></textarea>
+                <button onclick="askBot()" id="send-btn">Frage stellen</button>
             </div>
         </div>
     </div>
@@ -129,6 +129,7 @@
             light: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
             system: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path d="M12 3v1m0 16v1m9-9h-1M4 12H3" opacity="0.5"/></svg>'
         };
+
         function applyTheme(theme) {
             const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             document.documentElement.classList.toggle('dark', isDark);
@@ -139,6 +140,7 @@
                 if(el) el.classList.toggle('hidden', t !== theme);
             });
         }
+
         function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
         function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); document.getElementById('view-menu').classList.remove('show'); }
         function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.toggle('show'); document.getElementById('theme-menu').classList.remove('show'); }
@@ -154,6 +156,7 @@
             });
             document.getElementById('view-menu').classList.remove('show');
         }
+
         function formatSummary(text) {
             if (!text) return '';
             text = text.trim().replace("Zu prüfen & Entscheidung", "Entscheidung"); 
@@ -163,6 +166,7 @@
             html = html.replace(/<span[^>]*>\s*<\/span>/g, '');
             return html;
         }
+
         async function loadUrteile() {
             try {
                 const response = await fetch('urteile.json?v=' + Date.now());
@@ -227,9 +231,17 @@
         loadUrteile();
 
         // BOT LOGIK
+        function handleKeyPress(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                askBot();
+            }
+        }
+
         function toggleChat() {
             const win = document.getElementById('bger-chat-window');
             win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+            if(win.style.display === 'flex') document.getElementById('bot-query').focus();
         }
 
         async function askBot() {
@@ -240,13 +252,11 @@
 
             if (!nr || !query) { alert("Bitte Urteilsnummer und Frage eingeben."); return; }
 
-            // User Nachricht hinzufügen
             const userDiv = document.createElement('div');
             userDiv.className = 'msg user';
             userDiv.innerText = query;
             chatBox.appendChild(userDiv);
             
-            // Lade-Animation hinzufügen
             const loadingDiv = document.createElement('div');
             loadingDiv.id = 'typing-indicator';
             loadingDiv.className = 'typing';
@@ -268,7 +278,6 @@
                 });
                 const data = await response.json();
                 
-                // Lade-Animation entfernen
                 const loader = document.getElementById('typing-indicator');
                 if(loader) loader.remove();
 
@@ -285,7 +294,7 @@
                 chatBox.appendChild(errDiv);
             } finally {
                 btn.disabled = false;
-                btn.innerText = "Frage an Claude senden";
+                btn.innerText = "Frage stellen";
                 chatBox.scrollTop = chatBox.scrollHeight;
                 document.getElementById('bot-query').value = "";
             }

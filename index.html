@@ -143,7 +143,7 @@
 
         function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
         function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); document.getElementById('view-menu').classList.remove('show'); }
-        function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.toggle('show'); document.getElementById('theme-menu').classList.remove('show'); }
+        function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.remove('show'); document.getElementById('theme-menu').classList.remove('show'); }
         window.onclick = function(event) { if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); if (!event.target.closest('#view-btn')) document.getElementById('view-menu').classList.remove('show'); }
         applyTheme(localStorage.theme || 'system');
         
@@ -165,6 +165,14 @@
             html = html.replace(/\n\n/g, '</span><span class="summary-text-block text-left">');
             html = html.replace(/<span[^>]*>\s*<\/span>/g, '');
             return html;
+        }
+
+        // NEU: Funktion um Aktenzeichen in den Bot zu kopieren
+        function fillBot(az) {
+            document.getElementById('bot-case-nr').value = az;
+            const win = document.getElementById('bger-chat-window');
+            win.style.display = 'flex';
+            document.getElementById('bot-query').focus();
         }
 
         async function loadUrteile() {
@@ -195,11 +203,13 @@
                             if (u.iv_zh_fuehrer) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>`;
                             else if (u.iv_zh_gegner) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>`;
                             const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
+                            
+                            // MODIFIZIERT: onclick="fillBot('${u.aktenzeichen}')" zum Aktenzeichen hinzugefügt
                             dayHtml += `
                                 <div class="sub-accordion-item">
                                     <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
                                         <div class="text-left pr-4">
-                                            <div class="text-blue-600 dark:text-blue-500 font-bold text-xl text-left">${u.aktenzeichen}</div>
+                                            <div onclick="event.stopPropagation(); fillBot('${u.aktenzeichen}')" class="text-blue-600 dark:text-blue-500 font-bold text-xl text-left cursor-pointer hover:underline">${u.aktenzeichen}</div>
                                             ${rolleHinweis}${pubHinweis}
                                             <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
                                         </div>

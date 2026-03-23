@@ -11,7 +11,7 @@ import anthropic
 ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit robustem JSON-Parsing."""
+    """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit verbessertem JSON-Parsing."""
     
     # DEIN PROMPT (Struktur bleibt 1:1 erhalten)
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.

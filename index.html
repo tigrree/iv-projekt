@@ -58,6 +58,14 @@
         .dark #chat-input-area input, .dark #chat-input-area textarea { background: #2c2c2e; border-color: #444; color: white; }
         #send-btn { background: #1a3a5a; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; }
         #send-btn:disabled { opacity: 0.5; }
+
+        /* LOADING ANIMATION */
+        .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #e4e6eb; border-radius: 12px; width: fit-content; }
+        .dark .typing { background: #2c2c2e; }
+        .dot { width: 6px; height: 6px; background: #8e8e93; border-radius: 50%; animation: hop 1.4s infinite ease-in-out; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes hop { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased text-left">
@@ -232,18 +240,26 @@
 
             if (!nr || !query) { alert("Bitte Urteilsnummer und Frage eingeben."); return; }
 
+            // User Nachricht hinzufügen
             const userDiv = document.createElement('div');
             userDiv.className = 'msg user';
             userDiv.innerText = query;
             chatBox.appendChild(userDiv);
             
+            // Lade-Animation hinzufügen
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'typing-indicator';
+            loadingDiv.className = 'typing';
+            loadingDiv.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+            chatBox.appendChild(loadingDiv);
+
             btn.disabled = true;
             btn.innerText = "Claude analysiert...";
             chatBox.scrollTop = chatBox.scrollHeight;
 
             try {
                 // HIER DEINE RENDER-URL EINTRAGEN
-                const API_URL = "https://bger-chatbot.onrender.com/ask";
+                const API_URL = "https://DEIN-BOT-NAME.onrender.com/ask";
 
                 const response = await fetch(API_URL, {
                     method: 'POST',
@@ -252,11 +268,17 @@
                 });
                 const data = await response.json();
                 
+                // Lade-Animation entfernen
+                const loader = document.getElementById('typing-indicator');
+                if(loader) loader.remove();
+
                 const botDiv = document.createElement('div');
                 botDiv.className = 'msg bot';
                 botDiv.innerText = data.antwort || "Problem bei der Analyse.";
                 chatBox.appendChild(botDiv);
             } catch (e) {
+                const loader = document.getElementById('typing-indicator');
+                if(loader) loader.remove();
                 const errDiv = document.createElement('div');
                 errDiv.className = 'msg bot';
                 errDiv.innerText = "Verbindungsfehler.";

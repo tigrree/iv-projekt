@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -25,411 +24,287 @@
         .ios-button:active { transform: scale(0.99); }
         .ios-button:hover { opacity: 0.9; }
 
-```
-    /* ── BOT STYLES ── */
-    #chat-icon-launcher {
-        position: fixed; bottom: 25px; right: 25px;
-        width: 60px; height: 60px; background-color: #1a3a5a;
-        border-radius: 50%; display: flex; align-items: center;
-        justify-content: center; cursor: pointer; z-index: 9999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    }
-    #chat-icon-launcher:hover { transform: scale(1.1); }
+        /* BOT STYLES */
+        #chat-icon-launcher {
+            position: fixed; bottom: 25px; right: 25px;
+            width: 60px; height: 60px; background-color: #1a3a5a;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; cursor: pointer; z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        #chat-icon-launcher:hover { transform: scale(1.1); }
+        #bger-chat-window {
+            position: fixed; bottom: 95px; right: 25px;
+            width: 350px; height: 500px; background: white;
+            border-radius: 15px; display: none; flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 10000;
+            overflow: hidden; border: 1px solid #ddd;
+        }
+        .dark #bger-chat-window { background: #1c1c1e; border-color: #333; color: white; }
+        #chat-header { background: #1a3a5a; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f0f2f5; }
+        .dark #chat-messages { background: #000; }
+        .msg { padding: 10px 14px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.4; }
+        .bot { background: #e4e6eb; align-self: flex-start; color: black; }
+        .dark .bot { background: #2c2c2e; color: white; }
+        .user { background: #1a3a5a; align-self: flex-end; color: white; }
+        #chat-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; flex-direction: column; gap: 8px; }
+        .dark #chat-input-area { border-color: #333; }
+        #chat-input-area input, #chat-input-area textarea { 
+            width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 8px; font-size: 13px; 
+            background: white; color: black; outline: none;
+        }
+        .dark #chat-input-area input, .dark #chat-input-area textarea { background: #2c2c2e; border-color: #444; color: white; }
+        #send-btn { background: #1a3a5a; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        #send-btn:disabled { opacity: 0.5; }
 
-    #bger-chat-window {
-        position: fixed; bottom: 95px; right: 25px;
-        width: 350px; height: 500px; background: white;
-        border-radius: 15px; display: none; flex-direction: column;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 10000;
-        overflow: hidden; border: 1px solid #ddd;
-    }
-    .dark #bger-chat-window { background: #1c1c1e; border-color: #333; color: white; }
-
-    #chat-header { background: #1a3a5a; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-
-    #chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f0f2f5; }
-    .dark #chat-messages { background: #000; }
-
-    .msg { padding: 10px 14px; border-radius: 12px; font-size: 14px; max-width: 85%; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
-    .bot { background: #e4e6eb; align-self: flex-start; color: black; }
-    .dark .bot { background: #2c2c2e; color: white; }
-    .user { background: #1a3a5a; align-self: flex-end; color: white; }
-
-    #chat-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; flex-direction: column; gap: 8px; }
-    .dark #chat-input-area { border-color: #333; }
-    #chat-input-area input, #chat-input-area textarea {
-        width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 8px; font-size: 13px;
-        background: white; color: black; outline: none;
-    }
-    .dark #chat-input-area input, .dark #chat-input-area textarea { background: #2c2c2e; border-color: #444; color: white; }
-    #send-btn { background: #1a3a5a; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: opacity 0.2s; }
-    #send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-    .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #e4e6eb; border-radius: 12px; width: fit-content; }
-    .dark .typing { background: #2c2c2e; }
-    .dot { width: 6px; height: 6px; background: #8e8e93; border-radius: 50%; animation: hop 1.4s infinite ease-in-out; }
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes hop { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
-</style>
-```
-
+        .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #e4e6eb; border-radius: 12px; width: fit-content; margin-bottom: 5px; }
+        .dark .typing { background: #2c2c2e; }
+        .dot { width: 6px; height: 6px; background: #8e8e93; border-radius: 50%; animation: hop 1.4s infinite ease-in-out; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes hop { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
+    </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased text-left">
-
-```
-<div class="max-w-4xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-8">
-
-    <!-- ── HEADER ── -->
-    <header class="flex justify-between items-center mb-8 relative border-b border-gray-100 dark:border-gray-800 pb-4">
-        <div class="relative">
-            <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                <span id="active-theme-icon" class="text-black dark:text-white font-bold"></span>
-            </button>
-            <div id="theme-menu" class="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
-                <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
-                    <span>System</span><span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
+    <div class="max-w-4xl mx-auto min-h-screen px-4 sm:px-6 lg:px-8 py-8">
+        <header class="flex justify-between items-center mb-8 relative border-b border-gray-100 dark:border-gray-800 pb-4">
+            <div class="relative">
+                <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <span id="active-theme-icon" class="text-black dark:text-white font-bold"></span>
                 </button>
-                <button onclick="setTheme('light')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
-                    <span>Hell</span><span id="check-light" class="hidden text-blue-500 font-bold">✓</span>
-                </button>
-                <button onclick="setTheme('dark')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
-                    <span>Dunkel</span><span id="check-dark" class="hidden text-blue-500 font-bold">✓</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="relative">
-            <button onclick="toggleViewMenu(event)" id="view-btn" class="text-gray-600 dark:text-gray-300 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
-                </svg>
-            </button>
-            <div id="view-menu" class="dropdown-menu absolute left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
-                <button onclick="setView('newest')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 text-sm">Nur aktuellster Tag</button>
-                <button onclick="setView('all')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 text-sm">Alle aufklappen</button>
-                <button onclick="setView('none')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Alle zuklappen</button>
-            </div>
-        </div>
-
-        <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
-        </button>
-    </header>
-
-    <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-left text-black dark:text-white">IV-Entscheide BGer</h1>
-    <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
-    <div id="app-container" class="space-y-6 text-black dark:text-white text-left"></div>
-</div>
-
-<!-- ── CHAT WIDGET ── -->
-<div id="chat-bot-wrapper">
-    <div id="chat-icon-launcher" onclick="toggleChat()">
-        <svg viewBox="0 0 24 24" fill="white" width="30px" height="30px">
-            <path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 16.5l-1.32 1.32-.96-.96C7.21 17.9 5 14.71 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.71-2.21 6.9-4.72 7.86l-.96.96L12 18.5zM7.5 10c.83 0 1.5-.67 1.5-1.5S8.33 7 7.5 7 6 7.67 6 8.5 6.67 10 7.5 10zm9 0c.83 0 1.5-.67 1.5-1.5S17.33 7 16.5 7 15 7.67 15 8.5s.67 1.5 1.5 1.5zM12 15c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"/>
-        </svg>
-    </div>
-
-    <div id="bger-chat-window">
-        <div id="chat-header">
-            <span>BGer Assistent</span>
-            <button onclick="toggleChat()" style="background:none;border:none;color:white;font-size:20px;cursor:pointer;line-height:1;">×</button>
-        </div>
-        <div id="chat-messages">
-            <div class="msg bot">Welches Urteil interessiert Sie? Geben Sie die Nummer (z.B. 9C_512/2024) und Ihre Frage an.</div>
-        </div>
-        <div id="chat-input-area">
-            <input type="text" id="bot-case-nr" placeholder="Urteilsnummer (z.B. 9C_512/2024)">
-            <textarea id="bot-query" placeholder="Ihre Frage... (Enter zum Senden)" rows="2" onkeydown="handleKeyPress(event)"></textarea>
-            <button onclick="askBot()" id="send-btn">Frage stellen</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    // ── KONFIGURATION ──────────────────────────────────────────────────────
-    const API_URL = "https://bger-chatbot.onrender.com"; // Deine Render-URL
-
-    // ── THEME ──────────────────────────────────────────────────────────────
-    const icons = {
-        dark: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>',
-        light: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-        system: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path d="M12 3v1m0 16v1m9-9h-1M4 12H3" opacity="0.5"/></svg>'
-    };
-
-    function applyTheme(theme) {
-        const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        document.documentElement.classList.toggle('dark', isDark);
-        const iconEl = document.getElementById('active-theme-icon');
-        if (iconEl) iconEl.innerHTML = icons[theme] || icons.system;
-        ['system', 'light', 'dark'].forEach(t => {
-            const el = document.getElementById('check-' + t);
-            if (el) el.classList.toggle('hidden', t !== theme);
-        });
-    }
-
-    function setTheme(theme) {
-        localStorage.theme = theme;
-        applyTheme(theme);
-        document.getElementById('theme-menu').classList.remove('show');
-    }
-
-    function toggleThemeMenu(e) {
-        e.stopPropagation();
-        document.getElementById('theme-menu').classList.toggle('show');
-        document.getElementById('view-menu').classList.remove('show');
-    }
-
-    function toggleViewMenu(e) {
-        e.stopPropagation();
-        document.getElementById('view-menu').classList.toggle('show');
-        document.getElementById('theme-menu').classList.remove('show');
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show');
-        if (!event.target.closest('#view-btn')) document.getElementById('view-menu').classList.remove('show');
-    };
-
-    applyTheme(localStorage.theme || 'system');
-
-    // ── VIEW TOGGLE ────────────────────────────────────────────────────────
-    function setView(mode) {
-        const groups = document.querySelectorAll('.accordion-group');
-        groups.forEach((group, index) => {
-            if (mode === 'newest') {
-                group.classList.toggle('is-open', index === 0);
-            } else if (mode === 'all') {
-                group.classList.add('is-open');
-            } else {
-                group.classList.remove('is-open');
-            }
-        });
-        document.getElementById('view-menu').classList.remove('show');
-    }
-
-    // ── FORMATTING ─────────────────────────────────────────────────────────
-    function formatSummary(text) {
-        if (!text) return '';
-        text = text.trim().replace("Zu prüfen & Entscheidung", "Entscheidung");
-        let html = '<span class="summary-text-block text-left">' + text + '</span>';
-        html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title text-left">$1</span><span class="summary-text-block text-left">');
-        html = html.replace(/\n\n/g, '</span><span class="summary-text-block text-left">');
-        html = html.replace(/<span[^>]*>\s*<\/span>/g, '');
-        return html;
-    }
-
-    // ── CHAT VORAUSFÜLLEN (Klick auf Aktenzeichen) ─────────────────────────
-    function fillBot(az) {
-        document.getElementById('bot-case-nr').value = az;
-        const win = document.getElementById('bger-chat-window');
-        win.style.display = 'flex';
-        document.getElementById('bot-query').focus();
-    }
-
-    // ── URTEILE LADEN ──────────────────────────────────────────────────────
-    async function loadUrteile() {
-        try {
-            const response = await fetch('urteile.json?v=' + Date.now());
-            const data = await response.json();
-            document.getElementById('loading').style.display = 'none';
-            const container = document.getElementById('app-container');
-
-            const tageMap = {};
-            data.forEach(u => {
-                if (!tageMap[u.datum]) tageMap[u.datum] = [];
-                tageMap[u.datum].push(u);
-            });
-
-            const sortierteTage = Object.keys(tageMap).sort(
-                (a, b) => b.split('.').reverse().join('') - a.split('.').reverse().join('')
-            );
-
-            sortierteTage.forEach((datum, i) => {
-                const urteileAmTag = tageMap[datum];
-                const echteUrteile = urteileAmTag.filter(u => u.aktenzeichen !== "INFO_SKIP");
-                const daySection = document.createElement('div');
-                daySection.className = i === 0 ? "accordion-group is-open" : "accordion-group";
-
-                let dayHtml = `
-                    <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full flex justify-between items-center px-1 mb-2">
-                        <span class="text-xl font-bold">${datum}</span>
-                        <svg class="rotate-icon w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
+                <div id="theme-menu" class="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
+                    <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
+                        <span>System</span><span id="check-system" class="hidden text-blue-500 font-bold">✓</span>
                     </button>
-                    <div class="accordion-content space-y-3">
-                `;
+                    <button onclick="setTheme('light')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 text-sm">
+                        <span>Hell</span><span id="check-light" class="hidden text-blue-500 font-bold">✓</span>
+                    </button>
+                    <button onclick="setTheme('dark')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
+                        <span>Dunkel</span><span id="check-dark" class="hidden text-blue-500 font-bold">✓</span>
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <button onclick="toggleViewMenu(event)" id="view-btn" class="text-gray-600 dark:text-gray-300 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
+                    </svg>
+                </button>
+                <div id="view-menu" class="dropdown-menu absolute left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden text-black dark:text-white">
+                    <button onclick="setView('newest')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 text-sm">Nur aktuellster Tag</button>
+                    <button onclick="setView('all')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 text-sm">Alle aufklappen</button>
+                    <button onclick="setView('none')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Alle zuklappen</button>
+                </div>
+            </div>
+            <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </button>
+        </header>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-left text-black dark:text-white">IV-Entscheide BGer</h1>
+        <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
+        <div id="app-container" class="space-y-6 text-black dark:text-white text-left"></div>
+    </div>
 
-                if (echteUrteile.length > 0) {
-                    dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm mb-4 text-left">`;
+    <div id="chat-bot-wrapper">
+        <div id="chat-icon-launcher" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" fill="white" width="30px" height="30px"><path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 16.5l-1.32 1.32-.96-.96C7.21 17.9 5 14.71 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.71-2.21 6.9-4.72 7.86l-.96.96L12 18.5zM7.5 10c.83 0 1.5-.67 1.5-1.5S8.33 7 7.5 7 6 7.67 6 8.5 6.67 10 7.5 10zm9 0c.83 0 1.5-.67 1.5-1.5S17.33 7 16.5 7 15 7.67 15 8.5s.67 1.5 1.5 1.5zM12 15c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"/></svg>
+        </div>
+        <div id="bger-chat-window">
+            <div id="chat-header"><span>BGer Assistent</span><button onclick="toggleChat()" class="text-xl">&times;</button></div>
+            <div id="chat-messages"><div class="msg bot">Welches Urteil interessiert Sie? Geben Sie die Nummer (z.B. 9C_512/2024) und Ihre Frage an.</div></div>
+            <div id="chat-input-area">
+                <input type="text" id="bot-case-nr" placeholder="Urteilsnummer (z.B. 9C_512/2024)">
+                <textarea id="bot-query" placeholder="Ihre Frage... (Enter zum Senden)" rows="2" onkeydown="handleKeyPress(event)"></textarea>
+                <button onclick="askBot()" id="send-btn">Frage stellen</button>
+            </div>
+        </div>
+    </div>
 
-                    echteUrteile.forEach(u => {
-                        let rolleHinweis = '';
-                        if (u.iv_zh_fuehrer) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>`;
-                        else if (u.iv_zh_gegner) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>`;
-                        const pubHinweis = u.publikation
-                            ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>`
-                            : '';
+    <script>
+        const icons = {
+            dark: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>',
+            light: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+            system: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path d="M12 3v1m0 16v1m9-9h-1M4 12H3" opacity="0.5"/></svg>'
+        };
 
-                        dayHtml += `
-                            <div class="sub-accordion-item">
-                                <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
-                                    <div class="text-left pr-4">
-                                        <div onclick="event.stopPropagation(); fillBot('${u.aktenzeichen}')"
-                                             class="text-blue-600 dark:text-blue-500 font-bold text-xl text-left cursor-pointer hover:underline">
-                                            ${u.aktenzeichen}
-                                        </div>
-                                        ${rolleHinweis}${pubHinweis}
-                                        <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
-                                    </div>
-                                    <svg class="rotate-icon flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </button>
-                                <div class="accordion-content bg-white/40 dark:bg-black/20">
-                                    <div class="px-6 pt-3 pb-6 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
-                                        ${formatSummary(u.zusammenfassung)}
-                                        <a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a>
-                                    </div>
-                                </div>
-                            </div>`;
-                    });
-
-                    dayHtml += `</div>`;
-                } else {
-                    dayHtml += `
-                        <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl flex items-center space-x-4 shadow-sm mb-4">
-                            <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                            <div class="text-left font-bold text-lg text-gray-700 dark:text-gray-200 w-full">Keine neuen IV-relevanten Urteile</div>
-                        </div>`;
-                }
-
-                dayHtml += `</div>`;
-                daySection.innerHTML = dayHtml;
-                container.appendChild(daySection);
+        function applyTheme(theme) {
+            const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.classList.toggle('dark', isDark);
+            const iconEl = document.getElementById('active-theme-icon');
+            if(iconEl) iconEl.innerHTML = icons[theme] || icons.system;
+            ['system', 'light', 'dark'].forEach(t => {
+                const el = document.getElementById('check-' + t);
+                if(el) el.classList.toggle('hidden', t !== theme);
             });
-
-        } catch (e) {
-            document.getElementById('loading').innerHTML = "Fehler beim Laden.";
         }
-    }
 
-    loadUrteile();
+        function setTheme(theme) { localStorage.theme = theme; applyTheme(theme); document.getElementById('theme-menu').classList.remove('show'); }
+        function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); document.getElementById('view-menu').classList.remove('show'); }
+        function toggleViewMenu(e) { e.stopPropagation(); document.getElementById('view-menu').classList.toggle('show'); document.getElementById('theme-menu').classList.remove('show'); }
+        window.onclick = function(event) { if (!event.target.closest('#theme-btn')) document.getElementById('theme-menu').classList.remove('show'); if (!event.target.closest('#view-btn')) document.getElementById('view-menu').classList.remove('show'); }
+        applyTheme(localStorage.theme || 'system');
+        
+        function setView(mode) {
+            const groups = document.querySelectorAll('.accordion-group');
+            groups.forEach((group, index) => {
+                if (mode === 'newest') { if (index === 0) group.classList.add('is-open'); else group.classList.remove('is-open'); }
+                else if (mode === 'all') group.classList.add('is-open');
+                else if (mode === 'none') group.classList.remove('is-open');
+            });
+            document.getElementById('view-menu').classList.remove('show');
+        }
 
-    // ── CHAT WIDGET ────────────────────────────────────────────────────────
-    function toggleChat() {
-        const win = document.getElementById('bger-chat-window');
-        const isOpen = win.style.display === 'flex';
-        win.style.display = isOpen ? 'none' : 'flex';
+        function formatSummary(text) {
+            if (!text) return '';
+            text = text.trim().replace("Zu prüfen & Entscheidung", "Entscheidung"); 
+            let html = '<span class="summary-text-block text-left">' + text + '</span>';
+            html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title text-left">$1</span><span class="summary-text-block text-left">');
+            html = html.replace(/\n\n/g, '</span><span class="summary-text-block text-left">');
+            html = html.replace(/<span[^>]*>\s*<\/span>/g, '');
+            return html;
+        }
 
-        if (!isOpen) {
+        function fillBot(az) {
+            document.getElementById('bot-case-nr').value = az;
+            const win = document.getElementById('bger-chat-window');
+            win.style.display = 'flex';
             document.getElementById('bot-query').focus();
-            // Server aufwecken (Render Cold-Start Prevention)
-            fetch(API_URL + "/ping").catch(() => {});
-        }
-    }
-
-    function handleKeyPress(event) {
-        if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault();
-            askBot();
-        }
-    }
-
-    async function askBot() {
-        const nr = document.getElementById('bot-case-nr').value.trim();
-        const query = document.getElementById('bot-query').value.trim();
-        const btn = document.getElementById('send-btn');
-        const chatBox = document.getElementById('chat-messages');
-
-        if (!nr || !query) {
-            alert("Bitte Urteilsnummer und Frage eingeben.");
-            return;
         }
 
-        // Nutzernachricht anzeigen
-        const userDiv = document.createElement('div');
-        userDiv.className = 'msg user';
-        userDiv.textContent = query;
-        chatBox.appendChild(userDiv);
-        document.getElementById('bot-query').value = '';
+        async function loadUrteile() {
+            try {
+                const response = await fetch('urteile.json?v=' + Date.now());
+                const data = await response.json();
+                document.getElementById('loading').style.display = 'none';
+                const container = document.getElementById('app-container');
+                const tageMap = {};
+                data.forEach(u => { if (!tageMap[u.datum]) tageMap[u.datum] = []; tageMap[u.datum].push(u); });
+                const sortierteTage = Object.keys(tageMap).sort((a, b) => b.split('.').reverse().join('') - a.split('.').reverse().join(''));
+                sortierteTage.forEach((datum, i) => {
+                    const urteileAmTag = tageMap[datum];
+                    const echteUrteile = urteileAmTag.filter(u => u.aktenzeichen !== "INFO_SKIP");
+                    const daySection = document.createElement('div');
+                    daySection.className = i === 0 ? "accordion-group is-open" : "accordion-group";
+                    let dayHtml = `
+                        <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full flex justify-between items-center px-1 mb-2">
+                            <span class="text-xl font-bold">${datum}</span>
+                            <svg class="rotate-icon w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="accordion-content space-y-3">
+                    `;
+                    if (echteUrteile.length > 0) {
+                        dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm mb-4 text-left">`;
+                        echteUrteile.forEach(u => {
+                            let rolleHinweis = '';
+                            if (u.iv_zh_fuehrer) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>`;
+                            else if (u.iv_zh_gegner) rolleHinweis = `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>`;
+                            const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
+                            
+                            dayHtml += `
+                                <div class="sub-accordion-item">
+                                    <button onclick="event.stopPropagation(); this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
+                                        <div class="text-left pr-4">
+                                            <div onclick="event.stopPropagation(); fillBot('${u.aktenzeichen}')" class="text-blue-600 dark:text-blue-500 font-bold text-xl text-left cursor-pointer hover:underline">${u.aktenzeichen}</div>
+                                            ${rolleHinweis}${pubHinweis}
+                                            <div class="text-gray-500 dark:text-gray-400 text-sm mt-0.5 text-left">${u.vorschau}</div>
+                                        </div>
+                                        <svg class="rotate-icon flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                    </button>
+                                    <div class="accordion-content bg-white/40 dark:bg-black/20">
+                                        <div class="px-6 pt-3 pb-6 text-gray-800 dark:text-gray-300 text-base leading-relaxed whitespace-pre-wrap border-t border-gray-200 dark:border-gray-800/30 text-left">
+                                            ${formatSummary(u.zusammenfassung)}<a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                        });
+                        dayHtml += `</div>`;
+                    } else {
+                        dayHtml += `
+                            <div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl flex items-center space-x-4 shadow-sm mb-4">
+                                <div class="bg-gray-200 dark:bg-gray-800 p-3 rounded-2xl text-gray-500 dark:text-gray-400 flex-shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div class="text-left font-bold text-lg text-gray-700 dark:text-gray-200 w-full">Keine neuen IV-relevanten Urteile</div>
+                            </div>`;
+                    }
+                    dayHtml += `</div>`;
+                    daySection.innerHTML = dayHtml;
+                    container.appendChild(daySection);
+                });
+            } catch (e) { document.getElementById('loading').innerHTML = "Fehler beim Laden."; }
+        }
+        loadUrteile();
 
-        // Tipp-Indikator
-        const loadingDiv = document.createElement('div');
-        loadingDiv.id = 'typing-indicator';
-        loadingDiv.className = 'typing';
-        loadingDiv.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
-        chatBox.appendChild(loadingDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
+        function handleKeyPress(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                askBot();
+            }
+        }
 
-        btn.disabled = true;
-        btn.textContent = 'Claude analysiert…';
+        function toggleChat() {
+            const win = document.getElementById('bger-chat-window');
+            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+            if(win.style.display === 'flex') document.getElementById('bot-query').focus();
+        }
 
-        // Nach 8 Sekunden Hinweis einblenden (Cold-Start-Warnung)
-        const slowWarning = setTimeout(() => {
-            const ind = document.getElementById('typing-indicator');
-            if (ind) ind.innerHTML = `
-                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                <span style="font-size:11px;color:#888;margin-left:8px;">Server startet… (~30 Sek.)</span>`;
-        }, 8000);
+        async function askBot() {
+            const nr = document.getElementById('bot-case-nr').value.trim();
+            const query = document.getElementById('bot-query').value.trim();
+            const btn = document.getElementById('send-btn');
+            const chatBox = document.getElementById('chat-messages');
 
-        // Fetch mit 90-Sekunden-Timeout (für Render Cold Start)
-        const controller = new AbortController();
-        const hardTimeout = setTimeout(() => controller.abort(), 90000);
+            if (!nr || !query) { alert("Bitte Urteilsnummer und Frage eingeben."); return; }
 
-        try {
-            const response = await fetch(API_URL + "/ask", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    urteilsnummer: nr,
-                    frage: query
-                }),
-                signal: controller.signal
-            });
+            const userDiv = document.createElement('div');
+            userDiv.className = 'msg user';
+            userDiv.innerText = query;
+            chatBox.appendChild(userDiv);
+            
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'typing-indicator';
+            loadingDiv.className = 'typing';
+            loadingDiv.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+            chatBox.appendChild(loadingDiv);
 
-            clearTimeout(hardTimeout);
-            clearTimeout(slowWarning);
-
-            const data = await response.json();
-
-            const loader = document.getElementById('typing-indicator');
-            if (loader) loader.remove();
-
-            const botDiv = document.createElement('div');
-            botDiv.className = 'msg bot';
-            botDiv.textContent = data.antwort || 'Problem bei der Analyse.';
-            chatBox.appendChild(botDiv);
-
-        } catch (e) {
-            clearTimeout(hardTimeout);
-            clearTimeout(slowWarning);
-
-            const loader = document.getElementById('typing-indicator');
-            if (loader) loader.remove();
-
-            const errDiv = document.createElement('div');
-            errDiv.className = 'msg bot';
-            errDiv.textContent = e.name === 'AbortError'
-                ? 'Zeitüberschreitung (90 Sek.). Bitte erneut versuchen.'
-                : 'Verbindungsfehler. Bitte erneut versuchen.';
-            chatBox.appendChild(errDiv);
-        } finally {
-            btn.disabled = false;
-            btn.textContent = 'Frage stellen';
+            btn.disabled = true;
+            btn.innerText = "Claude analysiert...";
             chatBox.scrollTop = chatBox.scrollHeight;
-        }
-    }
-</script>
-```
 
+            try {
+                // HIER DEINE RENDER-URL EINTRAGEN
+                const API_URL = "https://bger-chatbot.onrender.com/ask";
+
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ urteilsnummer: nr, frage: query })
+                });
+                const data = await response.json();
+                
+                const loader = document.getElementById('typing-indicator');
+                if(loader) loader.remove();
+
+                const botDiv = document.createElement('div');
+                botDiv.className = 'msg bot';
+                botDiv.innerText = data.antwort || "Problem bei der Analyse.";
+                chatBox.appendChild(botDiv);
+            } catch (e) {
+                const loader = document.getElementById('typing-indicator');
+                if(loader) loader.remove();
+                const errDiv = document.createElement('div');
+                errDiv.className = 'msg bot';
+                errDiv.innerText = "Verbindungsfehler.";
+                chatBox.appendChild(errDiv);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Frage stellen";
+                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById('bot-query').value = "";
+            }
+        }
+    </script>
 </body>
 </html>

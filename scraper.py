@@ -13,7 +13,6 @@ ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit verbessertem JSON-Parsing."""
     
-    # DEIN PROMPT (Struktur bleibt 1:1 erhalten)
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
     
 ### VORAB-INFORMATION ZUM URTEILSAUFBAU:
@@ -103,23 +102,18 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         
         raw_content = response.content[0].text
         
-        # Verbessertes Parsing: Suche den Bereich zwischen den ersten und letzten geschweiften Klammern
         try:
             json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
             if json_match:
-                # Wir bereinigen potenzielle Steuerzeichen, die JSON brechen
                 json_string = json_match.group(1).replace('\t', ' ')
                 res_data = json.loads(json_string)
                 v_de = res_data.get("vorschau_de", vorschau_raw)
                 z_de = res_data.get("zusammenfassung", "")
-                
-                # Anonymisierungssäuberung
                 z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
                 return v_de, z_de
             else:
                 raise ValueError("Kein JSON gefunden")
         except json.JSONDecodeError:
-            # Fallback: Falls JSON-Parsing scheitert, versuchen wir die Felder manuell zu extrahieren
             v_match = re.search(r'"vorschau_de":\s*"(.*?)"', raw_content)
             z_match = re.search(r'"zusammenfassung":\s*"(.*)"', raw_content, re.DOTALL)
             v_de = v_match.group(1) if v_match else vorschau_raw
@@ -132,7 +126,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 def scrape_bger():
     print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
     api_key = os.getenv("ANTHROPIC_API_KEY")
-    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" # Deine ID einsetzen
+    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" 
 
     if not api_key:
         print("Fehler: API Key fehlt."); return
@@ -153,57 +147,76 @@ def scrape_bger():
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: return
-
-        full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
-        day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
-        
-        tages_ergebnisse = []
-        rows = day_soup.find_all('tr')
-        
-        for i in range(len(rows)):
-            row = rows[i]
-            link_tag = row.find('a', href=True)
-            if not link_tag: continue
-            raw_az = link_tag.get_text().strip()
-            if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
+        if not tag_link: 
+            print(f"Kein Link für {ZIEL_DATUM} gefunden.")
+            # Auch hier Sicherheitsnetz greifen lassen, falls der Link auf der Hauptseite fehlt
+            tages_ergebnisse = [] 
+        else:
+            full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
+            day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
             
-            clean_az = raw_az.replace("*", "").strip()
-            # Wir nehmen das Sachgebiet von der Webseite
-            vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
-
-            if "invalid" in (row.get_text() + vorschau_raw).lower():
-                print(f"Verarbeite Treffer: {clean_az}")
-                case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
-                case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
+            tages_ergebnisse = []
+            rows = day_soup.find_all('tr')
+            
+            for i in range(len(rows)):
+                row = rows[i]
+                link_tag = row.find('a', href=True)
+                if not link_tag: continue
+                raw_az = link_tag.get_text().strip()
+                if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                iv_zh_fuehrer, iv_zh_gegner = False, False
-                if "IV-Stelle des Kantons Zürich" in case_html[:5000]:
-                    if "Beschwerdeführerin" in case_html[:2000]: iv_zh_fuehrer = True
-                    else: iv_zh_gegner = True
+                clean_az = raw_az.replace("*", "").strip()
+                vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
 
-                ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
-                existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
+                if "invalid" in (row.get_text() + vorschau_raw).lower():
+                    print(f"Verarbeite Treffer: {clean_az}")
+                    case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
+                    case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
+                    
+                    iv_zh_fuehrer, iv_zh_gegner = False, False
+                    if "IV-Stelle des Kantons Zürich" in case_html[:5000]:
+                        if "Beschwerdeführerin" in case_html[:2000]: iv_zh_fuehrer = True
+                        else: iv_zh_gegner = True
 
-                if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
-                    v_text, z_text = existing['vorschau'], existing['zusammenfassung']
-                else:
-                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
-                    time.sleep(1) 
+                    ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
+                    existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
 
-                tages_ergebnisse.append({
-                    "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": "*" in raw_az,
-                    "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
-                    "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
-                })
+                    if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
+                        v_text, z_text = existing['vorschau'], existing['zusammenfassung']
+                    else:
+                        v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
+                        time.sleep(1) 
 
-        if tages_ergebnisse:
-            archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
-            archiv_daten.extend(tages_ergebnisse)
-            archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-            with open('urteile.json', 'w', encoding='utf-8') as f:
-                json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
+                    tages_ergebnisse.append({
+                        "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": "*" in raw_az,
+                        "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
+                        "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
+                    })
+
+        # --- SICHERHEITSNETZ ---
+        if not tages_ergebnisse:
+            print(f"Keine IV-Urteile gefunden. Erstelle INFO_SKIP für {ZIEL_DATUM}.")
+            tages_ergebnisse.append({
+                "aktenzeichen": "INFO_SKIP",
+                "datum": ZIEL_DATUM,
+                "publikation": False,
+                "iv_zh_fuehrer": False,
+                "iv_zh_gegner": False,
+                "vorschau": "Keine neuen IV-relevanten Urteile",
+                "zusammenfassung": "",
+                "url": ""
+            })
+
+        # Archiv aktualisieren: Erst Altes für heute raus, dann Neues rein
+        archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
+        archiv_daten.extend(tages_ergebnisse)
+        archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
+        
+        with open('urteile.json', 'w', encoding='utf-8') as f:
+            json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
+            
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
+        
     except Exception as e:
         print(f"Fehler: {e}")
 

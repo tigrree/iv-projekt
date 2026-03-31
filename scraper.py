@@ -158,40 +158,57 @@ def scrape_bger():
             tages_ergebnisse = []
             rows = day_soup.find_all('tr')
             
-            for i in range(len(rows)):
-                row = rows[i]
-                link_tag = row.find('a', href=True)
-                if not link_tag: continue
-                raw_az = link_tag.get_text().strip()
-                if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
+                    for i in range(len(rows)):
+            row = rows[i]
+            link_tag = row.find('a', href=True)
+            if not link_tag: continue
+            raw_az = link_tag.get_text().strip()
+            if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
+            
+            clean_az = raw_az.replace("*", "").strip()
+            vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
+
+            if "invalid" in (row.get_text() + vorschau_raw).lower():
+                print(f"Verarbeite Treffer: {clean_az}")
+                case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
+                case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                 
-                clean_az = raw_az.replace("*", "").strip()
-                vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
-
-                if "invalid" in (row.get_text() + vorschau_raw).lower():
-                    print(f"Verarbeite Treffer: {clean_az}")
-                    case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
-                    case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
+                # --- KORRIGIERTE ROLLEN-IDENTIFIKATION ---
+                iv_zh_fuehrer, iv_zh_gegner = False, False
+                rubrum_bereich = case_html[:3000] # Wir schauen uns nur den Kopf des Urteils an
+                
+                target_string = "IV-Stelle des Kantons Zürich"
+                if target_string in rubrum_bereich:
+                    # Finde die exakte Position der IV-Stelle im Text
+                    start_pos = rubrum_bereich.find(target_string)
+                    # Wir prüfen die nächsten 200 Zeichen nach der Nennung der IV-Stelle
+                    kontext = rubrum_bereich[start_pos : start_pos + 200]
                     
-                    iv_zh_fuehrer, iv_zh_gegner = False, False
-                    if "IV-Stelle des Kantons Zürich" in case_html[:5000]:
-                        if "Beschwerdeführerin" in case_html[:2000]: iv_zh_fuehrer = True
-                        else: iv_zh_gegner = True
+                    if "Beschwerdeführerin" in kontext:
+                        iv_zh_fuehrer = True
+                    elif "Beschwerdegegnerin" in kontext:
+                        iv_zh_gegner = True
+                # ------------------------------------------
 
-                    ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
-                    existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
+                ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
+                existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
 
-                    if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
-                        v_text, z_text = existing['vorschau'], existing['zusammenfassung']
-                    else:
-                        v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
-                        time.sleep(1) 
+                if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
+                    v_text, z_text = existing['vorschau'], existing['zusammenfassung']
+                else:
+                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
+                    time.sleep(1) 
 
-                    tages_ergebnisse.append({
-                        "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": "*" in raw_az,
-                        "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
-                        "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
-                    })
+                tages_ergebnisse.append({
+                    "aktenzeichen": clean_az, 
+                    "datum": ZIEL_DATUM, 
+                    "publikation": "*" in raw_az,
+                    "iv_zh_fuehrer": iv_zh_fuehrer, 
+                    "iv_zh_gegner": iv_zh_gegner,
+                    "vorschau": v_text, 
+                    "zusammenfassung": z_text, 
+                    "url": case_url
+                })
 
         # --- SICHERHEITSNETZ ---
         if not tages_ergebnisse:

@@ -1,15 +1,5 @@
 [
     {
-        "aktenzeichen": "9C_35/2026",
-        "datum": "31.03.2026",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": true,
-        "vorschau": "Invalidenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20240620'}, 'request_id': 'req_011CZb9xNRjwx6vfhznQu1Gr'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://16-03-2026-9C_35-2026&lang=de&zoom=&type=show_document"
-    },
-    {
         "aktenzeichen": "9C_593/2025",
         "datum": "30.03.2026",
         "publikation": false,

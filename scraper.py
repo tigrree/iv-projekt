@@ -154,8 +154,6 @@ def scrape_bger():
         else:
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
             day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
-            
-            tages_ergebnisse = []
             rows = day_soup.find_all('tr')
             
             for i in range(len(rows)):
@@ -173,10 +171,18 @@ def scrape_bger():
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     
+                    # --- KORRIGIERTE ROLLEN-IDENTIFIKATION ---
                     iv_zh_fuehrer, iv_zh_gegner = False, False
-                    if "IV-Stelle des Kantons Zürich" in case_html[:5000]:
-                        if "Beschwerdeführerin" in case_html[:2000]: iv_zh_fuehrer = True
-                        else: iv_zh_gegner = True
+                    rubrum_bereich = case_html[:3000]
+                    
+                    target_string = "IV-Stelle des Kantons Zürich"
+                    if target_string in rubrum_bereich:
+                        start_pos = rubrum_bereich.find(target_string)
+                        kontext = rubrum_bereich[start_pos : start_pos + 200]
+                        if "Beschwerdeführerin" in kontext:
+                            iv_zh_fuehrer = True
+                        elif "Beschwerdegegnerin" in kontext:
+                            iv_zh_gegner = True
 
                     ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
                     existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
@@ -188,9 +194,14 @@ def scrape_bger():
                         time.sleep(1) 
 
                     tages_ergebnisse.append({
-                        "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "publikation": "*" in raw_az,
-                        "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
-                        "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
+                        "aktenzeichen": clean_az, 
+                        "datum": ZIEL_DATUM, 
+                        "publikation": "*" in raw_az,
+                        "iv_zh_fuehrer": iv_zh_fuehrer, 
+                        "iv_zh_gegner": iv_zh_gegner,
+                        "vorschau": v_text, 
+                        "zusammenfassung": z_text, 
+                        "url": case_url
                     })
 
         # --- SICHERHEITSNETZ ---

@@ -91,7 +91,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         clean_text = " ".join(urteil_text.split()[:5000])
         
         response = client.messages.create(
-            model="claude-sonnet-4-6", 
+            model="claude-3-5-sonnet-20240620", 
             max_tokens=3500,
             temperature=0,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Nutze für Zeilenumbrüche im Text '\\n'. Maskiere Anführungszeichen im Text mit einem Backslash.",
@@ -142,15 +142,16 @@ def scrape_bger():
         try: archiv_daten = json.load(f)
         except: archiv_daten = []
 
+    # WICHTIG: Hier initialisieren, damit das Sicherheitsnetz am Ende immer funktioniert
+    tages_ergebnisse = [] 
+
     try:
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
         if not tag_link: 
-            print(f"Kein Link für {ZIEL_DATUM} gefunden.")
-            # Auch hier Sicherheitsnetz greifen lassen, falls der Link auf der Hauptseite fehlt
-            tages_ergebnisse = [] 
+            print(f"Kein Link für {ZIEL_DATUM} auf der Hauptseite gefunden.")
         else:
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
             day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
@@ -171,7 +172,7 @@ def scrape_bger():
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     
-                    # --- KORRIGIERTE ROLLEN-IDENTIFIKATION ---
+                    # --- ROLLEN-IDENTIFIKATION ---
                     iv_zh_fuehrer, iv_zh_gegner = False, False
                     rubrum_bereich = case_html[:3000]
                     

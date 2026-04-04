@@ -1,27 +1,5 @@
 [
     {
-        "aktenzeichen": "INFO_SKIP_IV",
-        "datum": "03.04.2026",
-        "kategorie": "iv",
-        "vorschau": "Keine IV-Urteile",
-        "zusammenfassung": "",
-        "url": "",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false
-    },
-    {
-        "aktenzeichen": "INFO_SKIP_AK",
-        "datum": "03.04.2026",
-        "kategorie": "ak",
-        "vorschau": "Keine AK-Urteile",
-        "zusammenfassung": "",
-        "url": "",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false
-    },
-    {
         "aktenzeichen": "9C_279/2025",
         "datum": "02.04.2026",
         "kategorie": "ak",

@@ -129,7 +129,8 @@ def scrape_bger():
         
         if tag_link:
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
-            rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
+            day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
+            rows = day_soup.find_all('tr')
             
             iv_keywords = ["invalid", "ai", "invalidità"]
             ak_keywords = [
@@ -146,9 +147,12 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                clean_az, vorschau_raw = raw_az.replace("*", "").strip(), (rows[i+1].get_text().strip() if i+1 < len(rows) else "")
+                clean_az = raw_az.replace("*", "").strip()
+                vorschau_raw = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
                 check_text = (row.get_text() + vorschau_raw).lower()
-                ist_iv, ist_ak = any(k in check_text for k in iv_keywords), any(k in check_text for k in ak_keywords)
+                
+                ist_iv = any(k in check_text for k in iv_keywords)
+                ist_ak = any(k in check_text for k in ak_keywords)
 
                 if ist_iv or ist_ak:
                     kat = "iv" if ist_iv else "ak"
@@ -165,15 +169,7 @@ def scrape_bger():
                         if "Beschwerdeführerin" in kontext: iv_zh_fuehrer = True
                         elif "Beschwerdegegnerin" in kontext: iv_zh_gegner = True
 
-                    ist_fremd = any(w in vorschau_raw.lower() for w in ["assurance", "invalidità", "familiale", "vecchiaia", "vieillesse", "maladie", "prestation"])
-                    existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
-
-                    if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremd:
-                        v_text, z_text = existing['vorschau'], existing['zusammenfassung']
-                    else:
-                        v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
-                        time.sleep(1) 
-
+                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                     tages_ergebnisse.append({
                         "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "kategorie": kat,
                         "publikation": "*" in raw_az, "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
@@ -190,9 +186,11 @@ def scrape_bger():
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-        with open('urteile.json', 'w', encoding='utf-8') as f: json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
+        with open('urteile.json', 'w', encoding='utf-8') as f:
+            json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
-    except Exception as e: print(f"Fehler: {e}")
+    except Exception as e:
+        print(f"Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

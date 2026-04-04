@@ -45,7 +45,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 1. Erfinde nichts und leite nichts selbstständig her. Nutze für die Begründung nahezu ausschliesslich die im Urteil verwendeten Verben und Adjektive. Wenn das Gericht schreibt, eine Schlussfolgerung „beruht auf einer Verletzung von Bundesrecht“, schreibe nicht „ist bundesrechtswidrig“.
 2. Zum Sachverhalt: Fokus auf dem materiellen Sachverhalt. Namentlich auf den Anträgen (auch eventualiter Anträge), Prozessgeschichte (Vorinstanz) und Verfahren vor Bundesgericht.
 3. Streitig: Fokus auf dem, was strittig ist und was unstrittig ist.
-4. Zum Entscheid:
+4. Zum Entscheid (NUR bei IV-relevanten Urteilen relevant):
 4.1 Medizinische Aspekte: Fokus auf Gutachten und RAD-Stellungnahmen. Sofern das oder die Gutachten und/oder die RAD-Stellungnahme oder RAD-Stellungnahmen nicht thematisiert wird/werden, musst du keine Ausführungen dazu erfassen.
 4.2 Übergangsrecht: Falls WEIV (altes vs. neues Recht ab 1.1.2022) thematisiert wird, kurz erwähnen, welches Recht anwendbar ist. Sofern das WEIV nicht thematisiert wird, musst du keine Ausführungen zum WEIV erfassen.
 
@@ -57,13 +57,13 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 5. KEINE redundanten Aufzählungen ("Das Gericht hat zu prüfen...").
 6. Rubrum und Dispositiv (als Textblock) weglassen.
 7. Prozesskosten/Entschädigungen weglassen.
-8. Behörden: Stellungnahmen des BSV nur erwähnen, wenn diese tatsächlich vorhanden sind. Erwähne das BSV nicht, sofern es auf eine Stellungnahme verzichtet hat.
+8. Behörden: Stellungnahmen des BSV (Bundesamt für Sozialversicherungen) nur erwähnen, wenn diese tatsächlich inhaltlich vorhanden sind. Bei AK-Urteilen die jeweilige Ausgleichskasse nur bei Relevanz für die Begründung nennen.
 9. VERBOT DER SYNTHESE: Erstelle keine eigenen logischen Verknüpfungen zwischen Parteivorbringen und dem Urteil. Wenn das Bundesgericht eine Rüge nur wiedergibt, ohne sie sich zu eigen zu machen, darf sie nicht als Feststellung des Gerichts erscheinen. Die Zusammenfassung muss ein neutrales Referat des Textes sein, keine rechtliche Würdigung durch die KI.
 
 ### STRIKTE FORMREGELN:
 1. Anonymisierung:
 1.1. Namen von Personen (z. B. B.________) konsequent auf den Buchstaben und den Punkt reduzieren (Beispiel: B. B.).
-1.2. Gutachterstellen: Nur die Abkürzung angeben (z.B. ZMB statt Zentrum für Medizinische Begutachtung).
+1.2. Medizinische Gutachterstellen (NUR bei IV-relevanten Urteilen): Nur die Abkürzung angeben (z.B. ZMB statt Zentrum für Medizinische Begutachtung).
 2. Schreibstil: Konsequent 'ss' statt 'ß'.
 3. Zitatpflicht: Jede inhaltliche Feststellung MUSS mit der Erwägung (z.B. E. 7.1) belegt werden.
 4. Indirekte Rede & Quelle: Nutze bei der Wiedergabe von Parteivorbringen konsequent Verben wie „macht geltend“, „behauptet“ oder „rügt“. Bei der Vorinstanz „ging davon aus“ oder „erwog“. Nur beim Bundesgericht verwendest du Feststellungen wie „stellt fest“ oder „erkennt“.
@@ -89,9 +89,8 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
-        
         response = client.messages.create(
-            model="claude-sonnet-4-6", 
+            model="claude-3-5-sonnet-latest", 
             max_tokens=3500,
             temperature=0,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Nutze für Zeilenumbrüche im Text '\\n'. Maskiere Anführungszeichen im Text mit einem Backslash.",
@@ -99,64 +98,47 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
                 {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' kurz ins Deutsche. Schritt 2: Erstelle die Zusammenfassung.\n\nGib das Ergebnis NUR in diesem Format aus: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
             ]
         )
-        
         raw_content = response.content[0].text
-        
-        try:
-            json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
-            if json_match:
-                json_string = json_match.group(1).replace('\t', ' ')
-                res_data = json.loads(json_string)
-                v_de = res_data.get("vorschau_de", vorschau_raw)
-                z_de = res_data.get("zusammenfassung", "")
-                z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
-                return v_de, z_de
-            else:
-                raise ValueError("Kein JSON gefunden")
-        except json.JSONDecodeError:
-            v_match = re.search(r'"vorschau_de":\s*"(.*?)"', raw_content)
-            z_match = re.search(r'"zusammenfassung":\s*"(.*)"', raw_content, re.DOTALL)
-            v_de = v_match.group(1) if v_match else vorschau_raw
-            z_de = z_match.group(1) if z_match else "Fehler beim Parsing der KI-Antwort."
+        json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
+        if json_match:
+            res_data = json.loads(json_match.group(1).replace('\t', ' '))
+            v_de = res_data.get("vorschau_de", vorschau_raw)
+            z_de = re.sub(r'([A-Z]\.)_+', r'\1', res_data.get("zusammenfassung", ""))
             return v_de, z_de
-
+        return vorschau_raw, "Fehler beim Parsing der KI-Antwort."
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
 def scrape_bger():
     print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
     api_key = os.getenv("ANTHROPIC_API_KEY")
-    org_id = "85fb8cfd-b506-4277-bb3d-ac972465aecc" 
-
-    if not api_key:
-        print("Fehler: API Key fehlt."); return
-
-    client = anthropic.Anthropic(api_key=api_key, default_headers={"anthropic-organization": org_id})
-    domain = "https://www.bger.ch"
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    client = anthropic.Anthropic(api_key=api_key)
+    domain, headers = "https://www.bger.ch", {'User-Agent': 'Mozilla/5.0'}
     
     if not os.path.exists('urteile.json'):
         with open('urteile.json', 'w', encoding='utf-8') as f: json.dump([], f)
-    
     with open('urteile.json', 'r', encoding='utf-8') as f:
         try: archiv_daten = json.load(f)
         except: archiv_daten = []
 
-    # WICHTIG: Hier initialisieren, damit das Sicherheitsnetz am Ende immer funktioniert
     tages_ergebnisse = [] 
-
     try:
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
-        if not tag_link: 
-            print(f"Kein Link für {ZIEL_DATUM} auf der Hauptseite gefunden.")
-        else:
+        if tag_link:
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
-            day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
-            rows = day_soup.find_all('tr')
+            rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
+            iv_keywords = ["invalid", "ai", "invalidità"]
+            ak_keywords = [
+                "familienzulage", "allocation familiale", "assegni familiari",
+                "hinterlassenenversicherung", "vieillesse", "vecchiaia",
+                "krankenversicherung", "maladie", "malattie",
+                "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
+            ]
+
             for i in range(len(rows)):
                 row = rows[i]
                 link_tag = row.find('a', href=True)
@@ -164,73 +146,53 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                clean_az = raw_az.replace("*", "").strip()
-                vorschau_raw = rows[i+1].get_text().strip() if i + 1 < len(rows) else ""
+                clean_az, vorschau_raw = raw_az.replace("*", "").strip(), (rows[i+1].get_text().strip() if i+1 < len(rows) else "")
+                check_text = (row.get_text() + vorschau_raw).lower()
+                ist_iv, ist_ak = any(k in check_text for k in iv_keywords), any(k in check_text for k in ak_keywords)
 
-                if "invalid" in (row.get_text() + vorschau_raw).lower():
-                    print(f"Verarbeite Treffer: {clean_az}")
+                if ist_iv or ist_ak:
+                    kat = "iv" if ist_iv else "ak"
+                    if ist_iv and ist_ak: kat = "beide"
+                    
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     
-                    # --- ROLLEN-IDENTIFIKATION ---
                     iv_zh_fuehrer, iv_zh_gegner = False, False
-                    rubrum_bereich = case_html[:3000]
-                    
-                    target_string = "IV-Stelle des Kantons Zürich"
-                    if target_string in rubrum_bereich:
-                        start_pos = rubrum_bereich.find(target_string)
-                        kontext = rubrum_bereich[start_pos : start_pos + 200]
-                        if "Beschwerdeführerin" in kontext:
-                            iv_zh_fuehrer = True
-                        elif "Beschwerdegegnerin" in kontext:
-                            iv_zh_gegner = True
+                    rubrum = case_html[:3000]
+                    if "IV-Stelle des Kantons Zürich" in rubrum:
+                        pos = rubrum.find("IV-Stelle des Kantons Zürich")
+                        kontext = rubrum[pos:pos+200]
+                        if "Beschwerdeführerin" in kontext: iv_zh_fuehrer = True
+                        elif "Beschwerdegegnerin" in kontext: iv_zh_gegner = True
 
-                    ist_fremdsprachig = any(w in vorschau_raw.lower() for w in ["assicurazione", "assurance", "invalidità"])
+                    ist_fremd = any(w in vorschau_raw.lower() for w in ["assurance", "invalidità", "familiale", "vecchiaia", "vieillesse", "maladie", "prestation"])
                     existing = next((d for d in archiv_daten if d['aktenzeichen'] == clean_az), None)
 
-                    if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremdsprachig:
+                    if existing and "Fehler" not in existing.get('zusammenfassung', '') and not ist_fremd:
                         v_text, z_text = existing['vorschau'], existing['zusammenfassung']
                     else:
                         v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                         time.sleep(1) 
 
                     tages_ergebnisse.append({
-                        "aktenzeichen": clean_az, 
-                        "datum": ZIEL_DATUM, 
-                        "publikation": "*" in raw_az,
-                        "iv_zh_fuehrer": iv_zh_fuehrer, 
-                        "iv_zh_gegner": iv_zh_gegner,
-                        "vorschau": v_text, 
-                        "zusammenfassung": z_text, 
-                        "url": case_url
+                        "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "kategorie": kat,
+                        "publikation": "*" in raw_az, "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
+                        "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
                     })
 
-        # --- SICHERHEITSNETZ ---
         if not tages_ergebnisse:
-            print(f"Keine IV-Urteile gefunden. Erstelle INFO_SKIP für {ZIEL_DATUM}.")
             tages_ergebnisse.append({
-                "aktenzeichen": "INFO_SKIP",
-                "datum": ZIEL_DATUM,
-                "publikation": False,
-                "iv_zh_fuehrer": False,
-                "iv_zh_gegner": False,
-                "vorschau": "Keine neuen IV-relevanten Urteile",
-                "zusammenfassung": "",
-                "url": ""
+                "aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM, "kategorie": "info",
+                "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False,
+                "vorschau": "Keine neuen relevanten Urteile", "zusammenfassung": "", "url": ""
             })
 
-        # Archiv aktualisieren: Erst Altes für heute raus, dann Neues rein
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-        
-        with open('urteile.json', 'w', encoding='utf-8') as f:
-            json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-            
+        with open('urteile.json', 'w', encoding='utf-8') as f: json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
-        
-    except Exception as e:
-        print(f"Fehler: {e}")
+    except Exception as e: print(f"Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

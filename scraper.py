@@ -141,7 +141,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             
             # Wenn alles fehlschlägt und die KI trotzdem leer antwortet:
             if not z_de: 
-                z_de = "Zusammenfassung konnte nicht erstellt werden (Urteil möglicherweise zu kurz oder Nichteintretensentscheid)."
+                z_de = "Zusammenfassung konnte nicht erstellt werden (Urteil möglicherweise zu kurz oder reiner Nichteintretensentscheid)."
 
             return v_de, z_de
             
@@ -184,27 +184,28 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                tds = row.find_all('td')
-                haupt_sachgebiet = tds[2].get_text().strip() if len(tds) > 2 else ""
+                # --- BULLETPROOF TEXT-EXTRAKTION ---
+                # Holt absolut allen Text aus der aktuellen Zeile (egal welche HTML-Struktur)
+                volltext = row.get_text(" ", strip=True)
                 
-                unter_sachgebiet = ""
                 if i + 1 < len(rows):
                     next_row = rows[i+1]
+                    # Nur wenn die nächste Zeile keinen eigenen Link hat, gehört sie noch zu diesem Urteil
                     if not next_row.find('a', href=True):
-                        next_tds = next_row.find_all('td')
-                        if len(next_tds) > 2:
-                            unter_sachgebiet = next_tds[2].get_text().strip()
-                        else:
-                            unter_sachgebiet = next_row.get_text().strip()
+                        volltext += " " + next_row.get_text(" ", strip=True)
                 
-                volltext_sachgebiet = f"{haupt_sachgebiet} {unter_sachgebiet}".strip()
-                volltext_sachgebiet = re.sub(r'\s+', ' ', volltext_sachgebiet)
+                # Alles was VOR und INKLUSIVE dem Aktenzeichen steht, wird weggeschnitten
+                # So bleibt zu 100% nur noch das reine Sachgebiet übrig!
+                if raw_az in volltext:
+                    vorschau_raw = volltext.split(raw_az, 1)[-1].strip()
+                else:
+                    vorschau_raw = volltext
                 
-                # Aktenzeichen VOR dem Senden an die KI sicherheitshalber strippen
-                volltext_sachgebiet = re.sub(r'^[89]C_\d+/\d+\s*', '', volltext_sachgebiet).strip()
+                # Stern (Publikation) prüfen und aus dem Text entfernen
+                ist_publikation = "*" in volltext
+                vorschau_raw = vorschau_raw.replace("*", "").strip()
                 
-                search_text = volltext_sachgebiet.lower()
-                ist_publikation = "*" in volltext_sachgebiet
+                search_text = volltext.lower()
                 
                 ist_iv = any(k in search_text for k in iv_keywords)
                 ist_ak = any(k in search_text for k in ak_keywords)
@@ -225,14 +226,14 @@ def scrape_bger():
                         if "Beschwerdeführerin" in case_html[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
 
-                    v_text, z_text = summarize_and_translate(case_html, volltext_sachgebiet, client)
+                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                     
                     tages_ergebnisse.append({
                         "aktenzeichen": clean_az, 
                         "datum": ZIEL_DATUM, "kategorie": kat,
                         "publikation": ist_publikation, 
                         "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner, 
-                        "vorschau": v_text.replace("*", "").strip(), 
+                        "vorschau": v_text, 
                         "zusammenfassung": z_text, "url": case_url
                     })
 

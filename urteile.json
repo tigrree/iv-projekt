@@ -11,39 +11,6 @@
         "url": ""
     },
     {
-        "aktenzeichen": "8C_1/2026",
-        "datum": "02.04.2026",
-        "kategorie": "iv",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Aide sociale (condition de recevabilité)",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-4-6-sonnet'}, 'request_id': 'req_011CZj1PW35146PviPp6PrAW'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://10-03-2026-8C_1-2026&lang=de&zoom=&type=show_document"
-    },
-    {
-        "aktenzeichen": "9C_279/2025",
-        "datum": "02.04.2026",
-        "kategorie": "ak",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Krankenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-4-6-sonnet'}, 'request_id': 'req_011CZj1Pd5V1FHMSYKdGKLQH'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://17-03-2026-9C_279-2025&lang=de&zoom=&type=show_document"
-    },
-    {
-        "aktenzeichen": "9C_11/2026",
-        "datum": "02.04.2026",
-        "kategorie": "ak",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Krankenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-4-6-sonnet'}, 'request_id': 'req_011CZj1PfUr37JRebhRwVzDZ'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://18-03-2026-9C_11-2026&lang=de&zoom=&type=show_document"
-    },
-    {
         "aktenzeichen": "8C_234/2025",
         "datum": "01.04.2026",
         "kategorie": "iv",

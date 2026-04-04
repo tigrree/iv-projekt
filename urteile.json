@@ -1,16 +1,5 @@
 [
     {
-        "aktenzeichen": "INFO_SKIP",
-        "datum": "03.04.2026",
-        "kategorie": "info",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Keine neuen relevanten Urteile",
-        "zusammenfassung": "",
-        "url": ""
-    },
-    {
         "aktenzeichen": "9C_279/2025",
         "datum": "02.04.2026",
         "kategorie": "ak",

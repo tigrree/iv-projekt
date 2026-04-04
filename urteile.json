@@ -11,6 +11,39 @@
         "url": ""
     },
     {
+        "aktenzeichen": "9C_279/2025",
+        "datum": "02.04.2026",
+        "kategorie": "ak",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "vorschau": "Krankenversicherung",
+        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Expecting ',' delimiter: line 3 column 3552 (char 3993)",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://17-03-2026-9C_279-2025&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "9C_11/2026",
+        "datum": "02.04.2026",
+        "kategorie": "ak",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "vorschau": "Krankenversicherung – Nichteintreten mangels rechtsgenüglicher Begründung",
+        "zusammenfassung": "**Sachverhalt & Anträge**\nA. erhob am 22. September 2025 Beschwerde gegen den ihm am 15. April 2025 zugestellten Einspracheentscheid der WAS Wirtschaft Arbeit Soziales, Ausgleichskasse Luzern, vom 14. April 2025. Das Kantonsgericht Luzern trat mit Urteil vom 9. Dezember 2025 auf die Beschwerde nicht ein, da diese verspätet eingereicht worden war (5V 25 284). A., vertreten durch B., erhob am 8. Januar 2026 Beschwerde an das Bundesgericht und stellte ein Gesuch um unentgeltliche Rechtspflege. Mit Mitteilung vom 13. Januar 2026 wies das Bundesgericht A. darauf hin, dass die Vollmacht fehle und die Beschwerde die gesetzlichen Formerfordernisse hinsichtlich Begehren und Begründung nicht zu erfüllen scheine. Mit Eingabe vom 5. Februar 2026 reichte A. eine Vollmacht nach.\n\n**Streitig**\nStreitig ist, ob die Beschwerde an das Bundesgericht die gesetzlichen Formerfordernisse gemäss Art. 42 Abs. 1 und 2 BGG erfüllt, namentlich ob sie eine sachbezogene Begründung enthält, die sich mit dem vorinstanzlichen Nichteintreten wegen verpasster Rechtsmittelfrist auseinandersetzt.\n\n**Entscheidung**\nDas Bundesgericht tritt auf die Beschwerde nicht ein (E. 1 ff.).\n\n<u>Fehlen einer sachbezogenen Begründung:</u> Das Bundesgericht stellt fest, dass A. sich in seinen Eingaben zum eigentlichen Prozessthema – dem vorinstanzlichen Nichteintreten aufgrund verpasster Rechtsmittelfrist – nicht äussert. Stattdessen rügt er pauschal eine Verletzung des Verbots des überspitzten Formalismus (Art. 29 Abs. 1 BV), des Grundsatzes der Verfahrensfairness (Art. 6 Ziff. 1 EMRK) sowie des Rechts auf eine wirksame Beschwerde (Art. 13 EMRK), ohne Bezug auf die vorinstanzlichen Erwägungen zu nehmen.\n\n<u>Rüge des überspitzten Formalismus:</u> Das Bundesgericht erkennt, dass es an A. gewesen wäre, substanziiert und unter Bezugnahme auf die vorinstanzlichen Erwägungen darzulegen, inwiefern überspitzter Formalismus vorliegen sollte. Die strikte Anwendung der Regeln über die Fristen stellt keinen überspitzten Formalismus dar, da sie aus Gründen der Gleichbehandlung sowie des öffentlichen Interesses an einer guten Rechtspflege und an Rechtssicherheit gerechtfertigt ist (BGE 149 IV 196 E. 1.1; 149 IV 97 E. 2.1; Urteil 9C_119/2024 E. 2.2.3).\n\n<u>Rügen der Verfahrensfairness und des Rechts auf eine wirksame Beschwerde:</u> Das Bundesgericht stellt fest, dass diese Rügen am Prozessthema vorbeigehen, weil die entsprechenden Garantien nur im Rahmen der anwendbaren Verfahrensregeln gelten und das Eintreten auf eine Beschwerde von der Einhaltung der üblichen Zulässigkeitsvoraussetzungen – namentlich der Wahrung der Rechtsmittelfrist – abhängig gemacht werden darf (BGE 150 I 191 E. 2.1; 143 I 344 E. 8.2; 141 I 172 E. 4.4). Da die Beschwerde keine sachbezogene Begründung aufweist und kein formgültiges Rechtsmittel vorliegt, ist im vereinfachten Verfahren nach Art. 108 Abs. 1 lit. b BGG nicht einzutreten. Das Gesuch um unentgeltliche Rechtspflege wird damit gegenstandslos.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://18-03-2026-9C_11-2026&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "INFO_SKIP_IV",
+        "datum": "02.04.2026",
+        "kategorie": "iv",
+        "vorschau": "Heute sind keine IV-relevanten Urteile erschienen.",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false
+    },
+    {
         "aktenzeichen": "8C_234/2025",
         "datum": "01.04.2026",
         "kategorie": "iv",

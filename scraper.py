@@ -7,11 +7,11 @@ import re
 from datetime import datetime
 import anthropic
 
-# AUTOMATISIERUNG: Datum setzen
-ZIEL_DATUM = "02.04.2026" 
+# AUTOMATISIERUNG: Aktuelles Datum (für Tests manuell anpassbar)
+ZIEL_DATUM = "02.04.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit verbessertem JSON-Parsing."""
+    """Übersetzt das Sachgebiet und erstellt die Zusammenfassung als flachen Text."""
     
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
     
@@ -90,16 +90,40 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         response = client.messages.create(
-            model="claude-sonnet-4-6",
+            model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format.",
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format mit den Feldern 'vorschau_de' und 'zusammenfassung'. Der Wert von 'zusammenfassung' muss ein einzelner, flacher String (Text) sein, keine Unter-Objekte.",
             messages=[
-                {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' ins Deutsche. Schritt 2: Zusammenfassung.\n\nJSON: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
+                {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' kurz ins Deutsche. Schritt 2: Erstelle die Zusammenfassung.\n\nGib das Ergebnis NUR in diesem Format aus: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
             ]
         )
-        res_data = json.loads(re.search(r'(\{.*\})', response.content[0].text, re.DOTALL).group(1))
-        return res_data.get("vorschau_de", vorschau_raw), res_data.get("zusammenfassung", "")
+        
+        raw_content = response.content[0].text
+        json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
+        if json_match:
+            res_data = json.loads(json_match.group(1).replace('\t', ' '))
+            v_de = res_data.get("vorschau_de", vorschau_raw)
+            z_data = res_data.get("zusammenfassung", "")
+
+            # Sicherheitsprüfung: Falls Claude trotz Anweisung ein Objekt schickt
+            if isinstance(z_data, dict):
+                z_text = ""
+                if "sachverhalt_und_antraege" in z_data: z_text += f"**Sachverhalt & Anträge**\n{z_data['sachverhalt_und_antraege']}\n\n"
+                if "streitig" in z_data: z_text += f"**Streitig**\n{z_data['streitig']}\n\n"
+                if "entscheidung" in z_data:
+                    entsch = z_data["entscheidung"]
+                    if isinstance(entsch, dict):
+                        if "ergebnis" in entsch: z_text += f"**Entscheidung**\n{entsch['ergebnis']}: "
+                        if "begruendung" in entsch: z_text += entsch['begruendung']
+                    else: z_text += f"**Entscheidung**\n{entsch}"
+                z_de = z_text.strip()
+            else:
+                z_de = str(z_data)
+
+            z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
+            return v_de, z_de
+        return vorschau_raw, "Fehler beim Parsing der KI-Antwort."
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
@@ -128,8 +152,8 @@ def scrape_bger():
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
             rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
-            # STRENGER FILTER: Nur diese Begriffe im Sachgebiet lösen aus
-            iv_keywords = ["invalidenversicherung", "assurance-invalidité", "invalidità", "assurance-invalidité"]
+            # Präzisierte Keywords für das Sachgebiet
+            iv_keywords = ["invalidenversicherung", "assurance-invalidité", "invalidità"]
             ak_keywords = [
                 "familienzulage", "allocation familiale", "assegni familiari",
                 "hinterlassenenversicherung", "vieillesse", "vecchiaia",
@@ -143,14 +167,12 @@ def scrape_bger():
                 if not link_tag: continue
                 
                 raw_az = link_tag.get_text().strip()
-                # Nur 9C und 8C Abteilungen
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                # Das Sachgebiet steht immer in der darauffolgenden Zeile (Vorschau)
                 vorschau_raw = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
+                # Suche findet NUR im Sachbereich (Vorschau) statt
                 sachgebiet_text = vorschau_raw.lower()
                 
-                # Prüfung NUR im Sachgebiet
                 ist_iv = any(k in sachgebiet_text for k in iv_keywords)
                 ist_ak = any(k in sachgebiet_text for k in ak_keywords)
 
@@ -165,11 +187,11 @@ def scrape_bger():
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     
-                    # Zürich-Rollen-Check
+                    # Zürich-Check
                     iv_zh_fuehrer, iv_zh_gegner = False, False
                     if "IV-Stelle des Kantons Zürich" in case_html[:3000]:
-                        start = case_html.find("IV-Stelle des Kantons Zürich")
-                        if "Beschwerdeführerin" in case_html[start:start+250]: iv_zh_fuehrer = True
+                        pos = case_html.find("IV-Stelle des Kantons Zürich")
+                        if "Beschwerdeführerin" in case_html[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
 
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
@@ -179,29 +201,30 @@ def scrape_bger():
                         "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
                     })
 
-        # --- DOPPELTE SKIP-LOGIK ---
+        # --- GETRENNTE SKIP-LOGIK FÜR IV UND AK ---
         if not iv_gefunden:
             tages_ergebnisse.append({
                 "aktenzeichen": "INFO_SKIP_IV", "datum": ZIEL_DATUM, "kategorie": "iv",
-                "vorschau": "Heute sind keine IV-relevanten Urteile erschienen.",
-                "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
+                "vorschau": "Heute sind keine IV-relevanten Urteile erschienen.", "zusammenfassung": "",
+                "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
             })
         
         if not ak_gefunden:
             tages_ergebnisse.append({
                 "aktenzeichen": "INFO_SKIP_AK", "datum": ZIEL_DATUM, "kategorie": "ak",
-                "vorschau": "Heute sind keine AK-relevanten Urteile erschienen.",
-                "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
+                "vorschau": "Heute sind keine AK-relevanten Urteile erschienen.", "zusammenfassung": "",
+                "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
             })
 
-        # Speichern
+        # Archiv aktualisieren
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
-    except Exception as e: print(f"Fehler: {e}")
+    except Exception as e:
+        print(f"Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

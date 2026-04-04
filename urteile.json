@@ -362,6 +362,17 @@
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://02-03-2026-9C_672-2025&lang=de&zoom=&type=show_document"
     },
     {
+        "aktenzeichen": "INFO_SKIP_BEIDE",
+        "datum": "12.03.2026",
+        "kategorie": "beide",
+        "vorschau": "Keine neuen IV- oder AK-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false
+    },
+    {
         "aktenzeichen": "9C_677/2025",
         "datum": "11.03.2026",
         "kategorie": "iv",

@@ -126,11 +126,9 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
                 fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
                 res_data = json.loads(fixed_json)
 
-            # Vorschau sichern und von Aktenzeichen befreien (Sicherheitsnetz)
             v_de = res_data.get("vorschau_de", vorschau_raw)
             v_de = re.sub(r'^[89]C_\d+/\d+\s*', '', v_de).strip()
             
-            # Zusammenfassung auslesen und flach bügeln
             if "zusammenfassung" in res_data and res_data["zusammenfassung"]:
                 z_data = res_data["zusammenfassung"]
             else:
@@ -139,7 +137,6 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             z_de = flatten_json_to_string(z_data).strip()
             z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
             
-            # Wenn alles fehlschlägt und die KI trotzdem leer antwortet:
             if not z_de: 
                 z_de = "Zusammenfassung konnte nicht erstellt werden (Urteil möglicherweise zu kurz oder reiner Nichteintretensentscheid)."
 
@@ -184,24 +181,18 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                # --- BULLETPROOF TEXT-EXTRAKTION ---
-                # Holt absolut allen Text aus der aktuellen Zeile (egal welche HTML-Struktur)
                 volltext = row.get_text(" ", strip=True)
                 
                 if i + 1 < len(rows):
                     next_row = rows[i+1]
-                    # Nur wenn die nächste Zeile keinen eigenen Link hat, gehört sie noch zu diesem Urteil
                     if not next_row.find('a', href=True):
                         volltext += " " + next_row.get_text(" ", strip=True)
                 
-                # Alles was VOR und INKLUSIVE dem Aktenzeichen steht, wird weggeschnitten
-                # So bleibt zu 100% nur noch das reine Sachgebiet übrig!
                 if raw_az in volltext:
                     vorschau_raw = volltext.split(raw_az, 1)[-1].strip()
                 else:
                     vorschau_raw = volltext
                 
-                # Stern (Publikation) prüfen und aus dem Text entfernen
                 ist_publikation = "*" in volltext
                 vorschau_raw = vorschau_raw.replace("*", "").strip()
                 
@@ -220,11 +211,21 @@ def scrape_bger():
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     
+                    rubrum = case_html[:3000]
                     iv_zh_fuehrer, iv_zh_gegner = False, False
-                    if "IV-Stelle des Kantons Zürich" in case_html[:3000]:
-                        pos = case_html.find("IV-Stelle des Kantons Zürich")
-                        if "Beschwerdeführerin" in case_html[pos:pos+250]: iv_zh_fuehrer = True
+                    ak_zh_fuehrer, ak_zh_gegner = False, False
+                    
+                    # Check IV-Stelle
+                    if "IV-Stelle des Kantons Zürich" in rubrum:
+                        pos = rubrum.find("IV-Stelle des Kantons Zürich")
+                        if "Beschwerdeführerin" in rubrum[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
+                    
+                    # Check Ausgleichskasse
+                    if "Ausgleichskasse des Kantons Zürich" in rubrum:
+                        pos = rubrum.find("Ausgleichskasse des Kantons Zürich")
+                        if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
+                        else: ak_zh_gegner = True
 
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                     
@@ -232,19 +233,20 @@ def scrape_bger():
                         "aktenzeichen": clean_az, 
                         "datum": ZIEL_DATUM, "kategorie": kat,
                         "publikation": ist_publikation, 
-                        "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner, 
+                        "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
+                        "ak_zh_fuehrer": ak_zh_fuehrer, "ak_zh_gegner": ak_zh_gegner, 
                         "vorschau": v_text, 
                         "zusammenfassung": z_text, "url": case_url
                     })
 
-        # SKIP-Logik
+        # SKIP-Logik (Erweitert um AK-Felder, damit das JSON-Format konsistent bleibt)
         if not iv_gefunden and not ak_gefunden:
-            tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
+            tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False, "ak_zh_fuehrer": False, "ak_zh_gegner": False})
         else:
             if not iv_gefunden:
-                tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_IV", "datum": ZIEL_DATUM, "kategorie": "iv", "vorschau": "Keine neuen IV-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
+                tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_IV", "datum": ZIEL_DATUM, "kategorie": "iv", "vorschau": "Keine neuen IV-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False, "ak_zh_fuehrer": False, "ak_zh_gegner": False})
             if not ak_gefunden:
-                tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_AK", "datum": ZIEL_DATUM, "kategorie": "ak", "vorschau": "Keine neuen AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
+                tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_AK", "datum": ZIEL_DATUM, "kategorie": "ak", "vorschau": "Keine neuen AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False, "ak_zh_fuehrer": False, "ak_zh_gegner": False})
 
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)

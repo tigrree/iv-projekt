@@ -8,20 +8,16 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = "17.03.2026"
+ZIEL_DATUM = "16.03.2026"
 
 def flatten_json_to_string(data):
     """Zwingt jede verschachtelte JSON-Struktur in einen flachen String."""
-    if not data:
-        return ""
-    if isinstance(data, str):
-        return data
-    if isinstance(data, list):
-        return "\n".join([flatten_json_to_string(item) for item in data])
+    if not data: return ""
+    if isinstance(data, str): return data
+    if isinstance(data, list): return "\n".join([flatten_json_to_string(item) for item in data])
     if isinstance(data, dict):
         parts = []
         for key, val in data.items():
-            # Wenn Claude die Zusammenfassung in eigene Keys aufteilt
             if key.lower() in ["titel", "text", "inhalt", "zusammenfassung"]:
                 parts.append(flatten_json_to_string(val))
             else:
@@ -34,7 +30,6 @@ def flatten_json_to_string(data):
     return str(data)
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Erstellt die Zusammenfassung via Claude API."""
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
     
 ### VORAB-INFORMATION ZUM URTEILSAUFBAU:
@@ -115,8 +110,8 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Maskiere Anführungszeichen mit \\\".",
-            messages=[{"role": "user", "content": f"Schritt 1: Übersetze das Sachgebiet '{vorschau_raw}' EXAKT ins Deutsche. WICHTIG: Füge in der Übersetzung NIEMALS das Aktenzeichen hinzu (kein '9C_9/2025' oder ähnliches), nur das reine Sachgebiet!\nSchritt 2: Fasse das Urteil zusammen. Packe den kompletten Text inkl. aller Formatierungen zwingend in EINEN EINZIGEN String unter dem Key 'zusammenfassung'. Erschaffe keine separaten JSON-Keys für die Abschnitte!\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. SCHEMA:\n{\"vorschau_de\": \"String\", \"zusammenfassung\": \"String\"}\nMaskiere doppelte Anführungszeichen im Text mit \\\".",
+            messages=[{"role": "user", "content": f"Schritt 1: Übersetze das Sachgebiet '{vorschau_raw}' EXAKT ins Deutsche. Ergänze keine Aktenzeichen! \nSchritt 2: Fasse das Urteil zusammen. Packe den kompletten Text in EINEN String unter 'zusammenfassung'.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
         raw_content = response.content[0].text
         json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
@@ -133,19 +128,15 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 
             v_de = res_data.get("vorschau_de", vorschau_raw)
             
-            # --- ULTIMATIVER FALLBACK ---
-            # Wenn Claude die Zusammenfassung in separate Keys (Sachverhalt, Streitig, etc.) zerteilt hat:
             if "zusammenfassung" in res_data and res_data["zusammenfassung"]:
                 z_data = res_data["zusammenfassung"]
             else:
-                # Schnappt sich einfach ALLES ausser dem Vorschau-Feld
-                z_data = {k: v for k, v in res_data.items() if k.lower() != 'vorschau_de'}
+                z_data = {k: v for k, v in res_data.items() if k != "vorschau_de"}
 
-            z_de = flatten_json_to_string(z_data)
+            z_de = flatten_json_to_string(z_data).strip()
             z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
             
-            # PYTHON-SICHERHEITS-CHECK: Entfernt das Aktenzeichen, falls Claude es trotz Verbot eingefügt hat
-            v_de = re.sub(r'^[89]C_\d+/\d+\s*', '', v_de).strip()
+            if not z_de: z_de = "Zusammenfassung konnte nicht verarbeitet werden."
 
             return v_de, z_de
         return vorschau_raw, "Parsing Fehler: Kein JSON gefunden."
@@ -176,7 +167,8 @@ def scrape_bger():
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
             rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
-            iv_keywords = ["invalidenversicherung", "assurance-invalidité", "invalidità"]
+            # WICHTIG: Das Keyword "invalid" deckt Invalidenversicherung, Invalidenrente, assurance-invalidité etc. ab!
+            iv_keywords = ["invalid"]
             ak_keywords = ["familienzulage", "allocation familiale", "assegni familiari", "hinterlassenenversicherung", "vieillesse", "vecchiaia", "krankenversicherung", "maladie", "malattie", "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"]
 
             for i in range(len(rows)):
@@ -187,21 +179,24 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                # --- VERBESSERTES ZUSAMMENFÜGEN DES SACHGEBIETS ---
+                # --- BULLETPROOF ZEILEN-EXTRAKTION ---
                 tds = row.find_all('td')
                 haupt_sachgebiet = tds[2].get_text().strip() if len(tds) > 2 else ""
                 
                 unter_sachgebiet = ""
-                # Wir prüfen, ob die NÄCHSTE Zeile ein neues Urteil ist (indem wir nach einem Link suchen). 
-                # Nur wenn KEIN Link da ist, ist es die Unter-Sachgebiet-Zeile!
                 if i + 1 < len(rows):
                     next_row = rows[i+1]
+                    # Nur wenn die nächste Zeile KEINEN Link hat, ist es ein Unter-Sachgebiet!
                     if not next_row.find('a', href=True):
-                        unter_sachgebiet = next_row.get_text().strip()
+                        next_tds = next_row.find_all('td')
+                        if len(next_tds) > 2:
+                            unter_sachgebiet = next_tds[2].get_text().strip()
+                        else:
+                            unter_sachgebiet = next_row.get_text().strip()
                 
+                # Kombinieren und überschüssige Leerschläge entfernen
                 volltext_sachgebiet = f"{haupt_sachgebiet} {unter_sachgebiet}".strip()
-                # Entfernt unnötige Umbrüche, die BGer manchmal einbaut
-                volltext_sachgebiet = re.sub(r'\s+', ' ', volltext_sachgebiet) 
+                volltext_sachgebiet = re.sub(r'\s+', ' ', volltext_sachgebiet)
                 search_text = volltext_sachgebiet.lower()
                 
                 ist_publikation = "*" in volltext_sachgebiet
@@ -236,7 +231,7 @@ def scrape_bger():
                         "zusammenfassung": z_text, "url": case_url
                     })
 
-        # SKIP-Logik 
+        # SKIP-Logik
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
         else:

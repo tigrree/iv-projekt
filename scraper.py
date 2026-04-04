@@ -8,7 +8,7 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb anpassbar)
-ZIEL_DATUM = "27.03.2026"
+ZIEL_DATUM = "17.03.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -202,8 +202,8 @@ def scrape_bger():
                         else: iv_zh_gegner = True
                     
                     # Check Ausgleichskasse
-                    if "Ausgleichskasse des Kantons Zürich" in rubrum:
-                        pos = rubrum.find("Ausgleichskasse des Kantons Zürich")
+                    if "Sozialversicherungsanstalt des Kantons Zürich" in rubrum:
+                        pos = rubrum.find("Sozialversicherungsanstalt des Kantons Zürich")
                         if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
                         else: ak_zh_gegner = True
 

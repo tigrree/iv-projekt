@@ -7,27 +7,8 @@ import re
 from datetime import datetime
 import anthropic
 
-# AUTOMATISIERUNG: Aktuelles Datum
+# AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb anpassbar)
 ZIEL_DATUM = "23.03.2026"
-
-def flatten_json_to_string(data):
-    """Zwingt jede verschachtelte JSON-Struktur in einen flachen String."""
-    if not data: return ""
-    if isinstance(data, str): return data
-    if isinstance(data, list): return "\n".join([flatten_json_to_string(item) for item in data])
-    if isinstance(data, dict):
-        parts = []
-        for key, val in data.items():
-            if key.lower() in ["titel", "text", "inhalt", "zusammenfassung"]:
-                parts.append(flatten_json_to_string(val))
-            else:
-                header = key.replace('_', ' ').replace('ue', 'ü').replace('ae', 'ä').title()
-                if "Sachverhalt" in header: header = "Sachverhalt & Anträge"
-                elif "Streit" in header: header = "Streitig"
-                elif "Entscheidung" in header or "Ergebnis" in header: header = "Entscheidung"
-                parts.append(f"**{header}**\n{flatten_json_to_string(val)}")
-        return "\n\n".join(parts)
-    return str(data)
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -110,62 +91,32 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. SCHEMA:\n{\"vorschau_de\": \"String\", \"zusammenfassung\": \"String\"}\n\nWICHTIG: Wiederhole das JSON-Schema NIEMALS im Text der Zusammenfassung! Das Feld 'zusammenfassung' enthält ausschliesslich den Markdown-Text.",
-            messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet, KEINE Aktenzeichen.\nSchritt 2: Fasse das Urteil zusammen.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit den folgenden zwei XML-Tags:\n<vorschau_de>Übersetzung hier</vorschau_de>\n<zusammenfassung>Zusammenfassung hier</zusammenfassung>\n\nVerwende KEIN JSON und erfinde keine anderen Formate.",
+            messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet in den Tag <vorschau_de>.\nSchritt 2: Fasse das Urteil zusammen und schreibe den Text in den Tag <zusammenfassung>.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
         raw_content = response.content[0].text
-        json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
         
-        if json_match:
-            json_str = json_match.group(1).replace('\t', ' ')
-            try:
-                # strict=False erlaubt unmaskierte Zeilenumbrüche, was 90% der KI-JSON-Fehler verhindert
-                res_data = json.loads(json_str, strict=False)
-            except json.JSONDecodeError:
-                # Fallback: Versuche das JSON manuell zu reparieren
-                fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str)
-                fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"').replace('\\"zusammenfassung\\"', '"zusammenfassung"')
-                fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
-                try:
-                    res_data = json.loads(fixed_json, strict=False)
-                except:
-                    # Letzter Notausstieg, falls das JSON völlig zerstört ist
-                    res_data = {"vorschau_de": vorschau_raw, "zusammenfassung": "Parsing Fehler: JSON konnte nicht repariert werden."}
-
+        # --- BULLETPROOF XML-PARSING ---
+        v_match = re.search(r'<vorschau_de>(.*?)</vorschau_de>', raw_content, re.DOTALL | re.IGNORECASE)
+        z_match = re.search(r'<zusammenfassung>(.*?)</zusammenfassung>', raw_content, re.DOTALL | re.IGNORECASE)
+        
+        if v_match and z_match:
+            v_de = v_match.group(1).strip()
+            z_de = z_match.group(1).strip()
+            
             # Vorschau sichern und von Aktenzeichen befreien
-            v_de = res_data.get("vorschau_de", vorschau_raw)
             v_de = re.sub(r'^[89]C_\d+/\d+\s*', '', v_de).strip()
             
-            if "zusammenfassung" in res_data and res_data["zusammenfassung"]:
-                z_data = res_data["zusammenfassung"]
-            else:
-                z_data = {k: v for k, v in res_data.items() if k != "vorschau_de"}
-
-            z_de = flatten_json_to_string(z_data).strip()
-            
-            # --- NEUER REINIGUNGSDIENST ---
-            # 1. KI-Halluzinationen (JSON im JSON) abschneiden
-            if z_de.startswith('{"vorschau_de"'):
-                idx = z_de.find('**Sachverhalt')
-                if idx != -1:
-                    z_de = z_de[idx:]
-                else:
-                    # Notfall, falls "**Sachverhalt" fehlt
-                    z_de = re.sub(r'^\{.*?"zusammenfassung"\s*:\s*"', '', z_de)
-                    
-            # 2. Literale \n und \t in echte Formatierungen umwandeln
-            z_de = z_de.replace('\\n', '\n').replace('\\t', ' ')
-            
-            # 3. Überflüssige Leerzeichen nach Umbrüchen säubern
-            z_de = re.sub(r'\n\s+', '\n', z_de)
+            # Kosmetik
             z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
             
             if not z_de: 
-                z_de = "Zusammenfassung konnte nicht erstellt werden (Urteil möglicherweise zu kurz oder reiner Nichteintretensentscheid)."
+                z_de = "Zusammenfassung konnte nicht erstellt werden."
 
             return v_de, z_de
+        else:
+            return vorschau_raw, f"Parsing Fehler: Die KI hat die XML-Tags nicht korrekt generiert. Rohantwort: {raw_content[:150]}"
             
-        return vorschau_raw, "Parsing Fehler: Kein JSON gefunden."
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
@@ -194,7 +145,12 @@ def scrape_bger():
             rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
             iv_keywords = ["invalid"]
-            ak_keywords = ["familienzulage", "allocation familiale", "assegni familiari", "hinterlassenenversicherung", "vieillesse", "vecchiaia", "krankenversicherung", "maladie", "malattie", "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"]
+            ak_keywords = [
+                "familienzulage", "allocation familiale", "assegni familiari", 
+                "hinterlassenenversicherung", "vieillesse", "vecchiaia", 
+                "krankenversicherung", "maladie", "malattie", 
+                "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
+            ]
 
             for i in range(len(rows)):
                 row = rows[i]
@@ -204,6 +160,7 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
+                # Kompletter Text der Zeile(n)
                 volltext = row.get_text(" ", strip=True)
                 
                 if i + 1 < len(rows):
@@ -238,11 +195,13 @@ def scrape_bger():
                     iv_zh_fuehrer, iv_zh_gegner = False, False
                     ak_zh_fuehrer, ak_zh_gegner = False, False
                     
+                    # Check IV-Stelle
                     if "IV-Stelle des Kantons Zürich" in rubrum:
                         pos = rubrum.find("IV-Stelle des Kantons Zürich")
                         if "Beschwerdeführerin" in rubrum[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
                     
+                    # Check Ausgleichskasse
                     if "Ausgleichskasse des Kantons Zürich" in rubrum:
                         pos = rubrum.find("Ausgleichskasse des Kantons Zürich")
                         if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
@@ -260,6 +219,7 @@ def scrape_bger():
                         "zusammenfassung": z_text, "url": case_url
                     })
 
+        # SKIP-Logik 
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False, "ak_zh_fuehrer": False, "ak_zh_gegner": False})
         else:
@@ -271,6 +231,7 @@ def scrape_bger():
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
+        
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")

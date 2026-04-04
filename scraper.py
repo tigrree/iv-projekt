@@ -8,7 +8,7 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = "03.04.2026"
+ZIEL_DATUM = "01.04.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     """Erstellt die Zusammenfassung und stellt valides JSON sicher."""

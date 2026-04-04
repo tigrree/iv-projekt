@@ -31,6 +31,7 @@ def flatten_json_to_string(data):
     return str(data)
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
+    """Erstellt die Zusammenfassung via Claude API."""
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
     
 ### VORAB-INFORMATION ZUM URTEILSAUFBAU:
@@ -111,38 +112,30 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit einem validen JSON-Objekt. "
-                   "SCHEMA:\n{\n  \"vorschau_de\": \"String\",\n  \"zusammenfassung\": \"String\"\n}\n"
-                   "WICHTIG: Das Feld 'zusammenfassung' MUSS zwingend ein einfacher, flacher String sein! Maskiere doppelte Anführungszeichen im Text mit \\\".",
-            messages=[
-                {"role": "user", "content": f"Schritt 1: Übersetze das Sachgebiet '{vorschau_raw}' EXAKT und wortwörtlich ins Deutsche. Erfinde KEINE inhaltlichen Ergänzungen dazu! \nSchritt 2: Erstelle die Zusammenfassung.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
-            ]
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Maskiere Anführungszeichen mit \\\".",
+            messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Erfinde nichts dazu. \nSchritt 2: Fasse zusammen: {clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
-        
         raw_content = response.content[0].text
         json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
         
-        if not json_match:
-            return vorschau_raw, "Kein JSON in der KI-Antwort gefunden."
+        if json_match:
+            json_str = json_match.group(1).replace('\t', ' ')
+            try:
+                res_data = json.loads(json_str)
+            except json.JSONDecodeError:
+                fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str)
+                fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"').replace('\\"zusammenfassung\\"', '"zusammenfassung"')
+                fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
+                res_data = json.loads(fixed_json)
 
-        json_str = json_match.group(1).replace('\t', ' ')
-        
-        try:
-            res_data = json.loads(json_str)
-        except json.JSONDecodeError:
-            fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str)
-            fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"').replace('\\"zusammenfassung\\"', '"zusammenfassung"')
-            fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
-            res_data = json.loads(fixed_json)
+            v_de = res_data.get("vorschau_de", vorschau_raw)
+            z_data = res_data.get("zusammenfassung", "")
 
-        v_de = res_data.get("vorschau_de", vorschau_raw)
-        z_data = res_data.get("zusammenfassung", "")
+            z_de = flatten_json_to_string(z_data)
+            z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
 
-        z_de = flatten_json_to_string(z_data)
-        z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
-
-        return v_de, z_de
-
+            return v_de, z_de
+        return vorschau_raw, "Parsing Fehler"
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
@@ -171,12 +164,7 @@ def scrape_bger():
             rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
             iv_keywords = ["invalidenversicherung", "assurance-invalidité", "invalidità"]
-            ak_keywords = [
-                "familienzulage", "allocation familiale", "assegni familiari",
-                "hinterlassenenversicherung", "vieillesse", "vecchiaia",
-                "krankenversicherung", "maladie", "malattie",
-                "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
-            ]
+            ak_keywords = ["familienzulage", "allocation familiale", "assegni familiari", "hinterlassenenversicherung", "vieillesse", "vecchiaia", "krankenversicherung", "maladie", "malattie", "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"]
 
             for i in range(len(rows)):
                 row = rows[i]
@@ -186,19 +174,28 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                vorschau_raw = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
-                sachgebiet_text = vorschau_raw.lower()
+                # --- DIE LÖSUNG: BEIDE ZEILEN KOMBINIEREN ---
+                # 1. Haupt-Sachgebiet aus Spalte 3 (gleiche Zeile)
+                tds = row.find_all('td')
+                haupt_sachgebiet = tds[2].get_text().strip() if len(tds) > 2 else ""
                 
-                ist_publikation = "*" in row.get_text() or "*" in vorschau_raw
-
-                ist_iv = any(k in sachgebiet_text for k in iv_keywords)
-                ist_ak = any(k in sachgebiet_text for k in ak_keywords)
+                # 2. Unter-Sachgebiet aus nächster Zeile
+                unter_sachgebiet = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
+                
+                # 3. Zu einem String verschmelzen
+                volltext_sachgebiet = f"{haupt_sachgebiet} {unter_sachgebiet}".strip()
+                search_text = volltext_sachgebiet.lower()
+                
+                # Publikation prüfen
+                ist_publikation = "*" in volltext_sachgebiet
+                
+                ist_iv = any(k in search_text for k in iv_keywords)
+                ist_ak = any(k in search_text for k in ak_keywords)
 
                 if ist_iv or ist_ak:
                     clean_az = raw_az.replace("*", "").strip()
                     kat = "iv" if ist_iv else "ak"
                     if ist_iv and ist_ak: kat = "beide"
-                    
                     if ist_iv: iv_gefunden = True
                     if ist_ak: ak_gefunden = True
 
@@ -211,7 +208,8 @@ def scrape_bger():
                         if "Beschwerdeführerin" in case_html[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
 
-                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
+                    # Wir übergeben nun den komprimierten, sauberen Text an Claude
+                    v_text, z_text = summarize_and_translate(case_html, volltext_sachgebiet, client)
                     
                     tages_ergebnisse.append({
                         "aktenzeichen": clean_az, 
@@ -222,6 +220,7 @@ def scrape_bger():
                         "zusammenfassung": z_text, "url": case_url
                     })
 
+        # SKIP-Logik für Frontend-Filterung
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
         else:

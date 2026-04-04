@@ -7,8 +7,8 @@ import re
 from datetime import datetime
 import anthropic
 
-# AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = "02.04.2026"
+# AUTOMATISIERUNG: Datum setzen
+ZIEL_DATUM = "02.04.2026" 
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit verbessertem JSON-Parsing."""
@@ -90,22 +90,16 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         response = client.messages.create(
-            model="claude-4-6-sonnet", 
+            model="claude-3-5-sonnet-20241022", # Stabiler API-Identifier
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Nutze für Zeilenumbrüche im Text '\\n'. Maskiere Anführungszeichen im Text mit einem Backslash.",
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format.",
             messages=[
-                {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' kurz ins Deutsche. Schritt 2: Erstelle die Zusammenfassung.\n\nGib das Ergebnis NUR in diesem Format aus: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
+                {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' ins Deutsche. Schritt 2: Zusammenfassung.\n\nJSON: {{\"vorschau_de\": \"...\", \"zusammenfassung\": \"...\"}}\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
             ]
         )
-        raw_content = response.content[0].text
-        json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
-        if json_match:
-            res_data = json.loads(json_match.group(1).replace('\t', ' '))
-            v_de = res_data.get("vorschau_de", vorschau_raw)
-            z_de = re.sub(r'([A-Z]\.)_+', r'\1', res_data.get("zusammenfassung", ""))
-            return v_de, z_de
-        return vorschau_raw, "Fehler beim Parsing der KI-Antwort."
+        res_data = json.loads(re.search(r'(\{.*\})', response.content[0].text, re.DOTALL).group(1))
+        return res_data.get("vorschau_de", vorschau_raw), res_data.get("zusammenfassung", "")
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
@@ -121,7 +115,10 @@ def scrape_bger():
         try: archiv_daten = json.load(f)
         except: archiv_daten = []
 
-    tages_ergebnisse = [] 
+    tages_ergebnisse = []
+    iv_gefunden = False
+    ak_gefunden = False
+
     try:
         base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
         soup = BeautifulSoup(base_res.text, 'html.parser')
@@ -129,10 +126,10 @@ def scrape_bger():
         
         if tag_link:
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
-            day_soup = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser')
-            rows = day_soup.find_all('tr')
+            rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
-            iv_keywords = ["invalid", "ai", "invalidità"]
+            # STRENGER FILTER: Nur diese Begriffe im Sachgebiet lösen aus
+            iv_keywords = ["invalidenversicherung", "assurance-invalidité", "invalidità", "assurance-invalidité"]
             ak_keywords = [
                 "familienzulage", "allocation familiale", "assegni familiari",
                 "hinterlassenenversicherung", "vieillesse", "vecchiaia",
@@ -144,30 +141,36 @@ def scrape_bger():
                 row = rows[i]
                 link_tag = row.find('a', href=True)
                 if not link_tag: continue
+                
                 raw_az = link_tag.get_text().strip()
+                # Nur 9C und 8C Abteilungen
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                clean_az = raw_az.replace("*", "").strip()
+                # Das Sachgebiet steht immer in der darauffolgenden Zeile (Vorschau)
                 vorschau_raw = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
-                check_text = (row.get_text() + vorschau_raw).lower()
+                sachgebiet_text = vorschau_raw.lower()
                 
-                ist_iv = any(k in check_text for k in iv_keywords)
-                ist_ak = any(k in check_text for k in ak_keywords)
+                # Prüfung NUR im Sachgebiet
+                ist_iv = any(k in sachgebiet_text for k in iv_keywords)
+                ist_ak = any(k in sachgebiet_text for k in ak_keywords)
 
                 if ist_iv or ist_ak:
+                    clean_az = raw_az.replace("*", "").strip()
                     kat = "iv" if ist_iv else "ak"
                     if ist_iv and ist_ak: kat = "beide"
                     
+                    if ist_iv: iv_gefunden = True
+                    if ist_ak: ak_gefunden = True
+
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     case_html = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser').get_text()
                     
+                    # Zürich-Rollen-Check
                     iv_zh_fuehrer, iv_zh_gegner = False, False
-                    rubrum = case_html[:3000]
-                    if "IV-Stelle des Kantons Zürich" in rubrum:
-                        pos = rubrum.find("IV-Stelle des Kantons Zürich")
-                        kontext = rubrum[pos:pos+200]
-                        if "Beschwerdeführerin" in kontext: iv_zh_fuehrer = True
-                        elif "Beschwerdegegnerin" in kontext: iv_zh_gegner = True
+                    if "IV-Stelle des Kantons Zürich" in case_html[:3000]:
+                        start = case_html.find("IV-Stelle des Kantons Zürich")
+                        if "Beschwerdeführerin" in case_html[start:start+250]: iv_zh_fuehrer = True
+                        else: iv_zh_gegner = True
 
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
                     tages_ergebnisse.append({
@@ -176,21 +179,29 @@ def scrape_bger():
                         "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
                     })
 
-        if not tages_ergebnisse:
+        # --- DOPPELTE SKIP-LOGIK ---
+        if not iv_gefunden:
             tages_ergebnisse.append({
-                "aktenzeichen": "INFO_SKIP", "datum": ZIEL_DATUM, "kategorie": "info",
-                "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False,
-                "vorschau": "Keine neuen relevanten Urteile", "zusammenfassung": "", "url": ""
+                "aktenzeichen": "INFO_SKIP_IV", "datum": ZIEL_DATUM, "kategorie": "iv",
+                "vorschau": "Heute sind keine IV-relevanten Urteile erschienen.",
+                "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
+            })
+        
+        if not ak_gefunden:
+            tages_ergebnisse.append({
+                "aktenzeichen": "INFO_SKIP_AK", "datum": ZIEL_DATUM, "kategorie": "ak",
+                "vorschau": "Heute sind keine AK-relevanten Urteile erschienen.",
+                "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
             })
 
+        # Speichern
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")
-    except Exception as e:
-        print(f"Fehler: {e}")
+    except Exception as e: print(f"Fehler: {e}")
 
 if __name__ == "__main__":
     scrape_bger()

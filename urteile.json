@@ -2,7 +2,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "03.04.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "publikation": false,
         "iv_zh_fuehrer": false,
         "iv_zh_gegner": false,
@@ -13,7 +13,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "02.04.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "publikation": false,
         "iv_zh_fuehrer": false,
         "iv_zh_gegner": false,
@@ -123,7 +123,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "27.03.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "publikation": false,
         "iv_zh_fuehrer": false,
         "iv_zh_gegner": false,
@@ -233,7 +233,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "19.03.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "vorschau": "Keine neuen IV-relevanten Urteile",
         "zusammenfassung": "",
         "url": "",
@@ -297,7 +297,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "16.03.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "vorschau": "Keine IV-Urteile publiziert",
         "zusammenfassung": "",
         "url": ""
@@ -525,7 +525,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "05.03.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "vorschau": "Keine IV-Urteile publiziert",
         "zusammenfassung": "",
         "url": ""
@@ -558,7 +558,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "03.03.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "vorschau": "Keine IV-Urteile publiziert",
         "zusammenfassung": "",
         "url": ""
@@ -590,7 +590,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "27.02.2026",
-        "kategorie": "iv",
+        "kategorie": "info",
         "vorschau": "Keine IV-Urteile publiziert",
         "zusammenfassung": "",
         "url": ""
@@ -630,6 +630,7 @@
     {
         "aktenzeichen": "INFO_SKIP",
         "datum": "25.02.2026",
+        "kategorie": "iv",
         "vorschau": "Keine IV-Urteile publiziert",
         "zusammenfassung": "",
         "url": ""

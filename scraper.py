@@ -105,31 +105,23 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         )
         
         raw_content = response.content[0].text
-        
-        # JSON-Block extrahieren
         json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
         if not json_match:
             return vorschau_raw, "Kein JSON in der KI-Antwort gefunden."
 
-        json_str = json_match.group(1)
-        
-        # Kritische Korrektur: Tabulatoren und problematische Umbrüche entfernen
-        json_str = json_str.replace('\t', ' ')
+        json_str = json_match.group(1).replace('\t', ' ')
         
         try:
             res_data = json.loads(json_str)
         except json.JSONDecodeError:
-            # Falls das Parsing scheitert, versuchen wir eine Not-Reparatur der Maskierung
-            fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str) # Maskiere unmaskierte Quotes
-            fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"') # Schütze Keys
-            fixed_json = fixed_json.replace('\\"zusammenfassung\\"', '"zusammenfassung"')
+            fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str)
+            fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"').replace('\\"zusammenfassung\\"', '"zusammenfassung"')
             fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
             res_data = json.loads(fixed_json)
 
         v_de = res_data.get("vorschau_de", vorschau_raw)
         z_de = res_data.get("zusammenfassung", "")
 
-        # Falls z_de ein Objekt/Dictionary ist (Claude-Fehler), in Text wandeln
         if isinstance(z_de, dict):
             z_de = "\n\n".join([f"**{k.replace('_', ' ').title()}**\n{v}" for k, v in z_de.items()])
 
@@ -164,18 +156,15 @@ def scrape_bger():
             rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
             iv_keywords = ["invalidenversicherung", "assurance-invalidité", "invalidità"]
-            ak_keywords = [
-                "familienzulage", "allocation familiale", "assegni familiari",
-                "hinterlassenenversicherung", "vieillesse", "vecchiaia",
-                "krankenversicherung", "maladie", "malattie",
-                "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
-            ]
+            ak_keywords = ["familienzulage", "allocation familiale", "assegni familiari",
+                           "hinterlassenenversicherung", "vieillesse", "vecchiaia",
+                           "krankenversicherung", "maladie", "malattie",
+                           "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"]
 
             for i in range(len(rows)):
                 row = rows[i]
                 link_tag = row.find('a', href=True)
                 if not link_tag: continue
-                
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
@@ -202,25 +191,39 @@ def scrape_bger():
                         else: iv_zh_gegner = True
 
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
-                    
                     tages_ergebnisse.append({
-                        "aktenzeichen": raw_az.replace("*", "").strip(), 
-                        "datum": ZIEL_DATUM, "kategorie": kat,
-                        "publikation": "*" in raw_az, "iv_zh_fuehrer": iv_zh_fuehrer, 
-                        "iv_zh_gegner": iv_zh_gegner, "vorschau": v_text, 
-                        "zusammenfassung": z_text, "url": case_url
+                        "aktenzeichen": raw_az.replace("*", "").strip(), "datum": ZIEL_DATUM, "kategorie": kat,
+                        "publikation": "*" in raw_az, "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
+                        "vorschau": v_text, "zusammenfassung": z_text, "url": case_url
                     })
 
-        # SKIP-Logik
-        if not iv_gefunden:
-            tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_IV", "datum": ZIEL_DATUM, "kategorie": "iv", "vorschau": "Keine IV-Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
-        if not ak_gefunden:
-            tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_AK", "datum": ZIEL_DATUM, "kategorie": "ak", "vorschau": "Keine AK-Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
+        # --- REFORMIERTE SKIP-LOGIK (BILD 1-3) ---
+        if not iv_gefunden and not ak_gefunden:
+            # Fall: Weder IV noch AK gefunden (Nur 1 Eintrag für "Alle")
+            tages_ergebnisse.append({
+                "aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide",
+                "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "",
+                "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
+            })
+        else:
+            # Fall: Es gibt Urteile, aber eine Kategorie fehlt
+            if not iv_gefunden:
+                tages_ergebnisse.append({
+                    "aktenzeichen": "INFO_SKIP_IV", "datum": ZIEL_DATUM, "kategorie": "iv",
+                    "vorschau": "Keine neuen IV-relevanten Urteile", "zusammenfassung": "",
+                    "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
+                })
+            if not ak_gefunden:
+                tages_ergebnisse.append({
+                    "aktenzeichen": "INFO_SKIP_AK", "datum": ZIEL_DATUM, "kategorie": "ak",
+                    "vorschau": "Keine neuen AK-relevanten Urteile", "zusammenfassung": "",
+                    "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False
+                })
 
+        # Speichern
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-        
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")

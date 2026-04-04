@@ -247,6 +247,32 @@
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://04-03-2026-9C_268-2025&lang=de&zoom=&type=show_document"
     },
     {
+        "aktenzeichen": "9C_106/2026",
+        "datum": "27.03.2026",
+        "kategorie": "ak",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false,
+        "vorschau": "Alters- und Hinterlassenenversicherung",
+        "zusammenfassung": "**Sachverhalt & Anträge**\nA. (geb. 1942), im Ausland wohnhafter Schweizer Staatsangehöriger, leistete zwischen 1960 und 2001 mit Unterbrüchen Beiträge an die AHV/IV. Mit Verfügung vom 5. März 2007 wurde ihm eine ordentliche AHV-Rente von Fr. 2'210.- monatlich zugesprochen; seit Januar 2023 betrug diese Fr. 2'450.-. Nach Eintritt des Rentenfalls bei seiner 1961 geborenen Ehefrau (Rentenvorbezug ab 1. Mai 2023) setzte die SAK die Rente von A. mit Wirkung ab Mai 2023 auf Fr. 2'241.- fest (Verfügung vom 4. April 2023). Die dagegen erhobene Einsprache wurde abgewiesen. Das Bundesverwaltungsgericht wies die anschliessende Beschwerde, mit der A. die Ausrichtung einer Vollrente von Fr. 2'450.- verlangte, mit Urteil vom 7. Januar 2026 ab. Vor Bundesgericht beantragt A., es sei ihm weiterhin eine Rente von Fr. 2'450.- auszurichten.\n\n**Streitig**\nStreitig ist, ob die Kürzung der Altersrente von A. im Rahmen der Plafonierung nach Art. 35 Abs. 1 lit. a AHVG rechtmässig ist. Nicht bestritten ist die Berechnung der ungekürzten Altersrenten beider Ehegatten. A. macht geltend, auch nach einem Einkommenssplitting verbleibe genügend Deckung für eine maximale Rente von Fr. 2'450.-; zudem habe die Verwaltung durch Festsetzung eines falschen Einkommens für das Jahr 2003 das Ergebnis einer unrechtmässig angewendeten „neu kreierten Formel\" hergeleitet. Ferner rügt er, die Vorinstanz habe in E. 6.1 des angefochtenen Urteils zu Unrecht erklärt, nicht zur Untersuchung von Rechnungsfehlern verpflichtet zu sein.\n\n**Entscheidung**\nDas Bundesgericht tritt auf die Beschwerde nicht ein (E. 4).\n\n<u>Anforderungen an die Beschwerdebegründung:</u> Das Bundesgericht hält fest, dass eine Beschwerdeschrift in gedrängter Form darlegen muss, inwiefern der angefochtene Akt Recht verletzt, wobei gezielt und sachbezogen auf die vorinstanzlichen Erwägungen einzugehen ist (E. 2).\n\n<u>Würdigung der Vorbringen:</u> Das Bundesgericht stellt fest, dass sich A. mit seinen Ausführungen nicht ausreichend auf die massgebenden Erwägungen des Bundesverwaltungsgerichts bezieht (E. 3.2). Die Vorinstanz hatte im Einzelnen dargelegt, wie die Plafonierungsgrenze nach Art. 53bis AHVV anhand der Rentenskala 34 zu bestimmen ist, und hatte unter Angabe der massgebenden Bestimmungen vorgerechnet, wie sich die Kürzung der Altersrente von A. konkret ergeben hat. Die Rente von A. war auf Grundlage der Rentenskala 44 (Vollrenten), jene seiner Ehefrau auf Grundlage der Rentenskala 14 festzusetzen (E. 3.1). A. zeigt weder auf, dass die Vorinstanz gesetzliche Regeln falsch angewendet hat, noch dass sie den zugrundeliegenden Sachverhalt offensichtlich unrichtig oder in Verletzung von Bundesrecht festgestellt hat (E. 3.2).\n\n<u>Rüge betreffend Rügeprinzip:</u> Das Bundesgericht stellt fest, dass die Vorinstanz in E. 6.1 des angefochtenen Urteils lediglich auf das sogenannte Rügeprinzip verwiesen hat und damit keineswegs zum Ausdruck gebracht hat, auf im vorinstanzlichen Beschwerdeverfahren vorgebrachte Argumente nicht eingehen zu wollen (E. 3.2).\n\nDa die Beschwerdebegründung den gesetzlichen Anforderungen nicht genügt, tritt das Bundesgericht im vereinfachten Verfahren nach Art. 108 Abs. 1 lit. b BGG nicht auf das Rechtsmittel ein (E. 4).",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://17-03-2026-9C_106-2026&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "INFO_SKIP_IV",
+        "datum": "27.03.2026",
+        "kategorie": "iv",
+        "vorschau": "Keine neuen IV-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false
+    },
+    {
         "aktenzeichen": "8C_578/2025",
         "datum": "26.03.2026",
         "kategorie": "ak",

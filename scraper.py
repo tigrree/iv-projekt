@@ -8,7 +8,7 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = "19.03.2026"
+ZIEL_DATUM = "12.03.2026"
 
 def flatten_json_to_string(data):
     """Zwingt jede verschachtelte JSON-Struktur in einen flachen String."""

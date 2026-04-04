@@ -1,5 +1,16 @@
 [
     {
+        "aktenzeichen": "INFO_SKIP_BEIDE",
+        "datum": "03.04.2026",
+        "kategorie": "beide",
+        "vorschau": "Keine neuen IV- oder AK-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false
+    },
+    {
         "aktenzeichen": "9C_279/2025",
         "datum": "02.04.2026",
         "kategorie": "ak",

@@ -8,7 +8,7 @@ from datetime import datetime
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum
-ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+ZIEL_DATUM = "03.04.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     """Übersetzt das Sachgebiet und erstellt die Zusammenfassung mit verbessertem JSON-Parsing."""

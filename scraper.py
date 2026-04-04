@@ -19,23 +19,18 @@ def flatten_json_to_string(data):
     if isinstance(data, dict):
         parts = []
         for key, val in data.items():
-            # Unnötige KI-generierte Wrapper-Keys überspringen
             if key.lower() in ["titel", "text", "inhalt"]:
                 parts.append(flatten_json_to_string(val))
             else:
                 header = key.replace('_', ' ').replace('ue', 'ü').replace('ae', 'ä').title()
-                # Spezifische Korrektur für die drei Haupttitel
                 if "Sachverhalt" in header: header = "Sachverhalt & Anträge"
                 elif "Streit" in header: header = "Streitig"
                 elif "Entscheidung" in header or "Ergebnis" in header: header = "Entscheidung"
-                
                 parts.append(f"**{header}**\n{flatten_json_to_string(val)}")
         return "\n\n".join(parts)
     return str(data)
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
-    """Erstellt die Zusammenfassung und garantiert einen flachen Text-String."""
-    
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
     
 ### VORAB-INFORMATION ZUM URTEILSAUFBAU:
@@ -118,9 +113,9 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             temperature=0,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit einem validen JSON-Objekt. "
                    "SCHEMA:\n{\n  \"vorschau_de\": \"String\",\n  \"zusammenfassung\": \"String\"\n}\n"
-                   "WICHTIG: Das Feld 'zusammenfassung' MUSS zwingend ein einfacher, flacher String sein! Erschaffe KEINE Unter-Objekte oder Listen! Maskiere doppelte Anführungszeichen im Text mit \\\".",
+                   "WICHTIG: Das Feld 'zusammenfassung' MUSS zwingend ein einfacher, flacher String sein! Maskiere doppelte Anführungszeichen im Text mit \\\".",
             messages=[
-                {"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' kurz ins Deutsche. Schritt 2: Erstelle die Zusammenfassung.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
+                {"role": "user", "content": f"Schritt 1: Übersetze das Sachgebiet '{vorschau_raw}' EXAKT und wortwörtlich ins Deutsche. Erfinde KEINE inhaltlichen Ergänzungen dazu! \nSchritt 2: Erstelle die Zusammenfassung.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}
             ]
         )
         
@@ -135,7 +130,6 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         try:
             res_data = json.loads(json_str)
         except json.JSONDecodeError:
-            # Fallback bei Maskierungsfehlern
             fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str)
             fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"').replace('\\"zusammenfassung\\"', '"zusammenfassung"')
             fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
@@ -144,17 +138,13 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         v_de = res_data.get("vorschau_de", vorschau_raw)
         z_data = res_data.get("zusammenfassung", "")
 
-        # Die ultimative Waffe gegen verschachtelte KI-Antworten
         z_de = flatten_json_to_string(z_data)
-        
-        # Kosmetische Bereinigung der Abkürzungen
         z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
 
         return v_de, z_de
 
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
-
 
 def scrape_bger():
     print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
@@ -196,12 +186,9 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                # Vorschau / Sachgebiet der unteren Zeile holen
                 vorschau_raw = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
                 sachgebiet_text = vorschau_raw.lower()
                 
-                # --- LÖSUNG PUBLIKATION ---
-                # Prüfe den gesamten Text der oberen (row) UND unteren Zeile (vorschau_raw) auf den Stern
                 ist_publikation = "*" in row.get_text() or "*" in vorschau_raw
 
                 ist_iv = any(k in sachgebiet_text for k in iv_keywords)
@@ -229,13 +216,12 @@ def scrape_bger():
                     tages_ergebnisse.append({
                         "aktenzeichen": clean_az, 
                         "datum": ZIEL_DATUM, "kategorie": kat,
-                        "publikation": ist_publikation, # Wird nun garantiert korrekt erfasst
+                        "publikation": ist_publikation, 
                         "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner, 
-                        "vorschau": v_text.replace("*", "").strip(), # Stern aus Anzeigetext löschen
+                        "vorschau": v_text.replace("*", "").strip(), 
                         "zusammenfassung": z_text, "url": case_url
                     })
 
-        # --- GETRENNTE SKIP-LOGIK FÜR FRONTEND FILTER ---
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
         else:
@@ -247,7 +233,6 @@ def scrape_bger():
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-        
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
         print(f"Scan für {ZIEL_DATUM} abgeschlossen.")

@@ -110,7 +110,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. SCHEMA:\n{\"vorschau_de\": \"String\", \"zusammenfassung\": \"String\"}\nDas Feld 'zusammenfassung' DARF NIEMALS LEER SEIN. Maskiere doppelte Anführungszeichen mit \\\".",
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. SCHEMA:\n{\"vorschau_de\": \"String\", \"zusammenfassung\": \"String\"}\n\nWICHTIG: Wiederhole das JSON-Schema NIEMALS im Text der Zusammenfassung! Das Feld 'zusammenfassung' enthält ausschliesslich den Markdown-Text.",
             messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet, KEINE Aktenzeichen.\nSchritt 2: Fasse das Urteil zusammen.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
         raw_content = response.content[0].text
@@ -119,13 +119,20 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         if json_match:
             json_str = json_match.group(1).replace('\t', ' ')
             try:
-                res_data = json.loads(json_str)
+                # strict=False erlaubt unmaskierte Zeilenumbrüche, was 90% der KI-JSON-Fehler verhindert
+                res_data = json.loads(json_str, strict=False)
             except json.JSONDecodeError:
+                # Fallback: Versuche das JSON manuell zu reparieren
                 fixed_json = re.sub(r'(?<!\\)"', r'\"', json_str)
                 fixed_json = fixed_json.replace('\\"vorschau_de\\"', '"vorschau_de"').replace('\\"zusammenfassung\\"', '"zusammenfassung"')
                 fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
-                res_data = json.loads(fixed_json)
+                try:
+                    res_data = json.loads(fixed_json, strict=False)
+                except:
+                    # Letzter Notausstieg, falls das JSON völlig zerstört ist
+                    res_data = {"vorschau_de": vorschau_raw, "zusammenfassung": "Parsing Fehler: JSON konnte nicht repariert werden."}
 
+            # Vorschau sichern und von Aktenzeichen befreien
             v_de = res_data.get("vorschau_de", vorschau_raw)
             v_de = re.sub(r'^[89]C_\d+/\d+\s*', '', v_de).strip()
             
@@ -135,6 +142,22 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
                 z_data = {k: v for k, v in res_data.items() if k != "vorschau_de"}
 
             z_de = flatten_json_to_string(z_data).strip()
+            
+            # --- NEUER REINIGUNGSDIENST ---
+            # 1. KI-Halluzinationen (JSON im JSON) abschneiden
+            if z_de.startswith('{"vorschau_de"'):
+                idx = z_de.find('**Sachverhalt')
+                if idx != -1:
+                    z_de = z_de[idx:]
+                else:
+                    # Notfall, falls "**Sachverhalt" fehlt
+                    z_de = re.sub(r'^\{.*?"zusammenfassung"\s*:\s*"', '', z_de)
+                    
+            # 2. Literale \n und \t in echte Formatierungen umwandeln
+            z_de = z_de.replace('\\n', '\n').replace('\\t', ' ')
+            
+            # 3. Überflüssige Leerzeichen nach Umbrüchen säubern
+            z_de = re.sub(r'\n\s+', '\n', z_de)
             z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
             
             if not z_de: 
@@ -215,13 +238,11 @@ def scrape_bger():
                     iv_zh_fuehrer, iv_zh_gegner = False, False
                     ak_zh_fuehrer, ak_zh_gegner = False, False
                     
-                    # Check IV-Stelle
                     if "IV-Stelle des Kantons Zürich" in rubrum:
                         pos = rubrum.find("IV-Stelle des Kantons Zürich")
                         if "Beschwerdeführerin" in rubrum[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
                     
-                    # Check Ausgleichskasse
                     if "Ausgleichskasse des Kantons Zürich" in rubrum:
                         pos = rubrum.find("Ausgleichskasse des Kantons Zürich")
                         if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
@@ -239,7 +260,6 @@ def scrape_bger():
                         "zusammenfassung": z_text, "url": case_url
                     })
 
-        # SKIP-Logik (Erweitert um AK-Felder, damit das JSON-Format konsistent bleibt)
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False, "ak_zh_fuehrer": False, "ak_zh_gegner": False})
         else:

@@ -110,8 +110,8 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             model="claude-sonnet-4-6", 
             max_tokens=3500,
             temperature=0,
-            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. SCHEMA:\n{\"vorschau_de\": \"String\", \"zusammenfassung\": \"String\"}\nMaskiere doppelte Anführungszeichen im Text mit \\\".",
-            messages=[{"role": "user", "content": f"Schritt 1: Übersetze das Sachgebiet '{vorschau_raw}' EXAKT ins Deutsche. Ergänze keine Aktenzeichen! \nSchritt 2: Fasse das Urteil zusammen. Packe den kompletten Text in EINEN String unter 'zusammenfassung'.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
+            system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. SCHEMA:\n{\"vorschau_de\": \"String\", \"zusammenfassung\": \"String\"}\nDas Feld 'zusammenfassung' DARF NIEMALS LEER SEIN. Maskiere doppelte Anführungszeichen mit \\\".",
+            messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet, KEINE Aktenzeichen.\nSchritt 2: Fasse das Urteil zusammen.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
         raw_content = response.content[0].text
         json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
@@ -126,8 +126,11 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
                 fixed_json = fixed_json.replace('{\\"', '{"').replace('\\"}', '"}')
                 res_data = json.loads(fixed_json)
 
+            # Vorschau sichern und von Aktenzeichen befreien (Sicherheitsnetz)
             v_de = res_data.get("vorschau_de", vorschau_raw)
+            v_de = re.sub(r'^[89]C_\d+/\d+\s*', '', v_de).strip()
             
+            # Zusammenfassung auslesen und flach bügeln
             if "zusammenfassung" in res_data and res_data["zusammenfassung"]:
                 z_data = res_data["zusammenfassung"]
             else:
@@ -136,9 +139,12 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             z_de = flatten_json_to_string(z_data).strip()
             z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
             
-            if not z_de: z_de = "Zusammenfassung konnte nicht verarbeitet werden."
+            # Wenn alles fehlschlägt und die KI trotzdem leer antwortet:
+            if not z_de: 
+                z_de = "Zusammenfassung konnte nicht erstellt werden (Urteil möglicherweise zu kurz oder Nichteintretensentscheid)."
 
             return v_de, z_de
+            
         return vorschau_raw, "Parsing Fehler: Kein JSON gefunden."
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
@@ -167,7 +173,6 @@ def scrape_bger():
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
             rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
             
-            # WICHTIG: Das Keyword "invalid" deckt Invalidenversicherung, Invalidenrente, assurance-invalidité etc. ab!
             iv_keywords = ["invalid"]
             ak_keywords = ["familienzulage", "allocation familiale", "assegni familiari", "hinterlassenenversicherung", "vieillesse", "vecchiaia", "krankenversicherung", "maladie", "malattie", "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"]
 
@@ -179,14 +184,12 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                # --- BULLETPROOF ZEILEN-EXTRAKTION ---
                 tds = row.find_all('td')
                 haupt_sachgebiet = tds[2].get_text().strip() if len(tds) > 2 else ""
                 
                 unter_sachgebiet = ""
                 if i + 1 < len(rows):
                     next_row = rows[i+1]
-                    # Nur wenn die nächste Zeile KEINEN Link hat, ist es ein Unter-Sachgebiet!
                     if not next_row.find('a', href=True):
                         next_tds = next_row.find_all('td')
                         if len(next_tds) > 2:
@@ -194,11 +197,13 @@ def scrape_bger():
                         else:
                             unter_sachgebiet = next_row.get_text().strip()
                 
-                # Kombinieren und überschüssige Leerschläge entfernen
                 volltext_sachgebiet = f"{haupt_sachgebiet} {unter_sachgebiet}".strip()
                 volltext_sachgebiet = re.sub(r'\s+', ' ', volltext_sachgebiet)
-                search_text = volltext_sachgebiet.lower()
                 
+                # Aktenzeichen VOR dem Senden an die KI sicherheitshalber strippen
+                volltext_sachgebiet = re.sub(r'^[89]C_\d+/\d+\s*', '', volltext_sachgebiet).strip()
+                
+                search_text = volltext_sachgebiet.lower()
                 ist_publikation = "*" in volltext_sachgebiet
                 
                 ist_iv = any(k in search_text for k in iv_keywords)

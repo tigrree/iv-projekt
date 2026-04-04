@@ -90,7 +90,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
     try:
         clean_text = " ".join(urteil_text.split()[:5000])
         response = client.messages.create(
-            model="claude-3-5-sonnet-20241022", # Stabiler API-Identifier
+            model="claude-4-6", # Stabiler API-Identifier
             max_tokens=3500,
             temperature=0,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format.",

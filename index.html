@@ -39,7 +39,7 @@
             <div class="flex gap-2">
                 <button onclick="setFilter('iv')" id="filter-iv" class="filter-btn">IV</button>
                 <button onclick="setFilter('ak')" id="filter-ak" class="filter-btn">AK</button>
-                <button onclick="setFilter('alle')" id="filter-alle" class="filter-btn active">Alle</button>
+                <button onclick="setFilter('alle')" id="filter-alle" class="filter-btn">Alle</button>
             </div>
 
             <div class="flex gap-1 relative">
@@ -65,7 +65,10 @@
     </div>
 
     <script>
-        let allData = [], currentFilter = 'alle';
+        let allData = [];
+        // Lade den zuletzt gewählten Filter aus dem Browser-Speicher, Standard ist 'alle'
+        let currentFilter = localStorage.getItem('filter') || 'alle'; 
+        
         const icons = {
             dark: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>',
             light: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -84,6 +87,8 @@
 
         function setFilter(mode) {
             currentFilter = mode;
+            localStorage.setItem('filter', mode); // Speichert den aktiven Filter sofort
+            
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('filter-' + mode).classList.add('active');
             document.getElementById('page-title').innerText = mode === 'iv' ? "IV-relevante Urteile" : mode === 'ak' ? "AK-relevante Urteile" : "IV- und AK-relevante Urteile";
@@ -111,7 +116,9 @@
                 const response = await fetch('urteile.json?v=' + Date.now());
                 allData = await response.json();
                 document.getElementById('loading').style.display = 'none';
-                renderUrteile();
+                
+                // Setzt beim Start direkt den im localStorage gespeicherten Filter ein (rendert automatisch)
+                setFilter(currentFilter); 
             } catch (e) { document.getElementById('loading').innerHTML = "Fehler beim Laden."; }
         }
 
@@ -167,8 +174,12 @@
                     } else {
                         const tag = u.kategorie === 'ak' ? 'AK' : u.kategorie === 'iv' ? 'IV' : 'IV/AK';
                         
-                        // Hier sind die Rollen und der WICHTIGE Publikations-Hinweis
-                        const rolle = u.iv_zh_fuehrer ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>` : u.iv_zh_gegner ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>` : '';
+                        let rolle = '';
+                        if (u.iv_zh_fuehrer) rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>`;
+                        if (u.iv_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>`;
+                        if (u.ak_zh_fuehrer) rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: Ausgleichskasse Zürich</div>`;
+                        if (u.ak_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: Ausgleichskasse Zürich</div>`;
+                        
                         const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
                         
                         dayHtml += `

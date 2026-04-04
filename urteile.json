@@ -247,17 +247,6 @@
         "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://04-03-2026-9C_268-2025&lang=de&zoom=&type=show_document"
     },
     {
-        "aktenzeichen": "INFO_SKIP",
-        "datum": "27.03.2026",
-        "kategorie": "info",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Keine neuen IV-relevanten Urteile",
-        "zusammenfassung": "",
-        "url": ""
-    },
-    {
         "aktenzeichen": "8C_578/2025",
         "datum": "26.03.2026",
         "kategorie": "ak",

@@ -11,39 +11,6 @@
         "url": ""
     },
     {
-        "aktenzeichen": "9C_279/2025",
-        "datum": "02.04.2026",
-        "kategorie": "ak",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Krankenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-62'}, 'request_id': 'req_011CZj4jVk7Vc3vZPqsWxpRj'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://17-03-2026-9C_279-2025&lang=de&zoom=&type=show_document"
-    },
-    {
-        "aktenzeichen": "9C_11/2026",
-        "datum": "02.04.2026",
-        "kategorie": "ak",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "vorschau": "Krankenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-62'}, 'request_id': 'req_011CZj4jXqNs8tLgnoSFJa5K'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://18-03-2026-9C_11-2026&lang=de&zoom=&type=show_document"
-    },
-    {
-        "aktenzeichen": "INFO_SKIP_IV",
-        "datum": "02.04.2026",
-        "kategorie": "iv",
-        "vorschau": "Keine IV-Urteile",
-        "zusammenfassung": "",
-        "url": "",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false
-    },
-    {
         "aktenzeichen": "8C_234/2025",
         "datum": "01.04.2026",
         "kategorie": "iv",

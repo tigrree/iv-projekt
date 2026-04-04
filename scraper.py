@@ -12,6 +12,8 @@ ZIEL_DATUM = "16.03.2026"
 
 def flatten_json_to_string(data):
     """Zwingt jede verschachtelte JSON-Struktur in einen flachen String."""
+    if not data:
+        return ""
     if isinstance(data, str):
         return data
     if isinstance(data, list):
@@ -19,7 +21,8 @@ def flatten_json_to_string(data):
     if isinstance(data, dict):
         parts = []
         for key, val in data.items():
-            if key.lower() in ["titel", "text", "inhalt"]:
+            # Wenn Claude die Zusammenfassung in eigene Keys aufteilt
+            if key.lower() in ["titel", "text", "inhalt", "zusammenfassung"]:
                 parts.append(flatten_json_to_string(val))
             else:
                 header = key.replace('_', ' ').replace('ue', 'ü').replace('ae', 'ä').title()
@@ -113,7 +116,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             max_tokens=3500,
             temperature=0,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH im JSON-Format. Maskiere Anführungszeichen mit \\\".",
-            messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Erfinde nichts dazu. \nSchritt 2: Fasse zusammen: {clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
+            messages=[{"role": "user", "content": f"Schritt 1: Übersetze das Sachgebiet '{vorschau_raw}' EXAKT ins Deutsche. WICHTIG: Füge in der Übersetzung NIEMALS das Aktenzeichen hinzu (kein '9C_9/2025' oder ähnliches), nur das reine Sachgebiet!\nSchritt 2: Fasse das Urteil zusammen. Packe den kompletten Text inkl. aller Formatierungen zwingend in EINEN EINZIGEN String unter dem Key 'zusammenfassung'. Erschaffe keine separaten JSON-Keys für die Abschnitte!\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
         raw_content = response.content[0].text
         json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
@@ -129,13 +132,23 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
                 res_data = json.loads(fixed_json)
 
             v_de = res_data.get("vorschau_de", vorschau_raw)
-            z_data = res_data.get("zusammenfassung", "")
+            
+            # --- ULTIMATIVER FALLBACK ---
+            # Wenn Claude die Zusammenfassung in separate Keys (Sachverhalt, Streitig, etc.) zerteilt hat:
+            if "zusammenfassung" in res_data and res_data["zusammenfassung"]:
+                z_data = res_data["zusammenfassung"]
+            else:
+                # Schnappt sich einfach ALLES ausser dem Vorschau-Feld
+                z_data = {k: v for k, v in res_data.items() if k.lower() != 'vorschau_de'}
 
             z_de = flatten_json_to_string(z_data)
             z_de = re.sub(r'([A-Z]\.)_+', r'\1', z_de)
+            
+            # PYTHON-SICHERHEITS-CHECK: Entfernt das Aktenzeichen, falls Claude es trotz Verbot eingefügt hat
+            v_de = re.sub(r'^[89]C_\d+/\d+\s*', '', v_de).strip()
 
             return v_de, z_de
-        return vorschau_raw, "Parsing Fehler"
+        return vorschau_raw, "Parsing Fehler: Kein JSON gefunden."
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
@@ -174,19 +187,23 @@ def scrape_bger():
                 raw_az = link_tag.get_text().strip()
                 if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
                 
-                # --- DIE LÖSUNG: BEIDE ZEILEN KOMBINIEREN ---
-                # 1. Haupt-Sachgebiet aus Spalte 3 (gleiche Zeile)
+                # --- VERBESSERTES ZUSAMMENFÜGEN DES SACHGEBIETS ---
                 tds = row.find_all('td')
                 haupt_sachgebiet = tds[2].get_text().strip() if len(tds) > 2 else ""
                 
-                # 2. Unter-Sachgebiet aus nächster Zeile
-                unter_sachgebiet = rows[i+1].get_text().strip() if i+1 < len(rows) else ""
+                unter_sachgebiet = ""
+                # Wir prüfen, ob die NÄCHSTE Zeile ein neues Urteil ist (indem wir nach einem Link suchen). 
+                # Nur wenn KEIN Link da ist, ist es die Unter-Sachgebiet-Zeile!
+                if i + 1 < len(rows):
+                    next_row = rows[i+1]
+                    if not next_row.find('a', href=True):
+                        unter_sachgebiet = next_row.get_text().strip()
                 
-                # 3. Zu einem String verschmelzen
                 volltext_sachgebiet = f"{haupt_sachgebiet} {unter_sachgebiet}".strip()
+                # Entfernt unnötige Umbrüche, die BGer manchmal einbaut
+                volltext_sachgebiet = re.sub(r'\s+', ' ', volltext_sachgebiet) 
                 search_text = volltext_sachgebiet.lower()
                 
-                # Publikation prüfen
                 ist_publikation = "*" in volltext_sachgebiet
                 
                 ist_iv = any(k in search_text for k in iv_keywords)
@@ -208,7 +225,6 @@ def scrape_bger():
                         if "Beschwerdeführerin" in case_html[pos:pos+250]: iv_zh_fuehrer = True
                         else: iv_zh_gegner = True
 
-                    # Wir übergeben nun den komprimierten, sauberen Text an Claude
                     v_text, z_text = summarize_and_translate(case_html, volltext_sachgebiet, client)
                     
                     tages_ergebnisse.append({
@@ -220,7 +236,7 @@ def scrape_bger():
                         "zusammenfassung": z_text, "url": case_url
                     })
 
-        # SKIP-Logik für Frontend-Filterung
+        # SKIP-Logik 
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False})
         else:

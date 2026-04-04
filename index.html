@@ -12,26 +12,28 @@
         .is-open > .accordion-content { max-height: 10000px; transition: max-height 0.5s ease-in; }
         .rotate-icon { transition: transform 0.3s; }
         .is-open > button .rotate-icon { transform: rotate(180deg); }
-        .dropdown-menu { display: none; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; z-index: 50; }
         .dropdown-menu.show { display: block; }
         .summary-title { font-weight: 700; display: block; margin-top: 1.25rem; color: currentColor; text-align: left; }
         .summary-text-block { display: block; padding-top: 2px; margin-bottom: 0.5rem; text-align: left; }
         .ios-button { display: block; width: 100%; background-color: #3b82f6; color: white !important; padding: 10px 0; border-radius: 10px; font-weight: 600; text-align: center; text-decoration: none; margin-top: 1.5rem; transition: opacity 0.2s; }
-        .filter-btn { padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; transition: all 0.2s; border: 1px solid #e5e7eb; }
+        .filter-btn { padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; transition: all 0.2s; border: 1px solid #e5e7eb; background: transparent; }
         .dark .filter-btn { border-color: #374151; }
         .filter-btn.active { background-color: #3b82f6; color: white; border-color: #3b82f6; }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased text-left">
     <div class="max-w-4xl mx-auto min-h-screen px-4 py-8">
-        <header class="flex justify-between items-center mb-6 border-b border-gray-100 dark:border-gray-800 pb-4">
-            <button onclick="toggleThemeMenu(event)" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                <span id="active-theme-icon" class="font-bold"></span>
-            </button>
-            <div id="theme-menu" class="dropdown-menu absolute left-4 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl z-50 overflow-hidden">
-                <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">System</button>
-                <button onclick="setTheme('light')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Hell</button>
-                <button onclick="setTheme('dark')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Dunkel</button>
+        <header class="flex justify-between items-center mb-8 border-b border-gray-100 dark:border-gray-800 pb-4 relative">
+            <div class="relative">
+                <button onclick="toggleMenu(event, 'theme-menu')" id="theme-btn" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <span id="active-theme-icon" class="font-bold"></span>
+                </button>
+                <div id="theme-menu" class="dropdown-menu left-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                    <button onclick="setTheme('system')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm border-b border-gray-100 dark:border-gray-800">System</button>
+                    <button onclick="setTheme('light')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm border-b border-gray-100 dark:border-gray-800">Hell</button>
+                    <button onclick="setTheme('dark')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Dunkel</button>
+                </div>
             </div>
 
             <div class="flex gap-2">
@@ -40,22 +42,45 @@
                 <button onclick="setFilter('alle')" id="filter-alle" class="filter-btn active">Alle</button>
             </div>
 
-            <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-            </button>
+            <div class="flex gap-1 relative">
+                <div class="relative">
+                    <button onclick="toggleMenu(event, 'view-menu')" id="view-btn" class="text-gray-600 dark:text-gray-300 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                    </button>
+                    <div id="view-menu" class="dropdown-menu right-0 mt-2 w-48 bg-white dark:bg-[#1c1c1e] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                        <button onclick="setView('newest')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm border-b border-gray-100 dark:border-gray-800">Nur aktuellster Tag</button>
+                        <button onclick="setView('all')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm border-b border-gray-100 dark:border-gray-800">Alle aufklappen</button>
+                        <button onclick="setView('none')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Alle zuklappen</button>
+                    </div>
+                </div>
+                <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </button>
+            </div>
         </header>
 
-        <h1 id="page-title" class="text-3xl font-bold mb-8 text-left">IV- und AK-relevante Urteile</h1>
+        <h1 id="page-title" class="text-3xl font-bold mb-8 text-left tracking-tight">IV- und AK-relevante Urteile</h1>
         <div id="loading" class="text-gray-500 text-center py-10 italic">Lade Entscheide...</div>
         <div id="app-container" class="space-y-6"></div>
     </div>
 
     <script>
         let allData = [], currentFilter = 'alle';
+        const icons = {
+            dark: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>',
+            light: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+            system: '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path d="M12 3v1m0 16v1m9-9h-1M4 12H3" opacity="0.5"/></svg>'
+        };
 
-        function setTheme(theme) { localStorage.theme = theme; location.reload(); }
-        function toggleThemeMenu(e) { e.stopPropagation(); document.getElementById('theme-menu').classList.toggle('show'); }
-        document.documentElement.classList.toggle('dark', localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches));
+        function applyTheme(theme) {
+            const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.classList.toggle('dark', isDark);
+            document.getElementById('active-theme-icon').innerHTML = icons[theme] || icons.system;
+        }
+        function setTheme(t) { localStorage.theme = t; applyTheme(t); document.getElementById('theme-menu').classList.remove('show'); }
+        function toggleMenu(e, id) { e.stopPropagation(); document.querySelectorAll('.dropdown-menu').forEach(m => { if(m.id !== id) m.classList.remove('show'); }); document.getElementById(id).classList.toggle('show'); }
+        window.onclick = () => document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+        applyTheme(localStorage.theme || 'system');
 
         function setFilter(mode) {
             currentFilter = mode;
@@ -63,6 +88,15 @@
             document.getElementById('filter-' + mode).classList.add('active');
             document.getElementById('page-title').innerText = mode === 'iv' ? "IV-relevante Urteile" : mode === 'ak' ? "AK-relevante Urteile" : "IV- und AK-relevante Urteile";
             renderUrteile();
+        }
+
+        function setView(mode) {
+            const groups = document.querySelectorAll('.accordion-group');
+            groups.forEach((group, index) => {
+                if (mode === 'newest') index === 0 ? group.classList.add('is-open') : group.classList.remove('is-open');
+                else if (mode === 'all') group.classList.add('is-open');
+                else if (mode === 'none') group.classList.remove('is-open');
+            });
         }
 
         function formatSummary(text) {
@@ -82,11 +116,9 @@
         }
 
         function renderUrteile() {
-            const container = document.getElementById('app-container');
-            container.innerHTML = '';
+            const container = document.getElementById('app-container'); container.innerHTML = '';
             let filtered = allData.filter(u => currentFilter === 'alle' || u.kategorie === 'beide' || u.kategorie === currentFilter);
-            const tageMap = {};
-            filtered.forEach(u => { if (!tageMap[u.datum]) tageMap[u.datum] = []; tageMap[u.datum].push(u); });
+            const tageMap = {}; filtered.forEach(u => { if (!tageMap[u.datum]) tageMap[u.datum] = []; tageMap[u.datum].push(u); });
             Object.keys(tageMap).sort((a, b) => b.split('.').reverse().join('') - a.split('.').reverse().join('')).forEach((datum, i) => {
                 const echteUrteile = tageMap[datum].filter(u => u.aktenzeichen !== "INFO_SKIP");
                 const daySection = document.createElement('div');
@@ -96,12 +128,12 @@
                     dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] rounded-2xl overflow-hidden divide-y divide-gray-200 dark:divide-gray-800 shadow-sm">`;
                     echteUrteile.forEach(u => {
                         const tag = u.kategorie === 'ak' ? 'AK' : u.kategorie === 'iv' ? 'IV' : 'IV/AK';
-                        dayHtml += `<div class="sub-accordion-item"><button onclick="this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 flex justify-between items-center group"><div class="pr-4"><div class="flex items-center"><span class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</span><span class="ml-2 px-2 py-0.5 bg-gray-200 dark:bg-gray-800 text-[10px] rounded font-bold">${tag}</span></div><div class="text-gray-500 text-sm mt-0.5">${u.vorschau}</div></div><svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="accordion-content bg-white/40 dark:bg-black/20"><div class="px-6 pt-3 pb-6 text-base border-t border-gray-200 dark:border-gray-800/30 text-left">${formatSummary(u.zusammenfassung)}<a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a></div></div></div>`;
+                        const rolle = u.iv_zh_fuehrer ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>` : u.iv_zh_gegner ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>` : '';
+                        dayHtml += `<div class="sub-accordion-item"><button onclick="this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 flex justify-between items-center group"><div class="pr-4"><div class="flex items-center"><span class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</span><span class="ml-2 px-2 py-0.5 bg-gray-200 dark:bg-gray-800 text-[10px] rounded font-bold">${tag}</span></div>${rolle}<div class="text-gray-500 text-sm mt-0.5">${u.vorschau}</div></div><svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="accordion-content bg-white/40 dark:bg-black/20"><div class="px-6 pt-3 pb-6 text-base border-t border-gray-200 dark:border-gray-800/30 text-left">${formatSummary(u.zusammenfassung)}<a href="${u.url}" target="_blank" class="ios-button">Originalurteil öffnen</a></div></div></div>`;
                     });
                     dayHtml += `</div>`;
                 } else { dayHtml += `<div class="bg-gray-100 dark:bg-[#1c1c1e] p-6 rounded-2xl text-gray-500 italic mb-4">Keine Treffer für diesen Filter</div>`; }
-                daySection.innerHTML = dayHtml + `</div>`;
-                container.appendChild(daySection);
+                daySection.innerHTML = dayHtml + `</div>`; container.appendChild(daySection);
             });
         }
         loadUrteile();

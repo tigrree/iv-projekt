@@ -66,8 +66,22 @@
 
     <script>
         let allData = [];
-        // Lade den zuletzt gewählten Filter aus dem Browser-Speicher, Standard ist 'alle'
-        let currentFilter = localStorage.getItem('filter') || 'alle'; 
+        
+        // --- NEUE URL & SPEICHER LOGIK ---
+        // 1. Schauen, ob ein Link mit "?filter=..." aufgerufen wurde
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlFilter = urlParams.get('filter');
+        
+        let currentFilter = 'alle'; // Standard
+        
+        if (urlFilter && ['iv', 'ak', 'alle'].includes(urlFilter)) {
+            // Wenn jemand über einen Link kommt, gewinnt der Link
+            currentFilter = urlFilter;
+            localStorage.setItem('filter', currentFilter);
+        } else {
+            // Ansonsten nehmen wir den letzten Speicherstand (für dich lokal)
+            currentFilter = localStorage.getItem('filter') || 'alle';
+        }
         
         const icons = {
             dark: '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 01-4.4 2.26 5.4 5.4 0 01-5.4-5.4c0-1.31.48-2.51 1.27-3.44A9.03 9.03 0 0012 3z"/></svg>',
@@ -87,7 +101,12 @@
 
         function setFilter(mode) {
             currentFilter = mode;
-            localStorage.setItem('filter', mode); // Speichert den aktiven Filter sofort
+            localStorage.setItem('filter', mode);
+            
+            // --- NEU: Ändert die URL im Browser, ohne die Seite neu zu laden ---
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('filter', mode);
+            window.history.pushState({}, '', newUrl);
             
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('filter-' + mode).classList.add('active');
@@ -117,7 +136,7 @@
                 allData = await response.json();
                 document.getElementById('loading').style.display = 'none';
                 
-                // Setzt beim Start direkt den im localStorage gespeicherten Filter ein (rendert automatisch)
+                // Setzt den Start-Filter (und lädt damit automatisch die Urteile)
                 setFilter(currentFilter); 
             } catch (e) { document.getElementById('loading').innerHTML = "Fehler beim Laden."; }
         }

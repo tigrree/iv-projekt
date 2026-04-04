@@ -125,27 +125,21 @@
             Object.keys(tageMap).sort((a, b) => b.split('.').reverse().join('') - a.split('.').reverse().join('')).forEach((datum, i) => {
                 const tagUrteile = tageMap[datum];
                 
-                // Analysiere Bestand am Tag
                 const hatEchteIV = tagUrteile.some(u => u.kategorie === 'iv' && !u.aktenzeichen.startsWith('INFO_SKIP'));
                 const hatEchteAK = tagUrteile.some(u => u.kategorie === 'ak' && !u.aktenzeichen.startsWith('INFO_SKIP'));
-                const hatBeideSkip = tagUrteile.some(u => u.aktenzeichen === 'INFO_SKIP_BEIDE');
 
-                // Filter-Logik anwenden
                 let anzuzeigendeUrteile = [];
 
                 if (currentFilter === 'alle') {
                     if (!hatEchteIV && !hatEchteAK) {
-                        // Szenario: Weder IV noch AK -> Nur Kombi-Skip
                         anzuzeigendeUrteile = tagUrteile.filter(u => u.aktenzeichen === 'INFO_SKIP_BEIDE');
                     } else {
-                        // Szenario: Echte Urteile vorhanden -> Zeige nur echte Urteile (Skip unterdrücken laut deiner Anweisung)
                         anzuzeigendeUrteile = tagUrteile.filter(u => !u.aktenzeichen.startsWith('INFO_SKIP'));
                     }
                 } else if (currentFilter === 'iv') {
                     if (hatEchteIV) {
                         anzuzeigendeUrteile = tagUrteile.filter(u => u.kategorie === 'iv' && !u.aktenzeichen.startsWith('INFO_SKIP'));
                     } else {
-                        // Erzeuge / Zeige Skip für IV
                         const skip = tagUrteile.find(u => u.aktenzeichen === 'INFO_SKIP_IV' || u.aktenzeichen === 'INFO_SKIP_BEIDE');
                         if(skip) anzuzeigendeUrteile = [{...skip, vorschau: "Keine neuen IV-relevanten Urteile"}];
                     }
@@ -153,7 +147,6 @@
                     if (hatEchteAK) {
                         anzuzeigendeUrteile = tagUrteile.filter(u => u.kategorie === 'ak' && !u.aktenzeichen.startsWith('INFO_SKIP'));
                     } else {
-                        // Erzeuge / Zeige Skip für AK
                         const skip = tagUrteile.find(u => u.aktenzeichen === 'INFO_SKIP_AK' || u.aktenzeichen === 'INFO_SKIP_BEIDE');
                         if(skip) anzuzeigendeUrteile = [{...skip, vorschau: "Keine neuen AK-relevanten Urteile"}];
                     }
@@ -173,11 +166,23 @@
                         dayHtml += `<div class="p-6 text-gray-500 italic text-center">${u.vorschau}</div>`;
                     } else {
                         const tag = u.kategorie === 'ak' ? 'AK' : u.kategorie === 'iv' ? 'IV' : 'IV/AK';
+                        
+                        // Hier sind die Rollen und der WICHTIGE Publikations-Hinweis
                         const rolle = u.iv_zh_fuehrer ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>` : u.iv_zh_gegner ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>` : '';
+                        const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
+                        
                         dayHtml += `
                             <div class="sub-accordion-item">
                                 <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
-                                    <div class="pr-4"><div class="flex items-center"><span class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</span><span class="ml-2 px-2 py-0.5 bg-gray-200 dark:bg-gray-800 text-[10px] rounded font-bold">${tag}</span></div>${rolle}<div class="text-gray-500 text-sm mt-0.5">${u.vorschau}</div></div>
+                                    <div class="pr-4">
+                                        <div class="flex items-center">
+                                            <span class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</span>
+                                            <span class="ml-2 px-2 py-0.5 bg-gray-200 dark:bg-gray-800 text-[10px] rounded font-bold">${tag}</span>
+                                        </div>
+                                        ${rolle}
+                                        ${pubHinweis}
+                                        <div class="text-gray-500 text-sm mt-0.5">${u.vorschau}</div>
+                                    </div>
                                     <svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </button>
                                 <div class="accordion-content bg-white/40 dark:bg-black/20">

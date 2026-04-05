@@ -229,7 +229,6 @@
                         if (u.ak_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: Sozialversicherungsanstalt Zürich</div>`;
                         const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
                         
-                        // NEU: onclick Event direkt in den Span der Urteilsnummer eingebaut
                         dayHtml += `
                             <div class="sub-accordion-item">
                                 <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group relative">
@@ -269,7 +268,7 @@
             document.getElementById('chat-input').focus();
         }
 
-        // NEU: Chat leeren
+        // Chat leeren
         function clearChat() {
             const history = document.getElementById('chat-history');
             history.innerHTML = `
@@ -277,23 +276,20 @@
                     Hallo! Gib oben eine Urteilsnummer ein und stelle mir eine spezifische Frage zu diesem Entscheid.
                 </div>
             `;
+            // Beide Felder leeren: Die Frage UND die Urteilsnummer
             document.getElementById('chat-input').value = '';
+            document.getElementById('chat-urteil-id').value = '';
         }
 
-        // NEU: Urteil in Chat übernehmen und öffnen
+        // Urteil in Chat übernehmen und öffnen
         function openChatForUrteil(event, urteilId) {
-            // Verhindert, dass sich das Accordion beim Klick auf die Nummer ungewollt öffnet/schliesst
             event.stopPropagation(); 
-            
-            // Nummer in das Chat-Textfeld eintragen
             document.getElementById('chat-urteil-id').value = urteilId;
             
-            // Wenn der Chatbot noch zu ist, öffnen
             const chatWindow = document.getElementById('chatbot-window');
             if (!chatWindow.classList.contains('show')) {
                 toggleChat();
             } else {
-                // Falls er schon offen ist, zumindest den Fokus aufs Eingabefeld setzen
                 document.getElementById('chat-input').focus();
             }
         }

@@ -110,22 +110,31 @@
             });
         }
 
-        // --- VERBESSERTE FORMATIERUNG FÜR UNTERTITEL ---
+        // --- BULLETPROOF FORMATIERUNG FÜR UNTERTITEL ---
         function formatSummary(text) {
             if (!text) return '';
             
-            // Text in einen umschließenden Block packen
             let html = '<span class="summary-text-block">' + text.trim() + '</span>';
             
-            // 1. Haupttitel fett (Sachverhalt, Streitig, Entscheidung)
+            // 1. Haupttitel fett 
             html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title">$1</span><span class="summary-text-block">');
             
-            // 2. Untertitel (unterstrichen) erkennen und Abstand danach einfügen
-            // Packt <u>...</u>: in ein Div mit margin-bottom
-            html = html.replace(/<u>(.*?)<\/u>:/g, '</span><div class="mb-2 mt-4 font-medium italic"><u>$1</u>:</div><span class="summary-text-block">');
+            // 2. Untertitel (Bulletproof Regex)
+            // Sucht nach dem Text in <u>...</u> und fängt einen allfälligen Doppelpunkt sicher ab, egal ob er innerhalb oder ausserhalb steht.
+            html = html.replace(/<u>(.*?)<\/u>\s*:?\s*/g, function(match, innerText) {
+                // Entfernt einen möglichen Doppelpunkt ganz am Ende des inneren Textes
+                let cleanText = innerText.replace(/:$/, '').trim();
+                // Bricht den Textfluss zwingend auf (display: block durch div) und erzwingt einen Zeilenumbruch danach
+                return '</span><div class="mb-2 mt-4 font-medium italic"><u>' + cleanText + '</u>:</div><span class="summary-text-block">';
+            });
             
             // 3. Doppelte Umbrüche in neue Textblöcke umwandeln
-            return html.replace(/\n\n/g, '</span><span class="summary-text-block">');
+            html = html.replace(/\n\n/g, '</span><span class="summary-text-block">');
+            
+            // 4. Aufräumen von leeren Span-Blöcken (verhindert unsichtbare Abstände)
+            html = html.replace(/<span class="summary-text-block">\s*<\/span>/g, '');
+            
+            return html;
         }
 
         async function loadUrteile() {
@@ -172,8 +181,8 @@
                         let rolle = '';
                         if (u.iv_zh_fuehrer) rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: IV-Stelle Zürich</div>`;
                         if (u.iv_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: IV-Stelle Zürich</div>`;
-                        if (u.ak_zh_fuehrer) rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: SVA Zürich</div>`;
-                        if (u.ak_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: SVA Zürich</div>`;
+                        if (u.ak_zh_fuehrer) rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdeführerin: Sozialversicherungsanstalt Zürich</div>`;
+                        if (u.ak_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: Sozialversicherungsanstalt Zürich</div>`;
                         const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
                         
                         dayHtml += `

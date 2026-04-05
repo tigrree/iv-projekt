@@ -36,6 +36,9 @@
         #chat-history::-webkit-scrollbar-track { background: transparent; }
         #chat-history::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
         .dark #chat-history::-webkit-scrollbar-thumb { background-color: #4b5563; }
+        
+        /* Hover-Effekt für die klickbare Urteilsnummer */
+        .urteil-link:hover { text-decoration: underline; opacity: 0.8; }
     </style>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans antialiased text-left relative">
@@ -69,7 +72,7 @@
                         <button onclick="setView('none')" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">Alle zuklappen</button>
                     </div>
                 </div>
-                <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                <button onclick="location.reload()" class="text-gray-400 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors" title="Seite neu laden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
             </div>
@@ -90,9 +93,14 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span class="font-bold text-sm">Urteils-Assistent (KI)</span>
             </div>
-            <button onclick="toggleChat()" class="text-blue-100 hover:text-white transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+            <div class="flex items-center gap-3">
+                <button onclick="clearChat()" class="text-blue-100 hover:text-white transition-colors" title="Chatverlauf löschen">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </button>
+                <button onclick="toggleChat()" class="text-blue-100 hover:text-white transition-colors" title="Chatfenster schliessen">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
         </div>
         
         <div class="px-4 py-3 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-sm z-10">
@@ -160,7 +168,6 @@
             });
         }
 
-        // --- BULLETPROOF FORMATIERUNG FÜR UNTERTITEL ---
         function formatSummary(text) {
             if (!text) return '';
             let html = '<span class="summary-text-block">' + text.trim() + '</span>';
@@ -222,16 +229,17 @@
                         if (u.ak_zh_gegner)  rolle += `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Beschwerdegegnerin: Sozialversicherungsanstalt Zürich</div>`;
                         const pubHinweis = u.publikation ? `<div class="text-red-600 dark:text-red-500 font-bold text-sm mt-1">Achtung: Zur Publikation vorgesehen!</div>` : '';
                         
+                        // NEU: onclick Event direkt in den Span der Urteilsnummer eingebaut
                         dayHtml += `
                             <div class="sub-accordion-item">
-                                <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group">
+                                <button onclick="this.parentElement.classList.toggle('is-open')" class="w-full text-left px-6 py-5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-between items-center group relative">
                                     <div>
                                         <div class="flex items-center">
-                                            <span class="text-blue-600 dark:text-blue-500 font-bold text-xl">${u.aktenzeichen}</span>
+                                            <span class="text-blue-600 dark:text-blue-500 font-bold text-xl cursor-pointer urteil-link relative z-10" title="Im Chatbot öffnen" onclick="openChatForUrteil(event, '${u.aktenzeichen}')">${u.aktenzeichen}</span>
                                             <span class="ml-2 px-2 py-0.5 bg-gray-200 dark:bg-gray-800 text-[10px] rounded font-bold">${tagLabel}</span>
                                         </div>
                                         ${rolle}${pubHinweis}
-                                        <div class="text-gray-500 text-sm mt-0.5">${u.vorschau}</div>
+                                        <div class="text-gray-500 text-sm mt-0.5 relative z-0">${u.vorschau}</div>
                                     </div>
                                     <svg class="rotate-icon w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </button>
@@ -254,9 +262,40 @@
         loadUrteile();
 
         // --- KI CHATBOT LOGIK ---
+        
+        // Chatfenster öffnen/schliessen
         function toggleChat() {
             document.getElementById('chatbot-window').classList.toggle('show');
             document.getElementById('chat-input').focus();
+        }
+
+        // NEU: Chat leeren
+        function clearChat() {
+            const history = document.getElementById('chat-history');
+            history.innerHTML = `
+                <div class="chat-message chat-ai">
+                    Hallo! Gib oben eine Urteilsnummer ein und stelle mir eine spezifische Frage zu diesem Entscheid.
+                </div>
+            `;
+            document.getElementById('chat-input').value = '';
+        }
+
+        // NEU: Urteil in Chat übernehmen und öffnen
+        function openChatForUrteil(event, urteilId) {
+            // Verhindert, dass sich das Accordion beim Klick auf die Nummer ungewollt öffnet/schliesst
+            event.stopPropagation(); 
+            
+            // Nummer in das Chat-Textfeld eintragen
+            document.getElementById('chat-urteil-id').value = urteilId;
+            
+            // Wenn der Chatbot noch zu ist, öffnen
+            const chatWindow = document.getElementById('chatbot-window');
+            if (!chatWindow.classList.contains('show')) {
+                toggleChat();
+            } else {
+                // Falls er schon offen ist, zumindest den Fokus aufs Eingabefeld setzen
+                document.getElementById('chat-input').focus();
+            }
         }
 
         function addMessageToChat(text, sender, id = null) {
@@ -277,7 +316,7 @@
 
             if (!question) return;
             if (!urteilId) {
-                alert("Bitte gib oben die gewünschte Urteilsnummer ein (z.B. 9C_9/2025).");
+                alert("Bitte gib oben die gewünschte Urteilsnummer ein (z.B. 9C_9/2025) oder klicke auf eine Nummer in der Liste.");
                 urteilField.focus();
                 return;
             }
@@ -294,19 +333,17 @@
 
             try {
                 // 3. Den Volltext des Urteils von GitHub laden (RAG-Prinzip)
-                // Ersetzt Slashes durch Unterstriche, da Dateinamen keine Slashes enthalten dürfen
                 const safeFilename = urteilId.replace(/\//g, '_'); 
                 const textResponse = await fetch(`urteilstexte/${safeFilename}.txt`);
                 
                 if (!textResponse.ok) {
-                    loadingElement.innerText = `Ich konnte das Urteil "${urteilId}" in der Datenbank nicht finden. Bitte prüfe die genaue Schreibweise.`;
+                    loadingElement.innerText = `Ich konnte das Urteil "${urteilId}" in der Datenbank nicht finden. Ist das Urteil bereits gescrapt worden?`;
                     loadingElement.classList.remove("italic", "text-gray-500", "dark:text-gray-400");
                     return;
                 }
                 const urteilText = await textResponse.text();
 
                 // 4. Text und Frage an den sicheren Render-Proxy senden
-                // WICHTIG: Passe hier deine eigene Render-URL an!
                 const renderUrl = "https://bger-chatbot.onrender.com/ask"; 
 
                 const apiResponse = await fetch(renderUrl, {

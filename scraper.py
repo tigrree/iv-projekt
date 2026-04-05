@@ -4,7 +4,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 # AUTOMATISIERUNG: Manuelles Datum für den Text-Nachtrag
-ZIEL_DATUM = "20.03.2026"
+ZIEL_DATUM = "19.03.2026"
 
 def scrape_bger():
     print(f"--- Nur-Text-Scan gestartet für: {ZIEL_DATUM} ---")

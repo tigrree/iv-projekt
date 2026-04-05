@@ -95,7 +95,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         # Wir übergeben die ersten ~5000 Wörter für die Zusammenfassung
         clean_text = " ".join(urteil_text.split()[:5000])
         response = client.messages.create(
-            model="claude-sonnet-4-6", # KORRIGIERTES MODELL!
+            model="claude-sonnet-4-6",
             max_tokens=3500,
             temperature=0.1,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit den folgenden zwei XML-Tags:\n<vorschau_de>Übersetzung hier</vorschau_de>\n<zusammenfassung>Zusammenfassung hier</zusammenfassung>\n\nVerwende KEIN JSON und erfinde keine anderen Formate.",
@@ -211,6 +211,14 @@ def scrape_bger():
                     case_soup = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser')
                     case_html = case_soup.get_text()
                     case_full_text = case_soup.get_text(separator='\n', strip=True)
+                    
+                    # --- NEU: Boilerplate (Header/Footer) wegschneiden ---
+                    if "Tribunal federal" in case_full_text:
+                        case_full_text = case_full_text.split("Tribunal federal", 1)[-1].strip()
+                        
+                    if "Navigation\nNeue Suche" in case_full_text:
+                        case_full_text = case_full_text.split("Navigation\nNeue Suche", 1)[0].strip()
+                    # ------------------------------------------------------
                     
                     # VOLLTEXT SPEICHERN FÜR DEN CHATBOT (z.B. "9C_9_2025.txt")
                     safe_filename = clean_az.replace('/', '_')

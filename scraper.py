@@ -212,7 +212,7 @@ def scrape_bger():
                     case_html = case_soup.get_text()
                     case_full_text = case_soup.get_text(separator='\n', strip=True)
                     
-                    # --- NEU: Boilerplate (Header/Footer) wegschneiden ---
+                    # --- Boilerplate (Header/Footer) wegschneiden ---
                     if "Tribunal federal" in case_full_text:
                         case_full_text = case_full_text.split("Tribunal federal", 1)[-1].strip()
                         

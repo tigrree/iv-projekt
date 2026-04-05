@@ -34,6 +34,13 @@ SCHRITT 5 - BEGRÜNDUNG: Analysiere NUR die Begründung des Bundesgerichts in de
 2.1. Erläutere, warum die vorinstanzliche Beweiswürdigung bundesrechtlich standhält.
 2.2. Der Fokus deiner Zusammenfassung liegt zwingend auf der Begründung des Bundesgerichts und was es bejaht. Setze deinen Fokus darauf, was die Vorinstanz aus Sicht des Bundesgerichts korrekt ausführte.
 
+### ZWINGENDES GLOSSAR FÜR ÜBERSETZUNGEN (FR/IT -> DE):
+Wenn du französische oder italienische Urteile zusammenfasst, musst du zwingend folgende deutsche Fachbegriffe verwenden:
+- "ESS" (Enquête suisse sur la structure des salaires) -> "LSE" (Lohnstrukturerhebung)
+- "branche" -> "Branche" (niemals "Branchenlinie")
+- "expertise pluridisciplinaire" / "évaluation pluridisciplinaire" -> "interdisziplinäres Gutachten" oder "interdisziplinäre Begutachtung" (niemals "pluridisziplinär")
+- "réformer" / "réforme" -> "abändern" / "Abänderung" (niemals "reformieren" oder "Reformation")
+
 ### STRIKTE ROLLENTRENNUNG (ATTRIBUTION):
 Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten), den Feststellungen der Vorinstanz (was das kantonale Gericht entschied) und der Erwägung des Bundesgerichts (was das höchste Gericht als richtig/falsch bewertet).
 1. Verwende explizite Zuweisungen wie: „Die Beschwerdeführerin rügt...“, „Die Vorinstanz hielt fest...“, „Das Bundesgericht erkennt hingegen...“.

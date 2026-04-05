@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb anpassbar)
-ZIEL_DATUM = "17.03.2026"
+ZIEL_DATUM = "02.04.2026"
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.

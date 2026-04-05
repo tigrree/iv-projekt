@@ -31,13 +31,10 @@ jobs:
       - name: Install Python Dependencies
         run: |
           pip install requests beautifulsoup4 anthropic 
-          # Hier wurde 'anthropic' hinzugefügt
 
       - name: Run Scraper Script
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} 
-          # Hier wurde die Umgebungsvariable für Claude hinzugefügt
         run: python scraper.py
 
       - name: Commit and Push changes
@@ -45,11 +42,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          if [ -f urteile.json ]; then
-            git add urteile.json
-            # Commit nur, wenn tatsächlich Änderungen (neue Urteile) vorhanden sind
-            git commit -m "Automatisches Update: $(date +'%d.%m.%Y %H:%M')" || exit 0
-            git push
-          else
-            echo "Datei urteile.json wurde nicht gefunden. Überspringe Commit."
-          fi
+          # Der Punkt fügt ALLE neuen Dateien und Ordner (wie urteilstexte) hinzu
+          git add .
+          
+          # Commit nur, wenn tatsächlich Änderungen vorhanden sind
+          git commit -m "Automatisches Update: $(date +'%d.%m.%Y %H:%M')" || exit 0
+          git push

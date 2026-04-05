@@ -120,12 +120,10 @@
             html = html.replace(/\*\*(.*?)\*\*\n?/g, '</span><span class="summary-title">$1</span><span class="summary-text-block">');
             
             // 2. Untertitel (Bulletproof Regex)
-            // Sucht nach dem Text in <u>...</u> und fängt einen allfälligen Doppelpunkt sicher ab, egal ob er innerhalb oder ausserhalb steht.
             html = html.replace(/<u>(.*?)<\/u>\s*:?\s*/g, function(match, innerText) {
-                // Entfernt einen möglichen Doppelpunkt ganz am Ende des inneren Textes
                 let cleanText = innerText.replace(/:$/, '').trim();
-                // Bricht den Textfluss zwingend auf (display: block durch div) und erzwingt einen Zeilenumbruch danach
-                return '</span><div class="mb-2 mt-4 font-medium italic"><u>' + cleanText + '</u>:</div><span class="summary-text-block">';
+                // Das "italic" wurde hier entfernt, font-medium bleibt erhalten für eine dezente Gewichtung
+                return '</span><div class="mb-2 mt-4 font-medium"><u>' + cleanText + '</u>:</div><span class="summary-text-block">';
             });
             
             // 3. Doppelte Umbrüche in neue Textblöcke umwandeln

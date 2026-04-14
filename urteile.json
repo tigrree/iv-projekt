@@ -1,5 +1,31 @@
 [
     {
+        "aktenzeichen": "8C_434/2025",
+        "datum": "14.04.2026",
+        "kategorie": "iv",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false,
+        "vorschau": "Invalidenversicherung (Invalidenrente)",
+        "zusammenfassung": "**Sachverhalt & Anträge**\nA. A. (geb. 1968) meldete sich erstmals 2005 bei der IV-Stelle des Kantons St. Gallen zum Leistungsbezug an. Nach mehreren Abklärungsrunden und Neuanmeldungen – zuletzt 2014 – holte die IV-Stelle zwei polydisziplinäre Verlaufsgutachten bei der Medaffairs AG in Basel ein (Medaffairs-Gutachten 1 vom 24. April 2018 und Medaffairs-Gutachten 2 vom 18. Mai 2022). Gestützt auf das zweite Gutachten ermittelte die IV-Stelle einen Invaliditätsgrad von 37% und verneinte mit Verfügung vom 13. September 2022 einen Rentenanspruch. Das Versicherungsgericht des Kantons St. Gallen wies die dagegen erhobene Beschwerde ab (Entscheid vom 26. Juni 2025). Vor Bundesgericht beantragt A. A., ihm sei eine ganze Invalidenrente zuzusprechen; eventualiter sei die Sache zur Neuentscheidung an die Vorinstanz oder die IV-Stelle zurückzuweisen.\n\n**Streitig**\nStreitig ist, ob die Vorinstanz Bundesrecht verletzte, indem sie die Verneinung des Rentenanspruchs durch die IV-Stelle bestätigte. Konkret umstritten sind die Feststellungen zum Gesundheitszustand und zur Arbeitsfähigkeit sowie die Ermittlung des Invaliditätsgrades, namentlich die Höhe des leidensbedingten Abzuges und die Verwertbarkeit der Restarbeitsfähigkeit auf dem ausgeglichenen Arbeitsmarkt.\n\n**Entscheidung**\n<u>Beweiswürdigung und Arbeitsfähigkeit (E. 4.1 und 4.2.1):</u>\nDas Bundesgericht stellt fest, dass die Vorinstanz nach einlässlicher Würdigung der Aktenlage und ausführlicher Erörterung der Einwände des Beschwerdeführers mit überzeugender Begründung zutreffend erkannt hat, dass A. A. in einer leidensangepassten Tätigkeit – entgegen den Einschätzungen der behandelnden Ärzte – seit der Neuanmeldung 2014 bezogen auf ein 100%-Pensum, abgesehen von kürzeren vorübergehenden Phasen, stets zu mindestens 70% arbeitsfähig blieb. Die Vorinstanz stützte sich dabei auf die im Verfahren nach Art. 44 ATSG eingeholten Medaffairs-Gutachten 1 und 2. A. A. rügt eine unrichtige bzw. unvollständige Feststellung des rechtserheblichen Sachverhalts, legt jedoch nach Auffassung des Bundesgerichts nicht ansatzweise dar, inwiefern die vorinstanzliche Beweiswürdigung und Sachverhaltsfeststellung das Willkürverbot verletzen sollten, soweit er sich überhaupt rechtsgenüglich mit den einschlägigen Erwägungen des angefochtenen Entscheids auseinandersetzt (E. 4.2.1).\n\n<u>Invaliditätsgradermittlung und leidensbedingter Abzug (E. 4.1 und 4.2.2):</u>\nDas Bundesgericht erkennt, dass die Vorinstanz bundesrechtskonform einen anspruchsausschliessenden Invaliditätsgrad von 37% ermittelte, indem sie beiden Vergleichseinkommen denselben statistischen Zentralwert der Hilfsarbeiterlöhne zugrunde legte und einen leidensbedingten Abzug von 10% berücksichtigte. A. A. macht geltend, die Vorinstanz habe lediglich 7% zusätzlich als Zuschlag gewährt; das Bundesgericht hält dieses Vorbringen für nicht nachvollziehbar. Es finden sich zudem keine Anhaltspunkte dafür, dass die Vorinstanz bei der Berücksichtigung des leidensbedingten Abzuges von 10% das ihr zustehende Ermessen rechtsfehlerhaft ausgeübt hätte (E. 4.2.2).\n\n<u>Verwertbarkeit der Restarbeitsfähigkeit (E. 4.2.2):</u>\nDas Bundesgericht stellt fest, dass die Vorinstanz ausführlich darlegte, inwiefern dem Beschwerdeführer ungeachtet seines fortgeschrittenen Alters auf dem ausgeglichenen Arbeitsmarkt praxisgemäss genügend zumutbare Betätigungsmöglichkeiten offenstanden. Die dagegen appellatorisch geäusserte Kritik des Beschwerdeführers ist nicht weiter zu berücksichtigen.\n\nDie Beschwerde wird als offensichtlich unbegründet im vereinfachten Verfahren nach Art. 109 Abs. 2 lit. a BGG abgewiesen. Das Gesuch um unentgeltliche Rechtspflege wird abgewiesen, da die Beschwerde als aussichtslos zu qualifizieren ist.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://24-03-2026-8C_434-2025&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "INFO_SKIP_AK",
+        "datum": "14.04.2026",
+        "kategorie": "ak",
+        "vorschau": "Keine neuen AK-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false
+    },
+    {
         "aktenzeichen": "INFO_SKIP_BEIDE",
         "datum": "13.04.2026",
         "kategorie": "beide",

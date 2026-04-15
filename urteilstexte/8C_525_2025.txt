@@ -1,0 +1,182 @@
+8C_525/2025
+Arrêt du 17 mars 2026
+IVe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux Viscione, Présidente,
+Maillard et Métral.
+Greffier : M. Ourny.
+Participants à la procédure
+A.________,
+représenté par Me Michel De Palma, avocat,
+recourant,
+contre
+Caisse nationale suisse d'assurance en cas d'accidents (CNA), Division juridique, Fluhmattstrasse 1, 6002 Lucerne,
+intimée.
+Objet
+Assurance-accidents (révision; rente d'invalidité),
+recours contre l'arrêt du Tribunal cantonal du Valais du 4 août 2025 (S2 23 90).
+Faits :
+A.
+A.a.
+A.________ (ci-après aussi: l'assuré), né en 1974, a travaillé sur le chantier souterrain de percement du tunnel du Lötschberg. Le 23 mars 2004, une pierre tombée d'une hauteur de trois mètres l'a atteint à la tête, entraînant ensuite des fractures du tibia, du péroné et de l'avant-bras gauches. L'assuré s'est trouvé en incapacité totale de travail dès le jour de l'accident et la Caisse nationale suisse d'assurance en cas d'accidents (CNA) a pris en charge le cas.
+Par décision du 16 mai 2014, la CNA a alloué à l'assuré une rente mensuelle d'invalidité de 2'239 fr. 60, fondée sur un gain annuel assuré de 93'316 fr., à compter du 1
+er
+décembre 2010. Cette décision faisait suite à un arrêt de la Cour des assurances sociales du Tribunal cantonal du Valais (ci-après: la Cour des assurances sociales) du 10 juin 2013 reconnaissant le droit de l'assuré à une rente fondée sur un taux d'invalidité de 36 % dès le 1
+er
+décembre 2010.
+Par décisions des 29 novembre 2017 et 15 février 2018, l'Office cantonal AI du Valais (ci-après: l'office AI) a octroyé à l'assuré un quart de rente d'invalidité du 1
+er
+mars au 31 mai 2016, puis une rente entière dès le 1
+er
+juin 2016.
+A.b.
+Le 11 juin 2018, l'assuré a demandé à la CNA la révision de sa décision du 16 mai 2014. Il alléguait que l'accident du 23 mars 2004 avait causé, en sus des atteintes physiques, des troubles psychiques qui s'étaient progressivement aggravés, ce qui avait abouti à une incapacité totale de travail attestée médicalement depuis janvier 2016.
+Par décision du 1
+er
+juillet 2019, confirmée sur opposition le 14 octobre suivant, la CNA a refusé d'augmenter la rente d'invalidité précédemment octroyée à l'assuré, motif pris qu'il n'y avait pas d'aggravation notable de son état de santé sur le plan somatique, et que ses troubles psychiques n'étaient pas en lien de causalité adéquate avec l'accident du 23 mars 2004. Statuant le 6 juillet 2022, la Cour des assurances sociales a admis le recours formé contre la décision sur opposition du 14 octobre 2019, l'a annulée et a renvoyé la cause à la CNA afin qu'elle rende une nouvelle décision sur le droit de l'assuré aux prestations dues pour ses affections psychiques, qui étaient selon la cour cantonale en relation de causalité naturelle et adéquate avec l'accident.
+Par décision du 24 mars 2023, confirmée sur opposition le 22 août suivant, la CNA a accordé à l'assuré une rente fondée sur un taux d'invalidité de 100 % dès le 1
+er
+juin 2018.
+B.
+Saisie d'un recours contre la décision sur opposition du 22 août 2023, la Cour des assurances sociales l'a rejeté par arrêt du 4 août 2025.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt, en concluant à sa réforme en ce sens qu'il soit mis au bénéfice d'une rente fondée sur un taux d'invalidité de 100 % à partir du 23 mars 2004, subsidiairement du 1
+er
+janvier 2016.
+L'intimée conclut au rejet du recours. La juridiction cantonale et l'Office fédéral de la santé publique ont renoncé à se déterminer. Le recourant a brièvement répliqué.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le litige porte sur la date à partir de laquelle le recourant peut prétendre à une rente fondée sur un taux d'invalidité de 100 % en raison de ses troubles psychiques. Dès lors qu'il s'agit d'une prestation en espèces de l'assurance-accidents, le Tribunal fédéral n'est pas lié par les faits établis par la juridiction précédente (
+art. 105 al. 3 LTF
+).
+3.
+Le recourant se plaint d'une violation de l'
+art. 53 al. 1 LPGA
+.
+3.1.
+3.1.1.
+Aux termes de l'
+art. 53 al. 1 LPGA
+, les décisions et les décisions sur opposition formellement passées en force sont soumises à révision si l'assuré ou l'assureur découvre subséquemment des faits nouveaux importants ou trouve des nouveaux moyens de preuve qui ne pouvaient être produits auparavant.
+3.1.2.
+La notion de faits ou moyens de preuve nouveaux s'apprécie de la même manière en cas de révision (procédurale) d'une décision administrative (
+art. 53 al. 1 LPGA
+) ou de révision d'un jugement cantonal (
+art. 61 let. i LPGA
+) (
+ATF 144 V 245
+consid. 5.1; arrêt 8C_25/2025 du 8 juillet 2025 consid. 3.2). La révision suppose la réalisation de cinq conditions: 1° le requérant invoque un ou des faits; 2° ce ou ces faits sont pertinents, dans le sens d'importants ("erhebliche"), c'est-à-dire qu'ils sont de nature à modifier l'état de fait qui est à la base du jugement et à conduire à un jugement différent en fonction d'une appréciation juridique correcte; 3° ces faits existaient déjà lorsque le jugement a été rendu: il s'agit de pseudo-nova ("unechte Noven"), c'est-à-dire de faits antérieurs au jugement ou, plus précisément, de faits qui se sont produits jusqu'au moment où, dans la procédure principale, des allégations de faits étaient encore recevables; 4° ces faits ont été découverts après coup ("nachträglich"), soit postérieurement au jugement, ou, plus précisément, après l'ultime moment auquel ils pouvaient encore être utilement invoqués dans la procédure principale; 5° le requérant n'a pas pu, malgré toute sa diligence, invoquer ces faits dans la procédure précédente (
+ATF 143 III 272
+consid. 2.2).
+Les preuves, quant à elles, doivent servir à prouver soit les faits nouveaux importants qui motivent la révision, soit des faits qui étaient certes connus lors de la procédure précédente, mais qui n'avaient pas pu être prouvés, au détriment du requérant. Si les nouveaux moyens sont destinés à prouver des faits allégués antérieurement, le requérant doit aussi démontrer qu'il ne pouvait pas les invoquer dans la précédente procédure. Une preuve est considérée comme concluante lorsqu'il faut admettre qu'elle aurait conduit le juge à statuer autrement s'il en avait eu connaissance dans la procédure principale (
+ATF 144 V 245
+consid. 5.2;
+127 V 353
+consid. 5b; arrêt 8F_5/2025 du 8 août 2025 consid. 1.2).
+3.2.
+En l'espèce, la cour cantonale a relevé que l'accident du 23 mars 2004 avait bien provoqué des troubles psychiques chez le recourant, mais qu'ils avaient évolué favorablement sans entraîner d'incapacité de travail avant la décision du 16 mai 2014. Les rapports du Centre de Psychiatrie B.________ établis entre juillet 2016 et novembre 2017, déposés à l'appui de la demande de révision du 11 juin 2018, n'avaient de facto pas pu être produits avant le prononcé du 16 mai 2014. Ces avis médicaux ne prouvaient nullement une incapacité de travail d'origine psychique antérieure à cette décision. Il ressortait au contraire de ces documents, ainsi que des explications du recourant, que celui-ci avait présenté une fragilité psychique après l'accident, traitée par des antidépresseurs et faisant l'objet d'un suivi spécialisé. Les troubles psychiques avaient fluctué et s'étaient progressivement amplifiés, au point d'entraîner un arrêt de travail en janvier 2016. Le recourant avait ainsi été capable de suivre des formations et de travailler en tant qu'agent de sécurité, mais n'avait pas été en mesure de faire face aux pressions professionnelles et personnelles. Les premiers juges en ont conclu que les rapports médicaux du Centre de Psychiatrie B.________ n'établissaient pas des faits nouveaux qui auraient existé avant la décision du 16 mai 2014 mais n'auraient pas été connus à cette date. Ces pièces, qui ne constituaient pas non plus de nouvelles preuves de faits connus avant ce prononcé mais n'ayant pas pu être prouvés, n'étaient donc pas de nature à justifier la révision procédurale de la décision précitée.
+3.3.
+Le recourant soutient que les juges cantonaux ont méconnu le droit en considérant, d'une part, que les moyens de preuve déposés à l'appui de la demande de révision ne constituaient pas des preuves nouvelles de faits connus à l'époque de la décision du 16 mai 2014 et, d'autre part, que ces documents n'établissaient pas des faits nouveaux ayant existé avant cette décision. Il argue que ses problèmes psychiques étaient connus de l'intimée dès son accident en 2004, mais que les moyens de preuve attestant leur gravité et leur impact sur sa capacité de travail faisaient défaut. Il en découlerait que la symptomatologie psychiatrique invalidante est un fait nouveau, qui n'était pas connu de l'intimée lors du prononcé du 16 mai 2014. Le recourant estime par ailleurs que celle-ci aurait dû ordonner une expertise psychiatrique pour déterminer rétrospectivement l'impact des troubles psychiques sur la capacité de travail, ainsi que le moment précis à partir duquel ceux-ci sont devenus invalidants.
+3.4.
+Cette critique est dénuée de pertinence. Le recourant perd de vue que ses affections psychiques n'ont pas causé d'incapacité de travail antérieurement au 16 mai 2014. Indiquant que la symptomatologie était apparue progressivement depuis l'accident, ses propres médecins traitants au Centre de Psychiatrie B.________ n'ont pas constaté d'incapacité de travail avant janvier 2016, laquelle avait été précédée de la reprise d'un emploi durant trois ans. Ce constat sans équivoque dispensait l'intimée de diligenter une expertise psychiatrique. À défaut d'avoir été incapacitants avant la décision du 16 mai 2014, les troubles psychiques du recourant n'ont pas à être pris en compte, a posteriori, dans le calcul du degré d'invalidité ayant servi de base à cette décision. Les conditions d'une révision de la décision de l'intimée sur la base de l'
+art. 53 al. 1 LPGA
+ne sont donc pas réunies. Étant entendu que ce sont les juges cantonaux qui, par arrêt du 10 juin 2013, ont reconnu le droit du recourant à une rente fondée sur un taux d'invalidité de 36 % dès le 1
+er
+décembre 2010, on peut se demander si celui-ci n'aurait pas dû demander la révision de cet arrêt (cf.
+art. 61 let. i LPGA
+), plutôt que celle de la décision de l'intimée du 16 mai 2014. Les conditions d'une révision de ce jugement cantonal pour les motifs allégués n'étant a fortiori pas données, cette question peut demeurer indécise, de même que celle relative au respect du délai dans lequel la demande de révision - qu'elle fût fondée sur l'
+art. 53 al. 1 ou 61 let. i LPGA
+- devait être présentée.
+4.
+Le recourant se plaint d'une violation de l'
+art. 17 al. 1 LPGA
+.
+4.1.
+4.1.1.
+Aux termes de l'
+art. 17 al. 1 LPGA
+(dans sa teneur en vigueur jusqu'au 31 décembre 2021, applicable ratione temporis au cas d'espèce [cf.
+ATF 150 V 323
+consid. 4.2;
+150 II 390
+consid. 4.3;
+148 V 397
+consid. 3.2]), si le taux d'invalidité du bénéficiaire de la rente subit une modification notable, la rente est, d'office ou sur demande, révisée pour l'avenir, à savoir augmentée ou réduite en conséquence, ou encore supprimée. Tout changement important des circonstances propre à influencer le taux d'invalidité, et donc le droit à la rente, peut motiver une révision. La rente peut ainsi être révisée non seulement en cas de modification sensible de l'état de santé, mais aussi lorsque celui-ci est resté en soi le même, mais que ses conséquences sur la capacité de gain ont subi un changement important. Tel est le cas lorsque la capacité de travail s'améliore grâce à l'accoutumance ou à une adaptation au handicap. En revanche, une simple appréciation différente d'un état de fait qui, pour l'essentiel, est demeuré inchangé n'appelle pas une révision au sens de l'
+art. 17 al. 1 LPGA
+(
+ATF 147 V 167
+consid. 4.1;
+144 I 103
+consid. 2.1;
+141 V 9
+consid. 2.3;
+134 V 131
+consid. 3).
+4.1.2.
+Selon la jurisprudence relative à l'
+art. 17 al. 1 LPGA
+en matière d'assurance-accidents, l'augmentation de la rente d'invalidité par voie de révision, en cas de rechute ou de séquelles tardives, doit avoir lieu au moment de l'arrêt du traitement médical, comme cela se fait, sur la base de l'
+art. 19 al. 1 LAA
+, en cas d'octroi initial d'une rente. Une application par analogie des art. 88a al. 2 et 88
+bis
+al. 1 RAI (RS 831.201) est exclue (
+ATF 140 V 65
+consid. 4). Si, au moment de l'annonce de la rechute ou des séquelles tardives, il n'y a pas lieu de mettre en oeuvre un traitement médical, dont l'achèvement peut faire dépendre la naissance du droit à la rente, le début de ce droit doit être fixé au plus tôt au moment du dépôt de la demande de révision, respectivement de l'annonce de la rechute ou des séquelles tardives (
+ATF 144 V 245
+consid. 6.4). Le début du droit à la rente doit également être fixé au plus tôt au moment de la demande de révision lorsque l'assuré, dans sa nouvelle demande de rente, fait uniquement valoir un changement de sa situation économique, même si ce changement est intervenu avant la demande de révision (arrêt 8C_878/2018 du 21 août 2019 consid. 4.5).
+4.2.
+En l'occurrence, les premiers juges ont retenu qu'au vu des avis médicaux au dossier, malgré le traitement en cours, ni une guérison ni une augmentation de la capacité de travail n'étaient attendues, mais tout au plus une amélioration de la qualité de vie. Il convenait ainsi d'assimiler la situation du recourant à celle dans laquelle aucune mesure thérapeutique n'avait été mise en place à l'époque de la demande de révision de la rente précédemment octroyée. Conformément à l'arrêt paru aux
+ATF 144 V 245
+, dont les développements avaient été confirmés dans l'arrêt 8C_878/2018, la hausse du taux d'invalidité de 36 % à 100 % ne pouvait pas intervenir avant la date du dépôt de la demande de révision, le 11 juin 2018. L'intimée avait donc à juste titre augmenté ce taux à 100 % à compter du 1
+er
+juin 2018, à savoir à partir du mois durant lequel la demande de révision avait été déposée. L'octroi d'une rente fondée sur un tel taux dès le 23 mars 2004 se justifiait d'autant moins qu'à partir de cette date et jusqu'au 30 novembre 2010, le recourant avait perçu des indemnités journalières. L'absence de toute incapacité de travail en raison de troubles psychiques avant le 16 mai 2014 excluait également l'allocation d'une rente fondée sur un taux d'invalidité de 100 % dès le 1
+er
+décembre 2010, comme cela avait déjà été exposé.
+4.3.
+Le recourant fait grief à la juridiction cantonale d'avoir appliqué "servilement" l'
+art. 17 al. 1 LPGA
+, sans prendre en considération les circonstances concrètes du cas d'espèce. Aucune pièce au dossier ne permettant de définir avec certitude le moment à partir duquel la symptomatologie psychique est devenue invalidante, les juges cantonaux n'auraient pas été en mesure de statuer sur le recours cantonal. Par ailleurs, l'application stricte de la disposition précitée par ceux-ci priverait le recourant de plusieurs mois, voire d'années de rente d'invalidité, alors même que selon les rapports médicaux au dossier, il souffre de troubles psychiques depuis 2004 et est en incapacité totale de travail depuis le 1
+er
+janvier 2016. L'office AI aurait du reste reconnu son droit à des prestations de longue durée depuis cette date. Le recourant ajoute qu'une telle application rigoriste de l'
+art. 17 al. 1 LPGA
+aurait uniquement pour but de protéger les intérêts pécuniaires de l'intimée, laquelle aurait d'ailleurs dû initier d'office la procédure de révision à réception des décisions de l'office AI.
+4.4.
+Au vu de la jurisprudence susmentionnée (cf. consid. 4.1.2 supra), c'est à bon droit que l'intimée et la cour cantonale ont considéré que le recourant ne pouvait pas prétendre à une rente fondée sur un taux d'invalidité de 100 % avant le 1
+er
+juin 2018, dès lors que la demande de révision, par laquelle le recourant a annoncé la dégradation de son état de santé, a été introduite le 11 juin 2018. Puisqu'il est admis que le recourant était à ce moment-là déjà en incapacité totale de travail, il n'est pas nécessaire - à l'aune de l'
+art. 17 al. 1 LPGA
+- de déterminer quand cette incapacité a commencé. En outre, on ne saurait reprocher à l'intimée de ne pas avoir initié d'office la procédure de révision lorsque les décisions rendues les 29 novembre 2017 et 15 février 2018 lui ont été communiquées, dès lors qu'elle considérait à l'époque que les troubles psychiques qui avaient donné lieu à l'augmentation de la rente de l'assurance-invalidité n'étaient pas d'origine accidentelle. Si le recourant était d'un avis contraire, il lui appartenait de déposer aussitôt une demande de révision, conformément à l'
+art. 29 al. 1 LPGA
+(cf.
+ATF 149 V 177
+consid. 4.6). En l'espèce, l'intimée n'était donc pas tenue de réviser d'elle-même, avant le dépôt de la demande de révision, la rente d'invalidité fondée sur un taux de 36 % que percevait le recourant depuis le 1
+er
+décembre 2010. Le grief du recourant s'avère mal fondé. Il s'ensuit que le recours doit être rejeté.
+5.
+Le recourant, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, à la Cour des assurances sociales du Tribunal cantonal du Valais et à l'Office fédéral de la santé publique.
+Lucerne, le 17 mars 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+Le Greffier :    Ourny

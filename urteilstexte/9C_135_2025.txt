@@ -1,0 +1,130 @@
+9C_135/2025
+Arrêt du 23 mars 2026
+IIIe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Moser-Szeless, Présidente,
+Stadelmann et Parrino.
+Greffière : Mme Perrenoud.
+Participants à la procédure
+A.________,
+agissant par sa curatrice Alison Matundu,
+Service des curatelles et tutelles professionnelles Région Est,
+elle-même représentée par Me Grégoire Ventura, avocat,
+recourant,
+contre
+Mutuel Assurance Maladie SA, Service juridique, rue des Cèdres 5, 1920 Martigny,
+intimée.
+Objet
+Assurance-maladie (soins à domicile),
+recours contre l'arrêt du Tribunal cantonal du canton de Vaud du 22 janvier 2025 (AM 2/24 - 1/2025).
+Faits :
+A.
+A.________, né en 1969, est atteint d'une trisomie 21, associée notamment à un comportement autistique et à une anxiété importante. Il est assuré auprès de Mutuel Assurance Maladie SA (ci-après: Mutuel ou la caisse-maladie) pour l'assurance obligatoire des soins depuis 2015 et bénéficie de soins infirmiers à domicile depuis 2017. Ces soins lui sont prodigués par B.________ Sàrl depuis le 1er avril 2023.
+Le 4 avril 2023, B.________ Sàrl a complété un formulaire d'évaluation des prestations en faveur de A.________ pour la période du 1er au 30 avril 2023, validé par la doctoresse C.________, spécialiste en médecine interne générale, à l'attention de Mutuel. Il y était indiqué que l'assuré présentait un besoin de soins totalisant 179 heures et 30 minutes par mois (à savoir: 4 heures et 34 minutes au tarif A; 26 heures et 32 minutes au tarif B; 148 heures et 24 minutes au tarif C). Par courrier du 18 mai 2023, Mutuel a informé B.________ Sàrl que le mandat de soins du 4 avril 2023 ne correspondait pas aux exigences légales d'efficacité, d'adéquation et d'économicité des prestations. Par conséquent, la caisse-maladie se trouvait dans l'obligation de limiter les prestations revendiquées pour le mois d'avril 2023 dans la mesure suivante: 4 heures et 34 minutes au tarif A; 15 heures au tarif B; 60 heures au tarif C, soit 60 minutes accordées pour le matin, 30 minutes pour le midi et 30 minutes pour Ie soir. B.________ Sàrl a par la suite fait parvenir à Mutuel deux nouveaux formulaires d'évaluation des prestations à fournir à l'assuré (dont il ressortait que le besoin de soins s'élevait à 543 heures et 46 minutes pour la période du 1er mai au 30 juillet 2023, respectivement à 549 heures et 27 minutes pour la période du 31 juillet au 30 octobre 2023). Par décision du 31 août 2023, confirmée sur opposition le 1er décembre suivant, Mutuel a prononcé la limitation des soins infirmiers à domicile pour la période du 1er au 30 avril 2023, conformément à la teneur de son courrier du 18 mai 2023.
+B.
+Statuant le 22 janvier 2025 sur le recours formé par l'assuré contre la décision sur opposition du 1er décembre 2023, la Cour des assurances sociales du Tribunal cantonal du canton de Vaud l'a rejeté.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt, dont il demande l'annulation. En substance, il conclut principalement à l'annulation de la décision sur opposition du 1er décembre 2023 et à la prise en charge, par Mutuel, des prestations mensuelles de soins telles que prévues par B.________ Sàrl dans le formulaire d'évaluation des prestations du 4 avril 2023 (soit 4 heures et 34 minutes au tarif A, 26 heures et 32 minutes au tarif B et 148 heures et 24 minutes au tarif C, correspondant à "6 heures de prestations par jour, 7 j./7"), à compter du 1er avril 2023. Subsidiairement, l'assuré requiert le renvoi de la cause à l'instance précédente ou à Mutuel, pour un nouvel arrêt, respectivement une nouvelle décision, dans le sens des considérants. Il sollicite également le bénéfice de l'assistance judiciaire.
+Mutuel conclut au rejet du recours, tandis que l'Office fédéral de la santé publique a renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours en matière de droit public peut être interjeté pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il statue par ailleurs sur la base des faits établis par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Le recourant qui entend s'en écarter doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+sont réalisées, sinon un état de fait divergent ne peut pas être pris en considération.
+2.
+2.1.
+Circonscrivant le litige à la question de savoir si le recourant a droit, pour la période du 1er au 30 avril 2023, à la prise en charge par l'assurance obligatoire des soins de l'intégralité des frais de soins à domicile qui lui ont été prodigués par B.________ Sàrl, la juridiction cantonale a d'abord relevé que, quand bien même la décision sur opposition entreprise ne portait que sur les soins dispensés en avril 2023, les considérants de son arrêt devaient être transposables aux soins mis en oeuvre dès le mois de mai 2023. Elle a ensuite examiné le point de savoir si les soins prodigués quotidiennement à l'assuré par B.________ Sàrl respectaient les critères légaux d'efficacité, d'adéquation et d'économicité des prestations. Après avoir admis que lesdits soins apparaissaient a priori efficaces pour pallier les conséquences des graves atteintes à la santé dont souffrait le recourant, les premiers juges ont considéré que la question de leur indication médicale pouvait en l'occurrence demeurer ouverte. En effet, le maintien à domicile de l'assuré ne correspondait pas aux critères d'une gestion économique et rationnelle de l'assurance-maladie sociale. L'instance précédente a d'abord exposé qu'il existait en l'espèce une alternative thérapeutique aux soins infirmiers à domicile, à savoir le placement du recourant dans une institution spécialisée ou un établissement médico-social. Sous l'angle ensuite de l'économicité, elle a constaté que les soins à domicile se révélaient 2,85 fois plus élevés que les coûts des soins potentiellement dispensés dans un établissement médico-social (9'863 fr. 03 par mois pour les soins à domicile contre 3'456 fr. par mois pour les soins en établissement médico-social; à savoir 115 fr. 20 par jour, conformément à l'
+art. 7a al. 3 let
+. l OPAS [RS 832.112.31]). Compte tenu de la disproportion entre le coût d'une prise en charge à domicile et celui d'une prise en charge dans un établissement médico-social, ainsi que des bénéfices restreints des soins fournis à domicile, en l'occurrence, les juges précédents ont considéré que les soins à domicile dispensés par B.________ Sàrl ne pouvaient pas être considérés comme économiques au sens des
+art. 32 et 56 LAMal
+. En conséquence, il y avait lieu de confirmer la décision sur opposition du 1er décembre 2023.
+2.2.
+À l'appui de son recours, l'assuré se prévaut d'une appréciation arbitraire des faits et d'une violation du droit fédéral, singulièrement de la maxime inquisitoire (
+art. 61 let
+. c LPGA). Il reproche en substance à la juridiction cantonale d'avoir admis qu'un placement dans un établissement médico-social pût constituer une alternative à la fourniture de soins à domicile. Il allègue à cet égard que le placement en institution est une solution contre-indiquée médicalement, en tout cas jusqu'en 2023, et qu'il est tout simplement insoutenable, en l'état et sur la base du dossier, de prétendre qu'un maintien à domicile ne lui apporterait pas des bénéfices substantiels. Même si le "caractère entièrement substituable entre les deux solutions thérapeutiques" devait être admis, le recourant soutient que les soins à domicile respecteraient encore entièrement l'
+art. 32 LAMal
+, en raison des nets bénéfices qu'il en retire actuellement du point de vue de son accomplissement personnel et compte tenu aussi de l'absence de disproportion manifeste entre les coûts des deux solutions. Le fait de le contraindre à vivre en institution alors que tel n'est pas son souhait, en le privant de financement de soins pour le mettre sous pression, contreviendrait par ailleurs également à la loi fédérale du 13 décembre 2002 sur l'élimination des inégalités frappant les personnes handicapées (LHand; RS 151.3).
+3.
+3.1.
+Est en l'espèce litigieuse la question de savoir si le recourant a droit à la prise en charge par l'assurance obligatoire des soins de l'intégralité des coûts des soins à domicile qui lui sont prodigués par B.________ Sàrl, à compter du 1er avril 2023.
+3.2.
+L'arrêt entrepris expose de manière complète les dispositions légales et les principes jurisprudentiels relatifs à la prise en charge des coûts des soins en cas de maladie par l'assurance obligatoire des soins (
+art. 25a LAMal
+, art. 33 let. b, h et i OAMal,
+art. 7, 7a et 8 OPAS
+), à l'exigence du caractère efficace, approprié et économique des prestations mentionnées aux art. 25 à 31 LAMal (
+art. 32 al. 1 et 56 LAMal
+;
+ATF 139 V 135
+consid. 4.4), ainsi qu'à la libre appréciation des preuves (
+art. 61 let
+. c LPGA). Il suffit d'y renvoyer.
+3.3.
+On rappellera également, à la suite des premiers juges, que selon la jurisprudence (cf.
+ATF 139 V 135
+consid. 4.5), lorsqu'il y a lieu d'examiner l'alternative que constituent des prestations de soins prodiguées à domicile par rapport à des prestations de soins fournies dans un établissement médico-social, le principe d'économicité n'autorise pas l'assureur à limiter d'office la prise en charge des soins à domicile à ce qu'il aurait à supporter en cas de séjour dans un établissement médico-social. L'appréciation du caractère économique ne doit en effet pas s'effectuer au moyen d'une stricte comparaison des coûts à charge de l'assurance obligatoire des soins. La jurisprudence a retenu que des prestations de soins fournies à domicile devaient, malgré l'existence d'une disproportion, être considérées comme plus adéquates que des prestations de soins fournies dans un établissement médico-social, lorsqu'elles permettaient d'apporter à la personne assurée un épanouissement sur le plan personnel (travail [
+ATF 126 V 334
+consid. 3a], formation [arrêt K 66/00 du 5 octobre 2000 consid. 3b, in RAMA 2001 p. 23], engagement social ou politique) ou d'assumer une fonction sociale importante qu'un placement dans une institution n'autoriserait pas (telle que le rôle de mère de famille; arrêt K 52/99 du 22 septembre 2000 consid. 3a, in RAMA 2001 p. 10). Tel n'était en revanche pas le cas lorsque les soins à domicile ne permettaient à la personne assurée que de bénéficier d'une meilleure qualité de vie (arrêt K 61/00 du 5 octobre 2000 consid. 3a, in RAMA 2001 p. 19).
+Par la suite, le Tribunal fédéral a considéré que la prise en charge, à efficacité égale, de soins à domicile 2,35 fois plus chers que les soins dispensés dans un établissement médico-social respectait "tout juste" le critère de l'économicité (arrêt 9C_940/2011 du 21 septembre 2012 consid. 3.4). Dans le même ordre d'idées, dans le cas d'une personne d'à peu près 80 ans, présentant un trouble démentiel léger, capable de se déplacer et de participer aux activités familiales ainsi que de tenir son ménage de manière partiellement autonome, le Tribunal fédéral a admis que des soins à domicile 2,57 fois plus chers que les soins prodigués dans un établissement médico-social pouvaient être considérés comme économiques (arrêt 9C_343/2013 du 21 janvier 2014 consid. 4). Il a également nié l'existence d'une disproportion grossière en présence de soins à domicile entre 2,3 et 3,04 fois plus chers que des soins prodigués dans un établissement médico-social, dans la mesure où les soins à domicile apportaient en l'occurrence tout de même une certaine plus-value pour l'assuré, qui souffrait d'un syndrome démentiel grave (arrêt 9C_912/2017 du 6 décembre 2018 consid. 5.2.2). La Cour de céans a en revanche nié le caractère économique de soins à domicile 3,5 fois plus chers que les soins dispensés dans un établissement médico-social dans le cas d'une assurée presque centenaire, victime d'une chute avec fracture du col du fémur (arrêt 9C_41/2020 du 17 juin 2020 consid. 4.2.2). Dans le cas d'une personne de près de 90 ans, atteinte de la maladie d'Alzheimer à un stade avancé, le Tribunal fédéral a également conclu au caractère non économique de soins à domicile 2,56 fois plus chers que les soins dispensés dans un établissement médico-social, eu égard aux bénéfices limités des soins fournis à domicile et de la disproportion manifeste entre le coût d'une prise en charge à domicile et celui d'une prise en charge dans un établissement médico-social (
+ATF 139 V 135
+consid. 5).
+En définitive, la fourniture de soins à domicile doit être associée à un bénéfice manifeste par rapport à un placement dans un établissement médico-social. Néanmoins, s'il existe une disproportion évidente entre les coûts de ces deux mesures, les prestations de soins fournies à domicile ne peuvent plus être considérées comme conformes au critère de l'économicité, quels que soient les intérêts légitimes de la personne assurée, et cela même si les prestations de soins fournies à domicile apparaissent dans le cas particulier plus efficaces et appropriées qu'un placement dans un établissement médico-social (
+ATF 139 V 135
+consid. 4.5;
+126 V 334
+consid. 2a).
+4.
+Il convient d'examiner si la juridiction cantonale a respecté les principes susmentionnés dans le cas d'espèce.
+4.1.
+En l'occurrence, les juges précédents ont considéré que d'un point de vue médical, rien au dossier ne permettait d'affirmer que les soins fournis dans un établissement médico-social seraient moins efficaces et appropriés que les soins fournis à domicile. Ils ont justifié leur point de vue en relevant que le refus d'intégrer une institution spécialisée semblait bien plutôt fondé sur la décision catégorique de la soeur du recourant et que l'on ne pouvait en aucun cas se fonder sur les expériences de placement en institution réalisées en 2021 pour parvenir à une telle conclusion, alors que depuis lors, tout particulièrement depuis mai 2022, l'état physique et mental du recourant s'était largement altéré et continuait d'ailleurs de se détériorer significativement" ce qu'attestait l'ensemble des médecins traitants. À cet égard, l'instance précédente a exposé qu'étant donné la démence fronto-temporale dont l'assuré était atteint, on pouvait douter qu'il fût désormais en mesure d'évaluer la qualité du lieu de vie dans lequel il se trouvait. Les éventuels avantages psychoaffectifs d'un maintien à domicile du recourant devaient ainsi être ramenés à une proportion pratiquement inexistante, tandis que son état de santé était voué à décliner. L'assuré se trouvait d'ores et déjà dans un état de dépendance totale pour toutes les activités de la vie quotidienne. Il ne disposait, à l'évidence, plus des facultés suffisantes pour participer activement à une quelconque forme de vie sociale ou familiale. Dans ces circonstances, les premiers juges sont parvenus à la conclusion que les bénéfices objectifs des soins à domicile apparaissaient particulièrement ténus et ne correspondaient assurément pas aux formes de bénéfices attendus en vertu de la jurisprudence pour admettre que des prestations de soins fournies à domicile devaient, malgré l'existence d'une disproportion, être considérées comme plus adéquates que des prestations de soins fournies dans un établissement médico-social.
+4.2.
+Les considérations de la juridiction cantonale ne peuvent pas être suivies, pour les raisons qui suivent.
+4.2.1.
+À la lecture de l'arrêt entrepris (cf. consid. 9a p. 23-24), on constate que les juges précédents se sont pour l'essentiel contentés de reprendre l'appréciation développée au consid. 5.1 de l'
+ATF 139 V 135
+, sans adapter celle-ci aux particularités du cas qui leur était soumis. Or le cas du recourant se distingue à de nombreux égards de la situation ayant donné lieu à l'
+ATF 139 V 135
+(à savoir la situation d'une personne âgée de plus de 80 ans [née en 1924], atteinte à un stade avancé de la maladie d'Alzheimer, grabataire, sans perspective d'amélioration compte tenu du caractère dégénératif et irréversible de cette maladie, qui se trouvait dans un état de dépendance totale pour toutes les activités de la vie quotidienne et ne disposait, à l'évidence, plus des facultés suffisantes pour participer activement à une quelconque forme de vie sociale ou familiale; cf.
+ATF 139 V 135
+consid. 5.1).
+4.2.2.
+En l'espèce, l'assuré (né en 1969) était âgé de moins de 55 ans au moment où la question de la limitation de la prise en charge des soins litigieux s'est posée pour la première fois (en 2023). Certes, il n'est pas contesté que le recourant est lourdement atteint dans sa santé, souffrant non seulement d'une trisomie 21, accompagnée d'un processus démentiel dégénératif, mais également de multiples affections somatiques graves (insuffisance rénale et cardiaque, troubles respiratoires, incontinence urinaire et fécale, etc.), et qu'il s'agit d'un tableau clinique sévère et sans espoir de rémission, selon les constatations des premiers juges. Cela étant, on ne saurait suivre les considérations de l'instance précédente, selon lesquelles l'assuré se trouvait d'ores et déjà dans un état de dépendance totale pour toutes les activités de la vie quotidienne et ne disposait, à l'évidence, plus des facultés suffisantes pour participer activement à une quelconque forme de vie sociale ou familiale, ainsi que pour évaluer la qualité du lieu de vie dans lequel il se trouvait. Il suffit à cet égard de constater que dans son rapport du 24 mai 2023, si le docteur D.________, spécialiste en neurologie, a posé le diagnostic de trouble neurocognitif progressif à caractère dégénératif avec perte subtotale de l'autonomie, il a fait état d'une perte progressive de l'autonomie, en relevant en particulier que son patient mangeait seul, que des fonctions telles que le langage étaient en partie conservées et que les troubles mnésiques n'étaient pas majeurs actuellement. Dans un avis du 2 juillet 2024, le docteur D.________ a ensuite qualifié les troubles neurologiques dont souffrait le recourant de démence dégénérative lentement progressive s'inscrivant dans le cadre de la trisomie 21 (et dont le diagnostic présumé était une atteinte se situant entre la maladie à corps de Lewy et une maladie d'Alzheimer), en insistant sur l'évolution progressive des deux affections. Il a fait état de troubles de la motricité avec un manque d'initiative, d'une incontinence urinaire, de fluctuations importantes de la vigilance et de troubles végétatifs (syncopes), en relevant aussi l'apparition, plus récente, de troubles de la mémoire immédiate avec désorientation, troubles du langage et comitialité. Pour sa part, la doctoresse E.________, spécialiste en psychiatrie et psychothérapie, a diagnostiqué des troubles du comportement significatifs nécessitant une surveillance ou un traitement (F71.1) chez un patient présentant une trisomie 21 (Q90.9) et des troubles mentaux et du comportement en lien avec un début de processus démentiel (avis du 11 septembre 2023). Si elle a décrit un état psychique régressif, en indiquant que le recourant restait "cloué" au lit à la suite d'une longue hospitalisation en raison du Covid, elle a également constaté une amélioration depuis lors, son patient arrivant désormais à déjeuner à table au salon et à sortir de l'appartement pour effectuer des petites promenades en ville; la psychiatre traitante a préconisé l'introduction d'un programme de mobilisation avec l'installation de rituels pour les activités essentielles de la journée, en insistant aussi sur la nécessité de travailler "les moments de blocage entre diverses activités", en relation avec le handicap mental (rapport du 11 septembre 2023).
+4.3.
+Compte tenu de ce qui précède, la cause doit être renvoyée à Mutuel pour instruction complémentaire quant au point de savoir si la fourniture de soins à domicile au recourant est associée à un bénéfice manifeste par rapport à un placement dans un établissement médico-social. À cet égard, la caisse-maladie examinera au préalable la question de savoir si des prestations de soins fournies dans un établissement médico-social constituent une alternative aux prestations de soins prodiguées à domicile au recourant. On rappellera en effet que le critère de l'économicité n'intervient que lorsqu'il existe dans le cas particulier plusieurs alternatives diagnostiques ou thérapeutiques appropriées (
+ATF 139 V 135
+consid. 4.4.3; cf. aussi arrêt 9C_331/2020 du 29 septembre 2020 consid. 6.3.2.3). Or la doctoresse C.________ a indiqué, en 2022, que le placement dans une institution n'était pas une solution médicalement indiquée dans le cas du recourant (avis du 17 mai 2022). En ce qu'ils ont considéré que d'un point de vue médical, rien au dossier ne permettait d'affirmer que les soins fournis dans un établissement médico-social seraient moins efficaces et appropriés que les soins fournis à domicile à l'assuré, les premiers juges ont fait abstraction de l'avis de la doctoresse C.________. La conclusion subsidiaire du recours est bien fondée.
+5.
+En ce qui concerne la répartition des frais judiciaires et des dépens, le renvoi de la cause pour nouvelle décision revient à obtenir gain de cause au sens des art. 66 al. 1 et 68 al. 1 et 2 LTF, indépendamment du fait qu'une conclusion ait ou non été formulée à cet égard, à titre principal ou subsidiaire (
+ATF 146 V 28
+consid. 7;
+141 V 281
+consid. 11.1). Les frais judiciaires ainsi que les dépens que peut prétendre le recourant seront dès lors mis à la charge de l'intimée, qui succombe, ce qui rend la demande d'assistance judiciaire sans objet. La cause est renvoyée à la juridiction cantonale pour nouvelle décision sur les frais et les dépens de la procédure antérieure (
+art. 67 et 68 al. 5 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est partiellement admis. L'arrêt du Tribunal cantonal du canton de Vaud, Cour des assurances sociales, du 22 janvier 2025 et la décision sur opposition de la Mutuel Assurance Maladie SA du 1er décembre 2023 sont annulés. La cause est renvoyée à Mutuel Assurance Maladie SA pour instruction complémentaire au sens des considérants et nouvelle décision. Le recours est rejeté pour le surplus.
+2.
+Les frais judiciaires, arrêtés à 500 fr., sont mis à la charge de l'intimée.
+3.
+L'intimée versera à l'avocat du recourant la somme de 3'000 fr. à titre de dépens pour la procédure devant le Tribunal fédéral.
+4.
+La cause est renvoyée au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, pour nouvelle décision sur les frais et dépens de la procédure antérieure.
+5.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, et à l'Office fédéral de la santé publique.
+Lucerne, le 23 mars 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+La Greffière :    Perrenoud

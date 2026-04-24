@@ -1,0 +1,125 @@
+9C_48/2026
+Urteil vom 23. März 2026
+III. öffentlich-rechtliche Abteilung
+Besetzung
+Bundesrichterin Moser-Szeless, Präsidentin,
+Bundesrichter Stadelmann, Bundesrichterin Bollinger,
+Gerichtsschreiberin Fleischanderl.
+Verfahrensbeteiligte
+A.A.________,
+Beschwerdeführer,
+gegen
+Ausgleichskasse des Kantons Zürich,
+Röntgenstrasse 17, 8005 Zürich,
+Beschwerdegegnerin.
+Gegenstand
+Alters- und Hinterlassenenversicherung (Haftung des Arbeitgebers; Schaden),
+Beschwerde gegen das Urteil des Sozialversicherungsgerichts des Kantons Zürich vom 17. November 2025
+(AK.2024.00017).
+Sachverhalt:
+A.
+A.a.
+A.A.________ war seit der Eintragung der B.________ GmbH im Handelsregister des Kantons Zürich im Mai 2014 deren einziger Gesellschafter und Geschäftsführer. Mit Urteil vom 22. März 2021 eröffnete das Bezirksgericht Zürich den Konkurs über die Gesellschaft, der am 12. Januar 2022 für geschlossen erklärt wurde.
+A.b.
+Mit Verfügung vom 7. Februar 2024 verpflichtete die Ausgleichskasse des Kantons Zürich, der die Konkursitin als beitragspflichtige Arbeitgeberin angeschlossen gewesen war, A.A.________ zur Bezahlung von Schadenersatz für ihr entgangene Lohnbeiträge (einschliesslich Mahn-, Verwaltungs- und Betreibungskosten sowie Verzugszinsen) im Betrag von Fr. 7'724.65. Auf Einsprache hin reduzierte die Ausgleichskasse den zu leistenden Schadenersatz auf Fr. 4'617.- (Einspracheentscheid vom 2. Mai 2024).
+B.
+Die dagegen erhobene Beschwerde wies das Sozialversicherungsgericht des Kantons Zürich ab (Urteil vom 17. November 2025).
+C.
+A.A.________ führt subsidiäre Verfassungsbeschwerde und beantragt (sinngemäss) die Aufhebung des angefochtenen Urteils und des Einspracheentscheids der Ausgleichskasse vom 2. Mai 2024, eventuell sei die Sache an die Ausgleichskasse, subeventuell an die Vorinstanz zur Neubeurteilung zurückzuweisen.
+Erwägungen:
+1.
+1.1.
+Die frist- und formgerecht erhobene Beschwerde (
+Art. 42 Abs. 2 und
+Art. 100 Abs. 1 BGG
+) richtet sich gegen einen Entscheid einer letzten kantonalen Instanz (
+Art. 86 Abs. 1 lit. c BGG
+), der sich auf öffentliches Recht des Bundes stützt (
+Art. 82 lit. a BGG
+). Es liegt keine der in
+Art. 83 BGG
+erwähnten Ausnahmen vor. Der Beschwerdeführer ist nach
+Art. 89 Abs. 1 BGG
+grundsätzlich zur Beschwerdeerhebung legitimiert.
+1.2.
+Gemäss bundesgerichtlicher Rechtsprechung fallen Beschwerden betreffend die Haftung gemäss
+Art. 52 AHVG
+unter die Bestimmung von
+Art. 85 Abs. 1 lit. a BGG
+(Staatshaftung;
+BGE 137 V 51
+E. 4.3; bestätigt mit Urteil 9C_166/2017 vom 8. August 2017 E. 1.1, in: SVR 2017 AHV Nr. 21 S. 71). Die Beschwerde in öffentlich-rechtlichen Angelegenheiten ist diesfalls jedoch unzulässig, wenn der Streitwert weniger als Fr. 30'000.- beträgt, es sei denn, es stelle sich eine Rechtsfrage von grundsätzlicher Bedeutung (
+Art. 85 Abs. 2 BGG
+).
+Im vorliegenden Fall liegt der Streitwert unbestrittenermassen unter Fr. 30'000.-. Auch macht der Beschwerdeführer keine Rechtsfrage von grundsätzlicher Bedeutung geltend (dazu etwa Urteil 9C_187/2020 vom 11. November 2020 E. 1.2.1 mit Hinweisen).
+1.3.
+Die als "Subsidiäre Verfassungsbeschwerde" betitelte Eingabe kann jedoch als solche gemäss
+Art. 113 ff. BGG
+an die Hand genommen werden, wird darin doch die Verletzung des rechtlichen Gehörs (
+Art. 29 Abs. 2 BV
+) sowie des Willkürverbots (
+Art. 9 BV
+) - und damit von verfassungsmässigen Rechten (
+Art. 116 BGG
+) - gerügt.
+2.
+Das Bundesgericht legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat. Es kann die Sachverhaltsfeststellung der Vorinstanz von Amtes wegen berichtigen oder ergänzen, wenn sie auf einer Rechtsverletzung im Sinne von
+Art. 116 BGG
+beruht (
+Art. 118 BGG
+). Das Bundesgericht prüft die Verletzung von Grundrechten nicht von Amtes wegen, sondern nur insoweit, als eine solche Rüge in der Beschwerde vorgebracht und begründet worden ist (Art. 117 in Verbindung mit
+Art. 106 Abs. 2 BGG
+). Diesbezüglich gilt eine qualifizierte Rügepflicht. Das Bundesgericht prüft lediglich präzise, d.h. klar und detailliert erhobene und, soweit möglich, belegte Rügen; auf rein appellatorische Kritik am angefochtenen Entscheid tritt es nicht ein (
+BGE 142 III 364
+E. 2.4;
+140 III 264
+E. 2.3).
+3.
+3.1.
+Der Beschwerdeführer beanstandet zum einen eine Gehörsverletzung. Insbesondere seien entscheidwesentliche Beweismittel vorinstanzlich unberücksichtigt geblieben.
+3.2.
+Aus dem Anspruch auf rechtliches Gehör nach
+Art. 29 Abs. 2 BV
+fliesst die Pflicht der Behörden, die Vorbringen der von einem Entscheid in ihrer Rechtsstellung betroffenen Person tatsächlich zu hören, zu prüfen und in der Entscheidfindung zu berücksichtigen. Nicht erforderlich ist, dass sich die Behörden mit sämtlichen Parteistandpunkten - und Beweismitteln - einlässlich auseinandersetzen und jedes einzelne Vorbringen ausdrücklich widerlegen. Vielmehr können sich die Behörden auf die für einen Entscheid wesentlichen Punkte beschränken. Die Begründung muss so abgefasst sein, dass sich die Betroffenen über die Tragweite eines Entscheids Rechenschaft geben und ihn in voller Kenntnis der Sache an die höhere Instanz weiterziehen können. In diesem Sinne müssen wenigstens kurz die Überlegungen genannt werden, von denen sich die Behörde hat leiten lassen und auf die sich ihr Entscheid stützt (vgl.
+BGE 143 III 65
+E. 5.2
+;
+142 I 135
+E. 2.1;
+141 V 557
+E. 3.2.1).
+3.3.
+Der Beschwerdeführer macht geltend, er habe den Lohn, der ihm für die Monate Januar und Februar 2019 ausbezahlt worden sei, zurückerstattet, sodass er im Jahr 2019 letztlich keinen Lohn bezogen habe, auf denen Lohnbeiträge zu entrichten gewesen wären. Bezug genommen wird in der Beschwerde hierfür, wie bereits im vorinstanzlichen Verfahren, auf einen beigelegten E-Mailwechsel zwischen dem Beschwerdeführer und dem Revisor der B.________ GmbH, dem das kantonale Gericht in seiner Entscheidfindung zu Unrecht nicht Rechnung getragen habe.
+3.3.1.
+Im angefochtenen Urteil äusserte sich die Vorinstanz zu diesem Punkt unter Hinweis auf die jeweiligen sachbezüglichen Belege folgendermassen: Den Unterlagen der Beschwerdegegnerin sei zu entnehmen, dass die Schlussrechnung 2019 vom 26. Februar 2020 auf der vom Beschwerdeführer mit E-Mail-Nachricht vom 19. Februar 2020 eingereichten Lohndeklaration 2019 basiert habe, worin ein dem Beschwerdeführer ausbezahlter Lohn in der Höhe von Fr. 33'333.33 ausgewiesen worden sei. Darüber hinaus habe die Beschwerdegegnerin durch Beizug der Steuerakten des Beschwerdeführers in Erfahrung bringen können, dass seiner Steuererklärung 2019 ein Lohnausweis mit einem Bruttolohn in der Höhe von Fr. 33'333.- beigelegt worden sei, was Grundlage für die Steuerveranlagungen des Kantonalen Steueramts Zürich vom 8. März 2021 gebildet habe. Demgegenüber verweise der Beschwerdeführer auf den vom 29. Mai 2019 datierenden Eintrag des Journals der Buchhaltung 2019 der B.________ GmbH im Betrag von Fr. 40'000.-, dessen Buchungstext wie folgt laute: "Darlehen A.A.________ - einbezahlt von Frau C.A.________ (gem. A.A.________ 12.3.2020) ". Dazu habe der Beschwerdeführer ausgeführt, dass es sich um "ein Darlehen, teils bestehend aus ausstehendem Lohn, teils aus einem zusätzlichen Betrag zur Begleichung ausstehender Zahlungen der Firma" gehandelt habe. Allerdings sei von Seiten des Beschwerdeführers noch am 11. März 2020 erklärt worden, dass sich die Lohnzahlen gemäss der am 19. Februar 2020 eingereichten Lohndeklaration 2019 samt seinem Verdienst in der Höhe von Fr. 33'333.33 als korrekt erwiesen. Ferner sei im Schreiben des Beschwerdeführers vom 15. Januar 2021 an die D.________ AG mit dem Betreff "Suspendierung Firmenkonto" vermerkt worden, dass er im Jahr 2019 auf zehn (und nicht zwölf) Monatslöhne verzichtet habe.
+Vor diesem Hintergrund war die Vorinstanz abschliessend zum Ergebnis gelangt, soweit ein Lohn bezogen worden sei, unterstehe dieser auch dann der Beitragspflicht, wenn hernach mit dem gleichen Geld wiederum ein Darlehen (gegenüber dem Arbeitgeber) gewährt werde. Dies mute zwar etwas formalistisch an, bilde aber Ausfluss der zwingenden Beitragspflicht, die im Zeitpunkt der Lohnausrichtung entstehe. Was mit diesem Geld hernach geschehe, spiele AHV-rechtlich keine Rolle. Hätte der Beschwerdeführer gar keinen Lohn bezogen, hätte sich dies rechnerisch in gleicher Weise ausgewirkt, das Geld wäre in der Firma verblieben. Da er sich indes einen Lohn (zumindest rechnerisch) habe ausrichten lassen, sei dieser Betrag beitragspflichtig geworden, auch wenn das Geld in der Folge wieder in die Firma zurückgeflossen sei. Anzufügen bleibe, dass keine Bemühungen des Beschwerdeführers aktenkundig seien, den Eintrag im individuellen Konto entsprechend zu korrigieren und für das Jahr 2019 ein Einkommen von Fr. 0.- verbuchen zu lassen. Dies bestätige, dass auch er von einem entsprechenden Lohnbezug und einer anschliessenden Darlehensgewährung ausgegangen sei.
+3.3.2.
+Es wird aus den Ausführungen des Beschwerdeführers vor dem Bundesgericht nicht ersichtlich, inwiefern der von ihm erwähnte E-Mailverkehr zwischen ihm und dem Revisor der B.________ GmbH das kantonale Gericht zu einer anderen Schlussfolgerung hätte bewegen sollen. Vielmehr geht daraus hervor, sofern chronologisch zuordbar - einzig die Mail des Beschwerdeführers vom 3. September 2021 weist eine Datumsangabe auf -, dass der Revisor zuletzt erklärt hatte, der Beschwerdeführer habe ihm zwar mitgeteilt, 2019 keinen Lohn bezogen zu haben. Laut der Finanzbuchhaltung seien die Monatslöhne Januar und Februar 2019 ausbezahlt worden, eine Rückbuchung oder -zahlung lasse sich jedoch nicht finden. Aus diesem Grund gehe er von einem bezogenen Lohn aus, weshalb keine Korrektur vorgenommen werden könne. Da für die Entscheidfindung somit nicht massgeblich bzw. diese sogar zusätzlich - neben anderen Anhaltspunkten - stützend, erwies es sich für die Vorinstanz nicht als zwingend, darauf ebenfalls explizit Bezug zu nehmen. Eine Gehörsverletzung ist in dieser Vorgehensweise nach Massgabe der entsprechenden Grundsätze (vgl. E. 3.2 hiervor) nicht erkennbar.
+3.4.
+Soweit der Beschwerdeführer sich unter dem Titel eines Verstosses gegen das rechtliche Gehör im Weiteren auf das Schreiben der Beschwerdegegnerin vom 8. Dezember 2021 beruft, wonach die betreffenden "Löhne weitgehend richtig deklariert" worden seien, handelt es sich um rein appellatorische Kritik, auf die an dieser Stelle nicht weiter einzugehen ist (vgl. E. 2 am Ende hiervor). Dasselbe gilt sodann auch hinsichtlich der Rügen, zu Unrecht sei im angefochtenen Urteil seiner E-Mail vom 11. März 2020 mit Blick auf die Bestätigung der im Jahr 2019 ausbezahlten Löhne Beweiswert zuerkannt und die Funktion des Revisors im Rahmen der Arbeitgeberkontrolle in der vorliegenden Diskussion vollständig ausgeblendet worden.
+4.
+4.1.
+Ebenso wenig zeigt der Beschwerdeführer ferner auf, inwiefern die vorinstanzliche Sachverhaltsfeststellung und Beweiswürdigung geradezu willkürlich sein sollen.
+4.2.
+Nach der ständigen Praxis des Bundesgerichts liegt Willkür in der Rechtsanwendung vor, wenn der angefochtene Entscheid offensichtlich unhaltbar ist, mit der tatsächlichen Situation in klarem Widerspruch steht, eine Norm oder einen unumstrittenen Rechtsgrundsatz krass verletzt oder in stossender Weise dem Gerechtigkeitsgedanken zuwiderläuft. Das Bundesgericht hebt einen Entscheid jedoch nur auf, wenn nicht bloss die Begründung, sondern auch das Ergebnis unhaltbar ist. Dass eine andere Lösung ebenfalls als vertretbar oder gar zutreffender erscheint, genügt nicht (
+BGE 137 I 1
+E. 2.4 mit Hinweisen).
+4.3.
+Der Willkürvorwurf wird in der Beschwerde im Wesentlichen mit den bereits hiervor erwähnten Unterlagen untermauert: So die Mitteilung der Beschwerdegegnerin vom 8. Dezember 2021, das Schreiben des Beschwerdeführers vom 15. Januar 2021 an die D.________ AG sowie den mit dem Revisor der Gesellschaft geführten E-Mailverkehr. Die an deren vorinstanzlichen Würdigung geäusserten Beanstandungen zeigen indessen kein willkürliches gerichtliches Handeln auf, sondern stellen ebenfalls unzulässige appellatorische Vorbringen dar. Auch erweisen sich die Erwägungen im angefochtenen Urteil zum Zeitpunkt sowohl der effektiven letztmaligen Auszahlung von Löhnen durch die B.________ GmbH (18. Oktober 2020) als auch der durch diese bis 10. Dezember 2020 grundsätzlich noch möglichen Ausführung von Zahlungen von ihrem durch die Staatsanwaltschaft U.________ in der Folge gesperrten Geschäftskontos als nicht offenkundig unhaltbar; jedenfalls vermögen die vom Beschwerdeführer in diesem Zusammenhang angerufenen Dokumente (vom 15. Januar, 23. Februar und 20. April 2021) nichts Derartiges zu belegen, ergibt sich aus diesen doch keine frühere Kontosperre. Auch wurde schliesslich willkürfrei durch das kantonale Gericht erkannt, dass die Beschwerdegegnerin kein Mitverschulden am Entstehen des Schadens trifft, den der Beschwerdeführer durch sein als grobfahrlässig einzustufendes Verhalten adäquat kausal verursacht hat.
+Es hat damit beim vorinstanzlichen Urteil sein Bewenden.
+5.
+Bei diesem Verfahrensausgang hat der Beschwerdeführer die Gerichtskosten zu tragen (
+Art. 66 Abs. 1 Satz 1 BGG
+).
+Demnach erkennt das Bundesgericht:
+1.
+Die Beschwerde wird abgewiesen.
+2.
+Die Gerichtskosten von Fr. 800.- werden dem Beschwerdeführer auferlegt.
+3.
+Dieses Urteil wird den Parteien, dem Sozialversicherungsgericht des Kantons Zürich und dem Bundesamt für Sozialversicherungen schriftlich mitgeteilt.
+Luzern, 23. März 2026
+Im Namen der III. öffentlich-rechtlichen Abteilung
+des Schweizerischen Bundesgerichts
+Die Präsidentin:    Moser-Szeless
+Die Gerichtsschreiberin:    Fleischanderl

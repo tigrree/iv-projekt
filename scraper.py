@@ -95,7 +95,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         # Wir übergeben die ersten ~5000 Wörter für die Zusammenfassung
         clean_text = " ".join(urteil_text.split()[:5000])
         response = client.messages.create(
-            model="claude-sonnet-4-6",
+            model="claude-sonnet-4-7",
             max_tokens=3500,
             temperature=0.1,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit den folgenden zwei XML-Tags:\n<vorschau_de>Übersetzung hier</vorschau_de>\n<zusammenfassung>Zusammenfassung hier</zusammenfassung>\n\nVerwende KEIN JSON und erfinde keine anderen Formate.",

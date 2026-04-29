@@ -1,44 +1,5 @@
 [
     {
-        "aktenzeichen": "9C_110/2026",
-        "datum": "29.04.2026",
-        "kategorie": "iv",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "ak_zh_fuehrer": false,
-        "ak_zh_gegner": false,
-        "vorschau": "Invalidenversicherung Invalidenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-7'}, 'request_id': 'req_011CaY271YR6yutr2eLAfnC1'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://08-04-2026-9C_110-2026&lang=de&zoom=&type=show_document"
-    },
-    {
-        "aktenzeichen": "8C_753/2025",
-        "datum": "29.04.2026",
-        "kategorie": "iv",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "ak_zh_fuehrer": false,
-        "ak_zh_gegner": false,
-        "vorschau": "Invalidenversicherung Invalidenversicherung",
-        "zusammenfassung": "Zusammenfassung aktuell nicht möglich: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-7'}, 'request_id': 'req_011CaY275CS2ntC5b4LYQT8M'}",
-        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://14-04-2026-8C_753-2025&lang=de&zoom=&type=show_document"
-    },
-    {
-        "aktenzeichen": "INFO_SKIP_AK",
-        "datum": "29.04.2026",
-        "kategorie": "ak",
-        "vorschau": "Keine neuen AK-relevanten Urteile",
-        "zusammenfassung": "",
-        "url": "",
-        "publikation": false,
-        "iv_zh_fuehrer": false,
-        "iv_zh_gegner": false,
-        "ak_zh_fuehrer": false,
-        "ak_zh_gegner": false
-    },
-    {
         "aktenzeichen": "INFO_SKIP_BEIDE",
         "datum": "28.04.2026",
         "kategorie": "beide",

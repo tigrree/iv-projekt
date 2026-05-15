@@ -1,0 +1,85 @@
+8C_454/2025
+Arrêt du 16 avril 2026
+IVe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux Viscione, Présidente,
+Heine et Métral.
+Greffière : Mme Castella.
+Participants à la procédure
+Office de l'assurance-invalidité pour le canton de Vaud,
+avenue du Général-Guisan 8, 1800 Vevey,
+recourant,
+contre
+A.________,
+représenté par Me Charles Munoz, avocat,
+intimé.
+Objet
+Assurance-invalidité (frais d'expertise),
+recours contre le jugement du Tribunal cantonal du canton de Vaud du 30 juin 2025 (AI 75/23 - 201/2025).
+Faits :
+A.
+A.________, né en 1960, a déposé une demande de prestations de l'assurance-invalidité le 24 juin 2019.
+Dans le cadre de l'instruction du dossier sur le plan médical, l'Office de l'assurance-invalidité pour le canton de Vaud (ci-après: l'office AI) a confié une expertise pluridisciplinaire au centre d'expertises médicales CEMEDEX SA à Fribourg, dont le rapport a été établi le 2 février 2022. Par décision du 26 janvier 2023, l'office AI a rejeté la demande de prestations.
+B.
+Saisie d'un recours contre cette décision, la Cour des assurances sociales du Tribunal cantonal du canton de Vaud a confié une expertise pluridisciplinaire à l'Unité d'expertises médicales d'Unisanté. Par arrêt du 30 juin 2025, la cour cantonale a admis le recours (ch. I), réformé la décision attaquée en allouant une rente entière d'invalidité à l'assuré à compter du 1er août 2020 (ch. II) et mis les frais d'expertise judiciaire à la charge de l'office AI (ch. III).
+C.
+L'office AI forme un recours en matière de droit public contre cet arrêt en concluant à l'annulation du ch. III de son dispositif.
+L'intimé s'en remet à justice. La juridiction cantonale a renoncé à formuler des observations sur le recours, se référant à son arrêt. L'Office fédéral des assurances sociales ne s'est pas déterminé.
+Considérant en droit :
+1.
+Le recours en matière de droit public peut être formé pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+), sans être limité par les arguments de la partie recourante ou par la motivation de l'autorité précédente. Le Tribunal fédéral n'examine en principe que les griefs invoqués, compte tenu de l'exigence de motivation prévue à l'
+art. 42 al. 2 LTF
+, et ne peut aller au-delà des conclusions des parties (
+art. 107 al. 1 LTF
+). Il fonde son raisonnement sur les faits retenus par la juridiction de première instance (
+art. 105 al. 1 LTF
+) sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+).
+2.
+Le litige porte uniquement sur la question de la mise des frais d'expertise judiciaire à la charge du recourant, lequel ne conteste pas le recours à cette mesure d'instruction ni la valeur probante des conclusions du rapport en cause.
+En revanche, il se plaint que la cour cantonale n'ait pas expliqué en quoi l'instruction menée par lui aurait présenté des lacunes ou des insuffisances caractérisées, au vu des documents à disposition jusqu'à la date de la décision entreprise. Les juges cantonaux se seraient également abstenus de mentionner pour quelles raisons il n'y avait pas lieu d'accorder une pleine valeur probante au rapport d'expertise du CEMEDEX, qui, selon le recourant, remplissait les conditions jurisprudentielles en la matière. Le recourant fait en outre valoir qu'au moment de sa décision du 26 janvier 2023, aucun élément objectif versé au dossier n'aurait été ignoré par les experts du CEMEDEX, référence faite en particulier à un rapport du docteur B.________, spécialiste en médecine interne générale, du 9 décembre 2022.
+3.
+Selon la jurisprudence, les frais d'expertise peuvent être mis à la charge de l'assurance-invalidité (ou de l'assureur-accidents) lorsque les résultats de l'instruction mise en oeuvre dans la procédure administrative n'ont pas une valeur probatoire suffisante pour trancher des points juridiquement essentiels (
+ATF 139 V 225
+consid. 4.3;
+137 V 210
+consid. 4.4.1 et 4.4.2). Cette règle, qui découle de l'
+art. 45 al. 1 LPGA
+, ne saurait toutefois entraîner la mise systématique des frais d'une expertise judiciaire à la charge de l'autorité administrative. Encore faut-il que l'autorité administrative ait procédé à une instruction présentant des lacunes ou des insuffisances caractérisées et que l'expertise judiciaire serve à pallier les manquements commis dans la phase d'instruction administrative. En d'autres termes, il doit exister un lien entre les défauts de l'instruction administrative et la nécessité de mettre en oeuvre une expertise judiciaire (
+ATF 139 V 496
+consid. 4.4).
+Dans le contexte d'un recours dirigé contre la condamnation de l'autorité administrative à prendre en charge les frais d'expertise judiciaire, il n'appartient pas au Tribunal fédéral, compte tenu de son pouvoir d'examen restreint (
+art. 105 al. 1 LTF
+), de se prononcer en détail sur l'appréciation anticipée des preuves effectuée par les premiers juges, au terme de laquelle ils ont décidé de compléter l'instruction. Le Tribunal fédéral doit néanmoins vérifier si les conditions posées par la jurisprudence pour mettre les frais à la charge de l'autorité administrative sont remplies. Tel ne sera notamment pas le cas si l'autorité administrative a respecté le principe inquisitoire et mis en oeuvre les mesures d'instruction raisonnablement exigibles d'elle en ordonnant une expertise conformément à l'
+art. 44 LPGA
+, et que sa propre appréciation anticipée des preuves au terme de cette expertise n'apparaît pas manifestement erronée. Le fait que les premiers juges ont par la suite porté une appréciation différente, à tort ou à raison, sur la base du dossier à disposition de l'administration ou en raison de moyens de preuve complémentaires produits pendant la procédure de recours, ne justifie pas de faire supporter à l'autorité administrative les frais du complément d'instruction qu'ils ont ordonné (
+ATF 143 V 269
+consid. 3.3;
+140 V 70
+consid. 6.1;
+139 V 496
+consid. 4.4).
+4.
+En l'espèce, la cour cantonale a motivé sa décision de mettre les frais de l'expertise judiciaire à la charge du recourant "en raison des incertitudes liées aux avis médicaux contradictoires versés au dossier, que l'autorité se devait de lever". Elle n'indique toutefois pas à quels avis contradictoires elle se réfère. On ignore également les raisons qui l'ont conduite dans un premier temps à écarter l'expertise du CEMEDEX, laquelle n'apparaît pas d'emblée dépourvue de fiabilité.
+Faute pour la cour cantonale d'avoir établi un lien de causalité entre la nécessité de réaliser une expertise judiciaire et des insuffisances caractérisées dans l'instruction en procédure administrative, elle n'était pas fondée à condamner le recourant au paiement des frais de l'expertise judiciaire. Il convient dès lors d'annuler le ch. III du dispositif de l'arrêt attaqué. Le recours se révèle bien fondé.
+5.
+Vu les circonstances, il est renoncé à la perception des frais judiciaires (art. 66 al. 1 seconde phrase LTF).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est admis. Le chiffre III du dispositif de l'arrêt de la Cour des assurances sociales du Tribunal cantonal du canton de Vaud du 30 juin 2025 est annulé.
+2.
+Il n'est pas perçu de frais judiciaires.
+3.
+Le présent arrêt est communiqué aux parties, à la Cour des assurances sociales du Tribunal cantonal du canton de Vaud et à l'Office fédéral des assurances sociales.
+Lucerne, le 16 avril 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Castella

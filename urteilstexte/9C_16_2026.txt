@@ -1,0 +1,122 @@
+9C_16/2026
+Arrêt du 22 avril 2026
+IIIe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Moser-Szeless, Présidente,
+Parrino et Beusch.
+Greffière : Mme Perrenoud.
+Participants à la procédure
+Office de l'assurance-invalidité du canton de Neuchâtel,
+rue Chandigarh 2, 2300 La Chaux-de-Fonds,
+recourant,
+contre
+A.________,
+agissant par ses parents B.A.________et C.A.________,
+représentés par Me Franziska Lüthy, avocate, Service juridique de Procap,
+intimée.
+Objet
+Assurance-invalidité,
+recours contre l'arrêt du Tribunal cantonal de la République et canton de Neuchâtel du 26 novembre 2025 (CDP.2025.224-AI).
+Faits :
+A.
+A.________, née en 2005, est atteinte d'une infirmité congénitale (paralysie cérébrale infantile congénitale de type paraparésie spastique sur mutation du gène ZC4H2) et d'un déficit cognitif léger à modéré. Elle bénéficiait ou avait déjà bénéficié de différentes prestations de l'assurance-invalidité lorsqu'elle a sollicité l'octroi d'une allocation pour impotent au mois de mars 2024, par l'intermédiaire de ses parents. Après avoir notamment mis en oeuvre une enquête à domicile (rapport du 3 septembre 2024 et complément du 5 décembre 2024), l'Office de l'assurance-invalidité du canton de Neuchâtel (ci-après: l'office AI) a reconnu le droit de l'assurée à une allocation pour impotent de degré faible à compter du 1er avril 2023 (décision du 12 mai 2025). En bref, il a considéré que l'assurée présentait un besoin d'aide régulière et importante d'autrui pour accomplir deux actes ordinaires de la vie (faire sa toilette et se déplacer).
+B.
+Statuant le 26 novembre 2025 sur le recours formé par l'assurée contre cette décision, le Tribunal cantonal de la République et canton de Neuchâtel, Cour de droit public, l'a admis. Il a réformé la décision du 12 mai 2025 en ce sens que A.________ a droit à une allocation pour impotent de degré moyen dès le 1er avril 2023.
+C.
+L'office AI interjette un recours en matière de droit public contre cet arrêt, dont il requiert l'annulation "avec ou sans renvoi à l'instance judiciaire précédente". Il conclut à la confirmation de la décision administrative du 12 mai 2025. Il sollicite également l'octroi de l'effet suspensif au recours.
+L'assurée conclut au rejet du recours, tandis que l'Office fédéral des assurances sociales a renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours en matière de droit public peut être interjeté pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il statue par ailleurs sur la base des faits établis par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Le recourant qui entend s'en écarter doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+sont réalisées sinon un état de fait divergent ne peut pas être pris en considération.
+2.
+2.1.
+Le litige porte sur le droit de l'intimée à une allocation pour impotent de degré moyen de l'assurance-invalidité à compter du 1er avril 2023, singulièrement sur le point de savoir si les troubles dont elle souffre rendent nécessaire un accompagnement pour faire face aux nécessités de la vie (
+art. 42 al. 3 LAI
+et 38 al. 1 RAI [RS 831.201], en relation avec l'
+art. 37 al. 2 let
+. c RAI).
+2.2.
+L'arrêt attaqué expose de manière complète les dispositions légales et les principes jurisprudentiels relatifs à la notion d'impotence (
+art. 9 LPGA
+), aux conditions du droit à une allocation pour impotent (art. 42 al. 1 à 3 LAI), aux critères d'évaluation de l'impotence (
+art. 37 RAI
+) et à la notion d'accompagnement pour faire face aux nécessités de la vie (
+art. 38 RAI
+;
+ATF 133 V 450
+), ainsi qu'à la valeur probante des rapports d'enquête pour l'évaluation du degré d'impotence (
+art. 69 al. 2 RAI
+;
+ATF 130 V 61
+consid. 6;
+128 V 93
+). Il suffit d'y renvoyer.
+2.3.
+L'interprétation et l'application correctes de la notion juridique de l'impotence, ainsi que les exigences relatives à la valeur probante de rapports d'enquête au domicile de l'assuré relèvent de questions de droit, que le Tribunal fédéral examine librement (
+art. 95 let. a LTF
+). Les constatations de la juridiction cantonale relatives aux limitations fonctionnelles de la personne assurée pour accomplir certains actes ordinaires de la vie, fondées sur le résultat d'examens médicaux et sur un rapport d'enquête à domicile ayant valeur probante, constituent en revanche des questions de fait, soumises au Tribunal fédéral sous un angle restreint (
+art. 105 al. 2 LTF
+; cf.
+ATF 132 V 393
+consid. 3.2; arrêts 9C_308/2022 du 28 mars 2023 consid. 2; 9C_410/2009 du 1er avril 2010 consid. 3).
+3.
+3.1.
+Dès lors que le besoin d'aide pour accomplir deux actes ordinaires de la vie avait été admis par l'office recourant et n'était pas contesté par l'assurée, la juridiction cantonale a examiné si celle-ci présentait un besoin d'accompagnement pour faire face aux nécessités de la vie. En se fondant sur les conclusions du rapport d'enquête à domicile du 3 septembre 2024, les premiers juges ont constaté que le besoin hebdomadaire d'aide de l'intimée s'élevait à 5 heures et 18 minutes (348 minutes dont à déduire 30 minutes d'aide dans les actes ordinaires de la vie) pour la tenue du ménage et pour l'accompagnement pour faire face aux nécessités de la vie hors du domicile (sans quoi l'assurée devrait être placée dans un home selon les indications mêmes de l'enquêtrice), auquel s'ajoutait un besoin d'aide hebdomadaire de 140 minutes pour la gestion de l'administratif et la structuration de la journée. L'instance précédente a ensuite considéré que l'aide hebdomadaire de 630 minutes (soit 10 heures et 30 minutes) exigée par l'enquêtrice des membres de la famille de l'assurée (à savoir de sa mère, de son père et de son frère), au titre de l'obligation de réduire le dommage, était excessive. Dans la mesure où l'intimée a besoin d'une aide régulière et importante d'autrui pour accomplir deux actes ordinaires de la vie (faire sa toilette et se déplacer) et nécessite en outre un accompagnement durable pour faire face aux nécessités de la vie (au sens de l'
+art. 38 al. 1 let. a et b RAI
+), les premiers juges lui ont reconnu le droit à une allocation pour impotent de degré moyen (cf.
+art. 37 al. 2 let
+. c RAI), à compter du 1er avril 2023 (date qui n'était pas contestée par les parties et respectait l'
+art. 42 al. 4 LAI
+).
+3.2.
+L'office recourant reproche en substance à la juridiction cantonale d'avoir procédé à une appréciation arbitraire, ainsi qu'à une application du droit non conforme à la jurisprudence fédérale, en ce qu'elle a admis que l'aide hebdomadaire de 630 minutes exigée par l'enquêtrice des membres de la famille de l'assurée, au titre de l'obligation de réduire le dommage, était excessive. Dans une argumentation subsidiaire, à supposer que le Tribunal fédéral considère que l'aide apportée par les proches va au-delà de ce qui est exigible, l'office AI fait valoir qu'il y aurait alors lieu de ne plus retenir le besoin d'aide pour l'acte ordinaire de la vie "se déplacer".
+3.3.
+Pour sa part, l'assurée fait valoir qu'elle présente un besoin d'accompagnement suffisamment important pour être déterminant dans le cadre de l'allocation pour impotent, même après déduction de l'aide apportée par les membres de sa famille au titre de l'obligation de réduire le dommage. À cet égard, elle allègue en particulier que l'on ne saurait exiger des parents faisant ménage commun avec leur enfant majeur et invalide qu'ils assument toutes les tâches quotidiennes, ménagères et administratives de celui-ci, sous peine de vider l'institution de l'allocation pour impotent de tout son sens.
+4.
+4.1.
+À la suite des juges précédents, on rappellera que la nécessité de l'aide apportée par une tierce personne doit être examinée de manière objective, selon l'état de santé de l'assuré concerné, indépendamment de l'environnement dans lequel celui-ci se trouve; seul importe le point de savoir si, dans la situation où il ne dépendrait que de lui-même, cet assuré aurait besoin de l'aide d'un tiers (
+ATF 146 V 322
+consid. 2.3;
+133 V 450
+consid. 5). L'assistance que lui apportent les membres de sa famille a trait à l'obligation de diminuer le dommage et ne doit être examinée que dans une seconde étape (cf. arrêts 9C_330/2017 du 14 décembre 2017 consid. 4; 9C_410/2009 précité consid. 5.1 et les arrêts cités).
+4.2.
+En l'espèce, la juridiction cantonale a retenu, en se fondant sur les constatations de l'enquêtrice, qu'hormis la lessive dont la tâche incombe apparemment à la mère de l'intimée pour des raisons d'organisation familiale (cf. rapport d'enquête du 3 septembre 2024, let. F p. 5), l'assurée se trouve dans l'incapacité d'accomplir de manière indépendante quasiment toutes les tâches et activités relevant de la tenue du ménage (nettoyage et rangement, préparation des repas) et des actes de la vie hors du domicile (courses), lesquelles sont finalement assumées de manière directe ou indirecte par les membres de la famille. Les premiers juges ont également constaté que l'enquêtrice avait répondu par l'affirmative à la question de savoir si sans cette aide, l'assurée devrait être placée dans un home (cf. rapport d'enquête du 3 septembre 2024, let. F p. 6). Ces constatations, qui ne sont pas contestées par l'office recourant, lient le Tribunal fédéral (consid. 1 supra). Partant, il n'y a pas lieu de s'écarter de la considération de l'instance précédente, selon laquelle l'intimée présente un besoin d'accompagnement pour vivre de manière indépendante au sens de l'
+art. 38 al. 1 let. a et b RAI
+. Contrairement à ce qu'affirme de manière péremptoire l'office recourant, le fait que les proches s'arrangent pour apporter concrètement l'aide dont a besoin l'assurée ne saurait remettre en question ce qui précède mais établit au contraire l'existence même de la nécessité de l'assistance apportée par un tiers.
+On ajoutera, en relation avec l'argumentation subsidiaire de l'office recourant, que l'accompagnement pour faire face aux nécessités de la vie ne fait en l'espèce pas "doublon" avec l'acte de se déplacer. Quoi qu'en dise l'administration, il ressort du rapport d'enquête à domicile du 3 septembre 2024, que l'aide relative aux déplacements extérieurs a été prise en compte dans le cadre de l'acte ordinaire de la vie "se déplacer" et non pas en lien avec le besoin d'accompagnement durable pour les activités et les contacts hors du domicile (cf. rapport d'enquête du 3 septembre 2024, let. F p. 5).
+4.3.
+Concernant ensuite l'aide que peuvent ou doivent apporter les parents et le frère de l'intimée dans la mesure où ceux-ci forment une communauté familiale, on précisera que, selon la jurisprudence, si la question de savoir comment s'organiserait cette communauté familiale dans le cas où elle ne devait pas percevoir de prestations d'assurance est certes importante, l'aide exigible ne doit pas devenir excessive ou disproportionnée (cf. arrêts 9C_330/2017 précité consid. 4; 9C_410/2009 précité consid. 5.5). Or à moins de vider l'institution de l'allocation pour impotent de tout son sens lorsque les parents font ménage commun avec leur enfant majeur et invalide, on ne saurait exiger de ceux-ci qu'ils assument toutes les tâches ménagères de leur enfant - ou la quasi totalité de celles-ci au regard des empêchements mentionnés ci-dessus (consid. 4.2 supra) - comme le fait valoir l'assurée.
+En l'occurrence et comme les premiers juges l'ont constaté, on ne comprend par ailleurs pas comment la durée de l'aide exigible a été fixée à 630 minutes par l'office recourant, à la suite de l'enquêtrice. Dans son recours, l'office AI a expliqué que l'aide exigible des proches avait été fixée à 630 minutes "en application par analogie de [la] jurisprudence, établie dans le cadre des enquêtes ménagères". Quant à l'enquêtrice, elle a indiqué, dans son complément d'enquête du 5 décembre 2024, qu'elle avait retenu une obligation de réduire le dommage correspondant au "plafond maximal, soit 630 minutes/semaine". Ces explications ne sont pas convaincantes, dès lors déjà qu'il n'est pas fait mention d'une durée maximale d'aide exigible des proches dans la Circulaire sur l'impotence de l'OFAS (CSI) et que l'on ne saurait pas non plus en déduire une de la jurisprudence à laquelle se réfère l'office recourant (à savoir les arrêts 9C_446/2008 du 18 septembre 2008 et 9C_410/2009 du 1er avril 2010). Déterminer l'aide exigible des proches de manière forfaitaire ne tient par ailleurs pas compte de la nécessité de procéder à un examen concret des particularités du cas d'espèce. Conformément à la jurisprudence, il est en particulier nécessaire de déterminer comment s'organiserait la communauté familiale dans le cas où elle ne devrait pas percevoir de prestations d'assurance (cf.
+ATF 141 V 642
+consid. 4.3.2 et les arrêts cités). En se limitant à affirmer que l'aide requise des proches serait exigible car elle ne se monterait qu'à 18 minutes par jour et par personne faisant partie du ménage, l'office recourant ne démontre pas pour quels motifs le raisonnement suivi par les juges cantonaux serait contraire à la jurisprudence citée ci-avant. En particulier, il n'expose pas quelle serait l'aide exigible des proches dans le cas d'espèce sur la base d'un examen concret de la situation. Le recours est mal fondé.
+5.
+Le présent arrêt rend sans objet la requête d'effet suspensif présentée par l'office recourant.
+6.
+Compte tenu de l'issue de la procédure, l'office recourant, qui succombe, supportera les frais judiciaires ainsi que les dépens que peut prétendre l'intimée (art. 66 al. 1 et 68 al. 1 LTF).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 500 fr., sont mis à la charge du recourant.
+3.
+Le recourant versera à l'intimée la somme de 3'000 fr. à titre de dépens pour la procédure devant le Tribunal fédéral.
+4.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal de la République et canton de Neuchâtel, Cour de droit public, et à l'Office fédéral des assurances sociales.
+Lucerne, le 22 avril 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+La Greffière :    Perrenoud

@@ -1,0 +1,111 @@
+9C_166/2025
+Arrêt du 5 mai 2026
+IIIe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux
+Moser-Szeless, Présidente,
+Parrino et Bollinger.
+Greffier : M. Berthoud.
+Participants à la procédure
+A.________, représenté par Me Andres Perez, avocat,
+recourant,
+contre
+Office de l'assurance-invalidité pour le canton de Vaud, avenue du Général-Guisan 8, 1800 Vevey,
+intimé.
+Objet
+Assurance-invalidité,
+recours contre l'arrêt du Tribunal cantonal du canton de Vaud du 6 février 2025 (AI 200/24 - 34/2025).
+Faits :
+A.
+Le 5 mai 2015, A.________ a déposé une première demande de prestations de l'assurance-invalidité. Par décision du 11 octobre 2018, l'Office de l'assurance-invalidité pour le canton de Vaud (ci-après: l'office AI) lui a alloué une rente entière d'invalidité du 1er novembre 2015 au 31 décembre 2017. Le 21 octobre 2020, l'assuré a introduit une nouvelle demande de prestations, que l'office AI a rejetée par décision du 17 janvier 2022.
+Le 13 mars 2024, A.________ a déposé un questionnaire de révision, accompagné d'un rapport de la doctoresse B.________, médecin généraliste interne, du 27 novembre 2023, et d'un rapport du docteur C.________, psychiatre, du 8 décembre 2023. L'office AI a soumis le cas au Service médical régional de l'assurance-invalidité (SMR). Dans un projet de décision du 23 avril 2024, il a indiqué à l'assuré qu'il envisageait de refuser d'entrer en matière sur la demande de révision du 13 mars 2024, ce qu'il a fait par décision du 10 juin 2024.
+B.
+L'assuré a déféré cette décision au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, qui l'a débouté par arrêt du 6 février 2025.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt dont il demande l'annulation ainsi que celle de la décision du 10 juin 2024. Il conclut au renvoi du dossier à l'office AI afin qu'il entre en matière sur sa demande du 13 mars 2024. Il sollicite par ailleurs le bénéfice de l'assistance judiciaire.
+L'office AI conclut au rejet du recours, tandis que l'Office fédéral des assurances sociales a renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours en matière de droit public (au sens des
+art. 82 ss LTF
+) peut être formé pour violation du droit (circonscrit par les
+art. 95 et 96 LTF
+). Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il n'est limité ni par l'argumentation de la partie recourante ni par la motivation de l'autorité précédente. Il statue sur la base des faits établis par cette dernière (
+art. 105 al. 1 LTF
+). Cependant, il peut rectifier les faits ou les compléter d'office s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Le recourant ne peut critiquer les faits que s'ils ont été constatés de façon manifestement inexacte ou contraire au droit et si la correction d'un tel vice peut influer sur le sort de la cause (
+art. 97 al. 1 LTF
+).
+2.
+2.1.
+Le litige porte sur le point de savoir si la juridiction cantonale était fondée à confirmer le refus de l'office intimé d'entrer en matière sur la nouvelle demande de prestations déposée par le recourant le 13 mars 2024.
+2.2.
+À cet égard, l'arrêt attaqué expose de manière complète les dispositions légales pertinentes - dans leur version en vigueur à partir du 1er janvier 2022 (cf.
+ATF 148 V 21
+consid. 5.3) - et les principes jurisprudentiels relatifs notamment à la notion d'invalidité (
+art. 7 et 8 al. 1 LPGA
+en relation avec l'
+art. 4 al. 1 LAI
+) et à la révision du droit à la rente (
+art. 17 al. 1 LPGA
+, applicable par analogie, en lien avec l'
+art. 87 al. 2 et 3 RAI
+[RS 831.201]). Il suffit d'y renvoyer.
+2.3.
+À la suite des premiers juges, on rappellera qu'en vertu de l'
+art. 87 al. 2 et 3 RAI
+, lorsque la rente a été refusée parce que le taux d'invalidité était insuffisant, la nouvelle demande ne peut être examinée que si l'assuré rend plausible que son invalidité s'est modifiée de manière à influencer ses droits. Cette exigence doit permettre à l'administration qui a précédemment rendu une décision de refus de prestations entrée en force d'écarter sans plus ample examen de nouvelles demandes dans lesquelles l'assuré se borne à répéter les mêmes arguments, sans alléguer une modification des faits déterminants (
+ATF 133 V 108
+consid. 5.2 et 5.3;
+130 V 64
+consid. 5.2.3;
+117 V 198
+consid. 4b et les références). Lorsqu'elle est saisie d'une nouvelle demande, l'administration doit commencer par examiner si les allégations de l'assuré sont, d'une manière générale, plausibles. Si tel n'est pas le cas, l'affaire est liquidée d'entrée de cause et sans autres investigations par un refus d'entrer en matière (
+ATF 117 V 198
+consid. 3a).
+Par ailleurs, dans un litige portant sur le bien-fondé du refus d'entrer en matière sur une demande de révision, l'examen du juge des assurances sociales est d'emblée limité au point de savoir si les pièces déposées en procédure administrative justifiaient ou non la reprise de l'instruction du dossier. Le juge doit donc examiner la situation d'après l'état de fait tel qu'il se présentait à l'administration au moment où celle-ci a statué. Il ne prend pas en considération les rapports médicaux produits postérieurement à la décision administrative. Cette limitation du pouvoir d'examen du juge ne s'applique toutefois pas si l'administration a omis d'impartir un délai à la personne assurée pour produire les pièces pertinentes auxquelles il s'était référé dans sa demande (
+ATF 130 V 64
+consid. 5.2.5 et 6).
+3.
+3.1.
+À la lumière des rapports de la doctoresse B.________ du 27 novembre 2023 et du docteur C.________ du 8 décembre 2023, les premiers juges ont nié que le recourant ait rendu plausible une aggravation de son état de santé depuis janvier 2022. En particulier, ils ont constaté que le rapport d'imagerie par résonance magnétique (IRM) du 10 octobre 2023 (concernant le rachis lombaire), cité par la doctoresse B.________ dans son rapport du 27 novembre 2023, ne figurait pas au dossier et n'avait pas été produit par le recourant dans le cadre de la demande de révision. Il en allait de même du rapport d'IRM du 13 octobre 2023 (concernant le genou droit). La juridiction cantonale a considéré qu'elle ne pouvait dès lors rien déduire des considérations de la doctoresse B.________, que ce soit en lien avec une prétendue aggravation du rachis lombaire, avec l'état du genou droit ou encore l'épaule droite de l'assuré. Le médecin ne faisait que citer des extraits de rapports d'IRM sans leurs conclusions, alors que les documents en question n'avaient pas été produits. En tout état de cause, les atteintes à l'épaule droite étaient déjà connues par le passé, puisqu'elles avaient déjà été mentionnées dans un rapport de la doctoresse B.________ du 28 janvier 2021. De plus, elles entraînaient une limitation fonctionnelle qui, dût-elle entrer en considération (en particulier les travaux nécessitant une position des bras au-dessus de l'horizontale), ne changeait rien quant à l'évaluation de la capacité de travail dans une activité adaptée.
+3.2.
+Le recourant soutient tout d'abord que l'instance précédente aurait dû constater que l'office AI avait omis de lui fixer un délai approprié pour fournir les rapports IRM mentionnés, au lieu de lui reprocher de ne pas les avoir produits, car le rapport de la doctoresse B.________ du 27 novembre 2023 confirmait indéniablement une aggravation de l'état de santé, plus particulièrement de l'épaule droite et du rachis lombaire, tant par rapport à la première demande de prestations que par rapport à la deuxième. Il en déduit que le Tribunal cantonal n'a arbitrairement pas tenu compte de ce rapport.
+4.
+4.1.
+La juridiction cantonale a examiné la situation du recourant d'après l'état de fait qui se présentait à l'office intimé au moment du prononcé de sa décision du 10 juin 2024, conformément à ce qu'elle était tenue de faire (consid. 2.3 supra). Son appréciation des preuves relève cependant de l'arbitraire, en ce qu'elle a écarté le rapport de la doctoresse B.________ du 27 novembre 2023 au motif qu'elle ne pouvait rien en déduire car elle ne disposait pas des rapports IRM cités par le médecin.
+En l'occurrence, à l'appui de sa nouvelle demande, le recourant a fait valoir une aggravation de son état de santé en produisant notamment le rapport du 27 novembre 2023. La doctoresse B.________ y atteste clairement une aggravation progressive des atteintes au rachis lombaire, au genou droit et à l'épaule droite en fonction des différents rapports IRM (respectivement des 9, 10 et 13 octobre 2023) par rapport aux imageries précédentes datant de 2022; elle cite par ailleurs des extraits des conclusions du docteur E.________, spécialiste en radiologie, qui a effectué les examens radiologiques en 2023. Or à moins de sous-entendre que le médecin traitant du recourant aurait repris de manière faussée les conclusions des rapports IRM, on ne comprend pas le reproche de la juridiction cantonale selon lequel elle ne "dispose que d'une interprétation de la Dre B.________" du rapport IRM du 13 octobre 2023. De plus, la constatation selon laquelle le médecin traitant se contentait de "lister des atteintes déjà connues et pour lesquelles [d]es limitations fonctionnelles [...] avaient été retenues" par le SMR, dans son avis du 6 novembre 2017 apparaît manifestement inexacte, dès lors qu'elle ne prend pas en considération les éléments objectifs mis en évidence par l'IRM 2023 (tels que cités par la doctoresse B.________) : alors que le médecin du SMR avait fait état de "gonalgies bilatérales dans le cadre de troubles dégénératifs et statiques", sa consoeur, s'appuyant sur les observations obtenues par IRM, fait état d'atteintes articulaires détaillées pouvant, le cas échéant, expliquer les douleurs au niveau du genou droit. Il en va de même des constatations cantonales relatives à l'épaule droite de l'assuré: si la doctoresse B.________ avait effectivement déjà mentionné des dysfonctionnements du sus-épineux et du sous-scapulaire dans son rapport du 28 janvier 2021 (fourni lors de la deuxième procédure), elle a cité - par le biais du rapport IRM du 9 octobre 2023 - une atteinte allant au-delà d'un "dysfonctionnement", sous la forme d'une déchirure du tendon sus-épineux (rapport du 27 novembre 2023).
+4.2.
+Dans ces circonstances, au regard du degré de preuve requis dans ce contexte (la plausibilité d'une aggravation étant suffisante) - où il suffit qu'il existe certains indices ("gewisse Anhaltspunkte") d'une éventuelle aggravation, même s'il reste possible que celle-ci ne puisse être rendue vraisemblable (au degré de la vraisemblance prépondérante) par une évaluation plus poussée (arrêt 9C_683/2013 du 2 avril 2014 consid. 3.4.1 et les références) -, la juridiction cantonale a méconnu le droit en niant que le recourant avait rendu plausible une aggravation de son état de santé sans recueillir les rapports médicaux dont elle a précisément déploré l'absence. Compte tenu de l'examen nécessaire de ceux-ci pour se prononcer sur la nouvelle demande de prestations du recourant à l'aune des éléments suffisants dont a fait état la doctoresse B.________, il appartiendra à l'office intimé de prendre les renseignements nécessaires et de se prononcer à nouveau. Cela se justifie d'autant plus que ni le projet de décision de l'office AI du 23 avril 2023, ni la décision de non-entrée en matière sur la demande du 13 mars 2024 ne comprennent de motivation expliquant les raisons pour lesquelles le recourant n'aurait pas produit de "documents adéquats". Le rapport du SMR du 23 avril 2024 n'est pas davantage utile, puisque la doctoresse D.________ se limite à l'affirmation selon laquelle "il n'y a pas de modification notable de l'état de santé", les limitations fonctionnelles restant inchangées, sans qu'elle ne commente ou montre avoir pris en considération les rapports médicaux produits par le recourant.
+4.3.
+Dans le contexte du renvoi de la cause à l'administration, on ajoutera que le recourant soutient encore à juste titre que l'office intimé n'avait pas examiné les atteintes somatiques lors de la procédure relative à la demande de prestations présentée en octobre 2020. Selon le rapport du SMR du 2 février 2021, c'est le rapport de la psychiatre traitante du recourant, reçu le 1er février 2021 (cf. rapport de la doctoresse F.________, du 12 janvier 2021), qui justifiait une entrée en matière sur la nouvelle demande. Par ailleurs, seuls les troubles psychiques ont par la suite fait l'objet d'un examen de la part de l'office intimé (cf. courrier du 11 février 2021 à la psychiatre traitante, avis du SMR des 26 avril 2021 [préconisant une expertise psychiatrique] et du 21 octobre 2021). La constatation de la juridiction cantonale selon laquelle le SMR a estimé que les atteintes somatiques n'avaient pas de répercussions fonctionnelles, tirée du rapport de celui-ci du "21 (recte 26) avril 2021" est manifestement inexacte, puisque le docteur G.________ du SMR y indique que l'entrée en matière sur la demande est due au rapport de la psychiatre traitante, sans évoquer ni prendre position sur l'état de santé du recourant sous l'angle somatique. À défaut d'une constatation des faits pertinents sur ce plan, la décision du 17 janvier 2022 ne correspond pas au dernier examen (complet) du droit à la rente et ne saurait servir de base de comparaison au sens de la jurisprudence (cf.
+ATF 133 V 108
+consid. 5.4).
+4.4.
+Ensuite de ce qui précède, le recours est bien fondé. La cause est renvoyée à l'office intimé pour qu'il entre en matière sur la demande du 13 mars 2024.
+5.
+L'office intimé, qui succombe, supportera les frais de la procédure et les dépens que peut prétendre le recourant (art. 66 al. 1 et 68 al. 1 LTF).
+La cause est renvoyée à la juridiction cantonale pour nouvelle décision sur les frais et les dépens de la procédure antérieure (
+art. 67 et 68 al. 5 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est admis. L'arrêt du Tribunal cantonal du canton de Vaud, Cour des assurances sociales, du 6 février 2025 et la décision de l'Office de l'assurance-invalidité pour le canton de Vaud du 10 juin 2024 sont annulés. La cause est renvoyée à cet office pour qu'il entre en matière sur la demande du 13 mars 2024 et rende une nouvelle décision.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge de l'intimé.
+3.
+L'intimé versera à l'avocat du recourant la somme de 3'000 fr. à titre de dépens pour la procédure devant le Tribunal fédéral.
+4.
+La cause est renvoyée au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, pour nouvelle décision sur les frais et les dépens de la procédure antérieure.
+5.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, et à l'Office fédéral des assurances sociales.
+Lucerne, le 5 mai 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+Le Greffier :    Berthoud

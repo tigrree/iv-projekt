@@ -1,0 +1,155 @@
+8C_503/2024
+Urteil vom 30. April 2026
+IV. öffentlich-rechtliche Abteilung
+Besetzung
+Bundesrichterin Viscione, Präsidentin,
+Bundesrichter Maillard,
+Bundesrichterin Scherrer Reber,
+Bundesrichter Métral,
+Bundesrichterin Bollinger,
+Gerichtsschreiber Walther.
+Verfahrensbeteiligte
+A.________,
+vertreten durch Rechtsanwalt Eric Schuler,
+Beschwerdeführer,
+gegen
+IV-Stelle des Kantons Aargau,
+Bahnhofplatz 3C, 5000 Aarau,
+Beschwerdegegnerin.
+Gegenstand
+Invalidenversicherung,
+Beschwerde gegen das Urteil des Versicherungsgerichts des Kantons Aargau vom 8. Mai 2024 (VBE.2023.514).
+Sachverhalt:
+A.
+A.a.
+A.________, geboren 1970, meldete sich am 15. März 2013 wegen Gelenkbeschwerden erstmals bei der Invalidenversicherung (IV) zum Leistungsbezug an. Die IV-Stelle des Kantons Aargau holte in der Folge bei der MEDAS Zentralschweiz, Luzern, ein psychiatrisch-rheumatologisches Gutachten sowie ein rheumatologisches Verlaufsgutachten ein, welche am 17. September 2015 bzw. am 20. Juni 2017 erstattet wurden. Mit Verfügung vom 19. Juli 2017 verneinte sie einen Rentenanspruch. Zur Begründung führte sie aus, die von den Gutachtern aus psychiatrischer Sicht attestierte Arbeitsunfähigkeit von 50 % in allen Tätigkeiten sei aus rechtlicher Sicht nicht relevant; die rheumatologisch begründete Arbeitsunfähigkeit von 20 % ergebe einen nicht rentenbegründenden Invaliditätsgrad von 6 %. Das Versicherungsgericht des Kantons Aargau bestätigte diese Verfügung mit Urteil vom 16. Mai 2018.
+A.b.
+Am 10. Dezember 2020 meldete sich A.________ erneut zum Leistungsbezug an und verwies auf eine rezidivierende depressive Störung, rheumatische Beschwerden und einen Bandscheibenvorfall. Die IV-Stelle nahm neue Abklärungen vor und liess A.________ durch die Dres. med. B.________ und C.________ psychiatrisch und rheumatologisch begutachten. Gestützt auf deren Expertise vom 6. November 2022 verneinte sie mit Verfügung vom 9. November 2023 einen Rentenanspruch mit der Begründung, es liege keine relevante Veränderung der Verhältnisse vor.
+B.
+Das Versicherungsgericht des Kantons Aargau wies die von A.________ gegen diese Verfügung erhobene Beschwerde mit Urteil vom 8. Mai 2024 ab.
+C.
+A.________ lässt Beschwerde in öffentlich-rechtlichen Angelegenheiten führen und beantragen, unter Aufhebung des kantonalen Urteils sei die IV-Stelle zu verpflichten, ihm ab 1. Juni 2021 mindestens eine halbe Invalidenrente auszurichten.
+Die IV-Stelle beantragt die Abweisung der Beschwerde. Die Vorinstanz und das Bundesamt für Sozialversicherungen verzichten auf eine Vernehmlassung.
+Erwägungen:
+1.
+1.1.
+Mit Beschwerde in öffentlich-rechtlichen Angelegenheiten kann namentlich die Verletzung von Bundesrecht gerügt werden (
+Art. 95 lit. a BGG
+). Das Bundesgericht wendet das Recht von Amtes wegen an (
+Art. 106 Abs. 1 BGG
+). Es prüft jedoch - offensichtliche Fehler vorbehalten - grundsätzlich nur die in seinem Verfahren gerügten Rechtsmängel (
+Art. 42 Abs. 1 und 2 BGG
+;
+BGE 148 V 209
+E. 2.2 mit Hinweis). Es legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat (
+Art. 105 Abs. 1 BGG
+). Es kann diesen berichtigen oder ergänzen, wenn er offensichtlich unrichtig ist oder auf einer Rechtsverletzung im Sinne von
+Art. 95 BGG
+beruht und wenn die Behebung des Mangels für den Verfahrensausgang entscheidend sein kann (
+Art. 97 Abs. 1 und
+Art. 105 Abs. 2 BGG
+).
+1.2.
+Am 1. Januar 2022 traten im Zuge der Weiterentwicklung der IV (WEIV; Änderung vom 19. Juni 2020, AS 2021 705, BBl 2017 2535) revidierte Bestimmungen des IVG, ATSG und der IVV in Kraft. Die dem hier angefochtenen Urteil zugrundeliegende Verfügung erging zwar nach diesem Zeitpunkt, betrifft jedoch aufgrund der Neuanmeldung des Beschwerdeführers im Jahr 2020 Leistungen mit einem allfälligen Anspruchsbeginn vor dem 31. Dezember 2021. Nach den intertemporalrechtlichen Grundsätzen ist bei einem dauerhaften Sachverhalt, der - wie hier - teilweise vor und teilweise nach dem Inkrafttreten der neuen Gesetzgebung eingetreten ist, der Rentenanspruch für die erste Periode nach den altrechtlichen Bestimmungen und für die zweite Periode nach den neuen Normen zu prüfen (Urteil 9C_559/2024 vom 11. März 2025 E. 2.2.1 mit Hinweisen). Da die massgeblichen rechtlichen Grundlagen zwar revidiert wurden, im vorliegenden Zusammenhang jedoch keine entscheidrelevante Änderung erfahren haben, werden im Folgenden die bis zum 31. Dezember 2020 geltenden Bestimmungen zitiert.
+2.
+Streitig ist, ob die Vorinstanz Bundesrecht verletzte, indem sie einen Rentenanspruch des Beschwerdeführers verneinte. Im Zentrum steht die Frage, ob sie das Vorliegen eines Revisionsgrunds zu Recht in Abrede stellte.
+3.
+Bei einer Neuanmeldung zum Leistungsbezug nach vorgängiger Rentenverweigerung wegen eines zu geringen Invaliditätsgrades finden die Grundsätze zur Rentenrevision (vgl.
+Art. 17 Abs. 1 ATSG
+) analoge Anwendung (
+Art. 87 Abs. 2 und 3 IVV
+;
+BGE 130 V 71
+E. 3.2.3; Urteil 8C_372/2025 vom 21. August 2025 E. 2.2). Nach
+Art. 17 Abs. 1 ATSG
+wird die Rente von Amtes wegen oder auf Gesuch hin für die Zukunft entsprechend erhöht, herabgesetzt oder aufgehoben, wenn sich der Invaliditätsgrad erheblich ändert. Anlass zu einer umfassenden Prüfung des Rentenanspruchs gibt jede wesentliche Änderung der tatsächlichen Verhältnisse, die geeignet ist, den Invaliditätsgrad und damit den Rentenanspruch zu beeinflussen (
+BGE 150 V 67
+E. 4.3.1;
+141 V 9
+E. 2.3 und 6). Revidierbar ist die Invalidenrente namentlich bei einer wesentlichen Änderung des Gesundheitszustandes, der erwerblichen Auswirkungen eines an sich gleich gebliebenen Gesundheitszustandes oder wenn eine andere Art der Bemessung der Invalidität zur Anwendung gelangt (
+BGE 144 I 103
+E. 2.1;
+141 V 9
+E. 2.3; je mit Hinweisen). Zeitlicher Ausgangspunkt für die Beurteilung einer anspruchserheblichen Änderung des Invaliditätsgrades ist die letzte rechtskräftige Verfügung, die auf einer materiellen Prüfung des Rentenanspruchs beruht (
+BGE 134 V 131
+E. 3). Liegt ein Revisionsgrund vor, ist der Rentenanspruch in rechtlicher und tatsächlicher Hinsicht umfassend ("allseitig") zu prüfen, wobei keine Bindung an frühere Beurteilungen besteht (
+BGE 141 V 9
+E. 2.3).
+4.
+Für die Beantwortung der Frage, ob seit der rentenverweigernden Verfügung vom 19. Juli 2017 eine relevante Veränderung eingetreten ist, verwies die Vorinstanz zunächst auf das MEDAS-Gutachten vom 17. September 2015, das rheumatologisch eine seronegative rheumatoide Arthritis vermutet und psychiatrisch eine sonstige anhaltende affektive Störung sowie eine chronische Schmerzstörung mit somatischen und psychischen Faktoren mit unübersehbarer Verdeutlichungstendenz diagnostiziert hatte. In der angestammten Tätigkeit als Maschinenführer sei aus rheumatologischer Sicht eine volle, in einer leidensangepassten leichten Tätigkeit aus psychiatrischer Sicht eine 50-prozentige Arbeitsunfähigkeit attestiert worden. Demgegenüber habe der Regionale Ärztliche Dienst (RAD) den Beschwerdeführer versicherungspsychiatrisch als voll arbeitsfähig eingeschätzt. Im Urteil vom 16. Mai 2018 sei eine invalidisierende Wirkung der psychischen Beeinträchtigungen verneint worden, weil die im Gutachten attestierten funktionellen Beeinträchtigungen anhand der Standardindikatoren nach
+BGE 141 V 281
+nicht erstellt gewesen seien. Gestützt auf das neue Gutachten der Dres. med. B.________ und C.________ vom 6. November 2022, wonach die rheumatologische Situation im Wesentlichen unverändert geblieben sei und sich auch psychiatrisch trotz neu diagnostizierter rezidivierenden depressiven Störung mit gegenwärtig mittelgradiger Episode keine relevante Veränderung ergeben habe, sondern weiterhin eine Arbeitsunfähigkeit von 50 % bestehe, gelangte die Vorinstanz zum Schluss, eine relevante Veränderung des Gesundheitszustandes sei nicht ausgewiesen. Insgesamt liege keine neuanmeldungsrechtlich relevante Veränderung der tatsächlichen Verhältnisse vor, weshalb die IV-Stelle einen Rentenanspruch erneut zu Recht verneint habe.
+5.
+Der Beschwerdeführer rügt eine Verletzung seines Anspruchs auf rechtliches Gehör (
+Art. 29 Abs. 2 BV
+; zur daraus abgeleiteten Begründungspflicht vgl.
+BGE 149 V 156
+E. 6.1 mit Hinweisen; zu den Folgen einer Gehörsverletzung
+BGE 149 I 91
+E. 3.2 mit Hinweis). Er macht geltend, die Vorinstanz habe sich nicht mit seinem Vorbringen auseinandergesetzt, wonach sich die für das strukturierte Beweisverfahren massgebenden tatsächlichen Umstände erheblich verändert hätten und darin ein Revisionsgrund im Sinne von
+Art. 17 Abs. 1 ATSG
+liegen könne. Tatsächlich ging die Vorinstanz darauf nicht ausdrücklich ein, sondern beschränkte sich - nebst der Feststellung eines unveränderten Gesundheitszustandes und Arbeitsfähigkeit - auf den Hinweis, bereits im früheren Gutachten sei psychiatrisch unter Ausklammerung der psychosozialen bzw. soziokulturellen Faktoren von einer verselbstständigten psychischen Störung ausgegangen worden. Ob darin eine Gehörsverletzung liegt, kann jedoch offenbleiben, da sich die Beschwerde aus den nachfolgenden Gründen ohnehin als begründet erweist.
+6.
+6.1.
+Der Beschwerdeführer macht weiter geltend, für die Bejahung eines Revisionsgrunds sei keine direkte anspruchserhebliche Veränderung des Gesundheitszustandes erforderlich. Massgebend sei vielmehr das gesamte anspruchserhebliche Tatsachenspektrum, sofern sich dessen Änderung rechtlich auf den Rentenanspruch auswirke. Dies sei hier mit der erheblichen Veränderung der für den Rentenanspruch massgeblichen Indikatoren im Sinne von
+BGE 141 V 281
+der Fall. Er weist darauf hin, dass die Vorinstanz im Urteil vom 16. Mai 2018 den Rentenanspruch trotz psychiatrisch attestierter 50-prozentiger Arbeitsunfähigkeit verneint hatte, weil es an einer psychotherapeutischen Behandlung gefehlt habe, soziale Ressourcen (Unterstützung durch Ehefrau und Kinder, ausserfamiliäre Kontakte, geregelter Tagesablauf) bestanden hätten und aggravatorische Tendenzen festgestellt worden seien. Nunmehr werde unter anderem eine rezidivierende depressive Störung mit gegenwärtig mittelgradiger depressiver Episode diagnostiziert, die sich auf die Arbeitsfähigkeit auswirke. Seit Februar 2018 befinde er sich in kontinuierlicher psychiatrisch-psychotherapeutischer Behandlung mit mehreren stationären Aufenthalten, sei geschieden, habe den Kontakt zu seinen Kindern verloren und lebe sozial zurückgezogen. Er sei auf die psychiatrische Spitex angewiesen und werde von einer Beiständin in Wohn-, Betreuungs-, Tagesstruktur- und administrativen Belangen unterstützt. Diese Entwicklungen belegten nach seiner Auffassung eine wesentliche Änderung der tatsächlichen Verhältnisse seit der Verfügung vom 19. Juli 2017. Es liege nun ein eigenständiges psychisches Leiden von erheblicher Schwere vor, das auch bei optimaler Behandlung nicht absehbar zu verbessern sei und zu einer anhaltenden Arbeitsunfähigkeit führe. Gemäss neuem Gutachten bestehe zwar eine gewisse Tendenz zur Aggravation, doch seien objektive Befunde und Einschränkungen vorhanden, welche eine anhaltende Arbeitsunfähigkeit begründeten. Aufgrund der gleichmässigen Einschränkung in sämtlichen Lebensbereichen und Behandlungsresistenz sei von einer invalidisierenden psychischen Störung auszugehen. Auch der RAD, der ursprünglich eine invalidisierende Wirkung der psychischen Leiden verneint habe, anerkenne inzwischen, dass auf die aktuelle gutachterliche Einschätzung der Arbeitsunfähigkeit von 50 % abgestellt werden könne. Der von der Vorinstanz festgestellte Sachverhalt sei daher zu berichtigen und zu ergänzen, indem festzustellen sei, dass sich die tatsächlichen Verhältnisse in Bezug auf die massgebenden Indikatoren seit 2017 erheblich verändert hätten. In der Folge sei der Rentenanspruch neu zu prüfen. Gestützt auf eine Arbeitsunfähigkeit von 50 % in angepassten Tätigkeiten ergebe sich ein Invaliditätsgrad von rund 59 %, womit ihm ab 1. Juni 2021 mindestens eine halbe Invalidenrente zustehe.
+6.2.
+Nach dem Gesagten ist unbestritten und steht fest, dass sich der Gesundheitszustand und die Arbeitsfähigkeit des Beschwerdeführers seit der rentenverweigernden Verfügung vom 19. Juli 2017 aus medizinischer Sicht - trotz neu diagnostizierter rezidivierender depressiver Störung - nicht anspruchsrelevant verändert haben und insoweit kein Revisionsgrund im Sinne von
+Art. 17 Abs. 1 ATSG
+vorliegt (zur unterschiedlichen diagnostischen Einordnung eines Leidens im Revisionsverfahren vgl. Urteil 8C_155/2024 vom 11. März 2025 E. 6.1). Zu prüfen bleibt, ob die vom Beschwerdeführer im Übrigen geltend gemachten Änderungen seiner Verhältnisse (namentlich betreffend soziale Ressourcen, Therapiesituation und Aggravationstendenzen) als Revisionsgründe in Betracht kommen.
+6.2.1.
+Weil es praxisgemäss nicht allein in der Zuständigkeit der mit dem konkreten Einzelfall (gutachterlich) befassten Arztpersonen liegt, abschliessend und für die rechtsanwendende Stelle (Verwaltung, Gericht) verbindlich zu entscheiden, ob das medizinisch festgestellte Leiden zu einer (andauernden oder vorübergehenden) Arbeitsunfähigkeit (bestimmter Höhe und Ausprägung) führt (
+BGE 140 V 193
+E. 3.1), ist es im Grundsatz zulässig, einer medizinischen Einschätzung der Arbeitsunfähigkeit die rechtliche Massgeblichkeit abzusprechen, ohne dass das Gutachten seinen Beweiswert verliert (
+BGE 144 V 50
+E. 4.3; Urteil 9C_234/2025 vom 18. November 2025 E. 3.3.1). Insoweit unterliegt jede gutachterliche Einschätzung der Arbeitsunfähigkeit durch den psychiatrischen Sachverständigen der freien Überprüfung durch Verwaltung bzw. Gericht im Lichte von
+BGE 141 V 281
+(
+BGE 148 V 49
+E. 6.2.1). Ein Abweichen von der medizinisch-gutachterlichen Arbeitsunfähigkeitsschätzung ist geboten, wenn die medizinischen Experten nicht unter Beachtung der massgebenden Indikatoren hinreichend und nachvollziehbar begründen, dass, inwiefern und inwieweit wegen der erhobenen Befunde die beruflich-erwerbliche Arbeitsunfähigkeit eingeschränkt ist (
+BGE 148 V 49
+E. 6.2.1).
+Die Vorinstanz verneinte im Urteil vom 16. Mai 2018 eine Einschränkung der Arbeits- und Erwerbsfähigkeit trotz einer psychiatrisch-gutachterlich attestierten Arbeitsunfähigkeit von 50 %. Den psychischen Beeinträchtigungen komme aus rechtlicher Sicht - gestützt auf das mit
+BGE 141 V 281
+eingeführte strukturierte Beweisverfahren - keine invalidisierende Wirkung zu, da die funktionellen Auswirkungen des Leidens nicht als hinreichend erstellt erachtet werden könnten. Mithin sprach die Vorinstanz der medizinischen Arbeitsunfähigkeitsschätzung aus normativen Gründen die rechtliche Massgeblichkeit ab.
+6.2.2.
+Wird der gutachterlich-medizinischen Einschätzung die rechtliche Massgeblichkeit abgesprochen, kann einer rentenansprechenden Person in einem Revisions- oder Neuanmeldungsverfahren nicht einzig unter Hinweis auf eine unveränderte medizinische Arbeitsunfähigkeitsbeurteilung eine Neuprüfung versagt bleiben. Ändern sich die für das strukturierte Beweisverfahren relevanten Gesichtspunkte, verändert sich damit auch das Tatsachenfundament, auf welchem das strukturierte Beweisverfahren und die rechtliche Würdigung der funktionellen Einschränkungen beruhen. Wurde - wie hier - bei der letzten umfassenden Rentenprüfung trotz medizinisch attestierter Arbeitsunfähigkeit eine invalidisierende Wirkung des Gesundheitsschadens unter Hinweis auf bestimmte Standardindikatoren verneint, kann eine spätere Veränderung dieser tatsächlichen Umstände somit grundsätzlich geeignet sein, den Invaliditätsgrad zu beeinflussen. Dies gilt namentlich, wenn die damalige Leistungsablehnung darauf beruhte, dass die funktionellen Auswirkungen der psychischen Störung im Lichte der vorhandenen Ressourcen, der fehlenden Behandlung oder festgestellter Inkonsistenzen nicht als überwiegend wahrscheinlich erschienen. Fallen solche Faktoren später weg oder verändern sie sich wesentlich, kann dies die Beurteilung der funktionellen Auswirkungen und damit die Beweislage entscheidend verändern (vgl. auch Urteil 8C_190/2022 vom 19. August 2022 E. 5.3). Ein gegenteiliges Verständnis würde dazu führen, die einmalige rechtliche Würdigung der Standardindikatoren und damit der funktionellen Auswirkungen eines psychischen Gesundheitsschadens dauerhaft zu verfestigen und die versicherte Person damit von einer Rente auszuschliessen, selbst wenn sich die tatsächlichen Verhältnisse, die zur Rentenverweigerung führten, wesentlich verändert haben. Ein solches Ergebnis wäre mit den revisionsrechtlichen Grundsätzen von
+Art. 17 ATSG
+nicht vereinbar. Freilich genügt nicht jede punktuelle oder banale Änderung in den persönlichen Verhältnissen; erforderlich ist vielmehr eine glaubhaft gemachte wesentliche Änderung der für die Indikatorenprüfung massgebenden tatsächlichen Umstände.
+6.3.
+Zusammenfassend ist damit festzuhalten, dass eine glaubhaft gemachte wesentliche Veränderung der tatsächlichen Umstände, die im Rahmen des strukturierten Beweisverfahrens geeignet ist, im Vergleich zur letztmaligen umfassenden Rentenprüfung aus normativen Gründen zu einer anderen Beurteilung der rechtlichen Massgeblichkeit der medizinischen Arbeitsfähigkeitsschätzung zu führen, grundsätzlich als Sachverhaltsänderung im Sinne von
+Art. 17 Abs. 1 ATSG
+in Betracht kommt. Es verbietet sich in solchen Fällen, einzig unter Hinweis auf eine gleich gebliebene medizinische Arbeitsunfähigkeitsschätzung eine neuanmeldungs- oder revisionsrechtlich relevante Veränderung zu verneinen.
+6.4.
+Die Vorinstanz traf keine Sachverhaltsfeststellungen dazu, ob die vom Beschwerdeführer geltend gemachten und potenziell revisionsbegründenden Veränderungen tatsächlich vorliegen. Indem sie den Sachverhalt insoweit unvollständig feststellte und das Vorliegen eines Revisionsgrunds unter Hinweis auf den im Wesentlichen unveränderten Gesundheitszustand und Arbeitsfähigkeit verneinte, verletzte sie Bundesrecht. Da die erforderlichen Abklärungen in erster Linie von der Verwaltung vorzunehmen sind (
+Art. 43 Abs. 1 ATSG
+;
+BGE 149 V 218
+E. 5.7), ist die Sache an die IV-Stelle zurückzuweisen, damit sie die notwendigen Abklärungen trifft. Erweist sich, dass die geltend gemachten Veränderungen eingetreten und von ihrer Ausprägung her geeignet sind, den Invaliditätsgrad zu beeinflussen, wird sie den Rentenanspruch des Beschwerdeführers umfassend und ohne Bindung an das Ergebnis der früheren Prüfung neu zu beurteilen haben.
+7.
+Hinsichtlich der Prozesskosten gilt die Rückweisung der Sache zu neuem Entscheid praxisgemäss als volles Obsiegen (
+BGE 146 V 28
+E. 7). Die Beschwerdegegnerin hat daher die Gerichtskosten zu tragen und dem Beschwerdeführer eine Parteientschädigung auszurichten (
+Art. 66 Abs. 1 und
+Art. 68 Abs. 1 BGG
+). Zur Neuverlegung der Kosten und der Parteientschädigung des kantonalen Verfahrens ist die Sache an die Vorinstanz zurückzuweisen (
+Art. 67 und
+Art. 68 Abs. 5 BGG
+).
+Demnach erkennt das Bundesgericht:
+1.
+Die Beschwerde wird teilweise gutgeheissen. Das Urteil des Versicherungsgerichts des Kantons Aargau vom 8. Mai 2024 und die Verfügung der IV-Stelle des Kantons Aargau vom 9. November 2023 werden aufgehoben. Die Sache wird zu neuer Verfügung an die IV-Stelle des Kantons Aargau zurückgewiesen. Im Übrigen wird die Beschwerde abgewiesen.
+2.
+Die Gerichtskosten von Fr. 800.- werden der Beschwerdegegnerin auferlegt.
+3.
+Die Beschwerdegegnerin hat den Beschwerdeführer für das bundesgerichtliche Verfahren mit Fr. 3'000.- zu entschädigen.
+4.
+Die Sache wird zur Neuverlegung der Kosten und der Parteientschädigung des vorangegangenen Verfahrens an das Versicherungsgericht des Kantons Aargau zurückgewiesen.
+5.
+Dieses Urteil wird den Parteien, dem Versicherungsgericht des Kantons Aargau und dem Bundesamt für Sozialversicherungen schriftlich mitgeteilt.
+Luzern, 30. April 2026
+Im Namen der IV. öffentlich-rechtlichen Abteilung
+des Schweizerischen Bundesgerichts
+Die Präsidentin:    Viscione
+Der Gerichtsschreiber:    Walther

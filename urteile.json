@@ -1,5 +1,18 @@
 [
     {
+        "aktenzeichen": "INFO_SKIP_BEIDE",
+        "datum": "01.06.2026",
+        "kategorie": "beide",
+        "vorschau": "Keine neuen IV- oder AK-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false
+    },
+    {
         "aktenzeichen": "8C_503/2024",
         "datum": "29.05.2026",
         "kategorie": "iv",

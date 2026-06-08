@@ -1,0 +1,137 @@
+8C_689/2025
+Arrêt du 30 avril 2026
+IVe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux
+Viscione, Présidente,
+Scherrer Reber et Métral.
+Greffier : M. Ourny.
+Participants à la procédure
+Caisse nationale suisse d'assurance en cas d'accidents (CNA), Division juridique, Fluhmattstrasse 1, 6002 Lucerne,
+recourante,
+contre
+A.________,
+représenté par Me Marie-Josée Costa, avocate,
+intimé.
+Objet
+Assurance-accidents (rente d'invalidité; indemnité pour atteinte à l'intégrité),
+recours contre l'arrêt de la Cour de justice de la République et canton de Genève du 28 octobre 2025 (A/4161/2023 - ATAS/822/2025).
+Faits :
+A.
+A.a.
+Le 13 avril 2011, A.________ (ci-après aussi: l'assuré), né en 1979, employé comme installateur sanitaire, s'est blessé à l'épaule gauche en chutant sur un chantier. La Caisse nationale suisse d'assurance en cas d'accidents (CNA) a pris en charge le cas. Par décision du 30 mai 2018, confirmée sur opposition le 5 juillet 2018, celle-ci a mis fin à la prise en charge des frais médicaux au 3 juin 2018 et au versement des indemnités journalières au 31 mars 2015. S'appuyant sur une expertise orthopédique mise en oeuvre par ses soins, elle indiquait qu'en l'absence de séquelles en lien de causalité avec l'accident, l'assuré ne pouvait bénéficier ni d'une rente d'invalidité ni d'une indemnité pour atteinte à l'intégrité (IPAI).
+A.b.
+L'assuré a recouru contre la décision sur opposition du 5 juillet 2018 auprès de la Chambre des assurances sociales de la Cour de justice de la République et canton de Genève (ci-après: la Chambre des assurances sociales). Par arrêt du 19 février 2019, la cour cantonale a partiellement admis le recours, annulé la décision attaquée et renvoyé la cause à la CNA en vue, notamment, de la réalisation d'une nouvelle expertise.
+A.c.
+La CNA a confié de nouvelles expertises aux docteurs B.________, spécialiste en neurologie, et C.________, spécialiste en chirurgie orthopédique et traumatologie de l'appareil locomoteur. Sur la base de ces expertises, elle a, par décision du 8 avril 2022 confirmée sur opposition le 17 novembre 2023, mis un terme à la prise en charge des frais de traitement au 3 juin 2018 et au paiement des indemnités journalières au 31 mars 2015. Contestant toujours l'existence de séquelles ayant un rapport de causalité avec l'accident, elle a nié le droit de l'assuré à une rente d'invalidité et à une IPAI.
+B.
+L'assuré a déféré la décision sur opposition du 17 novembre 2023 à la Chambre des assurances sociales. Entre autres mesures d'instruction, la juridiction cantonale a confié une expertise bidisciplinaire aux docteurs D.________, spécialiste en chirurgie orthopédique et traumatologie de l'appareil locomoteur, et E.________, spécialiste en neurologie. Se fondant sur leurs rapports d'expertise, elle a, par arrêt du 28 octobre 2025, partiellement admis le recours, annulé la décision sur opposition du 17 novembre 2023, dit que l'assuré avait droit à une rente fondée sur un taux d'invalidité de 100 % dès le 9 octobre 2014 ainsi qu'à une IPAI de 27.5 %, et renvoyé la cause à la CNA pour calculs du gain assuré et de la rente et nouvelle décision.
+C.
+La CNA interjette un recours en matière de droit public contre cet arrêt, en concluant à son annulation en tant qu'il reconnaît le droit de A.________ à une rente et à une IPAI, et au renvoi de la cause au tribunal cantonal pour qu'il mette en oeuvre une nouvelle expertise judiciaire et rende une nouvelle décision sur le droit à la rente et à l'IPAI.
+L'intimé conclut au rejet du recours. La cour cantonale et l'Office fédéral de la santé publique ont renoncé à se déterminer.
+Considérant en droit :
+1.
+Le Tribunal fédéral examine d'office sa compétence (
+art. 29 al. 1 LTF
+) et contrôle librement la recevabilité des recours qui lui sont soumis (
+ATF 151 IV 175
+consid. 2;
+151 I 187
+consid. 1).
+1.1.
+Le recours en matière de droit public (
+art. 82 ss LTF
+) est recevable contre les décisions qui mettent fin à la procédure (
+art. 90 LTF
+), contre les décisions partielles (
+art. 91 LTF
+) ainsi que contre les décisions préjudicielles et incidentes qui sont notifiées séparément et qui portent sur la compétence ou sur une demande de récusation (
+art. 92 al. 1 LTF
+). Selon l'
+art. 93 al. 1 LTF
+, les autres décisions préjudicielles et incidentes notifiées séparément peuvent faire l'objet d'un recours si elles peuvent causer un préjudice irréparable (let. a) ou si l'admission du recours peut conduire immédiatement à une décision finale qui permet d'éviter une procédure probatoire longue et coûteuse (let. b).
+1.2.
+Les arrêts qui renvoient la cause à l'autorité inférieure constituent en principe des décisions incidentes car ils ne mettent pas fin à la procédure. Toutefois, lorsque l'autorité inférieure à laquelle la cause est renvoyée ne dispose plus d'aucune marge de manoeuvre parce que le renvoi ne porte que sur l'exécution (par simple calcul) des injonctions de l'autorité supérieure, l'arrêt constitue matériellement une décision finale (
+ATF 145 III 42
+consid. 2.1;
+140 V 321
+consid. 3.2;
+135 V 141
+consid. 1.1). Tel étant le cas en l'espèce, le recours, dirigé contre une décision rendue par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF) et déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi, est recevable.
+2.
+Le litige porte sur le droit de l'intimé à une rente d'invalidité et à une IPAI. Dès lors qu'il s'agit de prestations en espèces de l'assurance-accidents, le Tribunal fédéral n'est pas lié par les faits établis par la juridiction précédente (
+art. 105 al. 3 LTF
+).
+3.
+3.1.
+L'arrêt entrepris expose de manière complète les dispositions légales et les principes jurisprudentiels relatifs notamment à l'allocation de prestations d'assurance en cas d'accident (
+art. 6 ss LAA
+), à l'exigence d'un lien de causalité naturelle et adéquate entre l'événement dommageable et l'atteinte à la santé (
+ATF 142 V 435
+consid. 1;
+129 V 177
+consid. 3.1 et 3.2; cf. aussi
+ATF 148 V 138
+consid. 5.1.1), à la validation du diagnostic de syndrome douloureux régional complexe (SDRC) et à l'admission d'un lien de causalité entre un accident et un tel trouble (cf. arrêt 8C_331/2024 du 29 novembre 2024 consid. 4.3 et les références), ainsi qu'à l'appréciation des preuves, en particulier des rapports médicaux (
+ATF 135 V 465
+consid. 4.4;
+134 V 231
+consid. 5.1;
+125 V 351
+consid. 3; cf. aussi
+ATF 143 V 124
+consid. 2.2.2). Il suffit d'y renvoyer.
+3.2.
+On rappellera qu'au vu de la divergence consacrée par la jurisprudence entre un mandat thérapeutique et un mandat d'expertise (cf.
+ATF 124 I 170
+consid. 4), on ne saurait remettre en cause une expertise ordonnée par l'administration ou le juge et procéder à de nouvelles investigations du seul fait qu'un ou plusieurs médecins traitants ont une opinion distincte de celle exprimée par les experts. Il n'en va différemment que si ces médecins traitants font état d'éléments objectivement vérifiables ayant été ignorés dans le cadre de l'expertise et qui sont suffisamment pertinents pour remettre en cause les conclusions de l'expertise (arrêt 8C_334/2025 du 10 novembre 2025 consid. 3.2 et l'arrêt cité). S'agissant plus particulièrement de la valeur probante d'une expertise judiciaire, le juge ne s'écarte en principe pas sans motifs impérieux des conclusions d'une expertise médicale judiciaire (
+ATF 143 V 269
+consid. 6.2.3.2), la tâche de l'expert étant précisément de mettre ses connaissances spéciales à la disposition de la justice afin de l'éclairer sur les aspects médicaux d'un état de fait donné. Selon la jurisprudence, peut notamment constituer une raison de s'écarter d'une expertise judiciaire le fait que celle-ci contient des contradictions ou qu'une surexpertise ordonnée par le tribunal en infirme les conclusions de manière convaincante. En outre, lorsque d'autres spécialistes émettent des opinions contraires aptes à mettre sérieusement en doute la pertinence des déductions de l'expert, on ne peut pas exclure, selon les cas, une interprétation divergente des conclusions de ce dernier par le juge ou, au besoin, une instruction complémentaire sous la forme d'une nouvelle expertise médicale (
+ATF 135 V 465
+consid. 4.4 et la référence citée).
+4.
+Les juges cantonaux ont observé que le docteur D.________ avait retenu, comme diagnostics séquellaires à l'accident du 13 avril 2011, une fracture-luxation gléno-humérale antéro-inférieure avec fracture de la coracoïde gauche, lésion du labrum antéro-inférieure, petit arrachement du bord inférieur de la glène (lésion de Bankart) et lésion de Hill-Sachs, une légère neuropathie motrice du nerf cubital au coude gauche, un status post capsulite rétractile, un status post SDRC, une raideur du coude gauche, ainsi qu'une raideur et une négligence du membre supérieur gauche. L'expert orthopédique, qui avait fixé la date de stabilisation de l'état de santé au 8 octobre 2014, avait exposé les raisons pour lesquelles il confirmait la présence d'un SDRC, les critères de Budapest étant remplis. À cet égard, il avait indiqué que les lésions à l'épaule gauche avaient évolué vers une épaule gelée, aboutissant à une raideur chronicisée touchant l'épaule et le coude gauches. Toujours selon l'expert, en raison du SDRC, l'intimé ne pouvait pas utiliser son membre supérieur gauche. Celui-ci présentait une incapacité de travail totale dans toute activité; la douleur constante engendrée par le SDRC, avec la raideur de l'épaule gauche et la négligence du membre supérieur gauche, ajoutées à la surcharge douloureuse sur sursollicitation de l'épaule droite, réduisaient à néant la capacité de travail. La juridiction cantonale a précisé que le docteur D.________ s'était également fondé sur des rapports d'observation professionnelle, établis ensuite de deux mesures d'orientation professionnelle accordées par l'assurance-invalidité, qui démontraient une incapacité fonctionnelle à exercer une activité lucrative.
+L'instance précédente a ensuite relevé que le docteur E.________ n'avait retenu aucun diagnostic sur le plan neurologique. L'expert neurologue avait fait état d'une épaule gelée sans substrat neurologique sous-jacent, mais objectivable par une hypomyotrophie segmentaire de sous-utilisation. Il avait souligné que l'épaule gauche n'était pas mobilisable et avait admis que les troubles sensitifs diffus pouvaient être attribués aux séquelles d'un SDRC. Il partageait les conclusions du docteur D.________.
+Reconnaissant une pleine valeur probante à l'expertise des docteurs D.________ et E.________, qui était renforcée par les rapports d'observation professionnelle, les premiers juges ont retenu que l'intimé présentait une incapacité de travail totale dans toute activité, ce qui ouvrait le droit à une rente fondée sur un taux d'invalidité de 100 % dès le 9 octobre 2014. S'agissant de l'IPAI, selon le docteur D.________, la diminution de mobilité de l'épaule jusqu'à l'horizontale correspondait à une atteinte à l'intégrité de 17.5 %, et la diminution de la mobilité du coude à une atteinte à l'intégrité de 10 %. L'intimé avait donc droit à une IPAI de 27.5 %.
+5.
+5.1.
+Contestant la valeur probante de l'expertise du docteur D.________, la recourante lui reproche d'avoir retenu l'existence d'une surcharge douloureuse sur sursollicitation de l'épaule droite, alors que l'intimé ne se serait plaint d'aucune douleur au niveau du membre supérieur droit. À l'examen clinique, l'expert en orthopédie aurait d'ailleurs décrit un membre supérieur droit présentant une mobilité, une force et une sensibilité parfaitement normales. Il aurait estimé que ce membre ne pouvait pas être utilisé dans le cadre d'une activité lucrative sur la seule base d'une notice téléphonique du 20 novembre 2015 entre l'assureur-accidents et l'assurance-invalidité, qui mentionne une inflammation et des douleurs du côté droit.
+5.2.
+Dans son rapport d'expertise, le docteur D.________ a relevé qu'un SDRC pouvait s'étendre aux articulations adjacentes à la région anatomique atteinte par le traumatisme, voire même, dans certains cas, à un membre controlatéral. Il a indiqué que dans le cas d'espèce, le fait que l'examen clinique n'avait pas montré de raideur ou de perte de force de l'épaule droite n'impliquait pas que le membre supérieur droit pouvait être utilisé dans le cadre d'une activité lucrative. Il précisait que les essais en ce sens avaient échoué, faisant ainsi allusion aux deux mesures d'orientation professionnelle auxquelles l'intimé a participé, la première auprès de l'Organisation romande pour l'intégration et la formation (ORIF) entre le 19 janvier et le 17 avril 2015, la seconde auprès de la fondation PRO (ci-après: PRO) du 19 octobre 2015 au 17 janvier 2016. Selon le rapport d'évaluation de l'ORIF du 1
+er
+avril 2015, le fait pour l'intimé de se servir uniquement du bras droit entraînait des inflammations au niveau de l'épaule [droite]. Aux termes du rapport de PRO du 14 mars 2016, seule la main droite pouvait être sollicitée, mais de façon limitée, car à force de compenser le côté gauche accidenté par le bras droit, l'intimé avait développé une importante tendinite du côté droit. Il ressort d'ailleurs d'un rapport du Service médical régional (SMR) de l'assurance-invalidité du 19 juin 2015 - établi entre les deux mesures d'orientation professionnelle - que l'intimé se plaignait de douleurs à l'épaule droite et au coude droit. En décembre 2015, il a déclaré à une collaboratrice de la recourante qu'il avait forcé sur le bras droit durant son stage auprès de PRO, ce qui avait provoqué une inflammation. Tant les observateurs de l'ORIF que ceux de PRO ont fait état d'importantes limitations et de douleurs multiples allant au-delà de la simple impossibilité d'utiliser le membre supérieur gauche, avec pour conséquence une capacité de travail extrêmement réduite. Les spécialistes de PRO ont estimé que l'intimé n'était pas en capacité d'occuper un poste de façon durable, même dans un environnement protégé. Comme l'ont souligné les premiers juges, l'expert judiciaire ne pouvait pas faire fi des rapports d'observation professionnelle, et à défaut d'une activité récente nécessitant l'utilisation accrue du bras droit, il n'y avait pas de raison qu'il identifie des limitations du membre supérieur droit à l'examen clinique. L'appréciation de cet expert ne prête pas le flanc à la critique. Le grief de la recourante, qui ne se prévaut d'aucun avis médical critiquant la position du docteur D.________, s'avère mal fondé.
+6.
+6.1.
+La recourante reproche en outre au docteur D.________ d'avoir, de manière contradictoire, retenu des limitations fonctionnelles en raison de lombalgies communes, après avoir pourtant indiqué que ce diagnostic n'avait pas d'impact sur la capacité de travail de l'intimé.
+6.2.
+L'expert judiciaire a certes classé les "lombalgies communes non déficitaires" parmi les troubles sans répercussion sur la capacité de travail (cf. ch. 4.2.1, p. 69 du rapport d'expertise du 24 mars 2025), avant de mentionner, au titre de restrictions fonctionnelles, que ces lombalgies causaient une limitation du port de charges à 5 kilos et empêchaient le travail en porte-à-faux, l'utilisation d'échelles ou d'escabeaux ainsi que la position debout et assise prolongée (cf. ch. 6.1.1, p. 72). Il n'a toutefois pas retenu un lien de causalité entre l'accident du 13 avril 2011 et les lombalgies (cf. ch. 5, p. 71), et n'a pas imputé l'incapacité de travail induite par cet accident à ces douleurs, mais aux conséquences du SDRC (cf. ch. 7.2, p. 72). Dès lors, la contradiction relevée par la recourante ne remet pas en cause l'appréciation de l'expert, en tant qu'elle porte sur la capacité de travail en lien avec les affections post-traumatiques.
+7.
+Dans un dernier grief, la recourante soutient que le droit à la rente d'invalidité ne peut pas prendre effet le 9 octobre 2014, puisque l'intimé a perçu des indemnités journalières jusqu'au 31 mars 2015. Cette critique est également dénuée de pertinence. Le docteur D.________ a situé la date de stabilisation de l'état de santé au 8 octobre 2014. En application de l'
+art. 19 al. 1 LAA
+, les juges cantonaux ont fixé le début du droit à la rente d'invalidité au 9 octobre 2014, ce à quoi la recourante ne trouve rien à redire. Ils ont annulé la décision sur opposition du 17 novembre 2023, qui fixait notamment le versement des indemnités journalières jusqu'au 31 mars 2015. Il appartient désormais à la recourante de régler le versement des indemnités journalières en tenant compte de la naissance du droit à la rente d'invalidité le 9 octobre 2014.
+8.
+Il s'ensuit que le recours doit être rejeté. La recourante, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+). L'intimé, qui obtient gain de cause, a droit à des dépens à la charge de la recourante (
+art. 68 al. 1 et 2 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge de la recourante.
+3.
+La recourante versera à l'intimé la somme de 3'000 fr. à titre de dépens pour la procédure devant le Tribunal fédéral.
+4.
+Le présent arrêt est communiqué aux parties, à la Chambre des assurances sociales de la Cour de justice de la République et canton de Genève et à l'Office fédéral de la santé publique.
+Lucerne, le 30 avril 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+Le Greffier :    Ourny

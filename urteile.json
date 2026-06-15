@@ -1,5 +1,31 @@
 [
     {
+        "aktenzeichen": "8C_307/2026",
+        "datum": "15.06.2026",
+        "kategorie": "iv",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false,
+        "vorschau": "Invalidenversicherung (Prozessvoraussetzung)",
+        "zusammenfassung": "**Sachverhalt & Anträge**\nDie IV-Stelle für Versicherte im Ausland (IVSTA) sprach A. mit Verfügung vom 27. Januar 2023 ab 1. September 2020 eine ganze Rente und ab 1. Juli 2021 eine Viertelsrente der Invalidenversicherung zu. Das Bundesverwaltungsgericht bestätigte diese Verfügung mit Urteil vom 11. März 2026. A. erhob dagegen Beschwerde beim Bundesgericht.\n\n**Streitig**\nStrittig ist, ob das Bundesverwaltungsgericht die Rentenabstufung zu Recht bestätigt hat. A. macht im Wesentlichen eine Verschlechterung seines Gesundheitszustands geltend und verweist dabei auf einen Bericht von Dr. med. M., Lingenau (Österreich), vom 5. Mai 2026.\n\n**Entscheidung**\nDas Bundesgericht tritt auf die Beschwerde nicht ein (E. 4).\n\nA. zeigt nicht auf, inwieweit die von der Vorinstanz getroffenen Sachverhaltsfeststellungen offensichtlich unrichtig oder sonstwie bundesrechtswidrig sein sollen (E. 3). Ebenso wenig bringt er vor, weshalb die darauf beruhenden Erwägungen gegen Bundesrecht verstossen oder einen anderen Beschwerdegrund gesetzt haben könnten (E. 3).\n\nDer von A. angerufene Bericht von Dr. med. M. vom 5. Mai 2026 ist nach dem vorinstanzlichen Urteil vom 11. März 2026 entstanden und stellt damit ein echtes Novum dar, das in jedem Fall unzulässig ist (E. 1.2, E. 3). Die blosse Behauptung einer Verschlechterung des Gesundheitszustands unter Verweis auf dieses unzulässige Beweismittel genügt den Begründungsanforderungen nach Art. 42 Abs. 1 und 2 BGG nicht (E. 3).\n\nDa dieser Begründungsmangel offensichtlich ist, tritt das Bundesgericht auf die Beschwerde im vereinfachten Verfahren nach Art. 108 Abs. 1 lit. b BGG nicht ein (E. 4).",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://02-06-2026-8C_307-2026&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "INFO_SKIP_AK",
+        "datum": "15.06.2026",
+        "kategorie": "ak",
+        "vorschau": "Keine neuen AK-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false
+    },
+    {
         "aktenzeichen": "8C_3/2026",
         "datum": "12.06.2026",
         "kategorie": "iv",

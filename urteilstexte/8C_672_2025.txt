@@ -1,0 +1,235 @@
+8C_672/2025
+Arrêt du 28 mai 2026
+IVe Cour de droit public
+Composition
+Mmes et MM. les Juges fédéraux
+Viscione, Présidente,
+Maillard, Heine, Scherrer Reber et Métral.
+Greffier : M. Ourny.
+Participants à la procédure
+A.________,
+représenté par Me Andres Perez, avocat,
+recourant,
+contre
+Office de l'assurance-invalidité pour les assurés résidant à l'étranger,
+avenue Edmond-Vaucher 18, 1203 Genève,
+intimé.
+Objet
+Assurance-invalidité (procédure de première instance; condition de recevabilité),
+recours contre l'arrêt du Tribunal administratif fédéral du 14 octobre 2025 (C-3412/2025).
+Faits :
+A.
+Par décisions séparées du 21 mars 2025, notifiées le 25 mars suivant, l'Office de l'assurance-invalidité pour les assurés résidant à l'étranger (OAIE) a alloué à A.________ (ci-après aussi: l'assuré) une rente entière d'invalidité du 1
+er
+mai 2016 au 31 mai 2019, trois quarts de rente du 1
+er
+août 2019 au 31 janvier 2020, une rente entière du 1
+er
+février au 30 septembre 2020 et du 1
+er
+septembre 2021 au 31 janvier 2023, ainsi qu'une rente correspondant à 40 % d'une rente entière à partir du 1
+er
+février 2023.
+B.
+Le 9 mai 2025, l'assuré - agissant par l'entremise de son avocat, M
+e
+Andres Perez - a déféré les décisions de l'OAIE au Tribunal administratif fédéral (TAF). Son recours, déposé par voie électronique, était muni de la signature électronique qualifiée de son mandataire, au sens de la loi fédérale du 18 mars 2016 sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (loi sur la signature électronique [SCSE]; RS 943.03) et de l'
+art. 14 al. 2
+bis
+CO
+.
+Par arrêt du 14 octobre 2025, la juge unique du TAF a déclaré le recours irrecevable, motif pris qu'en l'absence de signature manuscrite originale du recourant ou de son mandataire, il ne satisfaisait pas aux exigences de forme définies par la loi.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt, en concluant à son annulation, à ce que son recours électronique du 9 mai 2025 soit déclaré recevable et à ce que la cause soit renvoyée au TAF pour instruction et décision sur le fond. À titre subsidiaire, il conclut à l'annulation de l'arrêt attaqué et au renvoi de la cause au TAF pour régulariser le recours, plus subsidiairement pour instruction et nouvelle décision quant à la recevabilité du recours.
+L'intimé conclut au rejet du recours. Le TAF et l'Office fédéral des assurances sociales ont renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par le TAF (
+art. 86 al. 1 let. a LTF
+). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Eu égard toutefois à l'exigence de motivation qu'impose l'
+art. 42 al. 2 LTF
+, il n'examine en principe que les griefs invoqués, sauf en cas d'erreurs juridiques manifestes (
+ATF 151 IV 338
+consid. 2.3.5;
+146 IV 297
+consid. 1.2;
+142 III 402
+consid. 2.6). Il fonde son raisonnement juridique sur les faits retenus par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte - notion qui correspond à celle d'arbitraire au sens de l'
+art. 9 Cst.
+(
+ATF 150 II 346
+consid. 1.6;
+149 II 337
+consid. 2.3;
+148 V 366
+consid. 3.3) - ou en violation du droit au sens de l'
+art. 95 LTF
+(cf.
+art. 105 al. 2 LTF
+). Si le recourant entend s'écarter des constatations de fait de l'autorité précédente, il doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+seraient réalisées et la correction du vice susceptible d'influer sur le sort de la cause (
+art. 97 al. 1 LTF
+); à défaut, un état de fait divergent de celui de la décision attaquée ne peut pas être pris en compte (
+ATF 149 II 337
+consid. 2.3;
+148 V 366
+consid. 3.3;
+145 V 188
+consid. 2).
+3.
+3.1.
+Le litige porte sur la recevabilité du recours déposé le 9 mai 2025 auprès du TAF contre les décisions de l'intimé du 21 mars 2025.
+3.2.
+Sur la forme, l'arrêt contesté est rendu en une phrase, sur près de sept pages ("Vu [...] et considérant que [...]), ce qui rend plus difficile sa compréhension par le justiciable (cf. arrêt 7B_178/2026 du 13 mars 2026 consid. 2). Le TAF est invité à prêter une attention particulière à ce point à l'avenir.
+4.
+Dans son arrêt, l'instance précédente a relevé que selon l'
+art. 37 LTAF
+(RS 173.32), la procédure devant le TAF était régie par la PA (RS 172.021). Toutefois, conformément à l'
+art. 3 let
+. d
+bis
+PA, la procédure en matière d'assurances sociales n'était pas régie par la PA dans la mesure où la LPGA était applicable; tel était le cas en l'espèce dans les limites des
+art. 1 al. 1 LAI
+et 2 LPGA. Or la LPGA ne prévoyait pas que les écrits puissent être transmis à l'autorité par voie électronique. L'
+art. 55 al. 1
+bis
+LPGA
+prévoyait uniquement une délégation de compétence en faveur du Conseil fédéral, lequel pouvait déclarer applicables à la procédure en matière d'assurances sociales les dispositions de la PA relatives à la communication électronique avec les autorités. Parmi ces dispositions figurait l'
+art. 21a PA
+, qui prévoyait que les écrits pouvaient être transmis à l'autorité par voie électronique et qu'ils devaient être munis de la signature électronique qualifiée de la partie ou de son mandataire, au sens de la la loi sur la signature électronique. À ce jour, le Conseil fédéral n'avait cependant pas fait usage de la compétence qui lui était donnée par l'
+art. 55 al. 1
+bis
+LPGA
+, hormis en matière d'assurance-chômage. Ajoutant qu'il n'était pas admissible de se fonder sur l'
+art. 55 al. 1 LPGA
+pour appliquer de manière subsidiaire la PA, le TAF a constaté que s'agissant des procédures régies par la LPGA, il n'existait pas de base légale relative à la communication électronique des administrés avec les autorités. Par conséquent, le recours du 9 mai 2025, déposé par voie électronique, ne satisfaisait pas aux exigences de forme de l'
+art. 52 al. 1 PA
+, en l'absence de la signature manuscrite originale du recourant ou de son mandataire. On pouvait attendre de ce dernier, qui était avocat, qu'il sache que la voie électronique n'était pas possible dans le domaine de l'assurance-invalidité. Par ailleurs, dès lors que le recours avait été déposé le dernier jour du délai de recours, le défaut de signature ne pouvait pas être réparé avant l'échéance de ce délai. Le recours devait donc être déclaré irrecevable.
+5.
+5.1.
+Le recourant se plaint d'une violation du droit fédéral, en particulier de l'
+art. 52 al. 2 et 3 PA
+, ainsi que de violations de l'interdiction du formalisme excessif (
+art. 29 al. 1 Cst.
+), du droit d'être entendu (
+art. 29 al. 2 Cst.
+), du principe de la bonne foi (
+art. 5 al. 3 Cst.
+) et de l'interdiction de l'abus de droit (
+art. 2 al. 2 CC
+). Soutenant que son recours du 9 mai 2025 remplissait toutes les conditions de recevabilité, il observe que durant plusieurs années, le TAF a admis sans réserve, également en matière d'assurance-invalidité, la recevabilité des recours et autres écritures transmis par voie électronique. Il précise que son conseil, M
+e
+Andres Perez, pratique lui-même depuis plusieurs années et de manière constante la communication électronique avec ce tribunal, notamment dans les cas relevant de l'assurance-invalidité, et que jusqu'à l'arrêt rendu dans la présente cause, aucune des écritures qu'il a produites n'a été déclarée irrecevable. Il estime qu'un tel revirement soudain de pratique imposait au minimum l'octroi d'un délai de régularisation du recours, afin que celui-ci puisse être signé manuscritement.
+5.2.
+5.2.1.
+Selon l'
+art. 37 LTAF
+, la procédure devant le Tribunal administratif fédéral est régie par la PA, pour autant que la LTAF n'en dispose pas autrement. L'
+art. 21a PA
+, dans sa teneur en vigueur depuis le 1
+er
+janvier 2017, prévoit que les écrits peuvent être transmis à l'autorité par voie électronique (al. 1); ils doivent être munis de la signature électronique qualifiée de la partie ou de son mandataire au sens de la loi du 18 mars 2016 sur la signature électronique (al. 2). Aux termes de l'
+art. 3 let
+. d
+bis
+PA, la procédure en matière d'assurances sociales n'est pas régie par la PA, dans la mesure où la LPGA est applicable.
+Selon l'
+art. 55 LPGA
+, les points de procédure qui ne sont pas réglés de manière exhaustive aux art. 27 à 54 LPGA ou par les dispositions des lois spéciales sont régis par la PA (al. 1); le Conseil fédéral peut déclarer applicables aux procédures régies par la LPGA les dispositions de la loi fédérale du 20 décembre 1968 sur la procédure administrative relatives à la communication électronique avec les autorités (al. 1
+bis
+); la procédure devant une autorité fédérale est régie par la PA, sauf lorsqu'il s'agit de prestations, créances et injonctions relevant du droit des assurances sociales (al. 2).
+5.2.2.
+Dans son raisonnement, le TAF s'est appuyé sur l'
+art. 55 al. 1
+bis
+LPGA
+, en partant de l'idée que cette disposition s'appliquait à la procédure de recours en matière d'assurance-invalidité devant le TAF, en vertu de l'
+art. 3 let
+. d
+bis
+PA. Ce présupposé s'avère toutefois erroné. L'
+art. 55 LPGA
+ne concerne que la procédure administrative non contentieuse et la procédure d'opposition, qui sont régies par les art. 27 à 54 LPGA; ni le renvoi de l'
+art. 55 al. 1 LPGA
+, ni l'
+art. 55 al. 1
+bis
+LPGA
+ne s'appliquent à la procédure de recours (cf.
+ATF 132 V 418
+consid. 2.3.1; arrêt 9C_576/2025 du 12 mars 2026 consid. 3.2; SKOULIKAS / DÉFAGO GAUDIN, in Commentaire romand, Loi sur la partie générale des assurances sociales, 2
+e
+éd. 2025, n° 11 ad
+art. 55 LPGA
+; DIANA OSWALD, in Kommentar zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts [ATSG], 5
+e
+éd. 2024, n° 23 ad
+art. 55 LPGA
+). Devant les tribunaux cantonaux des assurances, la procédure de recours est réglée par les
+art. 56 ss LPGA
+. La procédure de recours devant le TAF est en revanche régie par la LTAF et la PA exclusivement (cf.
+art. 37 LTAF
+; JEAN MÉTRAL, in Commentaire romand, Loi sur la partie générale des assurances sociales, op. cit., n° 3 ad
+art. 56 LPGA
+; MIRIAM LENDFERS, in Kommentar zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts [ATSG], op. cit., n° 25 ad
+art. 57 LPGA
+et n° 20 ad
+art. 61 LPGA
+; GHISLAINE FRÉSARD-FELLAY, in Droit suisse de la sécurité sociale, Volume II, 2015, p. 573 n. 245; ANDREAS TRAUB, in Recht der Sozialen Sicherheit, 2014, § 5 n. 5.8). Il ressort d'ailleurs des travaux préparatoires à l'adoption de la LPGA que le législateur souhaitait soumettre à la LPGA uniquement la procédure de recours devant les tribunaux cantonaux, à l'exclusion de celle se déroulant devant les instances fédérales de recours. Au début du processus législatif, les exigences minimales de la procédure de recours étaient réglées à l'
+art. 67 LPGA
+. Ces règles de procédure ont finalement fait l'objet de l'
+art. 61 LPGA
+. En 1991, le Conseil des États proposait un art. 67 al. 1 libellé comme suit: "La procédure devant les autorités fédérales de recours autres que le Tribunal fédéral des assurances est réglée par la loi fédérale sur la procédure administrative". L'art. 67 al. 2 énumérait les exigences minimales que la procédure devant les autorités cantonales de recours devait respecter. Dans son rapport du 26 mars 1999, la Commission du Conseil national de la sécurité sociale et de la santé a proposé la suppression de l'al. 1; elle soulignait que la LPGA régissait uniquement la procédure par-devant les tribunaux cantonaux et qu'il n'était donc pas opportun de réglementer dans la LPGA la procédure devant les instances fédérales de recours (cf. FF 1999 IV 4168, p. 4274 s.).
+Il résulte de ce qui précède que les règles de procédure contenues dans la LPGA ne sont pas applicables à la procédure de recours devant le TAF. La réserve de l'
+art. 3 let
+. d bis PA concerne uniquement la procédure administrative régie par les art. 27 à 54 LPGA. Dans l'arrêt entrepris, hormis en ce qui concerne l'
+art. 21a PA
+, l'instance précédente se réfère d'ailleurs aussi aux règles de procédure de la PA, en particulier l'
+art. 52 PA
+. Aussi le TAF ne pouvait-il pas se fonder sur l'
+art. 55 al. 1
+bis
+LPGA
+pour conclure que dans le cas d'espèce, relevant de l'assurance-invalidité, le mémoire de recours du 9 mai 2025 ne pouvait pas lui être remis par voie électronique.
+Pour le reste, rien n'indique qu'en adoptant l'
+art. 21a PA
+, le législateur ait souhaité créer une exception concernant les procédures fédérales de recours en matière d'assurances sociales, avec pour effet d'exclure la transmission d'écrits par voie électronique au TAF dans cette matière, à l'inverse de toutes les autres. Une telle volonté ne ressort pas des travaux préparatoires (cf. FF 2014 957). En vertu de l'
+art. 21a PA
+, une écriture peut donc être remise au TAF par voie électronique dans une procédure en assurance-invalidité.
+5.2.3.
+Il s'ensuit que le recours déposé au TAF le 9 mai 2025, muni de la signature électronique qualifiée du mandataire du recourant au sens de la loi sur la signature électronique, est recevable, les autres conditions de recevabilité ne faisant pas débat. Le recours déposé contre l'arrêt du 14 octobre 2025 doit donc être admis, avec pour conséquence l'annulation de ce arrêt et le renvoi de la cause au TAF pour nouvelle décision sur le fond.
+6.
+L'intimé, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+). Le recourant a droit à des dépens à charge de l'intimé (
+art. 68 al. 1 et 2 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est admis. L'arrêt du Tribunal administratif fédéral du 14 octobre 2025 est annulé et la cause renvoyée à cette autorité pour nouvelle décision.
+2.
+Les frais judiciaires, arrêtés à 500 fr., sont mis à la charge de l'intimé.
+3.
+L'intimé versera au recourant la somme de 3'000 fr. à titre de dépens pour la procédure devant le Tribunal fédéral.
+4.
+Le présent arrêt est communiqué aux parties, au Tribunal administratif fédéral, Cour III, et à l'Office fédéral des assurances sociales.
+Lucerne, le 28 mai 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+Le Greffier :    Ourny

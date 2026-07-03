@@ -1,0 +1,172 @@
+8C_676/2025
+Arrêt du 16 juin 2026
+IVe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Viscione, Présidente,
+Maillard et Métral.
+Greffière : Mme Castella.
+Participants à la procédure
+A.________,
+représenté par Me Jean-Michel Duc, avocat,
+recourant,
+contre
+Office de l'assurance-invalidité pour le canton de Vaud,
+avenue du Général-Guisan 8, 1800 Vevey,
+intimé.
+Objet
+Assurance-invalidité (allocation pour impotent),
+recours contre l'arrêt du Tribunal cantonal du canton
+de Vaud du 14 octobre 2025 (AI 112/24 - 317/2025).
+Faits :
+A.
+A.________, né en 1964, a sollicité des prestations de l'assurance-invalidité en novembre 2020. L'Office de l'assurance-invalidité pour le canton de Vaud (ci-après: l'OAI) a instruit la demande notamment en ordonnant une expertise pluridisciplinaire. Celle-ci a été confiée au Centre médical d'expertises CEMEDEX SA (ci-après: le Cemedex), qui a établi son rapport le 9 octobre 2023. Se fondant sur les conclusions des experts, auxquelles s'était rallié le service médical régional (SMR) de l'assurance-invalidité, ainsi que sur un rapport d'enquête à domicile du 8 décembre 2023, l'OAI a rendu deux décisions, par lesquelles il a, d'une part, alloué une rente entière d'invalidité à l'assuré et, d'autre part, nié le droit de celui-ci à une allocation pour impotent.
+B.
+L'assuré a saisi la Cour des assurances sociales du Tribunal cantonal du canton de Vaud d'un recours contre la décision de refus d'allocation pour impotent rendue le 22 mars 2024. Par arrêt du 14 octobre 2025, la cour cantonale a rejeté le recours et confirmé la décision entreprise.
+C.
+A.________ forme un recours en matière de droit public contre cet arrêt en concluant à sa réforme dans le sens de la reconnaissance de son droit à une allocation pour impotent de degré moyen dès le 27 novembre 2020. À titre subsidiaire, il requiert l'annulation de l'arrêt entrepris et le renvoi de la cause à l'OAI pour nouvelles instruction et décision.
+L'intimé conclut implicitement au rejet du recours. La cour cantonale et l'Office fédéral des assurances sociales ont renoncé à se déterminer.
+Le recourant a déposé une écriture complémentaire le 16 mars 2026.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le recours en matière de droit public peut être interjeté pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il statue par ailleurs sur la base des faits établis par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Conformément à l'
+art. 106 al. 2 LTF
+, la partie recourante doit expliquer de manière circonstanciée en quoi ces conditions seraient réalisées; à défaut, il n'est pas possible de tenir compte d'un état de fait qui diverge de celui qui est contenu dans l'acte attaqué (
+ATF 148 I 160
+consid. 3 et les références).
+3.
+3.1.
+Le litige porte sur le droit éventuel du recourant à une allocation pour impotent, singulièrement sur la nécessité d'une aide régulière et importante pour accomplir certains actes ordinaires de la vie ou d'un accompagnement pour faire face aux nécessités de la vie.
+3.2.
+L'arrêt attaqué expose de manière complète les dispositions légales et les principes jurisprudentiels relatifs à la notion d'impotence (
+art. 9 LPGA
+), aux conditions du droit à une allocation pour impotent (
+art. 42 LAI
+), aux critères d'évaluation de l'impotence (
+art. 37 RAI
+[RS 831.201]) et à la notion d'accompagnement pour faire face aux nécessités de la vie (
+art. 38 RAI
+; en particulier
+ATF 133 V 450
+), ainsi qu'à l'appréciation des preuves et la valeur probante des rapports d'enquête pour l'évaluation du degré d'impotence (
+ATF 140 V 543
+consid. 3.2.1;
+130 V 61
+consid. 6;
+128 V 93
+). Il suffit d'y renvoyer.
+3.3.
+L'interprétation et l'application correctes de la notion juridique de l'impotence, ainsi que les exigences relatives à la valeur probante de rapports d'enquête au domicile de l'assuré relèvent de questions de droit, que le Tribunal fédéral examine librement (
+art. 95 let. a LTF
+). Les constatations de la juridiction cantonale relatives aux limitations fonctionnelles de la personne assurée pour accomplir certains actes ordinaires de la vie, fondées sur le résultat d'examens médicaux et sur un rapport d'enquête à domicile ayant valeur probante, constituent en revanche des questions de fait, soumises au Tribunal fédéral sous un angle restreint (
+art. 105 al. 2 LTF
+; cf.
+ATF 132 V 393
+consid. 3.2; arrêt 9C_336/2025 du 12 mai 2026 consid. 3.4 et les arrêt cités).
+4.
+4.1.
+Les juges cantonaux ont retenu que l'impotence du recourant devait s'examiner à la lumière des restrictions énumérées dans le rapport du Cemedex et que les rapports établis par les différents médecins traitants du recourant ne justifiaient pas la reconnaissance de limitations fonctionnelles supplémentaires. À propos du rapport d'expertise, ils ont relevé qu'en dépit des avis nuancés émis dans chaque spécialité, les médecins du Cemedex avaient consensuellement conclu que le recourant était autonome dans l'accomplissement des actes ordinaires de la vie et n'avait pas besoin d'un accompagnement pour faire face aux nécessités de la vie (cf. rapport d'expertise du 9 octobre 2023 p. 10 et 11). Ils ont retenu dans ce contexte les restrictions du recourant liées au trouble dépressif récurrent, des problèmes d'équilibre à la station debout, un manque de force dans le membre supérieur gauche, ainsi que la nécessité d'épargner le rachis (éviter les mouvements en porte-à-faux, en rotation, le port de charge, la marche et le piétinement prolongés, les escaliers, le travail en hauteur et les engins vibrants). Enfin, ils ont relevé que le recourant avait conservé une capacité de travail résiduelle de 70 % dans une activité adaptée jusqu'en 2020, que les problèmes psychiques avaient ensuite réduite à néant dès janvier 2021.
+4.2.
+À propos du rapport d'enquête à domicile du 8 décembre 2023 - qui concluait à l'absence de tout besoin d'aide pour les actes ordinaires de la vie et d'accompagnement pour faire face aux nécessités de la vie -, la cour cantonale a considéré qu'il était étayé sur les points pertinents et se fondait sur les explications fournies spontanément par le recourant. Ce document remplissait les réquisits jurisprudentiels pour se voir accorder pleine valeur probante.
+5.
+5.1.
+Le recourant se plaint d'une violation de son droit d'être entendu (29 al. 2 Cst.). Il reproche à la cour cantonale de s'être fondée à plusieurs reprises sur le rapport d'expertise du Cemedex pour nier son besoin d'aide, sans avoir discuté les arguments soulevés par lui à l'encontre de ce rapport, à savoir des imprécisions et contradictions.
+5.2.
+Un tel grief est mal fondé, dès lors que les garanties constitutionnelles découlant de l'
+art. 29 al. 2 Cst.
+n'imposent pas à l'autorité d'exposer et de discuter tous les arguments invoqués par les parties. Il n'y a violation du droit d'être entendu que si l'autorité ne satisfait pas à son devoir minimum d'examiner les problèmes pertinents (
+ATF 142 III 433
+consid. 4.3.2;
+138 I 232
+consid. 5.1), ce qui n'est manifestement pas le cas en l'espèce. Pour le reste, le grief se confond largement avec celui dirigé à l'encontre du rapport d'expertise et relevant d'une question d'arbitraire dans l'appréciation des preuves. Il sera examiné sous cet angle.
+6.
+6.1.
+Le recourant invoque l'absence de valeur probante du rapport d'expertise du Cemedex, soutenant que celui-ci contient des contradictions, notamment sur la question du besoin d'aide pour la tenue du ménage et des courses, telle qu'examinée par l'expert en chirurgie orthopédique et traumatologie de l'appareil locomoteur. Quant au spécialiste en neurologie, il aurait reconnu que le recourant était limité pour prendre sa douche ou pour s'habiller et bénéficiait de l'aide de son amie pour les activités du quotidien. Il aurait ainsi retenu le besoin d'aide pour les activités du quotidien (cf. p. 70 et 76 du rapport d'expertise), contrairement aux autres experts. Le recourant invoque également l'absence de valeur probante du rapport d'enquête à domicile, du fait que l'enquêtrice a oublié de chiffrer en heures et en minutes son besoin d'aide, de sorte qu'il serait impossible de déterminer si cette aide est raisonnablement exigible et si l'accompagnement pour faire face aux nécessités de la vie est régulier.
+6.2.
+On ne peut dénier toute valeur probante au rapport d'expertise sur la seule base des éléments soulignés par le recourant, sans lecture d'ensemble du document. L'expert en chirurgie orthopédique et traumatologie de l'appareil locomoteur a certes évoqué une aide probablement nécessaire pour la tenue du ménage et éventuellement les courses mais il l'a mise en relation avec des facteurs contextuels et autres pathologies, en concluant que du point de vue orthopédique il n'y avait pas de nécessité d'aide régulière (cf. rapport d'expertise p. 10 et 33). En ce qui concerne la partie neurologique, le besoin d'aide évoqué dans le recours se fonde sur les indications que le recourant a lui-même données à l'expert (cf. rapport d'expertise p. 70). Ce dernier a certes reconnu un besoin d'aide, mais uniquement lors de la survenance de céphalées (cf. rapport d'expertise p. 76), précisant que cette aide n'était sûrement pas permanente (cf. rapport d'expertise p. 10 et 76). Quant au rapport d'enquête à domicile, on ne saurait reprocher à l'enquêtrice de n'avoir pas chiffré un besoin qu'elle n'a précisément pas retenu. En définitive, l'argumentation du recourant ne suffit pas à écarter la valeur probante reconnue aux rapports d'expertise et d'enquête à domicile.
+7.
+7.1.
+Le recourant soutient qu'il a besoin de l'aide régulière et importante d'autrui pour quatre actes ordinaires de la vie, contrairement aux considérations des premiers juges qui n'ont retenu aucun besoin.
+7.2.
+7.2.1.
+Par rapport à l'acte de se vêtir/se dévêtir, les premiers juges ne voyaient pas, au vu des restrictions fonctionnelles du recourant, qu'une aide quotidienne pour I'habillage fût véritablement nécessaire et ont considéré qu'elle ne saurait en aucun cas être considérée comme régulière et importante au sens requis. Ils ont mis en doute la pertinence des informations communiquées par le docteur B.________, spécialiste en psychiatrie et psychothérapie, s'agissant des difficultés rencontrées pour l'habillage en raison de problèmes somatiques. Quoi qu'il en fût, les explications fournies par les médecins traitants du recourant ne divergeaient pas sensiblement des constats rapportés par l'enquêtrice. Au surplus, il apparaissait exigible de la part du recourant d'adapter ses tenues, en utilisant des vêtements amples et faciles à enfiler, et de consacrer davantage de temps à l'habillage, éventuellement jusqu'à 45 minutes pour limiter ses douleurs.
+7.2.2.
+Qualifiant ces considérations d'arbitraires, le recourant fait valoir que la limite temporelle de 45 minutes ne repose sur aucun fondement objectif. La cour cantonale se serait bornée à reprendre cette durée, mentionnée dans un rapport du docteur B.________, sans examen critique. En outre, les constations de l'enquêtrice et les observations des médecins traitants du recourant divergeraient de manière manifeste, dès lors que l'enquêtrice a relevé que le recourant sollicitait l'aide de sa mère ou de son amie pour enfiler la manche gauche d'un pull, tandis que le docteur B.________ a précisé que l'amie du recourant devait l'assister pour enfiler ses t-shirts et son pantalon, l'aidant à passer les pieds dans celui-ci et à le tirer. Les juges cantonaux auraient par ailleurs omis d'examiner les appréciations figurant au dossier de ses médecins traitants (le recourant citant les docteurs C.________, D.________, E.________ et F.________), dont les observations auraient dû être intégrées à une appréciation complète et objective de la situation, sous peine de violer leur devoir d'instruction. Se référant ensuite au ch. 2010 de la Circulaire sur l'invalidité et l'impotence (CSI) -
+aux termes duquel l'aide est régulière lorsque l'assuré en a besoin ou pourrait en avoir besoin chaque jour [...]. C'est par exemple le cas lors de crises pouvant ne se produire que tous les deux ou trois jours, mais pouvant aussi survenir brusquement chaque jour ou même plusieurs fois par jour [...]
+-, il fait valoir qu'il souffre notamment d'une lombosciatalgie mécanique gauche non déficitaire ainsi que d'une névralgie cervicobrachiale gauche non irritative et non déficitaire, affections dont I'évolution se caractériserait par la survenance de crises douloureuses fluctuantes. Ainsi il ressortirait du dossier que le recourant connaît des périodes où les douleurs sont particulièrement intenses, alternant avec des phases d'accalmie relative.
+7.2.3.
+Une telle argumentation ne suffit pas à démontrer le caractère arbitraires des constatations de l'arrêt attaqué. À suivre les explications du recourant, la durée de 45 minutes ressort d'un rapport de son psychiatre traitant, dont il se prévalait lui-même devant la juridiction cantonale. Quoi qu'il en soit, cette durée n'a pas de fondement objectif, comme le recourant le dit lui-même. Ensuite, en se limitant à citer les noms des médecins dont les rapports n'auraient pas été examinés par les juges cantonaux, le recourant ne démontre pas, d'une manière satisfaisant les conditions de motivation de l'
+art. 106 al. 2 LTF
+, en quoi leur contenu aurait permis de retenir le besoin d'aide invoqué. Il en va de même de son argumentation sur la survenance de crises douloureuses, qui repose sur de pures allégations, sans référence à des pièces précises du dossier.
+7.3.
+7.3.1.
+Par rapport à l'acte de se lever/s'asseoir/se coucher, les premiers juges se sont ralliés aux conclusions de l'enquêtrice, selon lesquelles le recourant était autonome pour tous les transferts et changements de position. Celui-ci exécutait les mouvements appris à la physiothérapie afin de ménager son dos. Parfois, selon son état de douleurs, il sollicitait l'aide de sa mère ou de son amie pour descendre ses jambes du lit et se lever. L'aide apportée n'était donc pas régulière et importante. À propos des médecins traitants, les juges cantonaux ont relevé que leurs rapports divergeaient quant à la fréquence de l'aide, considérée indispensable par le docteur G.________, spécialiste en médecine physique et réadaptation, et souvent nécessaire, selon le docteur B.________. En tout état de cause, la cour cantonale ne voyait pas que les limitations fonctionnelles retenues justifiassent des difficultés significatives dans le changement de positions et doutait d'autant plus des difficultés alléguées, que le recourant conservait, sur le plan strictement somatique, une capacité de travail substantielle dans une activité adaptée selon les conclusions du Cemedex. Au besoin, il incombait au recourant, dans le cadre de son devoir de diminuer le dommage, de se munir de moyens auxiliaires pour être totalement autonome pour le lever et le coucher.
+7.3.2.
+Le recourant fait valoir qu'en présence d'une telle divergence sur le plan médical, il appartenait à la cour cantonale d'instruire davantage la cause, plutôt que d'adopter la position la moins favorable à l'assuré. Ce faisant, elle aurait violé le principe inquisitoire et procédé à une appréciation arbitraire des preuves. Le recourant soutient ensuite que ses limitations fonctionnelles, prises dans leur ensemble, affectent directement sa capacité à modifier sa position corporelle, notamment pour passer de la position assise à la position debout ou couchée, et inversement.
+7.3.3.
+En l'occurrence, les juges cantonaux ont fondé leur appréciation sur les rapports du Cemedex et d'enquête à domicile, concordants sur l'absence de besoin d'aide régulière et importante pour l'acte en question. Dans cette mesure, ils n'avaient pas à départager d'éventuelles divergences entre les rapports des médecins traitants, si celles-ci ne mettent pas en évidence des éléments objectifs déterminants ignorés par les experts ou par l'enquêtrice. De surcroît, on ne voit pas en quoi les restrictions relatives aux efforts de soulèvement à partir du sol, au porte-à-faux et à la rotation répétée du buste ou du rachis cervical, à la position statique prolongée, ainsi qu'à la marche et au piétinement prolongés affecteraient - même prises dans leur ensemble - significativement le recourant dans le changement de position. L'appréciation des premiers juges n'apparaît en tout cas pas arbitraire.
+7.4.
+7.4.1.
+En lien avec l'acte de faire sa toilette, la cour cantonale s'est, ici aussi, ralliée à l'appréciation de l'enquêtrice, relevant que le recourant était en mesure d'effectuer seul la totalité des fonctions partielles. Dans ce contexte, il lui appartenait de faciliter les soins d'hygiène en renonçant aux bains au profit des douches et en recourant à des moyens auxiliaires courants, telle qu'une longue brosse, pour atteindre les parties moins accessibles. Un siège de douche et des aménagements de la salle de bain (pose de jets spéciaux) étaient également envisageables.
+7.4.2.
+Le recourant reproche aux juges cantonaux de n'avoir pas pris en considération I'évolution par crise des atteintes dont il souffre et d'avoir écarté sans explication les avis des docteurs B.________ et G.________. Pour le reste, il fait notamment valoir qu'il aurait indiqué lors de l'enquête ne pas pouvoir se laver le dos, malgré l'usage d'une brosse longue, en raison de ses douleurs et de ses limitations fonctionnelles proscrivant les mouvements répétitifs impliquant une élévation des membres supérieurs au-dessus du niveau des épaules. Il invoque à cet égard un rapport du docteur D.________ du 1er mars 2021 ("les limitations importantes nécessitant une aide régulière de sa femme dans ses différentes tâches quotidiennes, aussi bien pour le ménage que d'entretien personnel"), ainsi que les rapports des docteurs F.________ du 26 janvier 2025 et E.________ du 21 septembre 2022.
+7.4.3.
+Au vu des constatations des premiers juges relatives aux limitations fonctionnelles (cf. consid. 4.1), qui lient le Tribunal fédéral, il n'y a aucun motif de s'écarter de leurs considérations sur les possibilités de recourant de faire sa toilette. On relèvera que l'utilisation par celui-ci de son membre supérieur droit n'est pas limitée et que la survenance de céphalées a été prise en compte par l'expert en neurologie du Cemedex, sans pour autant qu'elle ne justifiât un besoin d'aide régulière et importante. Pour le reste, le recourant ne démontre pas que les rapports médicaux qu'ils invoquent permettraient d'écarter, sur la base d'éléments objectifs, les conclusions du Cemedex.
+7.5.
+7.5.1.
+Enfin, la cour cantonale a également suivi l'évaluation de l'intimé relative à l'acte de se déplacer et d'entretenir des contacts sociaux en l'absence de limitation fonctionnelle de nature à restreindre la capacité du recourant à se déplacer de manière autonome, tant à l'intérieur qu'à l'extérieur, ainsi qu'à entretenir des liens sociaux quotidiens. Elle a relevé, par rapport au trouble panique dont se prévalait le recourant, que ce diagnostic n'avait pas été retenu par les médecins du Cemedex et que le recourant n'avait pas été significativement entravé, par des attaques de panique ponctuelles, pour se rendre alternativement chez sa mère et sa compagne.
+7.5.2.
+Le recourant se prévaut à nouveau du diagnostic de trouble panique posé par son psychiatre traitant. Il reproche à l'instance cantonale de s'être fondée sur I'appréciation des experts du Cemedex, lesquels n'auraient pas discuté les limitations retenues par le docteur B.________, à savoir un évitement des contacts sociaux et une tendance à l'isolement. Les juges cantonaux n'auraient pas non plus discuté des discordances entre le rapport d'enquête et les appréciations médicales au dossier. Le recourant invoque un besoin d'aide pour les déplacements extérieurs, se référant une nouvelle fois à la survenance de ses crises.
+7.5.3.
+Contrairement à ce que semble soutenir le recourant, l'expert en psychiatrie du Cemedex a expliqué les motifs pour lesquels il ne retenait pas le diagnostic de troubles paniques, sans ignorer les restrictions posées par le docteur B.________ dans ce contexte (cf. rapport du Cemedex p. 47-49). Pour le reste, le recourant se borne à évoquer de nombreux autres avis médicaux, sans les détailler, et à substituer son appréciation à celle des premiers juges, ce qui ne suffit pas à en démontrer l'arbitraire. Il passe ainsi sous silence le fait qu'il se déplace de manière autonome chez lui ou à l'aide de sa canne à l'extérieur et qu'il conduit régulièrement la voiture de son amie pendant une heure maximum, comme l'ont constaté les premiers juges sur la base du rapport d'enquête à domicile.
+8.
+8.1.
+Par un dernier moyen, le recourant soutient qu'il a besoin d'un accompagnement durable pour faire face aux nécessités de la vie au sens de l'
+art. 38 RAI
+. Il reproche à la cour cantonale d'avoir omis son besoin d'aide pour la gestion des affaires administratives, se prévalant du rapport du docteur B.________ du 20 août 2022, dans lequel le médecin avait indiqué qu'il n'arrivait pas à s'en sortir sans l'aide de son assistant social, qu'il avait des difficultés d'attention, de concentration et de mémoire, ainsi que des difficultés dans la planification et l'organisation. Quant à l'accomplissement des tâches ménagères quotidiennes, telles que la lessive, les courses et l'entretien du domicile, le docteur B.________ aurait souligné de manière détaillée que l'assistance apportée par l'amie du recourant était essentielle. Il aurait précisé que, sans cette aide, le recourant risquait de voir son logement devenir insalubre et d'être confronté à des problèmes d'alimentation. Les premiers juges auraient en outre sous-estimé l'impact des troubles musculo-squelettiques et de la douleur chronique sur sa capacité à accomplir des tâches simples de manière régulière, même à son rythme. Ses limitations fonctionnelles entravant sa capacité à effectuer des gestes courants, tels que le soulèvement de charges légères, la rotation du tronc, la marche prolongée ou le piétinement, elles empêcheraient la réalisation des tâches ménagères de manière autonome. Enfin, le docteur G.________ aurait également indiqué, dans son rapport du 18 janvier 2021, que les limitations fonctionnelles du recourant étaient majeures et qu'il avait dès lors besoin d'aide au quotidien pour les tâches ménagères et les commissions.
+8.2.
+Le rapport du docteur B.________ auquel semble se référer le recourant - qui est daté du 29 et non du 20 août 2022 - indique certes que le recourant n'arrive pas à s'en sortir sans l'aide de son assistant social. On ne retrouve en revanche aucune mention d'une potentielle insalubrité de son logement ou problèmes d'alimentation sans l'aide de son amie. En tout état de cause, il ne permet pas de mettre en doute les conclusions du rapport d'enquête, dont il ressort (selon les constatations de l'arrêt attaqué) que le recourant peut assumer seul la gestion et la planification de son quotidien, ses rendez-vous médicaux, ses séances de physiothérapie et son état de santé; il gère les imprévus, se positionnant verbalement face aux voisins qui exigeaient qu'il participe aux travaux d'entretien du bâtiment, s'explique avec la propriétaire, et est capable d'effectuer ses paiements (facture de téléphone); il gère en outre de sa propre initiative ses horaires de lever, les heures de repas et son rythme jour/nuit. Ces constatations, nettement plus détaillées, que le besoin d'aide évoqué par le docteur B.________ dans le rapport susmentionné, permettaient d'écarter, sans arbitraire, un besoin d'accompagnement, au sens de l'
+art. 38 al. 1 RAI
+, sur le plan administratif. Quant à l'accomplissement des tâches ménagères, l'argumentation du recourant revient ici encore à opposer sa propre appréciation de la situation aux constatations de l'arrêt attaqué. Les premiers juges ont retenu, sans arbitraire, que les limitations fonctionnelles du recourant ne restreignaient pas la réalisation des tâches ménagères légères (telles qu'envisagées par l'enquêtrice) et qu'il lui était loisible de fractionner et réaliser à son rythme les tâches ménagères lourdes et les courses, sans aucune exigence de rendement; le recourant pouvait également se munir de moyens auxiliaires tels que des robots ménagers et chariot à roulettes (cf. arrêt attaqué p. 28 s.). Enfin, dans son rapport du 18 janvier 2021, le docteur G.________ n'a pas indiqué que le recourant avait besoin d'une aide quotidienne pour les tâches ménagères en raison des limitations fonctionnelles majeures. Il a uniquement répondu - à une question posée par le représentant du recourant et dont on ignore la formulation - que les limitations fonctionnelles étaient majeures
+puisque
+le recourant avait besoin d'une aide au quotidien pour les tâches ménagères. En conclusion, l'argumentation du recourant se révèle mal fondée.
+9.
+En définitive, compte tenu des arguments avancés, les premiers juges n'ont pas violé le droit fédéral ni apprécié les preuves de façon arbitraire en niant le droit du recourant à une allocation pour impotent. Il s'ensuit que l'arrêt entrepris échappe à la critique et que le recours doit être rejeté.
+10.
+Le recourant, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 500 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, et à l'Office fédéral des assurances sociales.
+Lucerne, le 16 juin 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Castella

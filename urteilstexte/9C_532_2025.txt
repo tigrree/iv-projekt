@@ -1,0 +1,119 @@
+9C_532/2025
+Urteil vom 25. Juni 2026
+III. öffentlich-rechtliche Abteilung
+Besetzung
+Bundesrichterin Moser-Szeless, Präsidentin,
+Bundesrichter Parrino, Beusch,
+Gerichtsschreiber Williner.
+Verfahrensbeteiligte
+A.________ AG, vertreten durch B.________ GmbH,
+Beschwerdeführerin,
+gegen
+Ausgleichskasse medisuisse, Frongartenstrasse 9, 9000 St. Gallen,
+Beschwerdegegnerin.
+Gegenstand
+Alters- und Hinterlassenenversicherung,
+Beschwerde gegen den Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025 (AHV 2025/3).
+Sachverhalt:
+A.
+Die A.________ AG ist bei der medisuisse Ausgleichskasse (nachfolgend: Ausgleichskasse) als beitragspflichtige Arbeitgeberin angeschlossen. Am 30. November 2023 liess die Ausgleichskasse durch die Revisionsstelle der Ausgleichskassen (nachfolgend: RSA) eine Arbeitgeberkontrolle bei der A.________ AG durchführen. In ihrem Bericht vom 28. März 2024 stellte die RSA fest, in den Jahren 2021 und 2022 seien vermutungsweise überhöhte Dividenden von mehr als 10 % des Steuerwerts ausgeschüttet worden und der C.________ Holding GmbH (nachfolgend: Holding) zugeflossen. D.________ sei Alleininhaber der Holding und arbeite zu 100 % bei der A.________ AG.
+Mit Nachzahlungsverfügung vom 8. Mai 2024 forderte die Ausgleichskasse für die Jahre 2021 und 2022 Nachzahlungen von insgesamt Fr. 38'826.45 für paritätische AHV/IV/EO-, ALV-, ALV2- und FAK SG-Beiträge samt Verwaltungskosten (Fr. 98.40) und Verzugszinsen (Fr. 3'289.60) basierend auf einer Lohnaufrechnung von insgesamt Fr. 265'208.- (Fr. 131'443.- für das Jahr 2021 und Fr. 133'765.- für das Jahr 2022). Die dagegen erhobene Einsprache hiess die Ausgleichskasse mit Einspracheentscheid vom 30. Dezember 2024 teilweise gut. Sie reduzierte die Lohnaufrechnung auf insgesamt Fr. 197'390.- (Fr. 99'044.- für das Jahr 2021 und Fr. 98'346.- für das Jahr 2022) und stellte eine Korrektur nach Rechtskraft des Einspracheentscheids in Aussicht.
+B.
+Das Versicherungsgericht des Kantons St. Gallen wies die dagegen erhobene Beschwerde mit Urteil vom 4. August 2025 ab.
+C.
+Die A.________ AG erhebt Beschwerde in öffentlich-rechtlichen Angelegenheiten und beantragt die Aufhebung des angefochtenen Entscheids.
+Erwägungen:
+1.
+1.1.
+Mit der Beschwerde in öffentlich-rechtlichen Angelegenheiten kann eine Rechtsverletzung nach Art. 95 f. BGG gerügt werden. Das Bundesgericht wendet das Recht von Amtes wegen an (
+Art. 106 Abs. 1 BGG
+). Dennoch prüft es - offensichtliche Fehler vorbehalten - nur die in seinem Verfahren gerügten Rechtsmängel (
+Art. 42 Abs. 1 und 2 BGG
+;
+BGE 145 V 57
+E. 4.2 mit Hinweis). Es legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat (
+Art. 105 Abs. 1 BGG
+). Es kann ihre Sachverhaltsfeststellung von Amtes wegen berichtigen oder ergänzen, wenn sie offensichtlich unrichtig ist oder auf einer Rechtsverletzung im Sinne von
+Art. 95 BGG
+beruht und wenn die Behebung des Mangels für den Verfahrensausgang entscheidend sein kann (
+Art. 97 Abs. 1,
+Art. 105 Abs. 2 BGG
+).
+1.2.
+Die Sachverhaltsfeststellung und Beweiswürdigung der Vorinstanz ist nicht schon dann offensichtlich unrichtig (willkürlich), wenn sich Zweifel anmelden, sondern erst, wenn sie eindeutig und augenfällig unzutreffend ist. Es genügt somit nicht, dass eine andere Lösung ebenfalls in Betracht fällt, selbst wenn diese als die plausiblere erscheint. Willkür liegt insbesondere vor, wenn die Vorinstanz offensichtlich unhaltbare Schlüsse gezogen, erhebliche Beweise übersehen oder solche grundlos ausser Acht gelassen hat (
+BGE 144 V 50
+E. 4.2 mit Hinweisen).
+2.
+2.1.
+Gemäss
+Art. 4 und 5 AHVG
+werden die AHV-Beiträge der erwerbstätigen Versicherten nur vom Erwerbseinkommen erhoben, nicht aber vom Vermögensertrag (
+BGE 145 V 50
+E. 3.1). Das gilt auch in Bezug auf IV-, EO-, ALV- und FAK-Beiträge, zumal die diesbezüglich einschlägigen Bestimmungen auf das AHVG verweisen (vgl.
+Art. 3 Abs. 1 und 2 IVG
+;
+Art. 27 Abs. 2 und 3 EOG
+[SR 834.1];
+Art. 3 Abs. 1 AVIG
+[SR 837.0];
+Art. 16 Abs. 2 FamZG
+[SR 836.2]).
+2.2.
+Weil auf Dividenden (als Vermögens- resp. Kapitalertrag) keine Sozialversicherungsabgaben geschuldet sind, mag es beitragspflichtigen Unternehmeraktionären als vorteilhaft erscheinen, hohe Dividenden und ein tiefes Salär auszuweisen (
+BGE 141 V 634
+E. 2.1), auch wenn die entsprechenden Folgen aus rein steuerrechtlicher Sicht insgesamt - zufolge (teilweiser) wirtschaftlicher Doppelbelastung als Körperschaftsgewinn und als Dividende - nachteilig ausfallen (vgl.
+BGE 134 V 297
+E. 2.2).
+Ob eine Vergütung als (beitragspflichtiges) Erwerbseinkommen oder als (beitragsfreier) Kapitalertrag zu qualifizieren ist, beurteilt sich nach dem Wesen und der Funktion einer Zuwendung. Deren rechtliche oder wirtschaftliche Bezeichnung ist nicht entscheidend und höchstens als Indiz zu werten. Unter Umständen können auch Zuwendungen aus dem Reingewinn einer Aktiengesellschaft beitragsrechtlich massgebender Lohn sein; dies gilt laut
+Art. 7 lit. h AHVV
+(SR 831.101) namentlich für Tantiemen. Es handelt sich dabei um Vergütungen, die im Arbeitsverhältnis ihren Grund haben. Zuwendungen, die nicht durch das Arbeitsverhältnis gerechtfertigt werden, gehören nicht zum massgebenden Lohn, sondern sind Gewinnausschüttungen, welche eine Gesellschaft ihren Gesellschaftern ohne entsprechende Gegenleistung zuwendet, aber unbeteiligten Dritten unter den gleichen Umständen nicht erbringen würde (
+BGE 145 V 50
+E. 3.2;
+141 V 634
+E. 2.2 mit Hinweisen).
+Von der durch die Gesellschaft gewählten Aufteilung zwischen Lohn und Dividende weichen die Behörden nur ab, wenn ein offensichtliches Missverhältnis zwischen Arbeitsleistung und Lohn einerseits und zwischen eingesetztem Vermögen und Dividende anderseits besteht. Mit anderen Worten: Die Umqualifizierung von Dividende in (beitragspflichtigen) Lohn im Rahmen einer Verhältnismässigkeitsprüfung setzt voraus, dass ein im Vergleich zu branchenüblichen Gehältern unangemessen tiefer Lohn und (kumulativ) eine offensichtlich überhöhte, 10 % des Aktienwertes übersteigende Dividendenzahlung ausgerichtet wurde (vgl.
+BGE 145 V 50
+E. 3.2-3.2.2, 4.3;
+141 V 634
+E. 2.2-2.2.2).
+2.3.
+Die Wegleitung des BSV über den massgebenden Lohn in der AHV, IV und EO (WML; vgl. zur Bedeutung von Verwaltungsweisungen
+BGE 148 V 385
+E. 5.2;
+147 V 79
+E. 7.3.2;
+138 V 475
+E. 3.2.2) enthält dazu insbesondere folgende Vorgaben: Zuwendungen aus dem Reingewinn einer juristischen Person an ihre Arbeitnehmenden, die gleichzeitig an der Gesellschaft beteiligt sind, gehören unbekümmert der verwendeten Bezeichnung zum massgebenden Lohn, wenn das Arbeitsverhältnis den ausschlaggebenden Grund für deren Ausrichtung bildet. Für die Entgelte, die einer versicherten Person als Organ einer juristischen Person zukommen, siehe Rz. 2049 ff. (Rz. 2010 WML). Nicht zum massgebenden Lohn gehören dagegen geldwerte Leistungen einer juristischen Person an ihre Arbeitnehmenden, die gleichzeitig an der Gesellschaft beteiligt sind, soweit die Beteiligungsrechte den Grund für die Auszahlung darstellen. Dies betrifft namentlich die Dividenden und den Wert allfälliger Bezugsrechte (Rz. 2011 WML).
+3.
+Das kantonale Gericht stellte fest, aus dem Aktienbuch der Beschwerdeführerin ergebe sich, dass die Holding seit ihrer Gründung als Aktionärin sämtlicher 100 Aktien der Beschwerdeführerin eingetragen sei. Nachdem es sich bei den beiden involvierten Gesellschaften um zwei unterschiedliche juristische Personen mit je eigener Rechtspersönlichkeit handle, könne die der Holding ausgeschütteten Dividenden - entgegen der Auffassung der Verwaltung - nicht ohne Weiteres D.________ zugerechnet werden. In einem ersten Schritt sei deshalb zu prüfen, unter welchen Umständen eine solche Zurechnung vorzunehmen sei. Mangels einschlägiger Bestimmungen im AHV-Recht wendete die Vorinstanz die im Aktienrecht ergangene Rechtsprechung zum Haftungsdurchgriff analog an. Sie schloss, das hier gewählte Vorgehen sei rechtsmissbräuchlich und die rechtliche Selbstständigkeit der Holding unbeachtlich. Die von der Beschwerdeführerin als Arbeitgeberin an die Holding bezahlten Dividenden seien als Zahlungen an D.________ als wirtschaftlich Berechtigten und Arbeitnehmer der Beschwerdeführerin anzusehen.
+In einem zweiten Schritt schützte das kantonale Gericht die Qualifikation dieser Zahlungen als (beitragspflichtigen) Lohn sowie die von der Verwaltung vorgenommene Aufrechnungen von Fr. 99'044.- für das Jahr 2021 (bei einem branchenüblichen Lohn von Fr. 185'084.-) und Fr. 98'346.- für das Jahr 2022 (bei einem branchenüblichen Lohn von Fr. 184'386.-). Dabei ging es davon aus, D.________ habe bei der Beschwerdeführerin jeweils in einem Pensum von 100 % gearbeitet.
+4.
+Die Beschwerdeführerin stellt dem Grundsatz nach nicht in Abrede, dass ausbezahlte Dividenden nicht nur dann massgeblichen Lohn darstellen können, wenn sie direkt von der Aktiengesellschaft an einen arbeitnehmenden Unternehmensaktionär ausbezahlt werden, sondern bei gegebenen Voraussetzungen auch dann, wenn dies indirekt über eine zwischengeschaltete Holding geschieht. Auch wenn sich mit Blick auf das Rügeprinzip (vgl. dazu E. 1.1 hievor) diesbezügliche Weiterungen grundsätzlich erübrigten, sei immerhin ergänzt, dass die Rechtsfigur des Durchgriffs wohl im Zusammenhang mit (aktienrechtlichen) Haftungsfragen entwickelt wurde. Der Grundgedanke, dass die Unterscheidung zwischen juristischer Person und dem hinter ihr stehenden, alles beherrschenden Aktionär dann ausnahmsweise unbeachtet zu bleiben hat, wenn sie eine den realen Gegebenheiten in keiner Weise entsprechende juristische Fiktion darstellt, ist letztlich aber ein allgemeiner (vgl.
+BGE 151 III 361
+E. 5.4.3.2.1 mit Hinweis).
+Zwar zeigt sich die Beschwerdeführerin nach dem Dargelegten einverstanden mit der grundsätzlichen Prüfung der Frage nach der ausnahmsweisen Nichtbeachtung der rechtlichen Eigenständigkeit der zwischengeschalteten Holding. Sie macht indessen geltend, die gewählte Holdingstruktur (Zweck der Holding gemäss Statuten: Erwerb, Verwaltung und Verkauf von Beteiligungen und Finanzanlagen sowie Erwerb von Grundeigentum) sei hier weder zweckwidrig noch rechtsmissbräuchlich, diene sie doch anderen Zwecken (namentlich der Immobilienverwaltung und der Nachfolgeregelung) als dem der Reduktion der AHV-beitragspflichtigen Einkünfte. Entsprechend seien im vorliegenden Fall die Voraussetzungen für eine analoge Anwendung der im Aktienrecht ergangenen Rechtsprechung zum Haftungsdurchgriff nicht gegeben. Die Beschwerdeführerin behauptet insbesondere, D.________ sei in den Jahren 2021 und 2022 lediglich in einem Pensum von 50 % bei ihr angestellt gewesen. Hochgerechnet auf ein volles Pensum sei von einem Gehalt in der Höhe von Fr. 172'080.- auszugehen, womit sich nicht rechtfertige, von einem offensichtlichen Missverhältnis zwischen Arbeitsleistung und Lohn auszugehen.
+4.1.
+Die Vorinstanz legte nachvollziehbar dar, dass das gewählte Konstrukt mit der zwischengelagerten Holding im Wesentlichen auf die Vermeidung unter anderem der hier interessierenden AHV-abgaberechtlichen Folgen abgezielt habe, während ein anderes Motiv weder ersichtlich noch von der Beschwerdeführerin dargetan werde. Namentlich trug das kantonale Gericht den Umständen Rechnung, dass die Beschwerdeführerin als AG aus der Einzelunternehmung des D.________ hervorging, wobei die AG am 9. Januar 2017 in das Handelsregister eingetragen wurde; D.________ war ab diesem Datum bis zum 5. Juli 2017 Alleinaktionär. An eben diesem 5. Juli 2017 wurde die Holding in das Handelsregister eingetragen, wobei D.________ auch bei dieser Gesellschaft alleiniger Anteilshaber war; gleichentags übernahm die zu 100 % im Eigentum von D.________ stehende Holding sämtliche Aktien der Beschwerdeführerin. Diese schüttete in den Jahren 2021 und 2022 hohe Dividenden (Fr. 582'000.- [2021] und Fr. 650'000.- [2022]) an die Holding aus, wobei nicht ersichtlich ist, dass die Dividenden bei dieser für eine wesentliche eigene Geschäftstätigkeit verwendet wurden. So wurden bei der Holding keine AHV-pflichtigen Löhne abgerechnet und stammten die Einnahmen mehr oder minder ausschliesslich (gemäss vorinstanzlichen Feststellungen zu 96.5 %) aus der Beteiligung an der Beschwerdeführerin. Gegen eine wesentliche Geschäftstätigkeit der Holding spricht weiter der Umstand, dass diese, nachdem sie ihrerseits bei der Beschwerdeführerin ein Darlehen von gut Fr. 650'000.- aufgenommen hatte, D.________ umgehend ein solches in der Höhe von knapp Fr. 1'200'000.- gewährte. Unabhängig von der streitigen Frage, ob diese Darlehen verzinst waren oder nicht (von letzterem ging die Vorinstanz aus), scheinen die von der Beschwerdeführerin an die Holding fliessenden Gelder grösstenteils umgehend weiter an D.________ zu fliessen, sei es in Form von Dividenden, sei es in Form von gewährten (allenfalls zinslosen) Darlehen.
+4.2.
+Ausser dem nicht näher begründeten Einwand, die Holding sei zum Zwecke der Nachfolgeregelung gegründet worden sowie der - im wesentlichen lediglich unter Hinweis auf die Statuten - erfolgten Behauptung, der Hauptzweck der Holding bestehe nicht darin, Beteiligungserträge zu vereinnahmen und an den wirtschaftlich Berechtigten weiterzuleiten, vermochte und vermag die Beschwerdeführerin keinen plausiblen Grund für die gewählte Holdingstruktur zu nennen - ein solcher ist auch nicht ersichtlich. Dass über die Holding auch ein Mehrfamilienhaus verwaltet wird, ist bekannt und fand im angefochtenen Entscheid Berücksichtigung. Das kantonale Gericht stellte indessen namentlich unter Hinweis auf sehr geringe Nettoerträge fest, darin sei keine wesentliche Geschäftstätigkeit zu erblicken. Eine Auseinandersetzung mit den diesbezüglich massgebenden vorinstanzlichen Erwägungen findet sich in der Beschwerde nicht. Im Lichte dessen ist der vorinstanzliche Schluss nicht zu beanstanden, die Vereinnahmung und Weiterleitung der Beteiligungserträge aus der Beschwerdeführerin an den wirtschaftlich Berechtigten (D.________) bilde Hauptzweck der Holding, während die gewählte Struktur alleine für die Verwaltung des Mehrfamilienhauses nicht plausibel sei.
+4.3.
+Sofern die Beschwerdeführerin behauptet, D.________ sei in den Jahren 2021 und 2022 lediglich zu 50 % bei ihr angestellt gewesen, vermag sie daraus nichts zu ihren Gunsten abzuleiten. So ergibt sich aus dem Bericht über die Arbeitgeberkontrolle an Ort und Stelle vom 28. März 2024, dass D.________ in den Jahren 2021 und 2022 (wie schon davor in den Jahren 2019 und 2020) in einem Pensum von 100 % bei der Beschwerdeführerin angestellt war. Gemäss verbindlichen vorinstanzlichen Feststellungen beruht dieser Schluss auf den Angaben der Mitarbeitenden der Steuerberatungsgesellschaft gegenüber den Revisoren, was die Beschwerdeführerin zwar pauschal in Abrede stellt, letztlich aber nicht substanziiert bestreitet. Es fehlt namentlich eine rechtsgenügliche Auseinandersetzung mit den überzeugenden vorinstanzlichen Erwägungen, wonach nicht plausibel sei, dass eine Arztpraxis, in welcher lediglich zwei Ärzte mit einem Pensum von je 50 % arbeiten würden, nach eigenen Angaben eine Verwaltungsangestellte (Geschäftsführerin) und sieben Medizinische Praxisassistentinnen (davon drei in Ausbildung) beschäftige. Selbst wenn von einem Pensum von 50 % ausgegangen würde, so das kantonale Gericht weiter, erstaune, dass D.________, nachdem er zuvor als Einzelunternehmer ein Einkommen in der Höhe von rund einer halben Million (bzw. einer Viertelmillion in einem hälftigen Pensum) generiert habe, nach der Umstrukturierung als Angestellter seiner eigenen AG nur noch Fr. 86'040.- verdienen solle. Die Beschwerdeführerin vermag auch vor Bundesgericht weder eine plausible Erklärungen für das von der Vorinstanz festgestellte Missverhältnis zwischen den Pensen der Arztpersonen und der Verwaltungsangestellten zu liefern noch die massive Lohneinbusse bei D.________ nachvollziehbar zu erklären. Im Lichte dessen kann der von der Vorinstanz ermittelte Sachverhalt nicht als offensichtlich unrichtig beurteilt werden und es ist zum vornherein auf die von der Beschwerdeführerin offerierte Zeugeneinvernahme der Treuhänderin der Steuerberatungsgesellschaft zu verzichten. Damit braucht auch nicht geklärt zu werden, welcher Beweiswert einer solchen Zeugenaussage beizumessen wäre mit Blick darauf, dass die angerufene Zeugin im vorliegenden Verfahren als unterzeichnende Vertreterin der Beschwerdeführerin auftritt.
+Der Vollständigkeit halber sei darauf hingewiesen, dass der Beschwerdeführerin wohl insoweit beizupflichten ist, dass es grundsätzlich nicht rechtsmissbräuchlich ist, für eine Tätigkeit als Arztperson in einem Vollpensum einen Lohn von Fr. 172'080.- (bzw. Fr. 86'040.- für ein hälftiges Pensum) zu bezahlen. Der Umstand aber, dass der in den Jahren 2021 und 2022 tatsächlich zur Auszahlung gelangte Lohn von Fr. 86'040.- exakt dem Betrag des massgebenden durchschnittlichen Einkommens entspricht, das gemäss Skala 44 der bundesamtlichen Rententabellen Anspruch auf die höchstmögliche monatliche Vollrente der AHV ergibt, darf mit der Vorinstanz zumindest als Indiz dafür gewertet werden, dass die AHV-abgaberechtlichen Folgen entgegen den Beteuerungen der Beschwerdeführerin durchaus eine Rolle gespielt haben dürften bei der Festsetzung des - gegenüber den Vorjahren - massiv tieferen neuen Lohnes von D.________.
+4.4.
+Dass ein Lohn in der Höhe von Fr. 86'040.- für ein volles Pensum im vorliegenden Fall nicht angemessen ist, stellt die Beschwerdeführerin zu Recht nicht in Abrede. Sie bringt auch gegen die Höhe der effektiv vorgenommenen Aufrechnungen nichts vor. Weiterungen dazu erübrigen sich (zum Rügeprinzip vgl. E. 1.1 hievor). Die Beschwerde ist unbegründet.
+5.
+Dem Ausgang des Verfahrens entsprechend hat die Beschwerdeführerin die Gerichtskosten zu tragen (
+Art. 66 Abs. 1 BGG
+).
+Demnach erkennt das Bundesgericht:
+1.
+Die Beschwerde wird abgewiesen.
+2.
+Die Gerichtskosten von Fr. 3'000.- werden der Beschwerdeführerin auferlegt.
+3.
+Dieses Urteil wird den Parteien, dem Versicherungsgericht des Kantons St. Gallen und dem Bundesamt für Sozialversicherungen schriftlich mitgeteilt.
+Luzern, 25. Juni 2026
+Im Namen der III. öffentlich-rechtlichen Abteilung
+des Schweizerischen Bundesgerichts
+Die Präsidentin:    Moser-Szeless
+Der Gerichtsschreiber:    Williner

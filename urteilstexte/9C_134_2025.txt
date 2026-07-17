@@ -1,0 +1,312 @@
+9C_134/2025
+Arrêt du 25 juin 2026
+IIIe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux
+Moser-Szeless, Présidente,
+Parrino et Bollinger.
+Greffier : M. Berthoud.
+Participants à la procédure
+A.________,
+représentée par
+Me Nicolas Rouiller et Me Alban Matthey, Avocats,
+recourante,
+contre
+1. Galenos SA (en tant que successeur en droit de Vivacare SA),
+2. CSS Assurance-maladie SA (également en tant que successeur en droit de Arcosana SA et INTRAS Assurance-maladie SA),
+3. CONCORDIA Assurance suisse de maladie et
+accidents SA,
+4. Atupri Assurance de la santé SA,
+5. Avenir Assurance Maladie SA (également en tant que successeur en droit de Easy Sana Assurance Maladie SA),
+6. KPT Caisse maladie SA,
+7. Vivao Sympany SA,
+8. vita surselva,
+9. SWICA Assurance-maladie SA,
+10. Groupe Mutuel Assurances GMA SA
+(en tant que successeur en droit de Mutuel Assurance Maladie SA et de SUPRA-1846 SA)
+11. Sanitas Grundversicherungen AG,
+12. Philos Assurance Maladie SA,
+13 Assura-Basis SA,
+14. Visana SA,
+15. Helsana Assurances SA (également en tant que successeur en droit de Progrès Assurances SA),
+16. sana24 SA,
+Caisses-maladie intimées pour l'année statistique 2017 (assureurs du groupe I, cause A/2603/2019)
+1. Galenos SA (en tant que successeur en droit de Vivacare SA),
+2. CSS Assurance-maladie SA (également en tant que successeur en droit de Arcosana SA et INTRAS Assurance-maladie SA),
+3. CONCORDIA Assurance suisse de maladie et
+accidents SA,
+4. Atupri Assurance de la santé SA,
+5. Avenir Assurance Maladie SA (également en tant que successeur en droit de Easy Sana Assurance Maladie SA),
+6. KPT Caisse maladie SA,
+7. vita surselva,
+8. SWICA Assurance-maladie SA,
+9. Groupe Mutuel Assurances GMA SA
+(en tant que successeur en droit de Mutuel Assurance Maladie SA et de SUPRA-1846 SA)
+10. Sanitas Grundversicherungen AG,
+11. Philos Assurance Maladie SA,
+12 Assura-Basis SA,
+13. Visana SA,
+14. Helsana Assurances SA (également en tant que successeur en droit de Progrès Assurances SA),
+15. sana24 SA,
+16. Vivao Sympany SA (en tant que successeur en droit de Moove Sympany SA),
+17. AMB Assurances SA.
+Caisses-maladie intimées pour l'année statistique 2018 (assureurs du groupe II, cause A/190/2020)
+toutes agissant par santésuisse,
+elle-même représentée par Me Amélie Vocat, avocate,
+intimées.
+Objet
+Assurance-maladie,
+recours contre l'arrêt du Tribunal arbitral des
+assurances de la République et canton de Genève
+du 14 janvier 2025 (A/2603/2019 - ATAS/16/2025).
+Faits :
+A.
+La doctoresse A.________, née en 1962, exploite depuis 2012 un cabinet médical à U.________ en tant que spécialiste FMH en diabétologie/endocrinologie et en médecine interne et générale. Dès 2015, santésuisse l'a interpellée sur sa pratique jugée non économique.
+B.
+B.a.
+Par demande déposée le 8 juillet 2019, les caisses-maladie énoncées dans le rubrum du présent arrêt sous "assureurs du groupe I", représentées par santésuisse, ont saisi le Tribunal arbitral des assurances de la République et canton de Genève (ci-après: le tribunal arbitral), concluant au paiement, par la doctoresse A.________, de 129'997 fr. pour l'année statistique 2017 (selon un indice de régression des coûts totaux de 189 points) et, subsidiairement, de 117'854 fr. (selon un indice ANOVA de 202 points), au titre de violation du principe du caractère économique des prestations (cause enregistrée sous le n° A/2603/2019). Le montant de 129'997 fr. a été établi comme suit: 695'807 (coûts directs + indirects) : 189 (indice de régression) x [ (189 - 120)] x [356'079 (coûts directs) : 695'807].
+B.b.
+Par demande déposée le 14 janvier 2020, les caisses-maladie énoncées dans le rubrum du présent arrêt sous "assureurs du groupe II", également représentées par santésuisse, ont saisi le tribunal arbitral d'une nouvelle requête en remboursement par la défenderesse de 161'069 fr. 10 pour l'année statistique 2018 (selon un indice de régression des coûts totaux de 201 points) et, subsidiairement, de 130'044 fr. 90 (selon un indice ANOVA de 213 points), au titre de violation du principe du caractère économique des prestations (cause enregistrée sous le n° A/190/2020). Le montant de 161'069 fr. 10 a été établi comme suit: 803'475 (coûts totaux directs et indirects) : 201 (indice de régression) x [ (201 - 120)] x [399'690 (coûts totaux directs) : 803'475].
+B.c.
+Le 8 mai 2023, le tribunal arbitral a informé les parties qu'il envisageait de mettre en oeuvre une expertise analytique de la pratique de la défenderesse, mesure sur laquelle les parties ont été invitées à se déterminer. Par lettre du 19 septembre 2023, Me Nicolas Rouiller, qui jusque-là représentait la défenderesse, a fait savoir au tribunal arbitral que son mandat avait pris fin. Par ordonnance du 26 septembre 2023, le tribunal arbitral a écarté les objections de la défenderesse et a désigné le docteur C.________ comme expert en vue d'analyser la pratique médicale en cause pour les années 2017 et 2018. Par écriture datée du 5 octobre 2023 - que le tribunal arbitral a transmise au Tribunal fédéral comme objet de sa compétence - la doctoresse A.________ a demandé la récusation du juge instructeur, au motif qu'il avait confié l'expertise analytique au docteur C.________, et a confirmé sa demande de récusation de l'expert. Par arrêt du 4 décembre 2023 (9C_652/2023), le Tribunal fédéral a déclaré irrecevable le recours interjeté par la doctoresse A.________ contre l'ordonnance d'expertise analytique du 26 septembre 2023, singulièrement la désignation de l'expert C.________. Par la suite, la défenderesse a adressé de nombreux courriers inconvenants au tribunal arbitral, a refusé de collaborer à l'instruction de la cause et, notamment, a fait notifier à l'expert le 8 mai 2024 un commandement de payer au titre de la "défense de mes intérêts contre la tentative d'escroquerie du débiteur". L'expert C.________ a déposé son rapport le 13 mai 2024. La défenderesse a produit des "Observations et prise de position à propos du rapport d'expertise analytique du docteur C.________", établies par le docteur E.________ le 3 juillet 2024. Le 30 septembre 2024, le tribunal arbitral a accordé à la défenderesse un délai au 15 octobre suivant pour faire valoir ses observations éventuelles, à la suite de quoi l'affaire serait en principe gardée à juger. Par écriture du 15 octobre 2024, la défenderesse, assistée par le docteur B.________, a renvoyé à ses précédentes lettres, critiquant une nouvelle fois les aptitudes mentales du mandataire des demanderesses, tout en réitérant ses invectives et accusations à l'encontre des membres du tribunal arbitral, notamment.
+B.d.
+Par arrêt du 14 janvier 2025, le tribunal arbitral a joint les causes A/2603/2019 et A/190/2020 sous la cause A/2603/2019 (ch. 2 du dispositif). Il a condamné la défenderesse à verser aux demanderesses, prises conjointement et solidairement, en mains de santésuisse, la somme de 119'816 fr. 95 pour l'année 2017 (ch. 3). Pour l'année 2018, le tribunal arbitral a condamné la défenderesse à verser aux demanderesses, prises conjointement et solidairement, en mains de santésuisse, la somme de 161'069 fr. 10 (ch. 4). Le tribunal arbitral a infligé à la défenderesse une amende de 2'500 fr. (ch. 5), mis 96,5 % des frais judiciaires (soit 43'381 fr. 40) à la charge de la défenderesse et 3,5 % (soit 1'573 fr. 40) à la charge des demanderesses, prises conjointement et solidairement (ch. 6), sans allocation de dépens (ch. 7).
+C.
+À nouveau représentée par Me Nicolas Rouiller et désormais également par Me Alban Matthey, avocats, la doctoresse A.________ interjette un recours en matière de droit public contre cet arrêt. À titre principal, elle conclut à son annulation, les actions introduites par santésuisse étant rejetées et le prononcé de l'amende de 2'500 fr. étant supprimé. À titre subsidiaire, elle conclut au renvoi de la cause au tribunal arbitral pour décision dans le sens des considérants.
+Le tribunal arbitral a présenté des observations et les intimées ont conclu au rejet du recours, écritures sur lesquelles la recourante a pris position. L'Office fédéral de la santé publique a renoncé à se déterminer.
+Considérant en droit :
+1.
+La désignation des parties a été adaptée d'office dans le rubrum, pour tenir compte des fusions ou des changements de nom des différentes caisses-maladie (cf. arrêt 9C_161/2024 du 29 octobre 2025 consid. 1 et la référence).
+2.
+2.1.
+Postérieurement au dépôt de son recours en matière de droit public, la recourante et le docteur B.________ ont conjointement fait savoir au Tribunal fédéral, par lettre du 27 avril 2025, qu'ils avaient déposé de nombreuses plaintes pénales et administratives, dont l'une d'elles vise le juge fédéral Francesco Parrino. La recourante requiert ainsi la suspension de la présente procédure jusqu'à ce qu'un jugement de la Cour pénale internationale (CPI) soit rendu. Le 13 mai 2025, Me Rouiller a transmis au Tribunal fédéral une communication de sa mandante; il a indiqué qu'elle apparaissait correspondre à une requête au sens de l'
+art. 36 LTF
+, en précisant que les plaintes à l'encontre du juge Parrino étaient de nature à affecter son impartialité. La recourante y motive sa demande (de récusation) en raison d'une plainte pénale pour crime contre l'humanité ("démocide") perpétré contre le Peuple Suisse par l'injection d'un poison (vaccin) ou arme biologique, ainsi que la destruction du système de santé suisse, qu'elle a déposée devant la CPI le 20 février 2025 à l'encontre du juge Parrino et de diverses autres personnalités et institutions suisses.
+2.2.
+Pour l'examen de ces requêtes, il sied de retracer les interventions du juge Parrino dans le cadre du présent litige opposant les parties. À l'origine de l'arrêt 9C_652/2023 du 4 décembre 2023, la juridiction arbitrale avait transmis au Tribunal fédéral, comme objet de sa compétence, une écriture du 5 octobre 2023 émanant du docteur B.________, agissant au nom de la doctoresse A.________. Le mandataire avait contesté d'une part une ordonnance d'expertise du Tribunal arbitral du 26 septembre 2023 confirmant la désignation du docteur C.________ comme expert dans le présent litige en matière de polypragmasie; il avait d'autre part demandé la récusation du juge D.________. Comme la recourante n'avait pas produit la décision attaquée ainsi que le Tribunal fédéral l'avait requis au préalable, le recours avait été déclaré irrecevable conformément à l'avertissement qui lui avait été signifié; le juge Parrino avait alors statué en tant que juge unique selon la procédure simplifiée de l'
+art. 108 al. 1 let. a LTF
+(arrêt 9C_652/2023).
+Par lettre du 18 décembre 2023 adressée au juge Parrino, la recourante et le docteur B.________ avaient conjointement fait savoir au Tribunal fédéral que l'arrêt 9C_652/2023 était une forfaiture. Ils avaient reproché au juge prénommé de s'être rendu coupable de plusieurs infractions pénales, la décision rendue violant selon eux le CP, la procédure et le droit constitutionnel. Ils ont par ailleurs fait état de 3.3 millions d'effets secondaires du "vaccin" Covid, officiellement dénombrés par l'OMS et requis de connaître le statut "vaccinal" Covid du juge Parrino qui devait, de leur avis, se soumettre à une expertise médicale.
+Le 21 décembre suivant, le Tribunal fédéral avait accusé réception de la lettre du 18 décembre 2023. Il avait attiré l'attention de leurs auteurs que suivant l'
+art. 61 LTF
+les arrêts du Tribunal fédéral passent en force de chose jugée dès qu'ils sont prononcés, qu'ils ne peuvent donc plus faire l'objet d'une procédure judiciaire ordinaire et qu'aucune correspondance ne pourra plus être échangée à ce sujet.
+2.3.
+Les griefs de la recourante ne suffisent pas pour fonder objectivement une suspicion de partialité du juge Parrino, respectivement pour rendre vraisemblable l'existence d'un motif de prévention au sens de l'
+art. 34 al. 1 let
+. e LTF. La recourante n'expose pas en quoi il faudrait retenir que le magistrat en cause nourrirait une inimitié à son endroit ni quel intérêt personnel il aurait pu avoir dans le litige qui l'oppose aux intimées. On précisera en tant que de besoin que le fait que l'arrêt 9C_652/2023 apparaisse erroné à la recourante ne suffit pas pour retenir l'apparente partialité du magistrat l'ayant rendu en tant que juge unique (parmi plusieurs: AUBRY GIRARDIN, in: Commentaire de la LTF, 3e éd. 2022, n° 41 ad
+art. 34 LTF
+). Enfin, ainsi que la jurisprudence a déjà eu l'occasion de le souligner, le dépôt d'une plainte pénale contre le Président d'une Cour du Tribunal fédéral n'est pas de nature à justifier la récusation du magistrat en cause (cf. arrêt 7F_59/2024 du 9 septembre 2025 consid. 3.2.1 et la référence citée).
+Tel qu'il est articulé, le moyen de récusation est manifestement mal fondé, voire abusif. Il peut dès lors être écarté par la Cour de céans dans une composition comprenant le juge visé (
+ATF 129 III 445
+consid. 4.2.2; arrêt 7F_59/2024 précité consid. 3.2.1). Pour le même motif, il n'y a pas lieu de suspendre la procédure (
+art. 6 al. 1 PCF
+[RS 273] en lien avec l'
+art. 71 LTF
+).
+3.
+Le recours en matière de droit public peut être formé pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+), sans être limité par les arguments de la partie recourante ou par la motivation de l'autorité précédente. Le Tribunal fédéral n'examine en principe que les griefs invoqués, compte tenu de l'exigence de motivation prévue à l'
+art. 42 al. 2 LTF
+, et ne peut aller au-delà des conclusions des parties (
+art. 107 al. 1 LTF
+). Il fonde son raisonnement sur les faits retenus par la juridiction de première instance (
+art. 105 al. 1 LTF
+) sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). La partie recourante qui entend s'écarter des faits constatés doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+sont réalisées sinon un état de fait divergent ne peut être pris en considération.
+4.
+Le litige porte sur la question de savoir si la pratique de la recourante pendant les années statistiques 2017 et 2018 était ou non conforme au principe de l'économicité ainsi que, dans l'éventualité de non-conformité, sur son obligation de restituer aux intimées le trop-perçu.
+5.
+5.1.
+La recourante demande l'annulation de l'arrêt entrepris en raison du fait que les deux causes relatives aux exercices 2017 et 2018 ont été jointes sans qu'elle ait pu se déterminer à ce sujet.
+5.2.
+Ce grief est infondé. Si les parties ne sont effectivement pas exactement les mêmes dans les deux demandes, le rubrum de l'arrêt attaqué spécifie expressément que trois caisses-maladie n'étaient partie que dans une seule procédure. L'étroite connexité des cas justifiait la jonction des causes par économie de procédure, ce qui n'a causé du reste aucun préjudice à la recourante qui a pu défendre ses droits à pleine satisfaction dans les deux procédures.
+6.
+6.1.
+La recourante se prévaut de l'illicéité de l'amende de 2'500 fr. qui lui a été infligée. Elle soutient que l'art. 88 de la loi cantonale genevoise du 12 septembre 1985 sur la procédure administrative (LPA; RSGE E 5 10) ne permet pas le prononcé d'une telle sanction, car elle ne s'appliquerait qu'à l'auteur d'un recours, d'une action ou d'une demande en interprétation ou en révision. Comme elle avait la qualité de défenderesse à une action, elle en déduit que la sanction a été rendue en violation de l'
+art. 88 LPA
+et en tout état de cause qu'elle est incompatible avec l'
+art. 1 CP
+.
+6.2.
+Le tribunal arbitral a prononcé cette sanction en application de l'
+art. 88 LPA
+, par renvoi de l'art. 45 al. 3 de la loi cantonale genevoise du 29 mai 1997 d'application de la loi fédérale sur l'assurance-maladie (LaLAMal, RSGE J 3 05), en raison du comportement de la recourante en procédure. Dans ses déterminations sur le recours, la juridiction arbitrale fait notamment valoir qu'il serait insoutenable qu'une partie adoptant (systématiquement) un comportement abusif ou inconvenant soit exemptée de toute amende, au motif qu'elle ne serait pas la partie demanderesse. À son avis, tel n'était à l'évidence pas l'intention du législateur en adoptant l'
+art. 88 LPA
+, respectivement l'
+art. 45 al. 3 LPA
+(recte: LaLAMal).
+6.3.
+Sous le titre "Emploi abusif des procédures", l'
+art. 88 al. 1 LPA
+prévoit que la juridiction administrative peut prononcer une amende à l'égard de celui dont le recours, l'action, la demande en interprétation ou en révision est jugée téméraire ou constitutive d'un emploi abusif des procédures prévues par la loi.
+Le tribunal arbitral n'a pas mentionné les travaux préparatoires de l'
+art. 88 al. 1 LPA
+d'où pourrait ressortir l'intention du législateur qu'il invoque. Quoi qu'il en soit, le texte légal est clair et ne permet pas de suivre le raisonnement de l'instance précédente qui souhaite étendre la possibilité de prononcer une sanction à l'encontre de tous les participants à la procédure. Avec la recourante, on doit admettre que l'
+art. 88 al. 1 LPA
+ne vise que la partie qui est initiatrice de la procédure, qu'il s'agisse d'un recours, d'une action ou d'une demande en interprétation ou en révision. Une telle interprétation ressort également de la jurisprudence de la Cour de justice genevoise, Chambre administrative, dont on peut déduire qu'est visée la partie qui a la qualité de recourante (arrêt ATA/759/2024 du 25 juin 2024 consid. 3). Il s'ensuit qu'une sanction motivée par le comportement procédural de la recourante, défenderesse aux actions intentées par les intimées, ne pouvait pas être prononcée sur la base de cette disposition légale, indépendamment de savoir si elle a ou non une connotation pénale. Sur ce point, le recours est bien fondé, ce qui entraîne l'annulation du ch. 5 du dispositif de l'arrêt entrepris.
+7.
+7.1.
+La recourante relève qu'elle avait été assistée par son avocat de 2019 jusqu'au 19 septembre 2023, jour où le mandat avait pris fin en raison de désaccords. Elle soutient que le délai qui lui avait été imparti postérieurement à la résiliation du mandat pour se déterminer, singulièrement pour poser des questions pertinentes à l'expert, était trop bref, de sorte qu'elle n'a pas bénéficié d'un procès équitable pour se défendre efficacement, en violation des
+art. 6 CEDH
+et 29 Cst. Dans ce contexte, elle reproche au tribunal arbitral d'avoir changé d'avis sur la méthode à appliquer (statistique ou analytique) pour déterminer si sa pratique était ou non conforme au principe de l'économicité, ce qui l'avait insécurisée. À son avis, les choix de communication opérés en l'absence d'un avocat avaient abouti à une relation confrontationnelle voire conflictuelle entre le tribunal arbitral (et l'expert) et elle-même. Finalement, elle avait dû à nouveau confier la défense de ses intérêts à son ancien avocat pour recourir au Tribunal fédéral, alléguant à cette occasion que les avocats maîtrisant le domaine de la polypragmasie sont rares.
+7.2.
+Dans son argumentation, la recourante élude pourtant la question centrale des démarches qu'elle aurait été concrètement en mesure d'entreprendre dans les meilleurs délais afin de trouver un autre avocat pour défendre ses droits devant le tribunal arbitral, à compter du moment où le précédent mandat avait pris fin. Elle n'indique pas non plus en quoi les délais impartis dans le cadre de l'administration des preuves étaient insuffisants. On relèvera néanmoins qu'une année entière s'est écoulée entre la résiliation du mandat, le 19 septembre 2023, et le 30 septembre 2024, jour où le tribunal arbitral a accordé à la défenderesse un délai échéant au 15 octobre suivant pour faire valoir ses observations éventuelles, avant de juger.
+À cet égard, même si la recherche d'un avocat spécialisé dans le domaine de la polypragmasie (
+art. 56 LAMal
+) n'avait pas été simple, ainsi que la recourante le laisse entendre, cette dernière aurait eu suffisamment de temps pour le faire. Au demeurant, la jurisprudence est connue des praticiens du droit, le Tribunal fédéral ayant rendu de nombreux arrêts en la matière qui ont été publiés au Recueil officiel. Il s'ensuit que le grief de la violation du droit à un procès équitable pour se défendre efficacement (
+art. 6 CEDH
+et 29 Cst.) est infondé.
+8.
+8.1.
+La recourante fait valoir que la légitimation active des caisses-maladie n'a pas été établie dans l'arrêt attaqué. Celui-ci devrait ainsi être annulé en raison de la violation des
+art. 56 al. 2 let. a et b LAMal
+et 29 al. 2 Cst.
+8.2.
+La juridiction arbitrale a tacitement admis la légitimation des caisses-maladie. À cet égard, elle a relevé à juste titre dans ses déterminations sur le recours que les assureurs-maladie, représentés le cas échéant par santésuisse, peuvent introduire une action collective à l'encontre d'un fournisseur de prestations, sans spécifier pour chaque assureur les montants remboursés et, à l'issue de la procédure, se partager le montant obtenu à titre de restitution des rétributions perçues sans droit. Il est dès lors sans importance que certains assureurs n'aient remboursé aucun montant pendant une période déterminée. Ils ne participeront pas au partage interne (arrêt du Tribunal fédéral 9C_167/2010 du 14 janvier 2011 consid. 2.2). Force est ainsi de constater que même si une des caisses-maladie figurant sur le rubrum de l'arrêt querellé se serait vu reconnaître, à tort, la légitimation active, la recourante n'en subirait aucun préjudice à ce titre. De plus, la recourante ne conteste nullement de manière concrète les montants avancés par les caisses-maladie.
+9.
+9.1.
+La juridiction arbitrale a rappelé qu'il y a polypragmasie, au sens de l'
+art. 56 LAMal
+, lorsqu'un médecin, en comparaison avec d'autres médecins dans le même bassin de population et avec à peu près le même type de malades, facture en moyenne nettement plus, sans pouvoir faire valoir des particularités qui influencent la moyenne (
+ATF 137 V 43
+consid. 2.2;
+136 V 415
+consid. 6.2). La condition préalable à l'évaluation du caractère économique selon la méthode statistique est tout d'abord que le groupe de référence soit composé de manière suffisamment similaire (
+ATF 137 V 43
+consid. 2.2).
+9.2.
+L'instance précédente a ensuite rappelé que la jurisprudence part du principe - sur la base de la situation antérieure à l'introduction du modèle de screening - que le caractère économique peut être vérifié aussi bien par la méthode statistique (comparaison des coûts moyens) que par la méthode analytique (examen au cas par cas) ou par une combinaison des deux méthodes. La méthode statistique repose sur des statistiques que les assureurs établissent sur la base des remboursements facturés (
+art. 76 let. b OAMal
+[RS 832.102]); les différentes prestations facturées sont alors attribuées au titulaire du numéro de registre des codes-créanciers mentionné sur le décompte concerné (
+ATF 135 V 237
+consid. 4.6.1).
+Conformément au mandat légal de l'
+art. 56 al. 6 LAMal
+, la Fédération des médecins suisses (FMH) et les associations d'assureurs-maladie (santésuisse et curafutura) se sont mises d'accord, en janvier 2014, sur la méthode de calcul des coûts; le contrat s'est d'abord basé sur l'analyse de la variance ("Analysis of Variance", ANOVA) comme méthode statistique de contrôle de l'économicité. Le 20 mars 2018, les partenaires tarifaires se sont mis d'accord sur la méthode de "screening". La convention 2018 s'applique à toutes les procédures de contrôle de l'économicité à partir de l'année statistique 2017, ce qui est le cas en l'espèce. Il s'agit d'un développement de la méthode ANOVA.
+La méthode de screening en tant que telle est de nature statistique. La méthode ANOVA et, à sa suite, la méthode de screening, constituent un développement de la comparaison des coûts moyens. La valeur individuelle du cas (c'est-à-dire les coûts de l'assureur-maladie générés en moyenne par patient par le fournisseur de prestations contrôlé pendant une période donnée par le biais de prestations propres ou de tiers) est comparée à la valeur du cas d'un groupe de référence approprié (
+ATF 150 V 129
+consid. 4.4.1 et les références). Par ailleurs, le calcul des indices se fait sur la base des données des assureurs. L'objectif d'établir une comparabilité via la définition du groupe de référence est poursuivi au moyen d'une analyse dite de régression. À l'aide de paramètres ou de coefficients de régression pondérés, on détermine dans quelle mesure la morbidité, par exemple, a une incidence sur les coûts dans un cas concret. Cela permet de standardiser les effets reconnus spécifiques au cabinet médical, c'est-à-dire de normaliser les écarts concernés à la valeur moyenne du groupe de comparaison concerné. Une telle neutralisation de facteurs indépendants du comportement et ayant une incidence sur les coûts permet en fin de compte d'isoler l'effet sur les coûts d'un traitement non économique. La méthode de screening complète les facteurs de morbidité "âge" et "sexe" contenus dans le modèle ANOVA par les indicateurs "PCG" (Pharmaceutical Cost Groups), "franchises" et "séjour à l'hôpital ou en EMS l'année précédente". Cette extension à des facteurs de morbidité supplémentaires a pour but de saisir les écarts par rapport aux coûts moyens du groupe de spécialistes concerné, qui sont dus à des maladies chroniques coûteuses dont la fréquence est supérieure à la moyenne dans le collectif de patients, et de les distinguer des anomalies dues à un mode de traitement inefficace (
+ATF 150 V 129
+consid. 4.4.1 et les références; arrêt 9C_600/2023 du 1er octobre 2025 consid. 4.3 in fine).
+10.
+10.1.
+Les juges arbitres ont répondu aux arguments de la recourante qui contestait la fiabilité et le manque de transparence, respectivement l'applicabilité de la méthode statistique et singulièrement la méthode de régression. Dans le cas d'espèce, ils ont constaté que les algorithmes utilisés dans la méthode de régression avaient tenu compte des quatre cas particulièrement onéreux qui avaient fait l'objet de l'expertise analytique (désignés comme cas A, B, C et D).
+S'agissant de la formation du groupe de comparaison, les juges ont aussi considéré que les reproches en lien avec sa représentativité étaient infondés. Ils ont ajouté qu'en tout état, comme l'avait relevé l'expert C.________, ledit groupe retenu par les intimées s'était avéré plus favorable que si la recourante avait été comparée à des médecins internistes généralistes. Dans cette hypothèse, la pratique de la recourante serait encore plus chère, dans la mesure où elle voyait ses patients un peu plus souvent et, surtout, avait pour chaque consultation "un coût énorme" (247 points TARMED contre 92 pour le groupe de contrôle en 2018). Dans le même sens, les intimées avaient fait valoir que si la recourante avait été comparée avec le groupe de médecine interne et de médecine générale, son indice de régression aurait été de 285 au lieu de 201, en 2018.
+L'analyse de régression avait abouti à un indice de régression des coûts totaux de 189 points pour l'année statistique 2017 et de 201 points pour l'année statistique 2018, dépassant ainsi largement la valeur moyenne de l'indice 100 du groupe de médecins spécialistes de référence (diabétologues /endocrinologues).
+10.2.
+10.2.1.
+Le tribunal arbitral a relevé que le filtrage (ou screening) avait permis de détecter une situation anormale, au sens où l'entend la méthode de régression, ce qui ne permettait pas encore de constater le caractère non économique de la pratique du médecin. Il a ajouté qu'en pareilles circonstances, le fournisseur de prestations est tenu de collaborer à l'instruction (cf.
+art. 89 al. 5 LAMal
+) et d'indiquer les particularités de sa pratique et de les étayer (cf.
+ATF 150 V 129
+consid. 5.3.2). À cet égard, l'autorité précédente a rappelé que si une partie refuse de collaborer sans motif valable, le juge en tient compte lors de l'appréciation des preuves (cf. arrêt attaqué, consid. 12.4.5).
+Cela étant, le tribunal arbitral a examiné si les anomalies constatées à l'issue de la première étape du contrôle de l'économicité avaient été suivies d'un examen au cas par cas. Dans ce cadre, la recourante avait fait valoir, au titre des spécificités de sa pratique, qu'elle comptait 70 % de patientes, un nombre important de patients de plus de 50 ans, un faible taux de patients hospitalisés, une médication importante en lien avec sa double spécialisation en médecine interne/générale et en diabétologie/endocrinologie, un nombre important de visites à domicile, et quatre cas très lourds et complexes, dont les coûts de traitements de l'un d'eux avaient été spécifiquement admis par Helsana. De leur côté, les demanderesses avaient procédé à une analyse des données, laquelle avait été suivie d'une expertise analytique judiciaire. Dans son rapport du 13 mai 2024, l'expert avait pris en compte les positions TARMED facturées par la recourante et comparé les données avec ses collègues endocrinologues et diabétologues, en particulier le nombre moyen de prestations de base par malade, concluant en substance qu'elle était pratiquement plus chère que ses collègues dans presque toutes les branches, car elle consultait beaucoup plus souvent.
+10.2.2.
+Dans le cas d'espèce, les juges arbitres ont retenu que (hormis le cas admis par Helsana) la recourante s'était bornée à fournir des explications d'ordre général en lien avec les limites actuelles des outils statistiques ou la nécessité d'apprécier l'économicité de sa pratique dans un cadre économique global. Elle n'avait présenté aucun document permettant de justifier les particularités alléguées de sa pratique et même expressément refusé de le faire. En outre, elle avait également délibérément refusé de participer à l'expertise analytique ordonnée par le tribunal, alors même qu'il lui avait rappelé, dans l'ordonnance d'expertise, qu'il lui incombait de soutenir activement le travail de l'expert. La recourante avait pourtant elle-même souligné, par son avocat, qu'une expertise analytique s'imposait, afin de pouvoir précisément discuter les cas considérés a priori comme douteux par les assureurs et d'apporter ses justifications; une telle mesure d'instruction était même "incontournable" et démontrerait "de façon implacable" l'absence de toute violation du principe d'économicité dans sa pratique. Les juges arbitres ont rappelé, à ce sujet, que, contrairement à la méthode statistique qui s'appuie essentiellement sur la comparaison chiffrée des médecins, la méthode analytique entre dans le détail de la pratique du médecin soupçonné de polypragmasie, afin de déterminer si les dépenses diagnostiques et thérapeutiques étaient justifiables compte tenu du tableau clinique et du succès de guérison visé (
+ATF 150 V 129
+consid. 4.4.2). Or la recourante avait refusé de fournir en particulier les indications sur le diagnostic et sur le type de mesures prises dans le cadre de sa pratique, rendant impossible l'examen des dossiers de ses patients par l'expert.
+Les juges arbitres ont aussi retenu que la recourante n'avait apporté aucun élément permettant d'établir que sa patientèle était moins souvent hospitalisée que celle de son groupe de comparaison grâce aux prestations dont elle se chargeait elle-même. Par ailleurs, ils ont admis que les explications fournies (jugées succinctes et dénuées de données quantitatives) ne permettaient pas de rendre vraisemblable une particularité du cabinet pouvant expliquer les indices de régression litigieux. De plus, la recourante n'avait nullement démontré la "nécessité médicale" alléguée des visites à domicile litigieuses.
+10.2.3.
+Quant aux autres "observations critiques" du docteur E.________ qu'il a discutées, le tribunal arbitral a conclu qu'elles ne permettaient pas non plus de remettre en cause le rapport d'expertise, ni même de jeter un quelconque doute sur les conclusions de celui-ci. À cet égard, il a retenu que le refus caractérisé de la recourante de collaborer la mettait en porte-à-faux avec la position du docteur E.________ pour lequel "l'explicitation des particularités d'une pratique" devait revêtir une place centrale lors de l'examen de l'économicité. Il a déduit que la recourante ne saurait se prévaloir du caractère lacunaire de l'expertise analytique, dont elle était la seule responsable par son refus non justifié de fournir à l'expert les informations réclamées par ce dernier. Quoi qu'il en fût, le docteur E.________ n'avait apporté aucun élément de nature analytique à l'appui de ses "observations critiques".
+10.2.4.
+S'agissant ensuite de l'économicité de la pratique de la recourante dans les quatre cas particuliers qui avaient été examinés, le tribunal arbitral s'est rallié aux conclusions, dûment motivées, de l'expertise analytique, selon lesquelles les traitements correspondants n'étaient pas économiques. Il a toutefois précisé que la question de l'économicité de l'un des traitements pouvait rester irrésolue (cas A), dans la mesure où Helsana avait finalement accepté de prendre en charge les coûts de ce traitement.
+10.3.
+Ce qui précède a conduit le tribunal arbitral à admettre que la recourante ne pouvait se prévaloir d'aucune pratique particulière, respectivement d'une patientèle différente de celle du groupe de comparaison, qui aurait permis de justifier une prise en charge de ses coûts au-delà de la marge de tolérance-type de 120-130 au sens de l'
+ATF 150 V 129
+consid. 5.5. Partant, il convenait de considérer que les facteurs de morbidité intégrés et fondamentalement standardisés par la procédure de screening étaient effectivement (déjà) entièrement représentés dans les indices de régression retenus par les intimées à l'appui de leurs prétentions, indices dont les taux étaient respectivement de 189 et 201 points pour les années 2017 et 2018. Dans la mesure où la recourante n'était pas parvenue à démontrer - comme il le lui incombait - le caractère inapproprié ou ne correspondant pas aux conditions réelles de ces facteurs de morbidités, il y avait lieu de valider les indices correspondants.
+10.4.
+L'instance arbitrale a finalement abordé le calcul des montants à restituer. Retenant une marge de tolérance de 30 % au lieu de 20 %, elle les a arrêtés au total à 280'886 fr. 05, soit 119'816 fr. 95 pour l'année 2017 et 161'069 fr. 10 pour l'année 2018. Eu égard aux conclusions initiales des demanderesses pour 2017 et 2018 qui s'élevaient à 291'066 fr. 10 (respectivement 129'997 fr. et 161'069 fr. 10), ces dernières obtenaient ainsi gain de cause à concurrence de 96,5 % de leurs prétentions.
+11.
+11.1.
+La recourante se prévaut d'une violation de l'
+art. 56 LAMal
+. Elle soutient que l'autorité précédente se devait de suspendre la procédure afin que les intimées procèdent à un examen au cas par cas, préalable à la procédure ou durant celle-ci, ou alors de rejeter les demandes en raison du défaut d'examen préalable au cas par cas.
+11.2.
+Ce grief est infondé. Déjà lors de l'application de la méthode ANOVA, avant l'année 2017, il avait été décidé que si les tribunaux arbitraux restaient en principe libres de choisir la méthode d'examen, la préférence devait néanmoins être donnée à la méthode statistique par rapport à la méthode analytique qui était en règle générale appliquée seulement lorsque des données fiables pour une comparaison des coûts moyens faisaient défaut (
+ATF 151 V 30
+consid. 5.7; voir aussi l'arrêt 9C_600/2023 précité consid. 4.3). La juridiction cantonale a de toute façon examiné les quatre cas dits lourds (patients A à D) dans le cadre de la méthode screening (cf.
+ATF 150 V 129
+consid. 5.2), au moyen des données à disposition dans la mesure de la participation défaillante de la recourante à l'administration des preuves (consid. 12 infra).
+12.
+12.1.
+La recourante fait grief à la juridiction arbitrale d'avoir admis à tort que le fardeau de la preuve et le devoir de collaborer lui incombent. Elle soutient que ces deux charges appartenaient au contraire aux caisses intimées. Dans ce contexte, en ce qui concerne l'administration des preuves dans les quatre cas ayant été analysés (patients A, B, C et D), elle se plaint d'une violation de la maxime inquisitoire ("maxime inquisitoriale"). À son avis, le tribunal arbitral aurait dû l'inviter à produire une déclaration des assureurs attestant l'économicité de traitements prodigués aux patients B, C et D, le cas échéant requérir une telle déclaration directement de la part des assureurs, à peine d'inverser le fardeau de la preuve. L'exclusion (de l'indice) - non seulement de la patiente A mais aussi des patients B, C et D - aurait eu "un impact fort" sur le montant des restitutions.
+12.2.
+En procédure cantonale, la recourante a été invitée à de nombreuses reprises à collaborer activement à l'administration des preuves et à exposer, de manière objective, compréhensible et étayée, les éventuelles particularités de sa pratique. Elle ne l'a toutefois pas fait, de sorte que la juridiction arbitrale n'a pas été en mesure de recueillir des données concrètes, tangibles et chiffrées. La recourante a également refusé d'apporter sa collaboration à la mise en oeuvre de l'expertise analytique qu'elle avait au demeurant appelée de ses voeux.
+En tant que la recourante se plaint d'une violation des maximes d'office et inquisitoire, son argumentation est dénuée de toute pertinence. En effet, si les tribunaux arbitraux déterminent les faits pertinents avec la participation des parties, administrent les preuves nécessaires et les apprécient librement (
+art. 89 al. 5 LAMal
+), les maximes d'office et inquisitoire trouvent leurs limites dans l'obligation des parties de collaborer, que la recourante n'a en tout cas pas respectée, voire dans l'interdiction de I'abus de droit.
+13.
+13.1.
+La recourante se prévaut ensuite d'une mauvaise application de l'outil statistique de filtrage. Elle soutient que le groupe de comparaison a été composé de façon erronée, car un tel groupe doit réunir des médecins ayant une pratique similaire. Cela n'aurait pas été le cas, dès lors qu'elle effectuerait beaucoup moins de consultations que ses confrères, mais que sa pratique comporterait un nombre important de visites à domicile. À son avis, l'instrument statistique ne permet absolument pas, à tout le moins en ce qui la concerne, de savoir si un médecin soigne de façon économique et donc de servir de base même subsidiairement au calcul de "restitutions", ce que le tribunal a pourtant fait, versant ainsi dans l'arbitraire. Elle relève que les médecins du groupe de comparaison fournissent des prestations ponctuelles (p. ex. une permanence, avec un patient qui vient une fois, peut-être deux fois l'an, et dont le "coût moyen" calculé sur un an est donc très bas) ou des prestations de quelques minutes comme des injections d'insuline. Cela n'aurait rien à voir avec sa pratique qui inclut le fait d'être aussi médecin traitant, en plus d'assumer ce qui relève de la médecine interne et de la diabétologie/endocrinologie, qui plus est dans le cas de pathologies lourdes.
+13.2.
+Ces griefs dirigés contre la formation du groupe de comparaison sont infondés. En effet, le tribunal arbitral a dûment tenu compte des éléments invoqués par la recourante, examinant notamment les indications relatives au nombre de consultations, le nombre de patients traités ou le nombre de visites à domicile (consid. 10.6 à 10.10 de l'arrêt attaqué). Ceci l'a amené à admettre que la méthode de régression avait valablement permis de détecter une situation anormale (consid. 12). La juridiction arbitrale s'est également prononcée sur les cas lourds invoqués par la recourante (consid. 10.10.2), sur l'impact allégué de sa double spécialisation, ainsi que sur ses critiques quant à la fiabilité des données statistiques retenues dans l'analyse (consid. 10.11). Le tribunal arbitral a rappelé que lorsqu'il est constaté qu'une structure des coûts est anormale, les assureurs-maladie restent en principe chargés de Ia preuve. Toutefois, il incombe au fournisseur de prestations d'indiquer les particularités de sa pratique et de les étayer (
+ATF 150 V 129
+consid. 5.3.2), compte tenu en particulier de l'obligation de collaborer des parties (consid. 12.3 et 12.4) à laquelle la recourante ne s'était pas tenue. L'argumentation de la recourante, fondée sur sa propre appréciation de la pratique des médecins du groupe de comparaison, ne suffit pas à mettre en évidence le caractère arbitraire de l'appréciation du tribunal arbitral.
+14.
+14.1.
+La recourante fait aussi valoir que les montants à restituer ont été fixés sur la base d'un indice (l'indice de régression) servant à la sélection, ce qui ne démontrerait rien du point de vue de l'économicité et ne permettrait pas de les déterminer.
+Par ailleurs, la recourante invoque une erreur manifeste de calcul dans l'exclusion de la patiente A (dont l'économicité a été spécifiquement confirmée par l'assureur Helsana). Elle soutient que le maintien des coûts engendrés par cette patiente (10 % en 2017 et 5 % en 2018) a évidemment eu un impact sur le niveau de l'indice, lequel ne serait ni de 230 pour 2017 ni de 248 pour 2018 et qui devrait être réduit, à peine de procéder arbitrairement à une "aberration arithmétique".
+La recourante se plaint aussi d'une absence de contrôle de l'outil statistique, dont seules les intimées ont la maîtrise. En se fondant sur cet outil comme moyen de preuve, son droit à un procès équitable (
+art. 6 CEDH
+) et à l'administration des preuves (
+art. 29 al. 2 Cst
+) aurait été violé.
+14.2.
+Dans le cas d'espèce, les intimées relèvent de façon pertinente que le tribunal arbitral a procédé à une évaluation individuelle des coûts anormaux constatés par l'analyse de régression (consid. 14.4 de l'arrêt attaqué). Cet examen a porté sur la double spécialisation de la recourante, sur l'impact des indicateurs PCG sur l'indice, de l'impact du nombre de visites à domicile et de leur nécessité médicale, ainsi que sur l'effet éventuel du nombre de "patientes femmes" ou de "la moyenne d'âge de ses patients" (consid. 15 de l'arrêt attaqué), puis de manière plus détaillée sur les patients A, B, C et D (consid. 18 de l'arrêt attaqué).
+C'est aussi à juste titre que les intimées ajoutent que l'expertise analytique n'a pas été mise en oeuvre en remplacement de l'analyse au cas par cas. Sur la base des conclusions de l'expert, le tribunal arbitral a retenu que rien ne permettait de remettre en cause, pas même l'expertise du docteur E.________ qui ne les avait pas contestées sur ce point, que les heures de consultation par semaine pour les patients A, B, C et D "apparaissent effectivement excessives" et que l'adéquation et l'économicité n'étaient pas respectées. Compte tenu de la garantie octroyée par Helsana en lien avec la patiente A, il a considéré que "ces traitements ont contribué aux indices du médecin et à son coût moyen par patient" de sorte qu'il convenait de les exclure du montant soumis à restitution. On ajoutera que l'instance précédente a clairement indiqué que les algorithmes utilisés dans la méthode de régression avaient tenu compte des quatre cas particulièrement onéreux (patients A, B, C et D). Les données de la patiente A ont été exclues de l'indice, dès lors que Helsana avait spécifiquement admis de prendre les coûts des traitements en charge. Quant aux patients B, C et D, l'expertise a précisément permis d'admettre que la pratique de la recourante était dispendieuse, de sorte qu'il fallait en tenir compte pour établir la polypragmasie contestée, même si les assureurs concernés avaient accepté de rembourser les factures correspondantes (sur la différence entre le contrôle de la facturation et celui de l'économicité, voir l'arrêt 9C_122/2023 du 23 août 2024 consid. 4.3).
+Quant au moyen tiré de l'absence de contrôle de l'outil statistique, dont seules les intimées auraient la maîtrise, il n'est d'aucun secours à la recourante. Il lui aurait incombé d'indiquer en quoi l'examen de l'économicité de sa pratique ne pouvait pas être effectué en fonction de l'outil statistique. Elle n'expose du reste pas en quoi il serait erroné.
+15.
+En bref, il convient de constater, avec les intimées, que l'arrêt entrepris reprend point par point les différentes particularités alléguées autant que le tribunal arbitral a pu le faire, en exposant comment elles ont été analysées et en expliquant leur lien avec le résultat de la première étape statistique. Il y a donc lieu de considérer que l'examen individuel a eu lieu de manière suffisante et que le résultat a permis de prouver le caractère non économique des prestations de Ia recourante. Il découle de ce qui précède qu'elle a bénéficié d'un contrôle fondé sur la méthode d'analyse de régression en deux étapes. Les deux étapes préconisées à savoir, l'examen statistique (à deux niveaux), suivi d'un examen au cas par cas, suffisant au regard de l'absence de collaboration de la recourante à l'administration des preuves, dont le résultat a été mis en relation avec ceux de Ia première étape, ont bien été respectées en l'espèce (consid. 14.8). Il aurait ainsi été contraire au principe d'économie de Ia procédure d'ordonner une suspension de la procédure comme le requiert aujourd'hui la recourante afin de réitérer ces étapes exactement de Ia même manière.
+Pour le surplus, la recourante ne remet pas suffisamment en cause les calculs en tant que tels relatifs à l'établissement des montants qu'elle doit restituer. Sur la question de la polypragmasie, le recours est donc infondé.
+16.
+16.1.
+À titre "extrêmement subsidiaire", la recourante se plaint d'une répartition erronée des frais judiciaires. Invoquant la jurisprudence rendue dans l'intervalle en matière de polypragmasie (cf.
+ATF 150 V 129
+), elle soutient que la position des intimées, qui avaient fondé leurs prétentions en application de la seule méthode statistique, ne se conciliait désormais plus avec les nouvelles règles. Elles auraient dès lors provoqué "90 % des efforts procéduraux", de sorte qu'il serait contraire aux
+art. 6 CEDH
+et 29 Cst. de mettre la quasi totalité des frais à sa charge.
+16.2.
+Ce moyen n'est pas mieux fondé. En effet, les frais de la procédure arbitrale ont été répartis en fonction du sort des conclusions des demanderesses, lesquelles ont obtenu très largement gain de cause, à concurrence de 96,5 %. La recourante n'indique pas en quoi le droit cantonal de procédure (art. 46 al. 1 et 2 LaLAMal) aurait été violé à cette occasion (
+art. 106 al. 2 LTF
+), ni que l'issue du litige aurait été différente si le procès s'était achevé avant le prononcé de l'
+ATF 150 V 129
+. De plus, le seul fait d'invoquer des droits constitutionnels ne répond pas aux exigences de motivation de l'
+art. 106 al. 2 Cst.
+(cf.
+ATF 150 II 346
+consid. 1.5.3 et les références).
+17.
+Les frais de justice pour la procédure fédérale sont mis à la charge de la recourante qui succombe sur le fond. Ils sont fixés en fonction de la valeur litigieuse totale de 280'886 fr. 05 (art. 65 al. 2 et al. 3 let. b, 66 al. 1 LTF; ch. 1 du Tarif des émoluments judiciaires du Tribunal fédéral du 31 mars 2006, RS 173.110.210.1).
+Dès lors que les conclusions relatives à l'amende de 2'500 fr. sont bien fondées et que le ch. 5 du dispositif de l'arrêt cantonal est annulé, la recourante a droit de ce chef à une indemnité de dépens réduite à charge des intimées, lesquelles ont conclu au rejet du recours et succombent sur ce point (
+art. 68 al. 1 LTF
+). Les intimées n'ont pas droit aux dépens qu'elles demandent (
+art. 68 al. 1 et 3 LTF
+;
+ATF 149 II 381
+). Compte tenu de l'issue du litige, il n'y a pas lieu de modifier la répartition des frais et dépens arrêtés par l'instance cantonale.
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+La demande de récusation du juge fédéral Francesco Parrino est rejetée.
+2.
+La requête de suspension de la procédure est rejetée.
+3.
+Le recours est partiellement admis en ce sens que le ch. 5 du dispositif de l'arrêt du Tribunal arbitral des assurances de la République et canton de Genève du 14 janvier 2025 est annulé. Le recours est rejeté pour le surplus.
+4.
+Les frais judiciaires, arrêtés à 8'000 fr., sont mis à la charge de la recourante.
+5.
+Les intimées verseront à la recourante une indemnité de dépens de 1'000 fr. pour la procédure fédérale.
+6.
+Le présent arrêt est communiqué aux parties, au Tribunal arbitral des assurances de la République et canton de Genève et à l'Office fédéral de la santé publique.
+Lucerne, le 25 juin 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+Le Greffier :    Berthoud

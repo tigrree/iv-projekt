@@ -1,0 +1,366 @@
+8C_254/2025
+Sentenza del 23 giugno 2026
+IV Corte di diritto pubblico
+Composizione
+Giudici federali Viscione, Presidente,
+Maillard, Heine, Scherrer Reber, Métral,
+Cancelliere Colombi.
+Partecipanti al procedimento
+Istituto nazionale svizzero di assicurazione contro gli infortuni (INSAI), Divisione giuridica, Fluhmattstrasse 1, 6002 Lucerna,
+ricorrente,
+contro
+A.________, Italia,
+patrocinato dall'avv. Andrea Cantaluppi,
+opponente.
+Oggetto
+Assicurazione contro gli infortuni (rendita d'invalidità; confronto dei redditi),
+ricorso contro la sentenza del Tribunale delle assicurazioni del Cantone Ticino del 24 marzo 2025 (35.2024.84).
+Fatti:
+A.
+Il 25 marzo 2022, A.________, nato nel 1985, a quel momento alle dipendenze della ditta B.________ SA di U.________ (TI) in qualità di piastrellista e, perciò, assicurato d'obbligo contro gli infortuni e le malattie professionali presso I'Istituto nazionale svizzero di assicurazione contro gli infortuni (INSAI), ha riportato un trauma distorsivo alla caviglia sinistra. L'esame di RMN del 19 maggio 2022 ha evidenziato la presenza di una lesione della sindesmosi tibio-fibulare anteriore e distrazione del legamento deltoideo, come pure un edema osseo dell'astragalo e in misura minore della tibia con piccolo danno osteocondrale del domo astragalico. Nel mese di settembre 2023, l'assicurato è quindi stato sottoposto ad un intervento artroscopico diagnostico con microfratture del talo laterale. L'istituto assicuratore ha assunto il caso e ha corrisposto regolarmente le prestazioni di legge.
+Alla chiusura del caso, con decisione formale del 24 giugno 2024 l'amministrazione ha negato il diritto a una rendita in quanto il reddito da invalido (fr. 67'899.-) è risultato superiore a quello da valido (fr. 65'298.-). L'INSAI ha invece assegnato un'indennità per menomazione dell'integrità (IMI) del 5 %. A seguito dell'opposizione interposta da A.________, in data 9 settembre 2024 l'assicuratore ha in sostanza confermato il contenuto della sua prima decisione, fissando tuttavia il reddito da invalido in fr. 68'236.19 facendo capo agli ultimi dati a disposizione relativi all'evoluzione nominale dei salari.
+B.
+Con sentenza del 24 marzo 2025, il Tribunale delle assicurazioni del Cantone Ticino ha parzialmente accolto il ricorso interposto dall'assicurato e condannato l'INSAI a riconoscergli una rendita d'invalidità del 13 % a partire dal 1° luglio 2024.
+C.
+L'INSAI presenta un ricorso in materia di diritto pubblico al Tribunale federale, chiedendo l'annullamento della sentenza cantonale e la conferma della decisione su opposizione del 9 settembre 2024.
+Chiamati a pronunciarsi, l'assicurato postula la reiezione del ricorso, assecondato dall'Ufficio federale della sanità pubblica (UFSP) con argomentazioni di cui si dirà in seguito, mentre la Corte cantonale rinuncia a presentare osservazioni.
+D.
+Il Tribunale federale ha indetto una deliberazione pubblica che si è tenuta il 23 giugno 2026.
+Diritto:
+1.
+La sentenza impugnata è una decisione finale (
+art. 90 LTF
+) resa in una materia di diritto pubblico (art. 82 segg. LTF) da un'autorità cantonale di ultima istanza (art. 86 cpv. 1 lett. d e cpv. 2 LTF). Presentato in tempo utile (
+art. 100 cpv. 1 LTF
+) e nelle debite forme (
+art. 42 LTF
+), il ricorso è ammissibile.
+2.
+2.1.
+Il ricorso in materia di diritto pubblico può essere presentato per violazione del diritto, conformemente a quanto stabilito dagli
+art. 95 e 96 LTF
+. Il Tribunale federale esamina d'ufficio l'applicazione del diritto federale (
+art. 106 cpv. 1 LTF
+), non essendo vincolato né dagli argomenti sollevati nel ricorso né dai motivi addotti dall'autorità precedente. Tuttavia, salvo che la violazione giuridica sia manifesta, tenuto conto dell'esigenza di motivazione posta dall'
+art. 42 cpv. 2 LTF
+, il Tribunale federale esamina solamente le censure sollevate, mentre non è tenuto a vagliare, come lo farebbe un'autorità di primo grado, tutte le questioni giuridiche che si pongono, se queste ultime non sono (più) debitamente presentate in sede federale (
+DTF 143 V 208
+consid. 2;
+141 V 234
+consid. 1). Inoltre, la parte ricorrente non può limitarsi a riproporre i punti di vista già difesi nella procedura cantonale, bensì deve sviluppare la propria critica partendo dai considerandi dell'autorità precedente (
+DTF 148 IV 205
+consid. 2.6;
+140 III 115
+consid. 2).
+2.2.
+Se il ricorso è presentato contro una decisione d'assegnazione o rifiuto di prestazioni pecuniarie dell'assicurazione militare o dell'assicurazione contro gli infortuni - come nella fattispecie - può essere censurato qualsiasi accertamento inesatto o incompleto dei fatti giuridicamente rilevanti (
+art. 97 cpv. 2 LTF
+); il Tribunale federale non è allora vincolato dall'accertamento dei fatti operato dall'autorità inferiore (
+art. 105 cpv. 3 LTF
+).
+3.
+Oggetto del contendere è sapere se la sentenza del Tribunale cantonale, che ha condannato il ricorrente a riconoscere una rendita d'invalidità del 13 % all'opponente, sia lesiva del diritto federale.
+4.
+4.1.
+I principi riconosciuti e le norme legali in materia di rendita d'invalidità a seguito d'infortunio (
+art. 18 cpv. 1 LAINF
+;
+art. 8 e 16 LPGA
+[RS 830.1]) sono già stati correttamente esposti nella sentenza impugnata. Nella misura in cui non servano ulteriori precisazioni, vi si può fare riferimento.
+4.2.
+Gli aspetti legati alla valutazione medica della capacità lavorativa residua dell'opponente sono rimasti incontestati già di fronte all'istanza precedente. Oltre a ciò, la determinazione dei redditi ipotetici effettuata dal ricorrente in base ai dati statistici (secondo la Rilevazione svizzera della struttura dei salari [RSS]) per il reddito da invalido e sulla scorta dell'ultimo salario realizzato per il reddito da valido - tutelata dalla Corte ticinese anche per quanto riguarda l'inapplicabilità dei correttivi giurisprudenziali (deduzione sociale e parallelismo dei redditi; cfr.
+DTF 150 V 410
+consid. 9.3) - non è stata ulteriormente censurata dall'opponente, il quale non è insorto contro la sentenza cantonale.
+D inanzi al Tribunale federale risulta pertanto litigiosa soltanto l'applicazione per analogia, proposta dai primi giudici e contestata nel ricorso, degli
+art. 26e 26
+bis cpv. 3 OAI (RS 831.201) nella determinazione del grado d'invalidità dell'opponente. Sulla scorta di queste disposizioni, la Corte ticinese ha fissato il reddito da invalido in fr. 61'376.80 e ritenuto un reddito da valido di fr. 70'739.95, ottenendo così un grado d'invalidità del 13 %.
+5.
+Il Tribunale federale non si è ancora pronunciato sulla portata di queste disposizioni nel diritto dell'assicurazione contro gli infortuni. Prima di chinarsi sulla motivazione proposta dai giudici cantonali e sulle argomentazioni delle parti in causa, per poi menzionare i principi e la dottrina pertinenti ed entrando così nel cuore dell'analisi, è opportuno ricordare il contenuto degli
+art. 26 e 26bis OAI
+attualmente in vigore.
+5.1.
+Ai sensi dell'
+art. 26 OAI
+("Determinazione del reddito senza invalidità", in vigore dal 1° gennaio 2022), il reddito senza invalidità (
+art. 16 LPGA
+) è determinato sulla base dell'ultimo reddito lavorativo effettivamente conseguito prima dell'insorgere dell'invalidità. Se il reddito lavorativo conseguito negli ultimi anni prima dell'insorgere dell'invalidità era soggetto a forti variazioni, ci si basa su un reddito medio adeguato (cpv. 1).
+Se il reddito lavorativo effettivamente conseguito è inferiore di almeno il 5 % al valore centrale usuale del settore secondo la RSS di cui all'art. 25 cpv. 3, il reddito senza invalidità corrisponde al 95 % di questo valore centrale (cpv. 2).
+Il cpv. 2 non è applicabile, se: (a) anche il reddito con invalidità secondo l'art. 26bis cpv. 1 è inferiore di almeno il 5 % al valore centrale usuale del settore secondo la RSS di cui all'art. 25 cpv. 3; o (b) il reddito è stato conseguito con un'attività lucrativa indipendente (cpv. 3).
+5.2.
+L'
+art. 26bis OAI
+("Determinazione del reddito con invalidità", in vigore dal 1° gennaio 2022), dal canto suo, prevede che se dopo l'insorgere dell'invalidità l'assicurato consegue un reddito lavorativo, quest'ultimo gli viene computato quale reddito con invalidità (
+art. 16 LPGA
+), sempre che gli permetta di valorizzare al meglio la sua capacità funzionale residua in relazione a un'attività lucrativa da lui ragionevolmente esigibile (cpv. 1).
+Se non vi è alcun reddito lavorativo computabile, il reddito con invalidità è determinato in base ai valori statistici di cui all'art. 25 cpv. 3. In deroga all'art. 25 cpv. 3, per gli assicurati di cui all'art. 26 cpv. 6 vanno impiegati valori indipendenti dal sesso (cpv. 2).
+Al valore determinato in base a valori statistici secondo il cpv. 2 è applicata una deduzione del 10 %. Se a causa dell'invalidità l'assicurato può lavorare soltanto con una capacità funzionale secondo l'art. 49 cpv. 1bis pari o inferiore al 50 %, è applicata una deduzione del 20 %. Non sono ammesse ulteriori deduzioni (cpv. 3, in vigore dal 1° gennaio 2024).
+6.
+6.1.
+Il Tribunale cantonale si è innanzitutto soffermato sulla portata dell'art. 26bis cpv. 3, prima frase, OAI nell'ambito dell'assicurazione contro gli infortuni.
+6.1.1.
+In primo luogo, i giudici cantonali hanno ripercorso il contesto normativo della revisione "Ulteriore sviluppo dell'AI", in vigore dal 1° gennaio 2022, riferendosi in particolare alla modifica degli
+art. 28a LAI
+e 26bis OAI inerente alla valutazione del grado d'invalidità. Essi hanno pure tematizzato la nuova versione di quest'ultima disposizione, entrata in vigore il 1° gennaio 2024 in risposta alla mozione 22.3377 della Commissione della sicurezza sociale e della sanità del Consiglio nazionale (CSSS-N) del 6 aprile 2022 ("Utilizzare salari statistici corrispondenti all'invalidità"). Adottata da entrambe le camere del parlamento, questa mozione aveva incaricato il Consiglio federale di implementare entro il 31 dicembre 2023 una base di calcolo che, nel determinare il reddito con invalidità mediante valori statistici, considerasse le possibilità di reddito realistiche delle persone affette dai problemi di salute. Dopo aver citato alcuni passaggi del rapporto esplicativo (dopo la procedura di consultazione) del Dipartimento federale dell'interno (DFI) del 18 ottobre 2023, il Tribunale cantonale ha discusso della problematica, constatata nella
+DTF 150 V 410
+, inerente all'
+art. 26bis cpv. 3 OAI
+nella versione in vigore dal 1° gennaio 2022 al 31 dicembre 2023, menzionando alcune reazioni successive (v. la Lettera circolare AI n. 445 dell'Ufficio federale delle assicurazioni sociali [UFAS] del 26 agosto 2024, l'interpellanza n. 24.3980 del Consigliere nazionale Christian Lohr del 24 settembre 2024 e il parere del Consiglio federale del 27 novembre 2024).
+6.1.2.
+A questo punto, dopo aver constatato l'impossibilità di applicare direttamente l'art. 26bis cpv. 3, prima frase, OAI (in vigore dal 1° gennaio 2024) nell'ambito dell'assicurazione contro gli infortuni, la Corte cantonale ha concluso che tale norma potesse invece trovarvi applicazione per analogia, le situazioni da considerare essendo senz'altro simili (
+DTF 130 V 71
+consid. 3.2.1). Con questa disposizione, il Consiglio federale aveva infatti voluto precisare la nozione di reddito da invalido prevista dall'
+art. 16 LPGA
+ai fini della determinazione del grado d'invalidità, ovvero una legge avente come obiettivo dichiarato quello di armonizzare e uniformare il diritto materiale delle assicurazioni sociali dei vari settori, seppure - riferendosi alla
+DTF 150 V 410
+- a mente dei giudici cantonali sarebbe stato più opportuno inserire tale modifica nell'OPGA (RS 830.11). La nuova versione dell'art. 26bis cpv. 3, prima frase, OAI era inoltre stata introdotta quale risposta alla mozione 22.3377 del 6 aprile 2022 della CSSS-CN, poi adottata dal Parlamento, mediante la quale era stato chiesto al Consiglio federale di sviluppare delle basi di calcolo specificatamente adattate alle necessità della valutazione dell'invalidità, tenendo conto delle proposte formulate dalla Prof. em. Riemer-Kafka e dal Dr. phil. Schwegler, dopo che l'UFAS e lo stesso Consiglio federale avevano dichiarato che i risultati sulla fattibilità e delle proposte concrete sarebbero stati disponibili non prima del 2025. Nell'atto parlamentare in questione era stato sottolineato che, secondo studi scientifici, se per il reddito da invalido ci si basava sulle tabelle RSS ne risultavano valori strutturalmente troppo elevati con ricadute negative sul diritto ai provvedimenti integrativi e alla rendita. Oltre a ciò, nel suo rapporto esplicativo del 18 ottobre 2023 (dopo consultazione), il DFI aveva indicato che la deduzione forfettaria del 10 % introdotta all'art. 26bis cpv. 3, prima frase, OAI, da applicare sul reddito da invalido calcolato in base ai dati statistici previsti dalle tabelle RSS, avrebbe permesso di compensare la maggiore difficoltà nella realizzazione di tale reddito per le persone con un danno alla salute. Ora, in quanto volta a correggere una distorsione insita nella determinazione del reddito da invalido in base ai valori centrali delle tabelle RSS, secondo il Tribunale cantonale la norma in questione non poteva essere considerata specifica all'assicurazione per l'invalidità. Infatti, nella misura in cui anche nell'assicurazione contro gli infortuni il reddito da invalido ai sensi dell'
+art. 16 LPGA
+deve essere stabilito, in assenza di un guadagno concreto computabile, utilizzando i salari statistici RSS (valore centrale), non vi era ragione per non applicare anche in questo settore il correttivo previsto dall'art. 26bis cpv. 3, prima frase, OAI.
+6.1.3.
+La Corte cantonale ha inoltre precisato che il DFI, nel rapporto esplicativo del 5 aprile 2023 per l'indizione della procedura di consultazione, aveva negato l'applicazione diretta, pur lasciando aperta la questione riguardante l'applicazione per analogia, indicando che tale aspetto avrebbe dovuto essere chiarito dalla giurisprudenza. Nel suo successivo rapporto esplicativo del 18 ottobre 2023 (dopo consultazione), il DFI aveva invece messo in dubbio l'efficacia di una deduzione forfettaria del 10 % nell'assicurazione contro gli infortuni, in particolare poiché in quell'ambito il diritto ad una rendita nasceva già a partire da un grado d'invalidità del 10 %, comportando potenzialmente un aumento delle concessioni di rendita e quindi delle spese di questa assicurazione. Al riguardo, i giudici ticinesi hanno sottolineato che la necessita di correggere dei dati salariali statistici unanimemente ritenuti troppo elevati per delle persone con problemi di salute era la medesima nell'assicurazione per l'invalidità e in quella contro gli infortuni. Nella
+DTF 148 V 174
+consid. 9.2.3, il Tribunale federale aveva del resto ribadito, una volta ancora, il principio dell'uniformità nella valutazione del grado d'invalidità. Considerazioni di politica finanziaria non potevano dunque rappresentare un ostacolo all'applicazione per analogia del correttivo nel settore dell'assicurazione infortuni.
+6.2.
+Il ricorrente non condivide le conclusioni a cui è giunto il Tribunale cantonale.
+6.2.1.
+Pur non contestando che la nozione d'invalidità definita nella LPGA sarebbe identica in tutti i rami dell'assicurazione sociale, non si potrebbero ignorare le differenze tra l'assicurazione per l'invalidità e quella contro gli infortuni. Ad esempio, l'
+art. 28 cpv. 4 OAINF
+(RS 832.202) non troverebbe nessuna corrispondenza in materia di assicurazione per l'invalidità, in cui il fattore dell'età potrebbe giocare un ruolo non indifferente nella fissazione della rendita. L'assicurazione per l'invalidità sarebbe inoltre tenuta a versare una rendita solo con un discapito di almeno il 40 %, per cui le deduzioni avrebbero un impatto minore rispetto a quello che potrebbero avere per gli assicuratori infortuni, chiamati a corrispondere una rendita già di fronte ad una differenza del 10 %. L'assicurazione per l'invalidità verserebbe poi una rendita intera in caso di un grado d'invalidità del 70 %, a differenza degli assicuratori LAINF, chiamati unicamente a effettuare gli arrotondamenti alla percentuale intera superiore o inferiore. Il grado d'invalidità giocherebbe un ruolo in materia di provvedimenti professionali, obiettivo centrale per l'AI, ma non concernerebbe gli assicuratori infortuni. Oltre a ciò, l'assicurazione per l'invalidità riguarderebbe anche le persone che presentano un danno alla salute dalla nascita o un danno alla salute precoce, diversamente dall'assicurazione contro gli infortuni.
+6.2.2.
+Inoltre, per giurisprudenza, la valutazione del grado d'invalidità secondo l'assicurazione per l'invalidità non vincolerebbe gli assicuratori infortuni, e viceversa; entrambi gli assicuratori sarebbero tenuti a valutare il grado d'invalidità in modo indipendente. Ciò significherebbe che già prima della modifica dell'OAI entrata in vigore il 1° gennaio 2024 sarebbero risultate delle differenze in materia di raffronto dei redditi, anche nei casi in cui la persona assicurata non presentava delle affezioni morbose. Infine, citando un passaggio del consid. 10.3 della
+DTF 150 V 410
+, nonché della sentenza 8C_57/2024 del 4 dicembre 2024, il ricorrente conclude che il Tribunale federale avrebbe lasciato intendere che un'applicazione per analogia non entra in considerazione. In ogni caso, non si potrebbe parlare di una lacuna delle legge, per cui spetterebbe al legislatore - e non ai tribunali - vagliare se introdurre una delega simile a quella di cui all'art. 28a cpv. 1, seconda frase, LAI in materia di assicurazione contro gli infortuni.
+6.3.
+Dal canto suo, l'opponente si è limitato a contestare quanto dedotto dal ricorrente, aderendo integralmente alla motivazione e alle conclusioni cui è giunta la Corte cantonale.
+6.4.
+L'UFSP ha invece sviluppato le seguenti argomentazioni. Esso ha innanzitutto osservato che, in assenza di una norma di delega nella LAINF, non sarebbe stato possibile introdurre la deduzione forfettaria di cui all'
+art. 26bis cpv. 3 OAI
+nell'OAINF e, di conseguenza, non sarebbe di principio applicabile nell'assicurazione contro gli infortuni. Nel seguito, è stato rammentato il principio dell'uniformità del concetto d'invalidità secondo la giurisprudenza e l'
+art. 16 LPGA
+, pur rilevando che gli assicuratori invalidità e quelli contro gli infortuni non sono vincolati dalle loro rispettive decisioni, essendo tenuti a valutare il grado d'invalidità in modo indipendente l'uno dall'altro. L'UFSP condivide l'opinione secondo cui sarebbe stato più opportuno inserire la modifica delle modalità di determinazione del reddito da invalido nella LPGA. Esso ritiene che la valutazione dell'invalidità, stipulata all'
+art. 16 LPGA
+, dovrebbe essere effettuata in modo uniforme nei diversi rami dell'assicurazione sociale. Già nel rapporto esplicativo del DFI del 5 aprile 2023 era stato stabilito che sarebbe spettato alla giurisprudenza chiarire se, anche in assenza di una normativa specifica, la deduzione forfettaria potesse essere applicata anche nell'assicurazione infortuni. Per questo motivo, l'UFSP chiede che l'
+art. 26bis cpv. 3 OAI
+venga applicato per analogia anche in questo settore.
+7.
+7.1.
+7.1.1.
+L'analogia è l'estensione, fondata su considerazioni teleologiche, del campo di applicazione di una norma giuridica oltre i confini testuali del suo tenore letterale (
+DTF 142 III 329
+consid. 5.3). Essa presuppone fattispecie sufficientemente simili. L'analogia è pertanto vincolata al fatto che il contesto normativo per il quale una disposizione esiste nel diritto positivo, e la tematica in relazione alla quale si pone la questione dell'applicazione analogica dell'altra norma, presentino sufficienti affinità oggettive (
+DTF 130 V 71
+consid. 3.2.1).
+7.1.2.
+La giurisprudenza presuppone l'esistenza di una lacuna nella legge per l'applicazione analogica di una norma giuridica (
+DTF 141 III 43
+consid. 2.5.1; Emmenegger/Tschentscher, in: Berner Kommentar, 2012, n. 380 ad
+art. 1 CC
+; cfr. anche
+DTF 151 II 225
+consid. 4.4;
+150 V 33
+consid. 5.1;
+149 IV 376
+consid. 6.6;
+146 III 426
+consid. 3.1). Una lacuna in senso proprio, che può essere colmata dal giudice, è ammessa qualora il legislatore abbia omesso di regolare un punto che avrebbe dovuto disciplinare e che nessuna soluzione risulta dal testo o dall'interpretazione della legge. Se invece il legislatore ha volontariamente rinunciato a regolamentare una situazione che non richiedeva necessariamente un suo intervento, la sua inazione costituisce un silenzio qualificato. Il silenzio qualificato è dato anche quando volutamente una certa soluzione non è estesa ad altre fattispecie. Il giudice non può inoltre, in linea di principio, correggere le cosiddette lacune improprie, che si caratterizzano per il fatto che la legge offre una risposta considerata insoddisfacente, a meno che il fatto di invocare il senso reputato determinante della norma costituisca un abuso di diritto o una violazione della Costituzione (
+DTF 150 I 80
+consid. 3.1;
+149 V 156
+consid. 7.2.1;
+148 V 397
+consid. 6.2.1;
+147 V 2
+consid. 4.4.1;
+130 III 241
+consid. 3.3). Per contro, l'autorità non è autorizzata a rimediare all'assenza di una norma che appare semplicemente auspicabile (
+DTF 135 IV 113
+consid. 2.4.2;
+131 II 562
+consid. 3.5). Sapere se si è in presenza di una lacuna che deve essere colmata o di un silenzio qualificato va risolto per via interpretativa (
+DTF 150 V 33
+consid. 5.1;
+144 IV 97
+consid. 3.1.2).
+7.2.
+7.2.1.
+In virtù dell'
+art. 28a cpv. 1 LAI
+, per valutare il grado d'invalidità di un assicurato che esercita un'attività lucrativa si applica l'
+art. 16 LPGA
+. Il Consiglio federale definisce i redditi lavorativi determinanti per la valutazione del grado d'invalidità e i fattori di correzione applicabili.
+7.2.2.
+Questa norma ha conferito al Consiglio federale la competenza di disciplinare a livello di ordinanza le regole e i criteri - fino ad allora fondati in larga misura sulla giurisprudenza - per la determinazione del reddito da valido e da invalido (ad es. quando vanno applicati i valori effettivi, quando ci si deve invece basare sui salari indicati nelle tabelle e quale tabella va applicata). Il Consiglio federale è inoltre stato incaricato di definire i fattori di correzione necessari per tali redditi, sinora sviluppati dalla giurisprudenza (ad es. i criteri da tenere in considerazione per una deduzione dovuta al problema di salute e l'entità di questa deduzione). Lo scopo era, in particolare, di limitare il margine d'interpretazione degli Uffici AI e dei tribunali cantonali nell'esecuzione affinché, da un lato, si garantisse la maggiore uniformità possibile a livello nazionale ("unité de doctrine") e, dall'altro, si evitassero nella misura del possibile controversie giudiziarie relative alla valutazione dell'invalidità, in particolare tenendo conto anche del fatto che con il nuovo sistema di rendite lineari ogni singolo grado d'invalidità supplementare comporta un importo diverso della rendita (cfr. Messaggio del 15 febbraio 2017 concernente la modifica della legge federale sull'assicurazione per l'invalidità [Ulteriore sviluppo dell'AI], FF 2017 2191, in particolare 2324 e 2382; cfr. anche
+DTF 150 V 410
+consid. 9.4.1.1;
+148 V 174
+consid. 6.6).
+7.2.3.
+Nella
+DTF 150 V 410
+, il Tribunale federale ha sancito che la regolamentazione della deduzione dal salario statistico prevista esaustivamente dall'
+art. 26bis cpv. 3 OAI
+, nella versione del 3 novembre 2021, fosse contraria alla legge. Alcune considerazioni espresse in quel contesto si rivelano pertinenti anche nella presente fattispecie.
+7.2.3.1.
+Benché la versione dell'
+art. 26bis cpv. 3 OAI
+in vigore dal 1° gennaio 2024 non fosse oggetto della vertenza di cui alla
+DTF 150 V 410
+, il Tribunale federale ha comunque notato che il testo della mozione 22.3377 contenesse una critica di rara chiarezza nei confronti del Consiglio federale, il quale, nonostante le numerose voci di monito provenienti dalla giurisprudenza (cfr.
+DTF 142 V 178
+consid. 2.5.8;
+139 V 592
+consid. 7.4) e dalla dottrina, nonché contrariamente alla richiesta avanzata dalla stessa autrice della mozione di sviluppare una nuova base di calcolo, con l'
+art. 25 cpv. 3 OAI
+aveva consolidato una prassi problematica. L'obiettivo principale dell'iniziativa era quello di sviluppare basi di calcolo specificamente adattate alle esigenze della valutazione dell'invalidità, tenendo conto della proposta della Prof. Em. Riemer-Kafka e del Dr. phil. Schwegler dopo che l'UFAS e il Consiglio federale avevano previsto che i risultati sulla fattibilità e le proposte concrete in merito sarebbero stati disponibili non prima del 2025 (
+DTF 150 V 410
+consid. 9.5.3.5.1).
+7.2.3.2.
+Il Tribunale federale ha anche ricordato di avere preso atto, nella recente
+DTF 148 V 174
+, che il Consiglio federale aveva riconosciuto la necessità di intervenire nello sviluppo di redditi da raffrontare che siano maggiormente conformi all'invalidità, avviando le misure del caso. In quella decisione di principio era inoltre stata negata una modifica della giurisprudenza relativa all'utilizzo dei salari statistici, proprio perché gli strumenti di correzione a disposizione (in particolare la deduzione dai salari statistici fino al 25 %) permettevano di tenere conto delle particolarità del caso specifico (
+DTF 150 V 410
+consid. 9.5.3.5.2;
+148 V 174
+consid. 9.2). È stato inoltre constatato che l'impegno perseguito nella valutazione dell'invalidità e riflesso nella giurisprudenza relativa all'
+art. 16 LPGA
+, volto a ottenere un risultato il più possibile concreto e specifico per ciascun caso, non aveva subito alcuna limitazione con la recente revisione della LAI. Anche l'importanza e la necessità dei fattori di correzione è stata sottolineata, posto che i valori centrali dei salari statistici non potevano essere utilizzati "tel quel", cioè senza correzioni e senza considerare le circostanze del caso concreto. Significativo in questo senso era stato l'adeguamento dell'art. 26bis cpv. 3, prima frase, OAI, entrato in vigore il 1° gennaio 2024 a seguito della mozione 22.3377 (
+DTF 150 V 410
+consid. 10.2, con riferimenti).
+7.3.
+La dottrina non è unanime sull'applicabilità dell'
+art. 26bis cpv. 3 OAI
+in materia di assicurazione contro gli infortuni (a favore, cfr. Nathalie Lang, in Basler Kommentar, Allgemeiner Teil des Sozialversicherungsrechts, 2a ed. 2025, n. 128 ad
+art. 16 LPGA
+; Gabriel Hüni, Der Abzug vom tabellarischen Invalideneinkommen, Jahrbuch zum Sozialversicherungsrecht [JaSo] 2024 pag. 83; contrari, cfr. Moser-Szeless/Castella, in Commentaire romand, Loi sur la partie générale des assurances sociales, 2a ed. 2025, n. 11b ad
+art. 16 LPGA
+; David Ionta, Revenu d'invalide selon l'ESS - une mise à jour, Jusletter 21 novembre 2022 pag. 68; Juliette Audidier, L'assurance-accidents, in 3. Tagung zum Koordinationsrecht / 3e colloque sur le droit de la coordination [HAVE, ed.], 2022, pag. 88 seg.). La giurisprudenza dei tribunali cantonali sembra invece negare una tale possibilità (cfr. ad es. sentenze 200 2025 201 del 17 novembre 2025 consid. 4.4.2, Camera di diritto delle assicurazioni sociali del Tribunale amministrativo del Cantone di Berna; AA 140/24 83/2025 del 17 luglio 2025 consid. 5b) bb) aaa) della Corte delle assicurazioni sociali del Tribunale cantonale del Cantone di Vaud; VBE.2024.401 del 23 aprile 2025 consid. 4.2.2.2 della Camera di diritto delle assicurazioni sociali del Tribunale delle assicurazioni del Cantone di Argovia; I 2024 91 del 7 febbraio 2025 consid. 3.3.3 della I Camera del Tribunale amministrativo del Cantone di Svitto; UV.2024.23 del 30 gennaio 2025 consid. 5.3.6 del Tribunale delle assicurazioni sociali del Cantone di Basilea-Città; SV 24 20 del 16 dicembre 2024 consid. 5.2 della Camera di diritto delle assicurazioni sociali del Tribunale amministrativo del Cantone di Nidvaldo
+; 725 23
+296 del 10 ottobre 2024 consid. 5.3.3 della Camera di diritto delle assicurazioni sociali del Tribunale cantonale del Cantone di Basilea-Campagna).
+7.4.
+7.4.1.
+Il legislatore è al corrente della problematica legata ai salari statistici e delle conseguenze che ne derivano, ciò che emerge chiaramente anche dai considerandi che precedono. Nonostante le prescrizioni per la valutazione del grado d'invalidità, in virtù dell'
+art. 16 LPGA
+e della giurisprudenza ormai consolidata, siano le medesime sia nell'assicurazione per l'invalidità che, segnatamente, in quella contro gli infortuni, la risposta a livello parlamentare si è concentrata nell'adozione dell'
+art. 28a LAI
+e, per mezzo del Consiglio federale, attraverso le relative disposizioni d'esecuzione nell'OAI, tra le quali l'art. 26bis qui in esame. È pertanto ragionevole considerare che l'assenza di una regolamentazione equivalente in materia di assicurazione contro gli infortuni, perlomeno nel principio attraverso una norma di delegazione nella LAINF, sia il frutto di una scelta deliberata, e non di una dimenticanza. La revisione in questione era infatti, all'evidenza, circoscritta all'assicurazione per l'invalidità, con l'intento particolare di limitare il margine d'interpretazione degli Uffici AI e dei tribunali cantonali nell'esecuzione, oltre a contenere le relative controverse giudiziarie (cfr. consid. 7.2.2
+supra
+).
+7.4.2.
+Il Tribunale federale ha già manifestato stupore constatando che il legislatore non avesse affrontato la tematica in questione in una normativa di rango superiore, bensì in una legge speciale esclusivamente nell'ambito dell'assicurazione per l'invalidità. Infatti, l'
+art. 16 LPGA
+(cfr. art. 28a cpv. 1, prima frase, LAI) relativo alla valutazione dell'invalidità si applica direttamente non solo all'assicurazione per l'invalidità ma anche all'assicurazione contro gli infortuni e all'assicurazione militare e, indirettamente tramite l'
+art. 23 LPP
+, anche alla previdenza professionale. Dal punto di vista dell'unità richiesta dell'ordinamento giuridico, alla quale occorre attribuire importanza nell'ambito di un'interpretazione sistematica, una tale scelta ha sollevato questioni di ampia portata e di grande rilevanza pratica. In particolare nel diritto dell'assicurazione contro gli infortuni, nella valutazione dell'invalidità vengono applicati quotidianamente in modo analogo i noti principi del diritto dell'assicurazione per l'invalidità. In questo contesto, in assenza di una corrispondente revisione dell'OAINF, già era risultata incerta la portata delle eventuali implicazioni della revisione dell'OAI (
+DTF 150 V 410
+consid. 9.5.3.6.2, con riferimenti, e 10.3
+in fine
+).
+7.4.3.
+Ciò detto, proprio perché il legislatore ha collocato la delega per l'emanazione di norme regolamentari in una legge speciale, e questo nell'ambito della valutazione dell'invalidità - che deve avvenire in modo uniforme tra i diversi rami interessati (cfr.
+art. 16 LPGA
+, a cui rinvia l'art. 28a cpv. 1, prima frase, LAI) -, al Consiglio federale è stato imposto un limite: gli è stata preclusa la possibilità di introdurre differenze di ampia portata e ingiustificate rispetto all'ordinamento sino ad allora in vigore, e a maggior ragione rispetto agli altri rami del diritto non inclusi nella revisione. Ammettendo il carattere esaustivo dell'
+art. 26bis cpv. 3 OAI
+(nella sua versione del 3 novembre 2021), la valutazione dell'invalidità non sarebbe più stata identica nel settore dell'assicurazione infortuni e dell'assicurazione militare (anch'esse fondate su un sistema di rendita lineare). Il Tribunale federale ha già avuto modo di considerare che ovviare a tale problema attraverso una giurisprudenza
+praeter legem
+("al di fuori della legge"), applicando per analogia l'
+art. 26bis cpv. 3 OAI
+, risultava difficilmente ipotizzabile. Una tale coesistenza di diversi metodi di correzione comportava, a seconda del ramo, risultati divergenti in un numero non trascurabile di casi, senza giustificazioni oggettive (
+DTF 150 V 410
+consid. 10.3).
+7.4.4.
+Certo, le considerazioni nella sentenza impugnata sul principio dell'unità del concetto dell'invalidità sono senz'altro pertinenti. Principio che, cionondimeno, soffre di determinate relativizzazioni già riconosciute nella giurisprudenza. In effetti, segnatamente a riguardo del diritto alla rendita, l'assicurazione per l'invalidità non è vincolata dalle constatazioni dell'assicurazione contro gli infortuni, e viceversa, seppure le valutazioni dell'invalidità cresciute in giudicato non possano essere semplicemente ignorate (
+DTF 136 V 279
+consid. 4.1;
+133 V 549
+consid. 6.1 seg.; cfr. anche
+DTF 126 V 288
+consid. 2d; cfr. Moser-Szeless/Castella, in Commentaire romand,
+op. cit
+., n. 11a ad
+art. 16 LPGA
+; Nathalie Lang,
+op. cit
+., n. 116 ad
+art. 16 LPGA
+). Non è infatti raro che una persona assicurata soffra non soltanto delle conseguenze di un infortunio, ai sensi dell'
+art. 4 LPGA
+, ma presenti anche altri danni alla salute che non si trovano in un rapporto di causalità con tale evento, dei quali l'assicurazione contro gli infortuni - a differenza dell'assicurazione per l'invalidità - non è tenuta a rispondere (cfr. anche Nathalie Lang,
+op. cit
+., n. 113 ad
+art. 16 LPGA
+). Delle differenze sussistono anche per quanto riguarda il momento d'inizio del diritto alla rendita d'invalidità e la variabilità del grado d'invalidità nel tempo (cfr. la citata
+DTF 133 V 549
+consid. 6.2). Per quanto la problematica legata alla valutazione dell'invalidità sia comune ad entrambi i settori, la risposta fornita attraverso la recente revisione della LAI non può dunque essere trasposta - direttamente o per analogia - in materia di assicurazione contro gli infortuni.
+7.4.5.
+Non può inoltre essere ignorata la diversa soglia, nei due rami di assicurazione sociale, per la concessione di una rendita d'invalidità. Ai sensi dell'
+art. 18 cpv. 1 LAINF
+è infatti sufficiente un grado d'invalidità del 10 %, contro il 40 % previsto dall'
+art. 28 cpv. 1 LAI
+.
+7.4.5.1.
+Al riguardo, è opportuno evidenziare che l'
+art. 18 cpv. 1 LAINF
+, nella sua formulazione originaria (a partire dal 1° gennaio 1984), non prevedeva alcun grado minimo d'invalidità per il diritto alla rendita. Non era nemmeno richiesta una diminuzione "rilevante" della capacità di guadagno (RU 1982 1681). Tuttavia, in una prassi precedente, da ultimo pubblicata in RAMI 1988 no. U 48 pag. 230 (U 99/86; cfr.
+DTF 122 V 335
+consid. 4d), il Tribunale federale delle assicurazioni (oggi: III e IV Corte di diritto pubblico del Tribunale federale) esigeva un grado minimo d'invalidità del 10 %; tale giurisprudenza è quindi stata modificata con la
+DTF 122 V 335
+. Dopodiché, facendo seguito all'iniziativa parlamentare del Consigliere nazionale Raggenbass, il legislatore ha colto il mutamento di prassi come un'occasione per sancire espressamente nella legge, all'
+art. 18 cpv. 1 LAINF
+, un grado minimo d'invalidità del 10 % (rapporto della CSSS-CN del 26 novembre 1999 sull'iniziativa parlamentare "Invalidità inferiore al 10 per cento (Raggenbass) ", FF 2000 1184 segg.; parere del Consiglio federale del 23 febbraio 2000, FF 2000 1194 segg.; BU 2000 CN 366 segg. e 1611; BU 2000 CS 877 e 941). La modifica legislativa del 15 dicembre 2000 è entrata in vigore il 1° luglio 2001 (BU 2001 1491 segg.). Nell'ambito della procedura di consultazione, i sostenitori del progetto avevano in particolare sostenuto che, secondo la chiara volontà del legislatore, una rendita d'invalidità dovesse essere concessa soltanto qualora fosse intervenuto un sensibile pregiudizio alla capacità di guadagno. Si poteva dubitare che lievi pregiudizi, inferiori al 10 %, provocassero un'invalidità permanente. Delle conseguenze di un infortunio di lieve entità non comportavano generalmente un'incapacità effettiva di lavoro o di guadagno. Nella maggior parte dei casi l'assicurato, riprendendo l'attività lavorativa, si abitua dopo un certo periodo ai disturbi iniziali, ed era lecito ritenere che egli riuscisse ad adoperarsi per compensare le conseguenze economiche dell'invalidità oppure ad assumerle come tali. Rendite di esigua entità avrebbero inoltre ostacolato l'iniziativa personale degli assicurati volta a compensare lievi perdite di guadagno (FF 2000 1188 segg., cifra 2.4.1). Con parere del 23 febbraio 2000, il Consiglio federale ha sostenuto il progetto della CSSS-CN con argomentazioni analoghe (FF 2000 1194 seg.). La proposta della CSSS-CN è stata quindi adottata senza discussione tanto dal Consiglio nazionale quanto dal Consiglio degli Stati il 15 dicembre 2000 (BU 2000 CN 1611 e CS 877, 941;
+DTF 131 V 84
+consid. 2.2; per il tutto,
+DTF 140 V 89
+consid. 5.4.1).
+7.4.5.2.
+Questa importante differenza, e la chiara motivazione a fondamento della stessa, rappresenta un ulteriore motivo per lasciare che il processo legislativo faccia il suo corso. Seppure le considerazioni di politica finanziaria, espresse dal DFI nel suo rapporto esplicativo del 18 ottobre 2023 e criticate dalla Corte cantonale, siano discutibili e rappresentino una fragile argomentazione nell'ambito dell'interpretazione - giuridica - di una norma, la volontà del legislatore all'epoca della modifica dell'
+art. 18 cpv. 1 LAINF
+è chiara e non risulta essere stata discussa nel contesto della recente revisione della LAI. L'applicazione di una deduzione del 10 % al reddito da invalido di ogni assicurato comporterebbe infatti la concessione di rendite d'invalidità anche ad una parte di quei casi minori che, consapevolmente, si era inteso escludere. In questo senso, quanto proposto dall'UFSP nella sua risposta al ricorso, concretamente l'introduzione per mezzo della giurisprudenza di una nuova regola nel diritto dell'assicurazione infortuni senza una base legale, implicherebbe un'ingerenza inopportuna da parte del Tribunale federale al principio della separazione dei poteri.
+7.4.5.3.
+Va ancora rilevato che questo aspetto, in questo preciso contesto, mantiene tutta la sua pertinenza malgrado il fatto che la problematica legata ai salari statistici sia comune sia all'assicurazione per l'invalidità, sia a quella contro gli infortuni, indipendentemente dal grado d'invalidità risultante. Nel caso in esame si è confrontati con l'eventuale applicabilità (per analogia) di una regolamentazione specifica di un sistema assicurativo sociale ad un altro, senza una base legale e senza una lacuna da colmare; l' (in) adeguatezza dei salari statistici, in quanto tale, esula invece dall'oggetto del contendere. Questa tematica non è nuova e resta indubbiamente una sfida più che attuale nel diritto delle assicurazioni sociali interessate dal tema. Nelle necessarie incombenze per fornire una soluzione adeguata, non potrà passare in secondo piano la pertinenza della LPGA, il cui scopo è - per l'appunto - anche quello di armonizzare o uniformare il diritto materiale delle assicurazioni sociali nei suoi diversi ambiti (cfr.
+art. 1 lett. a LPGA
+), segnatamente mediante la definizione giuridica di concetti centrali, significativi per più settori, nel fondamento e nella delimitazione dell'obbligo di prestazioni (
+DTF 130 V 343
+consid. 2.2).
+7.5.
+In breve, in assenza di una lacuna in senso proprio nel diritto dell'assicurazione contro gli infortuni, un'integrazione del relativo quadro normativo eccede le competenze attribuite ai tribunali (per un altro esempio, si veda la
+DTF 147 V 2
+consid. 4.4.1). Il reddito da invalido accertato nella decisione su opposizione del 9 settembre 2024 deve quindi essere confermato.
+8.
+8.1.
+In un secondo tempo, il Tribunale cantonale ha accertato che il reddito da valido determinato dal ricorrente fosse conforme al salario minimo contemplato dal contratto collettivo di lavoro del settore in cui l'opponente era professionalmente attivo. Il correttivo della parallelizzazione dei redditi, per giurisprudenza (cfr. sentenza 8C_141/2016 del 17 maggio 2016 consid. 5.2.2), non avrebbe dunque potuto trovare applicazione. La Corte ticinese ha tuttavia ritenuto che, per gli stessi argomenti già sviluppati a proposito dell'art. 26bis cpv. 3, prima frase, OAI ("similitudine delle situazioni da disciplinare, norma non specifica all'assicurazione per l'invalidità e applicazione del principio dell'uniformità nella valutazione del grado d'invalidità"), anche l'
+art. 26 OAI
+potesse essere applicato per analogia nel settore dell'assicurazione contro gli infortuni. A mente dei giudici cantonali, esistevano validi motivi per un cambiamento della giurisprudenza finora in vigore. La nuova norma d'ordinanza la sostituiva, rendendola priva d'oggetto. Constatando dunque una differenza salariale del 12.30 %, il reddito da valido annuale dell'opponente doveva corrispondere a fr. 70'739.95, ovvero al 95 % di fr. 74'463.11 (reddito centrale del settore delle costruzioni nel 2024). Inoltre, l'una o l'altra eccezione dell'
+art. 26 cpv. 3 lett. a e b OAI
+non trovava applicazione; l'opponente svolgeva un'attività lucrativa dipendente e il reddito da invalido non era stato determinato in virtù dell'
+art. 26bis cpv. 1 OAI
+. Dal relativo raffronto dei redditi risultava così una perdita di guadagno del 13.23 %, arrotondata al 13 %, sufficiente a fondare il diritto a una rendita d'invalidità.
+8.2.
+Le conclusioni della Corte cantonale non possono essere assecondate. Quanto già espresso in merito all'inapplicabilità per analogia dell'
+art. 26bis cpv. 3 OAI
+in materia di assicurazione contro gli infortuni (cfr. consid. 7), deve infatti valere
+mutatis mutandis
+per l'
+art. 26 OAI
+. Tali considerazioni non sono in effetti specifiche al correttivo della deduzione sociale ma sono, all'evidenza, applicabili anche per il parallelismo dei redditi. L'
+art. 26 OAI
+non essendo dunque applicabile nella fattispecie, non vi è ragione per procedere ad una modifica della giurisprudenza come preteso dal Tribunale cantonale. Il reddito da valido determinato dal ricorrente va dunque confermato.
+9.
+Ne discende che il ricorso deve essere accolto. La sentenza impugnata va annullata e la decisione su opposizione del 9 settembre 2024 confermata. Le spese giudiziarie seguono la soccombenza (
+art. 66 cpv. 1 LTF
+). L'assicuratore vincente in causa non ha diritto a indennità per spese ripetibili (
+art. 68 cpv. 3 LTF
+).
+Per questi motivi, il Tribunale federale pronuncia:
+1.
+Il ricorso è accolto. La sentenza del Tribunale delle assicurazioni del Cantone Ticino del 24 marzo 2025 è annullata e la decisione su opposizione dell'Istituto nazionale svizzero di assicurazione contro gli infortuni (INSAI) del 9 settembre 2024 è confermata.
+2.
+Le spese giudiziarie di fr. 800.- sono poste a carico dell'opponente.
+3.
+La causa viene rinviata al Tribunale delle assicurazioni del Cantone Ticino per nuova decisione sulle ripetibili nella procedura precedente.
+4.
+Comunicazione alle parti, al Tribunale delle assicurazioni del Cantone Ticino e all'Ufficio federale della sanità pubblica.
+Lucerna, 23 giugno 2026
+In nome della IV Corte di diritto pubblico
+del Tribunale federale svizzero
+La Presidente:    Viscione
+Il Cancelliere:    Colombi

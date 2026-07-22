@@ -1,0 +1,87 @@
+8C_739/2025
+Arrêt du 29 juin 2026
+IVe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux
+Viscione, Présidente,
+Scherrer Reber et Métral.
+Greffière : Mme Castella.
+Participants à la procédure
+A.________,
+représenté par Me Charles Guerry, avocat,
+recourant,
+contre
+Caisse nationale suisse d'assurance en cas d'accidents (CNA), Division juridique, Fluhmattstrasse 1, 6002 Lucerne,
+intimée.
+Objet
+Assurance-accidents (rente d'invalidité),
+recours contre l'arrêt du Tribunal cantonal du Valais
+du 1er décembre 2025 (S2 24 101).
+Faits :
+A.
+A.________, né en 1965, a été engagé par B.________ Sàrl en qualité de coursier à un taux d'occupation de 50 % à compter du 1er janvier 2020. À ce titre, il est assuré contre le risque d'accidents auprès de la Caisse nationale suisse d'assurance en cas d'accidents (ci-après: la CNA).
+Le 7 novembre 2020, il a chuté dans les escaliers d'un immeuble lors d'une livraison, se blessant au niveau du poignet gauche ("fracture du radius distal gauche intra-articulaire partielle comminutive de type Volar Barton avec subluxation palmaire du carpe"). La CNA a pris en charge le cas et reconnu le droit de l'assuré à une indemnité journalière ainsi qu'au remboursement des frais médicaux jusqu'au 31 mars 2023.
+Par décision du 23 juillet 2024, confirmée sur opposition le 5 novembre suivant, la CNA a, d'une part, dénié à l'assuré le droit à une rente d'invalidité et, d'autre part, octroyé à celui-ci une indemnité pour atteinte à l'intégrité de 10 %.
+B.
+Saisie d'un recours contre la décision sur opposition du 5 novembre 2024, la Cour des assurances sociales du Tribunal cantonal du Valais l'a rejeté par arrêt du 1er décembre 2025.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt en concluant à sa réforme dans le sens de la reconnaissance de son droit à une rente d'invalidité, fondée sur un taux d'invalidité de 49 %. A titre subsidiaire, il conclut à l'annulation de l'arrêt attaqué et au renvoi de la cause à la cour cantonale pour instruction complémentaire et nouvelle décision.
+La CNA conclut au rejet du recours. La cour cantonale et l'Office fédéral de la santé publique ont renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le litige porte sur le droit éventuel du recourant à une rente d'invalidité. Dès lors qu'il s'agit d'une prestation en espèces de l'assurance-accidents, le Tribunal fédéral n'est pas lié par les faits établis par la juridiction précédente (
+art. 105 al. 3 LTF
+).
+3.
+L'arrêt entrepris expose de manière complète les dispositions légales et les principes jurisprudentiels relatifs notamment à l'allocation de prestations d'assurance en cas d'accident (
+art. 6 LAA
+), à la notion d'invalidité (
+art. 7 et 8 LPGA
+), ainsi qu'à l'établissement des faits et à l'appréciation des preuves, en particulier des rapports médicaux (cf. consid. 2.2-2.5 de l'arrêt cantonal). Il suffit d'y renvoyer.
+4.
+En résumé, les juges cantonaux ont reconnu une pleine valeur probante aux rapports des docteurs C.________ et D.________, spécialistes en chirurgie orthopédique et traumatologie de l'appareil locomoteur et médecins d'arrondissement de l'intimée, des 15 septembre 2022, 15 février 2023 et 17 juin 2024. Aussi ont-ils confirmé la pleine capacité de travail du recourant dans une activité légère et adaptée (pas d'exposition au froid, pas d'activités engendrant des chocs ou des vibrations, pas d'activités nécessitant de la force de préhension avec la main gauche, pas de port de charges moyennes, respectivement légères, de manière continue ou répétitive, activité mono-manuelle à privilégier, le membre supérieur gauche ne pouvant servir essentiellement que de main d'appui).
+En particulier, la cour cantonale a écarté le grief du recourant, selon lequel les médecins d'arrondissement n'avaient pas tenu compte des douleurs neuropathiques du membre supérieur gauche qui justifieraient une capacité de travail résiduelle de 50 % uniquement. Elle a relevé que tant le docteur C.________ que le docteur D.________ avaient posé le diagnostic de syndrome douloureux régional complexe du membre supérieur gauche - qui n'était autre qu'une douleur neuropathique chronique - en raison duquel ils avaient retenu de nombreuses limitations fonctionnelles et conclu que seul l'exercice d'une activité adaptée et légère était exigible. S'il était vrai que le docteur E.________, spécialiste en médecine physique et réadaptation, mentionnait la persistance de douleurs limitantes dans ses rapports des 12 octobre 2023, 1er décembre 2023 et 14 octobre 2024, ce médecin se contentait toutefois d'indiquer que son patient avait repris son activité habituelle de coursier à 50 %, sans toutefois se prononcer sur l'exigibilité définitive dans une activité adaptée ni poser de limitations fonctionnelles supplémentaires à celles retenues par les médecins de l'intimée. Quant aux rapports de la doctoresse F.________, médecin assistante, des 20 janvier et 29 avril 2025, ils ne permettaient pas non plus de mettre en doute les conclusions des médecins d'arrondissement. La prénommée avait uniquement relevé que les douleurs étaient importantes et apportaient une limitation significative des capacités du recourant, sans toutefois être en mesure d'évaluer la capacité de travail de celui-ci. S'agissant enfin de la doctoresse G.________, spécialiste en médecine interne générale, celle-ci a uniquement relevé que son patient avait repris son activité de coursier à 50 % et émis des doutes quant à une amélioration des limitations de ce dernier et de sa capacité à reprendre un travail à 100 % en raison de la fatigabilité qu'il présentait à la main gauche. Cela étant, elle ne s'était pas non plus prononcée sur l'exigibilité dans une activité légère et adaptée (cf. rapport du 10 mars 2023). Elle avait ensuite rédigé plusieurs certificats médicaux attestant une capacité de travail de 50 %, sans plus de précision. Compte tenu du fait que les médecins de la Clinique romande de réadaptation avaient relevé, déjà en 2021, des facteurs contextuels influençant négativement les aptitudes fonctionnelles rapportées par le patient, à savoir un catastrophisme élevé, une kinésiophobie légère à modérée, une sous-estimation des capacités fonctionnelles, une cotation élevée de la douleur et une focalisation sur celle-ci chez un assuré anxieux, et eu égard à la jurisprudence relative aux rapports médicaux émis par les médecins traitants, l'avis de la doctoresse G.________ ne pouvait prévaloir.
+5.
+Se plaignant d'une constatation erronée des faits, le recourant reproche à la cour cantonale d'avoir considéré qu'il était capable de travailler à plein temps dans une activité légère mono-manuelle. Invoquant de sévères douleurs neuropathiques dans tout son membre supérieur gauche (référence faite à des rapports du Service d'ergothérapie de l'Hôpital H.________ du 25 Juillet 2024, du docteur E.________ du 14 octobre 2025 et de la doctoresse F.________ des 17 Janvier et 29 avril 2025), le recourant soutient que les docteurs C.________ et D.________ n'en ont pas suffisamment tenu compte lors de l'évaluation de l'exigibilité. S'ils ont certes admis que les douleurs neuropathiques chroniques limitaient sa capacité à utiliser son membre supérieur gauche, ils auraient par contre omis de prendre en compte leurs effets systémiques. Les douleurs neuropathiques auraient en effet la particularité d'être indépendantes de l'effort et seraient présentes en permanence, même lorsque le membre atteint n'est pas utilisé et également durant la nuit. Leur impact ne se limiterait donc pas à l'usage du membre supérieur gauche, mais concernerait l'ensemble des capacités psychophysiques du recourant. Les douleurs neuropathiques entraîneraient en particulier une perturbation chronique du sommeil, d'où une fatigue persistante, une fatigabilité accrue même lors d'activités légères, une diminution de I'endurance, un ralentissement psychomoteur et des troubles de la concentration. Ces éléments affecteraient directement la capacité du recourant à maintenir un rendement normal et constant, même dans une activité légère. C'est ce qu'aurait implicitement attesté la doctoresse F.________ dans son rapport du 29 avril 2025. En conclusion, si la cour cantonale et l'intimée avaient pris en compte l'ensemble des limitations fonctionnelles dont souffrait le recourant, elles auraient retenu une capacité résiduelle de travail de 50 %, telle qu'attestée par la doctoresse G.________.
+À titre subsidiaire, le recourant demande l'application de la jurisprudence selon laquelle, lorsqu'un cas d'assurance est réglé sans avoir recours à une expertise dans une procédure au sens de l'
+art. 44 LPGA
+, il y a lieu de procéder à des investigations complémentaires s'il existe un doute même minime sur la fiabilité et la validité des constatations d'un médecin de l'assurance (
+ATF 145 V 97
+consid. 8.5).
+6.
+S'agissant de l'évaluation de la capacité de travail du recourant, on rappellera que, selon la jurisprudence, c'est la tâche du médecin de porter un jugement sur l'état de santé et d'indiquer dans quelle mesure et pour quelles activités l'assuré est incapable de travailler (
+ATF 150 V 410
+consid. 9.5.3.2;
+140 V 193
+consid. 3.2;
+125 V 256
+consid. 4 et les arrêts cités). En tant que le recourant rapporte les effets systémiques de ses douleurs, sans référence à un rapport médical précis, pour arriver à la conclusion qu'il ne peut travailler qu'à 50 %, son argumentation repose sur de simples allégations, de sorte qu'elle ne peut être suivie. Quant aux rapports médicaux qu'il cite, ils ne contiennent pas de conclusions sur l'exigibilité. On relèvera que, dans son rapport du 29 avril 2025, la doctoresse F.________ indique expressément ne pas être en mesure d'évaluer la capacité résiduelle de travail du recourant. Dans ces conditions, le fait qu'elle ait répondu "je crois que oui, dépendant de l'intensité de l'usage requis" à la question de savoir si les douleurs étaient de nature à provoquer de la fatigue/ fatigabilité/perte d'endurance/troubles de la concentration ne saurait être déterminant, ni même jeter un doute sur les conclusions des médecins de l'intimée. Il en va de même de simples certificats médicaux attestant une capacité de travail de 50 %, sans motivation. En conclusion, les considérations des premiers juges sur la capacité résiduelle de travail du recourant échappent à la critique. On relèvera, à toutes fins utiles, que l'intimée a tout de même et à juste titre tenu compte des limitations fonctionnelles du recourant dans la détermination du revenu d'invalide pour justifier un abattement sur le revenu statistique.
+Il s'ensuit que le recours, mal fondé, doit être rejeté.
+7.
+Le recourant, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du Valais, Cour des assurances sociales, et à l'Office fédéral de la santé publique.
+Lucerne, le 29 juin 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Castella

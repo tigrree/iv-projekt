@@ -1,0 +1,126 @@
+9C_73/2026
+Arrêt du 29 juin 2026
+IIIe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux
+Moser-Szeless, Présidente, Beusch et Bollinger.
+Greffier : M. J. Sieber.
+Participants à la procédure
+Office de l'assurance-invalidité du canton de Genève, rue des Gares 12, 1201 Genève,
+recourant,
+contre
+A.________,
+intimé.
+Objet
+Assurance-invalidité,
+recours contre l'arrêt de la Cour de justice de la République et canton de Genève du 10 décembre 2025 (A/4065/2023 ATAS/984/2025).
+Faits :
+A.
+A.a.
+En relation avec une chute survenue en 2009, A.________, né en 1963, marié et père de trois enfants, a déposé une demande de prestations de l'assurance-invalidité en décembre 2009, que l'Office de l'assurance-invalidité du canton de Genève (ci-après: l'office AI) a rejetée par décision du 18 janvier 2017, après lui avoir notamment octroyé des mesures professionnelles.
+A.b.
+En novembre 2018, A.________ a déposé une nouvelle demande de prestations. Il y indiquait être en incapacité de travail depuis juillet 2018. Après avoir sollicité des renseignements auprès des médecins traitants de l'assuré et diligenté une expertise auprès de la doctoresse B.________, spécialiste en médecine physique et réadaptation et en rhumatologie (rapport du 5 mai 2020), l'office AI a rejeté la demande, par décision du 7 octobre 2020. La Cour de justice de la République et canton de Genève, Chambre des assurances sociales, a partiellement admis le recours de A.________ contre cette décision. Elle a annulé celle-ci et renvoyé la cause à l'office AI pour instruction complémentaire au sens des considérants (arrêt du 27 octobre 2021).
+Reprenant l'instruction, l'office AI a recueilli des informations médicales complémentaires et a mis en oeuvre une expertise bidisciplinaire (rhumatologique et psychiatrique) auprès du Centre d'Expertises Médicales (CEMed) de Nyon (rapport du docteur C.________, spécialiste en rhumatologie, et de la doctoresse D.________, spécialiste en psychiatrie et psychothérapie, du 7 septembre 2023). Par décision du 10 novembre 2023, l'office AI a rejeté la nouvelle demande de prestations de l'assuré.
+B.
+A.________ a formé recours contre cette décision devant la Cour de justice. Il a conclu à être mis au bénéfice d'une rente entière d'invalidité dès le 28 novembre 2018. Après avoir notamment tenu une audience de comparution personnelle des parties (procès-verbal du 29 mai 2024) et ordonné une expertise psychiatrique (rapport de la doctoresse E.________, spécialiste en psychiatrie et psychothérapie, du 16 juillet 2025), la juridiction cantonale a partiellement admis le recours. Elle a annulé la décision du 10 novembre 2023 et reconnu le droit de A.________ à trois quarts de rente d'invalidité dès le 1er juillet 2019 (arrêt du 10 décembre 2025).
+C.
+L'office AI forme un recours en matière de droit public contre cet arrêt. Il conclut à l'annulation de celui-ci et à la confirmation de sa décision du 10 novembre 2023. Le recours est assorti d'une requête d'effet suspensif.
+L'assuré conclut au rejet de la requête d'effet suspensif et du recours, tandis que l'Office fédéral des assurances sociales (OFAS) a renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours en matière de droit public peut être formé notamment pour violation du droit fédéral (
+art. 95 let. a LTF
+), que le Tribunal fédéral applique d'office (
+art. 106 al. 1 LTF
+), n'étant limité ni par les arguments de la partie recourante, ni par la motivation de l'autorité précédente. Le Tribunal fédéral fonde son raisonnement sur les faits retenus par la juridiction de première instance (
+art. 105 al. 1 LTF
+) sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+).
+2.
+Est litigieux le point de savoir si la juridiction cantonale était en droit d'accorder trois quarts de rente d'invalidité à l'intimé depuis le 1er juillet 2019, en se fondant sur l'expertise judiciaire de la doctoresse E.________ du 16 juillet 2025.
+3.
+3.1.
+Dans le cadre du "développement continu de l'AI", la LAI, le RAI et la LPGA - notamment - ont été modifiés avec effet au 1er janvier 2022 (modification du 19 juin 2020, RO 2021 705; FF 2017 2535). Au regard des principes généraux en matière de droit transitoire (cf.
+ATF 150 V 323
+consid. 4.2;
+150 II 390
+consid. 4.3;
+149 II 320
+consid. 3), c'est à bon droit que la juridiction cantonale a fait application de l'ancien droit pour la période courant jusqu'au 31 décembre 2021 et pour la période à partir du 1er janvier 2022, dans la mesure où l'assuré avait plus de 55 ans à cette date (cf. let. c des dispositions transitoires de la modification du 19 juin 2020).
+3.2.
+L'arrêt attaqué expose de manière complète les dispositions légales et les principes jurisprudentiels applicables à la notion d'invalidité (
+art. 8 LPGA
+et
+art. 4 LAI
+) et à son évaluation (
+art. 16 LPGA
+et
+art. 28a LAI
+), en particulier s'agissant du caractère invalidant de troubles psychiques et autres syndromes sans substrat organique (
+ATF 143 V 409
+consid. 4.5;
+143 V 418
+consid. 6 et 7;
+141 V 281
+), ainsi qu'à la valeur probante des rapports médicaux (
+ATF 125 V 351
+consid. 3). Il suffit d'y renvoyer.
+On rappellera en outre, s'agissant de la valeur probante de rapports médicaux, que le juge ne s'écarte en principe pas sans motifs impérieux des conclusions d'une expertise judiciaire, la tâche de l'expert étant précisément de mettre ses connaissances spéciales à la disposition de la justice afin de l'éclairer sur les aspects médicaux d'un état de fait donné. Selon la jurisprudence, peut notamment constituer une raison de s'écarter d'une expertise judiciaire le fait que celle-ci contient des contradictions, ou qu'une surexpertise ordonnée par le tribunal en infirme les conclusions de manière convaincante. En outre, lorsque d'autres spécialistes émettent des opinions contraires aptes à mettre sérieusement en doute la pertinence des déductions de l'expert, on ne peut pas exclure, selon les cas, une interprétation divergente des conclusions de ce dernier par le juge ou, au besoin, une instruction complémentaire sous la forme d'une nouvelle expertise médicale (
+ATF 143 V 269
+consid. 6.2.3.2;
+135 V 465
+consid. 4.4; arrêt 8C_711/2020 du 2 juillet 2021 consid. 3.2 et la référence citée).
+4.
+4.1.
+La cour cantonale a retenu que l'intimé présentait une capacité de travail dans une activité adaptée de 50%, moins 20% de perte de rendement, soit globalement de 40%. Elle a fixé le début de l'incapacité durable de travail à juillet 2018. Pour l'évaluation de la capacité de travail de l'intimé, elle s'est fondée sur les conclusions du rapport de la doctoresse E.________ du 16 juillet 2025, auquel elle a reconnu une pleine valeur probante. L'experte judiciaire avait en particulier procédé à l'examen des indicateurs développés par le Tribunal fédéral, ce qui relevait de sa compétence. À ce propos, l'instance précédente a relevé que, même si l'experte judiciaire n'avait pas posé de diagnostic purement psychiatrique, elle était compétente pour poser le diagnostic de Z79.891 (selon la Classification internationales des maladies [CIM-10]), soit l'utilisation à long terme d'analgésiques opioïdes. La cour cantonale a qualifié de convaincantes les considérations générales de l'experte judiciaire, selon lesquelles les effets secondaires connus du médicament "Temgesic" administré à l'intimé pour ses douleurs étaient la somnolence, la fatigue et les nausées dès lors que ces effets étaient considérés comme notoires par le Tribunal fédéral (cf. arrêt 8C_419/2014 du 23 septembre 2014 consid. 6.2) et qu'elle s'était fondée sur des articles de littérature (scientifique). Les juges précédents ont également relevé que l'experte judiciaire s'était référée à d'autres rapports médicaux produits attestant de limitations chez l'assuré.
+4.2.
+Invoquant une appréciation arbitraire des preuves et une violation du droit fédéral, l'office AI reproche à la juridiction cantonale d'avoir: reconnu une pleine valeur probante au rapport d'expertise judiciaire et suivi ses conclusions sur la capacité de travail de l'intéressé; évalué de manière arbitraire le caractère invalidant de l'atteinte retenue par l'experte judiciaire au regard des indicateurs développés par la jurisprudence; écarté, sans raison valable, le rapport d'expertise psychiatrique de la doctoresse D.________ du 7 septembre 2023, ainsi que les "éléments médicaux et extra-médicaux pertinents pour l'appréciation du cas"; fixé, sans fondement médical, le début de l'incapacité de travail durable en juillet 2018. L'office AI soutient en particulier que les premiers juges ne pouvaient pas suivre les conclusions de l'experte judiciaire dès lors qu'elle avait catégoriquement affirmé que l'intimé ne présentait pas d'atteinte psychiatrique et s'était déclarée incompétente pour évaluer les conséquences de la prise d'opioïdes dans un contexte de douleurs chroniques. Il estime ainsi contradictoire que l'experte indique ne pas pouvoir se positionner sur l'évaluation de la gravité du "diagnostic Z79.891" mais le retient néanmoins comme ayant une influence sur la capacité de travail de l'assuré. Il conteste aussi l'analyse des indicateurs standards effectuée par l'experte judiciaire.
+5.
+5.1.
+En l'occurrence, par arrêt du 27 octobre 2021, les juges cantonaux ont renvoyé la cause à l'office AI pour complément d'expertise afin d'instruire l'aspect psychiatrique, voire pharmacologique de l'état de santé de l'intimé, questions demeurées non instruites jusque-là. Une expertise psychiatrique indépendante apparaissait nécessaire pour déterminer si une atteinte psychique avait pu avoir une incidence sur la capacité de travail de l'assuré dès janvier 2018. Une telle expertise n'était toutefois pas nécessaire s'il était établi que cette capacité de travail était nulle en raison des effets des morphiniques.
+5.2.
+Il ressort de l'arrêt entrepris du 10 décembre 2025 qu'une expertise bidisciplinaire rhumatologique et psychiatrique a été mise en oeuvre par l'office AI à la suite de l'arrêt de renvoi du 27 octobre 2021. Sur le plan somatique, dans leur appréciation consensuelle du 7 septembre 2023, les docteurs C.________ et D.________ ont retenu, comme diagnostic avec répercussion sur la capacité de travail, un syndrome radiculaire L5 droit chronique, secondaire à une intervention chirurgicale sur l'étage L4-L5 en 2010, avec canal lombaire rétréci essentiellement lié à une arthrose inter-apophysaire postérieure; il n'y avait pas de diagnostic psychiatrique. Sur le plan physique, ils ont indiqué que la capacité de travail de l'assuré avait toujours été de 100%, avec une performance toutefois réduite de 20%. Sur le plan psychique, ils ont conclu à une capacité de travail de 100% et n'ont pas retenu l'existence d'une atteinte durablement incapacitante. En se fondant sur cette évaluation consensuelle, l'office AI a nié le droit de l'intimé à une rente par décision du 10 novembre 2023.
+5.3.
+Dans le cadre de l'instruction du recours interjeté par l'assuré à l'encontre de cette décision, l'instance précédente a nié la valeur probante de l'évaluation consensuelle du 7 septembre 2023 s'agissant de l'effet du Temgesic et de la capacité de travail de l'assuré. Par ordonnance d'expertise du 30 mai 2025, elle a ordonné une nouvelle expertise psychiatrique, considérant que les effets addictifs du Temgesic n'avaient pas été pris en compte et que la doctoresse D.________ du CEMed s'était contentée de retenir qu'il apparaissait peu probable que la prise de ce médicament fût à l'origine des troubles de la concentration, étant donné les effets de tolérance bien connus pour les analgésiques opioïdes. L'instance précédente a qualifié ce point d'important puisqu'il avait précédemment justifié le renvoi de la cause pour instruction complémentaire. L'experte psychiatre du CEMed n'avait pas non plus abordé la question de savoir si l'arrêt des morphiniques était exigible. La nouvelle expertise a été confiée par l'instance cantonale à la doctoresse E.________ qui a rendu son rapport le 16 juillet 2025.
+6.
+6.1.
+Le 10 décembre 2025, les juges cantonaux ont admis le recours de l'assuré en se fondant sur l'expertise judiciaire du 16 juillet 2025. Comme le fait valoir le recourant, on ne saurait toutefois suivre l'appréciation des premiers juges qui lui attribuent une pleine valeur probante. En effet, l'expertise judiciaire est entachée d'une contradiction importante. D'une part, l'experte judiciaire affirme ne pas pouvoir se positionner en tant que psychiatre sur l'évaluation de la gravité de la prise d'opioïdes dans un contexte de douleurs chroniques et sans critères en lien avec une addiction psychiatrique. Elle confirme d'ailleurs sur ce point que l'assuré n'a pas de trouble psychiatrique à proprement parler, mais qu'il souffre seulement des effets secondaires liés à une utilisation à long terme d'analgésiques opioïdes pour des douleurs somatiques. Elle précise encore ne pas pouvoir se prononcer sur la prise en charge de l'assuré qui sort de son domaine de compétence et qui concerne la médecine interne. D'autre part, toutefois, la doctoresse E.________ remet en cause l'affirmation contenue dans l'expertise bidisciplinaire du 7 septembre 2023 selon laquelle une faible posologie ne peut pas générer d'effets secondaires, en se référant à la littérature scientifique qui montre que le Temgesic peut parfois entraîner durablement, donc chroniquement, des effets secondaires tels que fatigue, somnolence, baisse de la concentration ou confusion. Se référant à d'autres pièces médicales au dossier, elle conclut à une capacité de travail de l'assuré de 50% dans une activité adaptée avec un rendement diminué de 20% et dans le meilleur des cas dans un milieu protégé avec une flexibilité des horaires. Dès lors que l'experte judiciaire ne se déclare pas compétente pour évaluer les effets du traitement antalgique de l'assuré dans un contexte de douleur chronique, il apparaît pour le moins contradictoire de conclure à une incapacité de travail pour cette raison, comme elle l'a fait.
+6.2.
+En outre, contrairement à ce qu'ont retenu les juges cantonaux et à ce que soutient l'intimé dans sa réponse au recours, dès lors qu'aucun diagnostic psychiatrique n'a été posé, le cas n'avait pas à être examiné à l'aune de l'
+ATF 141 V 281
+, selon lequel il appartient au médecin de retenir - ou non - un diagnostic en fonction de critères médicaux et non jurisprudentiels (cf.
+ATF 141 V 281
+consid. 2.1 et la référence) et au juge d'en évaluer le caractère invalidant au regard des indicateurs développés par la jurisprudence (cf.
+ATF 141 V 281
+consid. 2.1.1 in initio). En effet, en l'absence de diagnostic psychiatrique - un trouble classifié sous le code Z selon le CIM-10 ne correspond pas à la notion d'atteinte à la santé déterminante selon le droit de l'assurance-invalidité (p. ex. arrêt 8C_699/2018 du 28 août 2019 consid. 4.2.2 et les références) -, une appréciation en fonction de la grille d'évaluation normative et structurée selon l'arrêt précité n'a pas à être effectuée (arrêt 9C_176/2018 du 16 août 2018 consid. 3.2.2).
+6.3.
+La seule question qui se posait encore était ainsi celle de savoir si le traitement antalgique de l'intimé avait des effets sur sa capacité de travail et, le cas échéant, si ce traitement pouvait être adapté. Or ni l'expertise bidisciplinaire du 7 septembre 2023, ni l'expertise judiciaire du 16 juillet 2025 ne permettent de confirmer ou d'infirmer les effets (limitatifs) de ce traitement puisque, dans les deux cas, les experts se sont essentiellement fondés sur des articles scientifiques et des considérations générales, sans se prononcer au regard des circonstances du cas d'espèce. Dès lors, en l'état du dossier, on ne parvient pas à comprendre, et partant à évaluer, si le traitement antalgique du recourant lui cause effectivement des troubles de la concentration limitant sa capacité de travail, ni, le cas échéant, dans quelle mesure. En l'état de l'instruction - qui se révèle insuffisante -, la cour cantonale ne pouvait pas se fonder sur l'expertise judiciaire pour en déduire une limitation de la capacité de travail de l'intimé. Il convient de renvoyer l'affaire à l'office AI afin qu'il procède à une nouvelle expertise sur les aspects mentionnés, en demandant par exemple à un spécialiste en médecine interne, comme suggéré du reste par l'experte judiciaire, voire à un spécialiste en pharmacologie ou à tout autre spécialiste compétent, d'évaluer concrètement l'incidence du traitement antalgique de l'assuré sur sa capacité de travail, respectivement les possibilités d'adaptation dudit traitement pour favoriser sa réinsertion professionnelle.
+7.
+Dans cette mesure, le recours se révèle bien fondé. Le présent arrêt rend sans objet la requête d'effet suspensif.
+8.
+Le renvoi de la cause pour instruction complémentaire et nouvelle décision revient à obtenir gain de cause (cf.
+ATF 141 V 281
+consid. 11.1). Les frais judiciaires sont dès lors mis à la charge de l'intimé (
+art. 66 al. 1 LTF
+). L'office recourant n'a pas droit à des dépens (
+art. 68 al. 3 LTF
+). La cause est renvoyée à l'autorité cantonale pour nouvelle décision sur les frais de la procédure antérieure (
+art. 68 al. 5 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est partiellement admis. L'arrêt de la Cour de justice de la République et canton de Genève, Chambre des assurances sociales, du 10 décembre 2025 et la décision de l'Office de l'assurance-invalidité du canton de Genève du 10 novembre 2023 sont annulés. La cause est renvoyée audit Office afin qu'il complète l'instruction et rende une nouvelle décision dans le sens des considérants.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge de l'intimé.
+3.
+La cause est renvoyée à la Cour de justice de la République et canton de Genève, Chambre des assurances sociales, pour nouvelle décision sur les frais de la procédure antérieure.
+4.
+Le présent arrêt est communiqué aux parties, à la Cour de justice de la République et canton de Genève, Chambre des assurances sociales, et à l'Office fédéral des assurances sociales.
+Lucerne, le 29 juin 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+Le Greffier :    Sieber

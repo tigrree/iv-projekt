@@ -1,0 +1,131 @@
+8C_614/2025
+Sentenza del 15 luglio 2026
+IV Corte di diritto pubblico
+Composizione
+Giudici federali Viscione, Presidente,
+Heine, Métral,
+Cancelliere Colombi.
+Partecipanti al procedimento
+Istituto nazionale svizzero di assicurazione contro gli infortuni (INSAI),
+Divisione giuridica, Fluhmattstrasse 1, 6002 Lucerna,
+ricorrente,
+contro
+A.________,
+rappresentato dall'Organizzazione Cristiano-Sociale Ticinese (OCST),
+opponente.
+Oggetto
+Assicurazione contro gli infortuni (rendita d'invalidità; confronto dei redditi),
+ricorso contro la sentenza del Tribunale delle assicurazioni del Cantone Ticino del 22 settembre 2025 (35.2025.23).
+Fatti:
+A.
+Il 14 dicembre 2022, A.________, nato nel 1976, a quel momento dipendente della ditta B.________ SA in qualità di cartongessista e perciò assicurato d'obbligo contro gli infortuni e le malattie professionali presso l'Istituto nazionale svizzero di assicurazione contro gli infortuni (INSAI), è caduto da una scaletta e ha fratturato il piede sinistro. Dal rapporto di uscita del 28 dicembre 2022 del Servizio di ortopedia e traumatologia dell'Ospedale C.________ è risultata la diagnosi di frattura trimalleolare scomposta della caviglia sinistra. Nel decorso, l'assicurato ha subito più operazioni, l'ultima delle quali è avvenuta il 17 novembre 2023 allorquando è stata eseguita la rimozione totale dei mezzi di osteosintesi. L'istituto assicuratore ha assunto il caso e ha corrisposto le prestazioni di legge.
+Con decisione del 27 gennaio 2025, confermata su opposizione il 3 marzo 2025, l'amministrazione ha negato ad A.________ il diritto a una rendita d'invalidità, mentre gli ha assegnato un'indennità per menomazione dell'integrità (IMI) del 15 %.
+B.
+Con sentenza del 22 settembre 2025, il Tribunale delle assicurazioni del Cantone Ticino ha parzialmente accolto il ricorso dell'assicurato e condannato l'INSAI a riconoscergli una rendita d'invalidità del 20 % a partire dal 1° marzo 2025.
+C.
+L'INSAI presenta un ricorso in materia di diritto pubblico al Tribunale federale, chiedendo l'annullamento della sentenza cantonale e la conferma della decisione su opposizione del 3 marzo 2025.
+Chiamati a pronunciarsi, l'assicurato postula la reiezione del ricorso, mentre la Corte cantonale rinuncia a presentare osservazioni.
+Diritto:
+1.
+La sentenza impugnata è una decisione finale (
+art. 90 LTF
+) resa in una materia di diritto pubblico (art. 82 segg. LTF) da un'autorità cantonale di ultima istanza (art. 86 cpv. 1 lett. d e cpv. 2 LTF). Presentato in tempo utile (
+art. 100 cpv. 1 LTF
+) e nelle debite forme (
+art. 42 LTF
+), il ricorso è ammissibile.
+2.
+2.1.
+Il ricorso in materia di diritto pubblico può essere presentato per violazione del diritto, conformemente a quanto stabilito dagli
+art. 95 e 96 LTF
+. Il Tribunale federale esamina d'ufficio l'applicazione del diritto federale (
+art. 106 cpv. 1 LTF
+), non essendo vincolato né dagli argomenti sollevati nel ricorso né dai motivi addotti dall'autorità precedente. Tuttavia, salvo che la violazione giuridica sia manifesta, tenuto conto dell'esigenza di motivazione posta dall'
+art. 42 cpv. 2 LTF
+, il Tribunale federale esamina solamente le censure sollevate, mentre non è tenuto a vagliare, come lo farebbe un'autorità di primo grado, tutte le questioni giuridiche che si pongono, se queste ultime non sono (più) debitamente presentate in sede federale (
+DTF 143 V 208
+consid. 2;
+141 V 234
+consid. 1). Inoltre, la parte ricorrente non può limitarsi a riproporre i punti di vista già difesi nella procedura cantonale, bensì deve sviluppare la propria critica partendo dai considerandi dell'autorità precedente (
+DTF 148 IV 205
+consid. 2.6;
+140 III 115
+consid. 2).
+2.2.
+Se il ricorso è presentato contro una decisione d'assegnazione o rifiuto di prestazioni pecuniarie dell'assicurazione militare o dell'assicurazione contro gli infortuni - come nella fattispecie - può essere censurato qualsiasi accertamento inesatto o incompleto dei fatti giuridicamente rilevanti (
+art. 97 cpv. 2 LTF
+); il Tribunale federale non è allora vincolato dall'accertamento dei fatti operato dall'autorità inferiore (
+art. 105 cpv. 3 LTF
+).
+3.
+Oggetto del contendere è sapere se la sentenza del Tribunale cantonale, che ha condannato il ricorrente a riconoscere una rendita d'invalidità del 20 % all'opponente, sia lesiva del diritto federale.
+La piena capacità lavorativa dell'opponente in attività adeguate e l'IMI stabilite nella decisione su opposizione del 3 marzo 2025, confermate dalla Corte cantonale e rimaste incontestate in questa sede, esulano invece dalla presente vertenza.
+4.
+I principi generali e le norme legali in materia di rendita d'invalidità a seguito d'infortunio (
+art. 18 cpv. 1 LAINF
+;
+art. 8 e 16 LPGA
+[RS 830.1]) sono già stati correttamente esposti nella sentenza impugnata. Nella misura in cui non servano ulteriori precisazioni, vi si può fare riferimento.
+5.
+5.1.
+Il Tribunale cantonale ha accertato che il ricorrente aveva determinato il reddito da valido in fr. 63'132.40.- tenendo conto di quanto previsto nel Contratto collettivo di lavoro (CCL) di categoria, rilevando che in un tale caso non era possibile, per giurisprudenza, procedere alla parallelizzazione dei redditi. Tuttavia, la Corte ticinese ha fatto riferimento ad una sua precedente sentenza del 24 marzo 2025 (contro la quale era pendente un ricorso al Tribunale federale [incarto 8C_254/2025]) in cui aveva applicato per analogia l'
+art. 26 cpv. 2 OAI
+(RS 831.201) in materia di assicurazione contro gli infortuni. Nel caso in esame, essa ha accertato l'esistenza di un gap salariale dell'14,33 % tra il reddito annuale che l'opponente avrebbe conseguito senza il danno alla salute e il reddito centrale del settore delle costruzioni di fr. 73'699.01 (secondo la tabella della Rilevazione svizzera della struttura dei salari [RSS] TA1 tirage_skill_levels 2022, settore economico 41-43 ["Costruzioni"], livello di competenze 1, riportato su 41,2 ore/settimana conformemente alla durata normale del lavoro nel settore e aggiornato al 2025). In linea con la propria giurisprudenza, il Tribunale cantonale ha adeguato di conseguenza il reddito da valido al 95 % di tale valore giungendo all'importo di fr. 70'014.05.
+5.2.
+La Corte cantonale ha in seguito rilevato che in base ai dati forniti dalla tabella RSS applicabile (TA1_tirage_skill_level 2022, ramo economico totale, uomini, livello di competenze 1, riportando il valore su 41,7 ore settimanali e aggiornandolo al 2025), l'opponente avrebbe potuto conseguire un salario annuale lordo pari a fr. 69'533.76. A questo punto, riferendosi nuovamente alla propria sentenza del 24 marzo 2025 appena menzionata, nella quale aveva applicato per analogia anche l'
+art. 26bis cpv. 3 OAI
+in materia di assicurazione infortuni, il Tribunale cantonale ha conseguentemente ridotto del 10 % il reddito da invalido, ottenendo l'importo di fr. 62'580.38. In aggiunta, poggiandosi su un'altra sua precedente sentenza del 30 luglio 2025 (contro la quale era anche pendente un ricorso al Tribunale federale [incarto 8C_481/2025]), esso ha applicato una deduzione sociale del 10 % quale correttivo giurisprudenziale (cfr.
+DTF 126 V 75
+), già ritenuta dal ricorrente per tenere conto delle circostanze personali e professionali del caso di specie. Il reddito da invalido corrispondeva quindi a fr. 56'322.34.
+Dal confronto dei redditi emergeva così una perdita di guadagno del 20 %.
+6.
+6.1.
+6.1.1.
+Pur non contestando che la nozione d'invalidità definita nella LPGA sarebbe identica in tutti i rami dell'assicurazione sociale, il ricorrente ritiene che non si potrebbero ignorare le differenze tra l'assicurazione per l'invalidità e quella contro gli infortuni. Ad esempio, l'
+art. 28 cpv. 4 OAINF
+(RS 832.202) non troverebbe nessuna corrispondenza in materia di assicurazione per l'invalidità, in cui il fattore dell'età potrebbe giocare un ruolo non indifferente nella fissazione della rendita. L'assicurazione per l'invalidità sarebbe inoltre tenuta a versare una rendita solo con un discapito di almeno il 40 %, per cui le deduzioni avrebbero un impatto minore rispetto a quello che potrebbero avere per gli assicuratori infortuni, chiamati a corrispondere una rendita già di fronte ad una differenza del 10 %. L'assicurazione per l'invalidità verserebbe poi una rendita intera in caso di un grado d'invalidità del 70 %, a differenza degli assicuratori LAINF, chiamati unicamente a effettuare gli arrotondamenti alla percentuale intera superiore o inferiore. Il grado d'invalidità giocherebbe un ruolo in materia di provvedimenti professionali, obiettivo centrale per l'AI, ma non concernerebbe gli assicuratori infortuni. Oltre a ciò, l'assicurazione per l'invalidità riguarderebbe anche le persone che presentano un danno alla salute dalla nascita o un danno alla salute precoce, diversamente dall'assicurazione contro gli infortuni.
+6.1.2.
+Inoltre, per giurisprudenza, la valutazione del grado d'invalidità secondo l'assicurazione per l'invalidità non vincolerebbe gli assicuratori infortuni, e viceversa; entrambi gli assicuratori sarebbero tenuti a valutare il grado d'invalidità in modo indipendente. Ciò significherebbe che già prima della modifica dell'OAI entrata in vigore il 1° gennaio 2024 sarebbero risultate delle differenze in materia di raffronto dei redditi, anche nei casi in cui la persona assicurata non presentava delle affezioni morbose. Citando quindi un passaggio del consid. 10.3 della
+DTF 150 V 410
+, nonché della sentenza 8C_57/2024 del 4 dicembre 2024, il ricorrente sostiene che il Tribunale federale avrebbe lasciato intendere che un'applicazione per analogia dell'
+art. 26bis cpv. 3 OAI
+(e di conseguenza anche dell'
+art. 26 OAI
+) non entra in considerazione. In ogni caso, non si potrebbe parlare di una lacuna della legge, per cui spetterebbe al legislatore - e non ai tribunali - vagliare se introdurre una delega simile a quella di cui all'art. 28a cpv. 1, seconda frase, LAI in materia di assicurazione contro gli infortuni. Infine, l'applicazione di una deduzione sociale ai sensi della giurisprudenza, in aggiunta alla riduzione prevista dall'
+art. 26bis cpv. 3 OAI
+, sarebbe suggerito unicamente dalla dottrina.
+6.2.
+Nelle proprie osservazioni al ricorso, l'opponente condivide quanto esposto nella sentenza impugnata in merito all'applicazione per analogia degli art. 26 cpv. 2 e 26bis cpv. 3 OAI. Egli sottolinea inoltre che una diversa soluzione costituirebbe una violazione dell'
+art. 8 Cost.
+e dell'
+art. 16 LPGA
+.
+7.
+Con sentenza 8C_254/2025 del 23 giugno 2026, il Tribunale federale ha stabilito che gli art. 26 e 26bis cpv. 3, prima frase, OAI, volti a correggere i redditi da raffronto determinati secondo le tabelle salariali RSS, non sono applicabili per analogia nell'assicurazione contro gli infortuni (si vedano in proposito i rispettivi consid. 7 e 8, destinati alla pubblicazione, ai quali si rinvia). Nel caso concreto non occorre inoltre chinarsi oltremodo sui correttivi giurisprudenziali. Invero, l'entità della deduzione sociale applicata, così come la giurisprudenza che impedisce di procedere ad un parallelismo dei redditi in presenza di un CCL (cfr. sentenza 8C_141/2016 del 17 maggio 2016 consid. 5.2.2), sono rimaste incontestate dinanzi al Tribunale federale. La censura di ordine costituzionale invocata dall'opponente, di principio ammissibile pur essendo stata presentata in questa sede soltanto con la risposta al ricorso (
+DTF 142 IV 129
+consid. 4.1; cfr. segnatamente sentenza 9C_173/2025 del 4 maggio 2026 consid. 2), non rispetta l'onere di motivazione accresciuto ad essa applicabile (
+art. 106 cpv. 2 LTF
+;
+DTF 150 II 346
+E. 1.5.3) e sfugge pertanto ad un esame di merito. Si rileverà nondimeno che le note differenze tra le assicurazioni sociali interessate, nonché le relativizzazioni del principio dell'unità del concetto dell'invalidità già ammesse dalla giurisprudenza, come segnatamente discusso anche nella citata sentenza 8C_254/2025 (cfr. consid. 7.4.4 seg.), non permetterebbero di ritenere il carattere ingiustificato di una disparità di trattamento, quand'anche essa si concretizzasse nonostante l'esistenza dei correttivi giurisprudenziali (cfr. sentenza 8C_610/2025 del 15 luglio 2026 consid. 7).
+In conclusione, il raffronto dei redditi ritenuto dal ricorrente va confermato, il che esclude la possibilità di assegnare una rendita d'invalidità all'opponente.
+8.
+Ne discende che il ricorso deve essere accolto. La sentenza impugnata va annullata e la decisione su opposizione del 3 marzo 2025 confermata. Le spese giudiziarie seguono la soccombenza (
+art. 66 cpv. 1 LTF
+). L'assicuratore vincente in causa non ha diritto a indennità per spese ripetibili (
+art. 68 cpv. 3 LTF
+).
+Per questi motivi, il Tribunale federale pronuncia:
+1.
+Il ricorso è accolto. La sentenza del Tribunale delle assicurazioni del Cantone Ticino del 22 settembre 2025 è annullata e la decisione su opposizione dell'Istituto nazionale svizzero di assicurazione contro gli infortuni (INSAI) è confermata.
+2.
+Le spese giudiziarie di fr. 800.- sono poste a carico dell'opponente.
+3.
+La causa viene rinviata al Tribunale delle assicurazioni del Cantone Ticino per nuova decisione sulle ripetibili nella procedura precedente.
+4.
+Comunicazione alle parti, al Tribunale delle assicurazioni del Cantone Ticino e all'Ufficio federale della sanità pubblica.
+Lucerna, 15 luglio 2026
+In nome della IV Corte di diritto pubblico
+del Tribunale federale svizzero
+La Presidente:    Viscione
+Il Cancelliere:    Colombi

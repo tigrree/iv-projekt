@@ -91,8 +91,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 [Text auf Deutsch: Beginne direkt mit der materiellen Würdigung]
 """
 
-   try:
-        # Den VOLLSTÄNDIGEN Text übergeben, damit das Dispositiv am Ende nicht fehlt
+try:
         clean_text = urteil_text
         response = client.messages.create(
             model="claude-opus-4-8",

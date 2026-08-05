@@ -94,7 +94,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
         try:
             clean_text = urteil_text
             response = client.messages.create(
-                model="claude-opus-4-8",
+                model="claude-sonnet-4-6",
                 max_tokens=4000,
                 temperature=0.1,
                 system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit den folgenden zwei XML-Tags:\n<vorschau_de>Übersetzung hier</vorschau_de>\n<zusammenfassung>Zusammenfassung hier</zusammenfassung>\n\nVerwende KEIN JSON und erfinde keine anderen Formate.",

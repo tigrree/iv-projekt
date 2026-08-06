@@ -19,12 +19,12 @@ jobs:
 
     steps:
       - name: Checkout Repository Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           persist-credentials: true # Stellt sicher, dass das Push-Recht erhalten bleibt
 
       - name: Set up Python Environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 

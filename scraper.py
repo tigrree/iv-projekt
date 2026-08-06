@@ -99,7 +99,16 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit den folgenden zwei XML-Tags:\n<vorschau_de>Übersetzung hier</vorschau_de>\n<zusammenfassung>Zusammenfassung hier</zusammenfassung>\n\nVerwende KEIN JSON und erfinde keine anderen Formate.",
             messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet in den Tag <vorschau_de>.\nSchritt 2: Fasse das Urteil zusammen und schreibe den Text in den Tag <zusammenfassung>.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
-        raw_content = response.content[0].text
+        
+        # NEUER CODE: Filtern der Blöcke, um den "ThinkingBlock" zu ignorieren
+        raw_content = ""
+        for block in response.content:
+            if block.type == "text":
+                raw_content = block.text
+                break
+                
+        if not raw_content:
+            return vorschau_raw, "Fehler: Die KI hat keinen auslesbaren Text-Block zurückgegeben."
         
         # XML-Parsing
         v_match = re.search(r'<vorschau_de>(.*?)</vorschau_de>', raw_content, re.DOTALL | re.IGNORECASE)

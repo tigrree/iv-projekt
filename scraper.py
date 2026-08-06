@@ -79,7 +79,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 2. ABSTÄNDE: Füge nach einem Haupttitel KEINE zusätzliche Leerzeile ein. Der Text beginnt direkt in der nächsten Zeile.
 3. KEINE TRENNLINIEN: Verwende unter keinen Umständen Trennlinien (wie "---").
 4. UNTERTITEL: Zwingend UNTERSTRICHEN (<u>...</u>) und mit Doppelpunkt. Keine Fettschrift.
-   
+    
 ### FORMATVORGABEN:
 **Sachverhalt & Anträge**
 [Text]
@@ -92,11 +92,10 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 """
 
     try:
-        # Wir übergeben die ersten ~5000 Wörter für die Zusammenfassung
-        clean_text = " ".join(urteil_text.split()[:5000])
+        clean_text = urteil_text
         response = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=3500,
+            model="claude-fable-5",
+            max_tokens=4000,
             temperature=0.1,
             system="Du bist ein IT-System. Antworte AUSSCHLIESSLICH mit den folgenden zwei XML-Tags:\n<vorschau_de>Übersetzung hier</vorschau_de>\n<zusammenfassung>Zusammenfassung hier</zusammenfassung>\n\nVerwende KEIN JSON und erfinde keine anderen Formate.",
             messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet in den Tag <vorschau_de>.\nSchritt 2: Fasse das Urteil zusammen und schreibe den Text in den Tag <zusammenfassung>.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
@@ -121,7 +120,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
 
             return v_de, z_de
         else:
-            return vorschau_raw, f"Parsing Fehler: Die KI hat die XML-Tags nicht korrekt generiert."
+            return vorschau_raw, "Parsing Fehler: Die KI hat die XML-Tags nicht korrekt generiert."
             
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
@@ -143,7 +142,8 @@ def scrape_bger():
     
     # JSON initialisieren oder laden
     if not os.path.exists('urteile.json'):
-        with open('urteile.json', 'w', encoding='utf-8') as f: json.dump([], f)
+        with open('urteile.json', 'w', encoding='utf-8') as f:
+            json.dump([], f)
     with open('urteile.json', 'r', encoding='utf-8') as f:
         try: 
             archiv_daten = json.load(f)
@@ -174,10 +174,12 @@ def scrape_bger():
             for i in range(len(rows)):
                 row = rows[i]
                 link_tag = row.find('a', href=True)
-                if not link_tag: continue
+                if not link_tag:
+                    continue
                 
                 raw_az = link_tag.get_text().strip()
-                if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")): continue
+                if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")):
+                    continue
                 
                 volltext = row.get_text(" ", strip=True)
                 
@@ -201,9 +203,12 @@ def scrape_bger():
                 if ist_iv or ist_ak:
                     clean_az = raw_az.replace("*", "").strip()
                     kat = "iv" if ist_iv else "ak"
-                    if ist_iv and ist_ak: kat = "beide"
-                    if ist_iv: iv_gefunden = True
-                    if ist_ak: ak_gefunden = True
+                    if ist_iv and ist_ak:
+                        kat = "beide"
+                    if ist_iv:
+                        iv_gefunden = True
+                    if ist_ak:
+                        ak_gefunden = True
 
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     
@@ -235,13 +240,17 @@ def scrape_bger():
                     
                     if "IV-Stelle des Kantons Zürich" in rubrum:
                         pos = rubrum.find("IV-Stelle des Kantons Zürich")
-                        if "Beschwerdeführerin" in rubrum[pos:pos+250]: iv_zh_fuehrer = True
-                        else: iv_zh_gegner = True
+                        if "Beschwerdeführerin" in rubrum[pos:pos+250]:
+                            iv_zh_fuehrer = True
+                        else:
+                            iv_zh_gegner = True
                     
                     if "Sozialversicherungsanstalt des Kantons Zürich" in rubrum:
                         pos = rubrum.find("Sozialversicherungsanstalt des Kantons Zürich")
-                        if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
-                        else: ak_zh_gegner = True
+                        if "Beschwerdeführerin" in rubrum[pos:pos+250]:
+                            ak_zh_fuehrer = True
+                        else:
+                            ak_zh_gegner = True
 
                     # Claude Zusammenfassung aufrufen
                     v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)

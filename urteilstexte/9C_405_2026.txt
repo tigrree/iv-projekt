@@ -1,0 +1,90 @@
+9C_405/2026
+Arrêt du 21 juillet 2026
+IIIe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Moser-Szeless, Présidente,
+Stadelmann et Beusch.
+Greffière : Mme Perrenoud.
+Participants à la procédure
+A.________,
+recourante,
+contre
+Helsana Assurances SA,
+Zürichstrasse 130, 8600 Dübendorf,
+représentée par Helsana Assurances SA, Legal,
+avenue de Provence 15, 1007 Lausanne,
+intimée.
+Objet
+Assurance-maladie,
+recours contre l'arrêt du Tribunal cantonal du Valais du 27 mai 2026 (S2 24 7).
+Faits :
+A.
+A.________, née en 1971, est affiliée auprès d'Helsana Assurances SA (ci-après: Helsana) pour l'assurance obligatoire des soins en cas de maladie. L'assurée ne s'étant pas acquittée de l'intégralité des primes et participations aux coûts dues pour les années 2022 et 2023, Helsana a requis la poursuite le 7 juillet 2023, après avoir adressé plusieurs rappels à son assurée. Le 12 juillet suivant, l'Office des poursuites des districts de B.________ a notifié à l'assurée un commandement de payer dans la poursuite ordinaire n° xxx pour les primes impayées à hauteur de 737 fr. 25 plus intérêts à 5 % l'an dès le 8 juillet 2023, pour les décomptes de prestations restés en souffrance pour un montant de 527 fr. 60, pour les intérêts dus jusqu'au 7 juillet 2023 s'élevant à 34 fr. 80 et pour les frais de rappel et de dossier par 825 fr., plus les frais dudit commandement de payer arrêtés à 73 fr. 30. Ce commandement de payer a été frappé d'opposition totale. Par décision du 25 août 2023, Helsana a retenu que l'assurée lui devait la somme de 2'197 fr. 95 (soit 737 fr. 25 + 527 fr. 60 + 34 fr. 80 + 825 fr. + 73 fr. 30) et levé l'opposition formée dans le cadre de la poursuite n° xxx à hauteur de ce montant. Par décision sur opposition du 5 décembre 2023, Helsana a partiellement admis l'opposition en ce sens que les frais de poursuite (73 fr. 30) ne devaient pas faire l'objet de la procédure de mainlevée et que les frais administratifs (rappel) ont été ramenés à 250 francs. Elle a pour le reste rejeté l'opposition et prononcé la mainlevée de l'opposition à concurrence de 1'549 fr. 65 (soit 737 fr. 25 [créance de primes à laquelle s'ajoutent des intérêts moratoires à 5 % l'an dès le 8 juillet 2023] + 527 fr. 60 [créance relative à la participation aux coûts] + 250 fr. [frais de rappel] + 34 fr. 80 [intérêts courus jusqu'au 7 juillet 2023]).
+B.
+Statuant le 27 mai 2026 sur le recours formé par l'assurée contre la décision sur opposition du 5 décembre 2023, la Cour des assurances sociales du Tribunal cantonal du Valais l'a rejeté. Elle a prononcé que l'opposition faite à la poursuite n° xxx de l'Office des poursuites des districts de B.________ est définitivement levée à concurrence de 737 fr. 25 de primes, plus intérêts à 5 % l'an dès le 8 juillet 2023, de 527 fr. 60 de participation aux coûts, de 250 fr. de frais administratifs et de 34 fr. 80 d'intérêts dus jusqu'au 7 juillet 2023.
+C.
+A.________ interjette un recours contre cet arrêt. Elle en requiert principalement l'annulation en tant qu'il confirme les frais administratifs litigieux et demande qu'il soit dit et jugé que l'application de l'
+art. 105b OAMal
+(RS 832.102) dans sa situation nécessitait un examen concret et individualisé du caractère approprié des frais administratifs, examen auquel ni la caisse-maladie ni la juridiction cantonale n'ont procédé. Subsidiairement, l'assurée conclut à la réforme de l'arrêt attaqué en ce sens que les frais administratifs litigieux sont annulés ou, subsidiairement, que leur montant doit être réexaminé au regard des exigences de proportionnalité découlant de l'
+art. 105b OAMal
+; elle demande qu'il soit dit et jugé qu'un nombre élevé de rappels adressés à un assuré dont la difficulté financière a été invoquée et était connue de l'assureur ne saurait, à lui seul, justifier des frais administratifs supplémentaires sans examen de leur utilité réelle, de leur nécessité et de leur caractère approprié au sens de l'
+art. 105b OAMal
+. L'assurée sollicite également l'octroi de l'assistance judiciaire.
+Considérant en droit :
+1.
+Le recours en matière de droit public peut être formé pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il n'examine en principe que les griefs invoqués, compte tenu de l'exigence de motivation prévue à l'
+art. 42 al. 2 LTF
+, et statue par ailleurs sur la base des faits établis par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Le recourant qui entend s'en écarter doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+sont réalisées sinon un état de fait divergent ne peut pas être pris en considération.
+2.
+2.1.
+En instance fédérale, le litige porte exclusivement sur le point de savoir si la juridiction cantonale était fondée à confirmer que l'assurée est débitrice, envers Helsana, de frais administratifs d'un montant de 250 fr.
+2.2.
+À la suite des premiers juges, on rappellera que lorsque l'assuré a causé par sa faute des dépenses qui auraient pu être évitées par un paiement effectué à temps, l'assureur peut percevoir des frais administratifs d'un montant approprié, pour autant qu'une telle mesure soit prévue par les conditions générales sur les droits et les obligations des assurés (art. 105b al. 2, 1re phrase, OAMal). Le montant des frais à prélever en cas de retard de paiement d'une personne assurée à titre obligatoire est laissé à I'appréciation de I'assureur-maladie, pour autant qu'il respecte le principe de l'équivalence, qui exige qu'une taxe ne soit manifestement pas disproportionnée par rapport à la dépense en question et qu'elle reste dans des limites raisonnables (arrêt 9C_874/2015 du 4 février 2016 consid. 4.1 et les références citées). Par exemple, des frais de rappel de 120 fr. pour des arriérés de 549 fr. 95 (environ 22 %) et de 735 fr. 60 (environ 16 %), respectivement de 240 fr. pour un arriéré de 1'025 fr. 25 (environ 23 %) ont certes été considérés comme élevés par le Tribunal fédéral, mais il a toutefois nié toute disproportion (arrêt 9C_170/2024 du 11 juin 2024 consid. 5.4 et les références citées).
+3.
+3.1.
+À l'appui de son recours, l'assurée se prévaut d'une violation de l'
+art. 105b OAMal
+et du principe de proportionnalité. Elle fait en substance valoir qu'un assureur-maladie ne peut pas considérer comme "appropriés" des frais administratifs dont l'augmentation résulte essentiellement de la multiplication de rappels qu'il a lui-même décidé d'adresser à une assurée dont la difficulté financière avait été invoquée et était connue. Selon la recourante, il appartenait dès lors à la juridiction cantonale de vérifier concrètement si les démarches entreprises par l'intimée demeuraient utiles, nécessaires et proportionnées au regard de sa situation financière connue de la caisse-maladie. En s'abstenant de procéder à cet examen, les juges précédents auraient méconnu la portée de l'
+art. 105b OAMal
+.
+3.2.
+L'argumentation de l'assurée est mal fondée. Comme cela ressort des constatations cantonales, non contestées par la recourante, le ch. 13 des conditions générales applicables en l'occurrence prévoit que les frais résultant du retard dans l'acquittement des primes et participations aux coûts, tels que les frais de rappel et les frais d'encaissement, vont à la charge de la personne assurée. Quant au montant des frais administratifs réclamés par Helsana, il ne prête pas le flanc à la critique, comme l'a dûment exposé l'instance précédente et quoi qu'en dise la recourante à cet égard. Des frais à hauteur de 250 fr. n'apparaissent pas excessifs en l'espèce, dans la mesure où le comportement de la recourante a généré - selon les constatations cantonales qu'elle ne conteste pas - l'envoi de dix rappels concernant les primes pour les mois de juillet 2022 à mars 2023, dix rappels s'agissant de sa participation aux coûts selon les décomptes de prestations du 14 mai 2022 au 4 février 2023, et dix-sept derniers rappels relatifs audites primes et à la participation aux coûts. Cette considération vaut d'autant plus que dans la décision sur opposition du 5 décembre 2023, l'intimée avait réduit les frais administratifs initialement réclamés de près de 70 % (de 825 fr. à 250 fr.) afin de garantir une proportion raisonnable avec le montant de la créance de base (de 1'264 fr. 85). Les frais supplémentaires occasionnés par ces trente-sept rappels trouvent leur cause dans le retard de l'assurée lors du versement des primes et de la participation aux coûts, soit dans un comportement fautif de l'intéressée (cf.
+ATF 125 V 276
+consid. 2c/cc). À cet égard, il aurait en effet été loisible à la recourante de prendre contact avec Helsana, afin de l'informer de sa situation financière difficile, ce qu'elle n'a toutefois fait qu'après la réquisition de poursuite du 7 juillet 2023. Dans son écriture de recours, l'assurée indique en effet qu'elle a invoqué sa situation financière dans son opposition du 25 septembre 2023. Partant, elle ne saurait valablement reprocher à la caisse-maladie de ne pas avoir tenu compte de sa situation financière lorsqu'elle lui a adressé des rappels, entre le 19 juin 2022 et le 21 mai 2023. Le montant de 250 fr. respecte du reste le principe jurisprudentiel d'équivalence, dès lors qu'il représente environ 20 % du montant de la créance de base de 1'264 fr. 85 (737 fr. 25 de primes + 527 fr. 60 de participation aux coûts; consid. 2.2 supra).
+3.3.
+En conséquence de ce qui précède, le recours, manifestement infondé, doit être rejeté selon la procédure simplifiée de l'
+art. 109 al. 2 let. a LTF
+. Vu les circonstances, il convient de renoncer à percevoir des frais judiciaires (
+art. 66 al. 1 LTF
+), ce qui rend sur ce point sans objet la requête d'assistance judiciaire (cf.
+art. 64 al. 1 LTF
+). Dans la mesure où celle-ci tendrait également à la désignation d'un avocat d'office (cf.
+art. 64 al. 2 LTF
+), elle doit être rejetée, vu l'absence manifeste de chances de succès du recours.
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+La demande d'assistance judiciaire est rejetée dans la mesure où elle n'est pas sans objet.
+3.
+Il n'est pas perçu de frais judiciaires.
+4.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du Valais, Cour des assurances sociales, et à l'Office fédéral de la santé publique.
+Lucerne, le 21 juillet 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+La Greffière :    Perrenoud

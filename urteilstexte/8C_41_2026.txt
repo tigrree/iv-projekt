@@ -1,0 +1,116 @@
+8C_41/2026
+Arrêt du 9 juillet 2026
+IVe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Viscione, Présidente, Maillard et Métral.
+Greffière : Mme Barman Ionta.
+Participants à la procédure
+A.________,
+représentée par Me Flore Primault, avocate,
+recourante,
+contre
+Office de l'assurance-invalidité pour le canton de Vaud,
+avenue du Général-Guisan 8, 1800 Vevey,
+intimé.
+Objet
+Assurance-invalidité (rente d'invalidité),
+recours contre l'arrêt du Tribunal cantonal
+du canton de Vaud du 3 décembre 2025
+(ZD25.011447).
+Faits :
+A.
+A.________, née en 1977, technicienne de production, a déposé une demande de prestations de l'assurance-invalidité au mois de juin 2021. Entre autres mesures d'instruction, l'Office de l'assurance-invalidité pour le canton de Vaud (ci-après: l'office AI) a diligenté une expertise en médecine interne, rhumatologie, neurologie et psychiatrie auprès du Centre médical d'expertises CEMEDEX. Les experts ont diagnostiqué une polyarthrite rhumatoïde faiblement évolutive, des lombalgies sur discopathie lombaire basse, des cervicalgies sur discopathie modérée, un épisode dépressif moyen avec syndrome somatique et un syndrome douloureux somatoforme persistant. Dans leur rapport du 27 février 2023, ils ont indiqué que si la capacité de travail de l'assurée était nulle dans son activité habituelle pour des raisons rhumatologiques, elle était en revanche entière dans une activité adaptée. Dès février 2022 toutefois, l'assurée présentait une capacité de travail limitée à 70 % en raison de problèmes psychiatriques.
+Après avoir soumis les conclusions des experts à son Service médical régional (SMR), l'office AI a reconnu le droit de l'assurée à une demi-rente d'invalidité du 1er décembre 2021 au 30 avril 2022, puis à une rente s'élevant à 37,5 % d'une rente entière à compter du 1er janvier 2024.
+B.
+Statuant le 3 décembre 2025 sur le recours formé par l'assurée contre la décision du 13 février 2025, la Cour des assurances sociales du Tribunal cantonal du canton de Vaud l'a rejeté.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt. Elle conclut principalement à sa réforme, en ce sens qu'elle a droit à une rente d'invalidité fondée à tout le moins sur un taux d'invalidité de 45 % pour la période du 1er mai 2022 au 31 décembre 2023. Subsidiairement, elle requiert l'annulation de l'arrêt entrepris et le renvoi de la cause à la juridiction cantonale pour nouvelle décision dans le sens des considérants.
+L'intimé et la cour cantonale concluent au rejet du recours, tandis que l'Office fédéral des assurances sociales a renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le recours en matière de droit public peut être interjeté pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il statue par ailleurs sur la base des faits établis par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Le recourant qui entend s'en écarter doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+sont réalisées, sinon un état de fait divergent ne peut pas être pris en considération.
+3.
+Le litige porte sur le droit de la recourante à une rente de l'assurance-invalidité pour la période du 1er mai 2022 au 31 décembre 2023. Compte tenu des motifs et conclusions du recours, est seul litigieux le calcul du taux d'invalidité, plus particulièrement l'application d'un abattement sur le revenu statistique d'invalide pour la période considérée.
+4.
+Dans le cadre du "développement continu de l'AI", la LAI, le RAI et la LPGA - notamment - ont été modifiés avec effet au 1er janvier 2022 (modification du 19 juin 2020, RO 2021 705; FF 2017 2535). Les dispositions de la LAI et celles du RAI dans leur version en vigueur à partir du 1er janvier 2022 sont applicables en l'espèce en lien avec la modification de la situation de la recourante reconnue par l'intimé à compter du mois de février 2022 (avec suppression, au 1er mai 2022, du droit à la rente versée depuis le 1er décembre 2021; cf. let. b al. 1 des dispositions transitoires de la modification du 19 juin 2020).
+5.
+La juridiction cantonale a constaté, en se fondant sur l'expertise diligentée par l'office intimé auprès du CEMEDEX, à laquelle elle a accordé une pleine valeur probante, que la recourante disposait d'une capacité de travail de 100 % dans une activité adaptée à ses limitations fonctionnelles rhumatologiques, et ce jusqu'en février 2022. Après avoir déterminé le degré d'invalidité pour 2021, année de naissance de l'éventuel droit à la rente, qui s'élevait à 13 % (arrondi), les premiers juges ont considéré que c'était de manière erronée que l'office AI avait accordé une demi-rente d'invalidité à la recourante pour la période du 1er décembre 2021 au 30 avril 2022. Ils ont toutefois estimé que la reformatio in pejus n'apparaissait pas opportune dans le cas particulier.
+Procédant ensuite au calcul du taux d'invalidité pour l'année 2022, la cour cantonale a établi le revenu sans invalidité, non contesté, à 62'244 francs. Quant au revenu d'invalide, elle l'a déterminé en se fondant sur les statistiques de l'Enquête suisse sur la structure des salaires (ESS 2022, TA1_skill_level, tous secteurs confondus, femmes, niveau 1). Le revenu de 54'631 fr. 17 qu'elle a obtenu a été adapté à la capacité de travail résiduelle de 70 %, soit à 38'241 fr. 82. S'agissant de la question de l'abattement que pourrait encore subir le revenu d'invalide, les premiers juges ont relevé que l'intimé y avait renoncé pour la période du 1er mai 2022 au 31 décembre 2023. Ils ont rappelé que la capacité de travail tenait déjà compte d'une diminution de 30 % pour les limitations psychiatriques et que les activités prises en considération dans le domaine industriel léger tenaient compte des autres limitations fonctionnelles rhumatologiques. En outre, ces activités étaient disponibles indépendamment de l'âge et ne requéraient ni formation ni expérience professionnelle spécifique. Enfin, ni le taux d'activité réduit ni l'origine kosovare de la recourante - qui était également de nationalité suisse - ne justifiaient un abattement. Le taux d'invalidité de 39 % (38'241 fr. 82 / 62'244 fr.) ainsi obtenu n'ouvrait pas le droit à la rente pour la période considérée. Depuis le 1er janvier 2024, l'
+art. 26bis al. 3 RAI
+prévoyait qu'une déduction de 10 % soit opérée sur la valeur statistique. L'intimé ayant appliqué cette déduction, le taux d'invalidité était alors de 45 % (arrondi) et justifiait l'octroi d'une rente d'invalidité de 37,5 % dès le 1er janvier 2024.
+6.
+La recourante reproche à la cour cantonale d'avoir fait fi de la jurisprudence du Tribunal fédéral au moment d'apprécier l'abattement et prétend qu'elle aurait fait preuve d'arbitraire en fixant le taux d'invalidité à 39 %, sans déduction, la privant ainsi de son droit à une rente. En examinant séparément chaque élément (limitations fonctionnelles, âge, absence de formation, taux d'activité et nationalité), la juridiction cantonale n'aurait pas procédé à une appréciation globale de l'effet cumulé de ces facteurs, comme l'imposerait la jurisprudence. En tout état de cause, même à admettre à titre purement hypothétique que chaque critère pris isolément ne suffirait pas à justifier une réduction, il n'en demeurerait pas moins un impact cumulé sur ses possibilités de placement. À cet égard, la recourante fait valoir que ses limitations fonctionnelles sur le plan tant somatique que psychique restreindraient notablement le champ des activités exigibles. Elle invoque également son âge (47 ans), son manque de formation professionnelle ainsi que son défaut d'expérience professionnelle dans des activités autres que ses travaux habituels, sa nationalité étrangère et sa possibilité d'occuper un emploi à temps partiel, ce qui justifierait, selon elle, de procéder à un abattement global de 10 %, voire 15 %, sur le salaire statistique d'invalide. En conséquence, le taux d'invalidité devrait être fixé à tout le moins à 45 % pour la période du 1er mai 2022 au 31 décembre 2023, ouvrant ainsi son droit à une rente d'invalidité.
+7.
+7.1.
+La mesure dans laquelle les salaires ressortant des statistiques doivent être réduits dépend de l'ensemble des circonstances personnelles et professionnelles du cas particulier (limitations liées au handicap, âge, années de service, nationalité/catégorie d'autorisation de séjour et taux d'occupation). Une déduction globale maximale de 25 % sur le salaire statistique permet de tenir compte des différents éléments qui peuvent influencer le revenu d'une activité lucrative (
+ATF 135 V 297
+consid. 5.2;
+134 V 322
+consid. 5.2;
+126 V 75
+consid. 5b/aa-cc). Il n'y a pas lieu de procéder à des déductions distinctes pour chacun des facteurs entrant en considération; il faut bien plutôt procéder à une évaluation globale, dans les limites du pouvoir d'appréciation, des effets de ces facteurs sur le revenu d'invalide, compte tenu de l'ensemble des circonstances du cas concret (
+ATF 148 V 174
+consid. 6.3;
+126 V 75
+précité consid. 5b/bb; arrêt 9C_325/2022 du 25 mai 2023 consid. 6.2).
+7.2.
+Le point de savoir s'il y a lieu de procéder à un abattement sur le salaire statistique en raison de circonstances particulières (liées au handicap de la personne ou à d'autres facteurs) est une question de droit qui peut être examinée librement par le Tribunal fédéral. En revanche, l'étendue de l'abattement sur le salaire statistique dans un cas concret constitue une question relevant du pouvoir d'appréciation, qui est soumise à l'examen du juge de dernière instance uniquement si la juridiction cantonale a exercé son pouvoir d'appréciation de manière contraire au droit, soit a commis un excès positif ou négatif de son pouvoir d'appréciation ou a abusé de celui-ci (
+ATF 146 V 16
+consid. 4.2;
+137 V 71
+consid. 5.1), notamment en retenant des critères inappropriés, en ne tenant pas compte de circonstances pertinentes, en ne procédant pas à un examen complet des circonstances pertinentes ou en n'usant pas de critères objectifs (
+ATF 135 III 179
+consid. 2.1;
+130 III 176
+consid. 1.2; arrêt 8C_39/2023 du 14 juillet 2023 consid. 4.1.3).
+7.3.
+En tant qu'elle demande la prise en compte d'un abattement sur le revenu d'invalide résultant d'une appréciation globale de l'ensemble des circonstances, non d'un examen critère par critère, la recourante ne saurait être suivie dans son raisonnement. En effet, elle néglige le fait qu'avant de procéder à une appréciation globale des différents facteurs, il faut préalablement que ces facteurs soient reconnus comme pertinents dans le cas d'espèce. Cela signifie qu'il convient d'examiner dans un premier temps quels critères sont remplis puis, dans un second temps, d'évaluer globalement ces critères pour déterminer l'abattement. Il ne ressort du reste pas de la jurisprudence citée par la recourante que le Tribunal fédéral aurait adopté une approche différente (notamment arrêt 8C_454/2023 du 19 décembre 2023 consid. 5.4).
+7.4.
+En l'occurrence, les experts du CEMEDEX ont retenu que la recourante devait exercer une activité sans prise de décision immédiate, sans traitement simultané d'informations multiples et sans sollicitation intellectuelle. C'est en considération de ces limitations fonctionnelles psychiatriques qu'ils ont établi que la capacité de travail était réduite au taux de 70 % dès février 2022. La recourante ne démontre pas que les limitations constatées justifieraient un abattement supplémentaire sur le salaire statistique (cf.
+ATF 148 V 174
+, consid. 6.3;
+146 V 16
+, consid. 4.1). En ce qui concerne les limitations physiques (pas d'efforts de soulèvement de plus de 5 kg à partir du sol, pas de porte-à-faux du buste ni du rachis cervical, port de charge proche du corps limité à 10 kg, pas d'efforts de préhension et de pronosupination forcée des deux mains), il n'apparaît pas - et la recourante ne le démontre pas - que les activités simples et répétitives dans le domaine de l'industrie légère, considérées par les premiers juges comme adaptées aux limitations de la recourante, soient fortement réduites au point de justifier une réduction pour en tenir compte. Par ailleurs, la recourante n'invoque aucun argument pour expliquer comment son âge, son absence de formation ou sa nationalité étrangère (alors qu'elle est également de nationalité suisse) pourraient avoir une influence négative sur ses perspectives salariales. Enfin, on ne saurait considérer qu'un travail à temps partiel serait proportionnellement moins bien rémunéré qu'un emploi à plein temps dans le champ d'activités de la recourante. Les femmes qui exercent une activité à temps partiel ne perçoivent souvent pas un revenu moins élevé proportionnellement à celles qui sont occupées à temps plein (arrêt 9C_10/2019 du 29 avril 2019, consid. 5.2.1). Dans ces circonstances, la juridiction cantonale n'a pas violé le droit fédéral en ne procédant à aucun abattement.
+7.5.
+Compte tenu de ce qui précède, les considérations des premiers juges relatives à la détermination du taux d'invalidité de la recourante pour la période du 1er mai 2022 au 31 décembre 2023 doivent être confirmées. Ce taux d'invalidité (39 %) n'ouvre pas le droit à une rente de l'assurance-invalidité. Le recours doit donc être rejeté.
+8.
+La recourante, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge de la recourante.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, et à l'Office fédéral des assurances sociales.
+Lucerne, le 9 juillet 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Barman Ionta

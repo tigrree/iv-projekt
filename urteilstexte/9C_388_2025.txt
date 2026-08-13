@@ -1,0 +1,126 @@
+9C_388/2025
+Arrêt du 30 juillet 2026
+IIIe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Moser-Szeless, Présidente,
+Stadelmann et Parrino.
+Greffière : Mme Perrenoud.
+Participants à la procédure
+A.________,
+agissant par sa curatrice B.________,
+elle-même représentée par
+Me Catalina Constantina, avocate,
+recourant,
+contre
+Office de l'assurance-invalidité du canton de Neuchâtel,
+rue Chandigarh 2, 2300 La Chaux-de-Fonds,
+intimé.
+Objet
+Assurance-invalidité,
+recours contre l'arrêt du Tribunal cantonal de la République et canton de Neuchâtel du 2 juin 2025 (CDP.2024.191-AI).
+Faits :
+A.
+Par le biais de sa curatrice, A.________, né en 1976, a déposé une demande de prestations de l'assurance-invalidité au mois d'octobre 2022. L'Office de l'assurance-invalidité du canton de Neuchâtel (ci-après: l'office AI) a sollicité des renseignements auprès des médecins traitants de l'assuré, qui ont posé le diagnostic principal de pancréatite chronique calcifiante sur éthylisme avec sténose cholédocienne (rapport du docteur C.________, spécialiste en médecine interne générale, et de la doctoresse D.________, médecin, tous deux auprès du Groupe hospitalier X.________, du 13 septembre 2023, notamment). Après avoir soumis les avis médicaux recueillis à son Service médical régional (SMR; rapports du docteur E.________, médecin, des 31 mars et 7 décembre 2023 et du 26 mars 2024), l'administration a rejeté la demande (décision du 4 juin 2024 [remplaçant une précédente décision du 12 février 2024]).
+B.
+Statuant le 2 juin 2025 sur le recours formé par A.________ contre la décision du 4 juin 2024, la Cour de droit public du Tribunal cantonal de la République et canton de Neuchâtel l'a rejeté.
+C.
+A.________ interjette un recours en matière de droit public contre cet arrêt, dont il requiert l'annulation, ainsi que celle de la décision administrative du 4 juin 2024. Il conclut au renvoi de la cause à l'office AI pour instruction complémentaire et nouvelle décision. L'assuré sollicite également l'octroi de l'assistance judiciaire.
+L'office AI conclut au rejet du recours, tandis que l'Office fédéral des assurances sociales a renoncé à se déterminer.
+Considérant en droit :
+1.
+Le recourant se contente de prendre des conclusions cassatoires et en renvoi, alors que la nature réformatoire d'un recours en matière de droit public (cf.
+art. 107 al. 2 LTF
+) exige en principe des conclusions sur le fond du litige (cf.
+ATF 137 II 313
+consid. 1.2). Ce procédé est toutefois admis à titre exceptionnel lorsqu'en cas d'admission du recours, le Tribunal fédéral ne serait pas en mesure de statuer (
+ATF 136 V 131
+consid. 1.2). Or tel est bien le cas en l'espèce. S'il venait à admettre la nécessité de procéder à des mesures d'instruction supplémentaires comme le requiert le recourant, le Tribunal fédéral serait tenu de renvoyer la cause à la juridiction cantonale, voire à l'intimé, et ne pourrait donc pas trancher le litige. Les autres conditions étant remplies, le recours est dès lors recevable.
+2.
+Le recours en matière de droit public peut être formé pour violation du droit, tel qu'il est délimité par les
+art. 95 et 96 LTF
+. Le Tribunal fédéral applique le droit d'office (
+art. 106 al. 1 LTF
+). Il statue par ailleurs sur la base des faits établis par l'autorité précédente (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+). Le recourant qui entend s'en écarter doit expliquer de manière circonstanciée en quoi les conditions de l'
+art. 105 al. 2 LTF
+sont réalisées, sinon un état de fait divergent ne peut pas être pris en considération.
+3.
+3.1.
+Le litige a trait au droit du recourant à des prestations de l'assurance-invalidité, à la suite de la demande qu'il a présentée en octobre 2022.
+3.2.
+L'arrêt entrepris expose de manière complète les dispositions légales et les principes jurisprudentiels relatifs notamment à la notion d'invalidité (
+art. 7 et 8 al. 1 LPGA
+en relation avec l'
+art. 4 al. 1 LAI
+) et à son évaluation (
+art. 16 LPGA
+et
+art. 28a LAI
+), en particulier s'agissant du caractère invalidant des affections psychiques et psychosomatiques, ainsi que des syndromes de dépendance (
+ATF 148 V 49
+;
+145 V 215
+;
+143 V 409
+et 418;
+141 V 281
+). Il rappelle également les règles quant à la valeur probante des rapports médicaux (
+ATF 125 V 351
+consid. 3) et à la libre appréciation des preuves (
+art. 61 let
+. c LPGA). Il suffit d'y renvoyer.
+4.
+4.1.
+La juridiction cantonale a constaté que si les diagnostics posés par les médecins traitants de l'assuré n'étaient en l'espèce pas contestés, les parties étaient en revanche opposées sur les répercussions de ces atteintes à la santé sur la capacité de travail de l'intéressé. Ainsi, sans remettre en cause l'éthylisme chronique du recourant, elle a procédé à l'appréciation de sa capacité de travail. Faute d'attestation médicale d'une incapacité de travail de 40 % en moyenne durant une année, les juges précédents sont parvenus à la conclusion que l'office intimé était en droit de renoncer à la mise en oeuvre d'une procédure probatoire structurée et qu'il avait retenu à juste titre que l'assuré ne remplissait pas les conditions d'octroi d'une rente d'invalidité. Ils ont justifié leur point de vue en indiquant que les médecins "spécialisés" n'avaient pas attesté, d'une manière fondée et avec motivation, la présence d'une incapacité de travail, que leurs rapports médicaux répondaient aux exigences jurisprudentielles et que d'éventuels avis contradictoires n'avaient pas de force probante. Quant au médecin du SMR, qui avait (également) constaté que le dossier médical ne comportait pas d'attestation médicale d'incapacité de travail et de limitations fonctionnelles durables, il avait retenu une capacité de travail de 100 % depuis toujours dans toute activité correspondant aux aptitudes du recourant, hormis du 22 août au 25 novembre 2022 et du 29 août au 8 septembre 2023.
+4.2.
+À l'appui de son recours, l'assuré se prévaut d'un défaut d'instruction de l'office intimé en violation de l'
+art. 43 LPGA
+et de constats lacunaires du SMR, ainsi que d'un défaut d'instruction de la juridiction cantonale et d'éléments de faits ignorés par celle-ci. Il leur reproche en substance d'avoir constaté les faits de manière inexacte et violé le droit en considérant qu'il n'était pas nécessaire de mettre en oeuvre une procédure probatoire structurée pour évaluer l'incidence du syndrome de dépendance dont il est atteint sur sa capacité de travail.
+5.
+5.1.
+Selon la jurisprudence, dans le domaine de l'assurance-invalidité, l'évaluation de la capacité de travail, respectivement de l'incapacité de travail, en cas de syndrome douloureux somatoforme et d'autres affections psychiques ou psychosomatiques, au sein desquelles s'inscrivent notamment les syndromes de dépendance (troubles mentaux liés à l'utilisation de substances psychoactives), doit être effectuée selon un schéma défini, au moyen d'un catalogue d'indicateurs (
+ATF 141 V 281
+consid. 3.4 et 3.5 143 V 409 et 418;
+145 V 215
+). Aussi, le caractère invalidant d'atteintes à la santé psychique doit être établi dans le cadre d'un examen global, en tenant compte de différents indicateurs, au sein desquels figurent notamment les limitations fonctionnelles et les ressources de la personne assurée, de même que le critère de la résistance du trouble psychique à un traitement conduit dans les règles de l'art (
+ATF 143 V 409
+consid. 4.4).
+5.2.
+En l'occurrence, comme le fait valoir le recourant, ni l'office intimé ni, à sa suite, la juridiction cantonale n'ont examiné l'exigibilité d'une activité professionnelle selon les standards de la procédure probatoire structurée, telle que définie par la jurisprudence précédemment rappelée. Une telle procédure aurait pourtant dû être mise en oeuvre, en présence d'un syndrome de dépendance, plus particulièrement d'un éthylisme chronique "pas remis en cause" selon les constatations des premiers juges. Le docteur F.________, spécialiste en médecine interne générale, avait par ailleurs fait état d'un pronostic nul quant à la capacité de travail et de réadaptation de son patient (rapport du 18 décembre 2022). On ne se trouvait dès lors pas dans un cas de figure où une renonciation (à titre exceptionnel) à un examen du caractère invalidant de troubles somatoformes et d'affections psychiques ou psychosomatiques à l'aune des indicateurs jurisprudentiels eût pu intervenir (sur ce point, cf.
+ATF 143 V 418
+consid. 7.1 in fine; arrêt 9C_551/2024 du 20 décembre 2024 consid. 4.3).
+5.3.
+Compte tenu de ce qui précède, la cause doit être renvoyée à l'office intimé pour instruction complémentaire quant à la capacité de travail de l'assuré, au moyen d'une procédure probatoire structurée conformément à la jurisprudence rappelée au consid. 5.1 ci-dessus, comme le requiert le recourant. Le renvoi à l'administration est en effet nécessaire pour clarifier une situation médicale ayant fait l'objet d'investigations insuffisantes (cf.
+ATF 137 V 210
+consid. 4.4.1.4). Le recours est bien fondé.
+6.
+Vu le renvoi ordonné, qui revient à donner gain de cause au recourant, les frais judiciaires doivent être mis à la charge de l'intimé (
+art. 66 al. 1 LTF
+). Celui-ci versera par ailleurs une indemnité de dépens à l'assuré (
+art. 68 al. 1 LTF
+). La demande d'assistance judiciaire de ce dernier est dès lors sans objet.
+La cause est renvoyée à la juridiction cantonale pour nouvelle décision sur les frais et les dépens de la procédure antérieure (
+art. 67 et 68 al. 5 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est admis. L'arrêt du Tribunal cantonal de la République et canton de Neuchâtel, Cour de droit public, du 2 juin 2025 et la décision de l'Office de l'assurance-invalidité du canton de Neuchâtel du 4 juin 2024 sont annulés. La cause est renvoyée à l'intimé pour instruction complémentaire au sens des considérants et nouvelle décision.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge de l'intimé.
+3.
+L'intimé versera à l'avocate du recourant la somme de 3'000 fr. à titre de dépens pour la procédure devant le Tribunal fédéral.
+4.
+La cause est renvoyée au Tribunal cantonal de la République et canton de Neuchâtel, Cour de droit public, pour nouvelle décision sur les frais et les dépens de la procédure antérieure.
+5.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal de la République et canton de Neuchâtel, Cour de droit public, et à l'Office fédéral des assurances sociales.
+Lucerne, le 30 juillet 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+La Greffière :    Perrenoud

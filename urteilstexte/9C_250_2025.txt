@@ -1,0 +1,378 @@
+9C_250/2025
+Urteil vom 23. Juli 2026
+III. öffentlich-rechtliche Abteilung
+Besetzung
+Bundesrichterin Moser-Szeless, Präsidentin,
+Bundesrichter Stadelmann,
+Bundesrichter Parrino,
+Bundesrichter Beusch,
+Bundesrichterin Bollinger,
+Gerichtsschreiberin Dormann.
+Verfahrensbeteiligte
+Bundesamt für Gesundheit,
+Schwarzenburgstrasse 157, 3003 Bern,
+Beschwerdeführer,
+gegen
+Kanton Basel-Stadt,
+handelnd durch das Amt für Sozialbeiträge,
+Grenzacherstrasse 62, 4005 Basel
+Beschwerdegegner.
+Gegenstand
+Krankenversicherung,
+Beschwerde gegen das Urteil des Bundesverwaltungsgerichts vom 11. März 2025 (C-2001/2022).
+Sachverhalt:
+A.
+Das Bundesamt für Gesundheit (nachfolgend: BAG) informierte mit E-Mail-Nachricht vom 11. Oktober 2021 verschiedene kantonale Stellen über den definitiven Bundesbeitrag für das Jahr 2022 zur Prämienverbilligung in der Krankenversicherung und dessen definitive Aufteilung auf die einzelnen Kantone. Bei der Berechnung berücksichtigte es insbesondere den Ausgleich von zu hohen Prämieneinnahmen, wodurch der zuvor (ohne Ausgleich) ermittelte Bundesbeitrag insgesamt um Fr. 10'015'754.25 reduziert und auf Fr. 2'870'702'921.- festgesetzt wurde. Für den Kanton Basel-Stadt ergab sich ein um Fr. 983'136.75 (resp. 1,35 %) reduzierter Anteil am Bundesbeitrag von Fr. 72'113'388.-.
+Auf entsprechenden Antrag des Amtes für Sozialbeiträge des Kantons Basel-Stadt hin setzte das BAG mit Verfügung vom 5. April 2022 den auf
+Art. 66 KVG
+gestützten Bundesbeitrag zur individuellen Prämienverbilligung zugunsten des Kantons Basel-Stadt für das Jahr 2022 auf Fr. 72'113'388.- fest.
+B.
+Die dagegen durch das Amt für Sozialbeiträge des Kantons Basel-Stadt erhobene Beschwerde hiess das Bundesverwaltungsgericht mit Urteil vom 11. März 2025 gut. Es hob die Verfügung vom 5. April 2022 auf und wies das BAG an, den Bundesanteil an der individuellen Prämienverbilligung des Kantons Basel-Stadt ohne Abzug gemäss Art 3 Abs. 4bis der Verordnung vom 7. November 2007 über die Beiträge der Kantone und des Bundes zur Prämienverbilligung in der Krankenversicherung (aVPVK; AS 2007 6071 und 2015 5165) neu zu berechnen.
+C.
+Das BAG beantragt mit Beschwerde in öffentlich-rechtlichen Angelegenheiten, das Urteil vom 11. März 2025 sei aufzuheben und die Verfügung vom 5. April 2022 sei zu bestätigen.
+Das Bundesgericht hat dem BAG, der "Schweizerischen Eidgenossenschaft, handelnd durch den Bundesrat", dem "Kanton Basel-Stadt, handelnd durch den Regierungsrat" und dem Bundesverwaltungsgericht Zuständigkeitsfragen unterbreitet. Dazu äussern sich das BAG, das Amt für Sozialbeiträge des Kantons Basel-Stadt und das Bundesverwaltungsgericht. Zudem schliesst das Amt für Sozialbeiträge des Kantons Basel-Stadt auf Abweisung der Beschwerde.
+Erwägungen:
+1.
+Gegenstand in diesem Verfahren ist nicht die individuelle Prämienverbilligung im Sinne von
+Art. 65 und 65a KVG
+, die durch die Kantone gewährt wird und deswegen durch die IV. öffentlich-rechtliche Abteilung zu überprüfen wäre (vgl. Art. 32 lit. d des Reglements vom 20. November 2006 für das Bundesgericht [BGerR; SR 173.110.131]). Vielmehr ist hier der Bundesbeitrag zur individuellen Prämienverbilligung an den Kanton Basel-Stadt in Bezug auf dessen Höhe umstritten. Der Fall betrifft die soziale Krankenversicherung: Die wesentlichen rechtlichen Grundlagen zur Beurteilung finden sich alle im Krankenversicherungsrecht, namentlich in
+Art. 66 KVG
+und im zugehörigen Verordnungsrecht. Zuständig ist daher die III. öffentlich-rechtliche Abteilung (
+Art. 31 lit. e BGerR
+; vgl. auch Art. 30 Abs. 1 lit. c Ziff. 6 BGerR, wonach die II. öffentlich-rechtliche Abteilung nur subsidiär Beschwerden betreffend Subventionen beurteilt).
+2.
+2.1.
+Das Bundesgericht prüft seine Zuständigkeit und die weiteren Eintretensvoraussetzungen sowie diejenigen des vorinstanzlichen Verfahrens von Amtes wegen (
+Art. 29 Abs. 1 BGG
+) und mit freier Kognition (
+Art. 95 Abs. 1 lit. a BGG
+;
+BGE 148 V 265
+E. 1.1; Urteile 9C_304/2025 vom 25. März 2026 E. 1; 9C_416/2023 vom 16. Mai 2024 E. 1.1, nicht publ. in:
+BGE 150 II 409
+).
+2.2.
+2.2.1.
+Zunächst stellt sich die Frage, ob im vorinstanzlichen Verfahren ein taugliches Anfechtungsobjekt im Sinne von
+Art. 44 VwVG
+(SR 172.021; vgl. zur Anwendbarkeit dieses Gesetzes Art. 1 und Art. 3 lit. d
+bis
+VwVG i.V.m.
+Art. 1 Abs. 2 lit. c KVG
+) vorlag. Diesbezüglich ist die Zuständigkeit des BAG zum Erlass der Verfügung vom 5. April 2022 zu untersuchen (vgl. zur Unzuständigkeit als Nichtigkeitsgrund
+BGE 151 II 120
+E. 4.1 mit Hinweisen). Dazu ist an folgender Rechtslage anzuknüpfen:
+2.2.2.
+Der Bund gewährt den Kantonen jährlich einen Beitrag zur Verbilligung der Prämien im Sinne der Art. 65 und 65a (
+Art. 66 Abs. 1 KVG
+). Der Bundesbeitrag entspricht 7,5 % der Bruttokosten der obligatorischen Krankenpflegeversicherung (
+Art. 66 Abs. 2 KVG
+). Der Bundesrat setzt die Anteile der einzelnen Kantone am Bundesbeitrag nach deren Wohnbevölkerung sowie nach der Anzahl der Versicherten nach Art. 65a lit. a fest (
+Art. 66 Abs. 3 KVG
+). Der Bundesrat ist mit dem Vollzug des KVG beauftragt. Er erlässt die Ausführungsbestimmungen (
+Art. 96 KVG
+).
+In der hier anwendbaren aVPVK (auf Ende 2025 aufgehoben durch Art. 25 der Verordnung vom 12. September 2025 über die Beiträge der Kantone und des Bundes zur Prämienverbilligung in der Krankenversicherung [VPVK; SR 832.112.4]; zu den allgemeinen Grundsätzen des intertemporalen Rechts vgl.
+BGE 150 V 323
+E. 4.2 mit Hinweisen) regelte der Bundesrat die Ermittlung des Bundesbeitrags zur Prämienverbilligung nach
+Art. 66 KVG
+und dessen Aufteilung auf die Kantone (Art. 1 aVPVK). Dabei statuierte er spezifische Vorgaben (insbesondere Berechnungsformeln) zur Berechnung des Bundesbeitrags und dessen Aufteilung. Zudem übertrug er dem BAG explizit folgende Aufgaben: Berechnung der Bruttokosten nach
+Art. 66 Abs. 2 KVG
+(Art. 2 Abs. 2, 8, 9 aVPVK); Berechnung der jeweiligen Kantonsanteile und deren Veröffentlichung (Art. 3 Abs. 3-5 aVPVK); Beschaffung der Grundlagen und Kontrolle der Kantone (Art. 5 f. aVPVK).
+2.2.3.
+Ausgangspunkt jeder Auslegung bildet der Wortlaut der massgeblichen Norm. Ist der Text nicht ganz klar und sind verschiedene Auslegungen möglich, so muss das Gericht unter Berücksichtigung aller Auslegungselemente nach der wahren Tragweite der Norm suchen. Dabei hat es insbesondere den Willen des Gesetzgebers zu berücksichtigen, wie er sich namentlich aus den Gesetzesmaterialien ergibt (historische Auslegung). Weiter hat das Gericht nach dem Zweck, dem Sinn und den dem Text zugrunde liegenden Wertungen zu forschen, namentlich nach dem durch die Norm geschützten Interesse (teleologische Auslegung). Wichtig ist auch der Sinn, der einer Norm im Kontext zukommt, und das Verhältnis, in welchem sie zu anderen Gesetzesvorschriften steht (systematische Auslegung). Das Bundesgericht lehnt es ab, die einzelnen Auslegungselemente einer Prioritätsordnung zu unterstellen (
+BGE 152 V 20
+E. 5.4;
+150 V 120
+E. 4.2;
+149 V 21
+E. 4.3). Vom klaren, d.h. eindeutigen und unmissverständlichen Wortlaut darf somit ausnahmsweise abgewichen werden, wenn triftige Gründe dafür vorliegen, dass er nicht den wahren Sinn der Bestimmung wiedergibt (
+BGE 151 V 264
+E. 6.1;
+142 II 80
+E. 4.1;
+140 II 289
+E. 3.2).
+2.2.4.
+2.2.4.1.
+Nach dem Wortlaut von
+Art. 66 Abs. 3 KVG
+ist es der "Bundesrat" (nicht das BAG), der die hier interessierenden Anteile der einzelnen Kantone "festsetzt" ("le Conseil fédéral fixe la part [...] qui revient à chaque canton"; "il Consiglio federale stabilisce la quota che spetta a ciascun Cantone"). Nach dem allgemeinen Sprachgebrauch bedeutet dies, dass der Bundesrat zuständig ist, über den konkreten Anspruch eines Kantons in einem bestimmten Jahr mittels Verfügung zu befinden. Dass
+Art. 66 Abs. 3 KVG
+"lediglich" als Delegationsnorm aufzufassen wäre, geht aus dessen Formulierung nicht hervor (anders etwa bei Art. 17a Abs. 2 und 3,
+Art. 42a Abs. 3 oder
+Art. 96 KVG
+), auch wenn der Wortlaut solches nicht von vornherein ausschliesst.
+2.2.4.2.
+Die aktuelle (seit dem 1. Januar 2008 geltende) Fassung von
+Art. 66 KVG
+wurde im Rahmen des Bundesgesetzes vom 6. Oktober 2006 über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA; AS 2007 5779) beschlossen. Dabei erfuhr Abs. 1 lediglich insofern eine (redaktionelle) Änderung, als in der deutschen resp. italienischen Version der Begriff "Beiträge" resp. "sussidi" durch "einen Beitrag" resp. "un sussidio" ersetzt wurde. Hingegen wurden die früheren Abs. 2 bis 6 (vgl.
+Art. 66 KVG
+in der bis Ende 2007 geltenden Fassung) aufgehoben resp. durch die aktuellen Abs. 2 und 3 ersetzt, wobei die Formulierung, wonach der "Bundesrat" die Anteile der einzelnen Kantone "festsetzt", bereits in aArt. 66 Abs. 3 KVG verwendet worden war.
+In der entsprechenden Botschaft vom 7. September 2005 hatte der Bundesrat zu den Änderungen von "Art. 66 Abs. 2-6" KVG (recte:
+Art. 66 KVG
+gemäss Ziff. 23 Entwurf NFA [BBl 2005 6305]) ausgeführt, der Bundesbeitrag an die Kantone zur Prämienverbilligung werde nicht mehr (wie laut
+Art. 66 Abs. 2-4 KVG
+in der bis Ende 2007 geltenden Fassung) unter Berücksichtigung der Kostenentwicklung in der obligatorischen Krankenpflegeversicherung und der Finanzlage des Bundes durch einfachen Bundesbeschluss für jeweils vier Jahre festgesetzt. Gemäss
+Art. 66 Abs. 2 KVG
+entsprächen die Bundesbeiträge neu einem Viertel der Bruttokosten der sozialen Krankenpflegeversicherung für 30 % der Versicherten [was in der schliesslich verabschiedeten Fassung der Bestimmung zu "7,5 % der Bruttokosten der obligatorischen Krankenpflegeversicherung" vereinfacht wurde; vgl. GEBHARD EUGSTER, Die obligatorische Krankenpflegeversicherung nach KVG, 2025, S. 1174 Rz. 2800; ROLF FRICK, in: Basler Kommentar Krankenversicherungsgesetz/Krankenversicherungsaufsichtsgesetz, 2020, N. 5 zu
+Art. 66 KVG
+]. Der Bundesrat regle die Einzelheiten zur Festlegung der Bundesbeiträge auf Verordnungsebene. Die Finanzkraft der Kantone spiele bei der Festsetzung der Anteile der einzelnen Kantone am Bundesbeitrag keine Rolle mehr; massgebend seien nur noch die Wohnbevölkerung und die Anzahl der Versicherten nach
+Art. 65a lit. a KVG
+, weshalb
+Art. 66 Abs. 3 KVG
+entsprechend geändert werden müsse (BBl 2005 6029 Ziff. 2.9.9.3).
+Aus diesen Ausführungen geht unmissverständlich hervor, dass mit der Neufassung von
+Art. 66 KVG
+einerseits die Grundzüge zur Ermittlung des Bundesbeitrags und zu dessen Aufteilung auf die Kantone festgehalten wurden (Abs. 2 und 3). Anderseits wurde mit Abs. 3 - im Sinne einer Ergänzung zur in
+Art. 96 KVG
+(vgl. auch
+Art. 182 Abs. 2 BV
+) statuierten generellen Ermächtigung zum Erlass von Ausführungsbestimmungen zum KVG - dem Bundesrat die Kompetenz resp. der Auftrag erteilt, die Einzelheiten zu diesen Aspekten auf Verordnungsebene (lediglich) in generell-abstrakter Weise "festzusetzen" resp. zu regeln. Die so verstandene Regelung der Zuständigkeiten resp. Aufgaben des Bundesrats gab bei den Beratungen von Ziff. 23 E-NFA resp. E-
+Art. 66 KVG
+in den Eidgenössischen Räten keinen Anlass zur Diskussion (vgl. AB 2006 S 157-159; AB 2006 N 1224-1227; AB 2006 S 737-738).
+Der Bundesrat erliess denn auch die aVPVK, die auf den 1. Januar 2008 in Kraft trat und die zuvor geltende Verordnung vom 12. April 1995 über die Beiträge des Bundes zur Prämienverbilligung in der Krankenversicherung ersetzte (vgl. Art. 9 und 11 aVPVK).
+2.2.4.3.
+In systematischer Hinsicht ist zu berücksichtigen, dass eine Verfügung (vgl.
+Art. 5 VwVG
+) betreffend den kantonalen Anteil am Bundesbeitrag zur Prämienverbilligung nicht anfechtbar wäre, wenn der Bundesrat sie erlassen müsste (e contrario
+Art. 47 Abs. 1 VwVG
+, insbesondere dessen lit. b i.V.m.
+Art. 33 lit. a und b VGG
+[SR 173.32]; vgl. auch
+Art. 189 Abs. 4 BV
+; THOMAS SÄGESSER, Regierungs- und Verwaltungsorganisationsgesetz RVOG, 2. Aufl. 2022, N. 22 und 40 f. zu Art. 47 des Regierungs- und Verwaltungsorganisationsgesetzes vom 21. März 1997 [RVOG; SR 172.010]). Dass mit
+Art. 66 Abs. 3 KVG
+den betroffenen Kantonen ein Rechtsschutz versagt werden sollte oder die Bedeutung des Geschäfts die Zuständigkeit des Bundesrats erfordern würde (vgl.
+Art. 47 Abs. 1 RVOG
+), ist nicht ersichtlich.
+Sofern die Zuständigkeit für den Entscheid über den kantonalen Anteil am Bundesbeitrag nicht beim Bundesrat liegt, ist sie klar: Zwar nannte der Bundesrat in der aVPVK die Festsetzung des Anteils am Bundesbeitrag gegenüber einem bestimmten Kanton nicht explizit als Aufgabe des BAG (vgl.
+Art. 47 Abs. 2 RVOG
+). Indessen ist eine entsprechende Kompetenz des BAG angesichts der ausdrücklich geregelten Zuständigkeiten (für Berechnung, Veröffentlichung, Kontrolle; vgl. vorangehende E. 2.2.2 in fine) ohne Weiteres zu bejahen.
+2.2.5.
+Nach dem (in vorangehender E. 2.2.4) Gesagten ist
+Art. 66 Abs. 3 KVG
+- entgegen dessen klarem Wortlaut - nicht so zu verstehen, dass der Bundesrat den konkreten Anteil eines Kantons am Bundesbeitrag zur Prämienverbilligung in einem bestimmten Jahr (hier: des Kantons Basel-Stadt im Jahr 2022) mittels Verfügung festsetzen muss. Dafür ist vielmehr das BAG zuständig.
+2.2.6.
+Damit war die Verfügung vom 5. April 2022 im vorinstanzlichen Verfahren ein taugliches Anfechtungsobjekt im Sinne von
+Art. 44 VwVG
+.
+Indessen richtete sich die Beschwerde in jenem Verfahren gegen den Bund als Schuldner des umstrittenen Anspruchs (vgl.
+Art. 66 Abs. 1 KVG
+), weshalb nicht das BAG, sondern die Schweizerische Eidgenossenschaft (handelnd durch das BAG) Beschwerdegegnerin war; in diesem Sinne ist das Rubrum des angefochtenen Urteils von Amtes wegen zu korrigieren resp. ergänzen (vgl. Urteile 9C_212/2026 vom 29. Mai 2026 E. 2.1; 9C_85/2026 vom 9. Februar 2026 E. 2; 4A_411/2024 vom 30. Mai 2025 E. 5.3; 9C_177/2024 vom 3. April 2024).
+2.3.
+2.3.1.
+Fraglich ist sodann die Beschwerdebefugnis des kantonalen Amtes für Sozialbeiträge im vorinstanzlichen Verfahren.
+2.3.2.
+Zur Beschwerde ist berechtigt, wer vor der Vorinstanz am Verfahren teilgenommen (oder dazu keine Möglichkeit erhalten) hat, durch die angefochtene Verfügung besonders berührt ist und ein schutzwürdiges Interesse an deren Aufhebung oder Änderung hat (
+Art. 48 Abs. 1 VwVG
+). Zur Beschwerde berechtigt sind ferner Personen, Organisationen und Behörden, denen ein anderes Bundesgesetz dieses Recht einräumt (
+Art. 48 Abs. 2 VwVG
+).
+2.3.3.
+Das Bundesverwaltungsgericht hat das Amt für Sozialbeiträge als Verfügungsadressat bezeichnet und ohne weitere Begründung dessen Beschwerdebefugnis im Sinne von
+Art. 48 Abs. 1 VwVG
+bejaht. Indessen hatte das BAG die Verfügung vom 5. April 2022 an den anspruchsberechtigten "Kanton Basel-Stadt, handelnd durch das Amt für Sozialbeiträge" adressiert. Für dieses fehlte eine bundesgesetzliche Beschwerdebefugnis im Sinne von
+Art. 48 Abs. 2 VwVG
+. Dass es selbst von der angefochtenen Verfügung betroffen gewesen sein und ein eigenes schutzwürdiges Interesse an deren Anfechtung gehabt haben soll, ist nicht ersichtlich. Vielmehr kam dem Kanton Basel-Stadt - als in spezifischer Weise betroffenes Gemeinwesen (vgl.
+BGE 147 II 227
+E. 2.3.2; MARANTELLI-SONANINI/HUBER, in: Praxiskommentar Verwaltungsverfahrensgesetz, 3. Aufl. 2023, N. 21 zu
+Art. 48 VwVG
+) - eine Beschwerdeberechtigung gemäss
+Art. 48 Abs. 1 VwVG
+zu. Auch wenn das Amt für Sozialbeiträge formell im eigenen Namen auftrat, erhob es die vorinstanzliche Beschwerde sinngemäss für den Kanton Basel-Stadt. Demnach war dieser (handelnd durch das Amt für Sozialbeiträge) Beschwerdeführer im vorinstanzlichen Verfahren; die Parteibezeichnung im angefochtenen Urteil ist von Amtes wegen entsprechend zu korrigieren (vgl. die Hinweise in vorangehender E. 2.2.6).
+Zu prüfen ist, ob das Amt berechtigt war, für den Kanton Basel-Stadt (in dessen Namen) zu handeln.
+2.3.4.
+Der Regierungsrat besorgt die Regierungsobliegenheiten, indem er insbesondere den Kanton Basel-Stadt nach innen und aussen vertritt (§ 3 Abs. 1 lit. e des Gesetzes vom 22. April 1976 betreffend die Organisation des Regierungsrates und der Verwaltung des Kantons Basel-Stadt [Organisationsgesetz, OG/BS; SG 153.100]). Der Regierungsrat nimmt jene Verwaltungshandlungen selber vor, die aufgrund von Verfassung und Gesetz oder wegen ihrer Bedeutung nicht nachgeordneten Behörden zur Erledigung übertragen werden können (
+§ 6 OG
+/BS).
+Das Gesetz vom 15. November 1989 über die Krankenversicherung im Kanton Basel-Stadt (GKV/BS; SG 834.400) enthält in Bezug auf den Bundesbeitrag zur Prämienverbilligung an den Kanton Basel-Stadt keine spezifische Regelung. Es bestimmt, dass der Regierungsrat Einzelheiten der Prämienverbilligung regelt und die zur Durchführung des GKV/BS erforderlichen Ausführungsbestimmungen erlässt (§ 17 Abs. 2 und 4,
+§ 21 Abs. 2,
+§ 56 GKV
+/BS). Gestützt auf (u.a.) das GKV/BS erliess der Regierungsrat die Verordnung vom 25. November 2008 über die Krankenversicherung (KVO/BS; SG 834.410). Gemäss § 1 Abs. 3 lit. b KVO/BS ist die Ausrichtung und Kontrolle der Beiträge an die Krankenversicherungsprämien (i.S.v. Art. 65 f. KVG) Aufgabe des "Departements für Wirtschaft, Soziales und Umwelt (Amt für Sozialbeiträge) ". Es obliegt dem Amt für Sozialbeiträge, die Bundesgelder (im Sinne von
+Art. 66 KVG
+) geltend zu machen (§ 23 Abs. 2 KVO/BS). Das Gesundheitsdepartement und das Departement für Wirtschaft, Soziales und Umwelt (Amt für Sozialbeiträge) werden mit dem Vollzug beauftragt (§ 28 KVO/BS).
+2.3.5.
+Insbesondere aus
+§ 6 OG
+/BS (e contrario) und
+§ 56 GKV
+/BS ergibt sich, dass der Regierungsrat des Kantons Basel-Stadt Aufgaben im Zusammenhang mit dem Bundesbeitrag zur Prämienverbilligung dem Amt für Sozialbeiträge übertragen durfte. Diesem obliegt nach dem Wortlaut von § 23 KVO/BS (zur Auslegung vgl. vorangehende E. 2.2.3) die
+Geltendmachung
+des Bundesbeitrags, was die Bereitstellung der entsprechenden Unterlagen und die Kooperation mit dem BAG (vgl. Art. 5 f. aVPVK) einschliesst. Dass im Zusammenhang mit dem hier interessierenden Bundesbeitrag eine förmliche Geltendmachung des Anspruchs erforderlich sein soll, ist nicht ersichtlich. Der Regierungsrat scheint implizit - indem er die Beantwortung der vom Bundesgericht aufgeworfenen Zuständigkeitsfragen ohne Weiteres dem Amt für Sozialbeiträge überliess (vgl. Sachverhalt lit. C) - der Auffassung zu sein, dass § 23 KVO/BS über den reinen Wortlaut hinaus auch die Befugnis umfasst, im Namen des Kantons eine
+Beschwerde zu erheben
+. Diese Auslegung des kantonalen Rechts ist insbesondere angesichts der weiteren Aufgaben des Amtes für Sozialbeiträge im Zusammenhang mit der individuellen Prämienverbilligung vertretbar und bundesrechtskonform.
+Demnach war das Amt für Sozialbeiträge befugt, im Namen des Kantons Basel-Stadt die Verfügung vom 5. April 2022 anzufechten.
+2.4.
+2.4.1.
+Sodann sind die spezifischen Voraussetzungen für das bundesgerichtliche Verfahren näher zu betrachten.
+2.4.2.
+Indem die Vorinstanz das BAG anwies, den Bundesanteil an der individuellen Prämienverbilligung des Kantons Basel-Stadt auf eine bestimmte Art neu zu berechnen, erliess sie einen das Verfahren weder ganz noch teilweise abschliessenden Rückweisungsentscheid. Formell liegt damit weder ein End- noch ein Teilentscheid (vgl. Art. 90 f. BGG), sondern ein Vor- resp. Zwischenentscheid im Sinne von
+Art. 93 Abs. 1 BGG
+vor, der nur unter den dort genannten Voraussetzungen angefochten werden kann.
+Ein Rückweisungsentscheid ist nach der Praxis der öffentlich-rechtlichen Abteilungen des Bundesgerichts (ausnahmsweise) wie ein Endentscheid im Sinne von
+Art. 90 BGG
+zu behandeln, wenn die von der eidgenössischen oder kantonalen Vorinstanz des Bundesgerichts ausgesprochene Rückweisung an eine Unterinstanz einzig noch der (rechnerischen) Umsetzung des oberinstanzlich Angeordneten dient und der rückweisungsempfangenden Unterinstanz aus diesem Grund in der Sache selbst keinerlei Entscheidungsspielraum verbleibt (
+BGE 150 II 346
+E. 1.3.4 mit zahlreichen Hinweisen). Das trifft hier zu.
+2.4.3.
+Das im eigenen Namen auftretende BAG hat ein Beschwerderecht im Sinne von
+Art. 89 Abs. 2 lit. a BGG
+(i.V.m.
+Art. 27 Abs. 2 KVV
+[SR 832.102]). Auch wenn es sich bei der umstrittenen Leistung um eine Subvention handelt (vgl. Art. 3 Abs. 2 des Bundesgesetzes vom 5. Oktober 1990 über Finanzhilfen und Abgeltungen [Subventionsgesetz, SuG; SR 616.1]; vgl. auch THOMAS HÄBERLI, in: Basler Kommentar zum BGG, 3. Aufl. 2018, N. 196 f. zu
+Art. 83 BGG
+), liegt angesichts der Anspruchsverankerung in
+Art. 66 KVG
+kein Ausschlussgrund im Sinne von
+Art. 83 lit. k BGG
+vor. Auf die form- und fristgerecht (vgl. Art. 42 Abs. 1 und 2 sowie
+Art. 100 Abs. 1 BGG
+) eingereichte Beschwerde ist einzutreten.
+3.
+Mit der Beschwerde in öffentlich-rechtlichen Angelegenheiten kann eine Rechtsverletzung nach Art. 95 f. BGG gerügt werden. Das Bundesgericht wendet das Recht von Amtes wegen an (
+Art. 106 Abs. 1 BGG
+). Dennoch prüft es - offensichtliche Fehler vorbehalten - nur die in seinem Verfahren gerügten Rechtsmängel (
+Art. 42 Abs. 1 und 2 BGG
+;
+BGE 150 V 340
+E. 2). Es legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat (
+Art. 105 Abs. 1 BGG
+).
+4.
+4.1.
+Zur massgeblichen Rechtslage wird auf die vorangehende E. 2.2.2 verwiesen; zu ergänzen ist Folgendes: Auf den 1. Januar 2016 wurde mit Art. 17 des Bundesgesetzes vom 26. September 2014 betreffend die Aufsicht über die soziale Krankenversicherung (Krankenversicherungsaufsichtsgesetz, KVAG; SR 832.12) der nachträgliche Ausgleich von zu hohen Prämieneinnahmen ermöglicht. Gleichzeitig ergänzte der Bundesrat die aVPVK mit Art. 3 Abs. 4
+bis
+aVPVK. Auf der Grundlage der aVPVK (in der ab dem 1. Januar 2016 geltenden Fassung) werden der Bundesbeitrag zur Prämienverbilligung und die Kantonsanteile an diesem (
+Art. 66 Abs. 2 und 3 KVG
+) folgendermassen ermittelt (vgl. dazu insbesondere die Erläuterungen des BAG zu Art. 3 Abs. 4
+bis
+aVPVK in: Verordnung betreffend die Aufsicht über die soziale Krankenversicherung [KVAV], Kommentar und Inhalt der Bestimmungen, November 2015, S. 42) :
+Zunächst berechnet das BAG nach den Vorgaben von Art. 2 aVPVK provisorische Bruttokosten, woraus sich der provisorische Bundesbeitrag ergibt. Dieser wird anhand der Formel von Art. 3 Abs. 4 aVPVK auf die einzelnen Kantone aufgeteilt. Die so berechneten kantonalen Anteile korrigiert das BAG wie folgt: Im Fall eines Ausgleichs von zu hohen Prämieneinnahmen nach
+Art. 17 KVAG
+zieht es 7,5 % vom nach Art. 3 Abs. 4 aVPVK berechneten Kantonsanteil ab (Art. 3 Abs. 4
+bis
+aVPVK). Die Summe der einzelnen - gegebenenfalls korrigierten - Kantonsanteile entspricht dem definitiven Bundesbeitrag resp. den Bruttokosten im Sinne von
+Art. 66 Abs. 2 KVG
+. Mit diesem Vorgehen soll gewährleistet werden, dass der Prämienausgleich (d.h. die Rückerstattung ["remboursement"; "restituzione"] von zu viel bezahlten Prämien durch den Krankenversicherer an die Versicherten; vgl. Art. 17 f. KVAG) gesamthaft in die Bruttokosten der obligatorischen Krankenpflegeversicherung und damit in die Berechnung des Bundesbeitrags einfliesst, während er im einzelnen Kanton nur soweit berücksichtigt wird, als er dort tatsächlich erfolgte.
+4.2.
+4.2.1.
+Umstritten war und ist die Höhe des Anteils des Kantons Basel-Stadt am Bundesbeitrag allein in Bezug auf die (Rechts-) Frage nach der Berücksichtigung des Ausgleichs von zu hohen Prämieneinnahmen, d.h. nach der Rechtmässigkeit von Art. 3 Abs. 4
+bis
+aVPVK.
+4.2.2.
+Die Vorinstanz ist der Auffassung, Art. 3 Abs. 4
+bis
+aVPVK sei eine gesetzesvertretende Verordnungsbestimmung und verfüge über keine Delegationsnorm in einem Gesetz; die Bestimmung sei nicht gesetzmässig und deshalb nicht anwendbar. Folglich müsse das BAG den Bundesanteil an der individuellen Prämienverbilligung des Kantons Basel-Stadt ohne den Abzug gemäss Art. 3 Abs. 4
+bis
+aVPVK neu berechnen.
+Zur Begründung hat das Bundesverwaltungsgericht insbesondere Folgendes erwogen: Art. 3 Abs. 4
+bis
+aVPVK sei keine gesetzesvollziehende Bestimmung zu
+Art. 17 KVAG
+, der keinen Hinweis auf einen Zusammenhang mit dem Bundesbeitrag an die Kantone zur individuellen Prämienverbilligung resp. mit der Berechnung des jeweiligen Kantonsanteils enthalte. Der Bundesrat habe den in
+Art. 66 Abs. 2 KVG
+verwendeten Begriff der "Bruttokosten der obligatorischen Krankenpflegeversicherung" gestützt auf
+Art. 182 Abs. 2 BV
+in Verbindung mit
+Art. 96 KVG
+in Art. 2 Abs. 1 aVPVK definiert und die Berechnung der Kantonsanteile am Bundesbeitrag gestützt auf
+Art. 66 Abs. 3 KVG
+in Art. 3 aVPVK geregelt. Allerdings werde Art. 3 Abs. 4
+bis
+aVPVK weder als gesetzesvollziehende noch als gesetzesvertretende Verordnungsbestimmung durch
+Art. 66 Abs. 2 KVG
+abgedeckt. Der Prämienausgleich gemäss
+Art. 17 KVAG
+sei in keiner der in Art. 2 aVPVK genannten Masszahlen zur Berechnung der Bruttokosten enthalten. In systematischer Hinsicht sei zudem festzuhalten, dass Art. 3 aVPVK den Titel "Aufteilung auf die Kantone" trage, weshalb dessen Abs. 4
+bis
+nicht der Berechnung resp. der Verringerung der Bruttokosten gemäss
+Art. 66 Abs. 2 KVG
+diene. Der fragliche Abzug werde ebenso wenig durch
+Art. 66 Abs. 3 KVG
+gedeckt: Die Kantonsanteile am Bundesbeitrag seien bereits im Gesetz abschliessend dahingehend geregelt, dass sie nach der Wohnbevölkerung und der Anzahl der Versicherten gemäss Art. 65a Bst. a KVG festgesetzt würden. Die Berücksichtigung eines allfälligen Prämienausgleichs gemäss
+Art. 17 KVAG
+sei in
+Art. 66 Abs. 3 KVG
+nicht vorgesehen und aufgrund des Wortlautes der Gesetzesbestimmung bestehe dazu kein Spielraum für den Bundesrat. Dieser habe sich denn auch zunächst an den gesetzlichen Vorgaben orientiert, bevor er Art. 3 Abs. 4
+bis
+aVPVK eingefügt resp. auf den 1. Januar 2016 in Kraft gesetzt habe.
+4.3.
+Das Bundesgericht kann - wie die Vorinstanz - Verordnungen des Bundesrats vorfrageweise (inzident, im Einzelfall), aber inhaltlich eingeschränkt auf ihre Rechtmässigkeit prüfen. Gesetzesvertretende Rechtsverordnungen und Vollziehungsverordnungen sind zunächst auf ihre Gesetzmässigkeit und hernach, soweit das Gesetz den Bundesrat nicht ermächtigt, von der Bundesverfassung abzuweichen, auf ihre Verfassungsmässigkeit zu prüfen. Die Gesetzmässigkeit der Rechtsverordnung prüft es anhand dessen, ob der Bundesrat die Grenzen der ihm gesetzlich eingeräumten Befugnisse eingehalten hat. Wird dem Bundesrat durch die gesetzliche Delegation ein sehr weiter Ermessensspielraum für die Regelung auf Verordnungsstufe eingeräumt, so ist dieser Spielraum nach
+Art. 190 BV
+für das Bundesgericht verbindlich; es darf in diesem Falle bei der Überprüfung der Verordnung nicht sein eigenes Ermessen an die Stelle desjenigen des Bundesrats setzen, sondern es beschränkt sich auf die Prüfung, ob die Verordnung den Rahmen der dem Bundesrat im Gesetz delegierten Kompetenzen offensichtlich sprengt oder aus anderen Gründen gesetzes- oder verfassungswidrig ist. Für die Zweckmässigkeit der angeordneten Massnahme trägt der Bundesrat die Verantwortung; es ist nicht Aufgabe des (Bundes-) Gerichts, sich zu deren wirtschaftlicher oder politischer Sachgerechtigkeit zu äussern (
+BGE 151 II 593
+E. 4.1;
+150 V 73
+E. 6.2;
+145 V 278
+E. 4.1; je mit Hinweisen).
+4.4.
+4.4.1.
+Der Bundesrat stützte sich beim Erlass der aVPVK (vgl. deren Ingress) auf
+Art. 66 und 96 KVG
+. Ob sich die entsprechende Kompetenz auch direkt aus
+Art. 182 Abs. 2 BV
+herleiten liesse (und es sich deswegen um eine selbständige und nicht um eine auf einer Gesetzesbestimmung beruhende unselbständige Verordnung handelt), kann offenbleiben. Gleiches gilt für die Frage, inwieweit die aVPVK gesetzesvertretende oder -vollziehende Bestimmungen enthält (vgl. vorangehende E. 4.3). Gegenstand der aVPVK ist allein die Ermittlung des Bundesbeitrags zur Prämienverbilligung und dessen Aufteilung auf die Kantone, d.h. sie regelt die Einzelheiten zu den Vorgaben von
+Art. 66 KVG
+(vgl. Art. 1 aVPVK; vgl. auch vorangehende E. 2.2.4.2). Anders als die Vorinstanz und der Beschwerdegegner anzunehmen scheinen, schadet es angesichts der dem Bundesrat in
+Art. 66 und 96 KVG
+resp.
+Art. 182 Abs. 2 BV
+eingeräumten Befugnisse nicht, dass (insbesondere) der in Art. 3 Abs. 4bis aVPVK statuierte "Korrekturmechanismus" nicht auf einer Delegationsnorm des KVAG beruht; entscheidend ist vielmehr, dass die Bestimmungen der aVPVK die Vorgaben des KVAG (oder eines anderen Bundesgesetzes, insbesondere des KVG; vgl. dazu nachfolgende E. 4.4.3) nicht verletzen. Solches legt die Vorinstanz nicht dar, macht der Beschwerdegegner (auch mit seiner Behauptung, wonach ihm das BAG als Auswirkung von
+Art. 17 KVAG
+im Zusammenhang mit dem Bundesbeitrag eine "nachträgliche Forderung" gestellt habe) nicht geltend und ist auch nicht ersichtlich. Es erübrigt sich, auf die weiteren Ausführungen der Parteien in diesem Zusammenhang einzugehen.
+4.4.2.
+Sodann lässt sich mit der "systematischen" Problematik, die die Vorinstanz und der Beschwerdegegner im Verhältnis von Art. 3 Abs. 4
+bis
+aVPVK zu den in Art. 2 aVPVK genannten Masszahlen und zum Titel von Art. 3 aVPVK erblicken, keine Verletzung von
+Art. 66 KVG
+oder einer anderen Gesetzesbestimmung begründen. Insbesondere war es dem Bundesrat nicht (gesetzlich) verwehrt, seine eigenen in der aVPVK ursprünglich statuierten Vorgaben durch den Erlass von Art. 3 Abs. 4
+bis
+aVPVK zu modifizieren. Auch wenn dadurch die aVPVK in gesetzgebungstechnischer Hinsicht allenfalls nicht (mehr) optimal ausgestaltet war (etwa weil mit der Einführung von Art. 3 Abs. 4
+bis
+aVPVK kein entsprechender Vorbehalt in Art. 2 aVPVK angebracht wurde), ist das darin geregelte Vorgehen zur Ermittlung des Bundesbeitrags und der einzelnen Kantonsanteile resp. das Zusammenspiel der einzelnen Vorgaben klar (vgl. vorangehende E. 4.1).
+4.4.3.
+Weiter wird zur Ermittlung der Bruttokosten der obligatorischen Krankenpflegeversicherung (i.S.v.
+Art. 66 Abs. 2 KVG
+) neben anderen Faktoren das Prämiensoll, d.h. die Summe der Prämien gemäss den genehmigten Prämientarifen für den Versichertenbestand, herangezogen (vgl. Art. 2 Abs. 1 lit. d und Abs. 6 aVPVK).
+Art. 17 KVAG
+erlaubt es Krankenversicherern unter bestimmten Voraussetzungen, zu hohe Einnahmen von Prämien (deren Tarif zuvor genehmigt wurde) nachträglich auszugleichen. Dem BAG ist daher beizupflichten, dass durch einen solchen Prämienausgleich eine faktische Korrektur der genehmigten Prämientarife erfolgt, die auch den Schluss auf eine Reduktion sowohl des Prämiensolls als auch der Bruttokosten der obligatorischen Krankenpflegeversicherung erlaubt. Eine Verletzung von
+Art. 66 KVG
+durch den Einbezug des Prämienausgleichs gemäss Art. 3 Abs. 4bis aVPVK ist daher nicht auszumachen. Die gesetzlich definierten Kriterien (Bruttokosten der obligatorischen Krankenpflegeversicherung, die Wohnbevölkerung, Anzahl der Versicherten nach
+Art. 65a lit. a KVG
+) sind beim Vorgehen gemäss aVPVK eingehalten. Dass in
+Art. 66 Abs. 3 KVG
+für die Festsetzung der Kantonsanteile nur die Wohnbevölkerung und die Anzahl der Versicherten nach
+Art. 65a lit. a KVG
+als Verteilkriterien genannt werden, ändert daran nichts: Angesichts der Ausführungen des Bundesrats zu den Änderungen von
+Art. 66 KVG
+gemäss Ziff. 23 E-NFA (vgl. vorangehende E. 2.2.4.2) und der systematisch engen Verbindung zwischen Abs. 2 und 3 des
+Art. 66 KVG
+steht fest, dass für die Kantonsanteile auch die Bruttokosten der obligatorischen Krankenpflegeversicherung massgeblich sind, aber die Finanzkraft des einzelnen Kantons (seit dem 1. Januar 2008) keine Rolle mehr spielt.
+Art. 66 Abs. 3 KVG
+schliesst nicht aus, die nachträgliche Reduktion der Bruttokosten nur in jenen Kantonen, in denen sie angefallen sind, zu berücksichtigen. Eine anderweitige Verletzung von Gesetzes- oder Verfassungsbestimmungen wird nicht (mehr) geltend gemacht und ist auch nicht ersichtlich. Demnach hat die Vorinstanz Art. 3 Abs. 4bis aVPVK zu Unrecht die Gesetzmässigkeit abgesprochen.
+4.5.
+An diesem Ergebnis ändert nichts, dass der Einbezug des Prämienausgleichs insoweit erhebliche finanzielle Auswirkungen nach sich ziehen kann, als dadurch der Bundesbeitrag resp. der hier interessierende Anteil des Beschwerdegegners verringert wird. Abgesehen davon, dass in diesem Zusammenhang nicht von einer neuen Pflicht der betroffenen Kantone oder Forderung des BAG gesprochen werden kann, ist es nicht Aufgabe des (Bundes-) Gerichts, sich zur wirtschaftlichen oder politischen Sachgerechtigkeit der hier interessierenden bundesrätlichen Regelung zu äussern (vgl. vorangehende E. 4.3). Ebenfalls ist ohne Belang, dass in der aktuellen Regelung gemäss VPVK der Prämienausgleich nicht (mehr) berücksichtigt wird: Einerseits ist in concreto die im Jahr 2022 geltende Rechtslage massgeblich (vgl. vorangehende E. 2.2.2); anderseits wurde mit der Totalrevision der aVPVK nicht nur der Einbezug des Prämienausgleichs aufgehoben, sondern das "Gesamtsystem" zur Ermittlung des Bundesbeitrags und der kantonalen Anteile daran neu geregelt. Die Beschwerde des BAG ist begründet.
+5.
+Dem Ausgang des Verfahrens entsprechend hat der unterliegende und in seinem Vermögensinteresse betroffene (vgl. vorangehende E. 2.3.3) Kanton Basel-Stadt die Gerichtskosten zu tragen (
+Art. 66 Abs. 1 und 4 BGG
+). Das in seinem amtlichen Wirkungskreis obsiegende BAG hat keinen Anspruch auf Parteientschädigung (Art. 68 Abs. 1 bis 3 BGG).
+Die Sache ist zur Neuverlegung der Kosten (samt allfälliger Parteientschädigung) des vorangegangenen Verfahrens an die Vorinstanz zurückzuweisen (
+Art. 67 und
+Art. 68 Abs. 5 BGG
+).
+Demnach erkennt das Bundesgericht:
+1.
+Die Beschwerde wird gutgeheissen. Das Urteil des Bundesverwaltungsgerichts vom 11. März 2025 wird aufgehoben und die Verfügung des Bundesamtes für Gesundheit vom 5. April 2022 bestätigt.
+2.
+Die Gerichtskosten von Fr. 15'000.- werden dem Beschwerdegegner auferlegt.
+3.
+Die Sache wird zur Neuverlegung der Kosten des vorangegangenen Verfahrens an das Bundesverwaltungsgericht zurückgewiesen.
+4.
+Dieses Urteil wird den Parteien, dem Bundesverwaltungsgericht und der Schweizerischen Eidgenossenschaft schriftlich mitgeteilt.
+Luzern, 23. Juli 2026
+Im Namen der III. öffentlich-rechtlichen Abteilung
+des Schweizerischen Bundesgerichts
+Die Präsidentin:    Moser-Szeless
+Die Gerichtsschreiberin:    Dormann

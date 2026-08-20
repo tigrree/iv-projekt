@@ -1,0 +1,105 @@
+8C_370/2024
+Urteil vom 6. August 2026
+IV. öffentlich-rechtliche Abteilung
+Besetzung
+Bundesrichterin Viscione, Präsidentin,
+Bundesrichterinnen Heine, Scherrer Reber,
+Gerichtsschreiber Grünvogel.
+Verfahrensbeteiligte
+Schweizerische Unfallversicherungsanstalt (Suva), Rechtsabteilung, Fluhmattstrasse 1, 6002 Luzern,
+Beschwerdeführerin,
+gegen
+A.________,
+vertreten durch Rechtsanwalt Michele Santucci,
+Beschwerdegegner.
+Gegenstand
+Unfallversicherung (Valideneinkommen; Invalideneinkommen; Parallelisierung der Vergleichseinkommen),
+Beschwerde gegen das Urteil des Versicherungsgerichts des Kantons Aargau vom 10. April 2024 (VBE.2023.487).
+Sachverhalt:
+A.
+A.________, geboren 1976, verletzte sich während der Arbeit am 14. Oktober 2021 am rechten Handgelenk. Die Schweizerische Unfallversicherungsanstalt (Suva) anerkannte ihre Leistungspflicht im Zusammenhang mit diesem Unfall, übernahm Heilbehandlungskosten und richtete Taggelder aus. Nachdem sie diese Leistungen am 12. Mai 2023 bis auf ein bis zwei Serien Ergotherapie pro Jahr sowie die Übernahme von Schmerzmitteln per 30. Juni 2023 eingestellt hatte, verneinte sie mit separater Verfügung vom 22. Mai 2023 einen Anspruch auf eine Invalidenrente. Zugleich sprach sie A.________ eine Integritätsentschädigung bei einer 10%igen Integritätseinbusse zu. Daran hielt sie mit Einspracheentscheid vom 17. Oktober 2023 fest.
+B.
+Die dagegen erhobene Beschwerde hiess das Versicherungsgericht des Kantons Aargau mit Urteil vom 10. April 2024 dahingehend teilweise gut, als es A.________ ab 1. Juli 2023 eine Invalidenrente entsprechend einem Invaliditätsgrad von 17 % zusprach. Im Übrigen wies es die Beschwerde ab.
+C.
+Die Suva führt Beschwerde in öffentlich-rechtlichen Angelegenheiten mit dem Rechtsbegehren, in Aufhebung des versicherungsgerichtlichen Urteils sei der Einspracheentscheid vom 17. Oktober 2023 zu bestätigen.
+A.________ lässt auf Abweisung der Beschwerde schliessen. Eventualiter seien das vorinstanzliche Urteil und der Einspracheentscheid dahingehend abzuändern, dass ihm ab dem 1. Juli 2023 ein Anspruch auf eine Invalidenrente gestützt auf einen Invaliditätsgrad von 10 % zugesprochen werde. In prozessualer Hinsicht wird um Gewährung der unentgeltlichen Rechtspflege unter Beiordnung des Rechtsanwalts Michele Santucci als unentgeltlicher Rechtsvertreter ersucht.
+Das Bundesamt für Gesundheit und das kantonale Versicherungsgericht verzichten auf eine Vernehmlassung.
+Erwägungen:
+1.
+1.1.
+Die Beschwerde in öffentlich-rechtlichen Angelegenheiten kann wegen Rechtsverletzungen gemäss
+Art. 95 und 96 BGG
+erhoben werden. Das Bundesgericht wendet das Recht von Amtes wegen an (
+Art. 106 Abs. 1 BGG
+), doch prüft es, unter Berücksichtigung der allgemeinen Rüge- und Begründungspflicht (
+Art. 42 Abs. 1 und 2 BGG
+), grundsätzlich nur die geltend gemachten Vorbringen, sofern allfällige weitere rechtliche Mängel nicht geradezu offensichtlich sind (
+BGE 147 I 73
+E. 2.1;
+145 V 304
+E. 1.1; je mit Hinweis).
+1.2.
+Im Beschwerdeverfahren um die Zusprechung oder Verweigerung von Geldleistungen der Militär- oder Unfallversicherung ist das Bundesgericht nicht an die vorinstanzliche Feststellung des rechtserheblichen Sachverhalts gebunden (
+Art. 97 Abs. 2 und
+Art. 105 Abs. 3 BGG
+).
+2.
+Streitig und zu prüfen ist, ob die Zusprechung einer Invalidenrente von 17 % vor Bundesrecht standhält. Die dazu ergangenen vorinstanzlichen Feststellungen zur 100%igen Arbeitsfähigkeit in einer dem Leiden adaptierten Tätigkeit werden von keiner Partei in Frage gestellt, weshalb darauf abgestellt werden kann (E. 1.1 in fine hiervor). Gegenstand der rechtlichen Auseinandersetzung bildet hingegen die Invaliditätsbemessung.
+3.
+Für die Invaliditätsbemessung (Einkommensvergleich) legte die Vorinstanz das Valideneinkommen auf der Grundlage des zuletzt erzielten Einkommens des Beschwerdegegners als Monteur von Photovoltaikanlagen bei der B.________ GmbH fest. Im Jahr 2023 hätte dieses Einkommen gemäss Angaben der Arbeitgeberin Fr. 63'700.- betragen. Dieses verglich sie mit dem in der Schweizerischen Lohnstrukturerhebung (LSE) 2020 des Bundesamts für Statistik in der Tabelle TA1 (Löhne nach Wirtschaftszweigen, Kompetenzniveau und Geschlecht - Privater Sektor) ausgewiesenen Durchschnittslohn für Männer im Bauhauptgewerbe im Kompetenzniveau 1. Dabei bereinigte sie diesen um die betriebsübliche wöchentliche Arbeitszeit von 41,7 Stunden und passte ihn zusätzlich der Nominallohnentwicklung bis ins Jahr 2022 an, was zu einem durchschnittlichen Jahresverdienst von Fr. 72'102.15 führte. Da der vom Beschwerdeführer zuletzt tatsächlich erzielte Verdienst von Fr. 63'700.- rund 11,7 % tiefer lag, bezeichnete das kantonale Gericht diesen mangels gegenteiliger Anhaltspunkte als aus invaliditätsfremden Gründen unter dem Durchschnitt liegend.
+Hinsichtlich des Invalideneinkommens zog das kantonale Gericht den Totalwert für Männer in Tätigkeiten des Kompetenzniveaus 1 gemäss der bereits oben erwähnten LSE 2020 bei und passte diesen an die betriebsübliche Arbeitszeit wie auch an die Nominallohnentwicklung an (Fr. 5'261.- / 40 x 41,7 [durchschnittliche Wochenarbeitszeit] x 107,1/106,8 [Nominallohnentwicklung] x 12 = Fr. 66'000.-). Alsdann reduzierte es diesen Wert in Anlehnung an die bei der Bemessung des Invaliditätsgrades in der Invalidenversicherung geltende Rechtsprechung zur Parallelisierung der Vergleichseinkommen (
+BGE 135 V 297
+E. 6.1.2 und E. 6.1.3) um 6,7 % (11,7 % - 5 %; Fr. 66'000.- - [Fr. 66'000.- x 0.067] = Fr. 61'578.-). Weiter bestätigte es den von der Beschwerdeführerin gewährten leidensbedingten Abzug auf den Durchschnittsverdienst von 10 % und schloss so auf ein Invalideneinkommen von Fr. 55'420.- im Jahr.
+Schliesslich stellte die Vorinstanz den Validenverdienst dem Invalideneinkommen gegenüber, wobei sie dabei offensichtlich einem Versehen unterlag, indem sie als Valideneinkommen Fr. 66'700.- anstatt des von ihr für massgeblich bezeichneten Betrags von Fr. 63'700.- heranzog. Dies führte gerundet zum rentenbegründenden (
+Art. 18 Abs. 1 UVG
+) Invaliditätsgrad von rund 17 %.
+4.
+Wie von der Beschwerdeführerin zutreffend eingebracht, werden branchenübliche Löhne in einem vom Bundesrat für allgemein verbindlich erklärten Gesamtarbeitsvertrag (GAV) präziser abgebildet als in der LSE. Daher fällt eine Parallelisierung der Vergleichseinkommen ausser Betracht, solange der zuletzt tatsächlich erzielte, als Valideneinkommen herangezogene Verdienst nicht unter den Mindestvorgaben des vom Bundesrat für allgemeinverbindlich erklärten GAV im entsprechenden Berufszweig liegt (SVR 2024 UV Nr. 17 S. 68, Urteil 8C_756/2022 vom 14. Dezember 2023 E. 5.1.2; SVR 2022 UV Nr. 32 S. 130, Urteil 8C_541/2021 vom 18. Mai 2022 E. 4.2 mit Hinweisen; Urteil 8C_759/2017 vom 8. Mai 2018 E. 3.2).
+4.1.
+Da der Beschwerdegegner als Gesunder zuletzt in der Elektrobranche tätig gewesen ist, sind in Übereinstimmung mit der Beschwerdeführerin zum Vergleich die Mindestvorgaben des GAV der Schweizerischen Elektrobranche beizuziehen. Ob der Beschwerdegegner dabei Hilfsarbeiten ausgeführt hat, die auch in anderen Sektoren wie dem Baugewerbe oder einer Montagefabrik anfallen können, ist dabei nicht von Belang. Vielmehr ist entscheidend, dass er bei einer dem GAV der Schweizerischen Elektrobranche unterstellten Arbeitgeberin als Monteur von Photovoltaikanlagen angestellt gewesen ist (sog. betriebliche Zugehörigkeit). Konkrete Anhaltspunkte, dass sein Arbeitsvertrag unter den Anwendungsbereich eines anderen allgemeinverbindlichen GAV fallen würde, sind weder dargetan noch ersichtlich. Voraussetzung hierfür wäre eine Tätigkeit in einem selbstständigen Betriebsteil der Arbeitgeberin, welcher als Ganzes einem anderen allgemeinverbindlichen GAV unterstellt wäre (Näheres: Urteile 9C_570/2020 vom 8. März 2021 E. 3.2 oder 4A_408/2017 vom 31. Januar 2018 E. 2.1; je mit Hinweisen u.a. auf
+BGE 141 V 657
+E. 4.5.2.2 und 134 III 11 E. 2.1 f.). Ebenso irrelevant ist in diesem Zusammenhang die vom Beschwerdegegner angerufene Berufshistorie. Ausschlaggebend bleibt einzig, dass er sich zum Unfallzeitpunkt in einem unbefristeten, ungekündigten, vom GAV der Schweizerischen Elektrobranche erfassten Arbeitsverhältnis befand.
+Selbst wenn der vom Beschwerdegegner vertretenen These gefolgt würde, dass aufgrund der tatsächlich ausgeübten Arbeiten alternativ oder ergänzend auf den allgemeinverbindlichen GAV für den Schweizerischen Gerüstbau und jenen in der Schweizerischen Gebäudetechnikbranche abzustellen wäre, könnte er daraus nichts zu seinen Gunsten ableiten. Die dort ausgewiesenen Mindestlöhne für Personen ohne spezielle Fachkenntnisse bzw. ohne branchenspezifische Weiterbildungen sind nämlich nicht höher als jene der Elektrobranchen (dazu siehe etwa: www.gav-service.ch, GAV-Editionen mit Gültigkeit im Jahr 2023).
+4.2.
+Gemäss unbestritten gebliebener vorinstanzlicher Feststellung (E. 4.5.1) hätte der Beschwerdegegner im Jahr 2023 bei der B.________ GmbH Fr. 63'700.- (Fr. 4'900.- x 13) verdient. Der für dieses Jahr vom Bundesrat für die Elektrobranche allgemeinverbindlich erklärte Mindestlohn für Arbeitnehmende ohne Berufsausbildung mit mindestens zwei Jahren Berufserfahrung betrug demgegenüber Fr. 58'500.- (Fr. 4'500 x 13; BBl 2020 7382 und 7403
+; 2022 1169
+und 2023 1459). Damit erweist sich die von der Vorinstanz vorgenommene Reduktion des Invalideneinkommens von 6,7 % als bundesrechtswidrig.
+5.
+Die Beschwerdeführerin beanstandet die vorinstanzliche Invaliditätsbemessung in weiteren Punkten, räumt aber selber ein, dass darauf nicht näher einzugehen sei, da bereits die Nichtberücksichtigung des von der Vorinstanz unzulässigerweise vorgenommenen Abzugs von 6,7 % auf das Invalideneinkommen zu einem unter 10 % liegenden Invaliditätsgrad führe, womit gemäss
+Art. 18 Abs. 1 UVG
+keine Invalidenrente nach UVG geschuldet sei (Invalideneinkommen: Fr. 66'000.- x 0,9 [Leidensabzug] = Fr. 59'400.-; Valideneinkommen: Fr. 63'700.-; Invaliditätsgrad: [Fr. 63'700.- Fr. 59'400.-] / Fr. 63'700.- x 100 = 6,75 %). Ergänzend auszuführen ist, dass der von der Vorinstanz festgelegte leidensbedingte Abzug von 10 % unbestritten ist. Soweit der Beschwerdegegner unter Verweis auf die seit dem 1. Januar 2024 geltende Fassung von
+Art. 26bis Abs. 3 IVV
+einen weiteren Abzug von 10 % verlangt, weil das Invalideneinkommen auf der Basis von Tabellenlöhnen festgelegt wurde, ist auf das dazu unlängst ergangene, zur Publikation vorgesehene Urteil 8C_254/2025 vom 23. Juni 2026 zu verweisen. Demnach sieht die erwähnte Bestimmung zwar generell einen Abzug von 10 % auf den statistisch bestimmten Wert vor. Dies gilt indessen nur für den Bereich der Invalidenversicherung. Gemäss dem erwähnten Urteil fällt eine analoge Anwendung von
+Art. 26
+bis
+Abs. 3 IVV
+im Bereich der Unfallversicherung ausser Betracht. Insgesamt erweist sich die Beschwerde als begründet.
+6.
+Dem Ausgang des Verfahrens folgend hat der Beschwerdegegner grundsätzlich die Gerichtskosten zu tragen (
+Art. 66 Abs. 1 Satz 1 BGG
+). Seinem Gesuch um unentgeltliche Rechtspflege (Prozessführung und Verbeiständung) kann jedoch entsprochen werden (
+Art. 64 Abs. 1 und 2 BGG
+). Es wird indes ausdrücklich auf
+Art. 64 Abs. 4 BGG
+hingewiesen, wonach die begünstigte Partei der Bundesgerichtskasse Ersatz zu leisten hat, wenn sie später dazu in der Lage ist. Überdies ist die Sache zur Neuverlegung der Parteientschädigung des vorangegangenen Verfahrens an die Vorinstanz zurückzuweisen (
+Art. 67 und
+Art. 68 Abs. 5 BGG
+).
+Demnach erkennt das Bundesgericht:
+1.
+Die Beschwerde wird gutgeheissen. Das Urteil des Versicherungsgerichts des Kantons Aargau vom 10. April 2024 wird aufgehoben und der Einspracheentscheid der Schweizerischen Unfallversicherungsanstalt (Suva) vom 17. Oktober 2023 bestätigt.
+2.
+Dem Beschwerdegegner wird die unentgeltliche Rechtspflege gewährt und Rechtsanwalt Michele Santucci wird als unentgeltlicher Anwalt bestellt.
+3.
+Die Gerichtskosten von Fr. 800.- werden dem Beschwerdegegner auferlegt, indes vorläufig auf die Bundesgerichtskasse genommen.
+4.
+Dem Rechtsvertreter des Beschwerdegegners wird aus der Bundesgerichtskasse eine Entschädigung von Fr. 3'000.- ausgerichtet.
+5.
+Die Sache wird zur Neuverlegung der Parteientschädigung des vorangegangenen Verfahrens an das Versicherungsgericht des Kantons Aargau zurückgewiesen.
+6.
+Dieses Urteil wird den Parteien, dem Versicherungsgericht des Kantons Aargau und dem Bundesamt für Gesundheit schriftlich mitgeteilt.
+Luzern, 6. August 2026
+Im Namen der IV. öffentlich-rechtlichen Abteilung
+des Schweizerischen Bundesgerichts
+Die Präsidentin:    Viscione
+Der Gerichtsschreiber:    Grünvogel

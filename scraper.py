@@ -163,7 +163,7 @@ def scrape_bger():
         return
 
     client = anthropic.Anthropic(api_key=api_key)
-    domain = "[https://www.bger.ch](https://www.bger.ch)"
+    domain = "https://www.bger.ch"
     headers = {'User-Agent': 'Mozilla/5.0'}
     
     # Ordner für Volltexte erstellen, falls nicht vorhanden

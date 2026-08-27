@@ -2,9 +2,13 @@ import os
 import json
 import re
 import requests
+import urllib3
 from datetime import datetime
 from bs4 import BeautifulSoup
 import anthropic
+
+# Unterdrückt die Warnungen, da wir SSL ignorieren
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb)
 ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
@@ -100,7 +104,6 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
             messages=[{"role": "user", "content": f"Schritt 1: Übersetze '{vorschau_raw}' EXAKT ins Deutsche. Schreibe NUR das Sachgebiet in den Tag <vorschau_de>.\nSchritt 2: Fasse das Urteil zusammen und schreibe den Text in den Tag <zusammenfassung>.\n\nUrteil:\n{clean_text}\n\n{PROMPT_ZUSAMMENFASSUNG}"}]
         )
         
-        # NEUER CODE: Filtern der Blöcke, um den "ThinkingBlock" zu ignorieren
         raw_content = ""
         for block in response.content:
             if block.type == "text":
@@ -163,13 +166,13 @@ def scrape_bger():
     ak_gefunden = False
 
     try:
-        base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers)
+        base_res = requests.get(f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index", headers=headers, verify=False)
         soup = BeautifulSoup(base_res.text, 'html.parser')
         tag_link = next((a['href'] for a in soup.find_all('a', href=True) if a.get_text().strip() == ZIEL_DATUM), None)
         
         if tag_link:
             full_tag_url = tag_link if tag_link.startswith("http") else domain + tag_link
-            rows = BeautifulSoup(requests.get(full_tag_url, headers=headers).text, 'html.parser').find_all('tr')
+            rows = BeautifulSoup(requests.get(full_tag_url, headers=headers, verify=False).text, 'html.parser').find_all('tr')
             
             iv_keywords = ["invalid"]
             ak_keywords = [
@@ -221,7 +224,7 @@ def scrape_bger():
                     case_url = link_tag['href'] if link_tag['href'].startswith("http") else domain + link_tag['href']
                     
                     # Volltext der Detailseite abrufen
-                    case_soup = BeautifulSoup(requests.get(case_url, headers=headers).text, 'html.parser')
+                    case_soup = BeautifulSoup(requests.get(case_url, headers=headers, verify=False).text, 'html.parser')
                     case_html = case_soup.get_text()
                     case_full_text = case_soup.get_text(separator='\n', strip=True)
                     

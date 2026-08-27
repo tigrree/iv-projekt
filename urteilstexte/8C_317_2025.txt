@@ -1,0 +1,219 @@
+8C_317/2025
+Arrêt du 6 août 2026
+IVe Cour de droit public
+Composition
+Mmes et MM. les Juges fédéraux
+Viscione, Présidente,
+Maillard, Scherrer Reber, Métral et Bollinger.
+Greffière : Mme Castella.
+Participants à la procédure
+A.________,
+représenté par Me Alexandre Bernel, avocat,
+recourant,
+contre
+Zurich Compagnie d'Assurances SA,
+Mythenquai 2, 8002 Zurich,
+intimée.
+Objet
+Assurance-accidents (rente d'invalidité),
+recours contre l'arrêt du Tribunal cantonal du canton de Vaud du 14 avril 2025 (AA 64/24 - 48/2025).
+Faits :
+A.
+A.________, né en 1958, travaillait à un taux d'activité de 70 % comme directeur général de B.________ SA, depuis le mois d'octobre 2011 et était, à ce titre, assuré contre le risque d'accident auprès de Zurich Compagnie d'Assurances SA (ci-après: la Zurich). Parallèlement à cette activité, il était conseiller municipal de la commune V.________.
+Le 18 mars 2020, le prénommé a heurté une remorque tirée par un tracteur alors qu'il circulait à moto. La Zurich a pris en charge les suites de cet accident. Par décision du 29 septembre 2023, elle a mis fin au remboursement des frais médicaux et au versement de l'indemnité journalière avec effet au 1er avril 2022. Elle a également reconnu le droit de l'assuré à une rente d'invalidité, fondée sur un taux d'invalidité de 87 % et un gain assuré de 148'200 fr., ainsi qu'à une indemnité pour atteinte à l'intégrité d'un taux de 74 %. L'assuré était par ailleurs informé que sa rente d'invalidité serait réduite de 32 % lorsqu'il atteindrait l'âge ordinaire de la retraite.
+Saisie d'une opposition, la Zurich l'a partiellement admise, en mettant un terme à la prise en charge des prestations temporaires au 30 juin 2022 et, partant, en octroyant la rente d'invalidité à compter du 1er juillet 2022, ainsi qu'en augmentant à 75 % le taux de l'indemnité pour atteinte à l'intégrité (décision du 19 avril 2024).
+B.
+Par arrêt du 14 avril 2025, la Cour des assurances sociales du Tribunal cantonal du canton de Vaud a partiellement admis le recours formé par l'assuré contre la décision sur opposition du 19 avril 2024, qu'elle a réformée en ce sens que le taux d'invalidité sur lequel se fonde la rente est de 88 %.
+C.
+A.________ forme un recours en matière de droit public contre cet arrêt, dont il demande la réforme dans le sens de la reconnaissance de son droit à une rente d'invalidité fondée sur un taux de 100 % dès le 1er juillet 2022, sous suite de compensation avec les montants déjà versés et avec intérêts à 5 % l'an dès le lendemain de l'échéance initiale de chacune des rentes mensuelles. À titre subsidiaire, il conclut à l'annulation de l'arrêt attaqué et au renvoi de la cause à la cour cantonale, pour nouvelles instruction et décision, dans le sens des considérants à venir.
+La Zurich conclut au rejet du recours. La cour cantonale et l'Office fédéral de la santé publique ont renoncé à se déterminer.
+La recourant a pris position sur la réponse de l'intimée et persisté dans ses conclusions.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le litige porte sur le taux d'invalidité de la rente à laquelle peut prétendre le recourant. Dès lors qu'il s'agit d'une prestation en espèces de l'assurance-accidents, le Tribunal fédéral n'est pas lié par les faits établis par la juridiction précédente (art. 97 al. 2 et 105 al. 3 LTF).
+3.
+L'arrêt entrepris expose de manière complète les dispositions légales et les principes jurisprudentiels applicables en l'espèce, s'agissant notamment du droit à une rente d'invalidité (art. 18 al. 1 et 19 al. 1 LAA; cf. consid. 6a de l'arrêt attaqué) et de l'évaluation de l'invalidité d'après la méthode ordinaire de la comparaison des revenus, en particulier de l'évaluation du revenu d'invalide sur la base des données de l'Enquête suisse sur la structure des salaires (ESS), lorsque l'assuré n'a pas repris d'activité lucrative dans une activité adaptée (
+art. 16 LPGA
+; cf. consid. 6b-c de l'arrêt attaqué). Il suffit d'y renvoyer.
+4.
+4.1.
+Sur le plan médical, la cour cantonale a reconnu une pleine valeur probante au rapport du Centre d'Expertises Médicales (CEMed) du 21 décembre 2022, auquel une expertise pluridisciplinaire (en médecine interne, neurologie, chirurgie orthopédique, psychiatrie et neuropsychologie) avait été confiée par l'intimée en procédure administrative. Fondée sur les conclusions des experts, elle a retenu que le recourant disposait d'une capacité résiduelle de travail de 33 % - compte tenu d'une durée moyenne hebdomadaire de 41,7 heures - dans une activité adaptée, à savoir une activité simple, ne sollicitant pas de compétences élevées en termes d'organisation, de concentration et de mémoire ainsi qu'au niveau relationnel. En outre, sur le plan orthopédique, le recourant ne pouvait plus effectuer de travaux lourds ou moyennement lourds, mais il pouvait accomplir des travaux Iégers essentiellement de façon mono-manuelle avec la main droite (dominante), en position essentiellement assise, avec un port de charges maximum de 5-10 kg en gardant le bras gauche au corps. En raison de sa fatigue et de sa fatigabilité, il devait avoir la possibilité de faire une pause d'un quart d'heure toutes les deux heures.
+4.2.
+En ce qui concernait l'incapacité de gain, les juges cantonaux l'ont calculée sur la base d'un revenu sans invalidité de 164'280 fr. et d'un revenu d'invalide de 19'623 fr. 77. Sur ce dernier point, ils se sont fondés sur le revenu fixé par l'intimée (21'718 fr. 99) sur la base des données de l'ESS (TA1, niveau de compétences 1), qu'ils ont réduit de 10 % compte tenu des limitations fonctionnelles du recourant affectant une activité résiduelle de 33 %.
+5.
+Le recourant soulève plusieurs griefs en relation avec la détermination du revenu d'invalide.
+5.1.
+D'abord, il demande l'application par analogie de l'
+art. 26bis al. 3 RAI
+(RS 831.201), dans sa teneur en vigueur depuis le 1er janvier 2024), invoquant en particulier le principe d'uniformité de la notion d'invalidité de l'
+art. 16 LPGA
+.
+D'emblée, il y a lieu d'écarter ce grief. En effet, indépendamment de la question de l'application dans le temps de la disposition précitée, le Tribunal fédéral a jugé récemment, dans un arrêt destiné à publication (arrêt 8C_254/2025 du 23 juin 2026), que les instruments expressément prévus dans l'assurance-invalidité pour corriger le revenu d'invalide déterminé selon les salaires statistiques de l'ESS (
+art. 26 et 26bis al. 3 RAI
+) ne sont pas applicables dans le cadre de l'assurance-accidents.
+5.2.
+Se référant ensuite à l'arrêt 8C_772/2020 du 9 juillet 2021, où un abattement de 25 % a été opéré sur les données statistiques dans le cas d'un assuré qui pouvait exercer une activité mono-manuelle à plein temps, le recourant soutient que ses limitations sont au moins aussi contraignantes que celles subies par cet assuré.
+La référence n'est toutefois pas pertinente dans la mesure où, dans l'affaire en question, le taux d'abattement de 25 % avait été fixé par l'assureur-accidents et n'était pas litigieux devant le Tribunal fédéral (cf. consid. 4.1 et 6 de l'arrêt en question). Pour le reste, la réduction de 10 % opérée par les premiers juges ne relève pas d'un abus ou d'un excès de leur pouvoir d'appréciation, étant précisé que les limitations fonctionnelles ont été prises en compte lors de la détermination médicale de la capacité de travail (
+ATF 148 V 174
+consid. 6.3;
+146 V 16
+consid. 4.1). On relèvera de surcroît que le recourant conserve la possibilité d'utiliser sa main dominante et la main gauche n'est pas totalement limitée.
+5.3.
+5.3.1.
+Le recourant conteste l'indexation du revenu d'invalide, au motif que les premiers juges ont refusé de prendre en considération l'évolution du revenu sans invalidité, à l'encontre des indications de son ancien employeur. Subsidiairement, il soutient que les critères d'adaptation appliqués par le Tribunal cantonal ne sont pas tout à fait corrects. Il faudrait certes tenir compte de la baisse des salaires nominaux pour les hommes en 2021 (- 0,7 % par rapport à 2020). En revanche, il n'y aurait pas lieu de considérer l'évolution des salaires en 2022 (+ 1,1 % par rapport à 2021), dès lors que le droit à la rente est né le 1er juillet 2022 et qu'on ignore comment l'augmentation de 1,1 % s'est répartie sur l'année en question.
+5.3.2.
+En l'espèce, le revenu sans invalidité n'a pas été déterminé sur la base des données statistiques, de sorte qu'il n'y a pas de parallélisme à opérer avec l'indexation du revenu d'invalide. Les juges cantonaux ont fixé celui-là au regard des salaires concrètement perçus par le recourant dans les activités exercées jusqu'à l'accident. Ils ont relevé que, selon les indications de la commune V.________, la rémunération serait restée la même en 2021 et 2023. Quant à la société B.________ SA, elle avait uniquement indiqué que le salaire aurait probablement augmenté de 3 à 5 % et qu'un bonus de 5'000 à 10'000 fr. s'y serait ajouté en fonction de la marche des affaires de l'entreprise. La cour cantonale a toutefois considéré que ces indications n'avaient pas pu être étayées par des indices concrets, alors que le salaire du recourant n'avait pas évolué entre 2019 et 2020 et qu'il n'avait touché aucun bonus durant ces années-là. Le recourant n'oppose rien à ces considérations, qui sont pertinentes.
+Quant à l'argument du recourant consistant à soutenir qu'il faut indexer le revenu d'invalide uniquement jusqu'en 2021, il ne repose sur aucun fondement légal ou jurisprudentiel. Il ne correspond précisément pas au principe selon lequel, pour procéder à la comparaison des revenus, il convient de se placer au moment de la naissance du droit à la rente, les revenus avec et sans invalidité devant être déterminés par rapport à un même moment et les modifications de ces revenus prises en compte en principe jusqu'au moment où la décision est rendue (cf.
+ATF 150 V 67
+consid. 5.2;
+129 V 222
+consid. 4.1 et 4.2 et les références; cf. aussi
+art. 25 al. 4 RAI
+). Dans ce contexte, il s'agit de tenir compte de l'évolution annuelle moyenne des salaires nominaux jusqu'à l'année de référence, sans qu'un examen mensuel de cette évolution n'entre en ligne de compte. Au demeurant, l'absence de prise en considération de l'indexation litigieuse n'aurait qu'un effet tout à fait marginal sur le calcul du taux d'invalidité, insuffisant pour fonder le droit à une rente d'un taux supérieur à 88 %.
+5.4.
+5.4.1.
+Le recourant soutient ensuite que sa capacité résiduelle de gain, d'environ 10 %, est si faible qu'elle ne pourrait pas être mise en valeur. Tel serait le cas en présence de taux d'invalidité de 90 % ou plus. Aussi aurait-il droit à une rente d'invalidité entière (référence faite à GHÉLEW/RAMELET/RITTER, Commentaire de la loi sur l'assurance accident [LAA], 1992, p. 108 et ALFRED MAURER, Schweizerisches Unfallversicherungsrecht, 1985, p. 374). Par ailleurs, l'éventail de ses limitations fonctionnelles rendrait une mise en valeur très théorique, même abstraction faite de son âge avancé. Enfin, le recourant fait valoir qu'au moment où il a reçu la décision d'octroi de rente, il avait déjà atteint l'âge de référence AVS (en mai 2023), de sorte que la période durant laquelle il aurait pu ou dû mettre en valeur sa capacité de travail résiduelle était déjà passée.
+5.4.2.
+Le raisonnement du recourant (qui se fonde en partie sur de la doctrine publiée avant l'entrée en vigueur de la LPGA) ne peut pas être suivi. Il existe certes, selon la jurisprudence, une limite quant à la prise en considération d'une capacité de gain pouvant être concrétisée sur le marché du travail équilibré, lorsque les activités envisagées relèvent de possibilités de travail irréalistes; ne constitue ainsi pas une activité exigible, celle qui ne peut être exercée que sous une forme tellement restreinte qu'elle n'existe pratiquement pas sur le marché général du travail ou que son exercice suppose de la part de l'employeur des concessions irréalistes et que, de ce fait, il semble exclu de trouver un emploi correspondant (cf. arrêts 8C_346/2023 du 21 décembre 2023 consid. 2.3; 8C_452/2023 du 19 décembre 2023 consid. 3.4). Tel n'est pas le cas en l'espèce. À cet égard, les juges cantonaux ont souligné que le recourant disposait encore d'une capacité résiduelle de travail de 33 % et que si le taux d'invalidité était élevé, cela s'expliquait surtout par les revenus importants perçus avant l'accident. Enfin, s'agissant des limitations fonctionnelles, ils ont retenu que le marché du travail contenait un éventail suffisamment large d'activités pour conclure qu'un nombre non négligeable d'entre elles étaient compatibles avec l'état de santé du recourant, en exposant la jurisprudence relative à la notion théorique et abstraite de marché équilibré du travail (consid. 8e/aa et bb). Ces considérations échappent à la critique et le recourant se contente de réitérer son argumentation sans égard à la réponse déjà donnée par les premiers juges.
+Enfin, le fait que le recourant ait reçu la décision d'octroi de rente après avoir atteint l'âge de la retraite n'est pas de nature à augmenter le taux d'invalidité, respectivement à retenir une incapacité totale de travailler au moment de la naissance du droit à la rente. En effet, les premiers juges ont considéré - sans être contestés par le recourant - que l'
+art. 28 al. 4 OLAA
+(RS 832.202) était applicable en I'espèce (puisque le recourant était âgé de plus de 64 ans lorsqu'il avait recouvré une certaine capacité de travail en juillet 2022). Or cette disposition commande précisément de prendre en considération, pour évaluer le degré d'invalidité d'un assuré qui n'a pas repris d'activité lucrative après l'accident en raison de son âge (variante I), ou dont la diminution de la capacité de gain est due essentiellement à son âge avancé (variante II), les revenus que pourrait réaliser un assuré d'âge moyen dont la santé aurait subi une atteinte de même gravité. La deuxième variante est également applicable lorsque l'âge avancé n'est pas un facteur qui a une incidence sur l'exigibilité, mais qu'il est malgré tout un obstacle à la mise en valeur de la capacité résiduelle de gain, notamment parce qu'aucun employeur n'est disposé à engager un employé présentant des atteintes à la santé pour un laps de temps très court avant l'ouverture de son droit à une rente de l'AVS. Il s'agit d'empêcher l'octroi de rentes d'invalidité qui comporteraient, en fait, une composante de prestation de vieillesse (
+ATF 148 V 419
+consid. 7.2 et les références).
+6.
+6.1.
+Le recourant se plaint de la réduction de sa rente en application de l'
+art. 20 al. 2ter let. a LAA
+, entré en vigueur le 1er janvier 2017. Il soutient, en résumé, que cette disposition ne lui est pas applicable en vertu de l'alinéa 2, 2e phrase, des dispositions transitoires relatives à la modification du 25 septembre 2015 (qui a introduit la disposition susmentionnée). Selon lui, cet alinéa 2 des dispositions transitoires ne fait pas de distinction entre les accidents survenus avant ou après le 1er janvier 2017. Le recourant invoque en outre l'
+ATF 148 V 419
+, dans lequel le Tribunal fédéral a jugé que la rente d'un assuré victime d'un accident survenu après l'entrée en vigueur de l'
+art. 20 al. 2ter LAA
+ne pouvait pas être réduite en application des dispositions transitoires en cause. Enfin, l'interprétation de l'alinéa 2 des dispositions transitoires par les juges cantonaux - selon laquelle les règles transitoires qui y sont définies visent uniquement les accidents survenus avant l'entrée en vigueur de l'
+art. 20 al. 2ter LAA
+- engendrerait une inégalité de traitement contraire à l'
+art. 8 al. 1 Cst.
+entre des assurés au bénéfice de rente d'invalidité atteignant l'âge de la retraite simultanément, suivant que l'accident dont ceux-ci ont été victimes est intervenu avant ou après le 1er janvier 2017.
+6.2.
+6.2.1.
+Selon l'
+art. 20 al. 2ter LAA
+, lorsque l'assuré atteint l'âge de référence, la rente d'invalidité et la rente complémentaire de l'assurance-accidents, allocations de renchérissement comprises, sont réduites comme suit, en dérogation à l'
+art. 69 LPGA
+, pour chaque année entière comprise entre le jour où il a eu 45 ans et le jour où l'accident est survenu: pour un taux d'invalidité de 40 % ou plus, de 2 points de pourcentage mais de 40 % au plus (let. a); pour un taux d'invalidité inférieur à 40 %, de 1 point de pourcentage mais de 20 % au plus (let. b).
+6.2.2.
+Les dispositions transitoires de la modification du 25 septembre 2015 ont la teneur suivante:
+"1 Pour les accidents qui sont survenus avant l'entrée en vigueur de la modification du 25 septembre 2015 et pour les maladies professionnelles qui se sont déclarées avant cette date, les prestations d'assurance sont allouées selon l'ancien droit.
+2 Les rentes d'invalidité et rentes complémentaires visées à l'art. 20 sont réduites selon le nouveau droit (art. 20, al. 2ter) si leurs bénéficiaires atteignent l'âge ordinaire de la retraite au moins douze ans après la date d'entrée en vigueur de la présente modification. Elles ne sont pas réduites si les bénéficiaires de telles rentes atteignent l'âge ordinaire de la retraite moins de huit ans après cette date. Lorsque les bénéficiaires de ces rentes atteignent l'âge ordinaire de la retraite huit ans ou plus, mais moins de douze ans après l'entrée en vigueur de la présente modification, ces rentes sont réduites, pour chaque année entière supplémentaire qui suit la huitième année, d'un cinquième du montant de la réduction prévue par le nouveau droit. Les capitaux libérés doivent être utilisés pour garantir le financement des allocations de renchérissement futures ou du capital de couverture supplémentaires qui seraient requis par suite d'une modification des normes comptables approuvées par le Conseil fédéral.
+3 La CNA et les assureurs désignés à l'art. 68, al. 1, let. b et c, peuvent continuer pendant cinq ans de financer selon l'ancien droit les prestations d'assurance visées à l'art. 90, al. 1, qui sont allouées pour des accidents survenus avant l'entrée en vigueur de la présente modification.
+4 Les provisions constituées jusqu'à l'entrée en vigueur de la présente modification par les assureurs visés à l'art. 68, al. 1, let. a, et par la caisse supplétive et destinées au financement des allocations de renchérissement et de l'adaptation des allocations pour impotent sont entièrement affectées au financement tel qu'il est réglé aux
+art. 90aet 90
+d. Les assureurs visés à l'art. 68, al. 1, let. a, qui ont déjà une fois fait partie du fonds destiné à garantir les rentes futures mais qui ne le sont plus au moment de l'entrée en vigueur de la présente modification doivent au moins tenir à disposition, à titre de provisions distinctes pour le financement des allocations de renchérissement conformément à l'art. 90aet de l'adaptation des allocations pour impotent conformément à l'art. 90d, le montant qu'ils avaient provisionné à cet effet au moment de leur sortie du fonds destiné à garantir les rentes futures."
+6.3.
+6.3.1.
+Procédant à une interprétation de l'alinéa 2 de ces dispositions transitoires, la cour cantonale a retenu, en résumé, que le texte de la loi ne permettait pas de comprendre si l'absence de réduction de la rente pour les assurés qui arrivaient à l'âge de la retraite moins de huit ans après l'entrée en vigueur de la modification concernait les assurés dont l'accident était intervenu antérieurement à l'entrée en vigueur de cette modification, ou postérieurement ou encore les deux catégories d'assurés. Les textes allemands ou italiens n'apportaient pas plus de précision. Toutefois, dans la mesure où la quatrième phrase de l'alinéa 2 réglait l'utilisation des "capitaux libérés" ("frei werdenden Deckungskapitalien", "capitali di copertura che divengono disponibili"), on pouvait inférer que le système transitoire prévu allait entraîner une diminution des dépenses des assureurs-accidents. Étant donné que l'
+art. 20 al. 2ter LAA
+avait pour effet de réduire les rentes accordées et, partant, d'augmenter les capitaux disponibles, la lecture de Ia quatrième phrase de l'al. 2 allait dans le sens d'une application rétroactive de l'
+art. 20 al. 2ter LAA
+à des assurés ayant subi un accident sous l'ancien droit plutôt que dans le sens d'une mise en oeuvre progressive de cette disposition pour les assurés ayant subi un accident postérieurement au 1er janvier 2017.
+6.3.2.
+C'était d'ailleurs ce qui ressortirait clairement du Message additionnel du 19 septembre 2014 relatif à la modification de la loi fédérale sur l'assurance-accidents, FF 2014 7691, 7728, au sujet de ces dispositions transitoires:
+"
+Al. 2
+: afin de faire pièce à la surindemnisation dans un délai raisonnable, il convient d'appliquer aussi les règles de réduction des rentes d'invalidité et des rentes complémentaires aux rentes qui sont nées avant l'entrée en vigueur de la présente révision. |l faut donc déroger sur ce point au principe posé à l'al. 1, faute de quoi la nouvelle réglementation n'exercera pleinement ses effets que des décennies après sa mise en vigueur, et la situation actuelle, qui est insatisfaisante, se maintiendra encore longtemps. Cependant, la disposition transitoire tient compte du fait que les bénéficiaires d'une rente LAA ont organisé leur retraite en s'appuyant avec confiance sur le texte légal actuel. Aussi prévoit-elle qu'aucune réduction ne sera opérée pendant les huit années qui suivent l'entrée en vigueur de la nouvelle réglementation et que les réductions seront ensuite introduites de manière échelonnée."
+Le Conseil fédéral avait ainsi exposé de manière explicite que l'alinéa 2 des dispositions transitoires constituait une dérogation au principe posé à l'alinéa 1 et s'appliquait aux assurés qui ont subi un accident avant l'entrée en vigueur de l'
+art. 20 al. 2ter LAA
+, respectivement dont le droit à la rente est né avant le 1er janvier 2017. Le législateur souhaitait mettre en place, dans une certaine limite, une application rétroactive de l'
+art. 20 al. 2ter LAA
+et n'avait nullement I'intention, par le biais des dispositions transitoires, de prévoir une mise en oeuvre progressive de l'
+art 20 al. 2ter LAA
+. Au contraire, il visait une concrétisation la plus rapide possible de la nouvelle réglementation dans le but d'éviter les situations de surindemnisation.
+6.3.3.
+Enfin, les juges cantonaux ont confirmé cette interprétation sur les plans systématique (l'alinéa 1 pose le principe selon lequel l'ancien droit s'applique aux accidents survenus avant I'entrée en vigueur de la loi, tandis que l'alinéa 2 prévoit des dérogations à ce principe) et téléologique, soulignant le but poursuivi par l'
+art. 20 al. 2ter LAA
+de remédier à une situation de surindemnisation pouvant survenir au moment où les assurés atteignent l'âge de la retraite (FF 2014 7691, 7704 s.).
+6.4.
+6.4.1.
+En l'occurrence, l'interprétation donnée à l'alinéa 2 des dispositions transitoires par les premiers juges, conforme aux méthodes ordinaires d'interprétation de la loi (cf.
+ATF 152 IV 27
+consid. 4.4.1), ne prête pas le flanc à la critique. Elle ne peut qu'être confirmée au vu du texte clair et non équivoque du Message additionnel du 19 septembre 2014 relatif à la modification de la loi fédérale sur l'assurance-accidents. Elle respecte également les principes généraux de droit intertemporel (cf.
+ATF 148 V 162
+consid. 3.2.1 et 146 V 364 consid. 7.1), qui permettent notamment une rétroactivité improprement dite des lois lorsque le législateur entend réglementer un état de choses qui, bien qu'ayant pris naissance dans le passé, se prolonge au moment de l'entrée en vigueur du nouveau droit (cf.
+ATF 144 I 81
+consid. 4.1;
+140 V 154
+consid. 6.3.2;
+138 I 189
+consid. 3.4). Cette rétroactivité improprement dite est en principe admise, sous réserve du respect des droits acquis (sur cette notion cf.
+ATF 143 I 65
+consid. 6.2;
+134 I 23
+consid. 7.2; arrêt 9C_435/2021 du 7 septembre 2022 consid. 3.2). Le recourant ne prétend pas avoir de droits acquis en lien avec la réduction de sa rente et la question n'entre pas en ligne de compte dans la mesure où l'accident dont il a été victime est survenu après l'entrée en vigueur de l'
+art. 20 al. 2ter LAA
+.
+En outre, sa situation diffère de celle d'assurés déjà victimes, au moment de l'entrée en vigueur de l'
+art. 20 al. 2ter LAA
+, d'un accident donnant droit à une rente susceptible d'être réduite à la suite de cette modification légale. Ceux-ci peuvent bénéficier du régime dérogatoire prévu à l'alinéa 2 des dispositions transitoires pour compenser, le cas échéant, leurs expectatives en matière d'indemnisation qui devraient être revues à la baisse. Le recourant ne pouvait quant à lui fonder aucune expectative sur une réglementation qui n'existait plus au moment de son accident. Le grief tiré de la violation de l'
+art. 8 al. 1 Cst.
+doit également être rejeté.
+6.4.2.
+S'agissant de l'
+ATF 148 V 419
+, il portait sur le point de savoir si un abattement à cause de l'âge avancé d'un assuré était envisageable en présence d'un cas d'application de l'
+art. 28 al. 4 OLAA
+, question jusqu'alors laissée ouverte par le Tribunal fédéral et à laquelle il a été répondu par la négative (consid. 8). Au consid. 8.4 cité par le recourant, l'arrêt expose que, selon le Message additionnel du 19 septembre 2014 relatif à la modification de la loi fédérale sur l'assurance-accidents, les règles de réduction de l'
+art. 20 al. 2ter LAA
+devraient s'ajouter au correctif prévu à l'
+art. 28 al. 4 OLAA
+(FF 2014 7691, 7716). Comme les deux règles poursuivaient en principe le même but, soit d'éviter une surindemnisation à cause de l'âge avancé de l'assuré, et que la loi a été modifiée ultérieurement, certains auteurs suggéraient d'examiner si, et dans quelle mesure, la disposition contenue dans l'ordonnance serait toujours nécessaire pour atteindre ce but (THOMAS FLÜCKIGER, in Basler Kommentar, Unfallversicherungsgesetz, 2019, n° 83 ad
+art. 18 LAA
+; PHILIPP GEERTSEN, Das Komplementärrentensystem der Unfallversicherung zur Koordination von UVG-Invalidenrenten mit Rentenleistungen der I. Säule [Art. 20 Abs. 2 UVG], 2011, p. 340; HÜRZELER/CADERAS, in Kommentar zum schweizerischen Sozialversicherungsrecht, UVG, Hürzeler/Kieser [éd.], 2018, n° 38 ad
+art. 18 LAA
+). La question n'avait toutefois pas à être examinée en l'espèce, puisque la rente de l'assuré intimé ne pouvait pas être réduite selon l'
+art. 20 al. 2ter LAA
+au regard de l'alinéa 2 des dispositions transitoires relatives à la modification du 25 septembre 2015. Le Tribunal fédéral retenait néanmoins que, par cette nouvelle disposition légale, le législateur avait réitéré sa volonté d'éviter une surindemnisation à cause de l'âge avancé de l'assuré.
+Il est vrai que l'assuré concerné par cet arrêt - qui avait atteint l'âge de la retraite moins de huit ans après l'entrée en vigueur de la modification légale - avait subi un accident en 2019, soit après l'entrée en vigueur de l'
+art. 20 al. 2ter LAA
+. La question de l'application de l'
+art. 20 al. 2ter LAA
+n'était toutefois pas litigieuse dans cette affaire et le Tribunal fédéral, qui n'a pas procédé à un examen approfondi des dispositions transitoires comme l'ont souligné les juges cantonaux, n'a pas jugé de manière explicite que l'alinéa 2 de ces dispositions visait (aussi) les accidents survenus après le 1er janvier 2017. En tout état de cause, telle n'est pas la conclusion qu'il convient de tirer de l'
+ATF 148 V 419
+. Le recourant ne peut donc pas invoquer son droit à une rente non réduite sur la base de cet arrêt. Quant à l'arrêt 8C_663/2022 du 30 novembre 2023, qu'il cite dans ses observations complémentaires, il ne lui est d'aucun secours dans la mesure où cette affaire concernait un accident survenu avant l'entrée en vigueur de la modification légale.
+7.
+Par un dernier grief, le recourant invoque des erreurs dans le calcul du montant de sa rente complémentaire qui auraient été validées par la cour cantonale. On peine toutefois à saisir sur quels points précis porte la contestation, étant donné que le recourant se limite essentiellement à procéder à ses propres calculs et qu'il semble admettre le montant de sa rente complémentaire fixé à 7'769 fr. par l'intimée. En tout cas, en tant qu'il rectifie le montant pour supprimer la réduction de l'
+art. 20 al. 2ter LAA
+, son argumentation tombe à faux (cf. consid. 6 ci-dessus). Ensuite, il se fonde à tort sur une rente correspondant à 80 % du gain assuré (118'560 fr.) comme si son invalidité était totale alors qu'elle est de 88 % (cf.
+art 20 al. 1 LAA
+, aux termes duquel la rente d'invalidité s'élève à 80 % du gain assuré, en cas d'invalidité totale; si l'invalidité n'est que partielle, la rente est diminuée en conséquence). Enfin, contrairement à ce que semble soutenir le recourant, la réduction selon l'
+art. 20 al. 2ter LAA
+est opérée sur les montants des rentes y compris les allocations de renchérissement (cf.
+art. 33a al. 1 OLAA
+). En conclusion, le recourant échoue à démontrer une erreur dans le calcul de sa rente complémentaire.
+8.
+Vu les considérants qui précèdent, le recours se révèle en tous points mal fondé et doit être rejeté.
+Le recourant, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du canton de Vaud, Cour des assurances sociales, et à l'Office fédéral de la santé publique.
+Lucerne, le 6 août 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Castella

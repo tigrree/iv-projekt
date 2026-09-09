@@ -1,18 +1,54 @@
 import os
 import json
 import re
-import requests
-import urllib3
 from urllib.parse import urljoin
 from datetime import datetime
 from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 import anthropic
-
-# Unterdrückt die Warnungen, da wir SSL ignorieren
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb)
 ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
+
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+
+
+def fetch_html(page, url, wait_ms=4000, max_versuche=3):
+    """
+    Lädt eine URL über den bereits offenen Playwright-Browser-Kontext und gibt
+    den finalen HTML-Text zurück.
+
+    Der echte Browser führt JavaScript aus, wodurch die Imperva/Incapsula-
+    Bot-Challenge (die requests/urllib3 nicht lösen konnte) automatisch
+    aufgelöst wird. Falls trotzdem eine Blockseite zurückkommt, wird kurz
+    gewartet und erneut versucht.
+    """
+    letzter_fehler = None
+    for versuch in range(1, max_versuche + 1):
+        try:
+            response = page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            # Der Browser braucht ggf. einen Moment, um eine JS-Challenge
+            # (Incapsula) im Hintergrund aufzulösen und die Seite neu zu laden.
+            page.wait_for_timeout(wait_ms)
+            html = page.content()
+
+            status = response.status if response else None
+            wirkt_geblockt = "_Incapsula_Resource" in html or "Service Unavailable" in html
+
+            if (status and status >= 400) or wirkt_geblockt:
+                print(f"WARNUNG: {url} lieferte Status {status} / Blockseite erkannt (Versuch {versuch}/{max_versuche}).")
+                if versuch < max_versuche:
+                    page.wait_for_timeout(5000)
+                    continue
+
+            return html
+        except Exception as e:
+            letzter_fehler = e
+            print(f"WARNUNG: Fehler beim Laden von {url} (Versuch {versuch}/{max_versuche}): {e}")
+            page.wait_for_timeout(3000)
+
+    raise RuntimeError(f"Konnte {url} nach {max_versuche} Versuchen nicht laden: {letzter_fehler}")
+
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
     PROMPT_ZUSAMMENFASSUNG = """Du bist ein erfahrener Schweizer Jurist und Bundesrichter mit Schwerpunkt Sozialversicherungsrecht. Deine Aufgabe ist es, den nachfolgenden Bundesgerichtsentscheid präzise zusammenzufassen.
@@ -150,6 +186,7 @@ Unterscheide zwingend zwischen den Rügen/Vorbringen (was die Parteien behaupten
     except Exception as e:
         return vorschau_raw, f"Zusammenfassung aktuell nicht möglich: {str(e)}"
 
+
 def scrape_bger():
     print(f"--- Scan gestartet für: {ZIEL_DATUM} ---")
     api_key = os.getenv("ANTHROPIC_API_KEY")
@@ -159,24 +196,17 @@ def scrape_bger():
 
     client = anthropic.Anthropic(api_key=api_key)
     domain = "https://www.bger.ch"
-    
-    # Neues, modernes Header-Set zur Umgehung von Bot-Blockaden
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'de-CH,de;q=0.9,en-US;q=0.8,en;q=0.7',
-    }
-    
+
     if not os.path.exists('urteilstexte'):
         os.makedirs('urteilstexte')
-    
+
     if not os.path.exists('urteile.json'):
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump([], f)
     with open('urteile.json', 'r', encoding='utf-8') as f:
-        try: 
+        try:
             archiv_daten = json.load(f)
-        except: 
+        except:
             archiv_daten = []
 
     tages_ergebnisse = []
@@ -184,117 +214,127 @@ def scrape_bger():
     ak_gefunden = False
 
     try:
-        index_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
-        base_res = requests.get(index_url, headers=headers, verify=False)
-        
-        # Debugging: Wirf sofort einen Fehler, wenn die BGer-Seite blockiert
-        if base_res.status_code != 200:
-            print(f"WARNUNG: BGer Website hat mit Fehlercode {base_res.status_code} geantwortet!")
-            print(f"Response Headers: {dict(base_res.headers)}")
-            print(f"Response Body (erste 800 Zeichen): {base_res.text[:800]}")
-        
-        soup = BeautifulSoup(base_res.text, 'html.parser')
-        alle_links = soup.find_all('a', href=True)
-        
-        # Debugging: Liste alle Publikationsdaten auf, die das Skript heute "sieht"
-        verfuegbare_daten = [a.get_text().strip() for a in alle_links if re.match(r'\d{2}\.\d{2}\.\d{4}', a.get_text().strip())]
-        print(f"Gefundene Publikationstage auf der Seite: {verfuegbare_daten}")
-        
-        # Tolerantere Suche: Finde den Link, in dem das Datum steht
-        tag_link = next((a['href'] for a in alle_links if ZIEL_DATUM in a.get_text()), None)
-        
-        if not tag_link:
-            print(f"HINWEIS: Für das Zieldatum {ZIEL_DATUM} wurde kein Unterlink gefunden. Beende Scan.")
-        
-        if tag_link:
-            # Absolute URL-Sicherheit
-            full_tag_url = urljoin(index_url, tag_link)
-            print(f"Scrape URL: {full_tag_url}")
-            
-            rows = BeautifulSoup(requests.get(full_tag_url, headers=headers, verify=False).text, 'html.parser').find_all('tr')
-            
-            iv_keywords = ["invalid"]
-            ak_keywords = [
-                "familienzulage", "allocation familiale", "assegni familiari", 
-                "hinterlassenenversicherung", "vieillesse", "vecchiaia", 
-                "krankenversicherung", "maladie", "malattie", 
-                "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
-            ]
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            # Ein einziger, durchgehender Browser-Kontext hält die von
+            # Imperva/Incapsula gesetzten Cookies über alle Anfragen dieses
+            # Laufs hinweg, sodass die Challenge im Idealfall nur einmal
+            # gelöst werden muss.
+            context = browser.new_context(
+                user_agent=USER_AGENT,
+                locale="de-CH",
+                ignore_https_errors=True,
+            )
+            page = context.new_page()
 
-            for i in range(len(rows)):
-                row = rows[i]
-                link_tag = row.find('a', href=True)
-                if not link_tag:
-                    continue
-                
-                raw_az = link_tag.get_text().strip()
-                if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")):
-                    continue
-                
-                volltext = row.get_text(" ", strip=True)
-                
-                if i + 1 < len(rows):
-                    next_row = rows[i+1]
-                    if not next_row.find('a', href=True):
-                        volltext += " " + next_row.get_text(" ", strip=True)
-                
-                if raw_az in volltext:
-                    vorschau_raw = volltext.split(raw_az, 1)[-1].strip()
-                else:
-                    vorschau_raw = volltext
-                
-                ist_publikation = "*" in volltext
-                vorschau_raw = vorschau_raw.replace("*", "").strip()
-                
-                search_text = volltext.lower()
-                ist_iv = any(k in search_text for k in iv_keywords)
-                ist_ak = any(k in search_text for k in ak_keywords)
+            index_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
+            html = fetch_html(page, index_url)
 
-                if ist_iv or ist_ak:
-                    clean_az = raw_az.replace("*", "").strip()
-                    kat = "iv" if ist_iv else "ak"
-                    if ist_iv and ist_ak: kat = "beide"
-                    if ist_iv: iv_gefunden = True
-                    if ist_ak: ak_gefunden = True
+            soup = BeautifulSoup(html, 'html.parser')
+            alle_links = soup.find_all('a', href=True)
 
-                    case_url = urljoin(full_tag_url, link_tag['href'])
-                    
-                    case_soup = BeautifulSoup(requests.get(case_url, headers=headers, verify=False).text, 'html.parser')
-                    case_html = case_soup.get_text()
-                    case_full_text = case_soup.get_text(separator='\n', strip=True)
-                    
-                    if "Tribunal federal" in case_full_text:
-                        case_full_text = case_full_text.split("Tribunal federal", 1)[-1].strip()
-                        
-                    if "Navigation\nNeue Suche" in case_full_text:
-                        case_full_text = case_full_text.split("Navigation\nNeue Suche", 1)[0].strip()
-                    
-                    safe_filename = clean_az.replace('/', '_')
-                    with open(f'urteilstexte/{safe_filename}.txt', 'w', encoding='utf-8') as tf:
-                        tf.write(case_full_text)
-                    print(f"Text gespeichert: {safe_filename}.txt")
-                    
-                    rubrum = case_html[:3000]
-                    iv_zh_fuehrer, iv_zh_gegner, ak_zh_fuehrer, ak_zh_gegner = False, False, False, False
-                    
-                    if "IV-Stelle des Kantons Zürich" in rubrum:
-                        pos = rubrum.find("IV-Stelle des Kantons Zürich")
-                        if "Beschwerdeführerin" in rubrum[pos:pos+250]: iv_zh_fuehrer = True
-                        else: iv_zh_gegner = True
-                    
-                    if "Sozialversicherungsanstalt des Kantons Zürich" in rubrum:
-                        pos = rubrum.find("Sozialversicherungsanstalt des Kantons Zürich")
-                        if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
-                        else: ak_zh_gegner = True
+            # Debugging: Liste alle Publikationsdaten auf, die das Skript heute "sieht"
+            verfuegbare_daten = [a.get_text().strip() for a in alle_links if re.match(r'\d{2}\.\d{2}\.\d{4}', a.get_text().strip())]
+            print(f"Gefundene Publikationstage auf der Seite: {verfuegbare_daten}")
 
-                    v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
-                    
-                    tages_ergebnisse.append({
-                        "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "kategorie": kat,
-                        "publikation": ist_publikation, "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
-                        "ak_zh_fuehrer": ak_zh_fuehrer, "ak_zh_gegner": ak_zh_gegner, "vorschau": v_text, 
-                        "zusammenfassung": z_text, "url": case_url
-                    })
+            # Tolerantere Suche: Finde den Link, in dem das Datum steht
+            tag_link = next((a['href'] for a in alle_links if ZIEL_DATUM in a.get_text()), None)
+
+            if not tag_link:
+                print(f"HINWEIS: Für das Zieldatum {ZIEL_DATUM} wurde kein Unterlink gefunden. Beende Scan.")
+
+            if tag_link:
+                full_tag_url = urljoin(index_url, tag_link)
+                print(f"Scrape URL: {full_tag_url}")
+
+                rows_html = fetch_html(page, full_tag_url)
+                rows = BeautifulSoup(rows_html, 'html.parser').find_all('tr')
+
+                iv_keywords = ["invalid"]
+                ak_keywords = [
+                    "familienzulage", "allocation familiale", "assegni familiari",
+                    "hinterlassenenversicherung", "vieillesse", "vecchiaia",
+                    "krankenversicherung", "maladie", "malattie",
+                    "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
+                ]
+
+                for i in range(len(rows)):
+                    row = rows[i]
+                    link_tag = row.find('a', href=True)
+                    if not link_tag:
+                        continue
+
+                    raw_az = link_tag.get_text().strip()
+                    if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")):
+                        continue
+
+                    volltext = row.get_text(" ", strip=True)
+
+                    if i + 1 < len(rows):
+                        next_row = rows[i+1]
+                        if not next_row.find('a', href=True):
+                            volltext += " " + next_row.get_text(" ", strip=True)
+
+                    if raw_az in volltext:
+                        vorschau_raw = volltext.split(raw_az, 1)[-1].strip()
+                    else:
+                        vorschau_raw = volltext
+
+                    ist_publikation = "*" in volltext
+                    vorschau_raw = vorschau_raw.replace("*", "").strip()
+
+                    search_text = volltext.lower()
+                    ist_iv = any(k in search_text for k in iv_keywords)
+                    ist_ak = any(k in search_text for k in ak_keywords)
+
+                    if ist_iv or ist_ak:
+                        clean_az = raw_az.replace("*", "").strip()
+                        kat = "iv" if ist_iv else "ak"
+                        if ist_iv and ist_ak: kat = "beide"
+                        if ist_iv: iv_gefunden = True
+                        if ist_ak: ak_gefunden = True
+
+                        case_url = urljoin(full_tag_url, link_tag['href'])
+
+                        case_html_raw = fetch_html(page, case_url)
+                        case_soup = BeautifulSoup(case_html_raw, 'html.parser')
+                        case_html = case_soup.get_text()
+                        case_full_text = case_soup.get_text(separator='\n', strip=True)
+
+                        if "Tribunal federal" in case_full_text:
+                            case_full_text = case_full_text.split("Tribunal federal", 1)[-1].strip()
+
+                        if "Navigation\nNeue Suche" in case_full_text:
+                            case_full_text = case_full_text.split("Navigation\nNeue Suche", 1)[0].strip()
+
+                        safe_filename = clean_az.replace('/', '_')
+                        with open(f'urteilstexte/{safe_filename}.txt', 'w', encoding='utf-8') as tf:
+                            tf.write(case_full_text)
+                        print(f"Text gespeichert: {safe_filename}.txt")
+
+                        rubrum = case_html[:3000]
+                        iv_zh_fuehrer, iv_zh_gegner, ak_zh_fuehrer, ak_zh_gegner = False, False, False, False
+
+                        if "IV-Stelle des Kantons Zürich" in rubrum:
+                            pos = rubrum.find("IV-Stelle des Kantons Zürich")
+                            if "Beschwerdeführerin" in rubrum[pos:pos+250]: iv_zh_fuehrer = True
+                            else: iv_zh_gegner = True
+
+                        if "Sozialversicherungsanstalt des Kantons Zürich" in rubrum:
+                            pos = rubrum.find("Sozialversicherungsanstalt des Kantons Zürich")
+                            if "Beschwerdeführerin" in rubrum[pos:pos+250]: ak_zh_fuehrer = True
+                            else: ak_zh_gegner = True
+
+                        v_text, z_text = summarize_and_translate(case_html, vorschau_raw, client)
+
+                        tages_ergebnisse.append({
+                            "aktenzeichen": clean_az, "datum": ZIEL_DATUM, "kategorie": kat,
+                            "publikation": ist_publikation, "iv_zh_fuehrer": iv_zh_fuehrer, "iv_zh_gegner": iv_zh_gegner,
+                            "ak_zh_fuehrer": ak_zh_fuehrer, "ak_zh_gegner": ak_zh_gegner, "vorschau": v_text,
+                            "zusammenfassung": z_text, "url": case_url
+                        })
+
+            browser.close()
 
         if not iv_gefunden and not ak_gefunden:
             tages_ergebnisse.append({"aktenzeichen": "INFO_SKIP_BEIDE", "datum": ZIEL_DATUM, "kategorie": "beide", "vorschau": "Keine neuen IV- oder AK-relevanten Urteile", "zusammenfassung": "", "url": "", "publikation": False, "iv_zh_fuehrer": False, "iv_zh_gegner": False, "ak_zh_fuehrer": False, "ak_zh_gegner": False})
@@ -307,14 +347,15 @@ def scrape_bger():
         archiv_daten = [d for d in archiv_daten if d['datum'] != ZIEL_DATUM]
         archiv_daten.extend(tages_ergebnisse)
         archiv_daten.sort(key=lambda x: datetime.strptime(x['datum'], "%d.%m.%Y"), reverse=True)
-        
+
         with open('urteile.json', 'w', encoding='utf-8') as f:
             json.dump(archiv_daten, f, ensure_ascii=False, indent=4)
-            
+
         print(f"Scan für {ZIEL_DATUM} erfolgreich abgeschlossen.")
-        
-    except Exception as e: 
+
+    except Exception as e:
         print(f"Fataler Fehler beim Scraping: {e}")
+
 
 if __name__ == "__main__":
     scrape_bger()

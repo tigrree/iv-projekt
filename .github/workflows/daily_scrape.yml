@@ -30,7 +30,10 @@ jobs:
 
       - name: Install Python Dependencies
         run: |
-          pip install requests beautifulsoup4 anthropic 
+          pip install beautifulsoup4 anthropic playwright
+
+      - name: Install Playwright Browser
+        run: playwright install --with-deps chromium
 
       - name: Run Scraper Script
         env:

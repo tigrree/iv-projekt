@@ -158,7 +158,7 @@ def scrape_bger():
         return
 
     client = anthropic.Anthropic(api_key=api_key)
-    domain = "[https://www.bger.ch](https://www.bger.ch)"
+    domain = "https://www.bger.ch"
     
     # Neues, modernes Header-Set zur Umgehung von Bot-Blockaden
     headers = {

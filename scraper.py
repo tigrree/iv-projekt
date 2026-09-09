@@ -190,6 +190,8 @@ def scrape_bger():
         # Debugging: Wirf sofort einen Fehler, wenn die BGer-Seite blockiert
         if base_res.status_code != 200:
             print(f"WARNUNG: BGer Website hat mit Fehlercode {base_res.status_code} geantwortet!")
+            print(f"Response Headers: {dict(base_res.headers)}")
+            print(f"Response Body (erste 800 Zeichen): {base_res.text[:800]}")
         
         soup = BeautifulSoup(base_res.text, 'html.parser')
         alle_links = soup.find_all('a', href=True)

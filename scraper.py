@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright
 import anthropic
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb)
-ZIEL_DATUM = "07.09.2026"
+ZIEL_DATUM = "08.09.2026"
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 

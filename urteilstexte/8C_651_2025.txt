@@ -1,0 +1,77 @@
+8C_651/2025
+Arrêt du 27 août 2026
+IVe Cour de droit public
+Composition
+Mmes et M. les Juges fédéraux
+Viscione, Présidente,
+Scherrer Reber et Métral.
+Greffière : Mme Barman Ionta.
+Participants à la procédure
+A.________,
+représenté par Me Elio Lopes, avocat,
+recourant,
+contre
+Caisse nationale suisse d'assurance en cas d'accidents (CNA), Division juridique, Fluhmattstrasse 1, 6002 Lucerne,
+intimée.
+Objet
+Assurance-accidents (rente d'invalidité; revenu d'invalidité),
+recours contre l'arrêt du Tribunal cantonal du canton de Fribourg du 7 octobre 2025 (605 2024 48).
+Faits :
+A.
+A.________, né en 1974, a été engagé par B.________ SA sur la base d'un contrat de mission temporaire et a travaillé en tant qu'étancheur dès le 5 mars 2018. Le 16 mars suivant, il a été victime d'un accident de voiture et a été blessé notamment au niveau de la main droite (plaie profonde interdigitale II-III avec section et exposition du tendon, traitée chirurgicalement le 17 mars 2018). La Caisse nationale suisse d'assurance en cas d'accidents (CNA), auprès de laquelle il était assuré obligatoirement contre le risque d'accidents, a pris en charge le cas.
+Par appréciation du 10 juillet 2020, le médecin d'assurance a indiqué que la situation était médicalement stabilisée et qu'une pleine capacité de travail, à plein temps et rendement, était possible dans le cadre d'une activité adaptée, à savoir sans port de charge supérieure à 25 kg, sans port de charge répétitif supérieure à 15 kg et sans mouvement nécessitant de la force ou une dextérité fine de la main droite. La CNA a mis un terme au paiement des frais médicaux et de l'indemnité journalière au 31 octobre 2020. Par décision du 5 octobre 2020, confirmée sur opposition le 22 janvier 2024, elle a nié le droit à une rente d'invalidité (en présence d'un revenu sans invalidité de 63'971 fr. et d'un revenu d'invalidité de 68'815 fr.) ainsi qu'à une indemnité pour atteinte à l'intégrité.
+B.
+L'assuré a déféré la décision sur opposition à la I re Cour des assurances sociales du Tribunal cantonal du canton de Fribourg, en concluant à l'octroi d'une rente d'invalidité de 21 % dès le 1er novembre 2020. Par arrêt du 7 octobre 2025, la juridiction cantonale a rejeté le recours.
+C.
+A.________ forme un recours en matière de droit public contre cet arrêt, dont il demande la réforme dans le sens de la reconnaissance de son droit à une rente d'invalidité fondée sur un taux de 11 % dès le 1er novembre 2020, subsidiairement dès le 1er janvier 2024.
+La CNA conclut au rejet du recours. La cour cantonale et l'Office fédéral de la santé publique ont renoncé à se déterminer.
+Le recourant a pris position sur la réponse de l'intimée et persisté dans ses conclusions.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le litige porte sur le droit du recourant à une rente d'invalidité dès le 1er novembre 2020. Le recourant conteste le revenu sans invalidité et le revenu d'invalide pris en compte par la juridiction cantonale.
+Dès lors qu'il s'agit d'une prestation en espèces de l'assurance-accidents, le Tribunal fédéral n'est pas lié par les faits établis par la juridiction précédente (art. 97 al. 2 et 105 al. 3 LTF).
+3.
+Les juges cantonaux ont tout d'abord confirmé les éléments non contestés, à savoir la stabilisation de l'état de santé du recourant, sa capacité de travail de 100 % dans une activité adaptée et l'absence d'indemnité pour atteinte à l'intégrité.
+En ce qui concerne l'incapacité de gain, ils l'ont calculée sur la base d'un revenu sans invalidité de 59'845 fr. et d'un revenu d'invalide de 65'815 francs. Sur ce dernier point, ils se sont fondés sur le revenu fixé par l'intimée sur la base des données de l'Enquête suisse sur la structure des salaires (ESS 2020; TA1_skill_level, niveau de compétences 1), considérant qu'il ne se justifiait pas de procéder à une réduction en raison de circonstances personnelles et professionnelles, ni d'appliquer un abattement forfaitaire de 10 %. S'agissant du revenu sans invalidité, le montant de 59'845 fr. reposait sur la moyenne des cinq dernières années (2013-2017) des revenus du recourant, figurant sur l'extrait du compte individuel, en tant que chef d'équipe (ferblantier/ étancheur) au sein de la société C.________ SA. Cette approche différait de celle de l'intimée, qui se fondait sur les informations fournies par B.________ SA, au vu du contrat de durée limitée à trois mois. En tout état de cause, même à considérer le revenu sans invalidité retenu par l'intimée (63'971 fr.) ou celui requis par le recourant (66'809 fr. 60), le degré d'invalidité restait inférieur au taux de 10 %, ce qui n'ouvrait pas le droit à la rente.
+4.
+4.1.
+Le recourant reproche à la cour cantonale de ne pas avoir opéré une déduction forfaitaire de 10 % sur le revenu statistique d'invalide. Il soutient que l'
+art. 26bis al. 3 RAI
+(RS 831.201; dans sa teneur en vigueur depuis le 1er janvier 2024) devrait s'appliquer par analogie dans le domaine de l'assurance-accidents, conformément au principe d'uniformité de la notion d'invalidité de l'
+art. 16 LPGA
+.
+Il y a lieu d'écarter d'emblée ce grief. En effet, indépendamment de la question de l'application dans le temps de la disposition précitée, le Tribunal fédéral a jugé récemment, dans un arrêt destiné à la publication (arrêt 8C_254/2025 du 23 juin 2026), que les instruments expressément prévus dans l'assurance-invalidité pour corriger le revenu d'invalide déterminé selon les salaires statistiques de l'ESS (
+art. 26 et 26bis al. 3 RAI
+) ne sont pas applicables dans le cadre de l'assurance-accidents.
+Pour le reste, le recourant ne soutient pas, contrairement à l'argumentation développée dans la procédure cantonale, la prise en compte d'un abattement sur le revenu d'invalide résultant d'autres circonstances (limitations liées au handicap, âge, années de service, nationalité/catégorie d'autorisation de séjour et taux d'occupation). Par conséquent, le revenu d'invalide de 65'815 fr. peut être confirmé ([5'261 fr x 41.7/40] x 12).
+4.2.
+Dans un second grief, le recourant reproche à la cour cantonale d'avoir pris en compte son activité au sein de la société C.________ SA pour déterminer son revenu sans invalidité, alors que cette société a été déclarée en faillite en novembre 2017 et qu'il n'était plus sous contrat au moment de l'accident. Selon lui, la juridiction cantonale, et l'intimée avant elle, aurait dû se baser sur la Convention nationale de la construction et considérer le salaire annuel d'un ouvrier "avec connaissances professionnelles B", qui correspondrait à un revenu de 66'809 fr. 60 pour l'année 2020.
+Ce grief n'a toutefois pas à être examiné plus avant, dans la mesure où la prise en compte du revenu susmentionné ne saurait, quoiqu'il en soit, fonder le droit à une rente. En effet, le revenu d'invalidité de 65'815 fr. exclurait, par comparaison avec le revenu sans invalidité de 66'809 fr. 60, un taux d'invalidité de 10 % au moins ouvrant droit à la rente.
+5.
+Il s'ensuit que le recours, mal fondé, doit être rejeté. Le recourant, qui succombe, supportera les frais judiciaires (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal du canton de Fribourg, Cour des assurances sociales, et à l'Office fédéral de la santé publique.
+Lucerne, le 27 août 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Barman Ionta

@@ -195,7 +195,7 @@ def scrape_bger():
         return
 
     client = anthropic.Anthropic(api_key=api_key)
-    domain = "https://www.bger.ch"
+    domain = "https://search.bger.ch"
 
     if not os.path.exists('urteilstexte'):
         os.makedirs('urteilstexte')
@@ -227,7 +227,7 @@ def scrape_bger():
             )
             page = context.new_page()
 
-            index_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index"
+            index_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index&search=false"
             html = fetch_html(page, index_url)
 
             soup = BeautifulSoup(html, 'html.parser')

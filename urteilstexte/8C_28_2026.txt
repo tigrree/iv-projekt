@@ -1,0 +1,125 @@
+8C_28/2026
+Arrêt du 17 août 2026
+IVe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Viscione, Présidente,
+Maillard et Métral.
+Greffière : Mme Castella.
+Participants à la procédure
+A.________,
+représenté par Me Laurie Roth,
+recourant,
+contre
+Caisse nationale suisse d'assurance en cas d'accidents (CNA), Division juridique, Fluhmattstrasse 1, 6002 Lucerne,
+intimée.
+Objet
+Assurance-accidents (rente d'invalidité),
+recours contre l'arrêt du Tribunal cantonal de la République et canton du Jura du 8 décembre 2025
+(AA 28/2025).
+Faits :
+A.
+A.________, né en 1962, imprimeur de formation, a travaillé en tant que tel, à plein temps, du 1er août 1981 au 31 août 2020 (terme de son licenciement) auprès de l'entreprise B.________ SA. À ce titre, il était assuré auprès de la Caisse nationale suisse d'assurance en cas d'accidents (CNA) contre le risque d'accident.
+L'assuré s'est blessé au niveau du genou gauche lors d'accidents successifs, les 23 décembre 1999, 22 janvier 2001, 1er avril 2019 et 14 janvier 2022. La CNA a pris en charge les suites de ces événements et, en ce qui concerne le dernier accident, a mis fin au versement de l'indemnité journalière et au remboursement des frais médicaux au 31 octobre 2023.
+Par décision du 15 décembre 2023, la CNA a nié le droit de l'assuré à une rente d'invalidité, au motif que le taux d'incapacité de gain (de 7 %) était insuffisant pour ouvrir le droit à cette prestation, mais lui a alloué une indemnité pour atteinte à l'intégrité, fondée sur un taux de 30 %. Saisie d'une opposition, elle l'a partiellement admise en lui reconnaissant le droit à une rente, fondée sur un taux d'invalidité de 12 %, avec effet au 1er novembre 2023 (décision sur opposition du 11 février 2025).
+B.
+Par arrêt du 8 décembre 2025, la Cour des assurances du Tribunal cantonal de la République et canton du Jura a rejeté le recours formé contre la décision sur opposition de la CNA du 11 février 2025.
+C.
+A.________ forme un recours en matière de droit public contre cet arrêt, dont il demande la réforme en ce sens que la rente d'invalidité soit calculée sur la base d'un revenu d'invalide réduit de 25 % ou en tout cas de 10 %. A titre subsidiaire, il conclut à l'annulation de l'arrêt cantonal et au renvoi de la cause à l'intimée pour instruction complémentaire et nouvelle décision dans le sens des considérants.
+L'intimée conclut au rejet du recours. La cour cantonale et l'Office fédéral de la santé publique ne se sont pas déterminés.
+Considérant en droit :
+1.
+Le recours est dirigé contre un arrêt final (
+art. 90 LTF
+) rendu en matière de droit public (
+art. 82 ss LTF
+) par une autorité cantonale de dernière instance (
+art. 86 al. 1 let
+. d LTF). Il a été déposé dans le délai (
+art. 100 LTF
+) et la forme (
+art. 42 LTF
+) prévus par la loi. Il est donc recevable.
+2.
+Le litige porte sur le taux d'invalidité de la rente à laquelle peut prétendre le recourant, singulièrement, sur le revenu d'invalide déterminant pour la comparaison des revenus.
+Dès lors que l'affaire concerne une prestation en espèces de l'assurance-accidents, le Tribunal fédéral n'est pas lié par les faits établis par la juridiction précédente (
+art. 105 al. 3 LTF
+).
+3.
+3.1.
+Le revenu d'invalide doit être évalué avant tout en fonction de la situation professionnelle concrète de l'assuré. En l'absence d'un revenu effectivement réalisé, soit lorsque la personne assurée, après la survenance de l'atteinte à la santé, n'a pas repris d'activité lucrative ou alors aucune activité normalement exigible, le revenu d'invalide peut être évalué sur la base des données statistiques résultant de l'Enquête suisse sur la structure des salaires (ESS;
+ATF 148 V 174
+consid. 6.2;
+139 V 592
+consid. 2.3;
+135 V 297
+consid. 5.2). Aux fins de déterminer le revenu d'invalide, le salaire fixé sur cette base peut à certaines conditions faire l'objet d'un abattement de 25 % au plus (
+ATF 148 V 174
+précité consid. 6.3;
+126 V 75
+consid. 5b/aa-cc).
+3.2.
+En ce qui concerne l'abattement, la mesure dans laquelle les salaires ressortant des statistiques doivent être réduits dépend de l'ensemble des circonstances personnelles et professionnelles du cas particulier (limitations liées au handicap, âge, années de service, nationalité/catégorie d'autorisation de séjour et taux d'occupation). Il n'y a pas lieu de procéder à des déductions distinctes pour chacun des facteurs entrant en considération. Il faut bien plutôt procéder à une évaluation globale, dans les limites du pouvoir d'appréciation, des effets de ces facteurs sur le revenu d'invalide, compte tenu de l'ensemble des circonstances du cas concret (
+ATF 148 V 419
+consid. 5.3, 174 consid. 6.3;
+126 V 75
+consid. 5b/bb).
+3.3.
+Le point de savoir s'il y a lieu de procéder à un abattement sur le salaire statistique en raison de circonstances particulières (liées au handicap de la personne ou à d'autres facteurs) est une question de droit qui peut être examinée librement par le Tribunal fédéral. En revanche, l'étendue de l'abattement sur le salaire statistique dans un cas concret constitue une question relevant du pouvoir d'appréciation, qui est soumise à l'examen du juge de dernière instance uniquement si la juridiction cantonale a exercé son pouvoir d'appréciation de manière contraire au droit, soit a commis un excès positif ("Ermessensüberschreitung") ou négatif ("Ermessensunterschreitung") de son pouvoir d'appréciation ou a abusé ("Ermessensmissbrauch") de celui-ci (
+ATF 148 V 419
+consid. 5.4;
+146 V 16
+consid. 4.2;
+137 V 71
+consid. 5.1), notamment en retenant des critères inappropriés, en ne tenant pas compte de circonstances pertinentes, en ne procédant pas à un examen complet des circonstances pertinentes ou en n'usant pas de critères objectifs (
+ATF 148 V 419
+consid. 5.4 précité et les arrêts cités).
+4.
+4.1.
+Se référant au profil d'exigibilité retenu par le médecin d'arrondissement de l'intimée, les juges cantonaux ont considéré que le recourant pouvait mettre à profit une pleine capacité de travail dans une activité exercée en position assise ou debout, ne nécessitant pas le port de charges supérieures à 15 kilos, évitant les longs déplacements, les déplacements sur terrain instable, le franchissement répété d'échelles ou d'escaliers ou encore le travail sur échafaudages. Ils ont également exposé que le médecin d'arrondissement, à l'instar du chirurgien traitant du recourant, concluait à l'incapacité totale de travail dans la profession habituelle d'imprimeur, qui n'était pas adaptée aux limitations endurées, conclusion à laquelle il y avait lieu de se rallier.
+4.2.
+En ce qui concerne le revenu d'invalide, les premiers juges ont considéré que l'intimée s'était fondée à bon droit sur l'ESS 2022 (TA1_skill-level, total, niveau de compétences 1, hommes, adapté à un temps de travail hebdomadaire usuel dans les entreprises de 41.7 heures) pour retenir un montant de 67'493 fr. 76, de surcroît admis par le recourant. Ils ont ensuite examiné le taux d'abattement de 5 % appliqué par l'intimée pour prendre en compte les "circonstances du cas d'espèce". Faute de motivation topique, ils partaient du principe que ce taux était motivé tant par les restrictions fonctionnelles que par l'âge du recourant.
+En réponse aux arguments du recourant, qui prétendait une imputation de 25 % sur les données statistiques, la cour cantonale a retenu que le recourant était âgé de 61 ans au moment de la naissance du droit à la rente (2023), de sorte que l'application de l'
+art. 28 al. 4 OLAA
+(RS 832.202) entrait en considération (référence faite aux arrêts 8C_321/2022 du 10 mars 2023 consid. 4.2 et 8C_507/2022 du 28 novembre 2022 consid. 5.1.3). Or, dans les deux arrêts précités, le Tribunal fédéral avait jugé qu'un abattement fondé sur l'âge ne se justifiait pas dans les hypothèses visées par l'
+art. 28 al. 4 OLAA
+. En l'espèce, l'intimée avait pris en considération un revenu hypothétique qu'un assuré d'âge moyen pourrait obtenir, de sorte qu'un abattement à cause de l'âge ne saurait être retenu. Refusant ensuite un abattement en lien avec I'expérience professionnelle du recourant, la cour cantonale a retenu que celui-ci disposait d'une formation qualifiante. Même s'il avait travaillé entre 1978 et 2020 au sein de la même entreprise, il avait néanmoins été à même d'effectuer des remplacements depuis son licenciement intervenu en août 2020. Les éléments au dossier démontraient également une motivation à travailler, le recourant ayant repris au plus vite son travail après les incapacités de travail endurées. En outre, il n'était éloigné que depuis peu du marché du travail. Pour finir, en ce qui concernait le facteur relatif au handicap, les juges cantonaux ont relevé que le niveau de compétences 1 de l'ESS tenait compte de nombreux emplois avec des tâches simples et légères compatibles avec les restrictions endurées par le recourant, étant précisé que seules les atteintes au genou gauche relevaient de l'assurance-accidents. Les limitations du recourant n'apparaissent d'ailleurs pas particulièrement sévères et ne présentaient pas de spécificités telles qu'il y aurait lieu de les prendre en considération comme facteur de réduction du salaire statistique déterminant.
+Les juges cantonaux ont conclu qu'une appréciation globale des critères détaillés ci-dessus ne fondait pas une appréciation divergente de la situation telle qu'opérée par I'autorité intimée, à savoir la prise en compte d'un abattement de 5 % sur le revenu d'invalide.
+5.
+5.1.
+Se plaignant d'un établissement inexact des faits et de la violation du droit fédéral, le recourant reproche à la cour cantonale d'avoir inféré que le taux d'abattement fixé par l'intimée était motivé tant par ses restrictions fonctionnelles que par son âge.
+En l'occurrence, il n'est pas déterminant de savoir sur quels critères précis s'est fondée l'intimée pour retenir un taux d'abattement de 5 %, dès lors que l'arrêt cantonal s'est substitué à sa décision en vertu de l'effet dévolutif du recours (cf.
+ATF 139 II 404
+consid. 2.5;
+136 II 539
+consid. 1.2).
+5.2.
+Le recourant fait grief à la cour cantonale d'avoir refusé un abattement en raison de son âge, faisant valoir que sa longue activité au sein de la même entreprise associée à son âge avancé compliquerait manifestement sa réintégration sur le marché de l'emploi.
+Cet argument doit d'emblée être écarté, dans la mesure où le recourant ne conteste pas, à raison, l'application au cas d'espèce de l'
+art. 28 al. 4 OLAA
+. Or, dans un tel cas de figure et comme l'ont retenu les premiers juges, l'âge ne constitue pas un facteur d'abattement des salaires statistiques dans le domaine de l'assurance-accidents (
+ATF 148 V 419
+consid. 8).
+5.3.
+Le recourant invoque ensuite son expérience professionnelle comme facteur de réduction. Il rappelle qu'il a effectué toute sa carrière au sein de la même entreprise et que l'expérience acquise dans un seul domaine, soit en tant qu'imprimeur, offre peu de débouchés sur le marché équilibré de l'emploi. En outre, depuis son licenciement, il n'aurait effectué qu'un seul remplacement d'environ trois semaines auprès d'une autre imprimerie. Il serait par ailleurs faux de prétendre qu'il est éloigné depuis peu du marché du travail puisqu'il n'a plus travaillé depuis août 2020. Enfin, sa motivation à travailler ne devrait pas conduire à lui refuser un abattement.
+S'il faut admettre, avec le recourant, que l'argumentation des premiers juges se fonde sur certains motifs qui ne sont pas pertinents dans le cadre du facteur lié au manque d'expérience. Il n'en reste pas moins que, selon la jurisprudence, l'absence de formation et d'expérience ne joue en règle générale pas de rôle lorsque le revenu d'invalide est déterminé en référence au salaire statistique auquel peuvent prétendre les hommes effectuant des activités simples et répétitives du niveau de compétences 1, comme c'est le cas en l'espèce. En effet, ce niveau de compétences de l'ESS concerne une catégorie d'emplois ne nécessitant ni formation ni expérience professionnelle spécifique (cf. arrêts 8C_118/2021 du 21 décembre 2021 consid. 6.3.2; 8C_175/2020 du 22 septembre 2020 consid. 4.2). Il en va de même en ce qui concerne le facteur lié aux années de service (arrêt 8C_438/2022 du 26 mai 2023 consid. 4.3.5 et l'arrêt cité).
+5.4.
+S'agissant enfin du facteur relatif aux limitations fonctionnelles, le recourant soutient que les restrictions qui ne sont pas en lien avec l'accident ne peuvent être ignorées dans l'évaluation globale des circonstances personnelles et professionnelles dès lors qu'elles ont un effet sur le revenu d'invalide, respectivement sur les capacités à retrouver un emploi. Au demeurant, il fait valoir que les limitations fonctionnelles en lien avec l'accident sont conséquentes et nombreuses. Une limitation du port de charge à 15 kilos restreindrait considérablement les activités professionnelles qu'il pourrait entreprendre.
+Une telle argumentation est dépourvue de fondement. L'assurance-accidents ne répond pas des conséquences de facteurs étrangers à un événement assuré, telles que des limitations fonctionnelles non imputables à un accident. Quant à la limitation du port de charges à 15 kilos, même additionnée aux autres restrictions, elle n'a pas un impact suffisant, s'agissant d'emplois non qualifiés incluant des tâches physiques légères, pour justifier un abattement global supérieur à celui admis par l'intimée et les premiers juges (cf. a contrario arrêt 8C_403/2024 du 14 janvier 2025 consid. 7.3.4).
+6.
+Il s'ensuit que le recours est mal fondé et doit être rejeté.
+Le recourant, qui succombe, supportera les frais de la procédure (
+art. 66 al. 1 LTF
+).
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 800 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal cantonal de la République et canton du Jura, Cour des assurances, et à l'Office fédéral de la santé publique.
+Lucerne, le 17 août 2026
+Au nom de la IVe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Viscione
+La Greffière :    Castella

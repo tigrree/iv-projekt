@@ -255,7 +255,7 @@ def scrape_bger():
                     "familienzulage", "allocation familiale", "assegni familiari",
                     "hinterlassenenversicherung", "vieillesse", "vecchiaia",
                     "krankenversicherung", "maladie", "malattie",
-                    "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari"
+                    "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari", "prestazione complementari"
                 ]
 
                 for i in range(len(rows)):

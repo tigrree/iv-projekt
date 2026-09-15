@@ -1,5 +1,31 @@
 [
     {
+        "aktenzeichen": "9C_197/2025",
+        "datum": "15.09.2026",
+        "kategorie": "ak",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false,
+        "vorschau": "Krankenversicherung Krankenversicherung",
+        "zusammenfassung": "Fehler: Die KI hat keinen auslesbaren Text-Block zurückgegeben.",
+        "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza://20-08-2026-9C_197-2025&lang=de&zoom=&type=show_document"
+    },
+    {
+        "aktenzeichen": "INFO_SKIP_IV",
+        "datum": "15.09.2026",
+        "kategorie": "iv",
+        "vorschau": "Keine neuen IV-relevanten Urteile",
+        "zusammenfassung": "",
+        "url": "",
+        "publikation": false,
+        "iv_zh_fuehrer": false,
+        "iv_zh_gegner": false,
+        "ak_zh_fuehrer": false,
+        "ak_zh_gegner": false
+    },
+    {
         "aktenzeichen": "INFO_SKIP_BEIDE",
         "datum": "14.09.2026",
         "kategorie": "beide",

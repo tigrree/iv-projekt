@@ -1,0 +1,114 @@
+9C_367/2026
+Arrêt du 27 août 2026
+IIIe Cour de droit public
+Composition
+Mme et MM. les Juges fédéraux
+Moser-Szeless, Présidente,
+Stadelmann et Beusch.
+Greffier : M. J. Sieber.
+Participants à la procédure
+A.________,
+représenté par Me Julien Gafner, avocat,
+recourant,
+contre
+HOTELA Caisse de compensation AVS, rue de la Gare 18, case postale 1251, 1820 Montreux,
+intimée.
+Objet
+Assurance-vieillesse et survivants (responsabilité de l'employeur),
+recours contre le jugement du Tribunal administratif du canton de Berne du 27 avril 2026 (200.2025.71.AVS).
+Faits :
+A.
+A.a.
+B.________ Sàrl (ci-après: la société), fondée en 1996, avec siège d'abord à U.________/VD puis à V.________/BE dès février 2022, a exploité un salon érotique à U.________, notamment entre 2018 et début 2022. A.________ était l'unique associé gérant de la société avec signature individuelle entre le 5 septembre 2017 et le 25 février 2022. La société était affiliée en tant qu'employeuse pour le paiement des cotisations sociales auprès de HOTELA Caisse de compensation AVS (ci-après: la caisse de compensation ou Hotela) dès le 1er janvier 2005. Par décision du 20 décembre 2021, la caisse de compensation a réclamé à la société le paiement de cotisations impayées à hauteur de 275'223 fr. 75 sur des salaires versés à des hôtesses étrangères entre 2018 et 2019. Cette décision a été confirmée par décision sur opposition rendue par la caisse de compensation le 24 février 2023, puis par jugement du 27 décembre 2023 du Tribunal administratif du canton de Berne, Cour des affaires de langue française. Entre-temps, la faillite de la société a été prononcée le xxx 2023, puis suspendue faute d'actif le yyy 2023. La société a été radiée du registre du commerce le zzz 2025.
+A.b.
+Par décision du 18 juin 2024, la caisse de compensation a réclamé à A.________, en sa qualité d'associé gérant, la réparation du dommage qu'elle a subi dans la faillite de la société et qu'elle a fixé à 262'589 fr. 45. Ce montant comprenait les cotisations AVS/AI/APG, à l'assurance-chômage et aux caisses d'allocations familiales impayées pour les mois de janvier 2018 à février 2022, des frais d'administration, de sommations et de poursuites, des intérêts moratoires ainsi que des honoraires. Par décision du 20 décembre 2024, la caisse de compensation a partiellement admis l'opposition formée par l'intéressé. Elle a confirmé sa précédente décision, à l'exception du montant du dommage, qu'elle a ramené à 254'365 fr. 30. En particulier, la masse salariale relative à l'année 2022 a été diminuée dès lors qu'un seul et dernier salaire avait été versé par la société cette année-là.
+B.
+Statuant le 27 avril 2026, le Tribunal administratif du canton de Berne a très partiellement admis le recours formé par A.________ contre cette décision, en ce sens que le dommage subi par la caisse de compensation devait être réduit de 52 fr. 45 et ainsi fixé à un montant total de 254'312 fr. 85. Il a rejeté le recours pour le surplus.
+C.
+A.________ forme un recours en matière de droit public contre ce jugement dont il demande la réforme en ce sens qu'il est constaté qu'il n'est débiteur d'aucun montant de quelque chef de responsabilité que ce soit en faveur de la caisse de compensation. Subsidiairement, il conclut à l'annulation du jugement entrepris et au renvoi de la cause à l'instance précédente pour nouvelle décision dans le sens des considérants. Le recours est assorti d'une requête d'effet suspensif.
+Considérant en droit :
+1.
+La recevabilité du recours en matière de droit public contre un arrêt statuant sur la responsabilité d'un employeur envers une caisse de compensation fondée sur l'
+art. 52 LAVS
+est subordonnée à la condition que la valeur litigieuse atteigne la somme de 30'000 francs (
+art. 85 al. 1 let. a LTF
+;
+ATF 137 V 51
+consid. 4.3). En l'occurrence, les conclusions restées litigieuses devant l'autorité précédente (
+art. 51 al. 1 let. a LTF
+) s'élèvent à 254'312 fr. 85, de sorte que le recours est recevable de ce chef.
+2.
+Le recours en matière de droit public peut être formé notamment pour violation du droit fédéral (
+art. 95 let. a LTF
+), que le Tribunal fédéral applique d'office (
+art. 106 al. 1 LTF
+), n'étant limité ni par les arguments de la partie recourante, ni par la motivation de l'autorité précédente. Le Tribunal fédéral fonde son raisonnement sur les faits retenus par la juridiction de première instance (
+art. 105 al. 1 LTF
+), sauf s'ils ont été établis de façon manifestement inexacte (c'est-à-dire arbitraire au sens de l'
+art. 9 Cst.
+;
+ATF 144 II 246
+consid. 6.7) ou en violation du droit au sens de l'
+art. 95 LTF
+(
+art. 105 al. 2 LTF
+).
+3.
+3.1.
+Le litige porte sur la responsabilité du recourant dans le préjudice subi par l'intimée en raison du non-paiement par la société (aujourd'hui radiée du registre du commerce) du solde des cotisations sociales afférentes aux mois de janvier 2018 à février 2022. À cet égard, le jugement entrepris expose de manière complète les normes légales et la jurisprudence applicables en matière de responsabilité subsidiaire des organes de l'employeur au sens de l'
+art. 52 LAVS
+. Il suffit d'y renvoyer.
+3.2.
+Après avoir constaté que la créance en réparation du dommage de l'intimée n'était pas prescrite, la juridiction cantonale a retenu que les conditions de la responsabilité prévues à l'
+art. 52 LAVS
+étaient cumulativement réalisées et a confirmé l'obligation de rembourser du recourant, en sa qualité d'ancien organe de la société. Les juges précédents ont notamment retenu qu'il avait fait preuve d'une négligence grave. Admettant que la qualification du statut des hôtesses engagées au sein de la société n'était pas d'emblée "évidente" et qu'elle avait nécessité un examen approfondi dans le jugement que le Tribunal administratif bernois avait rendu le 27 décembre 2023 (dans la cause opposant la société à la caisse de compensation sur les cotisations sociales 2018-2019), ils ont considéré que cette situation juridique singulière était connue du recourant. Ils lui ont reproché sa passivité en ce sens qu'il ne pouvait s'accommoder de ce flou juridique au vu des exigences sévères posées à l'égard de la société quant au paiement des cotisations. Il incombait ainsi au recourant de dissiper ces ambiguïtés, en particulier auprès de la caisse de compensation. La responsabilité du recourant n'était pas atténuée par la pratique prévalant dans le canton de Vaud et selon laquelle les travailleuses du sexe en provenance de l'Union européenne (UE) offrant leurs services en Suisse durant moins de 90 jours bénéficieraient du statut d'indépendantes. D'une part, cette pratique n'était pas avérée. D'autre part, chaque cas devait être examiné individuellement en fonction de la relation entre les partenaires et le niveau d'intégration des hôtesses. Cette pratique était en outre notamment soumise à la condition que les hôtesses fussent reconnues comme indépendantes dans leurs pays de domicile, ce qui n'était pas établi en l'occurrence. Enfin, le recourant ne pouvait se fonder sur les conseils de son fiduciaire quant à l'application de cette pratique dès lors que ce dernier n'était pas compétent pour le renseigner de manière contraignante. S'agissant du montant du dommage, les juges précédents l'ont cependant réduit de 52 fr. 45 correspondant à des intérêts moratoires indûment facturés pour l'année 2022.
+4.
+4.1.
+Invoquant une violation de l'
+art. 52 LAVS
+et du principe de la bonne foi (
+art. 5 al. 3 et 9 Cst.
+), le recourant nie toute négligence grave de sa part. Selon lui, il existait une incertitude quant à la qualification juridique du statut des hôtesses. Il souligne que les juges précédents ont admis la complexité et le caractère controversé de cette problématique. L'examen approfondi par le Tribunal administratif du canton de Berne dans le jugement du 27 décembre 2023 démontrait également que la situation n'était pas univoque. Or le recourant soutient que la responsabilité au sens de l'
+art. 52 LAVS
+n'entre en ligne de compte que si l'employeur pouvait, sans hésitation, considérer la personne qui collaborait avec lui comme un employé. Le recourant allègue avoir agi de bonne foi dès lors qu'il estimait, au vu de ses connaissances de la pratique vaudoise et des conseils de son fiduciaire, que les hôtesses exerçaient une activité indépendante. Il reproche à l'autorité précédente d'avoir refusé ses réquisitions de preuve sur ces aspects, à savoir la mise en oeuvre d'une enquête auprès de toute entité et/ou institution en vue de documenter la pratique vaudoise, ainsi que l'audition de son fiduciaire. Il se prévaut sur ce point d'une violation arbitraire de la maxime inquisitoire (
+art. 61 let
+. c LPGA), respectivement de son droit d'être entendu (
+art. 29 al. 2 Cst.
+), et d'un établissement manifestement inexact de l'état de fait.
+4.2.
+En l'occurrence, c'est à bon droit que les juges précédents ont considéré que le recourant ne pouvait s'accommoder du flou juridique entourant le statut des travailleuses du sexe dans son salon pour s'abstenir, en sa qualité d'organe formel de la société, de déclarer les salaires et retenir les cotisations sociales correspondantes. Selon la jurisprudence, l'omission de déclarer des salaires ne constitue pas encore une négligence grave lorsque, de bonne foi, des opinions divergentes peuvent être soutenues quant à l'obligation de décompter des cotisations (cf., dans le même sens,
+ATF 136 V 268
+consid. 3; arrêt 9C_347/2013 du 3 juillet 2013 consid. 5.3 et les références). Il est vrai, comme l'invoque le recourant, que dans son jugement du 27 décembre 2023, le Tribunal administratif bernois a souligné que la prostitution pouvait être exercée en Suisse aussi bien sous la forme d'activité indépendante que salariée, ce qui laisse suggérer que la situation n'apparaissait pas univoque. On constate toutefois à cet égard (
+art. 105 al. 2 LTF
+) qu'il ressort aussi de ce jugement notamment que la société fixait elle-même les tarifs, encaissait les rémunérations versées par la clientèle, à charge de reverser leur part aux hôtesses, s'occupait de la sécurité, de tenir le registre du salon, de la mise à disposition de la nourriture ainsi que d'articles d'hygiène et de la publicité. Or ces éléments constituent précisément des circonstances concrètes remettant sérieusement en doute le statut d'indépendantes des hôtesses au sens de la jurisprudence du Tribunal fédéral (arrêt 9C_347/2013 précité consid. 5.3). En outre et surtout, le recourant ne remet pas en cause les constatations cantonales selon lesquelles la pratique vaudoise dont il se prévaut impliquait en particulier la reconnaissance préalable d'un statut d'indépendant dans le pays d'origine et qu'il s'était abstenu de démarches propres à établir ce statut pour les hôtesses concernées. Il ressort aussi du jugement entrepris que le recourant n'a pas même cherché à établir s'être renseigné sur ces aspects lorsqu'il a commencé ses activités. Dès lors que la pratique visant à reconnaître le statut d'indépendantes des travailleuses du sexe était soumise à des conditions, le recourant ne pouvait considérer sans hésitation qu'elle s'appliquait effectivement à sa situation. Il reconnaît d'ailleurs lui-même qu'un doute sérieux subsistait quant à la qualification juridique des prestations des hôtesses, laquelle ne reposait sur aucune réglementation. Ces doutes auraient ainsi dû l'inciter à prendre contact avec la caisse de compensation afin de lever toute incertitude.
+D'une manière générale, un employeur, respectivement les organes agissant pour son compte, commettent une faute qualifiée lorsqu'ils ne s'acquittent pas des obligations qui leur incombent ou qu'ils adoptent à cet égard une attitude trop passive. Il est exigé de l'employeur ou de ses organes qu'ils s'emploient activement à accomplir les tâches qui leur incombent à tous les stades de l'exercice de leurs fonctions (arrêts 9C_463/2023 du 22 mai 2024 consid. 3.2.1; 9C_839/2016 du 4 juillet 2017 consid. 5.2; 9C_351/2008 du 30 septembre 2008 consid. 5.1; Marco Reichmuth, Die Haftung des Arbeitgeber und seiner Organe nach Art. 52 AHVG, 2008, n° 590 et 591 Marc Hürzeler in Basler Kommentar, Bundesgesetz über die Alters- und Hinterlassenenversicherung [AHVG], 2025, n° 28 ad
+art. 29ter LAVS
+). Il incombe notamment aux organes de la société de surveiller et de contrôler que les cotisations aux assurances sociales soient versées intégralement dans les délais (arrêt 9C_647/2009 du 15 avril 2010 consid. 4.2.2). Dans ces circonstances, au vu des doutes légitimes du recourant, il lui appartenait de s'enquérir de la situation directement auprès de la caisse de compensation. À ce défaut, c'est à juste titre que les juges précédents ont retenu une négligence grave.
+4.3.
+C'est également en vain que le recourant invoque sa bonne foi en se référant à la pratique vaudoise, ainsi qu'aux conseils de son fiduciaire puisqu'il n'a pas vérifié si les conditions de cette pratique étaient en l'occurrence remplies (consid. 4.2 supra). Partant, l'instance cantonale était fondée à refuser les mesures d'instruction en vue de la documenter. Les conseils du fiduciaire du recourant ne sauraient en outre remplacer un renseignement donné de manière contraignante par une autorité, en particulier la caisse de compensation, de sorte que l'audition de ce fiduciaire par l'instance cantonale n'était pas non plus nécessaire. Le recourant ne soutient au demeurant pas avoir agi conformément à un renseignement émanant d'une administration. Son grief relatif au principe de la bonne foi est ainsi mal fondé (sur le principe de la bonne foi, cf. notamment
+ATF 149 V 203
+consid. 5.1).
+4.4.
+En conséquence, au vu des arguments avancés, il n'y a pas lieu de s'écarter des conclusions des premiers juges, selon lesquelles le comportement du recourant en tant qu'unique associé gérant de la société est constitutif d'une négligence grave au sens de l'
+art. 52 LAVS
+. Les juges précédents n'ont pas non plus violé la maxime inquisitoire, respectivement le droit d'être entendu du recourant. Ils n'ont en outre pas établi les faits de manière inexacte. Pour le surplus, le recourant ne conteste pas que les autres conditions de l'
+art. 52 LAVS
+sont remplies, ni le montant du dommage subi par l'intimée. Le recours est dès lors entièrement mal fondé.
+5.
+Le présent arrêt rend sans objet la requête d'effet suspensif.
+6.
+Le recourant supportera les frais de la procédure (
+art. 66 al. 1 LTF
+). L'intimée n'a pas droit à des dépens.
+Par ces motifs, le Tribunal fédéral prononce :
+1.
+Le recours est rejeté.
+2.
+Les frais judiciaires, arrêtés à 8'000 fr., sont mis à la charge du recourant.
+3.
+Le présent arrêt est communiqué aux parties, au Tribunal administratif du canton de Berne, Cour des affaires de langue française, et à l'Office fédéral des assurances sociales.
+Lucerne, le 27 août 2026
+Au nom de la IIIe Cour de droit public
+du Tribunal fédéral suisse
+La Présidente :    Moser-Szeless
+Le Greffier :    Sieber

@@ -217,7 +217,17 @@ def scrape_bger():
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
+            # --disable-blink-features=AutomationControlled entfernt das
+            # navigator.webdriver-Flag und ein paar weitere Marker, an denen
+            # Bot-Schutzsysteme wie Imperva/Incapsula einen automatisierten
+            # Chromium-Browser von einem echten unterscheiden.
+            browser = p.chromium.launch(
+                headless=True,
+                args=[
+                    "--disable-blink-features=AutomationControlled",
+                    "--disable-dev-shm-usage",
+                ],
+            )
             # Ein einziger, durchgehender Browser-Kontext hält die von
             # Imperva/Incapsula gesetzten Cookies über alle Anfragen dieses
             # Laufs hinweg, sodass die Challenge im Idealfall nur einmal
@@ -225,9 +235,15 @@ def scrape_bger():
             context = browser.new_context(
                 user_agent=USER_AGENT,
                 locale="de-CH",
+                viewport={"width": 1366, "height": 768},
                 ignore_https_errors=True,
             )
             page = context.new_page()
+            try:
+                from playwright_stealth import stealth_sync
+                stealth_sync(page)
+            except ImportError:
+                print("HINWEIS: playwright-stealth nicht installiert, fahre ohne Stealth-Patches fort.")
 
             index_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index&search=false"
             html = fetch_html(page, index_url)

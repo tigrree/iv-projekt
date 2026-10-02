@@ -16,7 +16,7 @@ import anthropic
 RSS_FEED_URL = "http://relevancy.bger.ch/feeds/aza_de.rss"
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb)
-ZIEL_DATUM = "01.10.2026"
+ZIEL_DATUM = datetime.now().strftime("%d.%m.%Y")
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 

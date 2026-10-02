@@ -37,6 +37,8 @@ def fetch_html(page, url, wait_ms=4000, max_versuche=3):
 
             if (status and status >= 400) or wirkt_geblockt:
                 print(f"WARNUNG: {url} lieferte Status {status} / Blockseite erkannt (Versuch {versuch}/{max_versuche}).")
+                print(f"Response Body (erste 1000 Zeichen): {html[:1000]}")
+                print(f"Response Headers: {response.all_headers() if response else 'kein response-Objekt'}")
                 if versuch < max_versuche:
                     page.wait_for_timeout(5000)
                     continue

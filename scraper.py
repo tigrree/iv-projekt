@@ -240,8 +240,8 @@ def scrape_bger():
             )
             page = context.new_page()
             try:
-                from playwright_stealth import stealth_sync
-                stealth_sync(page)
+                from playwright_stealth import Stealth
+                Stealth().apply_stealth_sync(page)
             except ImportError:
                 print("HINWEIS: playwright-stealth nicht installiert, fahre ohne Stealth-Patches fort.")
 

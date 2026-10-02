@@ -1,11 +1,19 @@
 import os
 import json
 import re
+import urllib.request
+import xml.etree.ElementTree as ET
+from email.utils import parsedate_to_datetime
 from urllib.parse import urljoin
 from datetime import datetime
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 import anthropic
+
+# Offizieller RSS-Feed des Bundesgerichts für "andere Urteile" (AZA), auf
+# einer anderen Domain als die bisher genutzte Indexseite (siehe
+# hole_tagesfaelle_aus_rss unten für den Hintergrund des Wechsels).
+RSS_FEED_URL = "http://relevancy.bger.ch/feeds/aza_de.rss"
 
 # AUTOMATISIERUNG: Aktuelles Datum (für den Live-Betrieb)
 ZIEL_DATUM = "01.10.2026"
@@ -50,6 +58,58 @@ def fetch_html(page, url, wait_ms=4000, max_versuche=3):
             page.wait_for_timeout(3000)
 
     raise RuntimeError(f"Konnte {url} nach {max_versuche} Versuchen nicht laden: {letzter_fehler}")
+
+
+def hole_tagesfaelle_aus_rss(ziel_datum_str):
+    """
+    Liest den offiziellen AZA-RSS-Feed des Bundesgerichts (relevancy.bger.ch)
+    ein und gibt alle Einträge zurück, deren Publikationsdatum dem
+    Zieldatum entspricht.
+
+    HINTERGRUND DES WECHSELS: Der bisherige Weg über die Indexseite
+    search.bger.ch/.../index_aza.php ("Liste der Neuheiten") wird von der
+    Imperva/Incapsula-Schutzschicht dieser Domain inzwischen offenbar für
+    Anfragen aus Rechenzentrums-IPs (u.a. GitHub-Actions-Runner, aber auch
+    andere Cloud-Anbieter) mit einer als HTTP 404 getarnten Blockseite
+    beantwortet - erkennbar am winzigen generischen Seiteninhalt und dem
+    Incapsula-typischen 'x-iinfo'-Response-Header. Das trat selbst mit
+    echtem, per playwright-stealth getarntem Chromium auf, da es sich um
+    eine IP-basierte und keine reine Browser-Fingerprint-Sperre handelt;
+    Retries oder Stealth-Patches helfen dagegen nicht.
+
+    Der RSS-Feed liegt auf einer anderen Domain (relevancy.bger.ch) ohne
+    diesen Schutz und liefert dieselben Angaben (Aktenzeichen, Datum,
+    Sachgebiet/Vorschau, Link zum Volltext) direkt und zuverlässig - ganz
+    ohne Browser.
+    """
+    ziel_datum = datetime.strptime(ziel_datum_str, "%d.%m.%Y").date()
+
+    req = urllib.request.Request(RSS_FEED_URL, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        raw = resp.read()
+
+    root = ET.fromstring(raw)
+    treffer = []
+
+    for item in root.iter("item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        beschreibung = (item.findtext("description") or "").strip()
+        pub_date_raw = (item.findtext("pubDate") or "").strip()
+
+        try:
+            pub_datum = parsedate_to_datetime(pub_date_raw).date()
+        except (TypeError, ValueError):
+            continue
+
+        if pub_datum == ziel_datum:
+            treffer.append({"title": title, "link": link, "beschreibung": beschreibung})
+        elif pub_datum < ziel_datum:
+            # Der Feed ist (wie bei RSS üblich) neueste zuerst sortiert -
+            # sobald ein älterer Eintrag auftaucht, kann abgebrochen werden.
+            break
+
+    return treffer
 
 
 def summarize_and_translate(urteil_text, vorschau_raw, client):
@@ -197,7 +257,6 @@ def scrape_bger():
         return
 
     client = anthropic.Anthropic(api_key=api_key)
-    domain = "https://search.bger.ch"
 
     if not os.path.exists('urteilstexte'):
         os.makedirs('urteilstexte')
@@ -245,29 +304,21 @@ def scrape_bger():
             except ImportError:
                 print("HINWEIS: playwright-stealth nicht installiert, fahre ohne Stealth-Patches fort.")
 
-            index_url = f"{domain}/ext/eurospider/live/de/php/aza/http/index_aza.php?lang=de&mode=index&search=false"
-            html = fetch_html(page, index_url)
+            # Die Tagesliste kommt über den RSS-Feed (relevancy.bger.ch) statt
+            # über die Indexseite von search.bger.ch, siehe
+            # hole_tagesfaelle_aus_rss() für den Hintergrund.
+            try:
+                rss_treffer = hole_tagesfaelle_aus_rss(ZIEL_DATUM)
+            except Exception as e:
+                print(f"FEHLER: RSS-Feed ({RSS_FEED_URL}) konnte nicht gelesen werden: {e}")
+                rss_treffer = []
 
-            soup = BeautifulSoup(html, 'html.parser')
-            alle_links = soup.find_all('a', href=True)
+            print(f"Gefundene RSS-Einträge für {ZIEL_DATUM}: {len(rss_treffer)}")
 
-            # Debugging: Liste alle Publikationsdaten auf, die das Skript heute "sieht"
-            verfuegbare_daten = [a.get_text().strip() for a in alle_links if re.match(r'\d{2}\.\d{2}\.\d{4}', a.get_text().strip())]
-            print(f"Gefundene Publikationstage auf der Seite: {verfuegbare_daten}")
+            if not rss_treffer:
+                print(f"HINWEIS: Für das Zieldatum {ZIEL_DATUM} wurden keine RSS-Einträge gefunden. Beende Scan.")
 
-            # Tolerantere Suche: Finde den Link, in dem das Datum steht
-            tag_link = next((a['href'] for a in alle_links if ZIEL_DATUM in a.get_text()), None)
-
-            if not tag_link:
-                print(f"HINWEIS: Für das Zieldatum {ZIEL_DATUM} wurde kein Unterlink gefunden. Beende Scan.")
-
-            if tag_link:
-                full_tag_url = urljoin(index_url, tag_link)
-                print(f"Scrape URL: {full_tag_url}")
-
-                rows_html = fetch_html(page, full_tag_url)
-                rows = BeautifulSoup(rows_html, 'html.parser').find_all('tr')
-
+            if rss_treffer:
                 iv_keywords = ["invalid"]
                 ak_keywords = [
                     "familienzulage", "allocation familiale", "assegni familiari",
@@ -276,27 +327,20 @@ def scrape_bger():
                     "ergänzungsleistung", "prestations complémentaires", "prestazioni complementari", "prestazione complementari"
                 ]
 
-                for i in range(len(rows)):
-                    row = rows[i]
-                    link_tag = row.find('a', href=True)
-                    if not link_tag:
+                az_pattern = re.compile(r'([89]C_\d+/\d{4})')
+
+                for eintrag in rss_treffer:
+                    titel = eintrag["title"]
+                    beschreibung = eintrag["beschreibung"]
+                    link = eintrag["link"]
+
+                    az_match = az_pattern.search(titel) or az_pattern.search(beschreibung)
+                    if not az_match:
                         continue
+                    raw_az = az_match.group(1)
 
-                    raw_az = link_tag.get_text().strip()
-                    if not (raw_az.startswith("9C_") or raw_az.startswith("8C_")):
-                        continue
-
-                    volltext = row.get_text(" ", strip=True)
-
-                    if i + 1 < len(rows):
-                        next_row = rows[i+1]
-                        if not next_row.find('a', href=True):
-                            volltext += " " + next_row.get_text(" ", strip=True)
-
-                    if raw_az in volltext:
-                        vorschau_raw = volltext.split(raw_az, 1)[-1].strip()
-                    else:
-                        vorschau_raw = volltext
+                    volltext = f"{titel} {beschreibung}"
+                    vorschau_raw = volltext.split(raw_az, 1)[-1].strip() if raw_az in volltext else volltext
 
                     ist_publikation = "*" in volltext
                     vorschau_raw = vorschau_raw.replace("*", "").strip()
@@ -312,7 +356,7 @@ def scrape_bger():
                         if ist_iv: iv_gefunden = True
                         if ist_ak: ak_gefunden = True
 
-                        case_url = urljoin(full_tag_url, link_tag['href'])
+                        case_url = urljoin(RSS_FEED_URL, link)
 
                         case_html_raw = fetch_html(page, case_url)
                         case_soup = BeautifulSoup(case_html_raw, 'html.parser')

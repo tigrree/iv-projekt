@@ -8,7 +8,7 @@ on:
     # 13:23 UTC -> 15:23 Schweizer Sommerzeit
     # 14:23 UTC -> 15:23 Schweizer Winterzeit
     - cron: '23 10,11,13,14 * * 1-5'
-  
+
   workflow_dispatch:
 
 jobs:
@@ -30,24 +30,24 @@ jobs:
 
       - name: Install Python Dependencies
         run: |
-          pip install beautifulsoup4 anthropic playwright
+          pip install beautifulsoup4 anthropic playwright playwright-stealth
 
       - name: Install Playwright Browser
         run: playwright install --with-deps chromium
 
       - name: Run Scraper Script
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} 
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scraper.py
 
       - name: Commit and Push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           # Der Punkt fügt ALLE neuen Dateien und Ordner (wie urteilstexte) hinzu
           git add .
-          
+
           # Commit nur, wenn tatsächlich Änderungen vorhanden sind
           git commit -m "Automatisches Update: $(date +'%d.%m.%Y %H:%M')" || exit 0
           git push
